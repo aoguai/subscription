@@ -2,7 +2,7 @@
 
 存在 3 规则组 - [com.maxhom.weibu](/src/apps/com.maxhom.weibu.ts)
 
-## 交友-底部广告
+## 局部广告-交友-底部广告
 
 默认禁用
 
@@ -14,14 +14,14 @@
 - [快照-5](https://i.gkd.li/import/13702339)
 - [快照-6](https://i.gkd.li/import/13702345)
 
-## 漂流瓶-提示弹窗
+## 通知提示-漂流瓶-提示弹窗
 
 默认禁用
 
 - [快照-0](https://i.gkd.li/import/13377649)
 - [快照-1](https://i.gkd.li/import/13457015)
 
-## 漂流瓶-定位弹窗
+## 权限提示-漂流瓶-定位弹窗
 
 默认禁用 - 自动点击取消
 

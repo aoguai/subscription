@@ -6,7 +6,7 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '权限授予弹窗',
+      name: '权限提示-权限授予弹窗',
       desc: '自动点击【仅在使用中允许】',
       activityIds:
         'com.android.packageinstaller.permission.ui.GrantPermissionsActivity',

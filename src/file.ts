@@ -58,8 +58,8 @@ const pkg: typeof PkgT = JSON.parse(
 );
 const pkgKeys = Object.keys(pkg);
 
-const gkdFp = process.cwd() + '/dist/gkd.json5';
-const versionFp = process.cwd() + '/dist/gkd.version.json';
+const gkdFp = process.cwd() + '/dist/aoguai_gkd.json5';
+const versionFp = process.cwd() + '/dist/aoguai_gkd.version.json';
 const oldConfig: RawSubscription = JSON5.parse(
   await fs.readFile(gkdFp, 'utf-8').catch(() => '{}'),
 );
@@ -424,7 +424,7 @@ export const updateReadMeMd = async (
   await Promise.all(
     newConfig.apps!.map(async (app) => {
       const oldApp = oldConfig.apps!.find((a) => a.id == app.id);
-      if (!_.isEqual(oldApp, app)) {
+      if (oldApp && !_.isEqual(oldApp, app)) {
         changeCount++;
         await updateAppMd(app);
         const diffLog = getAppDiffLog(oldApp?.groups, app.groups);

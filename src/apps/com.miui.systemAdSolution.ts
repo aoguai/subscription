@@ -6,7 +6,7 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: 'miui-为什么不希望看到这条推广',
+      name: '局部广告-miui-为什么不希望看到这条推广',
       desc: '点击【不感兴趣】',
       activityIds: [
         'com.xiaomi.ad.feedback',

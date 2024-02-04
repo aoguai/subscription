@@ -7,7 +7,7 @@ export default defineAppConfig({
   groups: [
     {
       key: 10,
-      name: '开启消息通知',
+      name: '权限提示-开启消息通知',
       desc: '自动点击关闭',
       enable: false,
       quickFind: true,

@@ -6,7 +6,7 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '更新弹窗',
+      name: '更新提示-更新弹窗',
       activityIds: 'bin.mt.plus.Main',
       rules: '@[text="取消"] + [text="更新"]',
       snapshotUrls: 'https://i.gkd.li/import/12908784',

@@ -6,7 +6,7 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '浮窗广告',
+      name: '局部广告-浮窗广告',
       desc: '关闭右侧飘窗广告',
       quickFind: true,
       activityIds:
@@ -17,7 +17,7 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '横幅广告',
+      name: '局部广告-横幅广告',
       desc: '关闭播放页面横幅广告',
       quickFind: true,
       activityIds:
@@ -30,14 +30,14 @@ export default defineAppConfig({
     },
     {
       key: 3,
-      name: '弹窗广告_底部弹窗',
+      name: '局部广告-弹窗广告_底部弹窗',
       activityIds: 'com.tencent.qqmusiccommon.hybrid.HybridViewActivity',
       rules: 'ViewGroup > @ViewGroup + ViewGroup[childCount=5]',
       snapshotUrls: ['https://i.gkd.li/import/13304343'],
     },
     {
       key: 4,
-      name: '飘窗广告_首页右侧',
+      name: '局部广告-飘窗广告_首页右侧',
       activityIds: 'com.tencent.qqmusiclite.activity.MainActivity',
       quickFind: true,
       rules:
@@ -46,7 +46,7 @@ export default defineAppConfig({
     },
     {
       key: 5,
-      name: '首页-弹窗广告',
+      name: '局部广告-首页-弹窗广告',
       activityIds: 'com.tencent.qqmusiclite.activity.MainActivity',
       quickFind: true,
       rules: '[id="com.miui.player:id/iv_close_dialog_button"]',
@@ -55,7 +55,7 @@ export default defineAppConfig({
     {
       enable: false,
       key: 10,
-      name: '会员过期续费弹窗',
+      name: '局部广告-会员过期续费弹窗',
       activityIds: 'com.tencent.qqmusiccommon.hybrid.HybridViewActivity',
       rules: '[id=null][desc="关闭弹框按钮"][clickable=true]',
       snapshotUrls: 'https://i.gkd.li/import/12700955',
@@ -63,7 +63,7 @@ export default defineAppConfig({
     {
       enable: false,
       key: 11,
-      name: '我的页面-顶部 banner 广告',
+      name: '局部广告-我的页面-顶部 banner 广告',
       activityIds: 'com.tencent.qqmusiclite.activity.MainActivity',
       rules:
         '[id="com.miui.player:id/banner_image"] + [id="com.miui.player:id/close_banner"]',
@@ -72,7 +72,7 @@ export default defineAppConfig({
     {
       enable: false,
       key: 12,
-      name: '看广告视频领VIP',
+      name: '功能类-看广告视频领VIP',
       desc: '等待15s自动点击【退出】',
       rules: [
         {

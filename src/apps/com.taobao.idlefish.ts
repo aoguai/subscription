@@ -6,7 +6,7 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '通知提示',
+      name: '通知提示-通知提示',
       actionMaximum: 1,
       activityIds:
         'com.idlefish.flutterbridge.flutterboost.boost.FishFlutterBoostTransparencyActivity',
@@ -15,7 +15,7 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '权限提示',
+      name: '权限提示-权限提示',
       actionMaximum: 1,
       activityIds: 'com.taobao.idlefish.maincontainer.activity.MainActivity',
       rules:
@@ -24,7 +24,7 @@ export default defineAppConfig({
     },
     {
       key: 3,
-      name: '更新提示',
+      name: '更新提示-更新提示',
       quickFind: true,
       matchTime: 10000,
       actionMaximum: 1,

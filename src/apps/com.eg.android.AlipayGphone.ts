@@ -121,7 +121,7 @@ export default defineAppConfig({
     {
       enable: false,
       key: 4,
-      name: '设置支付宝小组件',
+      name: '局部广告-设置支付宝小组件',
       desc: '点击关闭',
       quickFind: true,
       activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
@@ -136,7 +136,7 @@ export default defineAppConfig({
     },
     {
       key: 10,
-      name: '小程序-12306',
+      name: '局部广告-小程序-12306',
       activityIds: 'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
       rules: [
         {

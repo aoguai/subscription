@@ -2,7 +2,7 @@
 
 存在 1 规则组 - [com.miui.cloudservice](/src/apps/com.miui.cloudservice.ts)
 
-## 相册-云存储空间不足
+## 通知提示-相册-云存储空间不足
 
 默认禁用
 

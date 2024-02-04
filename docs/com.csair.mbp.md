@@ -2,7 +2,7 @@
 
 存在 1 规则组 - [com.csair.mbp](/src/apps/com.csair.mbp.ts)
 
-## 首页-弹窗广告
+## 局部广告-首页-弹窗广告
 
 默认禁用
 

@@ -6,7 +6,7 @@ export default defineAppConfig({
   groups: [
     {
       key: 0,
-      name: '首页悬浮窗广告',
+      name: '局部广告-首页悬浮窗广告',
       activityIds: 'com.xiaomi.market.ui.FloatWebActivity',
       quickFind: true,
       rules: {
@@ -19,7 +19,7 @@ export default defineAppConfig({
     },
     {
       key: 9,
-      name: '应用升级界面-顶部广告横幅',
+      name: '局部广告-应用升级界面-顶部广告横幅',
       quickFind: true,
       activityIds: 'com.xiaomi.market.ui.UpdateListActivity',
       rules: '[id="com.xiaomi.market:id/iv_close_tip"]',
@@ -28,7 +28,7 @@ export default defineAppConfig({
     {
       enable: false,
       key: 10,
-      name: '忽略升级',
+      name: '功能类-忽略升级',
       quickFind: true,
       desc: '应用升级界面-自动点击忽略',
       exampleUrls:
@@ -58,7 +58,7 @@ export default defineAppConfig({
     },
     {
       key: 11,
-      name: '请求通知权限提示弹窗',
+      name: '权限提示-请求通知权限提示弹窗',
       desc: '自动点击关闭按钮',
       quickFind: true,
 
@@ -87,7 +87,7 @@ export default defineAppConfig({
     },
     {
       key: 12,
-      name: '个性化推荐弹窗',
+      name: '局部广告-个性化推荐弹窗',
       quickFind: true,
       matchTime: 10000,
       actionMaximum: 1,

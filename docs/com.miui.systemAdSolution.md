@@ -2,7 +2,7 @@
 
 存在 1 规则组 - [com.miui.systemAdSolution](/src/apps/com.miui.systemAdSolution.ts)
 
-## miui-为什么不希望看到这条推广
+## 局部广告-miui-为什么不希望看到这条推广
 
 默认禁用 - 点击【不感兴趣】
 

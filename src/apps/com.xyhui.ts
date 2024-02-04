@@ -7,7 +7,7 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '弹窗广告',
+      name: '局部广告-弹窗广告',
 
       rules: [
         {
@@ -99,7 +99,7 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '首页-右侧浮窗广告',
+      name: '局部广告-首页-右侧浮窗广告',
       quickFind: true,
       activityIds: [
         'com.xyhui.start.PUMainActivity',
@@ -114,7 +114,7 @@ export default defineAppConfig({
     {
       enable: false,
       key: 3,
-      name: '升级提示',
+      name: '更新提示-升级提示',
       quickFind: true,
       activityIds: [
         'com.xyhui.start.PUMainActivity',
