@@ -16,6 +16,10 @@ https://cdn.jsdelivr.net/gh/aoguai/subscription@custom/dist/aoguai_gkd.json5
 
 如何编写订阅/贡献此项目 -> [CONTRIBUTING.md](./CONTRIBUTING.md)
 
+**由于精力有限本项目仅接受本人使用的 APP 或改进 全局规则 的相关 PR 提交**
+
+如果您有额外的 APP 规则需求，您可以通过自己编写规则并添加到本地规则中使用
+
 ## 感谢以下项目
 
 [gkd-kit/subscription](https://github.com/gkd-kit/subscription)
