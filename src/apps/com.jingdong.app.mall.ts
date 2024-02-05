@@ -5,7 +5,6 @@ export default defineAppConfig({
   name: '京东',
   groups: [
     {
-      enable: false,
       key: 1,
       name: '局部广告-购物车界面-砸金蛋',
       activityIds: 'com.jingdong.app.mall.MainFrameActivity',
@@ -13,7 +12,6 @@ export default defineAppConfig({
       snapshotUrls: 'https://i.gkd.li/import/12642266',
     },
     {
-      enable: false,
       key: 2,
       name: '局部广告-我的界面-悬浮广告',
       activityIds: 'com.jingdong.app.mall.MainFrameActivity',
@@ -38,7 +36,6 @@ export default defineAppConfig({
       ],
     },
     {
-      enable: false,
       key: 3,
       name: '局部广告-首页-右侧浮层广告',
       activityIds: 'com.jingdong.app.mall.MainFrameActivity',
@@ -51,9 +48,9 @@ export default defineAppConfig({
       ],
     },
     {
-      enable: false,
       key: 4,
       name: '通知提示-请求打开通知',
+      enable: false,
       activityIds: [
         'com.jd.lib.message.messagecenter.view.activity.MessageCenterMainActivityNew',
         'com.jd.lib.ordercenter.mygoodsorderlist.view.activity.MyOrderListActivity',
@@ -77,7 +74,7 @@ export default defineAppConfig({
     },
     {
       key: 5,
-      name: '局部广告-广告弹窗',
+      name: '全屏广告-广告弹窗',
       rules: [
         {
           key: 0,
@@ -113,25 +110,44 @@ export default defineAppConfig({
             'https://i.gkd.li/import/13336847', // 增加excludeMatches: 'ImageView[desc="关闭页面"] - [text="优惠券"]', 避免在该快照误触
           ],
         },
+        {
+          key: 4,
+          activityIds: 'com.jingdong.app.mall.MainFrameActivity',
+          matches: '[id="com.jingdong.app.mall:id/close"]',
+          snapshotUrls: ['https://i.gkd.li/import/14162769'],
+        },
       ],
     },
     {
-      enable: false,
       key: 6,
       name: '局部广告-首页-底部横幅广告',
       activityIds: 'com.jingdong.app.mall.MainFrameActivity',
-      rules: 'ImageView < FrameLayout - FrameLayout > ImageView[desc="关闭"]',
-      snapshotUrls: [
-        'https://i.gkd.li/import/13258973',
-        'https://i.gkd.li/import/13258980',
-        'https://i.gkd.li/import/13258981',
+      rules: [
+        {
+          key: 0,
+          name: '类型1',
+          matches:
+            'ImageView < FrameLayout - FrameLayout > ImageView[desc="关闭"]',
+          snapshotUrls: [
+            'https://i.gkd.li/import/13258973',
+            'https://i.gkd.li/import/13258980',
+            'https://i.gkd.li/import/13258981',
+          ],
+        },
+        {
+          key: 1,
+          name: '类型2',
+          matches:
+            '@View[clickable=true][longClickable=false] -n ImageView <n RelativeLayout',
+          snapshotUrls: 'https://i.gkd.li/import/14163014',
+        },
       ],
     },
     {
-      enable: false,
       key: 7,
       name: '通知提示-首页弹窗-打开通知',
       desc: '自动点击正下方的【x】',
+      enable: false,
       quickFind: true,
       rules: [
         {
@@ -142,16 +158,15 @@ export default defineAppConfig({
       ],
     },
     {
-      enable: false,
       key: 10,
       name: '功能类-京东账号登录授权',
       desc: '自动点击【确认登录】',
+      enable: false,
       activityIds: 'com.jingdong.app.mall.WebActivity',
       rules: '[text="京东登录"] > [desc="确认登录"]',
       snapshotUrls: 'https://i.gkd.li/import/12901734',
     },
     {
-      enable: false,
       key: 11,
       name: '局部广告-支付界面-产品推荐',
       desc: '自动点击右上角【x】',
@@ -161,7 +176,6 @@ export default defineAppConfig({
       snapshotUrls: 'https://i.gkd.li/import/13191146',
     },
     {
-      enable: false,
       key: 12,
       name: '局部广告-购物车界面-支付成功广告弹窗',
       desc: '自动点击正下方的【x】',
