@@ -5,9 +5,9 @@ export default defineAppConfig({
   name: '支付宝',
   groups: [
     {
-      enable: false,
       key: 0,
-      name: '更新提示-关闭花呗升级弹窗',
+      name: '通知提示-关闭花呗升级弹窗',
+      enable: false,
       actionMaximum: 1,
       resetMatch: 'app',
       activityIds: [
@@ -47,9 +47,9 @@ export default defineAppConfig({
       ],
     },
     {
-      enable: false,
       key: 1,
       name: '定位提示-请求定位权限弹窗',
+      enable: false,
       quickFind: true,
       activityIds: 'com.eg.android.AlipayGphone.AlipayLogin',
       rules:
@@ -83,9 +83,9 @@ export default defineAppConfig({
       ],
     },
     {
-      enable: false,
       key: 3,
       name: '更新提示-版本更新弹窗',
+      enable: false,
       actionMaximum: 1,
       resetMatch: 'app',
       quickFind: true,
@@ -96,12 +96,14 @@ export default defineAppConfig({
       ],
       rules: [
         {
+          key: 0,
           name: '弹窗-【稍后再说】',
           matches:
             'TextView[id="com.alipay.mobile.accountauthbiz:id/update_cancel_tv"]',
           snapshotUrls: 'https://i.gkd.li/import/13327095',
         },
         {
+          key: 1,
           name: '弹窗-【x】',
           matches:
             '[text="版本更新"||text^="Version"] - [id="com.alipay.mobile.antui:id/btn_close"]',
@@ -111,6 +113,7 @@ export default defineAppConfig({
           ],
         },
         {
+          key: 2,
           name: '卡片-【x】',
           matches:
             '[text="立即升级最新版支付宝客户端"] < LinearLayout + [id="com.alipay.mobile.advertisement:id/announcementview_righticon"]',
@@ -119,10 +122,10 @@ export default defineAppConfig({
       ],
     },
     {
-      enable: false,
       key: 4,
       name: '局部广告-设置支付宝小组件',
       desc: '点击关闭',
+      enable: false,
       quickFind: true,
       activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
       rules: [
@@ -137,6 +140,7 @@ export default defineAppConfig({
     {
       key: 10,
       name: '局部广告-小程序-12306',
+      enable: false,
       activityIds: 'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
       rules: [
         {
@@ -160,6 +164,7 @@ export default defineAppConfig({
       key: 11,
       name: '全屏广告-借呗消费信贷协议',
       desc: '点击X',
+      enable: false,
       rules: [
         {
           activityIds:
