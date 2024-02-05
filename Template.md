@@ -4,6 +4,8 @@
 
 秉持 “如无必要，勿增实体” 的原则，该仓库只会维护 [适配 APP 列表](./AppList.md) 内的 APP 规则
 
+**同时本项目的目标是编写尽量精简通用的规则，所以部分针对APP的规则可能已存在全局规则中，希望您多留意**
+
 ## 使用
 
 在 [GKD](https://github.com/gkd-kit/gkd) 内添加以下链接即可使用此规则
@@ -26,7 +28,7 @@ https://cdn.jsdelivr.net/gh/aoguai/subscription@custom/dist/aoguai_gkd.json5
 
 如果您有额外的 APP 规则需求，您可以通过自己编写规则并添加到本地规则中使用
 
-如何编写订阅/贡献此项目 -> [CONTRIBUTING.md](./CONTRIBUTING.md)
+如果您希望参与或学习编写订阅/贡献此项目 -> [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 ## License 说明
 
