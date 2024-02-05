@@ -172,13 +172,12 @@ export default defineAppConfig({
       key: 14,
       name: '全屏广告-将小组件添加到手机桌面',
       desc: '点击取消',
+      enable: false,
       activityIds: 'com.alibaba.triver.container.TriverMainActivity',
-      rules: [
-        {
-          action: 'clickCenter',
-          matches: 'View[text="立即添加"] + View[text="取消"]',
-          snapshotUrls: 'https://i.gkd.li/import/13598578',
-        },
+      rules: 'View[childCount=2] >3 View[text="立即添加"] + View[text="取消"]',
+      snapshotUrls: [
+        'https://i.gkd.li/import/13598578',
+        'https://i.gkd.li/import/13853510', //误触快照
       ],
     },
     {
