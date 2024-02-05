@@ -3,48 +3,45 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.baidu.netdisk',
   name: '百度网盘',
-  deprecatedKeys: [0],
+  deprecatedKeys: [0, 3, 10, 11],
   groups: [
     {
       key: 1,
       name: '局部广告-活动弹窗',
       desc: '关闭各种活动弹窗信息',
-      quickFind: true,
-      rules: [
-        {
-          key: 1,
-          name: '一刻相册推广弹窗',
-          activityIds: 'com.baidu.netdisk.ui.MainActivity',
-          matches:
-            '[id="com.baidu.netdisk:id/cl_content"] - [id="com.baidu.netdisk:id/iv_close"]',
-          snapshotUrls: ['https://i.gkd.li/import/12642505'],
-        },
-        {
-          key: 2,
-          name: 'VIP弹窗',
-          activityIds: 'com.baidu.netdisk.business.guide.dialog.lifeproduct.', // LifeV10GuideDialog
-          matches:
-            '[id="com.baidu.netdisk:id/view_content_bg2"] - [id="com.baidu.netdisk:id/iv_close"]',
-          snapshotUrls: ['https://i.gkd.li/import/12923937'],
-        },
+      activityIds: [
+        'com.baidu.netdisk.ui.MainActivity',
+        'com.baidu.netdisk.business.guide.dialog.lifeproduct.',
+      ],
+      rules:
+        'ImageView[id="com.baidu.netdisk:id/iv_close"][visibleToUser=true]',
+      snapshotUrls: [
+        'https://i.gkd.li/import/12642505', // 一刻相册推广弹窗
+        'https://i.gkd.li/import/12923937', // VIP弹窗
+        'https://i.gkd.li/import/13806852', // 幸运券包弹窗
+        'https://i.gkd.li/import/12783106', // 看视频免费享极速下载弹窗
       ],
     },
     {
       key: 2,
-      name: '局部广告-首页banner广告',
+      name: '局部广告-首页广告',
+      desc: '关闭首页各种广告信息',
       activityIds: 'com.baidu.netdisk.ui.MainActivity',
       quickFind: true,
-      rules: '[id="com.baidu.netdisk:id/banner_item_close"]',
-      snapshotUrls: 'https://i.gkd.li/import/12706544',
-    },
-    {
-      key: 3,
-      name: '局部广告-首页热门广告',
-      activityIds: 'com.baidu.netdisk.ui.MainActivity',
-      quickFind: true,
-      rules:
-        '[id="com.baidu.netdisk:id/vf_content"] + [id="com.baidu.netdisk:id/close"]',
-      snapshotUrls: 'https://i.gkd.li/import/12706544',
+      rules: [
+        {
+          key: 1,
+          name: 'banner广告',
+          matches: '[id="com.baidu.netdisk:id/banner_item_close"]',
+          snapshotUrls: 'https://i.gkd.li/import/12706544',
+        },
+        {
+          key: 2,
+          name: '热门广告',
+          matches: '[id="com.baidu.netdisk:id/close"]',
+          snapshotUrls: ['https://i.gkd.li/import/12706544'],
+        },
+      ],
     },
     {
       key: 4,
@@ -95,31 +92,6 @@ export default defineAppConfig({
       activityIds: 'com.baidu.netdisk.ui.MainActivity',
       rules: 'ImageView[id="com.baidu.netdisk:id/dialog_cancel"]', //单独使用ID会导致误触（例如删除确认https://i.gkd.li/import/13069049）
       snapshotUrls: ['https://i.gkd.li/import/12923936'],
-    },
-    {
-      enable: false,
-      key: 10,
-      name: '局部广告-看视频免费享极速下载弹窗',
-      desc: '自动点击x按钮',
-      quickFind: true,
-      activityIds: 'com.baidu.netdisk.ui.MainActivity',
-      rules:
-        'ViewGroup > [id="com.baidu.netdisk:id/background_image"] +n [id="com.baidu.netdisk:id/iv_close"]',
-      snapshotUrls: 'https://i.gkd.li/import/12783106',
-    },
-    {
-      key: 11,
-      quickFind: true,
-      name: '局部广告-幸运券包弹窗',
-      desc: '自动点击关闭',
-      activityIds: 'com.baidu.netdisk.ui.MainActivity',
-      rules: [
-        {
-          matches:
-            '[id="com.baidu.netdisk:id/tv_title"][text^="恭喜获得"] -3 ImageView[clickable=true]',
-          snapshotUrls: 'https://i.gkd.li/import/13806852',
-        },
-      ],
     },
   ],
 });
