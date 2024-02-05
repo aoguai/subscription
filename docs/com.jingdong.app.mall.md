@@ -34,7 +34,7 @@
 - [快照-2](https://i.gkd.li/import/13917163)
 - [快照-3](https://i.gkd.li/import/12839865)
 
-## 局部广告-广告弹窗
+## 全屏广告-广告弹窗
 
 默认禁用
 
@@ -44,6 +44,7 @@
 - [快照-3](https://i.gkd.li/import/132599029)
 - [快照-4](https://i.gkd.li/import/13258996)
 - [快照-5](https://i.gkd.li/import/13336847)
+- [快照-6](https://i.gkd.li/import/14162769)
 
 ## 局部广告-首页-底部横幅广告
 
@@ -52,6 +53,7 @@
 - [快照-0](https://i.gkd.li/import/13258973)
 - [快照-1](https://i.gkd.li/import/13258980)
 - [快照-2](https://i.gkd.li/import/13258981)
+- [快照-3](https://i.gkd.li/import/14163014)
 
 ## 通知提示-首页弹窗-打开通知
 

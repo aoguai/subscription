@@ -2,7 +2,7 @@
 
 存在 7 规则组 - [com.eg.android.AlipayGphone](/src/apps/com.eg.android.AlipayGphone.ts)
 
-## 更新提示-关闭花呗升级弹窗
+## 通知提示-关闭花呗升级弹窗
 
 默认禁用
 

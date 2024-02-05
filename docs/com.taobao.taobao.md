@@ -1,10 +1,10 @@
 # 淘宝
 
-存在 13 规则组 - [com.taobao.taobao](/src/apps/com.taobao.taobao.ts)
+存在 12 规则组 - [com.taobao.taobao](/src/apps/com.taobao.taobao.ts)
 
 ## 开屏广告
 
-## 局部广告-限时福利弹窗
+## 全屏广告-限时福利弹窗
 
 默认禁用
 
@@ -46,17 +46,13 @@
 - [快照-0](https://i.gkd.li/import/13197553)
 - [快照-1](https://i.gkd.li/import/13197546)
 
-## 局部广告-视频页面-活动弹窗
+## 全屏广告-视频页面-弹窗
 
 默认禁用
 
 - [快照-0](https://i.gkd.li/import/12642813)
-
-## 局部广告-视频页面-签到弹窗
-
-默认禁用
-
-- [快照-0](https://i.gkd.li/import/12642798)
+- [快照-1](https://i.gkd.li/import/12642798)
+- [快照-2](https://i.gkd.li/import/14163734)
 
 ## 更新提示-版本更新
 
@@ -64,18 +60,20 @@
 
 - [快照-0](https://i.gkd.li/import/13336760)
 - [快照-1](https://i.gkd.li/import/13695520)
+- [快照-2](https://i.gkd.li/import/13965740)
 
-## 局部广告-小额免密支付弹窗
+## 全屏广告-小额免密支付弹窗
 
 默认禁用 - 点击关闭
 
 - [快照-0](https://i.gkd.li/import/13438414)
 
-## 局部广告-将小组件添加到手机桌面
+## 全屏广告-将小组件添加到手机桌面
 
 默认禁用 - 点击取消
 
 - [快照-0](https://i.gkd.li/import/13598578)
+- [快照-1](https://i.gkd.li/import/13853510)
 
 ## 权限提示-开启悬浮窗权限
 

@@ -2,7 +2,7 @@
 
 存在 1 规则组 - [com.google.android.gm](/src/apps/com.google.android.gm.ts)
 
-## 局部广告-信息流广告
+## 分段广告-信息流广告
 
 默认禁用
 

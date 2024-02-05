@@ -2,7 +2,7 @@
 
 存在 2 规则组 - [com.xuexiaoyi.xxy](/src/apps/com.xuexiaoyi.xxy.ts)
 
-## 局部广告-首页-底部广告
+## 分段广告-首页-底部广告
 
 默认禁用
 

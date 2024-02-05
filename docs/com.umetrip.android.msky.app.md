@@ -2,13 +2,13 @@
 
 存在 4 规则组 - [com.umetrip.android.msky.app](/src/apps/com.umetrip.android.msky.app.ts)
 
-## 局部广告-酒店-弹窗广告
+## 全屏广告-酒店-弹窗广告
 
 默认禁用
 
 - [快照-0](https://i.gkd.li/import/12909632)
 
-## 更新提示-首页-升级提示
+## 更新提示-升级提示
 
 默认禁用
 
