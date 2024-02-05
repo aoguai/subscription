@@ -30,10 +30,10 @@ export default defineAppConfig({
       ],
     },
     {
-      enable: false,
       key: 1,
       name: '局部广告-消息页面-顶部广告',
       desc: '规则误触,待修复,需要快照准确定位', // 当从聊天界面点击链接进入网页时会误触
+      enable: false,
       activityIds: 'com.tencent.mobileqq.activity.SplashActivity',
       rules: [
         {
@@ -63,9 +63,9 @@ export default defineAppConfig({
       ],
     },
     {
-      enable: false,
       key: 2,
       name: '分段广告-好友动态-广告卡片',
+      enable: false,
       rules: [
         {
           key: 0,
@@ -150,10 +150,10 @@ export default defineAppConfig({
       ],
     },
     {
-      enable: false,
       key: 4,
       name: '局部广告-顶部SVIP广告',
       desc: '消息界面-搜索框和消息记录之间的广告卡片,点击关闭右侧x',
+      enable: false,
       activityIds: 'com.tencent.mobileqq.activity.SplashActivity',
       rules:
         'LinearLayout > TextView[text*="SVIP"||text*="超级会员"] + FrameLayout[childCount<=2] + [name$="ImageView"||name$="Button"][id!=null][clickable=true]',
@@ -166,10 +166,10 @@ export default defineAppConfig({
       ],
     },
     {
-      enable: false,
       key: 5,
-      name: '局部广告-好友热播',
+      name: '分段广告-好友热播',
       desc: '好友动态中的好友热播，自动选择“减少好友热播” - 默认关闭',
+      enable: false,
       activityIds: [
         'com.qzone.reborn.feedx.activity.QZoneFriendFeedXActivity',
         'com.tencent.mobileqq.activity.SplashActivity',
@@ -197,7 +197,7 @@ export default defineAppConfig({
     },
     {
       key: 7,
-      name: '功能类-扫一扫-登录确认',
+      name: '功能类-自动授权',
       desc: '自动点击登录。包括 PC 登录确认、QQ 互联登录确认。',
       quickFind: true,
       rules: [
@@ -228,10 +228,10 @@ export default defineAppConfig({
       ],
     },
     {
-      enable: false,
       key: 8,
-      name: '通知提示-消息页面顶部-无法接收新消息通知',
+      name: '通知提示-消息页面顶部',
       desc: '消息界面-搜索框和消息记录之间的通知卡片,点击关闭右侧x',
+      enable: false,
       activityIds: 'com.tencent.mobileqq.activity.SplashActivity',
       rules: 'RelativeLayout > [text^="当前无法接收"] + ImageView',
       snapshotUrls: 'https://i.gkd.li/import/12855441',
@@ -245,10 +245,10 @@ export default defineAppConfig({
       snapshotUrls: 'https://i.gkd.li/import/12914734',
     },
     {
-      enable: false,
       key: 10,
       name: '功能类-自动勾选原图',
       desc: '发送图片时自动勾选原图',
+      enable: false,
       activityIds: [
         'com.tencent.mobileqq.activity.SplashActivity',
         'com.tencent.qqnt.qbasealbum.WinkHomeActivity',
@@ -263,10 +263,10 @@ export default defineAppConfig({
       ],
     },
     {
-      enable: false,
       key: 11,
       name: '功能类-自动查看原图',
       desc: '查看图片时自动点击原图',
+      enable: false,
       activityIds: 'com.tencent.richframework.gallery.QQGalleryActivity',
       rules: '[desc="查看原图"][checked=false]',
       snapshotUrls: [
@@ -275,10 +275,10 @@ export default defineAppConfig({
       ],
     },
     {
-      enable: false,
       key: 12,
-      name: '局部广告-QQ小世界评论区广告',
+      name: '分段广告-QQ小世界评论区广告',
       desc: '点击广告-弹出原因框-关闭此条广告',
+      enable: false,
       activityIds: [
         'com.tencent.mobileqq.activity.SplashActivity',
         'com.tencent.biz.qqcircle.activity.QCircleFolderActivity',
@@ -329,11 +329,10 @@ export default defineAppConfig({
       ],
     },
     {
-      enable: false,
       key: 15,
-      name: '局部广告-好友动态-为你推荐',
+      name: '分段广告-好友动态-为你推荐',
+      enable: false,
       quickFind: true,
-
       activityIds: [
         'com.tencent.mobileqq.activity.SplashActivity',
         'com.qzone.reborn.feedx.activity.QZoneFriendFeedXActivity',
@@ -372,9 +371,9 @@ export default defineAppConfig({
       ],
     },
     {
-      enable: false,
       key: 18,
       name: '更新提示-消息页面-顶部',
+      enable: false,
       rules: [
         {
           key: 0,
@@ -397,9 +396,8 @@ export default defineAppConfig({
       ],
     },
     {
-      enable: false,
       key: 19,
-      name: '局部广告-内测邀请弹窗',
+      name: '全屏广告-内测邀请弹窗',
       quickFind: true,
       activityIds: 'com.tencent.mobileqq.activity.SplashActivity',
       rules: [
@@ -411,7 +409,6 @@ export default defineAppConfig({
       ],
     },
     {
-      enable: false,
       key: 20,
       name: '局部广告-钱包-卡片广告',
       quickFind: true,
@@ -432,7 +429,7 @@ export default defineAppConfig({
     },
     {
       key: 21,
-      name: '局部广告-首页广告弹窗',
+      name: '全屏广告-首页广告弹窗',
       rules: [
         {
           key: 0,
