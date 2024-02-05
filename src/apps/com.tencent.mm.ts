@@ -3,13 +3,13 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.tencent.mm',
   name: '微信',
+  deprecatedKeys: [2, 11, 12, 20],
   groups: [
     {
-      enable: false,
       key: 0,
       name: '分段广告-朋友圈广告',
       desc: '点击广告卡片右上角广告,直接关闭/出现菜单,确认关闭',
-      quickFind: true,
+      enable: false,
       activityIds: [
         'com.tencent.mm.plugin.sns.ui.SnsTimeLineUI',
         'com.tencent.mm.plugin.sns.ui.improve.ImproveSnsTimelineUI',
@@ -22,153 +22,137 @@ export default defineAppConfig({
           key: 0,
           name: '点击广告卡片右上角',
           matches:
-            'ImageView - TextView[text="广告"][clickable=true][id!=null]',
+            'TextView[text.length!=null] +1 LinearLayout[text.length=null&&clickable=true&&focusable=true]',
           snapshotUrls: [
             'https://i.gkd.li/import/12642588',
-            'https://i.gkd.li/import/12888129', //ImageView - TextView[text="广告"][id!=null][index=0]这个规则无法匹配该广告，需要删除[index=0]
+            'https://i.gkd.li/import/12888129', // ImageView - TextView[text="广告"][id!=null][index=0]这个规则无法匹配该广告，需要删除[index=0]
             'https://i.gkd.li/import/12907641',
             'https://i.gkd.li/import/13000395',
+            'https://i.gkd.li/import/14164508', // TextView[text.length!=null] +1 LinearLayout[text.length=null&&clickable=true&&focusable=true]
+            'https://i.gkd.li/import/12905837', // 英文
+            'https://i.gkd.li/import/13791200', // 繁体
           ],
         },
         // 以下是[确认关闭按钮]出现的情况
-        // 情况1 - 你觉得这条广告怎么样->直接关闭
+        // 情况1 - 选择关闭该广告的原因->直接关闭
         {
           preKeys: 0,
           key: 1,
-          name: '你觉得这条广告怎么样-点击[关闭该广告]',
-          matches:
-            '@LinearLayout[clickable=true][childCount=2] > [text="关闭该广告"]',
-          snapshotUrls: ['https://i.gkd.li/import/12642584'],
-        },
-        {
-          preKeys: 1,
-          key: 2,
           name: '关闭该广告的原因-点击[直接关闭]',
-          matches: '[text="关闭该广告的原因"] +(2) [text="直接关闭"]',
-          snapshotUrls: ['https://i.gkd.li/import/12663984'],
+          matches: [
+            '[(name="LinearLayout"||name$=".LinearLayout")||((name="TextView"||name$=".TextView")&&text.length>3)] + [(name="LinearLayout"||name$=".LinearLayout")||((name="TextView"||name$=".TextView")&&(text="直接关闭"||text="Close the ad"))]',
+          ],
+          snapshotUrls: [
+            'https://i.gkd.li/import/12642584',
+            'https://i.gkd.li/import/14164530', // @LinearLayout[clickable=true][childCount=2] > [text="关闭该广告"]无法匹配
+            'https://i.gkd.li/import/14164548', // 选择后将减少该类推荐
+            'https://i.gkd.li/import/12663984',
+            'https://i.gkd.li/import/14164574',
+            'https://i.gkd.li/import/12905838', // text="Close the ad"
+            'https://i.gkd.li/import/13791202', // text="關閉此廣告"
+          ],
         },
         // 情况2 - 关闭该广告
         {
           preKeys: 0,
-          key: 3,
+          key: 2,
           name: '广告反馈-点击[关闭该广告]',
-          matches: 'TextView[text^="关闭"][text$="广告"][clickable=true]',
+          matches:
+            'TextView[(text^="关闭"&&text$="广告")||(text^="關閉"&&text$="廣告")||text="Close"][clickable=true]',
           snapshotUrls: [
             'https://i.gkd.li/import/12907642',
             'https://i.gkd.li/import/13926578',
+            'https://i.gkd.li/import/12905846', // text="Close"
           ],
         },
-      ],
-    },
-    {
-      enable: false,
-      key: 12,
-      name: '分段广告-朋友圈广告[英文]',
-      desc: '点击广告卡片右上角[Sponsored],直接关闭/出现菜单点击[Close the ad],确认关闭',
-      activityIds: 'com.tencent.mm.plugin.sns.ui.SnsTimeLineUI',
-      quickFind: true,
-      rules: [
-        {
-          key: 0,
-          name: '点击广告卡片右上角[Sponsored]',
-          matches:
-            'ImageView - TextView[text="Sponsored"][clickable=true][id!=null]',
-          snapshotUrls: 'https://i.gkd.li/import/12905837',
-        },
-        // 以下是[确认关闭按钮]出现的情况
-        // 情况1 - 你觉得这条广告怎么样->直接关闭
-        {
-          preKeys: 0,
-          key: 1,
-          name: 'Sponsored story-点击[Close the ad]',
-          matches:
-            '@LinearLayout[clickable=true][childCount=2] > TextView[text="Close the ad"]',
-          snapshotUrls: 'https://i.gkd.li/import/12905838',
-        },
+        // 情况3 - 点击[确认]关闭该广告
         {
           preKeys: 1,
-          key: 2,
-          name: 'Reason for closing the ad - 点击[Close]',
-          matches: '[text="Reason for closing the ad"] +(2) [text="Close"]',
-          snapshotUrls: 'https://i.gkd.li/import/12905846',
+          key: 3,
+          name: '不感兴趣原因-点击[确认]',
+          matches: '[text^="不感兴趣"] +2 [text="确认"]',
+          snapshotUrls: 'https://i.gkd.li/import/14164601',
         },
       ],
     },
     {
-      key: 20,
-      name: '分段广告-朋友圈广告[繁体]',
-      desc: '点击广告卡片右上角[廣告],出现菜单点击[關閉此廣告],确认关闭',
-      activityIds: 'com.tencent.mm.plugin.sns.ui.SnsTimeLineUI',
-      quickFind: true,
-      rules: [
-        {
-          key: 0,
-          name: '点击广告卡片右上角[廣告]',
-          matches:
-            'ImageView - TextView[text="廣告"][clickable=true][id!=null]',
-          snapshotUrls: 'https://i.gkd.li/import/13791200',
-        },
-        {
-          preKeys: 0,
-          key: 1,
-          name: '点击[關閉此廣告]',
-          matches: 'RelativeLayout[childCount=6] > TextView[text="關閉此廣告"]',
-          snapshotUrls: 'https://i.gkd.li/import/13791202',
-        },
-      ],
-    },
-    {
-      // Key1,2,3,4,11 均为授权类的规则
-      enable: false,
+      // Key 1,3,4 均为授权类的规则
       key: 1,
-      name: '功能类-电脑微信快捷自动登录',
-      quickFind: true,
+      name: '功能类-微信自动授权',
+      desc: '包括：PC 微信, 浏览器微信, 网页版文件传输助手, 微信表情开发平台, 微信红包封面开放平台 扫码登录动授权',
+      enable: false,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'activity',
       activityIds: [
         '.plugin.webwx.ui.ExtDeviceWXLoginUI',
+        'com.tencent.mm.plugin.webview.ui.tools.SDKOAuthUI',
+        'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
         'com.tencent.mm.ui.LauncherUI',
       ],
-      rules: 'TextView[text="取消登录"] - Button[text="登录"]',
-      snapshotUrls: [
-        'https://i.gkd.li/import/13522625', // activityIds: 'com.tencent.mm.plugin.webwx.ui.ExtDeviceWXLoginUI'
-        'https://i.gkd.li/import/13522577', // activityIds: 'com.tencent.mm.ui.LauncherUI'
+      rules: [
+        {
+          key: 0,
+          name: 'PC 微信扫码登录',
+          matches: 'TextView[text="取消登录"] - Button[text="登录"]',
+          snapshotUrls: [
+            'https://i.gkd.li/import/13522625', // activityIds: 'com.tencent.mm.plugin.webwx.ui.ExtDeviceWXLoginUI'
+            'https://i.gkd.li/import/13522577', // activityIds: 'com.tencent.mm.ui.LauncherUI'
+          ],
+        },
+        {
+          key: 1,
+          name: '浏览器扫码登录',
+          matches: 'Button[text="拒绝"] - Button[text="允许"]',
+          snapshotUrls: [
+            'https://i.gkd.li/import/13065462', //com.tencent.mm.ui.LauncherUI
+          ],
+        },
+        {
+          key: 2,
+          name: '网页版文件传输助手扫码登录',
+          matches: '[text="打开网页版文件传输助手"] + * > Button[text="打开"]',
+          snapshotUrls: ['https://i.gkd.li/import/12793745'],
+        },
+        {
+          key: 3,
+          name: '微信表情开发平台扫码登录',
+          matches: 'View[desc="取消登录"] - Button[text="登录"]',
+          snapshotUrls: [
+            'https://i.gkd.li/import/14164954', // com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI
+          ],
+        },
+        {
+          key: 4,
+          name: '微信红包封面开放平台扫码登录',
+          matches: 'Button[text="取消"] - Button[text="确定"]',
+          snapshotUrls: ['https://i.gkd.li/import/14164990'],
+        },
       ],
     },
     {
+      key: 3,
+      name: '功能类-第三方 APP 申请使用授权弹窗',
+      desc: '由于此界面可以额外新建昵称头像,默认不启用',
       enable: false,
-      key: 2,
-      name: '功能类-浏览器扫码微信登录自动授权',
-      desc: '自动允许使用头像昵称等',
       quickFind: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'activity',
       activityIds: [
+        'com.tencent.mm.plugin.base.stub.UIEntryStub',
         'com.tencent.mm.plugin.webview.ui.tools.SDKOAuthUI',
-        'com.tencent.mm.ui.LauncherUI',
       ],
       rules: 'Button[text="拒绝"] - Button[text="允许"]',
-      snapshotUrls: 'https://i.gkd.li/import/13065462', //com.tencent.mm.ui.LauncherUI
+      snapshotUrls: [
+        'https://i.gkd.li/import/12663602',
+        'https://i.gkd.li/import/14164920',
+      ],
     },
     {
-      enable: false,
-      key: 3,
-      name: '功能类-第三方APP申请使用授权弹窗',
-      desc: '自动点击允许,但由于此界面可以额外新建昵称头像,默认不启用',
-      quickFind: true,
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'activity',
-      activityIds: ['com.tencent.mm.plugin.base.stub.UIEntryStub'],
-      rules: 'Button[text="拒绝"] - Button[text="允许"]',
-      snapshotUrls: 'https://i.gkd.li/import/12663602',
-    },
-    {
-      enable: false,
       key: 4,
       name: '功能类-微信读书网页版扫码登录自动授权',
+      enable: false,
       quickFind: true,
       matchTime: 10000,
       actionMaximum: 1,
@@ -189,10 +173,10 @@ export default defineAppConfig({
       ],
     },
     {
-      enable: false,
       key: 5,
       name: '功能类-微信红包自动领取',
       desc: '自动领取私聊红包,群聊红包',
+      enable: false,
       exampleUrls:
         'https://github.com/gkd-kit/subscription/assets/38517192/32cfda78-b2e1-456c-8d85-bfb2bc4683aa',
       rules: [
@@ -229,10 +213,10 @@ export default defineAppConfig({
       ],
     },
     {
-      enable: false,
       key: 6,
       name: '分段广告-订阅号文章广告',
       desc: '⚠ 此规则有概率误触。自动点击关闭按钮，必须同时启用【订阅号文章广告反馈】规则',
+      enable: false,
       activityIds: [
         'com.tencent.mm.plugin.brandservice.ui.timeline.preload.ui.TmplWebView', //调整为TmplWebView, 同时兼容多种ID
       ],
@@ -265,10 +249,10 @@ export default defineAppConfig({
       ],
     },
     {
-      enable: false,
       key: 7,
       name: '功能类-自动选中发送原图',
       desc: '图片和视频选择器-自动选中底部中间的发送原图',
+      enable: false,
       quickFind: true,
       activityIds: [
         'com.tencent.mm.plugin.gallery.ui.AlbumPreviewUI',
@@ -287,10 +271,10 @@ export default defineAppConfig({
       ],
     },
     {
-      enable: false,
       key: 8,
       name: '分段广告-订阅号文章广告反馈',
       desc: '⚠ 此规则有概率误触。自动点击反馈理由，配合【订阅号文章广告】规则使用',
+      enable: false,
       activityIds:
         'com.tencent.mm.plugin.brandservice.ui.timeline.preload.ui.TmplWebView', //调整为TmplWebView, 同时兼容多种ID
       rules: [
@@ -323,10 +307,10 @@ export default defineAppConfig({
       ],
     },
     {
-      enable: false,
       key: 9,
       name: '功能类-自动查看原图',
       desc: '自动点击底部左侧[查看原图（*M）]按钮',
+      enable: false,
       quickFind: true,
       activityIds: 'com.tencent.mm.ui.chatting.gallery.ImageGalleryUI',
       rules: 'Button[text^="查看原图"][clickable=true]',
@@ -335,6 +319,7 @@ export default defineAppConfig({
     {
       key: 10,
       name: '全屏广告-微信小程序-开屏广告',
+      enable: false,
       quickFind: true,
       matchTime: 10000,
       // actionMaximum: 1, // 经常需要点2次，首次点击过早大概率跳不过
@@ -363,21 +348,9 @@ export default defineAppConfig({
       ],
     },
     {
-      enable: false,
-      key: 11,
-      name: '功能类-网页版文件传输助手扫码自动授权',
-      quickFind: true,
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'activity',
-      activityIds: 'com.tencent.mm.ui.LauncherUI',
-      rules: '[text="打开网页版文件传输助手"] + * > Button[text="打开"]',
-      snapshotUrls: 'https://i.gkd.li/import/12793745',
-    },
-    {
-      enable: false,
       key: 13,
       name: '全屏广告-提瓦特助手小程序-弹窗广告',
+      enable: false,
       activityIds: 'com.tencent.mm.plugin.appbrand.ui.AppBrandUI',
       rules: [
         {
@@ -399,9 +372,9 @@ export default defineAppConfig({
       ],
     },
     {
-      enable: false,
       key: 14,
       name: '分段广告-小程序-内部广告',
+      enable: false,
       activityIds: ['com.tencent.mm.plugin.appbrand.ui.AppBrandUI'],
       quickFind: true,
       rules: [
@@ -440,9 +413,9 @@ export default defineAppConfig({
       ],
     },
     {
-      enable: false,
       key: 16,
       name: '全屏广告-小程序-京东购物',
+      enable: false,
       desc: '低价包邮广告',
       actionDelay: 500,
       actionMaximum: 1,
@@ -456,6 +429,7 @@ export default defineAppConfig({
     {
       key: 17,
       name: '青少年模式',
+      enable: false,
       quickFind: true,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -474,6 +448,7 @@ export default defineAppConfig({
       key: 18,
       name: '功能类-青少年模式自动点击验证密码',
       desc: '点击“验证密码”以申请临时访问',
+      enable: false,
       actionMaximum: 1,
       resetMatch: 'activity',
       matchTime: 10000,
@@ -496,6 +471,7 @@ export default defineAppConfig({
     {
       key: 19,
       name: '功能类-订阅号-展开更早的消息',
+      enable: false,
       rules: [
         {
           key: 0,
