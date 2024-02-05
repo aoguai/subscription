@@ -7,7 +7,8 @@ export default defineAppConfig({
     {
       key: 0,
       name: '分段广告-推荐流广告',
-      desc: '主页,搜索页',
+      desc: '包括主页,搜索页',
+      enable: false,
       activityIds: [
         'com.weico.international.activity.MainFragmentActivity',
         'com.weico.international.ui.search.SearchActivity',
