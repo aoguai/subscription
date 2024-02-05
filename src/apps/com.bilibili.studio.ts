@@ -5,16 +5,22 @@ export default defineAppConfig({
   name: '必剪',
   groups: [
     {
-      enable: false,
       key: 0,
       name: '权限提示-通知权限请求',
       desc: '会出现在创作、模板、我的页面，自动点击不开启。',
+      enable: false,
       quickFind: true,
-      activityIds: 'com.bcut.homepage.widget.MainActivity',
+      activityIds: [
+        'com.bcut.homepage.widget.MainActivity',
+        'com.bcut.homepage.widget.SplashActivity',
+      ],
       rules: [
         {
           matches: 'TextView[text="开启设置"] - TextView[text="取消"]',
-          snapshotUrls: 'https://i.gkd.li/import/12867401', // 创作页面
+          snapshotUrls: [
+            'https://i.gkd.li/import/12867401',
+            'https://i.gkd.li/import/14161952',
+          ], // 创作页面
         },
         {
           matches: 'ImageView[id="com.bilibili.studio:id/iv_close"]',
@@ -30,6 +36,7 @@ export default defineAppConfig({
       key: 3,
       name: '更新提示-版本更新',
       desc: '勾选【忽略】-点击【以后再说】',
+      enable: false,
       quickFind: true,
       matchTime: 10000,
       actionMaximum: 1,
