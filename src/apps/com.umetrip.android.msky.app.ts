@@ -5,9 +5,8 @@ export default defineAppConfig({
   name: '航旅纵横',
   groups: [
     {
-      enable: false,
       key: 8,
-      name: '局部广告-酒店-弹窗广告',
+      name: '全屏广告-酒店-弹窗广告',
       quickFind: true,
       activityIds: 'com.ume.lib_weex.view.WeexActivity',
       rules:
@@ -15,9 +14,9 @@ export default defineAppConfig({
       snapshotUrls: 'https://i.gkd.li/import/12909632',
     },
     {
-      enable: false,
       key: 9,
-      name: '更新提示-首页-升级提示',
+      name: '更新提示-升级提示',
+      enable: false,
       quickFind: true,
       activityIds: [
         'com.miui.home.launcher.Launcher',
@@ -31,9 +30,9 @@ export default defineAppConfig({
       ],
     },
     {
-      enable: false,
       key: 10,
       name: '功能类-进入飞行模式-提示弹窗',
+      enable: false,
       quickFind: true,
       activityIds: 'com.umetrip.android.msky.homepage.activity.UmeHomeActivity',
       rules:
