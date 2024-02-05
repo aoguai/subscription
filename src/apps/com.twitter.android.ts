@@ -6,8 +6,9 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '局部广告-信息流广告-主页',
+      name: '分段广告-信息流广告-主页',
       desc: '点击右上角关闭,点击我不喜欢',
+      enable: false,
       activityIds: 'com.twitter.app.main.MainActivity',
       actionCd: 3000, // https://github.com/gkd-kit/subscription/issues/832
       quickFind: true,
@@ -38,8 +39,9 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '局部广告-信息流广告-帖子详情页、搜索页',
+      name: '分段广告-信息流广告-帖子详情页、搜索页',
       desc: '点击右上角关闭,点击屏蔽用户,确认屏蔽.点击[我不喜欢]会返回主页,因此点击[屏蔽]',
+      enable: false,
       quickFind: true,
       activityIds: [
         'com.twitter.tweetdetail.TweetDetailActivity',
@@ -103,8 +105,9 @@ export default defineAppConfig({
     },
     {
       key: 3,
-      name: '局部广告-信息流广告-用户资料页',
+      name: '分段广告-信息流广告-用户资料页',
       desc: '点击右上角关闭,点击我不喜欢',
+      enable: false,
       quickFind: true,
       activityIds: ['com.twitter.app.profiles.ProfileActivity'],
       actionCd: 3000,
@@ -142,9 +145,9 @@ export default defineAppConfig({
     {
       key: 4,
       name: '评价提示-评价弹窗',
+      enable: false,
       quickFind: true,
       matchTime: 10000,
-      enable: false,
       rules: [
         {
           activityIds: 'com.twitter.app.main.MainActivity',
@@ -158,6 +161,7 @@ export default defineAppConfig({
       quickFind: true,
       name: '权限提示-请求通知权限弹窗',
       desc: '点击"Not now"',
+      enable: false,
       rules: [
         {
           activityIds: 'com.twitter.app.main.MainActivity',
