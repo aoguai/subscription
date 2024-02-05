@@ -149,11 +149,13 @@ export default defineAppConfig({
       activityIds: [
         'com.taobao.android.detail.wrapper.activity.DetailActivity',
         'com.taobao.android.order.bundle.TBOrderListActivity',
+        'com.taobao.search.sf.MainSearchResultActivity',
       ],
       rules: '[id="com.taobao.taobao:id/update_imageview_cancel_v2"]',
       snapshotUrls: [
         'https://i.gkd.li/import/13336760',
         'https://i.gkd.li/import/13695520',
+        'https://i.gkd.li/import/13965740',
       ],
     },
     {
