@@ -71,7 +71,7 @@ export default defineAppConfig({
     {
       enable: false,
       key: 2,
-      name: '局部广告-信息流广告',
+      name: '分段广告-信息流广告',
       desc: '推荐帖子列表,评论区列表:像正常内容的广告,关闭时弹窗选原因',
       activityIds: [
         'com.baidu.tieba.pb.pb.main.PbActivity',
@@ -130,6 +130,7 @@ export default defineAppConfig({
     {
       key: 7,
       name: '更新提示-升级弹窗',
+      enable: false,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -138,10 +139,10 @@ export default defineAppConfig({
       snapshotUrls: 'https://i.gkd.li/import/12496934',
     },
     {
-      enable: false,
       key: 8,
-      name: '局部广告-帖子底部内容推荐卡片',
+      name: '分段广告-帖子底部内容推荐卡片',
       desc: '关闭时弹窗选原因',
+      enable: false,
       activityIds: 'com.baidu.tieba.pb.pb.main.PbActivity',
       rules: [
         {
@@ -162,7 +163,6 @@ export default defineAppConfig({
     {
       key: 9,
       name: '局部广告-广告弹窗',
-
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'activity',
