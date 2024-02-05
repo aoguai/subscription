@@ -7,14 +7,15 @@ export default defineAppConfig({
     {
       key: 0,
       name: '功能类-自动签到',
+      enable: false,
       activityIds: 'com.alicloud.databox.MainActivity',
+      quickFind: true,
       rules: [
         {
           key: 0,
           name: '自动签到',
           matches: ['[id="com.alicloud.databox:id/tvTaskAction"][text="领取"]'],
           snapshotUrls: 'https://i.gkd.li/import/12929318',
-          quickFind: true,
         },
         {
           key: 1,
@@ -22,7 +23,6 @@ export default defineAppConfig({
           name: '在签到后，关闭弹窗',
           matches: ['[id="com.alicloud.databox:id/ivClose"]'],
           snapshotUrls: 'https://i.gkd.li/import/13038304',
-          quickFind: true,
         },
       ],
     },
@@ -30,12 +30,18 @@ export default defineAppConfig({
       key: 1,
       name: '局部广告-活动弹窗',
       activityIds: 'com.alicloud.databox.MainActivity',
-      rules: '[text^="好运盲盒"] >n View > Image + TextView[clickable=true]',
-      snapshotUrls: 'https://i.gkd.li/import/13228610',
+      rules:
+        'WebView >n View > Image + TextView[clickable=true&&text.length=0]',
+      snapshotUrls: [
+        'https://i.gkd.li/import/13228610',
+        'https://i.gkd.li/import/14161216',
+      ],
     },
     {
       key: 2,
-      name: '功能类-时光设备间-自动点击“开心收下”',
+      name: '功能类-时光设备间-自动点击',
+      desc: '自动点击“开心收下”',
+      enable: false,
       activityIds:
         'com.alipay.mobile.nebulax.integration.mpaas.activity.NebulaActivity$Main',
       actionMaximum: 1,
@@ -56,6 +62,30 @@ export default defineAppConfig({
         {
           matches: '[text^="立即了解"] -3 View[clickable=true]',
           snapshotUrls: 'https://i.gkd.li/import/13806865',
+        },
+      ],
+    },
+    {
+      key: 4,
+      name: '通知提示-顶端横幅”',
+      desc: '出现在首页、备份盘、资源库',
+      activityIds: ['com.alicloud.databox.MainActivity'],
+      quickFind: true,
+      rules: [
+        {
+          key: 0,
+          name: '首页',
+          matches: ['[id="com.alicloud.databox:id/ivTitleAction"]'],
+          snapshotUrls: 'https://i.gkd.li/import/14161399',
+        },
+        {
+          key: 1,
+          name: '备份盘、资源库',
+          matches: ['[id="com.alicloud.databox:id/notice_view_icon_button"]'],
+          snapshotUrls: [
+            'https://i.gkd.li/import/14161340',
+            'https://i.gkd.li/import/14161336',
+          ],
         },
       ],
     },
