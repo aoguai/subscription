@@ -8,11 +8,17 @@
 
 ## 使用
 
-在 [GKD](https://github.com/gkd-kit/gkd) 内添加以下链接即可使用此规则
+添加以下任意链接至 [GKD](https://github.com/gkd-kit/gkd) 内即可使用此规则
 
-```txt
-https://cdn.jsdelivr.net/gh/aoguai/subscription@custom/dist/aoguai_gkd.json5
-```
+| GitHub 源（推荐）                                                                             | gitmirror 源                                                                      | jsDelivr 源                                                                         |
+| ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| [复制](https://raw.githubusercontent.com/aoguai/subscription/custom/dist/aoguai_gkd.json5) | [复制](https://raw.gitmirror.com/aoguai/subscription/custom/dist/aoguai_gkd.json5) | [复制](https://cdn.jsdelivr.net/gh/aoguai/subscription@custom/dist/aoguai_gkd.json5) |
+
+**注意：**
+
+- 以上任意链接规则皆相同，您只需要考虑合适您网络环境的链接即可
+
+- 不同链接间可能存在更新延迟
 
 注意：本项目维护的规则仅启用 `开屏广告` 一类规则, 其它所有规则均需用户手动打开
 
@@ -30,14 +36,20 @@ https://cdn.jsdelivr.net/gh/aoguai/subscription@custom/dist/aoguai_gkd.json5
 
 如果您希望参与或学习编写订阅/贡献此项目 -> [CONTRIBUTING.md](./CONTRIBUTING.md)
 
-## License 说明
+## 相关
 
-[@aoguai/subscription](https://github.com/aoguai/subscription) 遵循 [MIT license](./LICENSE)。
-
-## 感谢原项目
+### 感谢原项目
 
 [gkd-kit/subscription](https://github.com/gkd-kit/subscription)
 
 ### 感谢原开发者们的贡献
 
-![img](https://contrib.rocks/image?repo=gkd-kit/subscription&_v=2)
+![img](https://contrib.rocks/image?repo=gkd-kit/subscription&_v=--VERSION--)
+
+### Wiki
+
+想多了解一点？使用说明，相关教程，相关项目。关于一切 -> [Wiki](https://github.com/aoguai/subscription/wiki)
+
+## License 说明
+
+[@aoguai/subscription](https://github.com/aoguai/subscription) 遵循 [MIT license](./LICENSE)
