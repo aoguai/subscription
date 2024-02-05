@@ -3,6 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.taobao.taobao',
   name: '淘宝',
+  deprecatedKeys: [11],
   groups: [
     {
       key: 0,
@@ -14,9 +15,8 @@ export default defineAppConfig({
       rules: '[id="com.taobao.taobao:id/close"]',
     },
     {
-      enable: false,
       key: 1,
-      name: '局部广告-限时福利弹窗',
+      name: '全屏广告-限时福利弹窗',
       rules: [
         {
           key: 0,
@@ -97,7 +97,6 @@ export default defineAppConfig({
       ],
     },
     {
-      enable: false,
       key: 9,
       name: '局部广告-各级页面-添加到首页弹窗',
       desc: '自动点击退出',
@@ -114,23 +113,35 @@ export default defineAppConfig({
     },
     {
       key: 10,
-      name: '局部广告-视频页面-活动弹窗',
-      activityIds: 'com.taobao.tao.welcome.Welcome',
-      rules:
-        'View[id=null] > [text="立即参加"] + TextView[id=null][clickable=true]',
-      snapshotUrls: 'https://i.gkd.li/import/12642813',
-    },
-    {
-      enable: false,
-      key: 11,
-      name: '局部广告-视频页面-签到弹窗',
-      activityIds: 'com.taobao.tao.welcome.Welcome',
-      rules: '@View[clickable=true] - View > View > TextView[text="立即签到"]',
-      snapshotUrls: 'https://i.gkd.li/import/12642798',
+      name: '全屏广告-视频页面-弹窗',
+      activityIds: [
+        'com.taobao.tao.welcome.Welcome',
+        'com.taobao.tao.TBMainActivity',
+      ],
+      rules: [
+        {
+          key: 0,
+          name: '类型1',
+          matches:
+            'View[id=null] > [text="立即参加"] + TextView[id=null][clickable=true]',
+          snapshotUrls: 'https://i.gkd.li/import/12642813',
+        },
+        {
+          key: 1,
+          name: '签到弹窗',
+          matches:
+            '@Image[text.length>40] < View - View >n TextView[text*="立即"]',
+          snapshotUrls: [
+            'https://i.gkd.li/import/12642798',
+            'https://i.gkd.li/import/14163734',
+          ],
+        },
+      ],
     },
     {
       key: 12,
       name: '更新提示-版本更新',
+      enable: false,
       quickFind: true,
       matchTime: 10000,
       actionMaximum: 1,
@@ -138,42 +149,42 @@ export default defineAppConfig({
       activityIds: [
         'com.taobao.android.detail.wrapper.activity.DetailActivity',
         'com.taobao.android.order.bundle.TBOrderListActivity',
+        'com.taobao.search.sf.MainSearchResultActivity',
       ],
       rules: '[id="com.taobao.taobao:id/update_imageview_cancel_v2"]',
       snapshotUrls: [
         'https://i.gkd.li/import/13336760',
         'https://i.gkd.li/import/13695520',
+        'https://i.gkd.li/import/13965740',
       ],
     },
     {
-      enable: false,
       key: 13,
-      name: '局部广告-小额免密支付弹窗',
+      name: '全屏广告-小额免密支付弹窗',
       desc: '点击关闭',
+      enable: false,
       quickFind: true,
       activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
       rules: '@[text="关闭"] < * <3 * < * + * >3 [text$="小额免密支付"]',
       snapshotUrls: 'https://i.gkd.li/import/13438414',
     },
     {
-      enable: false,
       key: 14,
-      name: '局部广告-将小组件添加到手机桌面',
+      name: '全屏广告-将小组件添加到手机桌面',
       desc: '点击取消',
+      enable: false,
       activityIds: 'com.alibaba.triver.container.TriverMainActivity',
-      rules: [
-        {
-          action: 'clickCenter',
-          matches: 'View[text="立即添加"] + View[text="取消"]',
-          snapshotUrls: 'https://i.gkd.li/import/13598578',
-        },
+      rules: 'View[childCount=2] >3 View[text="立即添加"] + View[text="取消"]',
+      snapshotUrls: [
+        'https://i.gkd.li/import/13598578',
+        'https://i.gkd.li/import/13853510', //误触快照
       ],
     },
     {
-      enable: false,
       key: 15,
       name: '权限提示-开启悬浮窗权限',
       desc: '点击“否”',
+      enable: false,
       activityIds:
         'com.taobao.android.detail2.core.framework.floatwindow.permission.PermissionActivity',
       quickFind: true,
@@ -191,6 +202,7 @@ export default defineAppConfig({
     {
       key: 16,
       name: '全屏广告-花呗升级报送征信',
+      enable: false,
       quickFind: true,
       matchTime: 10000,
       actionMaximum: 1,
