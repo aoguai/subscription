@@ -3,6 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.taobao.idlefish',
   name: '闲鱼',
+  deprecatedKeys: [3],
   groups: [
     {
       key: 1,
@@ -21,17 +22,6 @@ export default defineAppConfig({
       rules:
         '@Button[text="取消"] <<n FrameLayout >n TextView[text*="手机信息"]',
       snapshotUrls: 'https://i.gkd.li/import/13620277',
-    },
-    {
-      key: 3,
-      name: '更新提示-更新提示',
-      quickFind: true,
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      activityIds: 'com.taobao.idlefish.maincontainer.activity.MainActivity',
-      rules: '[text="立即升级"] -2 [text="暂不升级"]',
-      snapshotUrls: 'https://i.gkd.li/import/13832272',
     },
   ],
 });
