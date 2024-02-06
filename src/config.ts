@@ -10,9 +10,9 @@ const subsConfig: RawSubscription = {
   author: 'aoguai',
   supportUri: 'https://github.com/aoguai/subscription/tree/custom',
   updateUrl:
-    'https://cdn.jsdelivr.net/gh/aoguai/subscription@custom/dist/aoguai_gkd.json5',
+    'https://raw.githubusercontent.com/aoguai/subscription/custom/dist/aoguai_gkd.json5',
   checkUpdateUrl:
-    'https://cdn.jsdelivr.net/gh/aoguai/subscription@custom/dist/aoguai_gkd.version.json',
+    'https://raw.githubusercontent.com/aoguai/subscription/custom/dist/aoguai_gkd.json5',
   globalGroups,
   categories,
   apps,

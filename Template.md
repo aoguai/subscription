@@ -10,9 +10,9 @@
 
 添加以下任意链接至 [GKD](https://github.com/gkd-kit/gkd) 内即可使用此规则
 
-| GitHub 源（推荐）                                                                          | gitmirror 源                                                                       | jsDelivr 源                                                                          |
-| ------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| [复制](https://raw.githubusercontent.com/aoguai/subscription/custom/dist/aoguai_gkd.json5) | [复制](https://raw.gitmirror.com/aoguai/subscription/custom/dist/aoguai_gkd.json5) | [复制](https://cdn.jsdelivr.net/gh/aoguai/subscription@custom/dist/aoguai_gkd.json5) |
+| GitHub 源（推荐）                                                                          | gitmirror 源                                                                       | cloudflare 源                   | jsDelivr 源                                                                          |
+| ------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------- | ------------------------------- | ------------------------------------------------------------------------------------ |
+| [复制](https://raw.githubusercontent.com/aoguai/subscription/custom/dist/aoguai_gkd.json5) | [复制](https://raw.gitmirror.com/aoguai/subscription/custom/dist/aoguai_gkd.json5) | [复制](https://gkd.aoguai.top/) | [复制](https://cdn.jsdelivr.net/gh/aoguai/subscription@custom/dist/aoguai_gkd.json5) |
 
 **注意：**
 
@@ -20,7 +20,7 @@
 
 - 不同链接间可能存在更新延迟
 
-注意：本项目维护的规则仅启用 `开屏广告` 一类规则, 其它所有规则均需用户手动打开
+- **本项目维护的规则仅启用 `开屏广告` 一类规则, 其它所有规则均需用户手动打开**
 
 ## 说明
 
