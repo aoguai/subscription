@@ -1,12 +1,6 @@
 # 云闪付
 
-存在 9 规则组 - [com.unionpay](/src/apps/com.unionpay.ts)
-
-## 更新提示-更新弹窗
-
-默认禁用
-
-- [快照-0](https://i.gkd.li/import/12727278)
+存在 8 规则组 - [com.unionpay](/src/apps/com.unionpay.ts)
 
 ## 分段广告-支付完成界面广告卡片
 

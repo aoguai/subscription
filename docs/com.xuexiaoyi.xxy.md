@@ -1,6 +1,6 @@
 # 学小易
 
-存在 2 规则组 - [com.xuexiaoyi.xxy](/src/apps/com.xuexiaoyi.xxy.ts)
+存在 1 规则组 - [com.xuexiaoyi.xxy](/src/apps/com.xuexiaoyi.xxy.ts)
 
 ## 分段广告-首页-底部广告
 
@@ -20,9 +20,3 @@
 - [快照-11](https://i.gkd.li/import/13457302)
 - [快照-12](https://i.gkd.li/import/13068819)
 - [快照-13](https://i.gkd.li/import/13457380)
-
-## 更新提示-升级弹窗
-
-默认禁用 - 自动点击以后再说。
-
-- [快照-0](https://i.gkd.li/import/13203105)

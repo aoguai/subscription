@@ -10,8 +10,8 @@
 
 添加以下任意链接至 [GKD](https://github.com/gkd-kit/gkd) 内即可使用此规则
 
-| GitHub 源（推荐）                                                                             | gitmirror 源                                                                      | cloudflare 源                  | jsDelivr 源                                                                         |
-| ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | ----------------------------- | ---------------------------------------------------------------------------------- |
+| GitHub 源（推荐）                                                                          | gitmirror 源                                                                       | cloudflare 源                   | jsDelivr 源                                                                          |
+| ------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------- | ------------------------------- | ------------------------------------------------------------------------------------ |
 | [复制](https://raw.githubusercontent.com/aoguai/subscription/custom/dist/aoguai_gkd.json5) | [复制](https://raw.gitmirror.com/aoguai/subscription/custom/dist/aoguai_gkd.json5) | [复制](https://gkd.aoguai.top/) | [复制](https://cdn.jsdelivr.net/gh/aoguai/subscription@custom/dist/aoguai_gkd.json5) |
 
 **注意：**
@@ -24,9 +24,9 @@
 
 ## 说明
 
-当前版本: v2
+当前版本: v3
 
-当前订阅文件已适配 62 个 APP, 共有 245 规则组
+当前订阅文件已适配 59 个 APP, 共有 238 规则组
 
 **查看详细 [适配 APP 列表](./AppList.md)**
 
@@ -44,7 +44,7 @@
 
 ### 感谢原开发者们的贡献
 
-![img](https://contrib.rocks/image?repo=gkd-kit/subscription&_v=--VERSION--)
+![img](https://contrib.rocks/image?repo=gkd-kit/subscription&_v=3)
 
 ### Wiki
 
