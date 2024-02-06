@@ -442,5 +442,15 @@ export default defineAppConfig({
         },
       ],
     },
+    {
+      key: 22,
+      name: '局部广告-聊天页-顶部活动浮窗',
+      activityIds: 'com.tencent.mobileqq.activity.SplashActivity',
+      rules:
+        'FrameLayout > RelativeLayout[childCount=4] > TextView[text!="" && text!=null] +2 ImageView[clickable=true]',
+      exampleUrls:
+        'https://m.gkd.li/101449500/e5b7415c-3d01-4b24-89fd-056cfc62d64a',
+      snapshotUrls: 'https://i.gkd.li/import/14178669',
+    },
   ],
 });
