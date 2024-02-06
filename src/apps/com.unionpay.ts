@@ -3,23 +3,8 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.unionpay',
   name: '云闪付',
+  deprecatedKeys: [1],
   groups: [
-    {
-      key: 1,
-      name: '更新提示-更新弹窗',
-      enable: false,
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      quickFind: true,
-      activityIds: ['com.unionpay.base.UPDialog'],
-      rules: [
-        {
-          matches: '@[text="稍候再说"] + [text="立即更新"]',
-          snapshotUrls: 'https://i.gkd.li/import/12727278',
-        },
-      ],
-    },
     {
       key: 2,
       name: '分段广告-支付完成界面广告卡片',

@@ -3,7 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.baidu.netdisk',
   name: '百度网盘',
-  deprecatedKeys: [0, 3, 10, 11],
+  deprecatedKeys: [0, 3, 6, 10, 11],
   groups: [
     {
       key: 1,
@@ -60,15 +60,6 @@ export default defineAppConfig({
       rules:
         '@ImageView[id="com.baidu.netdisk:id/close_btn"] + ImageView[id="com.baidu.netdisk:id/bg_image"]',
       snapshotUrls: 'https://i.gkd.li/import/12648987',
-    },
-    {
-      key: 6,
-      name: '更新提示-更新弹窗',
-      quickFind: true,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      rules: '[text="立即更新"] -n [text="下次再说"]', //使用ID会导致误触（例如删除确认https://i.gkd.li/import/13069049）
-      snapshotUrls: 'https://i.gkd.li/import/12863984',
     },
     {
       key: 7,
