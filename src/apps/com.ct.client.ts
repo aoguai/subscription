@@ -3,7 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.ct.client',
   name: '中国电信',
-  deprecatedKeys: [0],
+  deprecatedKeys: [0, 2],
   groups: [
     {
       key: 1,
@@ -13,19 +13,6 @@ export default defineAppConfig({
       activityIds: 'com.ct.client.activity.UserGuideActivity',
       rules: '[id="com.ct.client:id/tvSkip"]',
       snapshotUrls: ['https://i.gkd.li/import/12508971'],
-    },
-    {
-      key: 2,
-      name: '更新提示-更新弹窗',
-      actionMaximum: 1,
-      resetMatch: 'app',
-      quickFind: true,
-      rules: 'LinearLayout > [text="取消升级"]',
-      snapshotUrls: [
-        'https://i.gkd.li/import/12819594',
-        'https://i.gkd.li/import/13316168',
-        'https://i.gkd.li/import/13695096',
-      ],
     },
     {
       key: 3,
