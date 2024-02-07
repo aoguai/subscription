@@ -14,6 +14,7 @@ export default defineAppConfig({
         'com.tencent.mm.plugin.sns.ui.SnsTimeLineUI',
         'com.tencent.mm.plugin.sns.ui.improve.ImproveSnsTimelineUI',
       ],
+      excludeActivityIds: ['com.tencent.mm.ui.transmit.SelectConversationUI'],
       exampleUrls: [
         'https://github.com/gkd-kit/subscription/assets/38517192/c9ae4bba-a748-4755-b5e4-c7ad3d489a79',
       ],
@@ -22,7 +23,7 @@ export default defineAppConfig({
           key: 0,
           name: '点击广告卡片右上角',
           matches:
-            'TextView[text.length!=null] +1 LinearLayout[text.length=null&&clickable=true&&focusable=true]',
+            'LinearLayout[visibleToUser=true] > TextView[text.length!=null] +1 LinearLayout[text.length=null&&clickable=true&&focusable=true]',
           snapshotUrls: [
             'https://i.gkd.li/import/12642588',
             'https://i.gkd.li/import/12888129', // ImageView - TextView[text="广告"][id!=null][index=0]这个规则无法匹配该广告，需要删除[index=0]
@@ -31,6 +32,7 @@ export default defineAppConfig({
             'https://i.gkd.li/import/14164508', // TextView[text.length!=null] +1 LinearLayout[text.length=null&&clickable=true&&focusable=true]
             'https://i.gkd.li/import/12905837', // 英文
             'https://i.gkd.li/import/13791200', // 繁体
+            'https://i.gkd.li/import/14193379', // 误触，用 LinearLayout[visibleToUser=true] 排除
           ],
         },
         // 以下是[确认关闭按钮]出现的情况
@@ -82,7 +84,7 @@ export default defineAppConfig({
       desc: '包括：PC 微信, 浏览器微信, 网页版文件传输助手, 微信表情开发平台, 微信红包封面开放平台 扫码登录动授权',
       enable: false,
       matchTime: 10000,
-      actionMaximum: 1,
+      actionMaximum: 2,
       resetMatch: 'activity',
       activityIds: [
         '.plugin.webwx.ui.ExtDeviceWXLoginUI',
@@ -127,6 +129,13 @@ export default defineAppConfig({
           name: '微信红包封面开放平台扫码登录',
           matches: 'Button[text="取消"] - Button[text="确定"]',
           snapshotUrls: ['https://i.gkd.li/import/14164990'],
+        },
+        {
+          preKeys: [4],
+          key: 10,
+          name: '微信红包封面开放平台扫码登录-点击X',
+          matches: 'ImageView[desc="返回"]',
+          snapshotUrls: ['https://i.gkd.li/import/14193413'],
         },
       ],
     },
