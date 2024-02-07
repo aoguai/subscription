@@ -1,6 +1,6 @@
 import apps from './rawApps';
 import type { RawGlobalGroup } from './types';
-import { OPEN_AD_ORDER } from './utils';
+import * as utils from './utils';
 
 const diabledAppIds: string[] = [
   'com.android.systemui', // 通知栏界面/下拉开关/控制中心
@@ -72,7 +72,7 @@ const globalGroups: RawGlobalGroup[] = [
   {
     key: 0,
     name: '开屏广告',
-    order: OPEN_AD_ORDER,
+    order: utils.OPEN_AD_ORDER,
     actionMaximum: 2,
     matchTime: 10000,
     resetMatch: 'app',
@@ -96,7 +96,8 @@ const globalGroups: RawGlobalGroup[] = [
   {
     key: 1,
     name: '更新提示',
-    order: OPEN_AD_ORDER,
+    enable: false,
+    order: utils.UPDATE_PROMPT,
     actionMaximum: 2,
     matchTime: 10000,
     resetMatch: 'app',
@@ -106,7 +107,12 @@ const globalGroups: RawGlobalGroup[] = [
       {
         key: 0,
         matches:
-          '[childCount=0][visibleToUser=true][text$="更新"||text$="升级"||text$="体验"||text$="升級"||text$="體驗"||text$="Update"||text$="Upgrade"||text$="Experience"] <n * > [childCount=0][visibleToUser=true][text$="再说"||text="忽略"||text^="暂不"||text="取消"||text$="再說"||text$="暫不"||text$="Later"||text="Ignore"||text^="Not now"||text="Cancel"]',
+          '[childCount=0][visibleToUser=true][text$="新版本"||text$="更新"||text$="升级"||text$="体验"||text$="升級"||text$="體驗"||text$="Update"||text$="Upgrade"||text$="Experience"] <n * > [childCount=0][visibleToUser=true][text^="不再"||text$="再说"||text$="再想想"||text^="忽略"||text^="暂不"||text^="放弃"||text^="取消"||text$="再說"||text$="暫不"||text$="Later"||text^="Ignore"||text^="Not now"||text^="Cancel"]',
+      },
+      {
+        key: 1,
+        matches:
+          '[childCount=0][visibleToUser=true][desc$="新版本"||desc$="更新"||desc$="升级"||desc$="体验"||desc$="升級"||desc$="體驗"||desc$="Update"||desc$="Upgrade"||desc$="Experience"] <n * > [childCount=0][visibleToUser=true][desc^="不再"||desc$="再说"||desc$="再想想"||desc^="忽略"||desc^="暂不"||desc^="放弃"||desc^="取消"||desc$="再說"||desc$="暫不"||desc$="Later"||desc^="Ignore"||desc^="Not now"||desc^="Cancel"]',
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
