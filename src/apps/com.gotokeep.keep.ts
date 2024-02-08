@@ -3,16 +3,8 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.gotokeep.keep',
   name: 'Keep',
+  deprecatedKeys: [1],
   groups: [
-    {
-      key: 1,
-      name: '青少年模式-青少年模式弹窗',
-      actionMaximum: 1,
-      resetMatch: 'app',
-      quickFind: true,
-      rules: '[text$="未成年人模式"] +2 @[clickable=true] > [text="我知道了"]',
-      snapshotUrls: 'https://i.gkd.li/import/12706097',
-    },
     {
       key: 2,
       name: '局部广告-首页广告弹窗',

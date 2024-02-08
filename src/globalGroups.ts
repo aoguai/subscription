@@ -92,6 +92,11 @@ const NP_commonTextPatterns =
 const NP_commonDescPatterns =
   '[(desc*="开启"||desc*="打开"||desc*="获取"||desc*="订阅"||desc*="接收")&&(desc*="通知"||desc*="推送")]';
 
+const YM_commonTextPatterns =
+  '[text*="青少年模式"||(text*="未成年"&&text*="模式")||text*="儿童模式"]';
+const YM_commonDescPatterns =
+  '[desc*="青少年模式"||(desc*="未成年"&&desc*="模式")||desc*="儿童模式"]';
+
 const globalGroups: RawGlobalGroup[] = [
   {
     key: 0,
@@ -229,6 +234,45 @@ const globalGroups: RawGlobalGroup[] = [
       {
         key: 5,
         matches: `${COMMON_PREFIX}${NP_commonDescPatterns} <n * <n * <n * > * >n ${NEGATION_PART_RULE_DESC}`,
+      },
+    ],
+    // 将 Set 转换为数组，并设置 enable 为 false
+    apps: [...uniqueAppIdsUp].map((id) => ({ id, enable: false })),
+  },
+  {
+    key: 4,
+    name: '青少年模式',
+    enable: false,
+    order: utils.YOUTH_MODE,
+    actionMaximum: 2,
+    matchTime: 10000,
+    resetMatch: 'app',
+    actionCdKey: 0,
+    actionMaximumKey: 0,
+    rules: [
+      {
+        key: 0,
+        matches: `${COMMON_PREFIX}${YM_commonTextPatterns} <n * > ${NEGATION_PART_RULE_TEXT}`,
+      },
+      {
+        key: 1,
+        matches: `${COMMON_PREFIX}${YM_commonTextPatterns} <n * > * >n ${NEGATION_PART_RULE_TEXT}`,
+      },
+      {
+        key: 2,
+        matches: `${COMMON_PREFIX}${YM_commonTextPatterns} <n * <n * <n * > * >n ${NEGATION_PART_RULE_TEXT}`,
+      },
+      {
+        key: 3,
+        matches: `${COMMON_PREFIX}${YM_commonDescPatterns} <n * > ${NEGATION_PART_RULE_DESC}`,
+      },
+      {
+        key: 4,
+        matches: `${COMMON_PREFIX}${YM_commonDescPatterns} <n * > * >n ${NEGATION_PART_RULE_DESC}`,
+      },
+      {
+        key: 5,
+        matches: `${COMMON_PREFIX}${YM_commonDescPatterns} <n * <n * <n * > * >n ${NEGATION_PART_RULE_DESC}`,
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false

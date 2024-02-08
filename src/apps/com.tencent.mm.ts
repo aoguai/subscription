@@ -3,7 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.tencent.mm',
   name: '微信',
-  deprecatedKeys: [2, 11, 12, 20],
+  deprecatedKeys: [2, 11, 12, 17, 20],
   groups: [
     {
       key: 0,
@@ -434,24 +434,6 @@ export default defineAppConfig({
         action: 'clickCenter',
         snapshotUrls: ['https://i.gkd.li/import/13298294'],
       },
-    },
-    {
-      key: 17,
-      name: '青少年模式',
-      enable: false,
-      quickFind: true,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      activityIds: [
-        'com.tencent.mm.plugin.finder.ui.FinderSelfUI',
-        'com.tencent.mm.plugin.finder.ui.FinderHomeAffinityUI',
-      ],
-      rules:
-        'TextView[text^="为呵护未成年人健康成长，微信推出青少年模式"] +2 Button[text="我知道了"]',
-      snapshotUrls: [
-        'https://i.gkd.li/import/13538145',
-        'https://i.gkd.li/import/13575195', //activityIds: 'com.tencent.mm.plugin.finder.ui.FinderHomeAffinityUI'
-      ],
     },
     {
       key: 18,
