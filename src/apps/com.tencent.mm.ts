@@ -14,7 +14,6 @@ export default defineAppConfig({
         'com.tencent.mm.plugin.sns.ui.SnsTimeLineUI',
         'com.tencent.mm.plugin.sns.ui.improve.ImproveSnsTimelineUI',
       ],
-      excludeActivityIds: ['com.tencent.mm.ui.transmit.SelectConversationUI'],
       exampleUrls: [
         'https://github.com/gkd-kit/subscription/assets/38517192/c9ae4bba-a748-4755-b5e4-c7ad3d489a79',
       ],
@@ -23,7 +22,7 @@ export default defineAppConfig({
           key: 0,
           name: '点击广告卡片右上角',
           matches:
-            'LinearLayout[visibleToUser=true] > TextView[text.length!=null] +1 LinearLayout[text.length=null&&clickable=true&&focusable=true]',
+            'LinearLayout[visibleToUser=true] > TextView[text.length!=null] +1 LinearLayout[text.length=null&&desc=null&&clickable=true&&focusable=true]',
           snapshotUrls: [
             'https://i.gkd.li/import/12642588',
             'https://i.gkd.li/import/12888129', // ImageView - TextView[text="广告"][id!=null][index=0]这个规则无法匹配该广告，需要删除[index=0]
@@ -33,6 +32,7 @@ export default defineAppConfig({
             'https://i.gkd.li/import/12905837', // 英文
             'https://i.gkd.li/import/13791200', // 繁体
             'https://i.gkd.li/import/14193379', // 误触，用 LinearLayout[visibleToUser=true] 排除
+            'https://i.gkd.li/import/14193181', // 误触，用 desc=null 排除
           ],
         },
         // 以下是[确认关闭按钮]出现的情况
