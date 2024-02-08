@@ -1,12 +1,6 @@
 # Keep
 
-存在 5 规则组 - [com.gotokeep.keep](/src/apps/com.gotokeep.keep.ts)
-
-## 青少年模式-青少年模式弹窗
-
-默认禁用
-
-- [快照-0](https://i.gkd.li/import/12706097)
+存在 3 规则组 - [com.gotokeep.keep](/src/apps/com.gotokeep.keep.ts)
 
 ## 局部广告-首页广告弹窗
 
@@ -27,9 +21,3 @@
 
 - [快照-0](https://i.gkd.li/import/12706111)
 - [快照-1](https://i.gkd.li/import/13766358)
-
-## 权限提示-请求开启通知权限弹窗
-
-默认禁用
-
-- [快照-0](https://i.gkd.li/import/13761671)

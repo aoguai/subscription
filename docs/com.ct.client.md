@@ -1,20 +1,12 @@
 # 中国电信
 
-存在 5 规则组 - [com.ct.client](/src/apps/com.ct.client.ts)
+存在 4 规则组 - [com.ct.client](/src/apps/com.ct.client.ts)
 
 ## 全屏广告-用户引导
 
 默认禁用
 
 - [快照-0](https://i.gkd.li/import/12508971)
-
-## 更新提示-更新弹窗
-
-默认禁用
-
-- [快照-0](https://i.gkd.li/import/12819594)
-- [快照-1](https://i.gkd.li/import/13316168)
-- [快照-2](https://i.gkd.li/import/13695096)
 
 ## 局部广告-浮窗广告
 

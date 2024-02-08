@@ -1,6 +1,6 @@
 # 淘宝
 
-存在 12 规则组 - [com.taobao.taobao](/src/apps/com.taobao.taobao.ts)
+存在 11 规则组 - [com.taobao.taobao](/src/apps/com.taobao.taobao.ts)
 
 ## 开屏广告
 
@@ -74,12 +74,6 @@
 
 - [快照-0](https://i.gkd.li/import/13598578)
 - [快照-1](https://i.gkd.li/import/13853510)
-
-## 权限提示-开启悬浮窗权限
-
-默认禁用 - 点击“否”
-
-- [快照-0](https://i.gkd.li/import/13588165)
 
 ## 全屏广告-花呗升级报送征信
 
