@@ -44,7 +44,7 @@
 
 ### 感谢原开发者们的贡献
 
-![img](https://contrib.rocks/image?repo=gkd-kit/subscription&_v=--VERSION--)
+![img](https://contrib.rocks/image?repo=gkd-kit/subscription&_v=185)
 
 ### Wiki
 
@@ -53,3 +53,13 @@
 ## License 说明
 
 [@aoguai/subscription](https://github.com/aoguai/subscription) 遵循 [MIT license](./LICENSE)
+
+## Star History
+
+<a href="https://star-history.com/#aoguai/subscription&Timeline">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=aoguai/subscription&type=Timeline&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=aoguai/subscription&type=Timeline" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=aoguai/subscription&type=Timeline" />
+  </picture>
+</a>
