@@ -71,6 +71,10 @@ const uniqueAppIdsRp = new Set([
   ...diabledAppIds,
   ...filterAppsByGroup(apps, '评价提示'),
 ]);
+const uniqueAppIdsPP = new Set([
+  ...diabledAppIds,
+  ...filterAppsByGroup(apps, '权限提示'),
+]);
 
 const COMMON_PREFIX = '[childCount=0][visibleToUser=true]';
 
@@ -96,6 +100,11 @@ const YM_commonTextPatterns =
   '[text*="青少年模式"||(text*="未成年"&&text*="模式")||text*="儿童模式"]';
 const YM_commonDescPatterns =
   '[desc*="青少年模式"||(desc*="未成年"&&desc*="模式")||desc*="儿童模式"]';
+
+const PP_commonTextPatterns =
+  '[(text*="开启"||text*="打开"||text*="获取")&&text*="权限"]';
+const PP_commonDescPatterns =
+  '[(desc*="开启"||desc*="打开"||desc*="获取")&&desc*="权限"]';
 
 const globalGroups: RawGlobalGroup[] = [
   {
@@ -277,6 +286,46 @@ const globalGroups: RawGlobalGroup[] = [
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
     apps: [...uniqueAppIdsUp].map((id) => ({ id, enable: false })),
+  },
+  {
+    key: 5,
+    name: '权限提示',
+    desc: '! 该规则会自动拒绝 APP 一些权限申请弹窗提示，如果有影响请关闭',
+    enable: false,
+    order: utils.YOUTH_MODE,
+    actionMaximum: 2,
+    matchTime: 10000,
+    resetMatch: 'app',
+    actionCdKey: 0,
+    actionMaximumKey: 0,
+    rules: [
+      {
+        key: 0,
+        matches: `${COMMON_PREFIX}${PP_commonTextPatterns} <n * > ${NEGATION_PART_RULE_TEXT}`,
+      },
+      {
+        key: 1,
+        matches: `${COMMON_PREFIX}${PP_commonTextPatterns} <n * > * >n ${NEGATION_PART_RULE_TEXT}`,
+      },
+      {
+        key: 2,
+        matches: `${COMMON_PREFIX}${PP_commonTextPatterns} <n * <n * <n * > * >n ${NEGATION_PART_RULE_TEXT}`,
+      },
+      {
+        key: 3,
+        matches: `${COMMON_PREFIX}${PP_commonDescPatterns} <n * > ${NEGATION_PART_RULE_DESC}`,
+      },
+      {
+        key: 4,
+        matches: `${COMMON_PREFIX}${PP_commonDescPatterns} <n * > * >n ${NEGATION_PART_RULE_DESC}`,
+      },
+      {
+        key: 5,
+        matches: `${COMMON_PREFIX}${PP_commonDescPatterns} <n * <n * <n * > * >n ${NEGATION_PART_RULE_DESC}`,
+      },
+    ],
+    // 将 Set 转换为数组，并设置 enable 为 false
+    apps: [...uniqueAppIdsPP].map((id) => ({ id, enable: false })),
   },
 ];
 export default globalGroups;

@@ -3,7 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'tv.danmaku.bili',
   name: '哔哩哔哩',
-  deprecatedKeys: [1, 3, 5],
+  deprecatedKeys: [1, 3, 5, 9],
   groups: [
     {
       key: -1,
@@ -145,24 +145,6 @@ export default defineAppConfig({
       activityIds: 'com.bilibili.bililive.room.ui.roomv3.LiveRoomActivityV3',
       rules: '[id="tv.danmaku.bili:id/shopping_close"]',
       snapshotUrls: 'https://i.gkd.li/import/13200549',
-    },
-    {
-      enable: false,
-      key: 9,
-      name: '权限提示-请求通知权限弹窗',
-      quickFind: true,
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      activityIds: [
-        'tv.danmaku.bili.MainActivityV2',
-        'com.bilibili.video.story.StoryTransparentActivity',
-      ],
-      rules: '[text$="通知"] +2 * > [id="tv.danmaku.bili:id/close"]',
-      snapshotUrls: [
-        'https://i.gkd.li/import/13229159',
-        'https://i.gkd.li/import/13614090',
-      ],
     },
     {
       enable: false,
