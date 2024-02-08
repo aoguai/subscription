@@ -413,21 +413,13 @@ export const updateAppMd = async (app: RawApp) => {
 const getAppDiffLog = (
   oldGroups: RawAppGroup[] = [], // 旧应用组列表，默认为空数组
   newGroups: RawAppGroup[] = [], // 新应用组列表，默认为空数组
-  oldGlobalGroups: RawGlobalGroup[] = [], // 旧全局应用组列表，默认为空数组
-  newGlobalGroups: RawGlobalGroup[] = [], // 新全局应用组列表，默认为空数组
 ) => {
   // 根据旧应用组列表和新应用组列表，计算出被移除的应用组列表
   const removeGroups = oldGroups.filter(
     (og) => !newGroups.find((ng) => ng.key == og.key),
   );
-  // 根据旧全局应用组列表和新全局应用组列表，计算出被移除的全局应用组列表
-  const removeGlobalGroups = oldGlobalGroups.filter(
-    (og) => !newGlobalGroups.find((ng) => ng.key == og.key),
-  );
   const addGroups: RawAppGroup[] = []; // 存储新增的应用组列表
-  const addGlobalGroups: RawGlobalGroup[] = []; // 存储新增的全局应用组列表
   const changeGroups: RawAppGroup[] = []; // 存储变更的应用组列表
-  const changeGlobalGroups: RawGlobalGroup[] = []; // 存储变更的全局应用组列表
   // 遍历新应用组列表
   newGroups.forEach((ng) => {
     const oldGroup = oldGroups.find((og) => og.key == ng.key); // 查找对应的旧应用组
@@ -442,6 +434,24 @@ const getAppDiffLog = (
       addGroups.push(ng); // 将新应用组添加到新增列表中
     }
   });
+  return {
+    addGroups, // 返回新增的应用组列表
+    changeGroups, // 返回变更的应用组列表
+    removeGroups, // 返回被移除的应用组列表
+  };
+};
+
+// 定义一个函数，用于获取全局规则的变更日志
+const getGlobalDiffLog = (
+  oldGlobalGroups: RawGlobalGroup[] = [], // 旧全局应用组列表，默认为空数组
+  newGlobalGroups: RawGlobalGroup[] = [], // 新全局应用组列表，默认为空数组
+) => {
+  // 根据旧全局应用组列表和新全局应用组列表，计算出被移除的全局应用组列表
+  const removeGlobalGroups = oldGlobalGroups.filter(
+    (og) => !newGlobalGroups.find((ng) => ng.key == og.key),
+  );
+  const addGlobalGroups: RawGlobalGroup[] = []; // 存储新增的全局应用组列表
+  const changeGlobalGroups: RawGlobalGroup[] = []; // 存储变更的全局应用组列表
   // 遍历新全局应用组列表
   newGlobalGroups.forEach((ng) => {
     const oldGroup = oldGlobalGroups.find((og) => og.key == ng.key); // 查找对应的旧全局应用组
@@ -457,11 +467,8 @@ const getAppDiffLog = (
     }
   });
   return {
-    addGroups, // 返回新增的应用组列表
     addGlobalGroups, // 返回新增的全局应用组列表
-    changeGroups, // 返回变更的应用组列表
     changeGlobalGroups, // 返回变更的全局应用组列表
-    removeGroups, // 返回被移除的应用组列表
     removeGlobalGroups, // 返回被移除的全局应用组列表
   };
 };
@@ -472,6 +479,10 @@ type AppDiff = {
   addGroups: RawAppGroup[];
   changeGroups: RawAppGroup[];
   removeGroups: RawAppGroup[];
+};
+
+// 定义一个类型，表示全局规则的变更日志
+type GlobalDiff = {
   addGlobalGroups: RawGlobalGroup[];
   changeGlobalGroups: RawGlobalGroup[];
   removeGlobalGroups: RawGlobalGroup[];
@@ -483,7 +494,19 @@ export const updateReadMeMd = async (
 ) => {
   let changeCount = 0; // 变更计数器，用于记录变更次数
   const appDiffs: AppDiff[] = []; // 存储应用变更日志的数组
-
+  const globaldiffs: GlobalDiff[] = []; // 存储全局规则变更日志的数组
+  const globalDiffLog = getGlobalDiffLog(
+    oldConfig.globalGroups,
+    newConfig.globalGroups,
+  );
+  if (
+    globalDiffLog.addGlobalGroups.length +
+      globalDiffLog.changeGlobalGroups.length +
+      globalDiffLog.removeGlobalGroups.length >
+    0
+  ) {
+    globaldiffs.push({ ...globalDiffLog }); // 将全局规则变更日志添加到数组中
+  }
   // 获取应用组的变更日志，传入旧的应用组列表和新的应用组列表以及旧的全局应用组列表和新的全局应用组列表
   await Promise.all(
     newConfig.apps!.map(async (app) => {
@@ -494,28 +517,20 @@ export const updateReadMeMd = async (
         changeCount++; // 变更计数器加一
         await updateAppMd(app); // 调用更新应用 Markdown 文件的函数
         // 获取应用组的变更日志，传入旧的应用组列表和新的应用组列表以及旧的全局应用组列表和新的全局应用组列表
-        const diffLog = getAppDiffLog(
-          oldApp?.groups,
-          app.groups,
-          oldConfig.globalGroups,
-          newConfig.globalGroups,
-        );
+        const appDiffLog = getAppDiffLog(oldApp?.groups, app.groups);
         if (
-          diffLog.addGroups.length +
-            diffLog.changeGroups.length +
-            diffLog.removeGroups.length +
-            diffLog.addGlobalGroups.length +
-            diffLog.changeGlobalGroups.length +
-            diffLog.removeGlobalGroups.length >
+          appDiffLog.addGroups.length +
+            appDiffLog.changeGroups.length +
+            appDiffLog.removeGroups.length >
           0
         ) {
-          appDiffs.push({ app, ...diffLog }); // 将应用变更日志添加到数组中
+          appDiffs.push({ app, ...appDiffLog }); // 将应用变更日志添加到数组中
         }
       }
     }),
   );
 
-  if (appDiffs.length > 0) {
+  if (appDiffs.length > 0 || globaldiffs.length > 0) {
     // 如果存在应用变更日志
     // 计算新增规则组数量和变动规则组数量以及移除规则组数量
     const addGroupsCount = appDiffs.reduce((p, c) => p + c.addGroups.length, 0);
@@ -527,15 +542,15 @@ export const updateReadMeMd = async (
       (p, c) => p + c.removeGroups.length,
       0,
     );
-    const addGlobalGroupsCount = appDiffs.reduce(
+    const addGlobalGroupsCount = globaldiffs.reduce(
       (p, c) => p + c.addGlobalGroups.length,
       0,
     );
-    const changeGlobalGroupsCount = appDiffs.reduce(
+    const changeGlobalGroupsCount = globaldiffs.reduce(
       (p, c) => p + c.changeGlobalGroups.length,
       0,
     );
-    const removeGlobalGroupsCount = appDiffs.reduce(
+    const removeGlobalGroupsCount = globaldiffs.reduce(
       (p, c) => p + c.removeGlobalGroups.length,
       0,
     );
@@ -573,13 +588,13 @@ export const updateReadMeMd = async (
               ].join('|'),
             )
             .join('\n') +
-          '\n' + // 拼接应用变更详情信息
+          '\n\n---\n\n' + // 拼接应用变更详情信息
           '|全局规则|新增|变动|移除|\n|-|-|-|-|\n' + // 全局规则表格标题
-          appDiffs
+          globaldiffs
             .map((a) =>
               [
                 '',
-                a.app.name,
+                '-',
                 a.addGlobalGroups.map((g) => '<li>' + g.name).join(''), // 新增全局规则列表
                 a.changeGlobalGroups.map((g) => '<li>' + g.name).join(''), // 变动全局规则列表
                 a.removeGlobalGroups.map((g) => '<li>' + g.name).join(''), // 移除全局规则列表
