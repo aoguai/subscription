@@ -67,6 +67,15 @@ const uniqueAppIdsUp = new Set([
   ...diabledAppIds,
   ...filterAppsByGroup(apps, '更新提示'),
 ]);
+const uniqueAppIdsRp = new Set([
+  ...diabledAppIds,
+  ...filterAppsByGroup(apps, '评价提示'),
+]);
+
+const NEGATION_PART_RULE_TEXT =
+  '[childCount=0][visibleToUser=true][childCount=0][visibleToUser=true][text^="不了"||text^="不再"||text^="忽略"||text^="暂不"||text^="放弃"||text^="取消"||text$="再说"||text$="再想想"||text$="拒绝"||text$="再說"||text$="拒絕"||text^="暫不"||text^="Ignore"||text^="Not now"||text^="Cancel"||text$="later"||text$="refuse"]';
+const NEGATION_PART_RULE_DESC =
+  '[childCount=0][visibleToUser=true][childCount=0][visibleToUser=true][desc^="不了"||desc^="不再"||desc^="忽略"||desc^="暂不"||desc^="放弃"||desc^="取消"||desc$="再说"||desc$="再想想"||desc$="拒绝"||desc$="再說"||desc$="拒絕"||desc^="暫不"||desc^="Ignore"||desc^="Not now"||desc^="Cancel"||desc$="later"||desc$="refuse"]';
 
 const globalGroups: RawGlobalGroup[] = [
   {
@@ -106,13 +115,46 @@ const globalGroups: RawGlobalGroup[] = [
     rules: [
       {
         key: 0,
-        matches:
-          '[childCount=0][visibleToUser=true][text$="新版本"||text$="更新"||text$="升级"||text$="体验"||text$="升級"||text$="體驗"||text$="Update"||text$="Upgrade"||text$="Experience"] <n * > [childCount=0][visibleToUser=true][text^="不再"||text$="再说"||text$="再想想"||text^="忽略"||text^="暂不"||text^="放弃"||text^="取消"||text$="再說"||text$="暫不"||text$="Later"||text^="Ignore"||text^="Not now"||text^="Cancel"]',
+        matches: [
+          '[childCount=0][visibleToUser=true][text$="新版本"||text$="更新"||text$="升级"||text$="体验"||text$="升級"||text$="體驗"||text$="Update"||text$="Upgrade"||text$="Experience"] <n * > ',
+          NEGATION_PART_RULE_TEXT,
+        ].join(''),
       },
       {
         key: 1,
-        matches:
-          '[childCount=0][visibleToUser=true][desc$="新版本"||desc$="更新"||desc$="升级"||desc$="体验"||desc$="升級"||desc$="體驗"||desc$="Update"||desc$="Upgrade"||desc$="Experience"] <n * > [childCount=0][visibleToUser=true][desc^="不再"||desc$="再说"||desc$="再想想"||desc^="忽略"||desc^="暂不"||desc^="放弃"||desc^="取消"||desc$="再說"||desc$="暫不"||desc$="Later"||desc^="Ignore"||desc^="Not now"||desc^="Cancel"]',
+        matches: [
+          '[childCount=0][visibleToUser=true][desc$="新版本"||desc$="更新"||desc$="升级"||desc$="体验"||desc$="升級"||desc$="體驗"||desc$="Update"||desc$="Upgrade"||desc$="Experience"] <n * > ',
+          NEGATION_PART_RULE_DESC,
+        ].join(''),
+      },
+    ],
+    // 将 Set 转换为数组，并设置 enable 为 false
+    apps: [...uniqueAppIdsUp].map((id) => ({ id, enable: false })),
+  },
+  {
+    key: 2,
+    name: '评价提示',
+    enable: false,
+    order: utils.REVIEW_PROMPT,
+    actionMaximum: 2,
+    matchTime: 10000,
+    resetMatch: 'app',
+    actionCdKey: 0,
+    actionMaximumKey: 0,
+    rules: [
+      {
+        key: 0,
+        matches: [
+          '[childCount=0][visibleToUser=true][text$="好评"||text$="鼓励一下"||text="马上评价"||text$="好評"||text$="鼓勵一下"||text$="马上評價"] <n * > ',
+          NEGATION_PART_RULE_TEXT,
+        ].join(''),
+      },
+      {
+        key: 1,
+        matches: [
+          '[childCount=0][visibleToUser=true][desc$="好评"||desc$="鼓励一下"||desc="马上评价"||desc$="好評"||desc$="鼓勵一下"||desc$="马上評價"] <n * > ',
+          NEGATION_PART_RULE_DESC,
+        ].join(''),
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
