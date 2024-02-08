@@ -77,6 +77,11 @@ const COMMON_PREFIX = '[childCount=0][visibleToUser=true]';
 const NEGATION_PART_RULE_TEXT = `${COMMON_PREFIX}[((text^="不"&&text$="谢谢")||text="否"||text="关闭"||text="不开启"||text="暂时不用"||text="先不了"||text="不允许"||text^="不了"||text^="不再"||text^="忽略"||text^="暂不"||text^="放弃"||text^="取消"||text$="再说"||text$="拒绝"||text$="再想想"||text$="知道了"||(text^="不"&&text$="謝謝")||text="關閉"||text="不開啟"||text="關閉"||text$="再說"||text$="拒絕"||text^="暫不"||text="close"||text="not now"||text^="Ignore"||text^="Cancel"||text$="later"||text$="refuse"||text$="I see")&&text.length<=7]`;
 const NEGATION_PART_RULE_DESC = `${COMMON_PREFIX}[((desc^="不"&&desc$="谢谢")||desc="否"||desc="关闭"||desc="不开启"||desc="暂时不用"||desc="先不了"||desc="不允许"||desc^="不了"||desc^="不再"||desc^="忽略"||desc^="暂不"||desc^="放弃"||desc^="取消"||desc$="再说"||desc$="拒绝"||desc$="再想想"||desc$="知道了"||(desc^="不"&&desc$="謝謝")||desc="關閉"||desc="不開啟"||desc="關閉"||desc$="再說"||desc$="拒絕"||desc^="暫不"||desc="close"||desc="not now"||desc^="Ignore"||desc^="Cancel"||desc$="later"||desc$="refuse"||desc$="I see")&&desc.length<=7]`;
 
+const RP_commonTextPatterns =
+  '[text$="好评"||text$="鼓励一下"||text="马上评价"||text$="好評"||text$="鼓勵一下"||text$="马上評價"]';
+const RP_commonDescPatterns =
+  '[desc$="好评"||desc$="鼓励一下"||desc="马上评价"||desc$="好評"||desc$="鼓勵一下"||desc$="马上評價"]';
+
 const globalGroups: RawGlobalGroup[] = [
   {
     key: 0,
@@ -144,17 +149,27 @@ const globalGroups: RawGlobalGroup[] = [
     rules: [
       {
         key: 0,
-        matches: [
-          '[childCount=0][visibleToUser=true][text$="好评"||text$="鼓励一下"||text="马上评价"||text$="好評"||text$="鼓勵一下"||text$="马上評價"] <n * > ',
-          NEGATION_PART_RULE_TEXT,
-        ].join(''),
+        matches: `${COMMON_PREFIX}${RP_commonTextPatterns} <n * > ${NEGATION_PART_RULE_TEXT}`,
       },
       {
         key: 1,
-        matches: [
-          '[childCount=0][visibleToUser=true][desc$="好评"||desc$="鼓励一下"||desc="马上评价"||desc$="好評"||desc$="鼓勵一下"||desc$="马上評價"] <n * > ',
-          NEGATION_PART_RULE_DESC,
-        ].join(''),
+        matches: `${COMMON_PREFIX}${RP_commonTextPatterns} <n * > * >n ${NEGATION_PART_RULE_TEXT}`,
+      },
+      {
+        key: 2,
+        matches: `${COMMON_PREFIX}${RP_commonTextPatterns} <n * <n * <n * > * >n ${NEGATION_PART_RULE_TEXT}`,
+      },
+      {
+        key: 3,
+        matches: `${COMMON_PREFIX}${RP_commonDescPatterns} <n * > ${NEGATION_PART_RULE_DESC}`,
+      },
+      {
+        key: 4,
+        matches: `${COMMON_PREFIX}${RP_commonDescPatterns} <n * > * >n ${NEGATION_PART_RULE_DESC}`,
+      },
+      {
+        key: 5,
+        matches: `${COMMON_PREFIX}${RP_commonDescPatterns} <n * <n * <n * > * >n ${NEGATION_PART_RULE_DESC}`,
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
