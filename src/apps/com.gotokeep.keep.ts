@@ -3,7 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.gotokeep.keep',
   name: 'Keep',
-  deprecatedKeys: [1],
+  deprecatedKeys: [1, 5],
   groups: [
     {
       key: 2,
@@ -52,15 +52,6 @@ export default defineAppConfig({
           snapshotUrls: 'https://i.gkd.li/import/13766358',
         },
       ],
-    },
-    {
-      key: 5,
-      name: '权限提示-请求开启通知权限弹窗',
-      actionMaximum: 1,
-      resetMatch: 'app',
-      quickFind: true,
-      rules: '@[text="暂不开启"] +2 [text="开启通知权限"]',
-      snapshotUrls: 'https://i.gkd.li/import/13761671',
     },
   ],
 });

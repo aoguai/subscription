@@ -16,13 +16,6 @@ export default defineAppConfig({
       ],
       rules: [
         {
-          matches: 'TextView[text="开启设置"] - TextView[text="取消"]',
-          snapshotUrls: [
-            'https://i.gkd.li/import/12867401',
-            'https://i.gkd.li/import/14161952',
-          ], // 创作页面
-        },
-        {
           matches: 'ImageView[id="com.bilibili.studio:id/iv_close"]',
           snapshotUrls: 'https://i.gkd.li/import/12908880', // 模板页面
         },

@@ -62,27 +62,5 @@ export default defineAppConfig({
         },
       ],
     },
-    {
-      key: 5,
-      name: '权限提示-漂流瓶-定位弹窗',
-      desc: '自动点击取消',
-      enable: false,
-      quickFind: true,
-      activityIds: [
-        'com.maxhom.weibu.tool.home.activity.ToolBottleActivity',
-        'com.maxhom.weibu.tool.msg.MyBottleActivity',
-        'com.maxhom.weibu.tool.home.activity.NewMainActivity',
-      ],
-      rules: [
-        {
-          matches: '[text="去设置"] +n [text="取消"]',
-          snapshotUrls: [
-            'https://i.gkd.li/import/13377685',
-            'https://i.gkd.li/import/13457033',
-            'https://i.gkd.li/import/13457038',
-          ],
-        },
-      ],
-    },
   ],
 });

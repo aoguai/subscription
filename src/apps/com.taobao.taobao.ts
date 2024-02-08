@@ -3,7 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.taobao.taobao',
   name: '淘宝',
-  deprecatedKeys: [11],
+  deprecatedKeys: [11, 15],
   groups: [
     {
       key: 0,
@@ -179,25 +179,6 @@ export default defineAppConfig({
         'https://i.gkd.li/import/13598578',
         'https://i.gkd.li/import/13853510', //误触快照
       ],
-    },
-    {
-      key: 15,
-      name: '权限提示-开启悬浮窗权限',
-      desc: '点击“否”',
-      enable: false,
-      activityIds:
-        'com.taobao.android.detail2.core.framework.floatwindow.permission.PermissionActivity',
-      quickFind: true,
-      actionMaximum: 1,
-      resetMatch: 'activity',
-      matchTime: 10000,
-      rules: {
-        matches: [
-          '[id="android:id/message"][text*="悬浮窗权限"]',
-          '[id="android:id/button2"][text="否"]',
-        ],
-      },
-      snapshotUrls: 'https://i.gkd.li/import/13588165',
     },
     {
       key: 16,
