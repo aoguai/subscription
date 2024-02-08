@@ -3,7 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.coolapk.market',
   name: '酷安',
-  deprecatedKeys: [2],
+  deprecatedKeys: [2, 3],
   groups: [
     {
       key: -1,
@@ -113,14 +113,6 @@ export default defineAppConfig({
       activityIds: 'com.coolapk.market.view.main.MainActivity',
       snapshotUrls: 'https://i.gkd.li/import/12503762',
       rules: '[text=`立即更新`] - [text=`取消`]',
-    },
-    {
-      key: 3,
-      quickFind: true,
-      name: '通知提示-关闭推送通知',
-      activityIds: 'com.coolapk.market.view.main.MainActivity',
-      rules: '[text="去开启"] - [text="以后再说"]',
-      snapshotUrls: 'https://i.gkd.li/import/13296465',
     },
   ],
 });
