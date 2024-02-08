@@ -59,17 +59,25 @@ function filterAppsByGroup(apps: any[], groupNamePrefix: string): string[] {
     .map((a) => a.id);
 }
 
-const uniqueAppIdsAd = new Set([
+const uniqueAppIdsAD = new Set([
   ...diabledAppIds,
   ...filterAppsByGroup(apps, '开屏广告'),
 ]);
-const uniqueAppIdsUp = new Set([
+const uniqueAppIdsUP = new Set([
   ...diabledAppIds,
   ...filterAppsByGroup(apps, '更新提示'),
 ]);
-const uniqueAppIdsRp = new Set([
+const uniqueAppIdsRP = new Set([
   ...diabledAppIds,
   ...filterAppsByGroup(apps, '评价提示'),
+]);
+const uniqueAppIdsNP = new Set([
+  ...diabledAppIds,
+  ...filterAppsByGroup(apps, '通知提示'),
+]);
+const uniqueAppIdsYM = new Set([
+  ...diabledAppIds,
+  ...filterAppsByGroup(apps, '青少年模式'),
 ]);
 const uniqueAppIdsPP = new Set([
   ...diabledAppIds,
@@ -78,8 +86,8 @@ const uniqueAppIdsPP = new Set([
 
 const COMMON_PREFIX = '[childCount=0][visibleToUser=true]';
 
-const NEGATION_PART_RULE_TEXT = `${COMMON_PREFIX}[((text^="不"&&text$="谢谢")||text="否"||text="关闭"||text="不开启"||text="暂时不用"||text="先不了"||text="不允许"||text^="不了"||text^="不再"||text^="忽略"||text^="暂不"||text^="放弃"||text^="取消"||text$="再说"||text$="拒绝"||text$="再想想"||text$="知道了"||(text^="不"&&text$="謝謝")||text="關閉"||text="不開啟"||text="關閉"||text$="再說"||text$="拒絕"||text^="暫不"||text="close"||text="not now"||text^="Ignore"||text^="Cancel"||text$="later"||text$="refuse"||text$="I see")&&text.length<=7]`;
-const NEGATION_PART_RULE_DESC = `${COMMON_PREFIX}[((desc^="不"&&desc$="谢谢")||desc="否"||desc="关闭"||desc="不开启"||desc="暂时不用"||desc="先不了"||desc="不允许"||desc^="不了"||desc^="不再"||desc^="忽略"||desc^="暂不"||desc^="放弃"||desc^="取消"||desc$="再说"||desc$="拒绝"||desc$="再想想"||desc$="知道了"||(desc^="不"&&desc$="謝謝")||desc="關閉"||desc="不開啟"||desc="關閉"||desc$="再說"||desc$="拒絕"||desc^="暫不"||desc="close"||desc="not now"||desc^="Ignore"||desc^="Cancel"||desc$="later"||desc$="refuse"||desc$="I see")&&desc.length<=7]`;
+const NEGATION_PART_RULE_TEXT = `${COMMON_PREFIX}[((text^="不"&&text$="谢谢")||text="否"||text="关闭"||text="不开启"||text="暂时不用"||text="先不了"||text="不允许"||text^="不了"||text^="不再"||text^="忽略"||text^="暂不"||text^="放弃"||text^="取消"||text$="再说"||text$="拒绝"||text$="再想想"||text$="知道了"||(text^="不"&&text$="謝謝")||text="關閉"||text="不開啟"||text="關閉"||text$="再說"||text$="拒絕"||text^="暫不"||text="close"||text="Close"||text="Not now"||text="not now"||text^="Ignore"||text^="Lgnore"||text^="Cancel"||text^="cancel"||text$="later"||text$="Later"||text$="refuse"||text$="Refuse"||text$="i see"||text$="I see")&&text.length<=7]`;
+const NEGATION_PART_RULE_DESC = `${COMMON_PREFIX}[((desc^="不"&&desc$="谢谢")||desc="否"||desc="关闭"||desc="不开启"||desc="暂时不用"||desc="先不了"||desc="不允许"||desc^="不了"||desc^="不再"||desc^="忽略"||desc^="暂不"||desc^="放弃"||desc^="取消"||desc$="再说"||desc$="拒绝"||desc$="再想想"||desc$="知道了"||(desc^="不"&&desc$="謝謝")||desc="關閉"||desc="不開啟"||desc="關閉"||desc$="再說"||desc$="拒絕"||desc^="暫不"||desc="close"||desc="Close"||desc="Not now"||desc="not now"||desc^="Ignore"||desc^="Lgnore"||desc^="Cancel"||desc^="cancel"||desc$="later"||desc$="Later"||desc$="refuse"||desc$="Refuse"||desc$="i see"||desc$="I see")&&desc.length<=7]`;
 
 const UP_commonTextPatterns =
   '[text$="新版本"||text$="更新"||text$="升级"||text$="体验"||text$="升級"||text$="體驗"||text$="Update"||text$="Upgrade"||text$="Experience"]';
@@ -92,9 +100,9 @@ const RP_commonDescPatterns =
   '[desc$="好评"||desc$="鼓励一下"||desc="马上评价"||desc$="好評"||desc$="鼓勵一下"||desc$="马上評價"]';
 
 const NP_commonTextPatterns =
-  '[(text*="开启"||text*="打开"||text*="获取"||text*="订阅"||text*="接收")&&(text*="通知"||text*="推送")]';
+  '[(text*="开启"||text*="打开"||text*="获取"||text*="订阅"||text*="接收"||text*="Turn on"||text*="turn on")&&(text*="通知"||text*="推送"||text*="notifications"||text*="Notifications")]';
 const NP_commonDescPatterns =
-  '[(desc*="开启"||desc*="打开"||desc*="获取"||desc*="订阅"||desc*="接收")&&(desc*="通知"||desc*="推送")]';
+  '[(desc*="开启"||desc*="打开"||desc*="获取"||desc*="订阅"||desc*="接收"||desc*="Turn on"||desc*="turn on")&&(desc*="通知"||desc*="推送"||desc*="notifications"||desc*="Notifications")]';
 
 const YM_commonTextPatterns =
   '[text*="青少年模式"||(text*="未成年"&&text*="模式")||text*="儿童模式"]';
@@ -129,7 +137,7 @@ const globalGroups: RawGlobalGroup[] = [
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
-    apps: [...uniqueAppIdsAd].map((id) => ({ id, enable: false })),
+    apps: [...uniqueAppIdsAD].map((id) => ({ id, enable: false })),
   },
   {
     key: 1,
@@ -168,7 +176,7 @@ const globalGroups: RawGlobalGroup[] = [
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
-    apps: [...uniqueAppIdsUp].map((id) => ({ id, enable: false })),
+    apps: [...uniqueAppIdsUP].map((id) => ({ id, enable: false })),
   },
   {
     key: 2,
@@ -207,7 +215,7 @@ const globalGroups: RawGlobalGroup[] = [
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
-    apps: [...uniqueAppIdsUp].map((id) => ({ id, enable: false })),
+    apps: [...uniqueAppIdsRP].map((id) => ({ id, enable: false })),
   },
   {
     key: 3,
@@ -246,7 +254,7 @@ const globalGroups: RawGlobalGroup[] = [
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
-    apps: [...uniqueAppIdsUp].map((id) => ({ id, enable: false })),
+    apps: [...uniqueAppIdsNP].map((id) => ({ id, enable: false })),
   },
   {
     key: 4,
@@ -285,7 +293,7 @@ const globalGroups: RawGlobalGroup[] = [
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
-    apps: [...uniqueAppIdsUp].map((id) => ({ id, enable: false })),
+    apps: [...uniqueAppIdsYM].map((id) => ({ id, enable: false })),
   },
   {
     key: 5,

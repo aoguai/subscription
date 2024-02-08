@@ -3,6 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.twitter.android',
   name: 'X(推特)',
+  deprecatedKeys: [5],
   groups: [
     {
       key: 1,
@@ -153,21 +154,6 @@ export default defineAppConfig({
           activityIds: 'com.twitter.app.main.MainActivity',
           matches: '[id="com.twitter.android:id/app_rating_button_never"]',
           snapshotUrls: 'https://i.gkd.li/import/13774150',
-        },
-      ],
-    },
-    {
-      key: 5,
-      quickFind: true,
-      name: '权限提示-请求通知权限弹窗',
-      desc: '点击"Not now"',
-      enable: false,
-      rules: [
-        {
-          activityIds: 'com.twitter.app.main.MainActivity',
-          matches:
-            '[id="com.twitter.android:id/secondary_button"] [text="Not now"]',
-          snapshotUrls: 'https://i.gkd.li/import/13930126',
         },
       ],
     },
