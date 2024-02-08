@@ -3,7 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'tv.danmaku.bili',
   name: '哔哩哔哩',
-  deprecatedKeys: [3, 5],
+  deprecatedKeys: [1, 3, 5],
   groups: [
     {
       key: -1,
@@ -30,16 +30,6 @@ export default defineAppConfig({
         'https://i.gkd.li/import/12785461',
         'https://i.gkd.li/import/12775156',
       ],
-    },
-    {
-      key: 1,
-      name: '青少年模式-青少年模式弹窗',
-      quickFind: true,
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      rules: 'TextView[text*="青少年模式"] +n TextView[text="我知道了"]',
-      snapshotUrls: 'https://i.gkd.li/import/13746766',
     },
     {
       key: 2,
