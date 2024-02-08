@@ -3,7 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.cainiao.wireless',
   name: '菜鸟',
-  deprecatedKeys: [0, 3, 7],
+  deprecatedKeys: [0, 3, 6, 7],
   groups: [
     {
       key: 1,
@@ -69,13 +69,6 @@ export default defineAppConfig({
       ],
       rules: '[id="com.cainiao.wireless:id/gg_dialog_base_close"]',
       snapshotUrls: ['https://i.gkd.li/import/14162211'],
-    },
-    {
-      key: 6,
-      name: '评价提示-请求好评弹窗',
-      activityIds: 'com.taobao.cainiao.logistic.ui.view.LogisticDetailActivity',
-      rules: '@[text="取消"] + [text="好评"]',
-      snapshotUrls: 'https://i.gkd.li/import/13692761',
     },
   ],
 });
