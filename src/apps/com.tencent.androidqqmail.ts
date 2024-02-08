@@ -3,6 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.tencent.androidqqmail',
   name: 'QQ邮箱',
+  deprecatedKeys: [1],
   groups: [
     {
       key: -1,
@@ -46,19 +47,6 @@ export default defineAppConfig({
           matches:
             '[text="赞助商提供的广告"] < FrameLayout + @FrameLayout > [text="不感兴趣"]',
           snapshotUrls: 'https://i.gkd.li/import/12775862',
-        },
-      ],
-    },
-    {
-      key: 1,
-      name: '通知提示-开启通知提醒',
-      enable: false,
-      quickFind: true,
-      activityIds: 'com.tencent.qqmail.fragment.base.MailFragmentActivity',
-      rules: [
-        {
-          matches: '[text="立刻开启"] - [text="以后再说"]',
-          snapshotUrls: ['https://i.gkd.li/import/13043069'],
         },
       ],
     },
