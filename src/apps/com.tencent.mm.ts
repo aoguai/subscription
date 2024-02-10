@@ -22,7 +22,7 @@ export default defineAppConfig({
           key: 0,
           name: '点击广告卡片右上角',
           matches:
-            'LinearLayout[visibleToUser=true] > TextView[text.length!=null] +1 LinearLayout[text.length=null&&desc=null&&clickable=true&&focusable=true]',
+            '@LinearLayout[visibleToUser=true][focusable=false] > TextView[text.length!=null] +1 LinearLayout[text.length=null&&desc=null&&clickable=true&&focusable=true]',
           snapshotUrls: [
             'https://i.gkd.li/import/12642588',
             'https://i.gkd.li/import/12888129', // ImageView - TextView[text="广告"][id!=null][index=0]这个规则无法匹配该广告，需要删除[index=0]
