@@ -322,10 +322,11 @@ export default defineAppConfig({
       name: '局部广告-黄钻-弹窗广告',
       activityIds: 'com.tencent.mobileqq.activity.QQBrowserActivity',
       rules:
-        'TextView[text.length=0&&clickable=true&&visibleToUser=true] + View > Button[text.length=0&&focusable=true]',
+        'TextView[text.length=0&&clickable=true&&visibleToUser=true] + View[childCount<=1] > Button[text.length=0&&focusable=true]',
       snapshotUrls: [
         'https://i.gkd.li/import/12914978',
         'https://i.gkd.li/import/12914886',
+        'https://i.gkd.li/import/14229202', // childCount<=1 防误触
       ],
     },
     {
