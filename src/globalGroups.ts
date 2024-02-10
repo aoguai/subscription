@@ -160,7 +160,7 @@ const globalGroups: RawGlobalGroup[] = [
       },
       {
         key: 2,
-        matches: `${COMMON_PREFIX}${UP_commonTextPatterns} <n * <n * <n * > * >n ${NEGATION_PART_RULE_TEXT}`,
+        matches: `${COMMON_PREFIX}${UP_commonTextPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_TEXT}`,
       },
       {
         key: 3,
@@ -172,7 +172,7 @@ const globalGroups: RawGlobalGroup[] = [
       },
       {
         key: 5,
-        matches: `${COMMON_PREFIX}${UP_commonDescPatterns} <n * <n * <n * > * >n ${NEGATION_PART_RULE_DESC}`,
+        matches: `${COMMON_PREFIX}${UP_commonDescPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_DESC}`,
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
@@ -199,7 +199,7 @@ const globalGroups: RawGlobalGroup[] = [
       },
       {
         key: 2,
-        matches: `${COMMON_PREFIX}${RP_commonTextPatterns} <n * <n * <n * > * >n ${NEGATION_PART_RULE_TEXT}`,
+        matches: `${COMMON_PREFIX}${RP_commonTextPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_TEXT}`,
       },
       {
         key: 3,
@@ -211,7 +211,7 @@ const globalGroups: RawGlobalGroup[] = [
       },
       {
         key: 5,
-        matches: `${COMMON_PREFIX}${RP_commonDescPatterns} <n * <n * <n * > * >n ${NEGATION_PART_RULE_DESC}`,
+        matches: `${COMMON_PREFIX}${RP_commonDescPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_DESC}`,
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
@@ -238,7 +238,7 @@ const globalGroups: RawGlobalGroup[] = [
       },
       {
         key: 2,
-        matches: `${COMMON_PREFIX}${NP_commonTextPatterns} <n * <n * <n * > * >n ${NEGATION_PART_RULE_TEXT}`,
+        matches: `${COMMON_PREFIX}${NP_commonTextPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_TEXT}`,
       },
       {
         key: 3,
@@ -250,7 +250,7 @@ const globalGroups: RawGlobalGroup[] = [
       },
       {
         key: 5,
-        matches: `${COMMON_PREFIX}${NP_commonDescPatterns} <n * <n * <n * > * >n ${NEGATION_PART_RULE_DESC}`,
+        matches: `${COMMON_PREFIX}${NP_commonDescPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_DESC}`,
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
@@ -277,7 +277,7 @@ const globalGroups: RawGlobalGroup[] = [
       },
       {
         key: 2,
-        matches: `${COMMON_PREFIX}${YM_commonTextPatterns} <n * <n * <n * > * >n ${NEGATION_PART_RULE_TEXT}`,
+        matches: `${COMMON_PREFIX}${YM_commonTextPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_TEXT}`,
       },
       {
         key: 3,
@@ -289,7 +289,7 @@ const globalGroups: RawGlobalGroup[] = [
       },
       {
         key: 5,
-        matches: `${COMMON_PREFIX}${YM_commonDescPatterns} <n * <n * <n * > * >n ${NEGATION_PART_RULE_DESC}`,
+        matches: `${COMMON_PREFIX}${YM_commonDescPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_DESC}`,
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
@@ -317,7 +317,7 @@ const globalGroups: RawGlobalGroup[] = [
       },
       {
         key: 2,
-        matches: `${COMMON_PREFIX}${PP_commonTextPatterns} <n * <n * <n * > * >n ${NEGATION_PART_RULE_TEXT}`,
+        matches: `${COMMON_PREFIX}${PP_commonTextPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_TEXT}`,
       },
       {
         key: 3,
@@ -329,7 +329,7 @@ const globalGroups: RawGlobalGroup[] = [
       },
       {
         key: 5,
-        matches: `${COMMON_PREFIX}${PP_commonDescPatterns} <n * <n * <n * > * >n ${NEGATION_PART_RULE_DESC}`,
+        matches: `${COMMON_PREFIX}${PP_commonDescPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_DESC}`,
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
