@@ -1,10 +1,10 @@
 {
-  "name": "@gkd-kit/subscription",
+  "name": "@aoguai/subscription",
   "type": "module",
   "version": "1.5.0",
-  "main": "./dist/gkd.json5",
-  "unpkg": "./dist/gkd.json5",
-  "jsdelivr": "./dist/gkd.json5",
+  "main": "./dist/aoguai_gkd.json5",
+  "unpkg": "./dist/aoguai_gkd.json5",
+  "jsdelivr": "./dist/aoguai_gkd.json5",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
@@ -45,13 +45,13 @@
   },
   "author": "lisonge",
   "license": "MIT",
-  "homepage": "https://github.com/gkd-kit/subscription#readme",
+  "homepage": "https://github.com/aoguai/subscription#readme",
   "bugs": {
-    "url": "https://github.com/gkd-kit/subscription/issues"
+    "url": "https://github.com/aoguai/subscription/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gkd-kit/subscription.git"
+    "url": "git+https://github.com/aoguai/subscription.git"
   },
   "volta": {
     "node": "20.9.0"

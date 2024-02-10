@@ -14,7 +14,7 @@ body:
       description: |
         快照是一个 zip 文件, 快照链接是类似 https://i.gkd.li/import/13474517 的文本, 按照如下方式可获得快照信息
 
-        按照此教程 [CONTRIBUTING.md](https://github.com/gkd-kit/subscription/blob/main/CONTRIBUTING.md) 或者下面的截图示例 来给界面打快照, 上传文件或者生成链接并粘贴到下面的输入框\
+        按照此教程 [CONTRIBUTING.md](https://github.com/aoguai/subscription/blob/main/CONTRIBUTING.md) 或者下面的截图示例 来给界面打快照, 上传文件或者生成链接并粘贴到下面的输入框\
         ![img](https://user-images.githubusercontent.com/45487685/270372181-9e05a475-6664-4e1b-adc7-1e3973fff01f.png)\
         此外需提供 [主页-点击记录] 的截图\
     validations:
