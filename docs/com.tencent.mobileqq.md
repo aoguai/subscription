@@ -119,6 +119,7 @@
 
 - [快照-0](https://i.gkd.li/import/12914978)
 - [快照-1](https://i.gkd.li/import/12914886)
+- [快照-2](https://i.gkd.li/import/14229202)
 
 ## 分段广告-好友动态-为你推荐
 
