@@ -12,7 +12,7 @@ const subsConfig: RawSubscription = {
   updateUrl:
     'https://raw.githubusercontent.com/aoguai/subscription/custom/dist/aoguai_gkd.json5',
   checkUpdateUrl:
-    'https://raw.githubusercontent.com/aoguai/subscription/custom/dist/aoguai_gkd.json5',
+    'https://raw.githubusercontent.com/aoguai/subscription/custom/dist/aoguai_gkd.version.json',
   globalGroups,
   categories,
   apps,

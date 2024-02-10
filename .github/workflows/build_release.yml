@@ -61,7 +61,7 @@ jobs:
         if: ${{ steps.commit.outcome == 'success' }}
         run: |
           pnpm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
-          pnpm publish
+          pnpm publish --publish-branch=custom
 
       - name: sync npmmirror
         if: ${{ steps.commit.outcome == 'success' }}
