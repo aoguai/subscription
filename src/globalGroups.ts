@@ -188,6 +188,30 @@ const globalGroups: RawGlobalGroup[] = [
         key: 5,
         matches: `${COMMON_PREFIX}${UP_commonDescPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_DESC}`,
       },
+      {
+        key: 6,
+        matches: `${COMMON_PREFIX}${UP_commonTextPatterns} <n * > ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 7,
+        matches: `${COMMON_PREFIX}${UP_commonTextPatterns} <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 8,
+        matches: `${COMMON_PREFIX}${UP_commonTextPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 9,
+        matches: `${COMMON_PREFIX}${UP_commonDescPatterns} <n * > ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 10,
+        matches: `${COMMON_PREFIX}${UP_commonDescPatterns} <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 11,
+        matches: `${COMMON_PREFIX}${UP_commonDescPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
     apps: [...uniqueAppIdsUP].map((id) => ({ id, enable: false })),
@@ -227,6 +251,30 @@ const globalGroups: RawGlobalGroup[] = [
         key: 5,
         matches: `${COMMON_PREFIX}${RP_commonDescPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_DESC}`,
       },
+      {
+        key: 6,
+        matches: `${COMMON_PREFIX}${RP_commonTextPatterns} <n * > ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 7,
+        matches: `${COMMON_PREFIX}${RP_commonTextPatterns} <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 8,
+        matches: `${COMMON_PREFIX}${RP_commonTextPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 9,
+        matches: `${COMMON_PREFIX}${RP_commonDescPatterns} <n * > ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 10,
+        matches: `${COMMON_PREFIX}${RP_commonDescPatterns} <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 11,
+        matches: `${COMMON_PREFIX}${RP_commonDescPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
     apps: [...uniqueAppIdsRP].map((id) => ({ id, enable: false })),
@@ -264,6 +312,30 @@ const globalGroups: RawGlobalGroup[] = [
       {
         key: 5,
         matches: `${COMMON_PREFIX}${NP_commonDescPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_DESC}`,
+      },
+      {
+        key: 6,
+        matches: `${COMMON_PREFIX}${NP_commonTextPatterns} <n * > ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 7,
+        matches: `${COMMON_PREFIX}${NP_commonTextPatterns} <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 8,
+        matches: `${COMMON_PREFIX}${NP_commonTextPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 9,
+        matches: `${COMMON_PREFIX}${NP_commonDescPatterns} <n * > ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 10,
+        matches: `${COMMON_PREFIX}${NP_commonDescPatterns} <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 11,
+        matches: `${COMMON_PREFIX}${NP_commonDescPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
@@ -304,6 +376,30 @@ const globalGroups: RawGlobalGroup[] = [
         key: 5,
         matches: `${COMMON_PREFIX}${YM_commonDescPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_DESC}`,
       },
+      {
+        key: 6,
+        matches: `${COMMON_PREFIX}${YM_commonTextPatterns} <n * > ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 7,
+        matches: `${COMMON_PREFIX}${YM_commonTextPatterns} <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 8,
+        matches: `${COMMON_PREFIX}${YM_commonTextPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 9,
+        matches: `${COMMON_PREFIX}${YM_commonDescPatterns} <n * > ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 10,
+        matches: `${COMMON_PREFIX}${YM_commonDescPatterns} <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 11,
+        matches: `${COMMON_PREFIX}${YM_commonDescPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
     apps: [...uniqueAppIdsYM].map((id) => ({ id, enable: false })),
@@ -342,6 +438,30 @@ const globalGroups: RawGlobalGroup[] = [
       {
         key: 5,
         matches: `${COMMON_PREFIX}${PP_commonDescPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_DESC}`,
+      },
+      {
+        key: 6,
+        matches: `${COMMON_PREFIX}${PP_commonTextPatterns} <n * > ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 7,
+        matches: `${COMMON_PREFIX}${PP_commonTextPatterns} <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 8,
+        matches: `${COMMON_PREFIX}${PP_commonTextPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 9,
+        matches: `${COMMON_PREFIX}${PP_commonDescPatterns} <n * > ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 10,
+        matches: `${COMMON_PREFIX}${PP_commonDescPatterns} <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 11,
+        matches: `${COMMON_PREFIX}${PP_commonDescPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
