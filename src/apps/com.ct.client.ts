@@ -3,7 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.ct.client',
   name: '中国电信',
-  deprecatedKeys: [0, 2],
+  deprecatedKeys: [0, 2, 5],
   groups: [
     {
       key: 1,
@@ -46,15 +46,6 @@ export default defineAppConfig({
       ],
       rules: 'Image[text="tishi-close"]',
       snapshotUrls: ['https://i.gkd.li/import/12913804'],
-    },
-    {
-      key: 5,
-      name: '通知提示-消息-开启消息通知',
-      desc: '自动点击关闭',
-      // quickFind: true, 实机测试使用无法跳过
-      activityIds: ['com.ct.client.activity.MainActivity'],
-      rules: 'ImageView[id="com.ct.client:id/msg_close"]',
-      snapshotUrls: ['https://i.gkd.li/import/13043522'],
     },
   ],
 });

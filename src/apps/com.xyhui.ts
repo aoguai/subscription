@@ -3,7 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.xyhui',
   name: 'PU口袋校园',
-  deprecatedKeys: [4],
+  deprecatedKeys: [3, 4],
   groups: [
     {
       key: 1,
@@ -109,21 +109,6 @@ export default defineAppConfig({
       snapshotUrls: [
         'https://i.gkd.li/import/12846543',
         'https://i.gkd.li/import/12868119',
-      ],
-    },
-    {
-      enable: false,
-      key: 3,
-      name: '更新提示-升级提示',
-      quickFind: true,
-      activityIds: [
-        'com.xyhui.start.PUMainActivity',
-        'com.xyhui.start.LoadingActivity',
-      ],
-      rules: 'ImageView[id="com.xyhui:id/closeIv"]',
-      snapshotUrls: [
-        'https://i.gkd.li/import/12908853',
-        'https://i.gkd.li/import/12908865',
       ],
     },
   ],

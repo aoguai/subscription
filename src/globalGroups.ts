@@ -83,11 +83,20 @@ const uniqueAppIdsPP = new Set([
   ...diabledAppIds,
   ...filterAppsByGroup(apps, '权限提示'),
 ]);
+const uniqueAppIdsFA = new Set([
+  ...diabledAppIds,
+  ...filterAppsByGroup(apps, '全屏广告'),
+]);
+const uniqueAppIdsLP = new Set([
+  ...diabledAppIds,
+  ...filterAppsByGroup(apps, '定位提示'),
+]);
 
 const COMMON_PREFIX = '[childCount=0][visibleToUser=true]';
 
-const NEGATION_PART_RULE_TEXT = `${COMMON_PREFIX}[((text^="不"&&text$="谢谢")||text="否"||text="关闭"||text="不开启"||text="暂时不用"||text="先不了"||text="不允许"||text^="不了"||text^="不再"||text^="忽略"||text^="暂不"||text^="放弃"||text^="取消"||text$="再说"||text$="拒绝"||text$="再想想"||text$="知道了"||(text^="不"&&text$="謝謝")||text="關閉"||text="不開啟"||text="關閉"||text$="再說"||text$="拒絕"||text^="暫不"||text="close"||text="Close"||text="Not now"||text="not now"||text^="Ignore"||text^="Lgnore"||text^="Cancel"||text^="cancel"||text$="later"||text$="Later"||text$="refuse"||text$="Refuse"||text$="i see"||text$="I see")&&text.length<=7]`;
-const NEGATION_PART_RULE_DESC = `${COMMON_PREFIX}[((desc^="不"&&desc$="谢谢")||desc="否"||desc="关闭"||desc="不开启"||desc="暂时不用"||desc="先不了"||desc="不允许"||desc^="不了"||desc^="不再"||desc^="忽略"||desc^="暂不"||desc^="放弃"||desc^="取消"||desc$="再说"||desc$="拒绝"||desc$="再想想"||desc$="知道了"||(desc^="不"&&desc$="謝謝")||desc="關閉"||desc="不開啟"||desc="關閉"||desc$="再說"||desc$="拒絕"||desc^="暫不"||desc="close"||desc="Close"||desc="Not now"||desc="not now"||desc^="Ignore"||desc^="Lgnore"||desc^="Cancel"||desc^="cancel"||desc$="later"||desc$="Later"||desc$="refuse"||desc$="Refuse"||desc$="i see"||desc$="I see")&&desc.length<=7]`;
+const NEGATION_PART_RULE_TEXT = `${COMMON_PREFIX}[((text^="不"&&text$="谢谢")||text="否"||text="关闭"||text="不开启"||text="暂时不用"||text="考虑一下"||text="考慮一下"||text="先不了"||text="不允许"||text^="不了"||text^="不再"||text^="忽略"||text^="暂不"||text^="放弃"||text^="取消"||text$="再说"||text$="拒绝"||text$="再想想"||text$="知道了"||(text^="不"&&text$="謝謝")||text="關閉"||text="不開啟"||text="關閉"||text$="再說"||text$="拒絕"||text^="暫不"||text="close"||text="Close"||text="Not now"||text="not now"||text^="Ignore"||text^="Lgnore"||text^="Cancel"||text^="cancel"||text$="later"||text$="Later"||text$="refuse"||text$="Refuse"||text$="i see"||text$="I see")&&text.length<=7]`;
+const NEGATION_PART_RULE_DESC = `${COMMON_PREFIX}[((desc^="不"&&desc$="谢谢")||desc="否"||desc="关闭"||desc="不开启"||desc="暂时不用"||desc="考虑一下"||desc="考慮一下"||desc="先不了"||desc="不允许"||desc^="不了"||desc^="不再"||desc^="忽略"||desc^="暂不"||desc^="放弃"||desc^="取消"||desc$="再说"||desc$="拒绝"||desc$="再想想"||desc$="知道了"||(desc^="不"&&desc$="謝謝")||desc="關閉"||desc="不開啟"||desc="關閉"||desc$="再說"||desc$="拒絕"||desc^="暫不"||desc="close"||desc="Close"||desc="Not now"||desc="not now"||desc^="Ignore"||desc^="Lgnore"||desc^="Cancel"||desc^="cancel"||desc$="later"||desc$="Later"||desc$="refuse"||desc$="Refuse"||desc$="i see"||desc$="I see")&&desc.length<=7]`;
+const NEGATION_PART_RULE_BUTTON = `${COMMON_PREFIX}[(id*="iv"||id*="guide"||id*="alert"||id*="Notific"||id*="dialog"||id*="btn"||id*="ad"||id*="ab")&&(id$="close"||id$="Close"||id$="Delete"||id$="delete"||id$="cancel"||id$="Cancel"||id$="cancle"||id$="Cancle"||id$="exit"||id$="Exit")||id*="/close"||id*="/Close"||id*="_close"||id*="_Close"||id*="/ab"||text=""||desc=""]`;
 
 const UP_commonTextPatterns =
   '[text$="新版本"||text$="更新"||text$="升级"||text$="体验"||text$="升級"||text$="體驗"||text$="Update"||text$="Upgrade"||text$="Experience"]';
@@ -100,9 +109,9 @@ const RP_commonDescPatterns =
   '[desc$="好评"||desc$="鼓励一下"||desc="马上评价"||desc$="好評"||desc$="鼓勵一下"||desc$="马上評價"]';
 
 const NP_commonTextPatterns =
-  '[(text*="开启"||text*="打开"||text*="获取"||text*="订阅"||text*="接收"||text*="Turn on"||text*="turn on")&&(text*="通知"||text*="推送"||text*="notifications"||text*="Notifications")]';
+  '[(text*="申请"||text*="开启"||text*="打开"||text*="获取"||text*="订阅"||text*="接收"||text*="Turn on"||text*="turn on")&&(text*="通知"||text*="推送"||text*="notifications"||text*="Notifications")&&(text!*="定位"&&text!*="位置"&&text!*="location"&&text!*="权限")]';
 const NP_commonDescPatterns =
-  '[(desc*="开启"||desc*="打开"||desc*="获取"||desc*="订阅"||desc*="接收"||desc*="Turn on"||desc*="turn on")&&(desc*="通知"||desc*="推送"||desc*="notifications"||desc*="Notifications")]';
+  '[(desc*="申请"||desc*="开启"||desc*="打开"||desc*="获取"||desc*="订阅"||desc*="接收"||desc*="Turn on"||desc*="turn on")&&(desc*="通知"||desc*="推送"||desc*="notifications"||desc*="Notifications")&&(desc!*="定位"&&desc!*="位置"&&desc!*="location"&&desc!*="权限")]';
 
 const YM_commonTextPatterns =
   '[text*="青少年模式"||(text*="未成年"&&text*="模式")||text*="儿童模式"]';
@@ -110,9 +119,14 @@ const YM_commonDescPatterns =
   '[desc*="青少年模式"||(desc*="未成年"&&desc*="模式")||desc*="儿童模式"]';
 
 const PP_commonTextPatterns =
-  '[(text*="开启"||text*="打开"||text*="获取")&&text*="权限"]';
+  '[(text*="申请"||text*="开启"||text*="打开"||text*="获取")&&text*="权限"&&(text!*="定位"&&text!*="位置"&&text!*="location"&&text!*="通知")]';
 const PP_commonDescPatterns =
-  '[(desc*="开启"||desc*="打开"||desc*="获取")&&desc*="权限"]';
+  '[(desc*="申请"||desc*="开启"||desc*="打开"||desc*="获取")&&desc*="权限"&&(desc!*="定位"&&desc!*="位置"&&desc!*="location"&&desc!*="通知")]';
+
+const LP_commonTextPatterns =
+  '[(text*="访问"||text*="申请"||text*="开启"||text*="打开"||text*="获取")&&(text*="定位"||text*="位置"||text*="location")&&text!*="通知"]';
+const LP_commonDescPatterns =
+  '[(desc*="访问"||desc*="申请"||desc*="开启"||desc*="打开"||desc*="获取")&&(desc*="定位"||desc*="位置"||desc*="location")&&desc!*="通知"]';
 
 const globalGroups: RawGlobalGroup[] = [
   {
@@ -174,6 +188,30 @@ const globalGroups: RawGlobalGroup[] = [
         key: 5,
         matches: `${COMMON_PREFIX}${UP_commonDescPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_DESC}`,
       },
+      {
+        key: 6,
+        matches: `${COMMON_PREFIX}${UP_commonTextPatterns} <n * > ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 7,
+        matches: `${COMMON_PREFIX}${UP_commonTextPatterns} <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 8,
+        matches: `${COMMON_PREFIX}${UP_commonTextPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 9,
+        matches: `${COMMON_PREFIX}${UP_commonDescPatterns} <n * > ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 10,
+        matches: `${COMMON_PREFIX}${UP_commonDescPatterns} <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 11,
+        matches: `${COMMON_PREFIX}${UP_commonDescPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
     apps: [...uniqueAppIdsUP].map((id) => ({ id, enable: false })),
@@ -213,6 +251,30 @@ const globalGroups: RawGlobalGroup[] = [
         key: 5,
         matches: `${COMMON_PREFIX}${RP_commonDescPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_DESC}`,
       },
+      {
+        key: 6,
+        matches: `${COMMON_PREFIX}${RP_commonTextPatterns} <n * > ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 7,
+        matches: `${COMMON_PREFIX}${RP_commonTextPatterns} <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 8,
+        matches: `${COMMON_PREFIX}${RP_commonTextPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 9,
+        matches: `${COMMON_PREFIX}${RP_commonDescPatterns} <n * > ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 10,
+        matches: `${COMMON_PREFIX}${RP_commonDescPatterns} <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 11,
+        matches: `${COMMON_PREFIX}${RP_commonDescPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
     apps: [...uniqueAppIdsRP].map((id) => ({ id, enable: false })),
@@ -222,7 +284,6 @@ const globalGroups: RawGlobalGroup[] = [
     name: '通知提示',
     enable: false,
     order: utils.NOTIFICATION_PROMPT,
-    actionMaximum: 2,
     matchTime: 10000,
     resetMatch: 'app',
     actionCdKey: 0,
@@ -251,6 +312,30 @@ const globalGroups: RawGlobalGroup[] = [
       {
         key: 5,
         matches: `${COMMON_PREFIX}${NP_commonDescPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_DESC}`,
+      },
+      {
+        key: 6,
+        matches: `${COMMON_PREFIX}${NP_commonTextPatterns} <n * > ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 7,
+        matches: `${COMMON_PREFIX}${NP_commonTextPatterns} <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 8,
+        matches: `${COMMON_PREFIX}${NP_commonTextPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 9,
+        matches: `${COMMON_PREFIX}${NP_commonDescPatterns} <n * > ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 10,
+        matches: `${COMMON_PREFIX}${NP_commonDescPatterns} <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 11,
+        matches: `${COMMON_PREFIX}${NP_commonDescPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
@@ -291,6 +376,30 @@ const globalGroups: RawGlobalGroup[] = [
         key: 5,
         matches: `${COMMON_PREFIX}${YM_commonDescPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_DESC}`,
       },
+      {
+        key: 6,
+        matches: `${COMMON_PREFIX}${YM_commonTextPatterns} <n * > ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 7,
+        matches: `${COMMON_PREFIX}${YM_commonTextPatterns} <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 8,
+        matches: `${COMMON_PREFIX}${YM_commonTextPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 9,
+        matches: `${COMMON_PREFIX}${YM_commonDescPatterns} <n * > ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 10,
+        matches: `${COMMON_PREFIX}${YM_commonDescPatterns} <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 11,
+        matches: `${COMMON_PREFIX}${YM_commonDescPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
     apps: [...uniqueAppIdsYM].map((id) => ({ id, enable: false })),
@@ -301,7 +410,6 @@ const globalGroups: RawGlobalGroup[] = [
     desc: '! 该规则会自动拒绝 APP 一些权限申请弹窗提示，如果有影响请关闭',
     enable: false,
     order: utils.YOUTH_MODE,
-    actionMaximum: 2,
     matchTime: 10000,
     resetMatch: 'app',
     actionCdKey: 0,
@@ -331,9 +439,138 @@ const globalGroups: RawGlobalGroup[] = [
         key: 5,
         matches: `${COMMON_PREFIX}${PP_commonDescPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_DESC}`,
       },
+      {
+        key: 6,
+        matches: `${COMMON_PREFIX}${PP_commonTextPatterns} <n * > ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 7,
+        matches: `${COMMON_PREFIX}${PP_commonTextPatterns} <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 8,
+        matches: `${COMMON_PREFIX}${PP_commonTextPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 9,
+        matches: `${COMMON_PREFIX}${PP_commonDescPatterns} <n * > ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 10,
+        matches: `${COMMON_PREFIX}${PP_commonDescPatterns} <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 11,
+        matches: `${COMMON_PREFIX}${PP_commonDescPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
     apps: [...uniqueAppIdsPP].map((id) => ({ id, enable: false })),
+  },
+  {
+    key: 6,
+    name: '全屏广告',
+    enable: false,
+    order: utils.FULLSCREEN_AD,
+    matchTime: 10000,
+    resetMatch: 'activity',
+    rules: [
+      {
+        key: 0,
+        name: '快手SDK-类型1',
+        matches: `[text="广告"] <<n ViewGroup >n ViewGroup[childCount=1][clickable=true] > ImageView${COMMON_PREFIX}`,
+      },
+      {
+        key: 1,
+        name: '快手SDK-类型2',
+        matches: `[text="广告"] <<n ViewGroup >n ViewGroup[childCount=4][clickable=true] > [text="跳过"]${COMMON_PREFIX}`,
+      },
+      {
+        key: 2,
+        name: '快手SDK-类型3',
+        matches: `[text="广告"]  <<n ViewGroup +2 ViewGroup[childCount=3][checked=false] >n ImageView${COMMON_PREFIX}`,
+      },
+      {
+        key: 3,
+        name: '字节SDK-类型1',
+        matches: `[id$="tt_reward_full_count_down_after_close"]${COMMON_PREFIX}`,
+      },
+      {
+        key: 4,
+        name: '字节SDK-类型2',
+        matches: `[id$="ad_flag_source_layout"] + [id$="iv_close"]${COMMON_PREFIX}`,
+      },
+      {
+        key: 5,
+        name: '美数SDK-类型1',
+        matches: `[id$="ms_activity_sdk_interstitial_cacel"]${COMMON_PREFIX}`,
+      },
+    ],
+    // 将 Set 转换为数组，并设置 enable 为 false
+    apps: [...uniqueAppIdsFA].map((id) => ({ id, enable: false })),
+  },
+  {
+    key: 7,
+    name: '定位提示',
+    desc: '! 该规则会自动拒绝 APP 的位置权限申请弹窗提示，如果有影响请关闭',
+    enable: false,
+    order: utils.LOCATION_PROMPT,
+    matchTime: 10000,
+    resetMatch: 'app',
+    actionCdKey: 0,
+    actionMaximumKey: 0,
+    rules: [
+      {
+        key: 0,
+        matches: `${COMMON_PREFIX}${LP_commonTextPatterns} <n * > ${NEGATION_PART_RULE_TEXT}`,
+      },
+      {
+        key: 1,
+        matches: `${COMMON_PREFIX}${LP_commonTextPatterns} <n * > * >n ${NEGATION_PART_RULE_TEXT}`,
+      },
+      {
+        key: 2,
+        matches: `${COMMON_PREFIX}${LP_commonTextPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_TEXT}`,
+      },
+      {
+        key: 3,
+        matches: `${COMMON_PREFIX}${LP_commonDescPatterns} <n * > ${NEGATION_PART_RULE_DESC}`,
+      },
+      {
+        key: 4,
+        matches: `${COMMON_PREFIX}${LP_commonDescPatterns} <n * > * >n ${NEGATION_PART_RULE_DESC}`,
+      },
+      {
+        key: 5,
+        matches: `${COMMON_PREFIX}${LP_commonDescPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_DESC}`,
+      },
+      {
+        key: 6,
+        matches: `${COMMON_PREFIX}${LP_commonTextPatterns} <n * > ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 7,
+        matches: `${COMMON_PREFIX}${LP_commonTextPatterns} <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 8,
+        matches: `${COMMON_PREFIX}${LP_commonTextPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 9,
+        matches: `${COMMON_PREFIX}${LP_commonDescPatterns} <n * > ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 10,
+        matches: `${COMMON_PREFIX}${LP_commonDescPatterns} <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
+      {
+        key: 11,
+        matches: `${COMMON_PREFIX}${LP_commonDescPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+      },
+    ],
+    // 将 Set 转换为数组，并设置 enable 为 false
+    apps: [...uniqueAppIdsLP].map((id) => ({ id, enable: false })),
   },
 ];
 export default globalGroups;

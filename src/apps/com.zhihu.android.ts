@@ -3,6 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.zhihu.android',
   name: '知乎',
+  deprecatedKeys: [10],
   groups: [
     {
       key: 0,
@@ -208,17 +209,6 @@ export default defineAppConfig({
       rules: [
         '[id="com.zhihu.android:id/tv_ad_tag"] + [id="com.zhihu.android:id/img_close_focus"]', // 1686911063850
       ],
-    },
-    {
-      enable: false,
-      key: 10,
-      name: '通知提示-推送通知弹窗',
-      desc: '推送通知弹窗-点击x按钮',
-      activityIds: 'com.zhihu.android.app.ui.dialog.d',
-      rules: [
-        'TextView[id="com.zhihu.android:id/guide_title"] - ImageView[id="com.zhihu.android:id/guide_image_exit"][clickable=true]',
-      ],
-      snapshotUrls: ['https://i.gkd.li/import/12647583'],
     },
     {
       enable: false,

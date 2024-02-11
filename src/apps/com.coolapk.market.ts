@@ -3,7 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.coolapk.market',
   name: '酷安',
-  deprecatedKeys: [2, 3],
+  deprecatedKeys: [1, 2, 3],
   groups: [
     {
       key: -1,
@@ -105,14 +105,6 @@ export default defineAppConfig({
           ],
         },
       ],
-    },
-    {
-      key: 1,
-      quickFind: true,
-      name: '更新提示-关闭升级弹窗',
-      activityIds: 'com.coolapk.market.view.main.MainActivity',
-      snapshotUrls: 'https://i.gkd.li/import/12503762',
-      rules: '[text=`立即更新`] - [text=`取消`]',
     },
   ],
 });

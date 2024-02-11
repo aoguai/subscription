@@ -3,7 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'tv.danmaku.bili',
   name: '哔哩哔哩',
-  deprecatedKeys: [1, 3, 5, 9],
+  deprecatedKeys: [1, 3, 5, 6, 9],
   groups: [
     {
       key: -1,
@@ -51,7 +51,6 @@ export default defineAppConfig({
         },
       ],
     },
-    // key = 3已弃用
     {
       enable: false,
       key: 4,
@@ -85,31 +84,6 @@ export default defineAppConfig({
           snapshotUrls: [
             'https://i.gkd.li/import/12642261', // 屏蔽广告菜单弹窗
             'https://i.gkd.li/import/13495649',
-          ],
-        },
-      ],
-    },
-    // key = 5已弃用
-    {
-      key: 6,
-      name: '更新提示-更新弹窗',
-      quickFind: true,
-      actionMaximum: 1,
-      matchDelay: 5000,
-      activityIds: [
-        'com.bilibili.app.preferences.BiliPreferencesActivity',
-        'tv.danmaku.bili.ui.splash.ad.page.HotSplashActivity',
-        'tv.danmaku.bili.MainActivityV2',
-      ],
-      rules: [
-        {
-          key: 1,
-          matches: '[id="tv.danmaku.bili:id/update_btn_cancel"]',
-          snapshotUrls: [
-            'https://i.gkd.li/import/12649689', // com.bilibili.app.preferences.BiliPreferencesActivity
-            'https://i.gkd.li/import/13212209', // tv.danmaku.bili.ui.splash.ad.page.HotSplashActivity
-            'https://i.gkd.li/import/13228977',
-            'https://i.gkd.li/import/13334963',
           ],
         },
       ],

@@ -2,6 +2,7 @@ import { defineAppConfig } from '../types';
 
 export default defineAppConfig({
   id: 'com.jingdong.app.mall',
+  deprecatedKeys: [7],
   name: '京东',
   groups: [
     {
@@ -140,20 +141,6 @@ export default defineAppConfig({
           matches:
             '@View[clickable=true][longClickable=false] -n ImageView <n RelativeLayout',
           snapshotUrls: 'https://i.gkd.li/import/14163014',
-        },
-      ],
-    },
-    {
-      key: 7,
-      name: '通知提示-首页弹窗-打开通知',
-      desc: '自动点击正下方的【x】',
-      enable: false,
-      quickFind: true,
-      rules: [
-        {
-          activityIds: 'com.jingdong.app.mall.MainFrameActivity',
-          matches: '[id="com.jingdong.app.mall:id/btn_close"]',
-          snapshotUrls: 'https://i.gkd.li/import/13463618',
         },
       ],
     },
