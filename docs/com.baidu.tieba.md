@@ -1,6 +1,6 @@
 # 百度贴吧
 
-存在 10 规则组 - [com.baidu.tieba](/src/apps/com.baidu.tieba.ts)
+存在 9 规则组 - [com.baidu.tieba](/src/apps/com.baidu.tieba.ts)
 
 ## 开屏广告
 
@@ -38,12 +38,6 @@
 默认禁用
 
 - [快照-0](https://i.gkd.li/import/13060892)
-
-## 更新提示-升级弹窗
-
-默认禁用
-
-- [快照-0](https://i.gkd.li/import/12496934)
 
 ## 分段广告-帖子底部内容推荐卡片
 

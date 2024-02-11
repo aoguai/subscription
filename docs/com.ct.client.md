@@ -1,6 +1,6 @@
 # 中国电信
 
-存在 4 规则组 - [com.ct.client](/src/apps/com.ct.client.ts)
+存在 3 规则组 - [com.ct.client](/src/apps/com.ct.client.ts)
 
 ## 全屏广告-用户引导
 
@@ -21,9 +21,3 @@
 默认禁用
 
 - [快照-0](https://i.gkd.li/import/12913804)
-
-## 通知提示-消息-开启消息通知
-
-默认禁用 - 自动点击关闭
-
-- [快照-0](https://i.gkd.li/import/13043522)

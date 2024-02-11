@@ -1,6 +1,6 @@
 # PU口袋校园
 
-存在 3 规则组 - [com.xyhui](/src/apps/com.xyhui.ts)
+存在 2 规则组 - [com.xyhui](/src/apps/com.xyhui.ts)
 
 ## 局部广告-弹窗广告
 
@@ -32,10 +32,3 @@
 
 - [快照-0](https://i.gkd.li/import/12846543)
 - [快照-1](https://i.gkd.li/import/12868119)
-
-## 更新提示-升级提示
-
-默认禁用
-
-- [快照-0](https://i.gkd.li/import/12908853)
-- [快照-1](https://i.gkd.li/import/12908865)

@@ -1,19 +1,12 @@
 # 航旅纵横
 
-存在 4 规则组 - [com.umetrip.android.msky.app](/src/apps/com.umetrip.android.msky.app.ts)
+存在 3 规则组 - [com.umetrip.android.msky.app](/src/apps/com.umetrip.android.msky.app.ts)
 
 ## 全屏广告-酒店-弹窗广告
 
 默认禁用
 
 - [快照-0](https://i.gkd.li/import/12909632)
-
-## 更新提示-升级提示
-
-默认禁用
-
-- [快照-0](https://i.gkd.li/import/12838294)
-- [快照-1](https://i.gkd.li/import/12838293)
 
 ## 功能类-进入飞行模式-提示弹窗
 

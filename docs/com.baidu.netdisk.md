@@ -1,6 +1,6 @@
 # 百度网盘
 
-存在 6 规则组 - [com.baidu.netdisk](/src/apps/com.baidu.netdisk.ts)
+存在 5 规则组 - [com.baidu.netdisk](/src/apps/com.baidu.netdisk.ts)
 
 ## 局部广告-活动弹窗
 
@@ -35,9 +35,3 @@
 默认禁用 - 关闭续费横幅提示
 
 - [快照-0](https://i.gkd.li/import/12924036)
-
-## 通知提示-开启消息通知弹窗
-
-默认禁用 - 自动点击关闭
-
-- [快照-0](https://i.gkd.li/import/12923936)

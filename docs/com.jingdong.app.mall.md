@@ -1,6 +1,6 @@
 # 京东
 
-存在 10 规则组 - [com.jingdong.app.mall](/src/apps/com.jingdong.app.mall.ts)
+存在 9 规则组 - [com.jingdong.app.mall](/src/apps/com.jingdong.app.mall.ts)
 
 ## 局部广告-购物车界面-砸金蛋
 
@@ -54,12 +54,6 @@
 - [快照-1](https://i.gkd.li/import/13258980)
 - [快照-2](https://i.gkd.li/import/13258981)
 - [快照-3](https://i.gkd.li/import/14163014)
-
-## 通知提示-首页弹窗-打开通知
-
-默认禁用 - 自动点击正下方的【x】
-
-- [快照-0](https://i.gkd.li/import/13463618)
 
 ## 功能类-京东账号登录授权
 

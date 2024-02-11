@@ -1,6 +1,6 @@
 # 知乎
 
-存在 13 规则组 - [com.zhihu.android](/src/apps/com.zhihu.android.ts)
+存在 12 规则组 - [com.zhihu.android](/src/apps/com.zhihu.android.ts)
 
 ## 开屏广告
 
@@ -52,12 +52,6 @@
 ## 局部广告-推荐页-顶部广告
 
 默认禁用
-
-## 通知提示-推送通知弹窗
-
-默认禁用 - 推送通知弹窗-点击x按钮
-
-- [快照-0](https://i.gkd.li/import/12647583)
 
 ## 局部广告-会员页面-月卡红包
 

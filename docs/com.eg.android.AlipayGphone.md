@@ -1,6 +1,6 @@
 # 支付宝
 
-存在 7 规则组 - [com.eg.android.AlipayGphone](/src/apps/com.eg.android.AlipayGphone.ts)
+存在 5 规则组 - [com.eg.android.AlipayGphone](/src/apps/com.eg.android.AlipayGphone.ts)
 
 ## 通知提示-关闭花呗弹窗
 
@@ -14,27 +14,11 @@
 - [快照-5](https://i.gkd.li/import/13631362)
 - [快照-6](https://i.gkd.li/import/13857535)
 
-## 定位提示-请求定位权限弹窗
+## 更新提示
 
 默认禁用
 
-- [快照-0](https://i.gkd.li/import/12792688)
-
-## 通知提示-请求通知弹窗
-
-默认禁用
-
-- [快照-0](https://i.gkd.li/import/13194955)
-- [快照-1](https://i.gkd.li/import/13669620)
-
-## 更新提示-版本更新弹窗
-
-默认禁用
-
-- [快照-0](https://i.gkd.li/import/13327095)
-- [快照-1](https://i.gkd.li/import/13490805)
-- [快照-2](https://i.gkd.li/import/13580594)
-- [快照-3](https://i.gkd.li/import/13490797)
+- [快照-0](https://i.gkd.li/import/13490797)
 
 ## 局部广告-设置支付宝小组件
 

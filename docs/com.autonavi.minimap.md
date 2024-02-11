@@ -1,13 +1,6 @@
 # 高德地图
 
-存在 5 规则组 - [com.autonavi.minimap](/src/apps/com.autonavi.minimap.ts)
-
-## 更新提示-更新弹窗
-
-默认禁用
-
-- [快照-0](https://i.gkd.li/import/13379094)
-- [快照-1](https://i.gkd.li/import/13379426)
+存在 4 规则组 - [com.autonavi.minimap](/src/apps/com.autonavi.minimap.ts)
 
 ## 功能类-截屏分享
 
