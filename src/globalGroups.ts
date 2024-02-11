@@ -344,7 +344,6 @@ const globalGroups: RawGlobalGroup[] = [
     name: '全屏广告',
     enable: false,
     order: utils.FULLSCREEN_AD,
-    actionMaximum: 2,
     matchTime: 10000,
     resetMatch: 'activity',
     rules: [
@@ -362,6 +361,21 @@ const globalGroups: RawGlobalGroup[] = [
         key: 2,
         name: '快手SDK-类型3',
         matches: `[text="广告"]  <<n ViewGroup +2 ViewGroup[childCount=3][checked=false] >n ImageView${COMMON_PREFIX}`,
+      },
+      {
+        key: 3,
+        name: '字节SDK-类型1',
+        matches: `[id$="tt_reward_full_count_down_after_close"]${COMMON_PREFIX}`,
+      },
+      {
+        key: 4,
+        name: '字节SDK-类型2',
+        matches: `[id$="ad_flag_source_layout"] + [id$="iv_close"]${COMMON_PREFIX}`,
+      },
+      {
+        key: 5,
+        name: '美数SDK-类型1',
+        matches: `[id$="ms_activity_sdk_interstitial_cacel"]${COMMON_PREFIX}`,
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
