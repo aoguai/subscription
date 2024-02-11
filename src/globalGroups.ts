@@ -83,6 +83,10 @@ const uniqueAppIdsPP = new Set([
   ...diabledAppIds,
   ...filterAppsByGroup(apps, '权限提示'),
 ]);
+const uniqueAppIdsFA = new Set([
+  ...diabledAppIds,
+  ...filterAppsByGroup(apps, '全屏广告'),
+]);
 
 const COMMON_PREFIX = '[childCount=0][visibleToUser=true]';
 
@@ -334,6 +338,34 @@ const globalGroups: RawGlobalGroup[] = [
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
     apps: [...uniqueAppIdsPP].map((id) => ({ id, enable: false })),
+  },
+  {
+    key: 6,
+    name: '全屏广告',
+    enable: false,
+    order: utils.FULLSCREEN_AD,
+    actionMaximum: 2,
+    matchTime: 10000,
+    resetMatch: 'activity',
+    rules: [
+      {
+        key: 0,
+        name: '快手SDK-类型1',
+        matches: `[text="广告"] <<n ViewGroup >n ViewGroup[childCount=1][clickable=true] > ImageView${COMMON_PREFIX}`,
+      },
+      {
+        key: 1,
+        name: '快手SDK-类型2',
+        matches: `[text="广告"] <<n ViewGroup >n ViewGroup[childCount=4][clickable=true] > [text="跳过"]${COMMON_PREFIX}`,
+      },
+      {
+        key: 2,
+        name: '快手SDK-类型3',
+        matches: `[text="广告"]  <<n ViewGroup +2 ViewGroup[childCount=3][checked=false] >n ImageView${COMMON_PREFIX}`,
+      },
+    ],
+    // 将 Set 转换为数组，并设置 enable 为 false
+    apps: [...uniqueAppIdsFA].map((id) => ({ id, enable: false })),
   },
 ];
 export default globalGroups;
