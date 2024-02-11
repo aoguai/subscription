@@ -3,30 +3,8 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.autonavi.minimap',
   name: '高德地图',
-  deprecatedKeys: [0],
+  deprecatedKeys: [0, 1],
   groups: [
-    {
-      key: 1,
-      name: '更新提示-更新弹窗',
-      actionMaximum: 1,
-      resetMatch: 'app',
-      quickFind: true,
-      rules: [
-        {
-          key: 1,
-          name: '更新弹窗-1',
-          matches:
-            '@[id="com.autonavi.minimap:id/iv_close"] + * > [text^="立即升级"]',
-          snapshotUrls: 'https://i.gkd.li/import/13379094',
-        },
-        {
-          key: 2,
-          name: '更新弹窗-2',
-          matches: '@[text="取消"] + * + [text="去下载"]',
-          snapshotUrls: 'https://i.gkd.li/import/13379426',
-        },
-      ],
-    },
     {
       enable: false,
       key: 4,

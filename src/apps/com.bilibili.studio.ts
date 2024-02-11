@@ -3,28 +3,8 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.bilibili.studio',
   name: '必剪',
+  deprecatedKeys: [0],
   groups: [
-    {
-      key: 0,
-      name: '权限提示-通知权限请求',
-      desc: '会出现在创作、模板、我的页面，自动点击不开启。',
-      enable: false,
-      quickFind: true,
-      activityIds: [
-        'com.bcut.homepage.widget.MainActivity',
-        'com.bcut.homepage.widget.SplashActivity',
-      ],
-      rules: [
-        {
-          matches: 'ImageView[id="com.bilibili.studio:id/iv_close"]',
-          snapshotUrls: 'https://i.gkd.li/import/12908880', // 模板页面
-        },
-        {
-          matches: 'ImageView[id="com.bilibili.studio:id/iv_push_tips_close"]',
-          snapshotUrls: 'https://i.gkd.li/import/12908886', // 我的页面
-        },
-      ],
-    },
     {
       key: 3,
       name: '更新提示-版本更新',

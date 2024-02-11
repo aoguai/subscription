@@ -3,7 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.unionpay',
   name: '云闪付',
-  deprecatedKeys: [1],
+  deprecatedKeys: [1, 10, 11, 12],
   groups: [
     {
       key: 2,
@@ -37,47 +37,6 @@ export default defineAppConfig({
           matches:
             '[id="com.unionpay:id/frog_float"] >2 [id="com.unionpay:id/close_view"][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/import/12695699',
-        },
-      ],
-    },
-    {
-      key: 10,
-      name: '权限提示-定位权限悬浮弹窗',
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      quickFind: true,
-      activityIds: 'com.unionpay.activity.UPActivityMain',
-      rules: '[id="com.unionpay:id/view_locate_close"]',
-      snapshotUrls: 'https://i.gkd.li/import/13634882',
-    },
-    {
-      key: 11,
-      name: '权限提示-访问位置请求弹窗',
-      enable: false,
-      desc: '自动点击【不允许】。默认关闭，请手动开启',
-      quickFind: true,
-      activityIds: ['com.unionpay.base.UPDialog'],
-      rules: [
-        {
-          matches:
-            '[text$="想访问您的位置信息"] < * +2 LinearLayout > [id="com.unionpay:id/btn_cancel"][visibleToUser=true]',
-          snapshotUrls: 'https://i.gkd.li/import/12695773',
-        },
-      ],
-    },
-    {
-      key: 12,
-      name: '通知提示-开启消息通知弹窗',
-      desc: '默认关闭，请手动开启',
-      enable: false,
-      quickFind: true,
-      activityIds: ['com.unionpay.base.UPDialog'],
-      rules: [
-        {
-          matches:
-            '[text="开启消息通知"] < * + [id="com.unionpay:id/view_alert_cancel"][visibleToUser=true]',
-          snapshotUrls: 'https://i.gkd.li/import/12695736',
         },
       ],
     },

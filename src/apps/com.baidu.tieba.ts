@@ -3,7 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.baidu.tieba',
   name: '百度贴吧',
-  deprecatedKeys: [4],
+  deprecatedKeys: [4, 7],
   groups: [
     {
       key: 0,
@@ -113,17 +113,6 @@ export default defineAppConfig({
           snapshotUrls: 'https://i.gkd.li/import/13060892',
         },
       ],
-    },
-    {
-      key: 7,
-      name: '更新提示-升级弹窗',
-      enable: false,
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      activityIds: 'com.baidu.tieba.UpdateDialog',
-      rules: '[text="稍后再说"]',
-      snapshotUrls: 'https://i.gkd.li/import/12496934',
     },
     {
       key: 8,

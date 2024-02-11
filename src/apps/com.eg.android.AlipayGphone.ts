@@ -3,6 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.eg.android.AlipayGphone',
   name: '支付宝',
+  deprecatedKeys: [1, 2],
   groups: [
     {
       key: 0,
@@ -39,44 +40,8 @@ export default defineAppConfig({
       ],
     },
     {
-      key: 1,
-      name: '定位提示-请求定位权限弹窗',
-      enable: false,
-      quickFind: true,
-      activityIds: 'com.eg.android.AlipayGphone.AlipayLogin',
-      rules:
-        '@[id="com.alipay.mobile.antui:id/closeButton"] - [id="com.alipay.mobile.antui:id/textAndButtonLayout"] [id="com.alipay.mobile.antui:id/tipTextView"][text^="开启定位权限"]',
-      snapshotUrls: 'https://i.gkd.li/import/12792688',
-    },
-    {
-      key: 2,
-      name: '通知提示-请求通知弹窗',
-      actionMaximum: 1,
-      resetMatch: 'app',
-      quickFind: true,
-      rules: [
-        {
-          key: 0,
-          name: '首页底部提示',
-          activityIds: 'com.eg.android.AlipayGphone.AlipayLogin',
-          matches:
-            '@[desc="关闭"] - * >n [id="com.alipay.mobile.antui:id/tipTextView"][text^="开启通知权限"]',
-          snapshotUrls: 'https://i.gkd.li/import/13194955',
-        },
-        {
-          key: 1,
-          name: '消息页弹窗提示',
-          activityIds:
-            'com.alipay.mobile.rome.pushservice.integration.PushOpenGuideActivity',
-          matches:
-            '[text="选择通知接收范围"] <2 RelativeLayout [text="暂时不用"]',
-          snapshotUrls: 'https://i.gkd.li/import/13669620',
-        },
-      ],
-    },
-    {
       key: 3,
-      name: '更新提示-版本更新弹窗',
+      name: '更新提示',
       enable: false,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -89,23 +54,6 @@ export default defineAppConfig({
       rules: [
         {
           key: 0,
-          name: '弹窗-【稍后再说】',
-          matches:
-            'TextView[id="com.alipay.mobile.accountauthbiz:id/update_cancel_tv"]',
-          snapshotUrls: 'https://i.gkd.li/import/13327095',
-        },
-        {
-          key: 1,
-          name: '弹窗-【x】',
-          matches:
-            '[text="版本更新"||text^="Version"] - [id="com.alipay.mobile.antui:id/btn_close"]',
-          snapshotUrls: [
-            'https://i.gkd.li/import/13490805',
-            'https://i.gkd.li/import/13580594',
-          ],
-        },
-        {
-          key: 2,
           name: '卡片-【x】',
           matches:
             '[text="立即升级最新版支付宝客户端"] < LinearLayout + [id="com.alipay.mobile.advertisement:id/announcementview_righticon"]',

@@ -3,21 +3,8 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.zmzx.college.search',
   name: '大学搜题酱',
-  deprecatedKeys: [4],
+  deprecatedKeys: [1, 4, 5, 6, 7],
   groups: [
-    {
-      enable: false,
-      key: 1,
-      name: '通知提示-首页-推送通知',
-      quickFind: true,
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      activityIds:
-        'com.zmzx.college.search.activity.main.activity.MainActivity',
-      rules: 'ImageView[id="com.zmzx.college.search:id/siv_dialog_close"]',
-      snapshotUrls: 'https://i.gkd.li/import/12867853',
-    },
     {
       key: 2,
       name: '全屏广告',
@@ -106,49 +93,6 @@ export default defineAppConfig({
           snapshotUrls: 'https://i.gkd.li/import/13063381',
         },
       ],
-    },
-    {
-      key: 5,
-      name: '更新提示-升级弹窗',
-      enable: false,
-      quickFind: true,
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      activityIds: [
-        'com.zmzx.college.search.activity.main.activity.MainActivity',
-        'com.zmzx.college.search.activity.init.InitActivity',
-      ],
-      rules: '[id="com.zmzx.college.search:id/update_close"]',
-      snapshotUrls: [
-        'https://i.gkd.li/import/13063373',
-        'https://i.gkd.li/import/13623469',
-      ],
-    },
-    {
-      key: 6,
-      name: '权限提示-申请开启推送通知弹窗',
-      enable: false,
-      quickFind: true,
-      matchTime: 10000,
-      actionMaximum: 1,
-      rules: [
-        {
-          matches:
-            '[text="开启推送通知"] - [id="com.zmzx.college.search:id/siv_dialog_close"]',
-          snapshotUrls: 'https://i.gkd.li/import/13440939',
-        },
-      ],
-    },
-    {
-      key: 7,
-      name: '评价提示-请求好评弹窗',
-      activityIds:
-        'com.zmzx.college.search.activity.camerasdk.ZybCameraSDKActivity',
-      quickFind: true,
-      rules:
-        '[id="com.zmzx.college.search:id/iv_logo"] + [id="com.zmzx.college.search:id/siv_close"]',
-      snapshotUrls: 'https://i.gkd.li/import/13476308',
     },
     {
       key: 8,
