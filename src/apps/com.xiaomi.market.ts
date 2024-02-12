@@ -3,7 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.xiaomi.market',
   name: '小米应用商店',
-  deprecatedKeys: [11],
+  deprecatedKeys: [11, 12],
   groups: [
     {
       key: 0,
@@ -56,17 +56,6 @@ export default defineAppConfig({
           snapshotUrls: 'https://i.gkd.li/import/12674269',
         },
       ],
-    },
-    {
-      key: 12,
-      name: '局部广告-个性化推荐弹窗',
-      quickFind: true,
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      activityIds: 'com.xiaomi.market.business_ui.main.MarketTabActivity',
-      rules: '[id="com.xiaomi.market:id/close_float_recommend"]',
-      snapshotUrls: 'https://i.gkd.li/import/13624971',
     },
   ],
 });

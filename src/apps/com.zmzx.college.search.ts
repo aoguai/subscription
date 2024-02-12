@@ -3,7 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.zmzx.college.search',
   name: '大学搜题酱',
-  deprecatedKeys: [1, 4, 5, 6, 7],
+  deprecatedKeys: [1, 3, 4, 5, 6, 7, 8, 9, 10],
   groups: [
     {
       key: 2,
@@ -70,60 +70,6 @@ export default defineAppConfig({
           snapshotUrls: 'https://i.gkd.li/import/12893408',
         },
       ],
-    },
-    {
-      key: 3,
-      name: '局部广告',
-      rules: [
-        {
-          key: 0,
-          quickFind: true,
-          activityIds:
-            'com.zmzx.college.search.activity.booksearch.result.activity.SearchScanCodeResultDxActivity',
-          matches: '[vid="close_m_image_left_text_right_app_compliance"]',
-          snapshotUrls: 'https://i.gkd.li/import/13849755',
-        },
-        {
-          key: 1,
-          quickFind: true,
-          activityIds:
-            'com.zmzx.college.search.activity.booksearch.result.activity.SearchScanCodeResultDxActivity',
-          matches:
-            '[id^="com.zmzx.college.search:id/ad_flag_source"] - * > [id="com.zmzx.college.search:id/close"]',
-          snapshotUrls: 'https://i.gkd.li/import/13063381',
-        },
-      ],
-    },
-    {
-      key: 8,
-      name: '局部广告-教材内弹窗广告1',
-      quickFind: true,
-      activityIds: [
-        'com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity',
-      ],
-      rules: '[id="com.byted.pangle.m:id/tt_reward_full_count_down_after"]',
-      snapshotUrls: ['https://i.gkd.li/import/13929945'],
-    },
-    {
-      key: 9,
-      name: '局部广告-教材内弹窗广告2',
-      quickFind: true,
-      activityIds: [
-        'com.zmzx.college.search.activity.booksearch.result.activity.AnswerBrowseActivity',
-      ],
-      rules: '[id="com.zmzx.college.search:id/iv_close"]',
-      snapshotUrls: ['https://i.gkd.li/import/13929981'],
-    },
-    {
-      key: 10,
-      name: '局部广告-教材内底部广告',
-      quickFind: true,
-      activityIds: [
-        'com.zmzx.college.search.activity.booksearch.result.activity.AnswerBrowseActivity',
-      ],
-      rules:
-        '[id="com.zmzx.college.search:id/close_m_image_left_text_right_app_compliance"]',
-      snapshotUrls: ['https://i.gkd.li/import/13929965'],
     },
   ],
 });

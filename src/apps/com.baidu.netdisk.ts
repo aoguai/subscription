@@ -3,7 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.baidu.netdisk',
   name: '百度网盘',
-  deprecatedKeys: [0, 3, 6, 8, 10, 11],
+  deprecatedKeys: [0, 2, 3, 4, 6, 8, 10, 11],
   groups: [
     {
       key: 1,
@@ -21,35 +21,6 @@ export default defineAppConfig({
         'https://i.gkd.li/import/13806852', // 幸运券包弹窗
         'https://i.gkd.li/import/12783106', // 看视频免费享极速下载弹窗
       ],
-    },
-    {
-      key: 2,
-      name: '局部广告-首页广告',
-      desc: '关闭首页各种广告信息',
-      activityIds: 'com.baidu.netdisk.ui.MainActivity',
-      quickFind: true,
-      rules: [
-        {
-          key: 1,
-          name: 'banner广告',
-          matches: '[id="com.baidu.netdisk:id/banner_item_close"]',
-          snapshotUrls: 'https://i.gkd.li/import/12706544',
-        },
-        {
-          key: 2,
-          name: '热门广告',
-          matches: '[id="com.baidu.netdisk:id/close"]',
-          snapshotUrls: ['https://i.gkd.li/import/12706544'],
-        },
-      ],
-    },
-    {
-      key: 4,
-      name: '局部广告-我的页面-限时福利',
-      activityIds: 'com.baidu.netdisk.ui.MainActivity',
-      quickFind: true,
-      rules: '@TextView + [text="专属福利"]',
-      snapshotUrls: 'https://i.gkd.li/import/12706549',
     },
     {
       key: 5,
