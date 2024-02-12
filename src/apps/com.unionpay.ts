@@ -3,7 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.unionpay',
   name: '云闪付',
-  deprecatedKeys: [1, 10, 11, 12],
+  deprecatedKeys: [1, 9, 10, 11, 12],
   groups: [
     {
       key: 2,
@@ -22,21 +22,6 @@ export default defineAppConfig({
           key: 1,
           matches: '[text="关闭广告"]',
           snapshotUrls: 'https://i.gkd.li/import/13070974',
-        },
-      ],
-    },
-    {
-      key: 9,
-      name: '局部广告-右侧悬浮广告',
-      actionMaximum: 1,
-      resetMatch: 'app',
-      quickFind: true,
-      activityIds: ['com.unionpay.activity.UPActivityMain'],
-      rules: [
-        {
-          matches:
-            '[id="com.unionpay:id/frog_float"] >2 [id="com.unionpay:id/close_view"][visibleToUser=true]',
-          snapshotUrls: 'https://i.gkd.li/import/12695699',
         },
       ],
     },

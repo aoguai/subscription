@@ -3,7 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.xyhui',
   name: 'PU口袋校园',
-  deprecatedKeys: [3, 4],
+  deprecatedKeys: [2, 3, 4],
   groups: [
     {
       key: 1,
@@ -95,20 +95,6 @@ export default defineAppConfig({
           matches: ['[id="com.xyhui:id/ms_activity_sdk_interstitial_cacel"]'],
           snapshotUrls: 'https://i.gkd.li/import/13458692',
         },
-      ],
-    },
-    {
-      key: 2,
-      name: '局部广告-首页-右侧浮窗广告',
-      quickFind: true,
-      activityIds: [
-        'com.xyhui.start.PUMainActivity',
-        'com.xyhui.start.LoadingActivity',
-      ],
-      rules: 'ImageView[id="com.xyhui:id/deleteIv"]',
-      snapshotUrls: [
-        'https://i.gkd.li/import/12846543',
-        'https://i.gkd.li/import/12868119',
       ],
     },
   ],

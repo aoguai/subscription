@@ -89,7 +89,7 @@ export default defineAppConfig({
     },
     {
       key: 5,
-      name: '局部广告-文档末尾广告',
+      name: '分段广告-文档末尾广告',
       activityIds: [
         'cn.wps.moffice.writer.multiactivity.Writer', //Writer1,Writer2...
       ],

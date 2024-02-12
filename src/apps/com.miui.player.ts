@@ -3,35 +3,8 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.miui.player',
   name: '小米音乐',
-  deprecatedKeys: [4, 5, 10],
+  deprecatedKeys: [1, 2, 4, 5, 10],
   groups: [
-    {
-      key: 1,
-      name: '局部广告-浮窗广告',
-      desc: '关闭右侧飘窗广告, 包括首页和播放页面',
-      quickFind: true,
-      activityIds:
-        'com.tencent.qqmusiclite.activity.player.MusicPlayerActivity',
-      rules:
-        '[id$="free_mode_tips_layout"||id$="iv_main_floating_promote"] + [id$="iv_close"]',
-      snapshotUrls: [
-        'https://i.gkd.li/import/13303283',
-        'https://i.gkd.li/import/13562649',
-      ],
-    },
-    {
-      key: 2,
-      name: '局部广告-横幅广告',
-      desc: '关闭播放页面横幅广告',
-      quickFind: true,
-      activityIds:
-        'com.tencent.qqmusiclite.activity.player.MusicPlayerActivity',
-      rules: '[id="com.miui.player:id/ad_skip_text"][text="关闭"]',
-      snapshotUrls: [
-        'https://i.gkd.li/import/13304347', // 倒计时
-        'https://i.gkd.li/import/13304344', // 可关闭
-      ],
-    },
     {
       key: 3,
       name: '全屏广告-弹窗广告',

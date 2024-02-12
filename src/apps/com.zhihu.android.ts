@@ -136,17 +136,6 @@ export default defineAppConfig({
           snapshotUrls: 'https://i.gkd.li/import/12864109',
         },
         {
-          key: 2,
-          activityIds: [
-            'com.zhihu.android.mix.activity.ContentMixProfileActivity',
-          ],
-          matches: 'TextView[text="查看详情"] + TextView[text="×"]',
-          snapshotUrls: [
-            'https://i.gkd.li/import/12647617',
-            'https://i.gkd.li/import/12647659', // 点击x按钮后的快照，界面无任何变化，导致反复触发这条规则
-          ],
-        },
-        {
           key: 3,
           matches: 'TextView[text*=`赞同`][text*=`评论`] + TextView[text=`×`]',
         },
@@ -154,22 +143,10 @@ export default defineAppConfig({
           key: 4,
           matches: 'TextView[text*=`回答`][text*=`关注`] + TextView[text=`×`]',
         },
-        // 存在误触，缺乏快照处置，暂时移除
-        // 误触快照：https://i.gkd.li/import/13196039
-        // {
-        //   key: 5,
-        //   matches:
-        //     'TextView[text!=null] + TextView[text*=`赞同`] + View > Image',
-        // },
         {
           key: 6,
           matches: 'TextView[text$=`的广告`] - Image[id=null]',
         },
-        // {
-        //   key: 7,
-        //   matches: 'TextView[text*=`广告`] +2 Image[id=null]', // 1687338556331
-        //   误触 https://i.gkd.li/import/13332447, 原规则没有快照无法debug, 先关闭
-        // },
         {
           key: 8,
           matches: 'TextView[text*=`点赞`][text*=`的回答`] +2 Image[id=null]', // 1687076663768 1686969672948

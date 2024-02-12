@@ -3,7 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'tv.danmaku.bili',
   name: '哔哩哔哩',
-  deprecatedKeys: [1, 3, 5, 6, 9],
+  deprecatedKeys: [0, 1, 3, 5, 6, 9, 11],
   groups: [
     {
       key: -1,
@@ -17,23 +17,8 @@ export default defineAppConfig({
       snapshotUrls: 'https://i.gkd.li/import/12705270',
     },
     {
-      key: 0,
-      name: '局部广告-评论区顶部公告横幅',
-      quickFind: true,
-      excludeActivityIds: [
-        'com.bilibili.bililive.room.ui.roomv3.LiveRoomActivityV3', // 直播间
-        'tv.danmaku.bili.MainActivityV2', // 主页
-      ],
-      rules:
-        'LinearLayout[id=`tv.danmaku.bili:id/ad_tint_frame`] > ImageView[id="tv.danmaku.bili:id/close"][desc=`关闭`]',
-      snapshotUrls: [
-        'https://i.gkd.li/import/12785461',
-        'https://i.gkd.li/import/12775156',
-      ],
-    },
-    {
       key: 2,
-      name: '局部广告-动态推荐广告卡片',
+      name: '分段广告-动态推荐广告卡片',
       desc: '点击卡片右上角[广告]按钮-点击不感兴趣',
       quickFind: true,
       matchDelay: 5000,
@@ -146,18 +131,6 @@ export default defineAppConfig({
           ],
         },
       ],
-    },
-    {
-      key: 11,
-      name: '局部广告-个性化内容推荐弹窗',
-      quickFind: true,
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      activityIds: 'tv.danmaku.bili.MainActivityV2',
-      rules:
-        '[text="开启个性化内容推荐"] +3 [id="tv.danmaku.bili:id/close_button"]',
-      snapshotUrls: 'https://i.gkd.li/import/13448905',
     },
   ],
 });

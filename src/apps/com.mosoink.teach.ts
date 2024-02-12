@@ -29,12 +29,6 @@ export default defineAppConfig({
             'https://m.gkd.li/64072399/69bb91ee-5367-4819-94d7-90e357dd9d3c',
           snapshotUrls: 'https://i.gkd.li/import/13784406', //极少触发
         },
-        {
-          matches: '[id$="/iv_close"]',
-          exampleUrls:
-            'https://m.gkd.li/64072399/695871fb-9c73-4c93-a6d1-18d90786604a',
-          snapshotUrls: 'https://i.gkd.li/import/13778123',
-        },
       ],
     },
   ],

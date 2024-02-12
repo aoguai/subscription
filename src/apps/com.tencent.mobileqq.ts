@@ -411,7 +411,7 @@ export default defineAppConfig({
     },
     {
       key: 20,
-      name: '局部广告-钱包-卡片广告',
+      name: '分段广告-钱包-卡片广告',
       quickFind: true,
       activityIds: 'com.tencent.mobileqq.activity.SplashActivity',
       rules: [

@@ -214,7 +214,7 @@ const globalGroups: RawGlobalGroup[] = [
     rules: [
       {
         key: 0,
-        matches: `[(((id*="/ad"||id*="/AD"||id$="ad"||id$="Ad"||id$="AD")&&id*="_")||id$="/adIv"||id$="_ad_"||id$="_Ad_"||id$="_AD_")&&(id!*="download"&&id!*="Download"&&id!*="DOWNLOAD")] <<n * <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+        matches: `[(((id*="/ad"||id*="/AD"||id$="ad"||id$="Ad"||id$="AD")&&id*="_")||id$="/adIv"||id$="_ad_"||id$="_Ad_"||id$="_AD_")&&(id!*="download"&&id!*="Download"&&id!*="DOWNLOAD")&&(id!*="read"&&id!*="Read"&&id!*="READ")] <<n * <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
       },
       {
         key: 1,
