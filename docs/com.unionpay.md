@@ -1,6 +1,6 @@
 # 云闪付
 
-存在 5 规则组 - [com.unionpay](/src/apps/com.unionpay.ts)
+存在 4 规则组 - [com.unionpay](/src/apps/com.unionpay.ts)
 
 ## 分段广告-支付完成界面广告卡片
 
@@ -8,12 +8,6 @@
 
 - [快照-0](https://i.gkd.li/import/13070564)
 - [快照-1](https://i.gkd.li/import/13070974)
-
-## 局部广告-右侧悬浮广告
-
-默认禁用
-
-- [快照-0](https://i.gkd.li/import/12695699)
 
 ## 全屏广告-天天签到-获得新勋章提示
 

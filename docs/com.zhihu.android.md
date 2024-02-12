@@ -40,10 +40,8 @@
 默认禁用
 
 - [快照-0](https://i.gkd.li/import/12864109)
-- [快照-1](https://i.gkd.li/import/12647617)
-- [快照-2](https://i.gkd.li/import/12647659)
-- [快照-3](https://i.gkd.li/import/12647525)
-- [快照-4](https://i.gkd.li/import/12647541)
+- [快照-1](https://i.gkd.li/import/12647525)
+- [快照-2](https://i.gkd.li/import/12647541)
 
 ## 局部广告-关闭首页广告
 

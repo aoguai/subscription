@@ -11,8 +11,7 @@
 ## 使用
 
 添加以下任意链接至 [GKD](https://github.com/gkd-kit/gkd) 内即可使用此规则
-
-| GitHub 源（推荐）                                                                             | npmmirror 源                                                            | gitmirror 源                                                                      | cloudflare 源                  | jsDelivr 源                                                                         |
+| GitHub 源（推荐） | npmmirror 源 | gitmirror 源 | cloudflare 源 | jsDelivr 源 |
 | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | -------------------------------------------------------------------------------- | ----------------------------- | ---------------------------------------------------------------------------------- |
 | [复制](https://raw.githubusercontent.com/aoguai/subscription/custom/dist/aoguai_gkd.json5) | [复制](https://registry.npmmirror.com/@aoguai/subscription/latest/files) | [复制](https://raw.gitmirror.com/aoguai/subscription/custom/dist/aoguai_gkd.json5) | [复制](https://gkd.aoguai.top/) | [复制](https://cdn.jsdelivr.net/gh/aoguai/subscription@custom/dist/aoguai_gkd.json5) |
 
@@ -26,9 +25,9 @@
 
 ## 说明
 
-当前版本: v6
+当前版本: v7
 
-当前订阅文件仅适配 52 个 APP, 仅有 191 规则组
+当前订阅文件仅适配 49 个 APP, 仅有 173 规则组
 
 **查看详细 [适配 APP 列表](./AppList.md)**
 

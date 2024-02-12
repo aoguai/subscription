@@ -7,19 +7,18 @@
 | QQ                     | [com.tencent.mobileqq](/docs/com.tencent.mobileqq.md)                           | 21     |
 | Telegram               | [org.telegram.messenger.web](/docs/org.telegram.messenger.web.md)               | 1      |
 | WPS                    | [cn.wps.moffice_eng](/docs/cn.wps.moffice_eng.md)                               | 6      |
-| Zepp Life              | [com.xiaomi.hm.health](/docs/com.xiaomi.hm.health.md)                           | 1      |
 | youtube                | [com.google.android.youtube](/docs/com.google.android.youtube.md)               | 4      |
 | Android 系统文件选择器 | [com.google.android.documentsui](/docs/com.google.android.documentsui.md)       | 1      |
-| PU口袋校园             | [com.xyhui](/docs/com.xyhui.md)                                                 | 2      |
+| PU口袋校园             | [com.xyhui](/docs/com.xyhui.md)                                                 | 1      |
 | QQ邮箱                 | [com.tencent.androidqqmail](/docs/com.tencent.androidqqmail.md)                 | 2      |
 | X(推特)                | [com.twitter.android](/docs/com.twitter.android.md)                             | 4      |
 | 阿里云盘               | [com.alicloud.databox](/docs/com.alicloud.databox.md)                           | 5      |
 | 百度贴吧               | [com.baidu.tieba](/docs/com.baidu.tieba.md)                                     | 9      |
-| 百度网盘               | [com.baidu.netdisk](/docs/com.baidu.netdisk.md)                                 | 5      |
+| 百度网盘               | [com.baidu.netdisk](/docs/com.baidu.netdisk.md)                                 | 3      |
 | 必剪                   | [com.bilibili.studio](/docs/com.bilibili.studio.md)                             | 1      |
-| 哔哩哔哩               | [tv.danmaku.bili](/docs/tv.danmaku.bili.md)                                     | 8      |
+| 哔哩哔哩               | [tv.danmaku.bili](/docs/tv.danmaku.bili.md)                                     | 6      |
 | 菜鸟                   | [com.cainiao.wireless](/docs/com.cainiao.wireless.md)                           | 4      |
-| 大学搜题酱             | [com.zmzx.college.search](/docs/com.zmzx.college.search.md)                     | 5      |
+| 大学搜题酱             | [com.zmzx.college.search](/docs/com.zmzx.college.search.md)                     | 1      |
 | 高德地图               | [com.autonavi.minimap](/docs/com.autonavi.minimap.md)                           | 4      |
 | 海南航空               | [com.rytong.hnair](/docs/com.rytong.hnair.md)                                   | 1      |
 | 航旅纵横               | [com.umetrip.android.msky.app](/docs/com.umetrip.android.msky.app.md)           | 3      |
@@ -28,12 +27,10 @@
 | 酷安                   | [com.coolapk.market](/docs/com.coolapk.market.md)                               | 2      |
 | 蓝岛                   | [com.loyea.adnmb](/docs/com.loyea.adnmb.md)                                     | 1      |
 | miui系统广告           | [com.miui.systemAdSolution](/docs/com.miui.systemAdSolution.md)                 | 1      |
-| miui主题壁纸           | [com.android.thememanager](/docs/com.android.thememanager.md)                   | 2      |
+| miui主题壁纸           | [com.android.thememanager](/docs/com.android.thememanager.md)                   | 1      |
 | 暮瑟                   | [com.maxhom.weibu](/docs/com.maxhom.weibu.md)                                   | 2      |
-| 南方航空               | [com.csair.mbp](/docs/com.csair.mbp.md)                                         | 1      |
 | 浦发银行               | [cn.com.spdb.mobilebank.per](/docs/cn.com.spdb.mobilebank.per.md)               | 1      |
 | 权限管理服务           | [com.lbe.security.miui](/docs/com.lbe.security.miui.md)                         | 1      |
-| 搜索                   | [com.android.quicksearchbox](/docs/com.android.quicksearchbox.md)               | 1      |
 | 淘宝                   | [com.taobao.taobao](/docs/com.taobao.taobao.md)                                 | 11     |
 | 万能遥控               | [com.duokan.phone.remotecontroller](/docs/com.duokan.phone.remotecontroller.md) | 1      |
 | 微博轻享版             | [com.weico.international](/docs/com.weico.international.md)                     | 1      |
@@ -41,15 +38,15 @@
 | 闲鱼                   | [com.taobao.idlefish](/docs/com.taobao.idlefish.md)                             | 1      |
 | 小黑盒                 | [com.max.xiaoheihe](/docs/com.max.xiaoheihe.md)                                 | 1      |
 | 小米手机管家           | [com.miui.securitycenter](/docs/com.miui.securitycenter.md)                     | 3      |
-| 小米应用商店           | [com.xiaomi.market](/docs/com.xiaomi.market.md)                                 | 4      |
-| 小米音乐               | [com.miui.player](/docs/com.miui.player.md)                                     | 5      |
+| 小米应用商店           | [com.xiaomi.market](/docs/com.xiaomi.market.md)                                 | 3      |
+| 小米音乐               | [com.miui.player](/docs/com.miui.player.md)                                     | 3      |
 | 小米云服务             | [com.miui.cloudservice](/docs/com.miui.cloudservice.md)                         | 1      |
 | 系统服务组件           | [com.miui.securityadd](/docs/com.miui.securityadd.md)                           | 1      |
 | 学小易                 | [com.xuexiaoyi.xxy](/docs/com.xuexiaoyi.xxy.md)                                 | 1      |
 | 应用包管理组件         | [com.miui.packageinstaller](/docs/com.miui.packageinstaller.md)                 | 3      |
-| 邮储银行               | [com.yitong.mbank.psbc](/docs/com.yitong.mbank.psbc.md)                         | 2      |
+| 邮储银行               | [com.yitong.mbank.psbc](/docs/com.yitong.mbank.psbc.md)                         | 1      |
 | 云班课                 | [com.mosoink.teach](/docs/com.mosoink.teach.md)                                 | 1      |
-| 云闪付                 | [com.unionpay](/docs/com.unionpay.md)                                           | 5      |
+| 云闪付                 | [com.unionpay](/docs/com.unionpay.md)                                           | 4      |
 | 支付宝                 | [com.eg.android.AlipayGphone](/docs/com.eg.android.AlipayGphone.md)             | 5      |
 | 知乎                   | [com.zhihu.android](/docs/com.zhihu.android.md)                                 | 12     |
 | 智联招聘               | [com.zhaopin.social](/docs/com.zhaopin.social.md)                               | 2      |

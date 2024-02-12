@@ -1,6 +1,6 @@
 # 哔哩哔哩
 
-存在 8 规则组 - [tv.danmaku.bili](/src/apps/tv.danmaku.bili.ts)
+存在 6 规则组 - [tv.danmaku.bili](/src/apps/tv.danmaku.bili.ts)
 
 ## 开屏广告
 
@@ -8,14 +8,7 @@
 
 - [快照-0](https://i.gkd.li/import/12705270)
 
-## 局部广告-评论区顶部公告横幅
-
-默认禁用
-
-- [快照-0](https://i.gkd.li/import/12785461)
-- [快照-1](https://i.gkd.li/import/12775156)
-
-## 局部广告-动态推荐广告卡片
+## 分段广告-动态推荐广告卡片
 
 默认禁用 - 点击卡片右上角[广告]按钮-点击不感兴趣
 
@@ -57,9 +50,3 @@
 - [快照-1](https://i.gkd.li/import/13256605)
 - [快照-2](https://i.gkd.li/import/13625309)
 - [快照-3](https://i.gkd.li/import/13742257)
-
-## 局部广告-个性化内容推荐弹窗
-
-默认禁用
-
-- [快照-0](https://i.gkd.li/import/13448905)

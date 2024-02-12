@@ -1,6 +1,6 @@
 # 百度网盘
 
-存在 5 规则组 - [com.baidu.netdisk](/src/apps/com.baidu.netdisk.ts)
+存在 3 规则组 - [com.baidu.netdisk](/src/apps/com.baidu.netdisk.ts)
 
 ## 局部广告-活动弹窗
 
@@ -10,19 +10,6 @@
 - [快照-1](https://i.gkd.li/import/12923937)
 - [快照-2](https://i.gkd.li/import/13806852)
 - [快照-3](https://i.gkd.li/import/12783106)
-
-## 局部广告-首页广告
-
-默认禁用 - 关闭首页各种广告信息
-
-- [快照-0](https://i.gkd.li/import/12706544)
-- [快照-1](https://i.gkd.li/import/12706544)
-
-## 局部广告-我的页面-限时福利
-
-默认禁用
-
-- [快照-0](https://i.gkd.li/import/12706549)
 
 ## 局部广告-相册页面-激活无限空间弹窗
 
