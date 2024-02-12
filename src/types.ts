@@ -1,4 +1,21 @@
+/**
+ * 一个或者多个值类型
+ * @example
+ * const n1: IArray<number> = 1; // ✅
+ * const n2: IArray<number> = [1]; // ✅
+ * const s1: IArray<string> = 'hello'; // ✅
+ * const a2: IArray<string> = ['hello']; // ✅
+ */
 export type IArray<T> = T | T[];
+
+/**
+ * 此类型表示一个整数
+ *
+ * @example
+ * 114514 // ✅
+ * 2.5 // ❌
+ */
+export type Integer = number;
 
 type RawCommonProps = {
   /**
@@ -8,7 +25,7 @@ type RawCommonProps = {
    *
    * @default 1000
    */
-  actionCd?: number;
+  actionCd?: Integer;
 
   /**
    * 单位: 毫秒
@@ -16,10 +33,9 @@ type RawCommonProps = {
    * 延迟执行: 查询到节点->等待一段时间->再次查询到节点则执行对应 action
    *
    */
-  actionDelay?: number;
+  actionDelay?: Integer;
 
   /**
-   *
    * 如果开启, 此规则下的所有 `末尾属性选择器`的`第一个属性选择表达式`符合下面的结构之一的选择器 将使用快速查找
    *
    * - [id='abc']
@@ -35,18 +51,13 @@ type RawCommonProps = {
    *
    * 大多数情况下都能查询到, 在少数某些复杂结构下, 即使目标节点存在, 快速查询也不一定查询到
    *
-   * 比如 [Image < &#64;View + View >2 [text*='广告']](https://github.com/gkd-kit/subscription/blob/1ae87452d287b558f58f9c4e4448a3190e212ca1/src/apps/com.zidongdianji.ts#L26) 虽然符合快速查询的条件但是使用 `findAccessibilityNodeInfosByText("广告")` 并不能查询到节点
+   * 比如 [Image &lt; \@View + View &gt;2 [text*='广告']](https://github.com/gkd-kit/subscription/blob/1ae87452d287b558f58f9c4e4448a3190e212ca1/src/apps/com.zidongdianji.ts#L26) 虽然符合快速查询的条件但是使用 `findAccessibilityNodeInfosByText("广告")` 并不能查询到节点
    *
    * 它是优点是快速, 因为遍历所有节点是一个耗时行为, 虽然多数情况下这种耗时较低
    *
    * 但是在某些软件比如 哔哩哔哩 的开屏广告在这种耗时下延迟可达 1-2s, 这也是导致 [gkd-kit/gkd#60](https://github.com/gkd-kit/gkd/issues/60) 的原因
    *
-   * ---
-   *
-   * v1.4.1 版本后生成的快照时将标识每个节点是否可 quickFind, 网页审查工具属性面板顶部会注明这个标识
-   *
-   * [![image](https://github.com/gkd-kit/subscription/assets/38517192/80cdbad1-fa8d-4415-81a1-cecaa7d69e33)](https://i.gkd.li/import/13316168)
-   *
+   * 如果你想对某个局部选择器关闭快速查找,只需要调整你的选择器的属性选择表达式的顺序使得它不符合快速查找的条件即可
    */
   quickFind?: boolean;
 
@@ -58,7 +69,7 @@ type RawCommonProps = {
    * 规则准备匹配/或被唤醒时, 等待一段时间, 使此规则参与查询屏幕节点
    *
    */
-  matchDelay?: number;
+  matchDelay?: Integer;
 
   /**
    * 单位: 毫秒
@@ -68,7 +79,7 @@ type RawCommonProps = {
    * 例如某些应用的 开屏广告 的 activityId 容易误触/太广泛, 而开屏广告几乎只在应用切出来时出现, 设置一个有限匹配时间能避免后续的误触
    *
    */
-  matchTime?: number;
+  matchTime?: Integer;
 
   /**
    * 最大执行次数
@@ -80,7 +91,7 @@ type RawCommonProps = {
    * 当规则准备匹配/或被唤醒时, 将重新计算次数
    *
    */
-  actionMaximum?: number;
+  actionMaximum?: Integer;
 
   /**
    * 当规则因为 matchTime/actionMaximum 而休眠时, 如何唤醒此规则
@@ -106,7 +117,7 @@ type RawCommonProps = {
    *
    * 如果你对这个 key 的 rule 设置 actionCd=3000, 那么当这个 rule 和 本 rule 触发任意一个时, 在 3000毫秒 内两个 rule 都将进入 cd
    */
-  actionCdKey?: number;
+  actionCdKey?: Integer;
 
   /**
    * 与这个 key 的 rule 共享次数
@@ -115,7 +126,7 @@ type RawCommonProps = {
    *
    * 如果你对这个 key 的 rule 设置 actionMaximum=1, 那么当这个 rule 和 本 rule 触发任意一个时, 两个 rule 都将进入休眠
    */
-  actionMaximumKey?: number;
+  actionMaximumKey?: Integer;
 
   /**
    * 规则参与匹配的顺序, 数字越小越先匹配
@@ -127,7 +138,7 @@ type RawCommonProps = {
    * @default 0
    *
    */
-  order?: number;
+  order?: Integer;
 
   /**
    * 当前 规则/规则组 的快照链接, 增强订阅可维护性
@@ -150,8 +161,11 @@ type RawRuleProps = RawCommonProps & {
    *
    * 设置后不可更改, 否则造成点击记录错乱
    */
-  key?: number;
+  key?: Integer;
 
+  /**
+   * 规则名称
+   */
   name?: string;
 
   /**
@@ -164,7 +178,7 @@ type RawRuleProps = RawCommonProps & {
    * 否则后面的规则不会触发, 也就是要求规则按顺序执行, 这是为了防止规则匹配范围太过广泛而误触
    *
    */
-  preKeys?: IArray<number>;
+  preKeys?: IArray<Integer>;
 
   /**
    * @example
@@ -175,8 +189,8 @@ type RawRuleProps = RawCommonProps & {
    * @example
    * `clickNode`
    * // 向系统发起一个点击无障碍节点事件. 即使节点在屏幕外部/或者被其它节点遮挡,也依然能够正确触发点击目标节点
-   * // 但是如果目标节点不是 clickable 的, 目标 APP 通常不响应这个点击事件, 也就是点击无效果
-   * // 在极少数情况下, 即使节点是 clickable 的, APP 显示接收但是不响应节点点击事件, 此时需要手动设置 `clickCenter`
+   * // 但是如果目标节点不是 clickable 的, 目标应用通常不响应这个点击事件, 也就是点击无效果
+   * // 在极少数情况下, 即使节点是 clickable 的,应用显示接收但是不响应节点点击事件, 此时需要手动设置 `clickCenter`
    *
    * @example
    * `clickCenter`
@@ -231,15 +245,22 @@ type RawGroupProps = RawCommonProps & {
    *
    * key 没有顺序大小之分, 可以是任意数字
    */
-  key: number;
+  key: Integer;
 
+  /**
+   * 规则组名称
+   */
   name: string;
+
+  /**
+   * 规则组描述
+   */
   desc?: string;
 
   /**
-   * 控制规则默认情况下是启用还是禁用, 默认启用
+   * 控制规则默认情况下是启用还是禁用
    *
-   * 仅对于本仓库的规则而言, 除开屏广告外, 其它规则默认禁用
+   * @default true
    */
   enable?: boolean;
 
@@ -252,10 +273,10 @@ type RawGroupProps = RawCommonProps & {
    *
    * 如果存在相同 key 的 rule, 优先使用本组的 rule, 其次按 scopeKeys 的顺序查找其它组的 rule
    *
+   * @version 1.7.0
+   *
    */
-  scopeKeys?: IArray<number>;
-
-  // rules: RawRuleProps[];
+  scopeKeys?: IArray<Integer>;
 };
 
 type RawAppRuleProps = {
@@ -272,46 +293,79 @@ type RawAppRuleProps = {
    * 优先级高于 activityIds
    */
   excludeActivityIds?: IArray<string>;
+
+  /**
+   * 如果应用版本名称包含在此列表中, 则匹配
+   *
+   * @version 1.7.0
+   */
+  versionNames?: IArray<string>;
+
+  /**
+   * 如果应用版本名称包含在此列表中, 则排除匹配, 优先级高于 versionNames
+   *
+   * @version 1.7.0
+   */
+  excludeVersionNames?: IArray<string>;
+
+  /**
+   * 如果应用版本代码包含在此列表中, 则匹配
+   *
+   * @version 1.7.0
+   */
+  versionCodes?: IArray<Integer>;
+
+  /**
+   * 如果应用版本代码包含在此列表中, 则排除匹配, 优先级高于 versionCodes
+   *
+   * @version 1.7.0
+   */
+  excludeVersionCodes?: IArray<Integer>;
 };
 
 // <--全局规则相关--
 type RawGlobalApp = RawAppRuleProps & {
-  id: string;
   /**
-   * 默认值: `true`
+   * 目标应用的包名
+   */
+  id: string;
+
+  /**
+   * 在此应用启用/禁用此规则
    *
-   * true => 在此 APP 启用此规则
-   *
-   * false => 在此 APP 禁用此规则
+   * @default true
    */
   enable?: boolean;
 };
 type RawGlobalRuleProps = {
   /**
-   * 默认值: `true`
+   * true => 匹配任意应用
    *
-   * true => 匹配任意 APP
+   * false => 仅匹配 apps 里面的应用
    *
-   * false => 仅匹配 apps 里面的 app
+   * @default true
    */
   matchAnyApp?: boolean;
 
   /**
-   * 默认值: `false`
-   *
    * 是否匹配桌面, 仅全局规则可用
    *
    * 如果你切换了桌面, 你需要打开 GKD 的界面触发识别新桌面
+   *
+   * @default false
    */
   matchLauncher?: boolean;
 
   /**
-   * 默认值: `false`
-   *
    * 是否匹配系统应用, 仅全局规则可用
+   *
+   * @default false
    */
   matchSystemApp?: boolean;
 
+  /**
+   * 应用配置列表, 配置应用内界面如何匹配或不匹配
+   */
   apps?: RawGlobalApp[];
 };
 
@@ -331,14 +385,14 @@ export type RawCategory = {
    *
    * 也是客户端禁用/启用此分类组的依据
    */
-  key: number;
+  key: Integer;
 
   /**
    * 分类名称
    *
-   * 同时也是分类的依据, 捕获以 name 开头的所有 APP 规则组, 不捕获全局规则组
+   * 同时也是分类的依据, 捕获以 name 开头的所有应用规则组, 不捕获全局规则组
    *
-   * 示例: `开屏广告` 将捕获 `开屏广告-1` `开屏广告-2` `开屏广告-233` 这类 APP 规则组
+   * 示例: `开屏广告` 将捕获 `开屏广告-1` `开屏广告-2` `开屏广告-233` 这类应用规则组
    */
   name: string;
 
@@ -364,13 +418,19 @@ export type RawAppGroup = RawGroupProps &
   };
 
 export type RawApp = {
+  /**
+   * 应用包名
+   */
   id: string;
 
   /**
-   * 如果设备没有安装这个 APP, 则使用这个 name 显示
+   * 如果设备没有安装这个应用, 则使用这个名称显示
    */
   name?: string;
 
+  /**
+   * 此应用的规则组列表
+   */
   groups: RawAppGroup[];
 
   /**
@@ -382,15 +442,13 @@ export type RawApp = {
 
 export type RawSubscription = {
   /**
-   * 当前订阅文件的标识, 如果新旧订阅文件id不一致则更新失败\
-   * 范围: `[0, Number.MAX_SAFE_INTEGER]`\
-   * 建议值: `new Date().getTime()`
    *
-   * GKD默认订阅是 0, 负数 id APP 自己内部使用, APP 不允许用户添加负数 id 的订阅
+   * 当前订阅文件的标识, 如果新旧订阅文件id不一致则更新失败
    *
-   * 负数订阅由 APP 内部使用, 如本地订阅是 -2, 内存订阅是 -1
+   * 负数 id 被 GKD 内部使用, 用户无法添加负数 id 的订阅
+   *
    */
-  id: number;
+  id: Integer;
 
   /**
    * 订阅的名称
@@ -402,12 +460,15 @@ export type RawSubscription = {
    *
    * 只有当新订阅的 version 大于本地旧订阅的 version 才执行更新替换本地
    */
-  version: number;
+  version: Integer;
 
+  /**
+   * 作者名称
+   */
   author?: string;
 
   /**
-   * GKD 会定时或者用户手动刷新请求这个链接, 如果返回的订阅的 version 大于 APP 订阅当前的 version , 则更新
+   * GKD 会定时或者用户手动刷新请求这个链接, 如果返回的订阅的 version 大于应用订阅当前的 version , 则更新
    *
    * 如果这个字段不存在, 则使用添加订阅时填写的链接
    */
@@ -416,7 +477,7 @@ export type RawSubscription = {
   /**
    * 一个自定义 uri 链接, 用户点击[用户反馈]时, 打开此链接
    *
-   * 可以是一个网页链接, 也可以是一个 APP 内部的 uri 链接
+   * 可以是一个网页链接, 也可以是一个应用内部的 uri 链接
    */
   supportUri?: string;
 
@@ -427,9 +488,20 @@ export type RawSubscription = {
    */
   checkUpdateUrl?: string;
 
-  globalGroups?: RawGlobalGroup[];
-  categories?: RawCategory[];
+  /**
+   * 此订阅的应用列表
+   */
   apps?: RawApp[];
+
+  /**
+   * 此订阅的全局规则组列表
+   */
+  globalGroups?: RawGlobalGroup[];
+
+  /**
+   * 此订阅的应用规则分类列表
+   */
+  categories?: RawCategory[];
 };
 
 export const defineSubsConfig = (config: RawSubscription) => {
