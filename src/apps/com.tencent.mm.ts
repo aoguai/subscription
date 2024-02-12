@@ -22,7 +22,7 @@ export default defineAppConfig({
           key: 0,
           name: '点击广告卡片右上角',
           matches:
-            '@LinearLayout[visibleToUser=true][focusable=false] > TextView[text.length!=null] +1 LinearLayout[text.length=null&&desc=null&&clickable=true&&focusable=true]',
+            'LinearLayout[visibleToUser=true][checked=false] >2 @LinearLayout[visibleToUser=true][focusable=false] > TextView[text.length!=null] +1 LinearLayout[text.length=null&&desc=null&&clickable=true&&focusable=true]',
           snapshotUrls: [
             'https://i.gkd.li/import/12642588',
             'https://i.gkd.li/import/12888129', // ImageView - TextView[text="广告"][id!=null][index=0]这个规则无法匹配该广告，需要删除[index=0]
@@ -42,7 +42,7 @@ export default defineAppConfig({
           key: 1,
           name: '关闭该广告的原因-点击[直接关闭]',
           matches: [
-            '[(name="LinearLayout"||name$=".LinearLayout")||((name="TextView"||name$=".TextView")&&text.length>3)] + [(name="LinearLayout"||name$=".LinearLayout")||((name="TextView"||name$=".TextView")&&(text="直接关闭"||text="Close the ad"))]',
+            '[(name$=".LinearLayout")||((name$=".TextView")&&text.length>3)][visibleToUser=true] + [(name$=".LinearLayout")||((name$=".TextView")&&(text="直接关闭"||text="Close the ad"||text="關閉此廣告"))][visibleToUser=true][clickable=true]',
           ],
           snapshotUrls: [
             'https://i.gkd.li/import/12642584',
