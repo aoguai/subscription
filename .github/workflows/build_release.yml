@@ -66,3 +66,9 @@ jobs:
       - name: sync npmmirror
         if: ${{ steps.commit.outcome == 'success' }}
         run: curl -X PUT 'https://registry-direct.npmmirror.com/@aoguai/subscription/sync'
+
+      - name: sync jsDelivr
+        if: ${{ steps.commit.outcome == 'success' }}
+        run: |
+          curl -X PUT 'https://purge.jsdelivr.net/gh/aoguai/subscription@custom/dist/aoguai_gkd.json5'
+          curl -X PUT 'https://purge.jsdelivr.net/gh/aoguai/subscription@custom/dist/aoguai_gkd.version.json'
