@@ -51,9 +51,8 @@ const diabledAppIds: string[] = [
 function filterAppsByGroup(apps: any[], groupNamePrefix: string): string[] {
   return apps
     .filter((a) =>
-      a.groups.some(
-        (g: { name: string; enable: boolean }) =>
-          g.name.startsWith(groupNamePrefix) && g.enable !== false,
+      a.groups.some((g: { name: string }) =>
+        g.name.startsWith(groupNamePrefix),
       ),
     )
     .map((a) => a.id);
