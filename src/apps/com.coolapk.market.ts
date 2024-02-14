@@ -13,10 +13,6 @@ export default defineAppConfig({
       resetMatch: 'app',
       actionCdKey: 0,
       actionMaximumKey: 0,
-      // excludeActivityIds: [
-      //   'com.coolapk.market.view.search.', // 在搜索页面禁用
-      //   'com.coolapk.market.view.feed.', // 在动态页面禁用
-      // ],
       rules: [
         {
           key: 0,
@@ -34,12 +30,7 @@ export default defineAppConfig({
           key: 1,
           matches:
             '[id$="ad_container"] +n * > [id$="tt_splash_skip_btn"||text^="跳过"]',
-          snapshotUrls: [
-            'https://i.gkd.li/import/13211392',
-            // 'https://i.gkd.li/import/13247733', // 误触
-            // 'https://i.gkd.li/import/13247782', // 可能误触
-            // 'https://i.gkd.li/import/13296816', // snapshot of excludeMatches
-          ],
+          snapshotUrls: ['https://i.gkd.li/import/13211392'],
         },
         {
           key: 2,
@@ -57,6 +48,7 @@ export default defineAppConfig({
       key: 0,
       name: '分段广告-卡片广告',
       desc: '点击卡片右上角按钮->免广告-点击不感兴趣->选择关闭原因-点击不感兴趣',
+      enable: false,
       quickFind: true,
       activityIds: [
         'com.coolapk.market.view.main.MainActivity', // 缺少快照

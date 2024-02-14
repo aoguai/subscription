@@ -17,6 +17,7 @@ export default defineAppConfig({
     {
       key: 1,
       name: '全屏广告-限时福利弹窗',
+      enable: false,
       rules: [
         {
           key: 0,
@@ -53,7 +54,7 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '局部广告-消息页面-热门活动卡片',
+      name: '局部广告-消息页面热门活动卡片',
       activityIds: 'com.taobao.tao.welcome.Welcome',
       rules: 'View[desc.length>0] +2n FrameLayout > TextView[text="퀺"]',
       snapshotUrls: [
@@ -84,6 +85,7 @@ export default defineAppConfig({
       name: '权限提示-开启系统通知提示',
       desc: '自动点击关闭',
       actionMaximum: 1,
+      resetMatch: 'app',
       activityIds: [
         'com.taobao.tao.welcome.Welcome',
         'com.taobao.android.order.bundle.TBOrderDetailActivity',
@@ -117,6 +119,7 @@ export default defineAppConfig({
     {
       key: 10,
       name: '全屏广告-视频页面-弹窗',
+      enable: false,
       activityIds: [
         'com.taobao.tao.welcome.Welcome',
         'com.taobao.tao.TBMainActivity',
@@ -143,7 +146,7 @@ export default defineAppConfig({
     },
     {
       key: 12,
-      name: '更新提示-版本更新',
+      name: '更新提示',
       enable: false,
       quickFind: true,
       matchTime: 10000,
@@ -212,6 +215,37 @@ export default defineAppConfig({
           matches:
             '[id="com.taobao.taobao:id/flybird_userinfo"] + * [text="暂不升级，继续付款"]',
           snapshotUrls: 'https://i.gkd.li/import/13898735',
+        },
+      ],
+    },
+    {
+      key: 17,
+      name: '全屏广告-抢天降补贴弹窗',
+      desc: '点击X',
+      enable: false,
+      rules: [
+        {
+          quickFind: true,
+          activityIds: 'com.taobao.tao.welcome.Welcome',
+          matches: '@[desc="关闭按钮"] - [vid="poplayer_native_state_id"]',
+          snapshotUrls: 'https://i.gkd.li/import/14060521',
+        },
+      ],
+    },
+    {
+      key: 18,
+      name: '全屏广告-"「0元下单」权益"弹窗',
+      desc: '点击关闭',
+      enable: false,
+      rules: [
+        {
+          quickFind: true,
+          activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
+          matches:
+            '[text="关闭"] < @FrameLayout[clickable=true] <3 FrameLayout[childCount=3] < * + FrameLayout[childCount=3] [text*="0元下单"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/a35c954d-5162-463c-aee3-b72b9c2d6625',
+          snapshotUrls: 'https://i.gkd.li/import/14155537',
         },
       ],
     },

@@ -8,6 +8,7 @@ export default defineAppConfig({
     {
       key: 2,
       name: '全屏广告',
+      enable: false,
       rules: [
         {
           key: 0,

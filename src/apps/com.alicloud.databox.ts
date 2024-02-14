@@ -8,33 +8,41 @@ export default defineAppConfig({
       key: 0,
       name: '功能类-自动签到',
       enable: false,
-      activityIds: 'com.alicloud.databox.MainActivity',
       quickFind: true,
+      activityIds: [
+        'com.alicloud.databox.MainActivity',
+        'com.alicloud.databox.navigation.NavigationFragmentContainerActivity',
+      ],
       rules: [
         {
           key: 0,
-          name: '自动签到',
-          matches: ['[id="com.alicloud.databox:id/tvTaskAction"][text="领取"]'],
+          name: '自动点击签到',
+          matches: '[id="com.alicloud.databox:id/tvTaskAction"][text="领取"]',
           snapshotUrls: 'https://i.gkd.li/import/12929318',
         },
         {
           key: 1,
           preKeys: [0],
           name: '在签到后，关闭弹窗',
-          matches: ['[id="com.alicloud.databox:id/ivClose"]'],
-          snapshotUrls: 'https://i.gkd.li/import/13038304',
+          matches: '[id="com.alicloud.databox:id/ivClose"]',
+          snapshotUrls: [
+            'https://i.gkd.li/import/13038304',
+            'https://i.gkd.li/import/14235221', // com.alicloud.databox.navigation.NavigationFragmentContainerActivity
+          ],
         },
       ],
     },
     {
       key: 1,
-      name: '局部广告-活动弹窗',
+      name: '全屏广告-活动弹窗',
+      enable: false,
       activityIds: 'com.alicloud.databox.MainActivity',
       rules:
         'WebView >n View > Image + TextView[clickable=true&&text.length=0]',
       snapshotUrls: [
         'https://i.gkd.li/import/13228610',
         'https://i.gkd.li/import/14161216',
+        'https://i.gkd.li/import/14235204',
       ],
     },
     {
@@ -52,7 +60,8 @@ export default defineAppConfig({
     },
     {
       key: 3,
-      name: '更新提示-版本更新',
+      name: '更新提示',
+      enable: false,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -69,8 +78,9 @@ export default defineAppConfig({
       key: 4,
       name: '通知提示-顶端横幅”',
       desc: '出现在首页、备份盘、资源库',
-      activityIds: ['com.alicloud.databox.MainActivity'],
+      enable: false,
       quickFind: true,
+      activityIds: ['com.alicloud.databox.MainActivity'],
       rules: [
         {
           key: 0,

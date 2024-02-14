@@ -6,7 +6,8 @@ export default defineAppConfig({
   groups: [
     {
       key: 3,
-      name: '局部广告-交友-底部广告',
+      name: '分段广告-交友页面底部广告',
+      enable: false,
       activityIds: [
         'com.maxhom.weibu.tool.home.activity.NewMainActivity',
         'com.maxhom.weibu.WelcomeActivity',
@@ -46,7 +47,7 @@ export default defineAppConfig({
     },
     {
       key: 4,
-      name: '通知提示-漂流瓶-提示弹窗',
+      name: '通知提示-漂流瓶页面提示弹窗',
       quickFind: true,
       activityIds: [
         'com.maxhom.weibu.tool.home.activity.ToolBottleActivity',

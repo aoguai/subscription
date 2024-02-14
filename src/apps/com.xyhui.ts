@@ -7,8 +7,8 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '局部广告-弹窗广告',
-
+      name: '全屏广告-弹窗广告',
+      enable: false,
       rules: [
         {
           key: 1,

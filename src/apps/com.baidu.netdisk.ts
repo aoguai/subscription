@@ -7,8 +7,9 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '局部广告-活动弹窗',
+      name: '全屏广告-活动弹窗',
       desc: '关闭各种活动弹窗信息',
+      enable: false,
       activityIds: [
         'com.baidu.netdisk.ui.MainActivity',
         'com.baidu.netdisk.business.guide.dialog.lifeproduct.',
@@ -24,7 +25,8 @@ export default defineAppConfig({
     },
     {
       key: 5,
-      name: '局部广告-相册页面-激活无限空间弹窗',
+      name: '全屏广告-相册页面激活无限空间弹窗',
+      enable: false,
       quickFind: true,
       activityIds:
         'com.baidu.netdisk.cloudimage.ui.album.AlbumGuideOneImageDialog',
@@ -34,7 +36,7 @@ export default defineAppConfig({
     },
     {
       key: 7,
-      name: '通知提示-续费横幅提示',
+      name: '局部广告-续费横幅提示',
       desc: '关闭续费横幅提示',
       quickFind: true,
       activityIds: 'com.baidu.netdisk.ui.MainActivity',

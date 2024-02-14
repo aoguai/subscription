@@ -7,7 +7,8 @@ export default defineAppConfig({
   groups: [
     {
       key: 2,
-      name: '局部广告-首页广告弹窗',
+      name: '全屏广告-首页广告弹窗',
+      enable: false,
       activityIds:
         'com.yitong.mbank.psbc.module.home.view.activity.MainActivity',
       rules:

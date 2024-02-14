@@ -6,7 +6,7 @@ export default defineAppConfig({
   groups: [
     {
       key: 0,
-      name: '分段广告-推荐流广告',
+      name: '分段广告-信息流广告',
       desc: '包括主页,搜索页',
       enable: false,
       activityIds: [

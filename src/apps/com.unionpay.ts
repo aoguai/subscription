@@ -29,6 +29,7 @@ export default defineAppConfig({
       key: 13,
       name: '全屏广告-天天签到-获得新勋章提示',
       desc: '点击左上角返回',
+      enable: false,
       actionMaximum: 1,
       resetMatch: 'app',
       rules: [
@@ -42,7 +43,8 @@ export default defineAppConfig({
     },
     {
       key: 14,
-      name: '局部广告-我的页面-广告弹窗',
+      name: '全屏广告-我的页面-广告弹窗',
+      enable: false,
       matchTime: 10000,
       actionMaximum: 1,
       activityIds: 'com.unionpay.activity.UPActivityMain',
@@ -52,9 +54,10 @@ export default defineAppConfig({
     },
     {
       key: 15,
-      quickFind: true,
       name: '全屏广告-领取优惠弹窗',
       desc: '点击X',
+      enable: false,
+      quickFind: true,
       rules: [
         {
           activityIds: 'com.unionpay.cordova.UPActivityCordovaWeb',

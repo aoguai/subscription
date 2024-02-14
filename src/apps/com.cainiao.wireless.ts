@@ -3,11 +3,12 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.cainiao.wireless',
   name: '菜鸟',
-  deprecatedKeys: [0, 3, 6, 7],
+  deprecatedKeys: [0, 3, 4, 6, 7],
   groups: [
     {
       key: 1,
       name: '全屏广告-弹窗广告',
+      enable: false,
       rules: [
         {
           key: 0,
@@ -48,17 +49,6 @@ export default defineAppConfig({
       snapshotUrls: ['https://i.gkd.li/import/14162159'],
     },
     {
-      key: 4,
-      name: '更新提示-升级提示',
-      enable: false,
-      quickFind: true,
-      activityIds: [
-        'com.cainiao.wireless.homepage.view.activity.HomePageActivity',
-      ],
-      rules: '[text="确认"] - [text="取消"]',
-      snapshotUrls: ['https://i.gkd.li/import/14162198'],
-    },
-    {
       key: 5,
       name: '权限提示-开启消息弹窗',
       desc: '自动点击关闭。',
@@ -69,6 +59,20 @@ export default defineAppConfig({
       ],
       rules: '[id="com.cainiao.wireless:id/gg_dialog_base_close"]',
       snapshotUrls: ['https://i.gkd.li/import/14162211'],
+    },
+    {
+      key: 8,
+      name: '全屏广告-发现页新装试用弹窗',
+      desc: '点击X',
+      enable: false,
+      rules: [
+        {
+          activityIds:
+            'com.cainiao.wireless.homepage.view.activity.HomePageActivity',
+          matches: 'View[childCount=2][clickable=true] > [text="关闭"]',
+          snapshotUrls: 'https://i.gkd.li/import/14033859',
+        },
+      ],
     },
   ],
 });

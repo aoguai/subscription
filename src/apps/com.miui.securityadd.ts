@@ -8,6 +8,7 @@ export default defineAppConfig({
       key: 1,
       name: '全屏广告-游戏加速广告弹窗',
       desc: '点击X',
+      enable: false,
       rules: [
         {
           activityIds: 'com.miui.gamebooster.GameBoosterRichWebActivity',

@@ -3,11 +3,11 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.ct.client',
   name: '中国电信',
-  deprecatedKeys: [0, 2, 5],
+  deprecatedKeys: [0, 2, 5, 6],
   groups: [
     {
       key: 1,
-      name: '全屏广告-用户引导',
+      name: '全屏广告-软件更新/安装后的用户引导',
       enable: false,
       quickFind: true,
       activityIds: 'com.ct.client.activity.UserGuideActivity',
@@ -16,8 +16,9 @@ export default defineAppConfig({
     },
     {
       key: 3,
-      name: '局部广告-浮窗广告',
+      name: '全屏广告-浮窗广告',
       desc: '会出现在首页、查询办理页面',
+      enable: false,
       quickFind: true,
       activityIds: [
         'com.ct.client.common.ConfirmDialogActivity',
@@ -39,8 +40,8 @@ export default defineAppConfig({
     },
     {
       key: 4,
-      name: '局部广告-业务办理-弹窗广告',
-      // quickFind: true, 实机测试使用无法跳过
+      name: '全屏广告-弹窗广告',
+      enable: false,
       activityIds: [
         'com.ct.client.common.webview.OnlineBusinessWebkitActivity',
       ],

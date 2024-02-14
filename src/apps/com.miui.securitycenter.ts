@@ -21,7 +21,7 @@ export default defineAppConfig({
     {
       enable: false,
       key: 11,
-      name: '权限提示-禁止获取定位',
+      name: '功能类-禁止获取定位',
       desc: '关闭【允许联网及定位】后，每次打开手机管家都会出现',
       quickFind: true,
       activityIds: [

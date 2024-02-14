@@ -35,6 +35,7 @@ export default defineAppConfig({
             'https://i.gkd.li/import/14229068',
             'https://i.gkd.li/import/13631362',
             'https://i.gkd.li/import/13857535',
+            'https://i.gkd.li/import/14060628',
           ],
         },
       ],
@@ -63,7 +64,7 @@ export default defineAppConfig({
     },
     {
       key: 4,
-      name: '局部广告-设置支付宝小组件',
+      name: '全屏广告-设置支付宝小组件',
       desc: '点击关闭',
       enable: false,
       quickFind: true,
@@ -79,7 +80,7 @@ export default defineAppConfig({
     },
     {
       key: 10,
-      name: '局部广告-小程序-12306',
+      name: '分段广告-小程序-12306',
       enable: false,
       activityIds: 'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
       rules: [
@@ -112,6 +113,20 @@ export default defineAppConfig({
           matches:
             '[text="同意协议并刷脸验证"] < * -4 * >2 Image[visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/import/13915022',
+        },
+      ],
+    },
+    {
+      key: 12,
+      name: '功能类-支付后自动点击完成',
+      enable: false,
+      quickFind: true,
+      rules: [
+        {
+          activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
+          matches:
+            '[id="com.alipay.android.app:id/rl_nav_bar"] > [id="com.alipay.android.app:id/nav_right_textview"]',
+          snapshotUrls: 'https://i.gkd.li/import/14008852',
         },
       ],
     },

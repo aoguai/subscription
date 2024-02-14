@@ -20,6 +20,7 @@ export default defineAppConfig({
       key: 2,
       name: '分段广告-动态推荐广告卡片',
       desc: '点击卡片右上角[广告]按钮-点击不感兴趣',
+      enable: false,
       quickFind: true,
       matchDelay: 5000,
       activityIds: 'tv.danmaku.bili.MainActivityV2',
@@ -37,10 +38,10 @@ export default defineAppConfig({
       ],
     },
     {
-      enable: false,
       key: 4,
       name: '分段广告-视频底部与评论区中间卡片式广告',
       desc: '需点击二次弹窗 屏蔽原因',
+      enable: false,
       quickFind: true,
       activityIds: [
         'com.bilibili.video.videodetail.VideoDetailsActivity',
@@ -106,29 +107,65 @@ export default defineAppConfig({
       snapshotUrls: 'https://i.gkd.li/import/13200549',
     },
     {
-      enable: false,
       key: 10,
-      name: '分段广告-首页-推荐视频卡片广告', // 流程与 key=4 视频底部广告 基本一致
-      quickFind: true,
+      name: '分段广告-首页推荐视频卡片广告', // 流程与 key=4 视频底部广告 基本一致
+      enable: false,
       activityIds: 'tv.danmaku.bili.MainActivityV2',
       rules: [
         {
           key: 0,
           name: '点击广告卡片右下角菜单按钮',
+          actionMaximum: 1,
+          actionCd: 500,
           matches:
-            '[id="tv.danmaku.bili:id/ad_tint_frame"] [id="tv.danmaku.bili:id/more"]',
-          snapshotUrls: 'https://i.gkd.li/import/13256570',
+            'RelativeLayout[desc^="广告"] > ViewGroup[childCount=3] > FrameLayout[index=2]',
+          snapshotUrls: 'https://i.gkd.li/import/14083540',
         },
         {
-          preKeys: 0,
+          key: 3,
+          name: '点击巨幅广告卡片右下角菜单按钮',
+          actionMaximum: 1,
+          actionCd: 500,
+          matches:
+            'ViewGroup[desc^="广告"] >2 ViewGroup[childCount=3] > FrameLayout[index=2]',
+          snapshotUrls: 'https://i.gkd.li/import/14059876',
+        },
+        {
+          preKeys: [0],
           key: 1,
+          quickFind: true,
           name: '点击[不感兴趣]',
-          matches: '@RelativeLayout > [text$="不感兴趣"]',
+          matches: '@[clickable=true] > [text="不感兴趣"]',
           snapshotUrls: [
+            'https://i.gkd.li/import/13742257',
             'https://i.gkd.li/import/13256605',
-            'https://i.gkd.li/import/13625309',
+            'https://i.gkd.li/import/14155801',
             'https://i.gkd.li/import/13742257',
           ],
+        },
+        {
+          preKeys: [0, 3],
+          key: 4,
+          name: '点击[相似内容过多]',
+          quickFind: true,
+          matches: '@[clickable=true] > [text="相似内容过多"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/acd89b46-45fc-459f-8d17-3913d98dcbad',
+          snapshotUrls: [
+            'https://i.gkd.li/import/13945597',
+            'https://i.gkd.li/import/14155272',
+            'https://i.gkd.li/import/14059882',
+          ],
+        },
+        {
+          preKeys: [0],
+          key: 5,
+          name: '点击[up主不感兴趣]',
+          quickFind: true,
+          matches: '@[clickable=true] > [text="up主不感兴趣"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/9c2f42d7-c262-4e06-b3c6-40f0908e7a94',
+          snapshotUrls: 'https://i.gkd.li/import/13625309',
         },
       ],
     },

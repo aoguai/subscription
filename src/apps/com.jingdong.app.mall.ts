@@ -2,19 +2,19 @@ import { defineAppConfig } from '../types';
 
 export default defineAppConfig({
   id: 'com.jingdong.app.mall',
-  deprecatedKeys: [7],
   name: '京东',
+  deprecatedKeys: [7],
   groups: [
     {
       key: 1,
-      name: '局部广告-购物车界面-砸金蛋',
+      name: '局部广告-购物车页面砸金蛋',
       activityIds: 'com.jingdong.app.mall.MainFrameActivity',
       rules: '[id="com.jd.lib.cart.feature:id/iv_egg_close"]',
       snapshotUrls: 'https://i.gkd.li/import/12642266',
     },
     {
       key: 2,
-      name: '局部广告-我的界面-悬浮广告',
+      name: '局部广告-我的页面悬浮广告',
       activityIds: 'com.jingdong.app.mall.MainFrameActivity',
       rules: [
         {
@@ -38,7 +38,7 @@ export default defineAppConfig({
     },
     {
       key: 3,
-      name: '局部广告-首页-右侧浮层广告',
+      name: '局部广告-首页右侧浮层广告',
       activityIds: 'com.jingdong.app.mall.MainFrameActivity',
       rules: 'RelativeLayout >n * > [desc^="关闭浮层"]',
       snapshotUrls: [
@@ -51,6 +51,8 @@ export default defineAppConfig({
     {
       key: 4,
       name: '通知提示-请求打开通知',
+      actionMaximum: 1,
+      resetMatch: 'app',
       enable: false,
       activityIds: [
         'com.jd.lib.message.messagecenter.view.activity.MessageCenterMainActivityNew',
@@ -76,6 +78,7 @@ export default defineAppConfig({
     {
       key: 5,
       name: '全屏广告-广告弹窗',
+      enable: false,
       rules: [
         {
           key: 0,
@@ -121,7 +124,7 @@ export default defineAppConfig({
     },
     {
       key: 6,
-      name: '局部广告-首页-底部横幅广告',
+      name: '局部广告-首页底部横幅广告',
       activityIds: 'com.jingdong.app.mall.MainFrameActivity',
       rules: [
         {
@@ -155,7 +158,7 @@ export default defineAppConfig({
     },
     {
       key: 11,
-      name: '局部广告-支付界面-产品推荐',
+      name: '局部广告-支付页面产品推荐',
       desc: '自动点击右上角【x】',
       activityIds:
         'com.jd.lib.settlement.fillorder.activity.NewFillOrderActivity',
@@ -164,8 +167,9 @@ export default defineAppConfig({
     },
     {
       key: 12,
-      name: '局部广告-购物车界面-支付成功广告弹窗',
+      name: '全屏广告-购物车页面支付成功广告弹窗',
       desc: '自动点击正下方的【x】',
+      enable: false,
       quickFind: true,
       rules: [
         {

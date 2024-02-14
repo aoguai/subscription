@@ -43,6 +43,7 @@ export default defineAppConfig({
     {
       key: 1,
       name: '权限提示-申请消息提醒弹窗',
+      enable: false,
       actionMaximum: 1,
       resetMatch: 'app',
       rules: [
@@ -56,10 +57,10 @@ export default defineAppConfig({
       ],
     },
     {
-      enable: false,
       key: 2,
       name: '分段广告-信息流广告',
-      desc: '推荐帖子列表,评论区列表:像正常内容的广告,关闭时弹窗选原因',
+      desc: '推荐帖子列表, 评论区列表, 关闭时弹窗选原因',
+      enable: false,
       activityIds: [
         'com.baidu.tieba.pb.pb.main.PbActivity',
         'com.baidu.tieba.frs.FrsActivity',
@@ -98,7 +99,7 @@ export default defineAppConfig({
     },
     {
       key: 3,
-      name: '局部广告-首页-推荐-列表顶部卡片式广告',
+      name: '局部广告-首页、推荐列表顶部卡片式广告',
       activityIds: [
         'com.baidu.tieba.tblauncher.MainTabActivity',
         'com.baidu.tieba.frs.FrsActivity',
@@ -138,7 +139,8 @@ export default defineAppConfig({
     },
     {
       key: 9,
-      name: '局部广告-广告弹窗',
+      name: '全屏广告-广告弹窗',
+      enable: false,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'activity',
@@ -215,9 +217,9 @@ export default defineAppConfig({
       ],
     },
     {
-      enable: false,
       key: 11,
-      name: '局部广告-吧内-悬浮卡通-进吧逛逛',
+      name: '局部广告-帖子内"进吧逛逛"弹窗',
+      enable: false,
       actionMaximum: 1,
       resetMatch: 'activity',
       rules:
@@ -228,9 +230,9 @@ export default defineAppConfig({
       ],
     },
     {
-      enable: false,
       key: 12,
       name: '功能类-贴吧内签到并关闭弹窗',
+      enable: false,
       resetMatch: 'activity',
       rules: [
         {

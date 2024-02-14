@@ -8,6 +8,7 @@ export default defineAppConfig({
     {
       key: 8,
       name: '全屏广告-酒店-弹窗广告',
+      enable: false,
       quickFind: true,
       activityIds: 'com.ume.lib_weex.view.WeexActivity',
       rules:

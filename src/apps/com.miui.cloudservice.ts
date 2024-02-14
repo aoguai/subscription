@@ -6,7 +6,8 @@ export default defineAppConfig({
   groups: [
     {
       key: 0,
-      name: '通知提示-相册-云存储空间不足',
+      name: '全屏广告-云存储空间不足弹窗',
+      enable: false,
       activityIds:
         'com.miui.cloudservice.hybrid.SignDeductDialogHybridActivity',
       rules: 'View > [text="以后再说"]',

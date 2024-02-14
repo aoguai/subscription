@@ -8,6 +8,7 @@ export default defineAppConfig({
     {
       key: 3,
       name: '全屏广告-弹窗广告',
+      enable: false,
       activityIds: [
         'com.tencent.qqmusiclite.activity.MainActivity',
         'com.tencent.qqmusiccommon.hybrid.HybridViewActivity',

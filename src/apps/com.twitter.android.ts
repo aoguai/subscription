@@ -7,7 +7,7 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '分段广告-信息流广告-主页',
+      name: '分段广告-主页信息流广告',
       desc: '点击右上角关闭,点击我不喜欢',
       enable: false,
       activityIds: 'com.twitter.app.main.MainActivity',
@@ -40,7 +40,7 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '分段广告-信息流广告-帖子详情页、搜索页',
+      name: '分段广告-帖子详情页、搜索页信息流广告',
       desc: '点击右上角关闭,点击屏蔽用户,确认屏蔽.点击[我不喜欢]会返回主页,因此点击[屏蔽]',
       enable: false,
       quickFind: true,
@@ -106,7 +106,7 @@ export default defineAppConfig({
     },
     {
       key: 3,
-      name: '分段广告-信息流广告-用户资料页',
+      name: '分段广告-用户资料页信息流广告',
       desc: '点击右上角关闭,点击我不喜欢',
       enable: false,
       quickFind: true,
@@ -149,11 +149,43 @@ export default defineAppConfig({
       enable: false,
       quickFind: true,
       matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules: [
         {
           activityIds: 'com.twitter.app.main.MainActivity',
           matches: '[id="com.twitter.android:id/app_rating_button_never"]',
           snapshotUrls: 'https://i.gkd.li/import/13774150',
+        },
+      ],
+    },
+    {
+      key: 6,
+      name: '功能类-自动点击"翻译帖子"',
+      enable: false,
+      quickFind: true,
+      activityIds: 'com.twitter.tweetdetail.TweetDetailActivity',
+      rules: [
+        {
+          matches: '[vid="translation_link"][text="翻译帖子"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/40ece44f-883f-429a-aa0c-17dac15a50e4',
+          snapshotUrls: 'https://i.gkd.li/import/14189817',
+        },
+      ],
+    },
+    {
+      key: 7,
+      name: '功能类-自动点击"显示更多帖子"',
+      enable: false,
+      quickFind: true,
+      activityIds: 'com.twitter.app.main.MainActivity',
+      rules: [
+        {
+          matches: '@FrameLayout[clickable=true] > [text="显示更多帖子"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/7efa8af7-90d3-42b4-bf5d-3d83775f175a',
+          snapshotUrls: 'https://i.gkd.li/import/14189847',
         },
       ],
     },

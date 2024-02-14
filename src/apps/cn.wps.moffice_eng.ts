@@ -7,7 +7,8 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '分段广告-首页-文档列表广告',
+      name: '分段广告-首页文档列表广告',
+      enable: false,
       exampleUrls: [
         'https://github.com/gkd-kit/subscription/assets/38517192/57787554-0443-4bc0-9f29-1759aae07b9b',
       ],
@@ -37,8 +38,9 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '局部广告-首页-弹窗广告',
+      name: '全屏广告-弹窗广告',
       quickFind: true,
+      enable: false,
       activityIds: [
         'cn.wps.moffice.main.AfterLoginActivity',
         'com.android.packageinstaller.permission.ui.GrantPermissionsActivity',
@@ -52,7 +54,10 @@ export default defineAppConfig({
     {
       enable: false,
       key: 3,
-      name: '更新提示-升级提示',
+      name: '更新提示',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       activityIds: [
         'com.android.packageinstaller.permission.ui.GrantPermissionsActivity',
         'cn.wps.moffice.main.local.HomeRootActivity',
@@ -62,10 +67,10 @@ export default defineAppConfig({
       snapshotUrls: 'https://i.gkd.li/import/12882371',
     },
     {
-      enable: false,
       key: 4,
       name: '全屏广告-开启WPS云服务',
       desc: '自动点击不开启',
+      enable: false,
       activityIds: [
         'cn.wps.moffice.main.cloud.roaming.login.core.QingLoginActivity',
         'com.tencent.mm.plugin.webview.ui.tools.SDKOAuthUI',
@@ -90,6 +95,7 @@ export default defineAppConfig({
     {
       key: 5,
       name: '分段广告-文档末尾广告',
+      enable: false,
       activityIds: [
         'cn.wps.moffice.writer.multiactivity.Writer', //Writer1,Writer2...
       ],
@@ -110,11 +116,24 @@ export default defineAppConfig({
     },
     {
       key: 6,
-      name: '局部广告-首页-底部广告',
+      name: '局部广告-首页底部广告',
       quickFind: true,
       activityIds: 'cn.wps.moffice.main.local.HomeRootActivity',
       rules: '[id="cn.wps.moffice_eng:id/home_banner_ad_spread_close"]',
       snapshotUrls: 'https://i.gkd.li/import/13804525',
+    },
+    {
+      key: 7,
+      name: '全屏广告-体验超级会员弹窗',
+      enable: false,
+      rules: [
+        {
+          activityIds: 'cn.wps.moffice.main.local.HomeRootActivity',
+          matches:
+            '[id="cn.wps.moffice_eng:id/push_tips_ptr_super_webview"] >6 TextView[index=2]',
+          snapshotUrls: 'https://i.gkd.li/import/13945835',
+        },
+      ],
     },
   ],
 });

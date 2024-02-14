@@ -6,7 +6,8 @@ export default defineAppConfig({
   groups: [
     {
       key: 0,
-      name: '局部广告-首页-班课列表广告',
+      name: '全屏广告-首页-班课列表广告',
+      enable: false,
       activityIds: ['com.mosoink.teach.MainMenuActivity'],
       rules: [
         {

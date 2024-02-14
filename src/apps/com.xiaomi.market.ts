@@ -7,9 +7,10 @@ export default defineAppConfig({
   groups: [
     {
       key: 0,
-      name: '局部广告-首页悬浮窗广告',
-      activityIds: 'com.xiaomi.market.ui.FloatWebActivity',
+      name: '全屏广告-首页悬浮窗广告',
+      enable: false,
       quickFind: true,
+      activityIds: 'com.xiaomi.market.ui.FloatWebActivity',
       rules: {
         matches: [
           '[id="com.xiaomi.market:id/webview_container"]',
@@ -20,7 +21,7 @@ export default defineAppConfig({
     },
     {
       key: 9,
-      name: '局部广告-应用升级界面-顶部广告横幅',
+      name: '局部广告-应用升级界面顶部广告横幅',
       quickFind: true,
       activityIds: 'com.xiaomi.market.ui.UpdateListActivity',
       rules: '[id="com.xiaomi.market:id/iv_close_tip"]',

@@ -7,7 +7,8 @@ export default defineAppConfig({
   groups: [
     {
       key: 2,
-      name: '局部广告-首页广告弹窗',
+      name: '全屏广告-首页广告弹窗',
+      enable: false,
       rules: [
         {
           key: 0,
@@ -33,7 +34,8 @@ export default defineAppConfig({
     },
     {
       key: 4,
-      name: '局部广告-运动购页面-广告弹窗',
+      name: '全屏广告-运动购页面广告弹窗',
+      enable: false,
       rules: [
         {
           key: 0,
