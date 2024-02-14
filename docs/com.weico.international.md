@@ -2,7 +2,7 @@
 
 存在 1 规则组 - [com.weico.international](/src/apps/com.weico.international.ts)
 
-## 分段广告-推荐流广告
+## 分段广告-信息流广告
 
 默认禁用 - 包括主页,搜索页
 

@@ -1,6 +1,6 @@
 # QQ
 
-存在 21 规则组 - [com.tencent.mobileqq](/src/apps/com.tencent.mobileqq.ts)
+存在 19 规则组 - [com.tencent.mobileqq](/src/apps/com.tencent.mobileqq.ts)
 
 ## 开屏广告
 
@@ -11,16 +11,30 @@
 - [快照-4](https://i.gkd.li/import/13856647)
 - [快照-5](https://i.gkd.li/import/13868177)
 
-## 局部广告-消息页面-顶部广告
+## 局部广告-消息页面顶部广告
 
-默认禁用 - 规则误触,待修复,需要快照准确定位
+默认禁用
 
 - [快照-0](https://i.gkd.li/import/12892726)
 - [快照-1](https://i.gkd.li/import/12774870)
 - [快照-2](https://i.gkd.li/import/13207766)
 - [快照-3](https://i.gkd.li/import/13386518)
-- [快照-4](https://i.gkd.li/import/13426912)
-- [快照-5](https://i.gkd.li/import/13476400)
+- [快照-4](https://i.gkd.li/import/13476400)
+- [快照-5](https://i.gkd.li/import/14155603)
+- [快照-6](https://i.gkd.li/import/14217033)
+- [快照-7](https://i.gkd.li/import/13426912)
+- [快照-8](https://i.gkd.li/import/12706907)
+- [快照-9](https://i.gkd.li/import/13107298)
+- [快照-10](https://i.gkd.li/import/12793359)
+- [快照-11](https://i.gkd.li/import/12855048)
+- [快照-12](https://i.gkd.li/import/13228108)
+- [快照-13](https://i.gkd.li/import/12855441)
+- [快照-14](https://i.gkd.li/import/13188722)
+- [快照-15](https://i.gkd.li/import/13255493)
+- [快照-16](https://i.gkd.li/import/13843140)
+- [快照-17](https://i.gkd.li/import/13931212)
+- [快照-18](https://i.gkd.li/import/14178669)
+- [快照-19](https://i.gkd.li/import/14178667)
 
 ## 分段广告-好友动态-广告卡片
 
@@ -34,24 +48,17 @@
 - [快照-5](https://i.gkd.li/import/13849730)
 - [快照-6](https://i.gkd.li/import/12749584)
 - [快照-7](https://i.gkd.li/import/13627967)
+- [快照-8](https://i.gkd.li/import/12840889)
+- [快照-9](https://i.gkd.li/import/13831867)
+- [快照-10](https://i.gkd.li/import/14138571)
 
-## 局部广告-频道页面广告
+## 全屏广告-频道页面广告
 
 默认禁用
 
 - [快照-0](https://i.gkd.li/import/13206663)
 - [快照-1](https://i.gkd.li/import/12642081)
 - [快照-2](https://i.gkd.li/import/12708844)
-
-## 局部广告-顶部SVIP广告
-
-默认禁用 - 消息界面-搜索框和消息记录之间的广告卡片,点击关闭右侧x
-
-- [快照-0](https://i.gkd.li/import/12706907)
-- [快照-1](https://i.gkd.li/import/13107298)
-- [快照-2](https://i.gkd.li/import/12793359)
-- [快照-3](https://i.gkd.li/import/12855048)
-- [快照-4](https://i.gkd.li/import/13228108)
 
 ## 分段广告-好友热播
 
@@ -71,13 +78,7 @@
 - [快照-2](https://i.gkd.li/import/13063027)
 - [快照-3](https://i.gkd.li/import/13166314)
 
-## 通知提示-消息页面顶部
-
-默认禁用 - 消息界面-搜索框和消息记录之间的通知卡片,点击关闭右侧x
-
-- [快照-0](https://i.gkd.li/import/12855441)
-
-## 局部广告-我的等级-浮窗广告
+## 局部广告-我的等级页面浮窗广告
 
 默认禁用
 
@@ -106,14 +107,14 @@
 - [快照-0](https://i.gkd.li/import/12847819)
 - [快照-1](https://i.gkd.li/import/12847821)
 
-## 开屏广告-QQ小程序开屏广告
+## 全屏广告-QQ小程序开屏广告
 
-点击右下角跳过
+默认禁用 - 点击右下角跳过
 
 - [快照-0](https://i.gkd.li/import/12877215)
 - [快照-1](https://i.gkd.li/import/12919195)
 
-## 局部广告-黄钻-弹窗广告
+## 全屏广告-黄钻页面弹窗广告
 
 默认禁用
 
@@ -130,46 +131,52 @@
 - [快照-2](https://i.gkd.li/import/12929619)
 - [快照-3](https://i.gkd.li/import/13387605)
 
-## 更新提示-更新弹窗
-
-默认禁用
-
-- [快照-0](https://i.gkd.li/import/13188721)
-- [快照-1](https://i.gkd.li/import/13386719)
-- [快照-2](https://i.gkd.li/import/13459507)
-
-## 更新提示-消息页面-顶部
-
-默认禁用
-
-- [快照-0](https://i.gkd.li/import/13188722)
-- [快照-1](https://i.gkd.li/import/13255493)
-- [快照-2](https://i.gkd.li/import/13843140)
-- [快照-3](https://i.gkd.li/import/13931212)
-
 ## 全屏广告-内测邀请弹窗
 
 默认禁用
 
 - [快照-0](https://i.gkd.li/import/13526551)
 
-## 分段广告-钱包-卡片广告
+## 分段广告-钱包页卡片广告
 
 默认禁用
 
 - [快照-0](https://i.gkd.li/import/13695087)
-- [快照-1](https://i.gkd.li/import/13699701)
+- [快照-1](https://i.gkd.li/import/14231489)
+- [快照-2](https://i.gkd.li/import/13699701)
 
 ## 全屏广告-首页广告弹窗
 
 默认禁用
 
-- [快照-0](https://i.gkd.li/import/13797876)
+- [示例-0](https://m.gkd.li/57941037/a9fe74db-07b4-47e6-beed-80983f61d2e3)
 
-## 局部广告-聊天页-顶部活动浮窗
+- [快照-0](https://i.gkd.li/import/13797876)
+- [快照-1](https://i.gkd.li/import/14207286)
+
+## 分段广告-天气页卡片广告
+
+默认禁用 - 点击关闭-点击关闭此条广告
+
+- [快照-0](https://i.gkd.li/import/14019384)
+- [快照-1](https://i.gkd.li/import/14019401)
+
+## 功能类-自动抢红包
+
+默认禁用 - 自己发的红包、专属红包、口令红包、私聊红包不抢
+
+- [示例-0](https://m.gkd.li/57941037/7a933a7f-dc5a-4eb7-8a6f-fe3cc4e8fb5e)
+- [示例-1](https://m.gkd.li/57941037/61006833-9806-45b2-b3a1-55b9b248958f)
+- [示例-2](https://m.gkd.li/57941037/b90e6a69-ac57-41a5-bd2c-c500b92a58ba)
+
+- [快照-0](https://i.gkd.li/import/14221309)
+- [快照-1](https://i.gkd.li/import/14221242)
+- [快照-2](https://i.gkd.li/import/14221279)
+
+## 功能类-申请入群后自动点击右上角关闭
 
 默认禁用
 
-- [示例-0](https://m.gkd.li/101449500/e5b7415c-3d01-4b24-89fd-056cfc62d64a)
+- [示例-0](https://m.gkd.li/57941037/df526685-8a68-48cd-8328-0292079ff030)
 
-- [快照-0](https://i.gkd.li/import/14178669)
+- [快照-0](https://i.gkd.li/import/14235163)

@@ -75,9 +75,10 @@
 - [快照-2](https://i.gkd.li/import/12646837)
 - [快照-3](https://i.gkd.li/import/12678937)
 - [快照-4](https://i.gkd.li/import/12714427)
-- [快照-5](https://i.gkd.li/import/12700183)
-- [快照-6](https://i.gkd.li/import/12701503)
-- [快照-7](https://i.gkd.li/import/12714424)
+- [快照-5](https://i.gkd.li/import/14006180)
+- [快照-6](https://i.gkd.li/import/12700183)
+- [快照-7](https://i.gkd.li/import/12701503)
+- [快照-8](https://i.gkd.li/import/12714424)
 
 ## 功能类-自动选中发送原图
 
@@ -94,8 +95,10 @@
 - [快照-0](https://i.gkd.li/import/12642234)
 - [快照-1](https://i.gkd.li/import/12722301)
 - [快照-2](https://i.gkd.li/import/12722331)
-- [快照-3](https://i.gkd.li/import/12642238)
-- [快照-4](https://i.gkd.li/import/12700191)
+- [快照-3](https://i.gkd.li/import/14006203)
+- [快照-4](https://i.gkd.li/import/12642238)
+- [快照-5](https://i.gkd.li/import/14006206)
+- [快照-6](https://i.gkd.li/import/12700191)
 
 ## 功能类-自动查看原图
 
@@ -137,6 +140,7 @@
 默认禁用 - 低价包邮广告
 
 - [快照-0](https://i.gkd.li/import/13298294)
+- [快照-1](https://i.gkd.li/import/14156176)
 
 ## 功能类-青少年模式自动点击验证密码
 

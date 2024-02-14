@@ -1,6 +1,6 @@
 # 淘宝
 
-存在 11 规则组 - [com.taobao.taobao](/src/apps/com.taobao.taobao.ts)
+存在 13 规则组 - [com.taobao.taobao](/src/apps/com.taobao.taobao.ts)
 
 ## 开屏广告
 
@@ -16,7 +16,7 @@
 - [快照-5](https://i.gkd.li/import/13198052)
 - [快照-6](https://i.gkd.li/import/13249418)
 
-## 局部广告-消息页面-热门活动卡片
+## 局部广告-消息页面热门活动卡片
 
 默认禁用
 
@@ -55,7 +55,7 @@
 - [快照-1](https://i.gkd.li/import/12642798)
 - [快照-2](https://i.gkd.li/import/14163734)
 
-## 更新提示-版本更新
+## 更新提示
 
 默认禁用
 
@@ -83,3 +83,17 @@
 - [快照-0](https://i.gkd.li/import/13628020)
 - [快照-1](https://i.gkd.li/import/13691864)
 - [快照-2](https://i.gkd.li/import/13898735)
+
+## 全屏广告-抢天降补贴弹窗
+
+默认禁用 - 点击X
+
+- [快照-0](https://i.gkd.li/import/14060521)
+
+## 全屏广告-"「0元下单」权益"弹窗
+
+默认禁用 - 点击关闭
+
+- [示例-0](https://m.gkd.li/57941037/a35c954d-5162-463c-aee3-b72b9c2d6625)
+
+- [快照-0](https://i.gkd.li/import/14155537)

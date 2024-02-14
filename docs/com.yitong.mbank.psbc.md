@@ -2,7 +2,7 @@
 
 存在 1 规则组 - [com.yitong.mbank.psbc](/src/apps/com.yitong.mbank.psbc.ts)
 
-## 局部广告-首页广告弹窗
+## 全屏广告-首页广告弹窗
 
 默认禁用
 

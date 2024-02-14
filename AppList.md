@@ -4,14 +4,14 @@
 | ---------------------- | ------------------------------------------------------------------------------- | ------ |
 | Gmail                  | [com.google.android.gm](/docs/com.google.android.gm.md)                         | 1      |
 | Keep                   | [com.gotokeep.keep](/docs/com.gotokeep.keep.md)                                 | 3      |
-| QQ                     | [com.tencent.mobileqq](/docs/com.tencent.mobileqq.md)                           | 21     |
+| QQ                     | [com.tencent.mobileqq](/docs/com.tencent.mobileqq.md)                           | 19     |
 | Telegram               | [org.telegram.messenger.web](/docs/org.telegram.messenger.web.md)               | 1      |
-| WPS                    | [cn.wps.moffice_eng](/docs/cn.wps.moffice_eng.md)                               | 6      |
+| WPS                    | [cn.wps.moffice_eng](/docs/cn.wps.moffice_eng.md)                               | 7      |
 | youtube                | [com.google.android.youtube](/docs/com.google.android.youtube.md)               | 4      |
 | Android 系统文件选择器 | [com.google.android.documentsui](/docs/com.google.android.documentsui.md)       | 1      |
 | PU口袋校园             | [com.xyhui](/docs/com.xyhui.md)                                                 | 1      |
 | QQ邮箱                 | [com.tencent.androidqqmail](/docs/com.tencent.androidqqmail.md)                 | 2      |
-| X(推特)                | [com.twitter.android](/docs/com.twitter.android.md)                             | 4      |
+| X(推特)                | [com.twitter.android](/docs/com.twitter.android.md)                             | 6      |
 | 阿里云盘               | [com.alicloud.databox](/docs/com.alicloud.databox.md)                           | 5      |
 | 百度贴吧               | [com.baidu.tieba](/docs/com.baidu.tieba.md)                                     | 9      |
 | 百度网盘               | [com.baidu.netdisk](/docs/com.baidu.netdisk.md)                                 | 3      |
@@ -31,7 +31,7 @@
 | 暮瑟                   | [com.maxhom.weibu](/docs/com.maxhom.weibu.md)                                   | 2      |
 | 浦发银行               | [cn.com.spdb.mobilebank.per](/docs/cn.com.spdb.mobilebank.per.md)               | 1      |
 | 权限管理服务           | [com.lbe.security.miui](/docs/com.lbe.security.miui.md)                         | 1      |
-| 淘宝                   | [com.taobao.taobao](/docs/com.taobao.taobao.md)                                 | 11     |
+| 淘宝                   | [com.taobao.taobao](/docs/com.taobao.taobao.md)                                 | 13     |
 | 万能遥控               | [com.duokan.phone.remotecontroller](/docs/com.duokan.phone.remotecontroller.md) | 1      |
 | 微博轻享版             | [com.weico.international](/docs/com.weico.international.md)                     | 1      |
 | 微信                   | [com.tencent.mm](/docs/com.tencent.mm.md)                                       | 15     |
@@ -47,7 +47,7 @@
 | 邮储银行               | [com.yitong.mbank.psbc](/docs/com.yitong.mbank.psbc.md)                         | 1      |
 | 云班课                 | [com.mosoink.teach](/docs/com.mosoink.teach.md)                                 | 1      |
 | 云闪付                 | [com.unionpay](/docs/com.unionpay.md)                                           | 4      |
-| 支付宝                 | [com.eg.android.AlipayGphone](/docs/com.eg.android.AlipayGphone.md)             | 5      |
-| 知乎                   | [com.zhihu.android](/docs/com.zhihu.android.md)                                 | 12     |
+| 支付宝                 | [com.eg.android.AlipayGphone](/docs/com.eg.android.AlipayGphone.md)             | 6      |
+| 知乎                   | [com.zhihu.android](/docs/com.zhihu.android.md)                                 | 5      |
 | 智联招聘               | [com.zhaopin.social](/docs/com.zhaopin.social.md)                               | 2      |
 | 中国电信               | [com.ct.client](/docs/com.ct.client.md)                                         | 3      |

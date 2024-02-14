@@ -1,41 +1,40 @@
 # @aoguai/subscription
 
-本仓库为由 aoguai 维护的 GKD 订阅规则
+此仓库由 aoguai 维护，提供 GKD 订阅规则。
 
-本项目的目标是编写尽量精简通用的规则，**全局规则是本项目侧重点**
+我们秉持 “如无必要，勿增实体” 的原则。
 
-**我们通过使用从[原项目](https://github.com/gkd-kit/subscription)，抽取出可用的全局规则**
-
-从而实现**全覆盖原项目规则**基础上优秀的全局匹配能力
+通过从[原项目](https://github.com/gkd-kit/subscription)抽取和整理通用的全局规则，已实现对原项目规则的全覆盖。
 
 ## 使用
 
-添加以下任意链接至 [GKD](https://github.com/gkd-kit/gkd) 内即可使用此规则
-| GitHub 源（推荐） | npmmirror 源 | gitmirror 源 | cloudflare 源 | jsDelivr 源 |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | -------------------------------------------------------------------------------- | ----------------------------- | ---------------------------------------------------------------------------------- |
+将以下任意链接添加至 [GKD](https://github.com/gkd-kit/gkd) 内即可使用此规则：
+
+| GitHub 源（推荐）                                                                          | npmmirror 源                                                             | gitmirror 源                                                                       | cloudflare 源                   | jsDelivr 源                                                                          |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ---------------------------------------------------------------------------------- | ------------------------------- | ------------------------------------------------------------------------------------ |
 | [复制](https://raw.githubusercontent.com/aoguai/subscription/custom/dist/aoguai_gkd.json5) | [复制](https://registry.npmmirror.com/@aoguai/subscription/latest/files) | [复制](https://raw.gitmirror.com/aoguai/subscription/custom/dist/aoguai_gkd.json5) | [复制](https://gkd.aoguai.top/) | [复制](https://cdn.jsdelivr.net/gh/aoguai/subscription@custom/dist/aoguai_gkd.json5) |
 
 **注意：**
 
-- 以上任意链接规则皆相同，您只需要考虑合适您网络环境的链接即可
-
-- 不同链接间可能存在更新延迟
-
 - **本项目维护的规则仅启用 `开屏广告` 一类规则, 其它所有规则均需用户手动打开**
+- 以上链接规则皆相同，只需选择适合您网络环境的链接即可。
+- 不同链接可能存在更新延迟。
 
 ## 说明
 
-当前版本: v7
+当前版本: v8
 
-当前订阅文件仅适配 49 个 APP, 仅有 173 规则组
+当前订阅文件仅需适配 49 个 APP，仅含 170 规则组。
 
 **查看详细 [适配 APP 列表](./AppList.md)**
 
-**秉持 “如无必要，勿增实体” 的原则，本仓库仅接受维护 [适配 APP 列表](./AppList.md) 或改进 全局规则 的相关 issues or PR 提交**
+**由于全局规则已初步抽取完成，项目将进入稳定维护状态。**
 
-如果您有额外的 APP 规则需求，您可以通过自己编写规则并添加到本地规则中使用
+**此仓库仅接受与全局规则相关的维护或改进 issues 或 PR 提交。**
 
-如果您希望参与或学习编写订阅/贡献此项目 -> [CONTRIBUTING.md](./CONTRIBUTING.md)
+如果您需要额外的 APP 规则，您可以编写规则并将其添加到本地规则中使用。
+
+如果您希望参与或学习编写订阅/贡献此项目，请参阅 [CONTRIBUTING.md](./CONTRIBUTING.md)。
 
 ## 相关
 
@@ -49,11 +48,11 @@
 
 ### Wiki
 
-想多了解一点？使用说明，相关教程，相关项目。关于一切 -> [Wiki](https://github.com/aoguai/subscription/wiki)
+欲了解更多信息？请访问 [Wiki](https://github.com/aoguai/subscription/wiki)，包括使用说明、相关教程和相关项目。
 
 ## License 说明
 
-[@aoguai/subscription](https://github.com/aoguai/subscription) 遵循 [MIT license](./LICENSE)
+[@aoguai/subscription](https://github.com/aoguai/subscription) 遵循 [MIT license](./LICENSE)。
 
 ## Star History
 
