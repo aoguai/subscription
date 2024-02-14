@@ -50,10 +50,11 @@ const diabledAppIds: string[] = [
 
 function filterAppsByGroup(apps: any[], groupNamePrefix: string): string[] {
   return apps
-    .filter((a) =>
-      a.groups.some((g: { name: string }) =>
-        g.name.startsWith(groupNamePrefix),
-      ),
+    .filter(
+      (a) =>
+        a.groups.filter((g: { name: string }) =>
+          g.name.startsWith(groupNamePrefix),
+        ).length === 1,
     )
     .map((a) => a.id);
 }
@@ -62,37 +63,13 @@ const uniqueAppIdsAD = new Set([
   ...diabledAppIds,
   ...filterAppsByGroup(apps, '开屏广告'),
 ]);
-const uniqueAppIdsFA = new Set([
-  ...diabledAppIds,
-  ...filterAppsByGroup(apps, '全屏广告'),
-]);
-const uniqueAppIdsPA = new Set([
-  ...diabledAppIds,
-  ...filterAppsByGroup(apps, '局部广告'),
-]);
 const uniqueAppIdsUP = new Set([
   ...diabledAppIds,
   ...filterAppsByGroup(apps, '更新提示'),
 ]);
-const uniqueAppIdsRP = new Set([
-  ...diabledAppIds,
-  ...filterAppsByGroup(apps, '评价提示'),
-]);
-const uniqueAppIdsNP = new Set([
-  ...diabledAppIds,
-  ...filterAppsByGroup(apps, '通知提示'),
-]);
 const uniqueAppIdsYM = new Set([
   ...diabledAppIds,
   ...filterAppsByGroup(apps, '青少年模式'),
-]);
-const uniqueAppIdsPP = new Set([
-  ...diabledAppIds,
-  ...filterAppsByGroup(apps, '权限提示'),
-]);
-const uniqueAppIdsLP = new Set([
-  ...diabledAppIds,
-  ...filterAppsByGroup(apps, '定位提示'),
 ]);
 
 const COMMON_PREFIX = '[childCount=0][visibleToUser=true]';
@@ -201,7 +178,7 @@ const globalGroups: RawGlobalGroup[] = [
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
-    apps: [...uniqueAppIdsFA].map((id) => ({ id, enable: false })),
+    apps: diabledAppIds.map((id) => ({ id, enable: false })),
   },
   {
     key: 2,
@@ -265,7 +242,7 @@ const globalGroups: RawGlobalGroup[] = [
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
-    apps: [...uniqueAppIdsPA].map((id) => ({ id, enable: false })),
+    apps: diabledAppIds.map((id) => ({ id, enable: false })),
   },
   {
     key: 3,
@@ -391,7 +368,7 @@ const globalGroups: RawGlobalGroup[] = [
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
-    apps: [...uniqueAppIdsRP].map((id) => ({ id, enable: false })),
+    apps: diabledAppIds.map((id) => ({ id, enable: false })),
   },
   {
     key: 5,
@@ -453,7 +430,7 @@ const globalGroups: RawGlobalGroup[] = [
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
-    apps: [...uniqueAppIdsNP].map((id) => ({ id, enable: false })),
+    apps: diabledAppIds.map((id) => ({ id, enable: false })),
   },
   {
     key: 6,
@@ -579,7 +556,7 @@ const globalGroups: RawGlobalGroup[] = [
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
-    apps: [...uniqueAppIdsPP].map((id) => ({ id, enable: false })),
+    apps: diabledAppIds.map((id) => ({ id, enable: false })),
   },
   {
     key: 8,
@@ -642,7 +619,7 @@ const globalGroups: RawGlobalGroup[] = [
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
-    apps: [...uniqueAppIdsLP].map((id) => ({ id, enable: false })),
+    apps: diabledAppIds.map((id) => ({ id, enable: false })),
   },
 ];
 export default globalGroups;
