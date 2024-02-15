@@ -3,11 +3,11 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.eg.android.AlipayGphone',
   name: '支付宝',
-  deprecatedKeys: [1, 2],
+  deprecatedKeys: [1, 2, 11],
   groups: [
     {
       key: 0,
-      name: '通知提示-关闭花呗弹窗',
+      name: '通知提示-关闭花呗, 借呗弹窗',
       desc: '包括升级和开通弹窗',
       enable: false,
       actionMaximum: 1,
@@ -21,14 +21,10 @@ export default defineAppConfig({
         {
           key: 0,
           matches:
-            'Image[visibleToUser=true][desc.length=null] <n * +n * > [(text^="同意协议并")&&(text$="确认交易"||text$="升级"||text$="开通")]',
-          snapshotUrls: 'https://i.gkd.li/import/12737055', //com.alipay.mobile.nebulax.integration.mpaas.activity.NebulaActivity$Main
-        },
-        {
-          key: 1,
-          matches:
-            '@[text^="暂不升级"||text="关闭"] <<n * <n * > * >n [(text^="同意协议并")&&(text$="确认交易"||text$="升级"||text$="开通")]',
+            '@[(name$=".Image")||(text^="暂不升级"||text="关闭")][visibleToUser=true][desc.length=null] <<n * <n * > * >n [(text^="同意协议并")&&(text$="确认交易"||text$="升级"||text$="开通"||text$="刷脸验证")]',
           snapshotUrls: [
+            'https://i.gkd.li/import/12737055', //com.alipay.mobile.nebulax.integration.mpaas.activity.NebulaActivity$Main
+            'https://i.gkd.li/import/13915022',
             'https://i.gkd.li/import/13183946', //com.alipay.android.msp.ui.views.MspContainerActivity
             'https://i.gkd.li/import/12826077', //com.alipay.android.msp.ui.views.MspUniRenderActivity
             'https://i.gkd.li/import/12915864',
@@ -98,21 +94,6 @@ export default defineAppConfig({
           matches: '[text="对该内容不感兴趣"]',
           action: 'clickCenter',
           snapshotUrls: 'https://i.gkd.li/import/13763315',
-        },
-      ],
-    },
-    {
-      key: 11,
-      name: '全屏广告-借呗消费信贷协议',
-      desc: '点击X',
-      enable: false,
-      rules: [
-        {
-          activityIds:
-            'com.alipay.mobile.nebulax.integration.mpaas.activity.NebulaActivity$Main',
-          matches:
-            '[text="同意协议并刷脸验证"] < * -4 * >2 Image[visibleToUser=true]',
-          snapshotUrls: 'https://i.gkd.li/import/13915022',
         },
       ],
     },
