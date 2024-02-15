@@ -11,12 +11,7 @@ export default defineAppConfig({
       enable: false,
       quickFind: true,
       activityIds: 'com.xiaomi.market.ui.FloatWebActivity',
-      rules: {
-        matches: [
-          '[id="com.xiaomi.market:id/webview_container"]',
-          'Button[text.length=2][text="关闭"]',
-        ],
-      },
+      rules: '[id="com.xiaomi.market:id/webview_container"] >n [text="关闭"]',
       snapshotUrls: 'https://i.gkd.li/import/13248808',
     },
     {
