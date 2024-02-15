@@ -9,7 +9,8 @@ export default defineAppConfig({
       key: 2,
       name: '局部广告-我的页面卡片广告',
       activityIds: 'com.zhaopin.social.homepage.ZSC_MainTabActivity',
-      rules: '[id="com.zhaopin.social:id/rl_banner_close"][clickable=true]',
+      rules:
+        '[id="com.zhaopin.social:id/rl_banner_close"][visibleToUser=true][clickable=true]',
       snapshotUrls: ['https://i.gkd.li/import/12706181'],
     },
     {
@@ -19,7 +20,7 @@ export default defineAppConfig({
       activityIds: ['com.zhaopin.social.homepage.ZSC_MainTabActivity'],
       rules:
         'ImageView[clickable=true&&focusable=true] < FrameLayout + FrameLayout > ImageView[clickable=false&&focusable=false]',
-      snapshotUrls: 'https://inspect.gkd.li/import/13063442',
+      snapshotUrls: 'https://i.gkd.li/import/13063442',
     },
   ],
 });
