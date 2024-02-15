@@ -8,20 +8,14 @@
 
 默认禁用
 
-- [快照-0](https://i.gkd.li/import/12642792)
-- [快照-1](https://i.gkd.li/import/13180826)
-- [快照-2](https://i.gkd.li/import/12648734)
-- [快照-3](https://i.gkd.li/import/12648746)
-- [快照-4](https://i.gkd.li/import/13198239)
-- [快照-5](https://i.gkd.li/import/13198052)
-- [快照-6](https://i.gkd.li/import/13249418)
+- [快照-0](https://i.gkd.li/import/13198052)
+- [快照-1](https://i.gkd.li/import/13249418)
 
 ## 局部广告-消息页面热门活动卡片
 
 默认禁用
 
-- [快照-0](https://i.gkd.li/import/12642795)
-- [快照-1](https://i.gkd.li/import/13197877)
+- [快照-0](https://i.gkd.li/import/13197877)
 
 ## 局部广告-悬浮广告
 

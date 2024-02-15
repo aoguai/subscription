@@ -1,6 +1,6 @@
 # 微信
 
-存在 15 规则组 - [com.tencent.mm](/src/apps/com.tencent.mm.ts)
+存在 14 规则组 - [com.tencent.mm](/src/apps/com.tencent.mm.ts)
 
 ## 分段广告-朋友圈广告
 
@@ -68,17 +68,32 @@
 
 ## 分段广告-订阅号文章广告
 
-默认禁用 - ⚠ 此规则有概率误触。自动点击关闭按钮，必须同时启用【订阅号文章广告反馈】规则
+默认禁用 - 自动点击关闭
 
 - [快照-0](https://i.gkd.li/import/12642232)
 - [快照-1](https://i.gkd.li/import/13199281)
-- [快照-2](https://i.gkd.li/import/12646837)
-- [快照-3](https://i.gkd.li/import/12678937)
-- [快照-4](https://i.gkd.li/import/12714427)
-- [快照-5](https://i.gkd.li/import/14006180)
-- [快照-6](https://i.gkd.li/import/12700183)
-- [快照-7](https://i.gkd.li/import/12701503)
-- [快照-8](https://i.gkd.li/import/12714424)
+- [快照-2](https://i.gkd.li/import/14006180)
+- [快照-3](https://i.gkd.li/import/12714427)
+- [快照-4](https://i.gkd.li/import/12700183)
+- [快照-5](https://i.gkd.li/import/12714424)
+- [快照-6](https://i.gkd.li/import/14293295)
+- [快照-7](https://i.gkd.li/import/12678937)
+- [快照-8](https://i.gkd.li/import/12646837)
+- [快照-9](https://i.gkd.li/import/12642234)
+- [快照-10](https://i.gkd.li/import/12722301)
+- [快照-11](https://i.gkd.li/import/12722331)
+- [快照-12](https://i.gkd.li/import/14006203)
+- [快照-13](https://i.gkd.li/import/12701503)
+- [快照-14](https://i.gkd.li/import/14292844)
+- [快照-15](https://i.gkd.li/import/12745280)
+- [快照-16](https://i.gkd.li/import/12642238)
+- [快照-17](https://i.gkd.li/import/14006206)
+- [快照-18](https://i.gkd.li/import/14293434)
+- [快照-19](https://i.gkd.li/import/12700191)
+- [快照-20](https://i.gkd.li/import/12745280)
+- [快照-21](https://i.gkd.li/import/12642238)
+- [快照-22](https://i.gkd.li/import/14006206)
+- [快照-23](https://i.gkd.li/import/12700191)
 
 ## 功能类-自动选中发送原图
 
@@ -87,18 +102,6 @@
 - [快照-0](https://i.gkd.li/import/12686641)
 - [快照-1](https://i.gkd.li/import/12840865)
 - [快照-2](https://i.gkd.li/import/12686640)
-
-## 分段广告-订阅号文章广告反馈
-
-默认禁用 - ⚠ 此规则有概率误触。自动点击反馈理由，配合【订阅号文章广告】规则使用
-
-- [快照-0](https://i.gkd.li/import/12642234)
-- [快照-1](https://i.gkd.li/import/12722301)
-- [快照-2](https://i.gkd.li/import/12722331)
-- [快照-3](https://i.gkd.li/import/14006203)
-- [快照-4](https://i.gkd.li/import/12642238)
-- [快照-5](https://i.gkd.li/import/14006206)
-- [快照-6](https://i.gkd.li/import/12700191)
 
 ## 功能类-自动查看原图
 

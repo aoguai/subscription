@@ -24,4 +24,3 @@
 - [快照-15](https://i.gkd.li/import/13259196)
 - [快照-16](https://i.gkd.li/import/13259198)
 - [快照-17](https://i.gkd.li/import/13259183)
-- [快照-18](https://i.gkd.li/import/13458692)

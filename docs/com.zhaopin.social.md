@@ -12,4 +12,4 @@
 
 默认禁用
 
-- [快照-0](https://inspect.gkd.li/import/13063442)
+- [快照-0](https://i.gkd.li/import/13063442)
