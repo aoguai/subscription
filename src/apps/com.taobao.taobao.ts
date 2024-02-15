@@ -20,24 +20,6 @@ export default defineAppConfig({
       enable: false,
       rules: [
         {
-          key: 0,
-          activityIds: [
-            'com.taobao.tao.welcome.Welcome',
-            'com.taobao.tao.TBMainActivity',
-            'com.taobao.android.tbabilitykit.pop.StdPopContainerActivity',
-            'com.taobao.android.detail.wrapper.activity.DetailActivity',
-            'com.alibaba.triver.container.TriverMainActivity',
-          ],
-          matches: '[desc^="限时福利"] < FrameLayout + [desc="关闭按钮"]',
-          snapshotUrls: [
-            'https://i.gkd.li/import/12642792', // activityId: com.taobao.tao.welcome.Welcome
-            'https://i.gkd.li/import/13180826', // activityId: com.taobao.tao.TBMainActivity
-            'https://i.gkd.li/import/12648734', // activityId: com.taobao.android.tbabilitykit.pop.StdPopContainerActivity
-            'https://i.gkd.li/import/12648746', // activityId: com.taobao.android.detail.wrapper.activity.DetailActivity
-            'https://i.gkd.li/import/13198239', //com.alibaba.triver.container.TriverMainActivity
-          ],
-        },
-        {
           key: 1,
           name: '88VIP开通优惠弹窗',
           activityIds: [
@@ -57,10 +39,7 @@ export default defineAppConfig({
       name: '局部广告-消息页面热门活动卡片',
       activityIds: 'com.taobao.tao.welcome.Welcome',
       rules: 'View[desc.length>0] +2n FrameLayout > TextView[text="퀺"]',
-      snapshotUrls: [
-        'https://i.gkd.li/import/12642795',
-        'https://i.gkd.li/import/13197877',
-      ],
+      snapshotUrls: ['https://i.gkd.li/import/13197877'],
     },
     {
       key: 3,

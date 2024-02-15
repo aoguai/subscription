@@ -88,13 +88,6 @@ export default defineAppConfig({
           ],
           snapshotUrls: 'https://i.gkd.li/import/13259183',
         },
-        {
-          key: 7,
-          name: '美数广告',
-          activityIds: 'com.meishu.sdk.activity.SdkInterstitialActivity',
-          matches: ['[id="com.xyhui:id/ms_activity_sdk_interstitial_cacel"]'],
-          snapshotUrls: 'https://i.gkd.li/import/13458692',
-        },
       ],
     },
   ],

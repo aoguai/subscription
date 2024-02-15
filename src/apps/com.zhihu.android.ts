@@ -3,7 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.zhihu.android',
   name: '知乎',
-  deprecatedKeys: [0, 1, 2, 3, 4, 5, 7, 8, 9, 10],
+  deprecatedKeys: [0, 1, 2, 3, 4, 5, 7, 8, 9, 10, 13],
   groups: [
     {
       key: 6,
@@ -123,9 +123,29 @@ export default defineAppConfig({
             'https://m.gkd.li/45487685/c7d89c48-91d1-4658-b22e-d2626117be8b',
           snapshotUrls: 'https://i.gkd.li/import/14206988',
         },
+        {
+          key: 2,
+          activityIds: 'com.zhihu.android.app.ui.activity.MainActivity',
+          quickFind: true,
+          matches: '@[vid="menu"][visibleToUser=true] < * - * > [text^="广告"]',
+          snapshotUrls: 'https://i.gkd.li/import/14296163',
+        },
       ],
     },
-
+    {
+      key: 15,
+      name: '局部广告-悬浮小广告',
+      rules: [
+        {
+          key: 0,
+          name: '发现页面-右侧年卡折扣悬浮窗',
+          activityIds: 'com.zhihu.android.app.ui.activity.MainActivity',
+          quickFind: true,
+          matches: '@[vid="activity_close"] + * > [vid="activity_img"]',
+          snapshotUrls: 'https://i.gkd.li/import/14296251',
+        },
+      ],
+    },
     {
       key: 101,
       name: '功能类-自动展开回答',

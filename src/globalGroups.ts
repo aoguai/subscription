@@ -18,6 +18,9 @@ const diabledAppIds: string[] = [
   'com.tencent.mm', // 微信
   'li.songe.gkd',
 
+  'com.google.ar.core', // 谷歌AR服务
+  'com.google.android.syncadapters.calendar', // 谷歌日历同步
+
   // 小米系
   'com.miui.aod', // miui 锁屏界面
   'miui.systemui.plugin', // miui 状态栏界面
@@ -50,10 +53,11 @@ const diabledAppIds: string[] = [
 
 function filterAppsByGroup(apps: any[], groupNamePrefix: string): string[] {
   return apps
-    .filter((a) =>
-      a.groups.some((g: { name: string }) =>
-        g.name.startsWith(groupNamePrefix),
-      ),
+    .filter(
+      (a) =>
+        a.groups.filter((g: { name: string }) =>
+          g.name.startsWith(groupNamePrefix),
+        ).length === 1,
     )
     .map((a) => a.id);
 }
@@ -62,44 +66,20 @@ const uniqueAppIdsAD = new Set([
   ...diabledAppIds,
   ...filterAppsByGroup(apps, '开屏广告'),
 ]);
-const uniqueAppIdsFA = new Set([
-  ...diabledAppIds,
-  ...filterAppsByGroup(apps, '全屏广告'),
-]);
-const uniqueAppIdsPA = new Set([
-  ...diabledAppIds,
-  ...filterAppsByGroup(apps, '局部广告'),
-]);
 const uniqueAppIdsUP = new Set([
   ...diabledAppIds,
   ...filterAppsByGroup(apps, '更新提示'),
-]);
-const uniqueAppIdsRP = new Set([
-  ...diabledAppIds,
-  ...filterAppsByGroup(apps, '评价提示'),
-]);
-const uniqueAppIdsNP = new Set([
-  ...diabledAppIds,
-  ...filterAppsByGroup(apps, '通知提示'),
 ]);
 const uniqueAppIdsYM = new Set([
   ...diabledAppIds,
   ...filterAppsByGroup(apps, '青少年模式'),
 ]);
-const uniqueAppIdsPP = new Set([
-  ...diabledAppIds,
-  ...filterAppsByGroup(apps, '权限提示'),
-]);
-const uniqueAppIdsLP = new Set([
-  ...diabledAppIds,
-  ...filterAppsByGroup(apps, '定位提示'),
-]);
 
 const COMMON_PREFIX = '[childCount=0][visibleToUser=true]';
 
-const NEGATION_PART_RULE_TEXT = `${COMMON_PREFIX}[((text^="不"&&text$="谢谢")||text="否"||text="关闭"||text="不开启"||text="暂时不用"||text="不用了"||text="考虑一下"||text="考慮一下"||text="先不了"||text="不允许"||text^="不了"||text^="不再"||text^="忽略"||text^="暂不"||text^="放弃"||text^="取消"||text$="再说"||text$="拒绝"||text$="再想想"||text$="知道了"||(text^="不"&&text$="謝謝")||text="關閉"||text="不開啟"||text="關閉"||text$="再說"||text$="拒絕"||text^="暫不"||text="close"||text="Close"||text="Not now"||text="not now"||text^="Ignore"||text^="Lgnore"||text^="Cancel"||text^="cancel"||text$="later"||text$="Later"||text$="refuse"||text$="Refuse"||text$="i see"||text$="I see")&&text.length<=7]`;
-const NEGATION_PART_RULE_DESC = `${COMMON_PREFIX}[((desc^="不"&&desc$="谢谢")||desc="否"||desc="关闭"||desc="不开启"||desc="暂时不用"||desc="不用了"||desc="考虑一下"||desc="考慮一下"||desc="先不了"||desc="不允许"||desc^="不了"||desc^="不再"||desc^="忽略"||desc^="暂不"||desc^="放弃"||desc^="取消"||desc$="再说"||desc$="拒绝"||desc$="再想想"||desc$="知道了"||(desc^="不"&&desc$="謝謝")||desc="關閉"||desc="不開啟"||desc="關閉"||desc$="再說"||desc$="拒絕"||desc^="暫不"||desc="close"||desc="Close"||desc="Not now"||desc="not now"||desc^="Ignore"||desc^="Lgnore"||desc^="Cancel"||desc^="cancel"||desc$="later"||desc$="Later"||desc$="refuse"||desc$="Refuse"||desc$="i see"||desc$="I see")&&desc.length<=7]`;
-const NEGATION_PART_RULE_BUTTON = `${COMMON_PREFIX}[(id*="iv"||id*="guide"||id*="alert"||id*="Notific"||id*="dialog"||id*="btn"||id*="ad"||id*="ab")&&(id$="close"||id$="Close"||id$="Delete"||id$="delete"||id$="cancel"||id$="Cancel"||id$="cancle"||id$="Cancle"||id$="exit"||id$="Exit")||id*="/close"||id*="/Close"||id*="/ab"||id*="/deleteIv"||id*="_close"||id*="_Close"||text=""||desc=""||text="×"||desc="×"]`;
+const NEGATION_PART_RULE_TEXT = `${COMMON_PREFIX}[((text^="不"&&text$="谢谢")||text="否"||text="关闭"||text="关闭按钮"||text="不开启"||text="暂时不用"||text="不用了"||text="考虑一下"||text="考慮一下"||text="先不了"||text="不允许"||text^="不了"||text^="不再"||text^="忽略"||text^="暂不"||text^="放弃"||text^="取消"||text$="再说"||text$="拒绝"||text$="再想想"||text$="知道了"||(text^="不"&&text$="謝謝")||text="關閉"||text="關閉按鈕"||text="不開啟"||text$="再說"||text$="拒絕"||text^="暫不"||text="close"||text="Close"||text="Not now"||text="not now"||text^="Ignore"||text^="Lgnore"||text^="Cancel"||text^="cancel"||text$="later"||text$="Later"||text$="refuse"||text$="Refuse"||text$="i see"||text$="I see")&&text.length<=7]`;
+const NEGATION_PART_RULE_DESC = `${COMMON_PREFIX}[((desc^="不"&&desc$="谢谢")||desc="否"||desc="关闭"||desc="关闭按钮"||desc="不开启"||desc="暂时不用"||desc="不用了"||desc="考虑一下"||desc="考慮一下"||desc="先不了"||desc="不允许"||desc^="不了"||desc^="不再"||desc^="忽略"||desc^="暂不"||desc^="放弃"||desc^="取消"||desc$="再说"||desc$="拒绝"||desc$="再想想"||desc$="知道了"||(desc^="不"&&desc$="謝謝")||desc="關閉"||desc="關閉按鈕"||desc="不開啟"||desc$="再說"||desc$="拒絕"||desc^="暫不"||desc="close"||desc="Close"||desc="Not now"||desc="not now"||desc^="Ignore"||desc^="Lgnore"||desc^="Cancel"||desc^="cancel"||desc$="later"||desc$="Later"||desc$="refuse"||desc$="Refuse"||desc$="i see"||desc$="I see")&&desc.length<=7]`;
+const NEGATION_PART_RULE_BUTTON = `${COMMON_PREFIX}[(id*="iv"||id*="guide"||id*="alert"||id*="Notific"||id*="dialog"||id*="btn"||id*="ad"||id*="ab")&&(id$="close"||id$="Close"||id$="Delete"||id$="delete"||id$="cancel"||id$="Cancel"||id$="cancle"||id$="Cancle"||id$="exit"||id$="Exit")||id*="/close"||id*="/Close"||id*="/ab"||id*="/deleteIv"||id*="_close"||id*="_Close"||text=""||desc=""||text="×"||desc="×"||text="퀺"||desc="퀺"]`;
 
 const UP_commonTextPatterns =
   '[text^="测试版"||text^="新版本"||text^="新版"||text^="更新"||text^="升级"||text^="体验"||text^="升級"||text^="體驗"||text^="Update"||text^="Upgrade"||text^="Experience"||text$="测试版"||text$="新版本"||text$="新版"||text$="更新"||text$="升级"||text$="体验"||text$="升級"||text$="體驗"||text$="Update"||text$="Upgrade"||text$="Experience"]';
@@ -132,9 +112,9 @@ const LP_commonDescPatterns =
   '[(desc*="访问"||desc*="申请"||desc*="开启"||desc*="打开"||desc*="获取")&&(desc*="定位"||desc*="位置"||desc*="location")&&desc!*="通知"]';
 
 const PA_commonTextPatterns =
-  '[text$="广告"||text$="廣告"||text$="AD"||text="ad"||(text*="申请"||text*="开启"||text*="打开"||text*="获取"||text*="订阅"||text*="接收"||text*="Turn on")&&(text*="个性化"||text*="推荐"||text*="感兴趣"||text*="個性化"||text*="推薦"||text*="感興趣"||text*="感興趣")]';
+  '[text^="广告"||text$="广告"||text^="廣告"||text$="廣告"||text$="限时福利"||text^="热门活动"||text$="热门活动"||text$="限時福利"||text^="限时福利"||text^="限時福利"||((text$="AD"||text="ad")&&((text!*="download"&&text!*="Download"&&text!*="DOWNLOAD")&&(text!*="read"&&text!*="Read"&&text!*="READ")))||(text*="申请"||text*="开启"||text*="打开"||text*="获取"||text*="订阅"||text*="接收"||text*="Turn on")&&(text*="个性化"||text*="推荐"||text*="感兴趣"||text*="個性化"||text*="推薦"||text*="感興趣"||text*="感興趣")]';
 const PA_commonDescPatterns =
-  '[desc$="广告"||desc$="廣告"||desc$="AD"||desc="ad"||(desc*="申请"||desc*="开启"||desc*="打开"||desc*="获取"||desc*="订阅"||desc*="接收"||desc*="Turn on")&&(desc*="个性化"||desc*="推荐"||desc*="感兴趣"||desc*="個性化"||desc*="推薦"||desc*="感興趣"||desc*="感興趣")]';
+  '[desc^="广告"||desc$="广告"||desc^="廣告"||desc$="廣告"||desc$="限时福利"||desc^="热门活动"||desc$="热门活动"||desc$="限時福利"||desc^="限时福利"||desc^="限時福利"||((desc$="AD"||desc="ad")&&((desc!*="download"&&desc!*="Download"&&desc!*="DOWNLOAD")&&(desc!*="read"&&desc!*="Read"&&desc!*="READ")))||(desc*="申请"||desc*="开启"||desc*="打开"||desc*="获取"||desc*="订阅"||desc*="接收"||desc*="Turn on")&&(desc*="个性化"||desc*="推荐"||desc*="感兴趣"||desc*="個性化"||desc*="推薦"||desc*="感興趣"||desc*="感興趣")]';
 
 const globalGroups: RawGlobalGroup[] = [
   {
@@ -201,7 +181,7 @@ const globalGroups: RawGlobalGroup[] = [
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
-    apps: [...uniqueAppIdsFA].map((id) => ({ id, enable: false })),
+    apps: diabledAppIds.map((id) => ({ id, enable: false })),
   },
   {
     key: 2,
@@ -265,7 +245,7 @@ const globalGroups: RawGlobalGroup[] = [
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
-    apps: [...uniqueAppIdsPA].map((id) => ({ id, enable: false })),
+    apps: diabledAppIds.map((id) => ({ id, enable: false })),
   },
   {
     key: 3,
@@ -391,7 +371,7 @@ const globalGroups: RawGlobalGroup[] = [
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
-    apps: [...uniqueAppIdsRP].map((id) => ({ id, enable: false })),
+    apps: diabledAppIds.map((id) => ({ id, enable: false })),
   },
   {
     key: 5,
@@ -453,7 +433,7 @@ const globalGroups: RawGlobalGroup[] = [
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
-    apps: [...uniqueAppIdsNP].map((id) => ({ id, enable: false })),
+    apps: diabledAppIds.map((id) => ({ id, enable: false })),
   },
   {
     key: 6,
@@ -579,7 +559,7 @@ const globalGroups: RawGlobalGroup[] = [
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
-    apps: [...uniqueAppIdsPP].map((id) => ({ id, enable: false })),
+    apps: diabledAppIds.map((id) => ({ id, enable: false })),
   },
   {
     key: 8,
@@ -642,7 +622,7 @@ const globalGroups: RawGlobalGroup[] = [
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
-    apps: [...uniqueAppIdsLP].map((id) => ({ id, enable: false })),
+    apps: diabledAppIds.map((id) => ({ id, enable: false })),
   },
 ];
 export default globalGroups;

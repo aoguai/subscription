@@ -11,19 +11,6 @@ export default defineAppConfig({
       activityIds: ['com.mosoink.teach.MainMenuActivity'],
       rules: [
         {
-          matches: '[text="广告"] <2 ViewGroup -2 ViewGroup > ViewGroup',
-          exampleUrls:
-            'https://m.gkd.li/64072399/4f7366d4-77eb-4a11-8e08-26afc29f29ed',
-          snapshotUrls: 'https://i.gkd.li/import/13778179',
-        },
-        {
-          matches:
-            '[text="广告"] <2 ViewGroup < ViewGroup < ViewGroup - ViewGroup > FrameLayout + ViewGroup > ViewGroup',
-          exampleUrls:
-            'https://m.gkd.li/64072399/ab4a196f-725d-4e03-aabf-fb0eb6018f51',
-          snapshotUrls: 'https://i.gkd.li/import/13786802',
-        },
-        {
           matches:
             'TextView - View <1 FrameLayout - FrameLayout >1 FrameLayout > ImageView < FrameLayout',
           exampleUrls:
