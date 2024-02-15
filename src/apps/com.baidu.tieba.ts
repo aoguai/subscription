@@ -49,7 +49,6 @@ export default defineAppConfig({
       rules: [
         {
           key: 0,
-          activityIds: 'com.baidu.tieba.pb.pb.main.PbActivity',
           matches:
             '@ImageView[clickable=true] -2 LinearLayout > [text^="打开通知"]',
           snapshotUrls: 'https://i.gkd.li/import/13536170',
@@ -184,7 +183,7 @@ export default defineAppConfig({
       rules: [
         {
           key: 0,
-          name: '首页右侧悬浮广告',
+          name: '首页右侧悬浮广告-1',
           activityIds: 'com.baidu.tieba.tblauncher.MainTabActivity',
           matches:
             '@ImageView[clickable=true] - TextView[text="广告"] < RelativeLayout + ImageView',
@@ -195,6 +194,14 @@ export default defineAppConfig({
         },
         {
           key: 1,
+          name: '首页右侧悬浮广告-2',
+          activityIds: 'com.baidu.tieba.tblauncher.MainTabActivity',
+          matches:
+            'RelativeLayout >2 RelativeLayout[childCount=1] > ImageView[childCount=0][clickable=true]',
+          snapshotUrls: 'https://i.gkd.li/import/14291964',
+        },
+        {
+          key: 2,
           name: '评论区左侧悬浮广告',
           quickFind: true,
           activityIds: 'com.baidu.tieba.pb.pb.main.PbActivity',
@@ -202,7 +209,7 @@ export default defineAppConfig({
           snapshotUrls: 'https://i.gkd.li/import/13296280',
         },
         {
-          key: 2,
+          key: 3,
           activityIds: [
             'com.baidu.tieba.pb.pb.main.PbActivity',
             'com.baidu.tieba.tblauncher.MainTabActivity',
