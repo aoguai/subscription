@@ -436,6 +436,7 @@ export default defineAppConfig({
       desc: '低价包邮广告',
       actionDelay: 500,
       actionMaximum: 1,
+      resetMatch: 'activity',
       activityIds: 'com.tencent.mm.plugin.appbrand.ui.AppBrandUI',
       rules: {
         matches:
