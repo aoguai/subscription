@@ -162,7 +162,6 @@ export default defineAppConfig({
       key: 4,
       name: '功能类-微信读书网页版扫码登录自动授权',
       enable: false,
-      quickFind: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'activity',

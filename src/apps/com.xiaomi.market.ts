@@ -9,7 +9,6 @@ export default defineAppConfig({
       key: 0,
       name: '全屏广告-首页悬浮窗广告',
       enable: false,
-      quickFind: true,
       activityIds: 'com.xiaomi.market.ui.FloatWebActivity',
       rules: '[id="com.xiaomi.market:id/webview_container"] >n [text="关闭"]',
       snapshotUrls: 'https://i.gkd.li/import/13248808',

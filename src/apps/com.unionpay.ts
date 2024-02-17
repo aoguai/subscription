@@ -9,7 +9,6 @@ export default defineAppConfig({
       key: 2,
       name: '分段广告-支付完成界面广告卡片',
       enable: false,
-      quickFind: true,
       activityIds: 'com.unionpay.activity.react.UPActivityReactNative',
       rules: [
         {
@@ -57,7 +56,6 @@ export default defineAppConfig({
       name: '全屏广告-领取优惠弹窗',
       desc: '点击X',
       enable: false,
-      quickFind: true,
       rules: [
         {
           activityIds: 'com.unionpay.cordova.UPActivityCordovaWeb',
