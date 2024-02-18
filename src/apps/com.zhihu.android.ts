@@ -10,52 +10,48 @@ export default defineAppConfig({
       name: '分段广告-信息流广告',
       desc: '点击关闭-点击内容不感兴趣',
       enable: false,
+      quickFind: true,
       activityIds: [
         'com.zhihu.android.mixshortcontainer.MixShortContainerActivity',
+        'com.zhihu.android.app.ui.activity.MainActivity',
         'com.zhihu.android.app.ui.activity.HostActivity',
         'com.zhihu.android.feature.short_container_feature.ui.ShortContainerHostActivity',
         'com.zhihu.android.ContentActivity',
+        'com.zhihu.android.app.ui.activity.MainActivity',
       ],
       rules: [
         {
           key: 0,
-          quickFind: true,
-          matches: '@ImageView[clickable=true] -n [text="广告"]',
-          snapshotUrls: 'https://i.gkd.li/import/13849671',
-        },
-        {
-          key: 1,
           matches:
-            '@ImageView[id=null][clickable=true] -2 ViewGroup > [text$="广告"]',
+            '@ImageView[id=null][clickable=true] <<n * <n * > * >n [text$="广告"]',
           exampleUrls:
             'https://m.gkd.li/57941037/f6498773-af55-4ba9-96fa-4c0597523d55',
           snapshotUrls: [
+            'https://i.gkd.li/import/13849671',
             'https://i.gkd.li/import/12647525',
             'https://i.gkd.li/import/14178516', //activityId: com.zhihu.android.feature.short_container_feature.ui.ShortContainerHostActivity
-          ],
-        },
-        {
-          key: 2,
-          quickFind: true,
-          matches: '@ImageView[clickable=true] -(2,3) * > [text*="广告"]',
-          snapshotUrls: [
             'https://i.gkd.li/import/13849442',
             'https://i.gkd.li/import/14178979',
+            'https://i.gkd.li/import/14206988',
           ],
-          exampleUrls:
-            'https://m.gkd.li/57941037/65e9f31a-e80f-4996-9621-1b8fd92940d6',
         },
         {
-          key: 3,
-          quickFind: true,
+          key: 1,
           matches: '@ViewGroup[clickable=true] <4 * -3 * >2 [text*="广告"]',
           snapshotUrls: 'https://i.gkd.li/import/14192451',
         },
         {
+          key: 2,
+          matches:
+            '[vid="dot_text_layout"] + [vid="menu_container"] > [vid="menu"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/689c77eb-9026-44db-b22e-d890961a0ad6',
+          snapshotUrls: 'https://i.gkd.li/import/14321041',
+        },
+        {
           key: 90,
-          preKeys: [0, 1, 2, 3],
-          quickFind: true,
-          matches: '@[clickable=true] >3 [text="内容不感兴趣"]',
+          preKeys: [0, 1, 2],
+          matches: '@[clickable=true] >3 [text$="不感兴趣"]',
           snapshotUrls: 'https://i.gkd.li/import/13849689',
         },
       ],
@@ -65,11 +61,11 @@ export default defineAppConfig({
       name: '全屏广告-会员页面月卡红包',
       desc: '点击关闭',
       enable: false,
+      quickFind: false,
       rules: [
         {
           activityIds: 'com.zhihu.android.app.ui.activity.MainActivity',
-          matches:
-            'RelativeLayout[childCount=2] > ImageView[index=1][clickable=true]',
+          matches: '[id="com.zhihu.android:id/floating_close_btn"]',
           exampleUrls:
             'https://m.gkd.li/57941037/335dee89-4b55-40f1-8316-b7b4f86a8ee6',
           snapshotUrls: 'https://i.gkd.li/import/12647421',
@@ -96,11 +92,13 @@ export default defineAppConfig({
       key: 14,
       name: '局部广告-信息流广告',
       desc: '点击关闭',
+      activityIds: [
+        'com.zhihu.android.feature.short_container_feature.ui.ShortContainerHostActivity',
+        'com.zhihu.android.app.ui.activity.MainActivity',
+      ],
       rules: [
         {
           key: 0,
-          activityIds:
-            'com.zhihu.android.feature.short_container_feature.ui.ShortContainerHostActivity',
           matches:
             'ViewGroup > TextView[text!=""][index=1] +(2,3) ImageView[clickable=true][visibleToUser=true]',
           exampleUrls:
@@ -113,19 +111,7 @@ export default defineAppConfig({
           ],
         },
         {
-          key: 1,
-          quickFind: true,
-          activityIds:
-            'com.zhihu.android.feature.short_container_feature.ui.ShortContainerHostActivity',
-          matches:
-            '@ImageView[clickable=true][visibleToUser=true] + * > [text*="广告"]',
-          exampleUrls:
-            'https://m.gkd.li/45487685/c7d89c48-91d1-4658-b22e-d2626117be8b',
-          snapshotUrls: 'https://i.gkd.li/import/14206988',
-        },
-        {
           key: 2,
-          activityIds: 'com.zhihu.android.app.ui.activity.MainActivity',
           quickFind: true,
           matches: '@[vid="menu"][visibleToUser=true] < * - * > [text^="广告"]',
           snapshotUrls: 'https://i.gkd.li/import/14296163',

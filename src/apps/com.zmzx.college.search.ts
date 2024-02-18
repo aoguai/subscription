@@ -9,11 +9,11 @@ export default defineAppConfig({
       key: 2,
       name: '全屏广告',
       enable: false,
+      quickFind: true,
       rules: [
         {
           key: 0,
           name: '腾讯广告',
-          quickFind: true,
           activityIds: [
             'com.zmzx.college.search.activity.main.activity.MainActivity',
             'com.zmzx.college.search.activity.questionsearch.camera.activity.PicSearchResultActivity',
@@ -30,7 +30,7 @@ export default defineAppConfig({
           activityIds:
             'com.zmzx.college.search.activity.camerasdk.ZybCameraSDKActivity',
           matches:
-            '[id="com.zmzx.college.search:id/ad_flag_source_layout"] + [id="com.zmzx.college.search:id/iv_close"]',
+            'RelativeLayout > [id="com.zmzx.college.search:id/iv_close"]',
           snapshotUrls: 'https://i.gkd.li/import/13522998',
         },
         {

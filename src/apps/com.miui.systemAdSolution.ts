@@ -2,12 +2,13 @@ import { defineAppConfig } from '../types';
 
 export default defineAppConfig({
   id: 'com.miui.systemAdSolution',
-  name: 'miui系统广告',
+  name: '智能服务',
   groups: [
     {
       key: 1,
       name: '局部广告-miui-为什么不希望看到这条推广',
       desc: '点击【不感兴趣】',
+      quickFind: true,
       activityIds: [
         'com.xiaomi.ad.feedback',
         'com.android.thememanager.module.detail.view.ThemeDetailActivity',

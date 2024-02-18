@@ -13,34 +13,30 @@ export default defineAppConfig({
       resetMatch: 'app',
       actionCdKey: 0,
       actionMaximumKey: 0,
+      quickFind: true,
       rules: [
         {
           key: 0,
           matches:
-            '[id$="ad_container"] >n [id$="tt_splash_skip_btn"||text^="跳过"]',
+            '@View[clickable=true] + TextView <<n * <n * > * >n [vid="ad_container"]',
           snapshotUrls: [
             'https://i.gkd.li/import/12503773',
             'https://i.gkd.li/import/13247610',
             'https://i.gkd.li/import/13264779',
             'https://i.gkd.li/import/14162294',
             'https://i.gkd.li/import/12917990',
+            'https://i.gkd.li/import/13826359',
+            'https://i.gkd.li/import/13827095',
+            'https://i.gkd.li/import/13247733', // 误触
+            'https://i.gkd.li/import/13247782', // 可能误触
+            'https://i.gkd.li/import/13296816', // snapshot of excludeMatches
           ],
         },
         {
           key: 1,
           matches:
-            '[id$="ad_container"] +n * > [id$="tt_splash_skip_btn"||text^="跳过"]',
+            '[id$="tt_splash_skip_btn"||text^="跳过"] < * -n [vid="ad_container"]',
           snapshotUrls: ['https://i.gkd.li/import/13211392'],
-        },
-        {
-          key: 2,
-          quickFind: true,
-          matches:
-            '@View[clickable=true] <(2,3) FrameLayout <2 FrameLayout <<n FrameLayout[id="com.coolapk.market:id/ad_container"]',
-          snapshotUrls: [
-            'https://i.gkd.li/import/13826359',
-            'https://i.gkd.li/import/13827095',
-          ],
         },
       ],
     },

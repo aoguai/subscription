@@ -37,8 +37,9 @@ export default defineAppConfig({
     },
     {
       key: 11,
-      name: '局部广告-我的页面-顶部 banner 广告',
+      name: '局部广告-我的页面顶部 banner 广告',
       activityIds: 'com.tencent.qqmusiclite.activity.MainActivity',
+      quickFind: true,
       rules:
         '[id="com.miui.player:id/banner_image"] + [id="com.miui.player:id/close_banner"]',
       snapshotUrls: 'https://i.gkd.li/import/12700984',
