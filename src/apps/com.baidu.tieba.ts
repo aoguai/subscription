@@ -9,6 +9,7 @@ export default defineAppConfig({
       key: 1,
       name: '权限提示-申请消息提醒弹窗',
       enable: false,
+      quickFind: true,
       actionMaximum: 1,
       resetMatch: 'app',
       rules: [
