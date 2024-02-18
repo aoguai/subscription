@@ -2,15 +2,6 @@
 
 存在 9 规则组 - [com.baidu.tieba](/src/apps/com.baidu.tieba.ts)
 
-## 开屏广告
-
-- [快照-0](https://i.gkd.li/import/12775906)
-- [快照-1](https://i.gkd.li/import/12566191)
-- [快照-2](https://i.gkd.li/import/12870916)
-- [快照-3](https://i.gkd.li/import/13233500)
-- [快照-4](https://i.gkd.li/import/13322227)
-- [快照-5](https://i.gkd.li/import/13168386)
-
 ## 权限提示-申请消息提醒弹窗
 
 默认禁用
@@ -38,6 +29,12 @@
 默认禁用
 
 - [快照-0](https://i.gkd.li/import/13060892)
+
+## 评价提示
+
+默认禁用
+
+- [快照-0](https://i.gkd.li/import/14317054)
 
 ## 分段广告-帖子底部内容推荐卡片
 

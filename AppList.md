@@ -15,7 +15,6 @@
 | 阿里云盘               | [com.alicloud.databox](/docs/com.alicloud.databox.md)                           | 5      |
 | 百度贴吧               | [com.baidu.tieba](/docs/com.baidu.tieba.md)                                     | 9      |
 | 百度网盘               | [com.baidu.netdisk](/docs/com.baidu.netdisk.md)                                 | 4      |
-| 必剪                   | [com.bilibili.studio](/docs/com.bilibili.studio.md)                             | 1      |
 | 哔哩哔哩               | [tv.danmaku.bili](/docs/tv.danmaku.bili.md)                                     | 6      |
 | 菜鸟                   | [com.cainiao.wireless](/docs/com.cainiao.wireless.md)                           | 4      |
 | 大学搜题酱             | [com.zmzx.college.search](/docs/com.zmzx.college.search.md)                     | 1      |
@@ -26,7 +25,6 @@
 | 京东                   | [com.jingdong.app.mall](/docs/com.jingdong.app.mall.md)                         | 9      |
 | 酷安                   | [com.coolapk.market](/docs/com.coolapk.market.md)                               | 2      |
 | 蓝岛                   | [com.loyea.adnmb](/docs/com.loyea.adnmb.md)                                     | 1      |
-| miui系统广告           | [com.miui.systemAdSolution](/docs/com.miui.systemAdSolution.md)                 | 1      |
 | miui主题壁纸           | [com.android.thememanager](/docs/com.android.thememanager.md)                   | 1      |
 | 暮瑟                   | [com.maxhom.weibu](/docs/com.maxhom.weibu.md)                                   | 2      |
 | 浦发银行               | [cn.com.spdb.mobilebank.per](/docs/cn.com.spdb.mobilebank.per.md)               | 1      |
@@ -50,4 +48,5 @@
 | 支付宝                 | [com.eg.android.AlipayGphone](/docs/com.eg.android.AlipayGphone.md)             | 5      |
 | 知乎                   | [com.zhihu.android](/docs/com.zhihu.android.md)                                 | 6      |
 | 智联招聘               | [com.zhaopin.social](/docs/com.zhaopin.social.md)                               | 2      |
+| 智能服务               | [com.miui.systemAdSolution](/docs/com.miui.systemAdSolution.md)                 | 1      |
 | 中国电信               | [com.ct.client](/docs/com.ct.client.md)                                         | 3      |

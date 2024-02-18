@@ -10,7 +10,7 @@
 - [快照-1](https://i.gkd.li/import/12700955)
 - [快照-2](https://i.gkd.li/import/13304343)
 
-## 局部广告-我的页面-顶部 banner 广告
+## 局部广告-我的页面顶部 banner 广告
 
 默认禁用
 

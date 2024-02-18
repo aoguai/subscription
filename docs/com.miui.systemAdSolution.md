@@ -1,4 +1,4 @@
-# miui系统广告
+# 智能服务
 
 存在 1 规则组 - [com.miui.systemAdSolution](/src/apps/com.miui.systemAdSolution.ts)
 
