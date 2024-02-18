@@ -92,9 +92,9 @@ const RP_commonDescPatterns =
   '[desc$="好评"||desc$="鼓励一下"||desc="马上评价"||desc$="好評"||desc$="鼓勵一下"||desc$="马上評價"]';
 
 const NP_commonTextPatterns =
-  '[(text*="申请"||text*="开启"||text*="打开"||text*="获取"||text*="订阅"||text*="接收"||text*="Turn on"||text*="turn on")&&(text*="通知"||text*="推送"||text*="notifications"||text*="Notifications")&&(text!*="定位"&&text!*="位置"&&text!*="location"&&text!*="权限")]';
+  '[(text*="是否允许"||text*="申请"||text*="开启"||text*="打开"||text*="获取"||text*="订阅"||text*="接收"||text*="Turn on"||text*="turn on")&&(text*="通知"||text*="推送"||text*="notifications"||text*="Notifications")&&(text!*="定位"&&text!*="位置"&&text!*="location"&&text!*="权限")]';
 const NP_commonDescPatterns =
-  '[(desc*="申请"||desc*="开启"||desc*="打开"||desc*="获取"||desc*="订阅"||desc*="接收"||desc*="Turn on"||desc*="turn on")&&(desc*="通知"||desc*="推送"||desc*="notifications"||desc*="Notifications")&&(desc!*="定位"&&desc!*="位置"&&desc!*="location"&&desc!*="权限")]';
+  '[(desc*="是否允许"||desc*="申请"||desc*="开启"||desc*="打开"||desc*="获取"||desc*="订阅"||desc*="接收"||desc*="Turn on"||desc*="turn on")&&(desc*="通知"||desc*="推送"||desc*="notifications"||desc*="Notifications")&&(desc!*="定位"&&desc!*="位置"&&desc!*="location"&&desc!*="权限")]';
 
 const YM_commonTextPatterns =
   '[text*="青少年模式"||(text*="未成年"&&text*="模式")||text*="儿童模式"]';
@@ -102,14 +102,14 @@ const YM_commonDescPatterns =
   '[desc*="青少年模式"||(desc*="未成年"&&desc*="模式")||desc*="儿童模式"]';
 
 const PP_commonTextPatterns =
-  '[(text*="申请"||text*="开启"||text*="打开"||text*="获取")&&text*="权限"&&(text!*="定位"&&text!*="位置"&&text!*="location"&&text!*="通知")]';
+  '[(text*="是否允许"||text*="申请"||text*="开启"||text*="打开"||text*="获取")&&text*="权限"&&(text!*="定位"&&text!*="位置"&&text!*="location"&&text!*="通知")]';
 const PP_commonDescPatterns =
-  '[(desc*="申请"||desc*="开启"||desc*="打开"||desc*="获取")&&desc*="权限"&&(desc!*="定位"&&desc!*="位置"&&desc!*="location"&&desc!*="通知")]';
+  '[(desc*="是否允许"||desc*="申请"||desc*="开启"||desc*="打开"||desc*="获取")&&desc*="权限"&&(desc!*="定位"&&desc!*="位置"&&desc!*="location"&&desc!*="通知")]';
 
 const LP_commonTextPatterns =
-  '[(text*="访问"||text*="申请"||text*="开启"||text*="打开"||text*="获取")&&(text*="定位"||text*="位置"||text*="location")&&text!*="通知"]';
+  '[(text*="是否允许"||text*="访问"||text*="申请"||text*="开启"||text*="打开"||text*="获取")&&(text*="定位"||text*="位置"||text*="location")&&text!*="通知"]';
 const LP_commonDescPatterns =
-  '[(desc*="访问"||desc*="申请"||desc*="开启"||desc*="打开"||desc*="获取")&&(desc*="定位"||desc*="位置"||desc*="location")&&desc!*="通知"]';
+  '[(desc*="是否允许"||desc*="访问"||desc*="申请"||desc*="开启"||desc*="打开"||desc*="获取")&&(desc*="定位"||desc*="位置"||desc*="location")&&desc!*="通知"]';
 
 const PA_commonTextPatterns =
   '[text^="广告"||text$="广告"||text^="廣告"||text$="廣告"||text$="限时福利"||text^="热门活动"||text$="热门活动"||text$="限時福利"||text^="限时福利"||text^="限時福利"||((text$="AD"||text="ad")&&((text!*="download"&&text!*="Download"&&text!*="DOWNLOAD")&&(text!*="read"&&text!*="Read"&&text!*="READ")))||(text*="申请"||text*="开启"||text*="打开"||text*="获取"||text*="订阅"||text*="接收"||text*="Turn on")&&(text*="个性化"||text*="推荐"||text*="感兴趣"||text*="個性化"||text*="推薦"||text*="感興趣"||text*="感興趣")]';
