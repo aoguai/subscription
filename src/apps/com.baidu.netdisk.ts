@@ -10,6 +10,7 @@ export default defineAppConfig({
       name: '全屏广告-活动弹窗',
       desc: '关闭各种活动弹窗信息',
       enable: false,
+      quickFind: true,
       activityIds: [
         'com.baidu.netdisk.ui.MainActivity',
         'com.baidu.netdisk.business.guide.dialog.lifeproduct.',
