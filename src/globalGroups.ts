@@ -112,9 +112,9 @@ const LP_commonDescPatterns =
   '[(desc*="是否允许"||desc*="访问"||desc*="申请"||desc*="开启"||desc*="打开"||desc*="获取")&&(desc*="定位"||desc*="位置"||desc*="location")&&desc!*="通知"]';
 
 const PA_commonTextPatterns =
-  '[text^="广告"||text$="广告"||text^="廣告"||text$="廣告"||text$="限时福利"||text^="热门活动"||text$="热门活动"||text$="限時福利"||text^="限时福利"||text^="限時福利"||((text$="AD"||text="ad")&&((text!*="download"&&text!*="Download"&&text!*="DOWNLOAD")&&(text!*="read"&&text!*="Read"&&text!*="READ")))||(text*="申请"||text*="开启"||text*="打开"||text*="获取"||text*="订阅"||text*="接收"||text*="Turn on")&&(text*="个性化"||text*="推荐"||text*="感兴趣"||text*="個性化"||text*="推薦"||text*="感興趣"||text*="感興趣")]';
+  '[text^="广告"||text$="广告"||text^="廣告"||text$="廣告"||text$="限时福利"||text^="热门活动"||text$="热门活动"||text$="限時福利"||text^="限时福利"||text^="限時福利"||((text$="AD"||text="ad")&&((text!*="download"&&text!*="Download"&&text!*="DOWNLOAD")&&(text!*="read"&&text!*="Read"&&text!*="READ")&&(text!*="add"&&text!*="Add"&&text!*="ADD")))||(text*="申请"||text*="开启"||text*="打开"||text*="获取"||text*="订阅"||text*="接收"||text*="Turn on")&&(text*="个性化"||text*="推荐"||text*="感兴趣"||text*="個性化"||text*="推薦"||text*="感興趣"||text*="感興趣")]';
 const PA_commonDescPatterns =
-  '[desc^="广告"||desc$="广告"||desc^="廣告"||desc$="廣告"||desc$="限时福利"||desc^="热门活动"||desc$="热门活动"||desc$="限時福利"||desc^="限时福利"||desc^="限時福利"||((desc$="AD"||desc="ad")&&((desc!*="download"&&desc!*="Download"&&desc!*="DOWNLOAD")&&(desc!*="read"&&desc!*="Read"&&desc!*="READ")))||(desc*="申请"||desc*="开启"||desc*="打开"||desc*="获取"||desc*="订阅"||desc*="接收"||desc*="Turn on")&&(desc*="个性化"||desc*="推荐"||desc*="感兴趣"||desc*="個性化"||desc*="推薦"||desc*="感興趣"||desc*="感興趣")]';
+  '[desc^="广告"||desc$="广告"||desc^="廣告"||desc$="廣告"||desc$="限时福利"||desc^="热门活动"||desc$="热门活动"||desc$="限時福利"||desc^="限时福利"||desc^="限時福利"||((desc$="AD"||desc="ad")&&((desc!*="download"&&desc!*="Download"&&desc!*="DOWNLOAD")&&(desc!*="read"&&desc!*="Read"&&desc!*="READ")&&(desc!*="add"&&desc!*="Add"&&desc!*="ADD")))||(desc*="申请"||desc*="开启"||desc*="打开"||desc*="获取"||desc*="订阅"||desc*="接收"||desc*="Turn on")&&(desc*="个性化"||desc*="推荐"||desc*="感兴趣"||desc*="個性化"||desc*="推薦"||desc*="感興趣"||desc*="感興趣")]';
 
 const globalGroups: RawGlobalGroup[] = [
   {
@@ -193,7 +193,7 @@ const globalGroups: RawGlobalGroup[] = [
     rules: [
       {
         key: 0,
-        matches: `[(((id*="/ad"||id*="/AD"||id$="ad"||id$="Ad"||id$="AD")&&id*="_")||id$="/adIv"||id$="_ad_"||id$="_Ad_"||id$="_AD_")&&(id!*="download"&&id!*="Download"&&id!*="DOWNLOAD")&&(id!*="read"&&id!*="Read"&&id!*="READ")] <<n * <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+        matches: `[(((id*="/ad"||id*="/AD"||id$="ad"||id$="Ad"||id$="AD")&&id*="_")||id$="/adIv"||id$="_ad_"||id$="_Ad_"||id$="_AD_")&&(id!*="download"&&id!*="Download"&&id!*="DOWNLOAD")&&(id!*="read"&&id!*="Read"&&id!*="READ")&&(id!*="add"&&id!*="Add"&&id!*="ADD")] <<n * <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
       },
       {
         key: 1,
