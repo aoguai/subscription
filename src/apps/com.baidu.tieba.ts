@@ -80,6 +80,16 @@ export default defineAppConfig({
       ],
     },
     {
+      key: 5,
+      name: '评价提示',
+      enable: false,
+      quickFind: true,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: '[text="喜欢“百度网盘”吗？"] +n [vid="tv_left_btn"]',
+      snapshotUrls: 'https://i.gkd.li/import/14317054',
+    },
+    {
       key: 8,
       name: '分段广告-帖子底部内容推荐卡片',
       desc: '关闭时弹窗选原因',
