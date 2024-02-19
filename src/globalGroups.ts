@@ -68,6 +68,11 @@ const uniqueAppIdsAD = new Set([
 ]);
 const uniqueAppIdsUP = new Set([
   ...diabledAppIds,
+  'com.android.packageinstaller', // 排除软件包安装程序
+  'com.google.android.packageinstaller', // Google Play
+  'com.miui.packageinstaller', // 小米系
+  'com.samsung.android.packageinstaller', // 三星系
+  'com.oplus.appdetail', // 一加系
   ...filterAppsByGroup(apps, '更新提示'),
 ]);
 const uniqueAppIdsYM = new Set([
@@ -79,22 +84,22 @@ const COMMON_PREFIX = '[childCount=0][visibleToUser=true]';
 
 const NEGATION_PART_RULE_TEXT = `${COMMON_PREFIX}[((text^="不"&&text$="谢谢")||text="否"||text="关闭"||text="关闭按钮"||text="不开启"||text="暂时不用"||text="不用了"||text="考虑一下"||text="考慮一下"||text="先不了"||text="不允许"||text^="不了"||text^="不再"||text^="忽略"||text^="暂不"||text^="放弃"||text^="取消"||text$="再说"||text$="拒绝"||text$="再想想"||text$="知道了"||(text^="不"&&text$="謝謝")||text="關閉"||text="關閉按鈕"||text="不開啟"||text$="再說"||text$="拒絕"||text^="暫不"||text="close"||text="Close"||text="Not now"||text="not now"||text^="Ignore"||text^="Lgnore"||text^="Cancel"||text^="cancel"||text$="later"||text$="Later"||text$="refuse"||text$="Refuse"||text$="i see"||text$="I see")&&text.length<=7]`;
 const NEGATION_PART_RULE_DESC = `${COMMON_PREFIX}[((desc^="不"&&desc$="谢谢")||desc="否"||desc="关闭"||desc="关闭按钮"||desc="不开启"||desc="暂时不用"||desc="不用了"||desc="考虑一下"||desc="考慮一下"||desc="先不了"||desc="不允许"||desc^="不了"||desc^="不再"||desc^="忽略"||desc^="暂不"||desc^="放弃"||desc^="取消"||desc$="再说"||desc$="拒绝"||desc$="再想想"||desc$="知道了"||(desc^="不"&&desc$="謝謝")||desc="關閉"||desc="關閉按鈕"||desc="不開啟"||desc$="再說"||desc$="拒絕"||desc^="暫不"||desc="close"||desc="Close"||desc="Not now"||desc="not now"||desc^="Ignore"||desc^="Lgnore"||desc^="Cancel"||desc^="cancel"||desc$="later"||desc$="Later"||desc$="refuse"||desc$="Refuse"||desc$="i see"||desc$="I see")&&desc.length<=7]`;
-const NEGATION_PART_RULE_BUTTON = `${COMMON_PREFIX}[(id*="iv"||id*="guide"||id*="alert"||id*="Notific"||id*="dialog"||id*="btn"||id*="ad"||id*="ab")&&(id$="close"||id$="Close"||id$="Delete"||id$="delete"||id$="cancel"||id$="Cancel"||id$="cancle"||id$="Cancle"||id$="exit"||id$="Exit")||id*="/close"||id*="/Close"||id*="/ab"||id*="/deleteIv"||id*="_close"||id*="_Close"||text=""||desc=""||text="×"||desc="×"||text="퀺"||desc="퀺"]`;
+const NEGATION_PART_RULE_BUTTON = `${COMMON_PREFIX}[(vid*="iv"||vid*="guide"||vid*="alert"||vid*="Notific"||vid*="dialog"||vid*="btn"||vid*="ad"||vid*="ab")&&(vid$="close"||vid$="Close"||vid$="Delete"||vid$="delete"||vid$="cancel"||vid$="Cancel"||vid$="cancle"||vid$="Cancle"||vid$="exit"||vid$="Exit")||vid^="close"||vid^="Close"||vid^="ab"||vid^="deleteIv"||vid*="_close"||vid*="_Close"||text=""||desc=""||text="×"||desc="×"||text="퀺"||desc="퀺"]`;
 
 const UP_commonTextPatterns =
-  '[text^="测试版"||text^="新版本"||text^="新版"||text^="更新"||text^="升级"||text^="体验"||text^="升級"||text^="體驗"||text^="Update"||text^="Upgrade"||text^="Experience"||text$="测试版"||text$="新版本"||text$="新版"||text$="更新"||text$="升级"||text$="体验"||text$="升級"||text$="體驗"||text$="Update"||text$="Upgrade"||text$="Experience"]';
+  '[(text^="测试版"||text^="新版本"||text^="新版"||text^="更新"||text^="升级"||text^="体验"||text^="升級"||text^="體驗"||text^="Update"||text^="Upgrade"||text^="Experience"||text$="测试版"||text$="新版本"||text$="新版"||text$="更新"||text$="升级"||text$="体验"||text$="升級"||text$="體驗"||text$="Update"||text$="Upgrade"||text$="Experience")&&(text!*="成功"&&text!*="失败"&&text!*="已")]';
 const UP_commonDescPatterns =
-  '[desc^="测试版"||desc^="新版本"||desc^="新版"||desc^="更新"||desc^="升级"||desc^="体验"||desc^="升級"||desc^="體驗"||desc^="Update"||desc^="Upgrade"||desc^="Experience"||desc$="测试版"||desc$="新版本"||desc$="新版"||desc$="更新"||desc$="升级"||desc$="体验"||desc$="升級"||desc$="體驗"||desc$="Update"||desc$="Upgrade"||desc$="Experience"]';
+  '[(desc^="测试版"||desc^="新版本"||desc^="新版"||desc^="更新"||desc^="升级"||desc^="体验"||desc^="升級"||desc^="體驗"||desc^="Update"||desc^="Upgrade"||desc^="Experience"||desc$="测试版"||desc$="新版本"||desc$="新版"||desc$="更新"||desc$="升级"||desc$="体验"||desc$="升級"||desc$="體驗"||desc$="Update"||desc$="Upgrade"||desc$="Experience")&&(desc!*="成功"&&desc!*="失败"&&text!*="已")]';
 
 const RP_commonTextPatterns =
-  '[text$="好评"||text$="鼓励一下"||text="马上评价"||text$="好評"||text$="鼓勵一下"||text$="马上評價"]';
+  '[(text$="好评"||text$="鼓励一下"||text="马上评价"||text$="好評"||text$="鼓勵一下"||text$="马上評價")&&(text!*="成功"&&text!*="失败"&&text!*="已")]';
 const RP_commonDescPatterns =
-  '[desc$="好评"||desc$="鼓励一下"||desc="马上评价"||desc$="好評"||desc$="鼓勵一下"||desc$="马上評價"]';
+  '[(desc$="好评"||desc$="鼓励一下"||desc="马上评价"||desc$="好評"||desc$="鼓勵一下"||desc$="马上評價")&&(desc!*="成功"&&desc!*="失败"&&text!*="已")]';
 
 const NP_commonTextPatterns =
-  '[(text*="是否允许"||text*="申请"||text*="开启"||text*="打开"||text*="获取"||text*="订阅"||text*="接收"||text*="Turn on"||text*="turn on")&&(text*="通知"||text*="推送"||text*="notifications"||text*="Notifications")&&(text!*="定位"&&text!*="位置"&&text!*="location"&&text!*="权限")]';
+  '[(text*="是否允许"||text*="申请"||text*="开启"||text*="打开"||text*="获取"||text*="订阅"||text*="接收"||text*="Turn on"||text*="turn on")&&(text*="通知"||text*="推送"||text*="notifications"||text*="Notifications")&&(text!*="定位"&&text!*="位置"&&text!*="location"&&text!*="权限"&&text!*="成功"&&text!*="失败"&&text!*="已")]';
 const NP_commonDescPatterns =
-  '[(desc*="是否允许"||desc*="申请"||desc*="开启"||desc*="打开"||desc*="获取"||desc*="订阅"||desc*="接收"||desc*="Turn on"||desc*="turn on")&&(desc*="通知"||desc*="推送"||desc*="notifications"||desc*="Notifications")&&(desc!*="定位"&&desc!*="位置"&&desc!*="location"&&desc!*="权限")]';
+  '[(desc*="是否允许"||desc*="申请"||desc*="开启"||desc*="打开"||desc*="获取"||desc*="订阅"||desc*="接收"||desc*="Turn on"||desc*="turn on")&&(desc*="通知"||desc*="推送"||desc*="notifications"||desc*="Notifications")&&(desc!*="定位"&&desc!*="位置"&&desc!*="location"&&desc!*="权限"&&desc!*="成功"&&desc!*="失败"&&text!*="已")]';
 
 const YM_commonTextPatterns =
   '[text*="青少年模式"||(text*="未成年"&&text*="模式")||text*="儿童模式"]';
@@ -102,14 +107,14 @@ const YM_commonDescPatterns =
   '[desc*="青少年模式"||(desc*="未成年"&&desc*="模式")||desc*="儿童模式"]';
 
 const PP_commonTextPatterns =
-  '[(text*="是否允许"||text*="申请"||text*="开启"||text*="打开"||text*="获取")&&text*="权限"&&(text!*="定位"&&text!*="位置"&&text!*="location"&&text!*="通知")]';
+  '[(text*="是否允许"||text*="申请"||text*="开启"||text*="打开"||text*="获取")&&text*="权限"&&(text!*="定位"&&text!*="位置"&&text!*="location"&&text!*="通知"&&text!*="成功"&&text!*="失败"&&text!*="已")]';
 const PP_commonDescPatterns =
-  '[(desc*="是否允许"||desc*="申请"||desc*="开启"||desc*="打开"||desc*="获取")&&desc*="权限"&&(desc!*="定位"&&desc!*="位置"&&desc!*="location"&&desc!*="通知")]';
+  '[(desc*="是否允许"||desc*="申请"||desc*="开启"||desc*="打开"||desc*="获取")&&desc*="权限"&&(desc!*="定位"&&desc!*="位置"&&desc!*="location"&&desc!*="通知"&&desc!*="成功"&&desc!*="失败"&&text!*="已")]';
 
 const LP_commonTextPatterns =
-  '[(text*="是否允许"||text*="访问"||text*="申请"||text*="开启"||text*="打开"||text*="获取")&&(text*="定位"||text*="位置"||text*="location")&&text!*="通知"]';
+  '[(text*="是否允许"||text*="访问"||text*="申请"||text*="开启"||text*="打开"||text*="获取")&&(text*="定位"||text*="位置"||text*="location")&&(text!*="通知"&&text!*="成功"&&text!*="失败"&&text!*="已")]';
 const LP_commonDescPatterns =
-  '[(desc*="是否允许"||desc*="访问"||desc*="申请"||desc*="开启"||desc*="打开"||desc*="获取")&&(desc*="定位"||desc*="位置"||desc*="location")&&desc!*="通知"]';
+  '[(desc*="是否允许"||desc*="访问"||desc*="申请"||desc*="开启"||desc*="打开"||desc*="获取")&&(desc*="定位"||desc*="位置"||desc*="location")&&(desc!*="通知"&&desc!*="成功"&&desc!*="失败"&&text!*="已")]';
 
 const PA_commonTextPatterns =
   '[text^="广告"||text$="广告"||text^="廣告"||text$="廣告"||text$="限时福利"||text^="热门活动"||text$="热门活动"||text$="限時福利"||text^="限时福利"||text^="限時福利"||((text$="AD"||text="ad")&&((text!*="download"&&text!*="Download"&&text!*="DOWNLOAD")&&(text!*="read"&&text!*="Read"&&text!*="READ")&&(text!*="add"&&text!*="Add"&&text!*="ADD")))||(text*="申请"||text*="开启"||text*="打开"||text*="获取"||text*="订阅"||text*="接收"||text*="Turn on")&&(text*="个性化"||text*="推荐"||text*="感兴趣"||text*="個性化"||text*="推薦"||text*="感興趣"||text*="感興趣")]';
@@ -135,7 +140,7 @@ const globalGroups: RawGlobalGroup[] = [
       {
         key: -1,
         matches:
-          '[childCount=0][visibleToUser=true][(text.length<10&&(text*="跳过"||text*="跳過"||text*="skip"||text*="Skip")) || id$="tt_splash_skip_btn" || vid*="skip" || vid*="Skip" || (vid*="count" && vid*="down" && vid!*="download") || desc*="跳过" || desc*="skip"]',
+          '[childCount=0][visibleToUser=true][(text.length<10&&(text*="跳过"||text*="跳過"||text*="skip"||text*="Skip")) || vid$="tt_splash_skip_btn" || vid*="skip" || vid*="Skip" || (vid*="count" && vid*="down" && vid!*="download") || desc*="跳过" || desc*="skip"]',
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
@@ -167,17 +172,17 @@ const globalGroups: RawGlobalGroup[] = [
       {
         key: 3,
         name: '字节SDK-类型1',
-        matches: `[id$="tt_reward_full_count_down_after_close"]${COMMON_PREFIX}`,
+        matches: `[vid$="tt_reward_full_count_down_after_close"]${COMMON_PREFIX}`,
       },
       {
         key: 4,
         name: '字节SDK-类型2',
-        matches: `[id$="ad_flag_source_layout"] + [id$="iv_close"]${COMMON_PREFIX}`,
+        matches: `[vid$="ad_flag_source_layout"] + [vid$="iv_close"]${COMMON_PREFIX}`,
       },
       {
         key: 5,
         name: '美数SDK-类型1',
-        matches: `[id$="ms_activity_sdk_interstitial_cacel"]${COMMON_PREFIX}`,
+        matches: `[vid$="ms_activity_sdk_interstitial_cacel"]${COMMON_PREFIX}`,
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
@@ -193,7 +198,7 @@ const globalGroups: RawGlobalGroup[] = [
     rules: [
       {
         key: 0,
-        matches: `[(((id*="/ad"||id*="/AD"||id$="ad"||id$="Ad"||id$="AD")&&id*="_")||id$="/adIv"||id$="_ad_"||id$="_Ad_"||id$="_AD_")&&(id!*="download"&&id!*="Download"&&id!*="DOWNLOAD")&&(id!*="read"&&id!*="Read"&&id!*="READ")&&(id!*="add"&&id!*="Add"&&id!*="ADD")] <<n * <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+        matches: `[(((vid^="ad"||vid^="AD"||vid$="ad"||vid$="Ad"||vid$="AD")&&vid*="_")||vid$="/adIv"||vid$="_ad_"||vid$="_Ad_"||vid$="_AD_")&&(vid!*="download"&&vid!*="Download"&&vid!*="DOWNLOAD")&&(vid!*="read"&&vid!*="Read"&&vid!*="READ")&&(vid!*="add"&&vid!*="Add"&&vid!*="ADD")] <<n * <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
       },
       {
         key: 1,
