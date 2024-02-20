@@ -10,6 +10,7 @@
 - [快照-3](https://i.gkd.li/import/13217807)
 - [快照-4](https://i.gkd.li/import/13856647)
 - [快照-5](https://i.gkd.li/import/13868177)
+- [快照-6](https://i.gkd.li/import/14341023)
 
 ## 局部广告-消息页面顶部广告
 

@@ -1,6 +1,6 @@
 # 知乎
 
-存在 6 规则组 - [com.zhihu.android](/src/apps/com.zhihu.android.ts)
+存在 7 规则组 - [com.zhihu.android](/src/apps/com.zhihu.android.ts)
 
 ## 分段广告-信息流广告
 
@@ -46,12 +46,19 @@
 - [快照-2](https://i.gkd.li/import/14232195)
 - [快照-3](https://i.gkd.li/import/14235024)
 - [快照-4](https://i.gkd.li/import/14296163)
+- [快照-5](https://i.gkd.li/import/14332161)
 
 ## 局部广告-悬浮小广告
 
 默认禁用
 
 - [快照-0](https://i.gkd.li/import/14296251)
+
+## 功能类-自动授权
+
+默认禁用 - 包括扫码登录授权
+
+- [快照-0](https://i.gkd.li/import/14341536)
 
 ## 功能类-自动展开回答
 

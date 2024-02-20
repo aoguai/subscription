@@ -46,7 +46,7 @@
 | 云班课                 | [com.mosoink.teach](/docs/com.mosoink.teach.md)                                 | 1      |
 | 云闪付                 | [com.unionpay](/docs/com.unionpay.md)                                           | 4      |
 | 支付宝                 | [com.eg.android.AlipayGphone](/docs/com.eg.android.AlipayGphone.md)             | 5      |
-| 知乎                   | [com.zhihu.android](/docs/com.zhihu.android.md)                                 | 6      |
+| 知乎                   | [com.zhihu.android](/docs/com.zhihu.android.md)                                 | 7      |
 | 智联招聘               | [com.zhaopin.social](/docs/com.zhaopin.social.md)                               | 2      |
 | 智能服务               | [com.miui.systemAdSolution](/docs/com.miui.systemAdSolution.md)                 | 1      |
 | 中国电信               | [com.ct.client](/docs/com.ct.client.md)                                         | 3      |
