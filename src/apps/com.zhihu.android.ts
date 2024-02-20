@@ -116,6 +116,13 @@ export default defineAppConfig({
           matches: '@[vid="menu"][visibleToUser=true] < * - * > [text^="广告"]',
           snapshotUrls: 'https://i.gkd.li/import/14296163',
         },
+        {
+          key: 3,
+          activityIds: 'com.zhihu.android.app.ui.activity.MainActivity',
+          quickFind: true,
+          matches: '@ViewGroup[clickable=true] <3 * < * -2 * >2 [text$="广告"]',
+          snapshotUrls: 'https://i.gkd.li/import/14332161',
+        },
       ],
     },
     {
@@ -129,6 +136,19 @@ export default defineAppConfig({
           quickFind: true,
           matches: '@[vid="activity_close"] + * > [vid="activity_img"]',
           snapshotUrls: 'https://i.gkd.li/import/14296251',
+        },
+      ],
+    },
+    {
+      key: 16,
+      name: '功能类-自动授权',
+      desc: '包括扫码登录授权',
+      enable: false,
+      activityIds: 'com.zhihu.android.app.ui.activity.HostActivity',
+      rules: [
+        {
+          matches: '[text="取消"] <n * > [text="确认登录"]',
+          snapshotUrls: 'https://i.gkd.li/import/14341536',
         },
       ],
     },
