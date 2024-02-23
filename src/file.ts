@@ -151,7 +151,7 @@ export async function* walk(dirPath: string) {
 // 导出一个函数，用于验证快照 URL 的有效性
 export const validSnapshotUrl = (s: string) => {
   const u = new URL(s);
-  return u.pathname.startsWith('/import/');
+  return u.pathname.startsWith('/import/') || u.pathname.startsWith('/i/');
 };
 
 // 导出一个函数，用于检查配置的有效性
@@ -308,7 +308,7 @@ export const checkConfig = (newConfig: RawSubscription) => {
             groupKey: g.key,
           });
           throw new Error(
-            `invalid snapshotUrls: ${u}\nit should like https://i.gkd.li/import/12506571`,
+            `invalid snapshotUrls: ${u}\nit should like https://i.gkd.li/import/XXXXXXXX or https://i.gkd.li/i/XXXXXXXX`,
           );
         }
       });
@@ -323,7 +323,7 @@ export const checkConfig = (newConfig: RawSubscription) => {
               ruleKey: r.key,
             });
             throw new Error(
-              `invalid snapshotUrls: ${u}\nit should like https://i.gkd.li/import/12506571`,
+              `invalid snapshotUrls: ${u}\nit should like https://i.gkd.li/import/XXXXXXXX or https://i.gkd.li/i/XXXXXXXX`,
             );
           }
         });
