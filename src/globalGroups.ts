@@ -46,9 +46,11 @@ const diabledAppIds: string[] = [
   'com.sec.android.app.launcher', // 桌面
 
   // https://github.com/gkd-kit/gkd/issues/451
-  'mark.via',
-  'com.mycompany.app.soulbrowser',
-  'com.mmbox.xbrowser',
+  'mark.via', // via浏览器
+  'mark.via.gp', // via浏览器 Google Play 版
+  'com.mmbox.xbrowser', // X浏览器
+  'com.mmbox.xbrowser.pro', // X浏览器 Google Play 版
+  'com.mycompany.app.soulbrowser', // soul浏览器
 ];
 
 function filterAppsByGroup(apps: any[], groupNamePrefix: string): string[] {
@@ -140,7 +142,7 @@ const globalGroups: RawGlobalGroup[] = [
       {
         key: -1,
         matches:
-          '[childCount=0][visibleToUser=true][(text.length<10&&(text*="跳过"||text*="跳過"||text*="skip"||text*="Skip")) || vid$="tt_splash_skip_btn" || vid*="skip" || vid*="Skip" || (vid*="count" && vid*="down" && vid!*="load" && vid!*="Load" && vid!*="LOAD") || desc*="跳过" || desc*="skip"]',
+          '[childCount<7] > [childCount=0][visibleToUser=true][(text.length<10&&(text*="跳过"||text*="跳過"||text*="skip"||text*="Skip")) || vid$="tt_splash_skip_btn" || vid*="skip" || vid*="Skip" || (vid*="count"&&vid*="down"&&vid!*="load"&&vid!*="Load"&&vid!*="LOAD"&&vid!*="hour"&&vid!*="Hour"&&vid!*="HOUR"&&vid!*="minute"&&vid!*="Minute"&&vid!*="MINUTE"&&vid!*="add"&&vid!*="Add"&&vid!*="ADD"&&vid!*="ead"&&vid!*="EAD") || desc*="跳过" || desc*="skip"]',
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
