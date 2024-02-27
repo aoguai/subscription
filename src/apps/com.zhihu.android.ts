@@ -100,7 +100,7 @@ export default defineAppConfig({
         {
           key: 0,
           matches:
-            'ViewGroup > TextView[text!=""][index=1] +(2,3) ImageView[clickable=true][visibleToUser=true]',
+            '@[name$=".ImageView"||name$=".Image"][clickable=true] <n * > [text$="广告"||text="创作者小助手"||text="知乎游戏"]',
           exampleUrls:
             'https://m.gkd.li/57941037/0443d5cb-aa24-4447-afd7-58c5a09af835',
           snapshotUrls: [
@@ -108,6 +108,7 @@ export default defineAppConfig({
             'https://i.gkd.li/import/14206949',
             'https://i.gkd.li/import/14232195', // text="创作者小助手"
             'https://i.gkd.li/import/14235024', // text="知乎游戏"
+            'https://i.gkd.li/i/14391614',
           ],
         },
         {
