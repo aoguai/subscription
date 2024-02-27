@@ -481,5 +481,30 @@ export default defineAppConfig({
         },
       ],
     },
+    {
+      key: 21,
+      name: '局部广告-订阅号消息-推荐文章',
+      desc: '自动点击“x”',
+      activityIds:
+        'com.tencent.mm.plugin.brandservice.ui.flutter.BizFlutterTLFlutterViewActivity',
+      rules:
+        'View[childCount=2] > View[desc$="推​荐​"][childCount=3] > ImageView[index=2][clickable=true][visibleToUser=true]',
+      snapshotUrls: 'https://i.gkd.li/i/14392392',
+    },
+    {
+      key: 22,
+      name: '功能类-付款后自动点击完成',
+      enable: false,
+      rules: [
+        {
+          quickFind: true,
+          activityIds: 'com.tencent.mm.framework.app.UIPageFragmentActivity',
+          matches: '[vid="kinda_button_impl_wrapper"][clickable=true]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/a5177d9d-6745-443f-baf5-af57153430d8',
+          snapshotUrls: 'https://i.gkd.li/i/14399355',
+        },
+      ],
+    },
   ],
 });
