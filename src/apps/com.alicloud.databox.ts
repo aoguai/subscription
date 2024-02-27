@@ -37,12 +37,22 @@ export default defineAppConfig({
       name: '全屏广告-活动弹窗',
       enable: false,
       activityIds: 'com.alicloud.databox.MainActivity',
-      rules:
-        'WebView >n View > Image + TextView[clickable=true&&text.length=0]',
-      snapshotUrls: [
-        'https://i.gkd.li/import/13228610',
-        'https://i.gkd.li/import/14161216',
-        'https://i.gkd.li/import/14235204',
+      rules: [
+        {
+          key: 0,
+          matches:
+            'WebView >3 View > Image + TextView[clickable=true&&text.length=0]',
+          snapshotUrls: [
+            'https://i.gkd.li/import/13228610',
+            'https://i.gkd.li/import/14161216',
+            'https://i.gkd.li/import/14235204',
+          ],
+        },
+        {
+          key: 1,
+          matches: 'WebView >3 View > TextView[index=3][clickable=true]',
+          snapshotUrls: ['https://i.gkd.li/i/14414446'],
+        },
       ],
     },
     {
@@ -96,6 +106,21 @@ export default defineAppConfig({
             'https://i.gkd.li/import/14161340',
             'https://i.gkd.li/import/14161336',
           ],
+        },
+      ],
+    },
+    {
+      key: 5,
+      name: '功能类-自动授权',
+      desc: '包括扫码登录',
+      actionMaximum: 1,
+      resetMatch: 'app',
+      quickFind: true,
+      activityIds: 'com.taobao.login4android.scan.QrScanActivity',
+      rules: [
+        {
+          matches: '[text="确认并登录"][clickable=true]',
+          snapshotUrls: 'https://i.gkd.li/i/14414503', // 该页面不允许截图所以快照页面是黑屏，但不影响编写规则
         },
       ],
     },
