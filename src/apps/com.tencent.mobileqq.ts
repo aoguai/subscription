@@ -40,7 +40,7 @@ export default defineAppConfig({
           key: 0,
           name: '顶部卡片广告',
           matches:
-            'RelativeLayout[visibleToUser=true] > ImageView +n RelativeLayout[childCount=2] > ImageView[childCount=0][visibleToUser=true]',
+            'RelativeLayout[visibleToUser=true] > ImageView +n RelativeLayout[childCount=2] > ImageView[childCount=0][visibleToUser=true][vid!="pic"]',
           snapshotUrls: [
             'https://i.gkd.li/import/12892726',
             'https://i.gkd.li/import/12774870',
@@ -49,13 +49,14 @@ export default defineAppConfig({
             'https://i.gkd.li/import/13476400',
             'https://i.gkd.li/import/14155603',
             'https://i.gkd.li/import/14217033',
+            'https://i.gkd.li/i/14414585',
           ],
         },
         {
           key: 1,
           name: '顶部横幅',
           matches:
-            'TextView[text^="当前无法接收"||text="发现QQ版本更新"||text*="惊喜礼包"||text*="SVIP"||text*="超级会员"||text*="QQ会员"][childCount=0][visibleToUser=true] <n * > [name$="ImageView"||name$="Button"][desc="关闭"||(desc=null&&text=null)][childCount=0][visibleToUser=true][clickable=true]',
+            'TextView[text^="当前无法接收"||text="发现QQ版本更新"||text*="礼包"||text*="SVIP"||text*="超级会员"||text*="QQ会员"][childCount=0][visibleToUser=true] <n * > [name$="ImageView"||name$="Button"][desc="关闭"||(desc=null&&text=null)][childCount=0][visibleToUser=true][clickable=true]',
           snapshotUrls: [
             'https://i.gkd.li/import/13426912',
             'https://i.gkd.li/import/12706907',
