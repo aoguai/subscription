@@ -1,6 +1,6 @@
 # 微信
 
-存在 14 规则组 - [com.tencent.mm](/src/apps/com.tencent.mm.ts)
+存在 16 规则组 - [com.tencent.mm](/src/apps/com.tencent.mm.ts)
 
 ## 分段广告-朋友圈广告
 
@@ -149,8 +149,9 @@
 
 默认禁用 - 点击“验证密码”以申请临时访问
 
-- [快照-0](https://i.gkd.li/import/13588338)
-- [快照-1](https://i.gkd.li/import/13631987)
+- [快照-0](https://i.gkd.li/import/13631987)
+- [快照-1](https://i.gkd.li/import/13588338)
+- [快照-2](https://i.gkd.li/i/14050004)
 
 ## 功能类-订阅号-展开更早的消息
 
@@ -158,3 +159,20 @@
 
 - [快照-0](https://i.gkd.li/import/13790550)
 - [快照-1](https://i.gkd.li/import/13790949)
+
+## 分段广告-订阅号消息页面广告
+
+默认禁用 - 自动点击“x”
+
+- [快照-0](https://i.gkd.li/i/14436176)
+- [快照-1](https://i.gkd.li/i/14392392)
+- [快照-2](https://i.gkd.li/i/14444654)
+- [快照-3](https://i.gkd.li/i/14436190)
+
+## 功能类-付款后自动点击完成
+
+默认禁用
+
+- [示例-0](https://m.gkd.li/57941037/a5177d9d-6745-443f-baf5-af57153430d8)
+
+- [快照-0](https://i.gkd.li/i/14399355)

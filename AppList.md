@@ -12,7 +12,7 @@
 | PU口袋校园             | [com.xyhui](/docs/com.xyhui.md)                                                 | 1      |
 | QQ邮箱                 | [com.tencent.androidqqmail](/docs/com.tencent.androidqqmail.md)                 | 2      |
 | X(推特)                | [com.twitter.android](/docs/com.twitter.android.md)                             | 6      |
-| 阿里云盘               | [com.alicloud.databox](/docs/com.alicloud.databox.md)                           | 5      |
+| 阿里云盘               | [com.alicloud.databox](/docs/com.alicloud.databox.md)                           | 6      |
 | 百度贴吧               | [com.baidu.tieba](/docs/com.baidu.tieba.md)                                     | 9      |
 | 百度网盘               | [com.baidu.netdisk](/docs/com.baidu.netdisk.md)                                 | 4      |
 | 哔哩哔哩               | [tv.danmaku.bili](/docs/tv.danmaku.bili.md)                                     | 6      |
@@ -32,7 +32,7 @@
 | 淘宝                   | [com.taobao.taobao](/docs/com.taobao.taobao.md)                                 | 13     |
 | 万能遥控               | [com.duokan.phone.remotecontroller](/docs/com.duokan.phone.remotecontroller.md) | 1      |
 | 微博轻享版             | [com.weico.international](/docs/com.weico.international.md)                     | 1      |
-| 微信                   | [com.tencent.mm](/docs/com.tencent.mm.md)                                       | 14     |
+| 微信                   | [com.tencent.mm](/docs/com.tencent.mm.md)                                       | 16     |
 | 闲鱼                   | [com.taobao.idlefish](/docs/com.taobao.idlefish.md)                             | 1      |
 | 小黑盒                 | [com.max.xiaoheihe](/docs/com.max.xiaoheihe.md)                                 | 1      |
 | 小米手机管家           | [com.miui.securitycenter](/docs/com.miui.securitycenter.md)                     | 3      |
