@@ -129,7 +129,7 @@ const globalGroups: RawGlobalGroup[] = [
     name: '开屏广告',
     order: utils.OPEN_AD_ORDER,
     actionMaximum: 2,
-    matchTime: 5000,
+    matchTime: 8000,
     resetMatch: 'app',
     actionCdKey: 0,
     actionMaximumKey: 0,
@@ -155,6 +155,8 @@ const globalGroups: RawGlobalGroup[] = [
     order: utils.FULLSCREEN_AD,
     matchTime: 10000,
     resetMatch: 'activity',
+    actionCdKey: 0,
+    actionMaximumKey: 0,
     rules: [
       {
         key: 0,
@@ -197,6 +199,8 @@ const globalGroups: RawGlobalGroup[] = [
     order: utils.PARTIAL_AD,
     matchTime: 10000,
     resetMatch: 'activity',
+    actionCdKey: 0,
+    actionMaximumKey: 0,
     rules: [
       {
         key: 0,
@@ -262,6 +266,8 @@ const globalGroups: RawGlobalGroup[] = [
     actionMaximum: 2,
     matchTime: 10000,
     resetMatch: 'app',
+    actionCdKey: 0,
+    actionMaximumKey: 0,
     rules: [
       {
         key: 0,
@@ -323,6 +329,8 @@ const globalGroups: RawGlobalGroup[] = [
     actionMaximum: 2,
     matchTime: 10000,
     resetMatch: 'app',
+    actionCdKey: 0,
+    actionMaximumKey: 0,
     rules: [
       {
         key: 0,
@@ -383,6 +391,8 @@ const globalGroups: RawGlobalGroup[] = [
     order: utils.NOTIFICATION_PROMPT,
     matchTime: 10000,
     resetMatch: 'app',
+    actionCdKey: 0,
+    actionMaximumKey: 0,
     rules: [
       {
         key: 0,
@@ -444,6 +454,8 @@ const globalGroups: RawGlobalGroup[] = [
     actionMaximum: 2,
     matchTime: 10000,
     resetMatch: 'app',
+    actionCdKey: 0,
+    actionMaximumKey: 0,
     rules: [
       {
         key: 0,
@@ -505,6 +517,8 @@ const globalGroups: RawGlobalGroup[] = [
     order: utils.YOUTH_MODE,
     matchTime: 10000,
     resetMatch: 'app',
+    actionCdKey: 0,
+    actionMaximumKey: 0,
     rules: [
       {
         key: 0,
@@ -566,6 +580,8 @@ const globalGroups: RawGlobalGroup[] = [
     order: utils.LOCATION_PROMPT,
     matchTime: 10000,
     resetMatch: 'app',
+    actionCdKey: 0,
+    actionMaximumKey: 0,
     rules: [
       {
         key: 0,
