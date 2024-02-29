@@ -443,19 +443,19 @@ export default defineAppConfig({
       actionMaximum: 1,
       resetMatch: 'activity',
       matchTime: 10000,
+      activityIds: [
+        'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
+        'com.tencent.mm.plugin.teenmode.ui.AuthorizationRequestUI',
+      ],
       rules: [
         {
           key: 0,
-          activityIds:
-            'com.tencent.mm.plugin.teenmode.ui.AuthorizationRequestUI',
-          matches: '@LinearLayout[childCount=2] > [text="验证密码"]',
-          snapshotUrls: 'https://i.gkd.li/import/13588338',
-        },
-        {
-          key: 1,
-          activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
-          matches: ['View[text="申请今天临时访问"]', 'View[desc="验证密码"]'],
-          snapshotUrls: 'https://i.gkd.li/import/13631987',
+          matches: ['[text="申请今天临时访问"]', '[text="验证密码"]'],
+          snapshotUrls: [
+            'https://i.gkd.li/import/13631987',
+            'https://i.gkd.li/import/13588338',
+            'https://i.gkd.li/i/14050004',
+          ],
         },
       ],
     },
@@ -483,13 +483,36 @@ export default defineAppConfig({
     },
     {
       key: 21,
-      name: '局部广告-订阅号消息-推荐文章',
+      name: '分段广告-订阅号消息页面广告',
       desc: '自动点击“x”',
       activityIds:
         'com.tencent.mm.plugin.brandservice.ui.flutter.BizFlutterTLFlutterViewActivity',
-      rules:
-        'View[childCount=2] > View[desc$="推​荐​"][childCount=3] > ImageView[index=2][clickable=true][visibleToUser=true]',
-      snapshotUrls: 'https://i.gkd.li/i/14392392',
+      rules: [
+        {
+          key: 0,
+          name: '点击[X]',
+          matches:
+            'View >n View[desc$="推​荐​"][childCount=3] > ImageView[index=2][clickable=true][visibleToUser=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14436176',
+            'https://i.gkd.li/i/14392392',
+          ],
+        },
+        {
+          preKeys: 0,
+          key: 1,
+          name: '点击[不喜欢此类视频]',
+          matches: '[desc="不喜欢此类视频"][clickable=true]',
+          snapshotUrls: 'https://i.gkd.li/i/14444654',
+        },
+        {
+          preKeys: 1,
+          key: 2,
+          name: '点击[确定]',
+          matches: '[desc="确定"][clickable=true]',
+          snapshotUrls: 'https://i.gkd.li/i/14436190',
+        },
+      ],
     },
     {
       key: 22,
