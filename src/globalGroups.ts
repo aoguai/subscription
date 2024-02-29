@@ -142,7 +142,7 @@ const globalGroups: RawGlobalGroup[] = [
       {
         key: -1,
         matches:
-          '[childCount<7] > [childCount=0][visibleToUser=true][(text.length<10&&(text*="跳过"||text*="跳過"||text*="skip"||text*="Skip")) || vid$="tt_splash_skip_btn" || vid*="skip" || vid*="Skip" || (vid*="count"&&vid*="down"&&vid!*="load"&&vid!*="Load"&&vid!*="LOAD"&&vid!*="hour"&&vid!*="Hour"&&vid!*="HOUR"&&vid!*="minute"&&vid!*="Minute"&&vid!*="MINUTE"&&vid!*="add"&&vid!*="Add"&&vid!*="ADD"&&vid!*="ead"&&vid!*="EAD") || desc*="跳过" || desc*="skip"]',
+          '[childCount<7] > [childCount=0][visibleToUser=true][(text.length<10&&(text*="跳过"||text*="跳過"||text*="skip"||text*="Skip")) || id$="tt_splash_skip_btn" || vid*="skip" || vid*="Skip" || (vid*="count"&&vid*="down"&&vid!*="load"&&vid!*="Load"&&vid!*="LOAD"&&vid!*="hour"&&vid!*="Hour"&&vid!*="HOUR"&&vid!*="minute"&&vid!*="Minute"&&vid!*="MINUTE"&&vid!*="add"&&vid!*="Add"&&vid!*="ADD"&&vid!*="ead"&&vid!*="EAD") || desc*="跳过" || desc*="skip"]',
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
@@ -176,7 +176,7 @@ const globalGroups: RawGlobalGroup[] = [
       {
         key: 3,
         name: '字节SDK-类型1',
-        matches: `[vid$="tt_reward_full_count_down_after_close"]${COMMON_PREFIX}`,
+        matches: `[id$="tt_reward_full_count_down_after_close"]${COMMON_PREFIX}`,
       },
       {
         key: 4,
