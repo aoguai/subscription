@@ -82,26 +82,26 @@ const uniqueAppIdsYM = new Set([
   ...filterAppsByGroup(apps, '青少年模式'),
 ]);
 
-const COMMON_PREFIX = '[childCount=0][visibleToUser=true]';
+const COMMON_PREFIX = '[name!$=".CheckBox"][childCount=0][visibleToUser=true]';
 
 const NEGATION_PART_RULE_TEXT = `${COMMON_PREFIX}[((text^="不"&&text$="谢谢")||text="否"||text="关闭"||text="关闭按钮"||text="不开启"||text="暂时不用"||text="不用了"||text="考虑一下"||text="考慮一下"||text="先不了"||text="不允许"||text^="不了"||text^="不再"||text^="忽略"||text^="暂不"||text^="放弃"||text^="取消"||text$="再说"||text$="拒绝"||text$="再想想"||text$="知道了"||(text^="不"&&text$="謝謝")||text="關閉"||text="關閉按鈕"||text="不開啟"||text$="再說"||text$="拒絕"||text^="暫不"||text="close"||text="Close"||text="Not now"||text="not now"||text^="Ignore"||text^="Lgnore"||text^="Cancel"||text^="cancel"||text$="later"||text$="Later"||text$="refuse"||text$="Refuse"||text$="i see"||text$="I see")&&text.length<=7]`;
 const NEGATION_PART_RULE_DESC = `${COMMON_PREFIX}[((desc^="不"&&desc$="谢谢")||desc="否"||desc="关闭"||desc="关闭按钮"||desc="不开启"||desc="暂时不用"||desc="不用了"||desc="考虑一下"||desc="考慮一下"||desc="先不了"||desc="不允许"||desc^="不了"||desc^="不再"||desc^="忽略"||desc^="暂不"||desc^="放弃"||desc^="取消"||desc$="再说"||desc$="拒绝"||desc$="再想想"||desc$="知道了"||(desc^="不"&&desc$="謝謝")||desc="關閉"||desc="關閉按鈕"||desc="不開啟"||desc$="再說"||desc$="拒絕"||desc^="暫不"||desc="close"||desc="Close"||desc="Not now"||desc="not now"||desc^="Ignore"||desc^="Lgnore"||desc^="Cancel"||desc^="cancel"||desc$="later"||desc$="Later"||desc$="refuse"||desc$="Refuse"||desc$="i see"||desc$="I see")&&desc.length<=7]`;
 const NEGATION_PART_RULE_BUTTON = `${COMMON_PREFIX}[(vid*="iv"||vid*="guide"||vid*="alert"||vid*="Notific"||vid*="dialog"||vid*="btn"||vid*="ad"||vid*="ab")&&(vid$="close"||vid$="Close"||vid$="Delete"||vid$="delete"||vid$="cancel"||vid$="Cancel"||vid$="cancle"||vid$="Cancle"||vid$="exit"||vid$="Exit")||vid^="close"||vid^="Close"||vid^="ab"||vid^="deleteIv"||vid*="_close"||vid*="_Close"||text=""||desc=""||text="×"||desc="×"||text="퀺"||desc="퀺"]`;
 
 const UP_commonTextPatterns =
-  '[(text^="测试版"||text^="新版本"||text^="新版"||text^="更新"||text^="升级"||text^="体验"||text^="升級"||text^="體驗"||text^="Update"||text^="Upgrade"||text^="Experience"||text$="测试版"||text$="新版本"||text$="新版"||text$="更新"||text$="升级"||text$="体验"||text$="升級"||text$="體驗"||text$="Update"||text$="Upgrade"||text$="Experience")&&text!*="自动"&&(text!*="成功"&&text!*="失败"&&text!*="已")]';
+  '[(((text*="更新"||text*="体验"||text*="优先")&&text*="内测")||text^="测试版"||text^="新版本"||text^="新版"||text^="更新"||text^="升级"||text^="体验"||text^="升級"||text^="體驗"||text^="Update"||text^="Upgrade"||text^="Experience"||text$="测试版"||text$="新版本"||text$="新版"||text$="更新"||text$="升级"||text$="体验"||text$="升級"||text$="體驗"||text$="Update"||text$="Upgrade"||text$="Experience")&&text!*="自动"&&(text!*="成功"&&text!*="失败"&&(text!*="已"||text*="已知"))]';
 const UP_commonDescPatterns =
-  '[(desc^="测试版"||desc^="新版本"||desc^="新版"||desc^="更新"||desc^="升级"||desc^="体验"||desc^="升級"||desc^="體驗"||desc^="Update"||desc^="Upgrade"||desc^="Experience"||desc$="测试版"||desc$="新版本"||desc$="新版"||desc$="更新"||desc$="升级"||desc$="体验"||desc$="升級"||desc$="體驗"||desc$="Update"||desc$="Upgrade"||desc$="Experience")&&desc!*="自动"&&(desc!*="成功"&&desc!*="失败"&&text!*="已")]';
+  '[(((desc*="更新"||desc*="体验"||desc*="优先")&&desc*="内测")||desc^="测试版"||desc^="新版本"||desc^="新版"||desc^="更新"||desc^="升级"||desc^="体验"||desc^="升級"||desc^="體驗"||desc^="Update"||desc^="Upgrade"||desc^="Experience"||desc$="测试版"||desc$="新版本"||desc$="新版"||desc$="更新"||desc$="升级"||desc$="体验"||desc$="升級"||desc$="體驗"||desc$="Update"||desc$="Upgrade"||desc$="Experience")&&desc!*="自动"&&(desc!*="成功"&&desc!*="失败"&&(text!*="已"||text*="已知"))]';
 
 const RP_commonTextPatterns =
-  '[(text$="好评"||text$="鼓励一下"||text="马上评价"||text$="好評"||text$="鼓勵一下"||text$="马上評價")&&(text!*="成功"&&text!*="失败"&&text!*="已")]';
+  '[(text$="好评"||text$="鼓励一下"||text="马上评价"||text$="好評"||text$="鼓勵一下"||text$="马上評價")&&(text!*="成功"&&text!*="失败"&&(text!*="已"||text*="已知"))]';
 const RP_commonDescPatterns =
-  '[(desc$="好评"||desc$="鼓励一下"||desc="马上评价"||desc$="好評"||desc$="鼓勵一下"||desc$="马上評價")&&(desc!*="成功"&&desc!*="失败"&&text!*="已")]';
+  '[(desc$="好评"||desc$="鼓励一下"||desc="马上评价"||desc$="好評"||desc$="鼓勵一下"||desc$="马上評價")&&(desc!*="成功"&&desc!*="失败"&&(text!*="已"||text*="已知"))]';
 
 const NP_commonTextPatterns =
-  '[(text*="是否允许"||text*="申请"||text*="开启"||text*="打开"||text*="获取"||text*="订阅"||text*="接收"||text*="Turn on"||text*="turn on")&&(text*="通知"||text*="推送"||text*="notifications"||text*="Notifications")&&(text!*="定位"&&text!*="位置"&&text!*="location"&&text!*="权限"&&text!*="成功"&&text!*="失败"&&text!*="已")]';
+  '[(text*="是否允许"||text*="申请"||text*="开启"||text*="打开"||text*="获取"||text*="订阅"||text*="接收"||text*="Turn on"||text*="turn on")&&(text*="通知"||text*="推送"||text*="notifications"||text*="Notifications")&&(text!*="定位"&&text!*="位置"&&text!*="location"&&text!*="权限"&&text!*="成功"&&text!*="失败"&&(text!*="已"||text*="已知"))]';
 const NP_commonDescPatterns =
-  '[(desc*="是否允许"||desc*="申请"||desc*="开启"||desc*="打开"||desc*="获取"||desc*="订阅"||desc*="接收"||desc*="Turn on"||desc*="turn on")&&(desc*="通知"||desc*="推送"||desc*="notifications"||desc*="Notifications")&&(desc!*="定位"&&desc!*="位置"&&desc!*="location"&&desc!*="权限"&&desc!*="成功"&&desc!*="失败"&&text!*="已")]';
+  '[(desc*="是否允许"||desc*="申请"||desc*="开启"||desc*="打开"||desc*="获取"||desc*="订阅"||desc*="接收"||desc*="Turn on"||desc*="turn on")&&(desc*="通知"||desc*="推送"||desc*="notifications"||desc*="Notifications")&&(desc!*="定位"&&desc!*="位置"&&desc!*="location"&&desc!*="权限"&&desc!*="成功"&&desc!*="失败"&&(text!*="已"||text*="已知"))]';
 
 const YM_commonTextPatterns =
   '[text*="青少年模式"||(text*="未成年"&&text*="模式")||text*="儿童模式"]';
@@ -109,14 +109,14 @@ const YM_commonDescPatterns =
   '[desc*="青少年模式"||(desc*="未成年"&&desc*="模式")||desc*="儿童模式"]';
 
 const PP_commonTextPatterns =
-  '[(text*="是否允许"||text*="申请"||text*="开启"||text*="打开"||text*="获取")&&text*="权限"&&(text!*="定位"&&text!*="位置"&&text!*="location"&&text!*="通知"&&text!*="成功"&&text!*="失败"&&text!*="已")]';
+  '[(text*="是否允许"||text*="申请"||text*="开启"||text*="打开"||text*="获取")&&text*="权限"&&(text!*="定位"&&text!*="位置"&&text!*="location"&&text!*="通知"&&text!*="成功"&&text!*="失败"&&(text!*="已"||text*="已知"))]';
 const PP_commonDescPatterns =
-  '[(desc*="是否允许"||desc*="申请"||desc*="开启"||desc*="打开"||desc*="获取")&&desc*="权限"&&(desc!*="定位"&&desc!*="位置"&&desc!*="location"&&desc!*="通知"&&desc!*="成功"&&desc!*="失败"&&text!*="已")]';
+  '[(desc*="是否允许"||desc*="申请"||desc*="开启"||desc*="打开"||desc*="获取")&&desc*="权限"&&(desc!*="定位"&&desc!*="位置"&&desc!*="location"&&desc!*="通知"&&desc!*="成功"&&desc!*="失败"&&(text!*="已"||text*="已知"))]';
 
 const LP_commonTextPatterns =
-  '[(text*="是否允许"||text*="访问"||text*="申请"||text*="开启"||text*="打开"||text*="获取")&&(text*="定位"||text*="位置"||text*="location")&&(text!*="通知"&&text!*="成功"&&text!*="失败"&&text!*="已")]';
+  '[(text*="是否允许"||text*="访问"||text*="申请"||text*="开启"||text*="打开"||text*="获取")&&(text*="定位"||text*="位置"||text*="location")&&(text!*="通知"&&text!*="成功"&&text!*="失败"&&(text!*="已"||text*="已知"))]';
 const LP_commonDescPatterns =
-  '[(desc*="是否允许"||desc*="访问"||desc*="申请"||desc*="开启"||desc*="打开"||desc*="获取")&&(desc*="定位"||desc*="位置"||desc*="location")&&(desc!*="通知"&&desc!*="成功"&&desc!*="失败"&&text!*="已")]';
+  '[(desc*="是否允许"||desc*="访问"||desc*="申请"||desc*="开启"||desc*="打开"||desc*="获取")&&(desc*="定位"||desc*="位置"||desc*="location")&&(desc!*="通知"&&desc!*="成功"&&desc!*="失败"&&(text!*="已"||text*="已知"))]';
 
 const PA_commonTextPatterns =
   '[text^="广告"||text$="广告"||text^="廣告"||text$="廣告"||text$="限时福利"||text^="热门活动"||text$="热门活动"||text$="限時福利"||text^="限时福利"||text^="限時福利"||((text$="AD"||text="ad")&&((text!*="load"&&text!*="Load"&&text!*="LOAD")&&(text!*="read"&&text!*="Read"&&text!*="READ")&&(text!*="add"&&text!*="Add"&&text!*="ADD")&&(text!*="ead"&&text!*="EAD")))||(text*="申请"||text*="开启"||text*="打开"||text*="获取"||text*="订阅"||text*="接收"||text*="Turn on")&&(text*="个性化"||text*="推荐"||text*="感兴趣"||text*="個性化"||text*="推薦"||text*="感興趣"||text*="感興趣")]';
@@ -129,7 +129,7 @@ const globalGroups: RawGlobalGroup[] = [
     name: '开屏广告',
     order: utils.OPEN_AD_ORDER,
     actionMaximum: 2,
-    matchTime: 5000,
+    matchTime: 8000,
     resetMatch: 'app',
     actionCdKey: 0,
     actionMaximumKey: 0,
@@ -142,7 +142,7 @@ const globalGroups: RawGlobalGroup[] = [
       {
         key: -1,
         matches:
-          '[childCount<7] > [childCount=0][visibleToUser=true][(text.length<10&&(text*="跳过"||text*="跳過"||text*="skip"||text*="Skip")) || vid$="tt_splash_skip_btn" || vid*="skip" || vid*="Skip" || (vid*="count"&&vid*="down"&&vid!*="load"&&vid!*="Load"&&vid!*="LOAD"&&vid!*="hour"&&vid!*="Hour"&&vid!*="HOUR"&&vid!*="minute"&&vid!*="Minute"&&vid!*="MINUTE"&&vid!*="add"&&vid!*="Add"&&vid!*="ADD"&&vid!*="ead"&&vid!*="EAD") || desc*="跳过" || desc*="skip"]',
+          '[childCount<7] > [childCount=0][visibleToUser=true][(text.length<10&&(text*="跳过"||text*="跳過"||text*="skip"||text*="Skip")) || id$="tt_splash_skip_btn" || vid*="skip" || vid*="Skip" || (vid*="count"&&vid*="down"&&vid!*="load"&&vid!*="Load"&&vid!*="LOAD"&&vid!*="hour"&&vid!*="Hour"&&vid!*="HOUR"&&vid!*="minute"&&vid!*="Minute"&&vid!*="MINUTE"&&vid!*="add"&&vid!*="Add"&&vid!*="ADD"&&vid!*="ead"&&vid!*="EAD") || desc*="跳过" || desc*="skip"]',
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
@@ -155,6 +155,8 @@ const globalGroups: RawGlobalGroup[] = [
     order: utils.FULLSCREEN_AD,
     matchTime: 10000,
     resetMatch: 'activity',
+    actionCdKey: 0,
+    actionMaximumKey: 0,
     rules: [
       {
         key: 0,
@@ -174,7 +176,7 @@ const globalGroups: RawGlobalGroup[] = [
       {
         key: 3,
         name: '字节SDK-类型1',
-        matches: `[vid$="tt_reward_full_count_down_after_close"]${COMMON_PREFIX}`,
+        matches: `[id$="tt_reward_full_count_down_after_close"]${COMMON_PREFIX}`,
       },
       {
         key: 4,
@@ -197,6 +199,8 @@ const globalGroups: RawGlobalGroup[] = [
     order: utils.PARTIAL_AD,
     matchTime: 10000,
     resetMatch: 'activity',
+    actionCdKey: 0,
+    actionMaximumKey: 0,
     rules: [
       {
         key: 0,
@@ -262,6 +266,8 @@ const globalGroups: RawGlobalGroup[] = [
     actionMaximum: 2,
     matchTime: 10000,
     resetMatch: 'app',
+    actionCdKey: 0,
+    actionMaximumKey: 0,
     rules: [
       {
         key: 0,
@@ -323,6 +329,8 @@ const globalGroups: RawGlobalGroup[] = [
     actionMaximum: 2,
     matchTime: 10000,
     resetMatch: 'app',
+    actionCdKey: 0,
+    actionMaximumKey: 0,
     rules: [
       {
         key: 0,
@@ -383,6 +391,8 @@ const globalGroups: RawGlobalGroup[] = [
     order: utils.NOTIFICATION_PROMPT,
     matchTime: 10000,
     resetMatch: 'app',
+    actionCdKey: 0,
+    actionMaximumKey: 0,
     rules: [
       {
         key: 0,
@@ -444,6 +454,8 @@ const globalGroups: RawGlobalGroup[] = [
     actionMaximum: 2,
     matchTime: 10000,
     resetMatch: 'app',
+    actionCdKey: 0,
+    actionMaximumKey: 0,
     rules: [
       {
         key: 0,
@@ -505,6 +517,8 @@ const globalGroups: RawGlobalGroup[] = [
     order: utils.YOUTH_MODE,
     matchTime: 10000,
     resetMatch: 'app',
+    actionCdKey: 0,
+    actionMaximumKey: 0,
     rules: [
       {
         key: 0,
@@ -566,6 +580,8 @@ const globalGroups: RawGlobalGroup[] = [
     order: utils.LOCATION_PROMPT,
     matchTime: 10000,
     resetMatch: 'app',
+    actionCdKey: 0,
+    actionMaximumKey: 0,
     rules: [
       {
         key: 0,

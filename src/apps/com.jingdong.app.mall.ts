@@ -116,9 +116,13 @@ export default defineAppConfig({
         },
         {
           key: 4,
+          quickFind: true,
           activityIds: 'com.jingdong.app.mall.MainFrameActivity',
-          matches: '[id="com.jingdong.app.mall:id/close"]',
-          snapshotUrls: ['https://i.gkd.li/import/14162769'],
+          matches: '[vid="close"]',
+          snapshotUrls: [
+            'https://i.gkd.li/import/14162769',
+            'https://i.gkd.li/i/14445257',
+          ],
         },
       ],
     },

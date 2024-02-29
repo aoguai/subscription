@@ -13,28 +13,22 @@ export default defineAppConfig({
       rules: [
         {
           key: 0,
-          name: '腾讯广告',
+          name: '广告-1',
           activityIds: [
             'com.zmzx.college.search.activity.main.activity.MainActivity',
             'com.zmzx.college.search.activity.questionsearch.camera.activity.PicSearchResultActivity',
+            'com.zmzx.college.search.activity.camerasdk.ZybCameraSDKActivity',
+            'com.zmzx.college.search.activity.common.CommonCacheHybridActivity',
           ],
-          matches: 'ImageView[id="com.zmzx.college.search:id/iv_close"]',
+          matches: '[vid="iv_close"]',
           snapshotUrls: [
             'https://i.gkd.li/import/12867751',
             'https://i.gkd.li/import/12894813',
+            'https://i.gkd.li/import/13522998',
           ],
         },
         {
-          key: 3,
-          name: '字节广告-1',
-          activityIds:
-            'com.zmzx.college.search.activity.camerasdk.ZybCameraSDKActivity',
-          matches:
-            'RelativeLayout > [id="com.zmzx.college.search:id/iv_close"]',
-          snapshotUrls: 'https://i.gkd.li/import/13522998',
-        },
-        {
-          key: 4,
+          key: 2,
           name: '字节广告-2',
           activityIds:
             'com.bytedance.sdk.openadsdk.core.component.reward.activity.TTFullScreenVideoActivity',
