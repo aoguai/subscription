@@ -43,10 +43,13 @@ export default defineAppConfig({
         {
           key: 2,
           matches:
-            '[vid="dot_text_layout"] + [vid="menu_container"] > [vid="menu"]',
+            '[text*="广告"] < [vid="bottom_line"] + [vid="menu_container"] > [vid="menu"]',
           exampleUrls:
             'https://m.gkd.li/57941037/689c77eb-9026-44db-b22e-d890961a0ad6',
-          snapshotUrls: 'https://i.gkd.li/import/14321041',
+          snapshotUrls: [
+            'https://i.gkd.li/import/14321041',
+            'https://i.gkd.li/i/14468152',
+          ],
         },
         {
           key: 90,
