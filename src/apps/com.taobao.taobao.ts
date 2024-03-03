@@ -145,13 +145,28 @@ export default defineAppConfig({
     },
     {
       key: 13,
-      name: '全屏广告-小额免密支付弹窗',
-      desc: '点击关闭',
+      name: '功能类-关闭小额免密支付',
+      desc: '在支付的时候出现，自动点击关闭和不开通',
       enable: false,
       quickFind: true,
       activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
-      rules: '@[text="关闭"] < * <3 * < * + * >3 [text$="小额免密支付"]',
-      snapshotUrls: 'https://i.gkd.li/import/13438414',
+      rules: [
+        {
+          key: 0,
+          name: '类型1',
+          matches: '@[text="关闭"] < * <3 * < * + * >3 [text$="小额免密支付"]',
+          snapshotUrls: 'https://i.gkd.li/import/13438414',
+        },
+        {
+          key: 1,
+          name: '类型2',
+          matches: '@[checked=true] < * - [text="开通淘宝小额免密支付"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14471853', // 关闭前
+            'https://i.gkd.li/i/14471858', // 关闭后
+          ],
+        },
+      ],
     },
     {
       key: 14,
