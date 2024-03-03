@@ -81,7 +81,7 @@ export default defineAppConfig({
       // Key 1,3,4 均为授权类的规则
       key: 1,
       name: '功能类-微信自动授权',
-      desc: '包括：PC 微信, 浏览器微信, 网页版文件传输助手, 微信表情开发平台, 微信红包封面开放平台 扫码登录动授权',
+      desc: '包括：PC 微信, 浏览器微信, 网页版文件传输助手, 微信表情开发平台, 微信红包封面开放平台, 微信开发者工具 扫码登录动授权',
       enable: false,
       matchTime: 10000,
       actionMaximum: 2,
@@ -129,6 +129,12 @@ export default defineAppConfig({
           name: '微信红包封面开放平台扫码登录',
           matches: 'Button[text="取消"] - Button[text="确定"]',
           snapshotUrls: ['https://i.gkd.li/import/14164990'],
+        },
+        {
+          key: 5,
+          name: '微信开发者工具扫码登录',
+          matches: '[desc="取消"] - [desc="确认登录"]',
+          snapshotUrls: ['https://i.gkd.li/i/14472990'],
         },
         {
           preKeys: [4],
