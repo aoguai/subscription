@@ -7,7 +7,7 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '分段广告-首页-底部广告',
+      name: '分段广告-首页底部广告',
       enable: false,
       activityIds: [
         'com.xuexiaoyi.entrance.main.MainActivity',
@@ -18,12 +18,13 @@ export default defineAppConfig({
           key: 0,
           name: '点击在下方的X',
           matches: [
-            'View[text="广告"&&longClickable=null] < View <n View <n View > View > Image[text.length=0]', // longClickable=null为了与 key:3 区别防止误触
+            'View[text="广告"] < View <2 View <n View[childCount>4] > View[childCount=1] > Image[text.length=0]', // longClickable=null为了与 key:3 区别防止误触
           ],
           snapshotUrls: [
             'https://i.gkd.li/import/13068836',
             'https://i.gkd.li/import/13375502',
             'https://i.gkd.li/import/13375559',
+            'https://i.gkd.li/i/14472483',
           ],
         },
         {
