@@ -56,7 +56,7 @@ export default defineAppConfig({
           key: 1,
           name: '顶部横幅',
           matches:
-            'TextView[text^="当前无法接收"||text="发现QQ版本更新"||text*="礼包"||text*="SVIP"||text*="超级会员"||text*="QQ会员"][childCount=0][visibleToUser=true] <n * > [name$="ImageView"||name$="Button"][desc="关闭"||(desc=null&&text=null)][childCount=0][visibleToUser=true][clickable=true]',
+            'TextView[text^="当前无法接收"||text="发现QQ版本更新"||text*="礼包"||text*="SVIP"||text*="超级会员"||text*="QQ会员"][childCount=0][visibleToUser=true] <n * > [name$="ImageView"||name$="Button"][desc="关闭"||(desc=null&&text=null)][childCount=0][visibleToUser=true][clickable=true][longClickable=false]',
           snapshotUrls: [
             'https://i.gkd.li/import/13426912',
             'https://i.gkd.li/import/12706907',
