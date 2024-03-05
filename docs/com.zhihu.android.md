@@ -17,7 +17,8 @@
 - [快照-5](https://i.gkd.li/import/14206988)
 - [快照-6](https://i.gkd.li/import/14192451)
 - [快照-7](https://i.gkd.li/import/14321041)
-- [快照-8](https://i.gkd.li/import/13849689)
+- [快照-8](https://i.gkd.li/i/14468152)
+- [快照-9](https://i.gkd.li/import/13849689)
 
 ## 全屏广告-会员页面月卡红包
 
