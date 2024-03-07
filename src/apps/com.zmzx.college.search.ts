@@ -37,5 +37,14 @@ export default defineAppConfig({
         },
       ],
     },
+    {
+      key: 11,
+      name: '局部广告-首页底部广告',
+      quickFind: true,
+      activityIds:
+        'com.zmzx.college.search.activity.main.activity.MainActivity',
+      rules: '[vid="tvClose"]',
+      snapshotUrls: 'https://i.gkd.li/i/14518991',
+    },
   ],
 });
