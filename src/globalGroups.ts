@@ -156,7 +156,6 @@ const globalGroups: RawGlobalGroup[] = [
     matchTime: 10000,
     resetMatch: 'activity',
     actionCdKey: 0,
-    actionMaximumKey: 0,
     rules: [
       {
         key: 0,
@@ -200,7 +199,6 @@ const globalGroups: RawGlobalGroup[] = [
     matchTime: 10000,
     resetMatch: 'activity',
     actionCdKey: 0,
-    actionMaximumKey: 0,
     rules: [
       {
         key: 0,
@@ -392,7 +390,6 @@ const globalGroups: RawGlobalGroup[] = [
     matchTime: 10000,
     resetMatch: 'app',
     actionCdKey: 0,
-    actionMaximumKey: 0,
     rules: [
       {
         key: 0,
@@ -518,7 +515,6 @@ const globalGroups: RawGlobalGroup[] = [
     matchTime: 10000,
     resetMatch: 'app',
     actionCdKey: 0,
-    actionMaximumKey: 0,
     rules: [
       {
         key: 0,
@@ -581,7 +577,6 @@ const globalGroups: RawGlobalGroup[] = [
     matchTime: 10000,
     resetMatch: 'app',
     actionCdKey: 0,
-    actionMaximumKey: 0,
     rules: [
       {
         key: 0,
