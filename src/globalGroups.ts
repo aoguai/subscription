@@ -452,6 +452,14 @@ const globalGroups: RawGlobalGroup[] = [
           `${NEGATION_PART_RULE_BUTTON}`,
         ],
       },
+      {
+        key: 3,
+        matches: [
+          `${COMMON_PREFIX}[(desc*="未成年"||desc*="儿童"||desc*="青少年"||desc*="守护")&&desc*="模式"&&desc.length<15]`,
+          `${COMMON_PREFIX}[(desc*="开启"||desc*="进入"||desc*="设置"||desc*="设计"||desc*="查看")&&(desc*="模式"||desc*="去")&&desc.length<15]`,
+          `${NEGATION_PART_RULE_BUTTON}`,
+        ],
+      },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
     apps: [...uniqueAppIdsYM].map((id) => ({ id, enable: false })),
