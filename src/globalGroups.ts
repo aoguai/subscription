@@ -84,14 +84,9 @@ const uniqueAppIdsYM = new Set([
 
 const COMMON_PREFIX = '[name!$=".CheckBox"][childCount=0][visibleToUser=true]';
 
-const NEGATION_PART_RULE_TEXT = `${COMMON_PREFIX}[((text^="不"&&text$="谢谢")||text="否"||text="关闭"||text="关闭按钮"||text="不开启"||text="暂时不用"||text="我已知晓"||text="不用了"||text="考虑一下"||text="考慮一下"||text="先不了"||text="不允许"||text^="不了"||text^="不再"||text^="忽略"||text^="暂不"||text^="放弃"||text^="取消"||text$="再说"||text$="拒绝"||text$="再想想"||text$="知道了"||(text^="不"&&text$="謝謝")||text="關閉"||text="關閉按鈕"||text="我已知曉"||text="不開啟"||text$="再說"||text$="拒絕"||text^="暫不"||text="close"||text="Close"||text="Not now"||text="not now"||text^="Ignore"||text^="Lgnore"||text^="Cancel"||text^="cancel"||text$="later"||text$="Later"||text$="refuse"||text$="Refuse"||text$="i see"||text$="I see")&&text.length<=7]`;
-const NEGATION_PART_RULE_DESC = `${COMMON_PREFIX}[((desc^="不"&&desc$="谢谢")||desc="否"||desc="关闭"||desc="关闭按钮"||desc="不开启"||desc="暂时不用"||desc="我已知晓"||desc="不用了"||desc="考虑一下"||desc="考慮一下"||desc="先不了"||desc="不允许"||desc^="不了"||desc^="不再"||desc^="忽略"||desc^="暂不"||desc^="放弃"||desc^="取消"||desc$="再说"||desc$="拒绝"||desc$="再想想"||desc$="知道了"||(desc^="不"&&desc$="謝謝")||desc="關閉"||desc="關閉按鈕"||desc="我已知曉"||desc="不開啟"||desc$="再說"||desc$="拒絕"||desc^="暫不"||desc="close"||desc="Close"||desc="Not now"||desc="not now"||desc^="Ignore"||desc^="Lgnore"||desc^="Cancel"||desc^="cancel"||desc$="later"||desc$="Later"||desc$="refuse"||desc$="Refuse"||desc$="i see"||desc$="I see")&&desc.length<=7]`;
-const NEGATION_PART_RULE_BUTTON = `${COMMON_PREFIX}[(vid*="iv"||vid*="guide"||vid*="alert"||vid*="Notific"||vid*="dialog"||vid*="btn"||vid*="ad"||vid*="ab")&&(vid$="close"||vid$="Close"||vid$="Delete"||vid$="delete"||vid$="cancel"||vid$="Cancel"||vid$="cancle"||vid$="Cancle"||vid$="exit"||vid$="Exit")||vid^="close"||vid^="Close"||vid^="ab"||vid^="deleteIv"||vid*="_close"||vid*="_Close"||text=""||desc=""||text="×"||desc="×"||text="퀺"||desc="퀺"]`;
-
-const UP_commonTextPatterns =
-  '[(((text*="更新"||text*="体验"||text*="优先")&&text*="内测")||text^="测试版"||text^="新版本"||text^="新版"||text^="更新"||text^="升级"||text^="体验"||text^="升級"||text^="體驗"||text^="Update"||text^="Upgrade"||text^="Experience"||text$="测试版"||text$="新版本"||text$="新版"||text$="更新"||text$="升级"||text$="体验"||text$="升級"||text$="體驗"||text$="Update"||text$="Upgrade"||text$="Experience")&&text!*="自动"&&(text!*="成功"&&text!*="失败"&&(text!*="已"||text*="已知"))]';
-const UP_commonDescPatterns =
-  '[(((desc*="更新"||desc*="体验"||desc*="优先")&&desc*="内测")||desc^="测试版"||desc^="新版本"||desc^="新版"||desc^="更新"||desc^="升级"||desc^="体验"||desc^="升級"||desc^="體驗"||desc^="Update"||desc^="Upgrade"||desc^="Experience"||desc$="测试版"||desc$="新版本"||desc$="新版"||desc$="更新"||desc$="升级"||desc$="体验"||desc$="升級"||desc$="體驗"||desc$="Update"||desc$="Upgrade"||desc$="Experience")&&desc!*="自动"&&(desc!*="成功"&&desc!*="失败"&&(text!*="已"||text*="已知"))]';
+const NEGATION_PART_RULE_TEXT = `${COMMON_PREFIX}[((text^="不"&&text$="谢谢")||text="否"||text="关闭"||text="关闭按钮"||text="不开启"||text="暂时不用"||text="我已知晓"||text="不用了"||text="本次忽略"||text="考虑一下"||text="考慮一下"||text="先不了"||text="不允许"||text^="不了"||text^="不再"||text^="稍后"||text^="忽略"||text^="暂不"||text^="放弃"||text^="取消"||text$="再说"||text$="拒绝"||text$="再想想"||text$="知道了"||text$="稍后提醒我"||text$="稍後提醒我"||(text^="不"&&text$="謝謝")||text="關閉"||text="關閉按鈕"||text="我已知曉"||text="不開啟"||text$="再說"||text$="拒絕"||text^="暫不"||text="close"||text="Close"||text="Not now"||text="not now"||text^="Ignore"||text^="Lgnore"||text^="Cancel"||text^="cancel"||text$="later"||text$="Later"||text$="refuse"||text$="Refuse"||text$="i see"||text$="I see")&&text.length<=7]`;
+const NEGATION_PART_RULE_DESC = `${COMMON_PREFIX}[((desc^="不"&&desc$="谢谢")||desc="否"||desc="关闭"||desc="关闭按钮"||desc="不开启"||desc="暂时不用"||desc="我已知晓"||desc="本次忽略"||desc="不用了"||desc="考虑一下"||desc="考慮一下"||desc="先不了"||desc="不允许"||desc^="不了"||desc^="不再"||desc^="稍后"||desc^="忽略"||desc^="暂不"||desc^="放弃"||desc^="取消"||desc$="再说"||desc$="拒绝"||desc$="再想想"||desc$="知道了"||desc$="稍后提醒我"||desc$="稍後提醒我"||(desc^="不"&&desc$="謝謝")||desc="關閉"||desc="關閉按鈕"||desc="我已知曉"||desc="不開啟"||desc$="再說"||desc$="拒絕"||desc^="暫不"||desc="close"||desc="Close"||desc="Not now"||desc="not now"||desc^="Ignore"||desc^="Lgnore"||desc^="Cancel"||desc^="cancel"||desc$="later"||desc$="Later"||desc$="refuse"||desc$="Refuse"||desc$="i see"||desc$="I see")&&desc.length<=7]`;
+const NEGATION_PART_RULE_BUTTON = `${COMMON_PREFIX}[(vid*="iv"||vid*="guide"||vid*="alert"||vid*="Notific"||vid*="dialog"||vid*="btn"||vid*="ad"||vid*="ab")&&(vid$="close"||vid$="Close"||vid$="Delete"||vid$="delete"||vid$="cancel"||vid$="Cancel"||vid$="cancle"||vid$="Cancle"||vid$="exit"||vid$="Exit")||vid^="close"||vid^="Close"||vid^="ab"||vid^="closeIv"||vid^="deleteIv"||vid*="_close"||vid*="_Close"||text=""||desc=""||text="×"||desc="×"||text="퀺"||desc="퀺"]`;
 
 const RP_commonTextPatterns =
   '[(text$="好评"||text$="鼓励一下"||text="马上评价"||text$="好評"||text$="鼓勵一下"||text$="马上評價")&&(text!*="成功"&&text!*="失败"&&(text!*="已"||text*="已知"))]';
@@ -264,51 +259,35 @@ const globalGroups: RawGlobalGroup[] = [
     rules: [
       {
         key: 0,
-        matches: `${COMMON_PREFIX}${UP_commonTextPatterns} <n * > ${NEGATION_PART_RULE_TEXT}`,
+        matches: [
+          `${COMMON_PREFIX}[(text*="内测"||text*="测试版"||text*="新版"||text*="更新"||text*="升级"||text*="体验"||text*="內測"||text*="測試版"||text*="升級"||text*="體驗"||text*="Update"||text*="Upgrade"||text*="Experience")&&text!*="自动"&&text!*="自動"&&(text!*="成功"&&text!*="失败"&&text!*="失敗"&&(text!*="已"||text*="已知")&&text!*="检查更新")]`,
+          `${COMMON_PREFIX}[(((text*="立即"||text*="马上"||text*="并"||text*="现在"||text*="立刻"||text*="抢先")&&(text*="更新"||text*="下载"||text*="安装"||text*="升级"||text*="查看"||text*="体验"))||text="更新"||text="下载"||text="安装"||text="升级"||text="确定"||text="好,升级")&&text.length<6]`,
+          `${NEGATION_PART_RULE_TEXT}`,
+        ],
       },
       {
         key: 1,
-        matches: `${COMMON_PREFIX}${UP_commonTextPatterns} <n * > * >n ${NEGATION_PART_RULE_TEXT}`,
+        matches: [
+          `${COMMON_PREFIX}[(desc*="内测"||desc*="测试版"||desc*="新版"||desc*="更新"||desc*="升级"||desc*="体验"||desc*="內測"||desc*="測試版"||desc*="升級"||desc*="體驗"||desc*="Update"||desc*="Upgrade"||desc*="Experience")&&desc!*="自动"&&desc!*="自動"&&(desc!*="成功"&&desc!*="失败"&&desc!*="失敗"&&(desc!*="已"||desc*="已知")&&desc!*="检查更新")]`,
+          `${COMMON_PREFIX}[(((desc*="立即"||desc*="马上"||desc*="并"||desc*="现在"||desc*="立刻"||desc*="抢先")&&(desc*="更新"||desc*="下载"||desc*="安装"||desc*="升级"||desc*="查看"||desc*="体验"))||desc="更新"||text="下载"||desc="安装"||desc="升级"||desc="确定"||desc="好,升级")&&desc.length<6]`,
+          `${NEGATION_PART_RULE_DESC}`,
+        ],
       },
       {
         key: 2,
-        matches: `${COMMON_PREFIX}${UP_commonTextPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_TEXT}`,
+        matches: [
+          `${COMMON_PREFIX}[(text*="内测"||text*="测试版"||text*="新版"||text*="更新"||text*="升级"||text*="体验"||text*="內測"||text*="測試版"||text*="升級"||text*="體驗"||text*="Update"||text*="Upgrade"||text*="Experience")&&text!*="自动"&&text!*="自動"&&(text!*="成功"&&text!*="失败"&&text!*="失敗"&&(text!*="已"||text*="已知")&&text!*="检查更新")]`,
+          `${COMMON_PREFIX}[(((text*="立即"||text*="马上"||text*="并"||text*="现在"||text*="立刻"||text*="抢先")&&(text*="更新"||text*="下载"||text*="安装"||text*="升级"||text*="查看"||text*="体验"))||text="更新"||text="下载"||text="安装"||text="升级"||text="确定"||text="好,升级")&&text.length<6]`,
+          `${NEGATION_PART_RULE_BUTTON}`,
+        ],
       },
       {
         key: 3,
-        matches: `${COMMON_PREFIX}${UP_commonDescPatterns} <n * > ${NEGATION_PART_RULE_DESC}`,
-      },
-      {
-        key: 4,
-        matches: `${COMMON_PREFIX}${UP_commonDescPatterns} <n * > * >n ${NEGATION_PART_RULE_DESC}`,
-      },
-      {
-        key: 5,
-        matches: `${COMMON_PREFIX}${UP_commonDescPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_DESC}`,
-      },
-      {
-        key: 6,
-        matches: `${COMMON_PREFIX}${UP_commonTextPatterns} <n * > ${NEGATION_PART_RULE_BUTTON}`,
-      },
-      {
-        key: 7,
-        matches: `${COMMON_PREFIX}${UP_commonTextPatterns} <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
-      },
-      {
-        key: 8,
-        matches: `${COMMON_PREFIX}${UP_commonTextPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
-      },
-      {
-        key: 9,
-        matches: `${COMMON_PREFIX}${UP_commonDescPatterns} <n * > ${NEGATION_PART_RULE_BUTTON}`,
-      },
-      {
-        key: 10,
-        matches: `${COMMON_PREFIX}${UP_commonDescPatterns} <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
-      },
-      {
-        key: 11,
-        matches: `${COMMON_PREFIX}${UP_commonDescPatterns} <<n * <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+        matches: [
+          `${COMMON_PREFIX}[(desc*="内测"||desc*="测试版"||desc*="新版"||desc*="更新"||desc*="升级"||desc*="体验"||desc*="內測"||desc*="測試版"||desc*="升級"||desc*="體驗"||desc*="Update"||desc*="Upgrade"||desc*="Experience")&&desc!*="自动"&&desc!*="自動"&&(desc!*="成功"&&desc!*="失败"&&desc!*="失敗"&&(desc!*="已"||desc*="已知")&&desc!*="检查更新")]`,
+          `${COMMON_PREFIX}[(((desc*="立即"||desc*="马上"||desc*="并"||desc*="现在"||desc*="立刻"||desc*="抢先")&&(desc*="更新"||desc*="下载"||desc*="安装"||desc*="升级"||desc*="查看"||desc*="体验"))||desc="更新"||text="下载"||desc="安装"||desc="升级"||desc="确定"||desc="好,升级")&&desc.length<6]`,
+          `${NEGATION_PART_RULE_BUTTON}`,
+        ],
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
