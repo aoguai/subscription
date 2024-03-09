@@ -3,7 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.baidu.tieba',
   name: '百度贴吧',
-  deprecatedKeys: [0, 4, 7],
+  deprecatedKeys: [0, 4, 5, 7],
   groups: [
     {
       key: 1,
@@ -79,16 +79,6 @@ export default defineAppConfig({
           snapshotUrls: 'https://i.gkd.li/import/13060892',
         },
       ],
-    },
-    {
-      key: 5,
-      name: '评价提示',
-      enable: false,
-      quickFind: true,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      rules: '[text="喜欢“百度网盘”吗？"] +n [vid="tv_left_btn"]',
-      snapshotUrls: 'https://i.gkd.li/import/14317054',
     },
     {
       key: 8,
