@@ -241,7 +241,6 @@ export default defineAppConfig({
         {
           key: 0,
           name: '点击「广告」按钮',
-          action: 'clickCenter',
           matches: [
             '@[name$=".View"||name$=".TextView"][text^="广告"][visibleToUser=true] <n View < View[childCount=1] <<3 View[childCount=1] <<2 View[childCount=1]',
           ],
@@ -267,7 +266,6 @@ export default defineAppConfig({
           key: 1,
           preKeys: [0],
           name: '点击「不感兴趣」或 「关闭此广告」',
-          action: 'clickCenter',
           matches:
             '[id^="menu"] > [(id="dislike"&&text="不感兴趣")||(id="closeBtn"&&text="关闭此广告")][visibleToUser=true]',
           snapshotUrls: [
@@ -282,7 +280,6 @@ export default defineAppConfig({
           key: 2,
           preKeys: [0, 1],
           name: '点击「与我无关」',
-          action: 'clickCenter',
           matches:
             '[id^="menu"] > [id="isdismatch"&&text="与我无关"][visibleToUser=true]',
           snapshotUrls: [
@@ -434,7 +431,6 @@ export default defineAppConfig({
       rules: {
         matches:
           'View[childCount=8] > View[index=6] > View[childCount=4] > Image[visibleToUser=true]',
-        action: 'clickCenter',
         snapshotUrls: [
           'https://i.gkd.li/import/13298294',
           'https://i.gkd.li/import/14156176', // 误触快照

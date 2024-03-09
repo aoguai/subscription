@@ -69,7 +69,6 @@ export default defineAppConfig({
         {
           matches:
             '@TextView[text="关闭"] < * <3 * < * + * >3 TextView[text="设置支付宝小组件"]',
-          action: 'clickCenter',
           snapshotUrls: 'https://i.gkd.li/import/13327349',
         },
       ],
@@ -84,7 +83,6 @@ export default defineAppConfig({
           key: 0,
           matches:
             '[desc="推荐广告"] > [desc="展开更多选项"][visibleToUser=true]',
-          action: 'clickCenter',
           snapshotUrls: 'https://i.gkd.li/import/13763314',
         },
         {
@@ -92,7 +90,6 @@ export default defineAppConfig({
           key: 1,
           quickFind: true,
           matches: '[text="对该内容不感兴趣"]',
-          action: 'clickCenter',
           snapshotUrls: 'https://i.gkd.li/import/13763315',
         },
       ],
