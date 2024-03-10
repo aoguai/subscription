@@ -1,6 +1,6 @@
 # 支付宝
 
-存在 5 规则组 - [com.eg.android.AlipayGphone](/src/apps/com.eg.android.AlipayGphone.ts)
+存在 6 规则组 - [com.eg.android.AlipayGphone](/src/apps/com.eg.android.AlipayGphone.ts)
 
 ## 通知提示-关闭花呗, 借呗弹窗
 
@@ -40,3 +40,10 @@
 默认禁用
 
 - [快照-0](https://i.gkd.li/import/14008852)
+
+## 分段广告-出行扫码广告
+
+默认禁用 - 点击[展开更多]-点击[对该内容不感兴趣]
+
+- [快照-0](https://i.gkd.li/i/14546044)
+- [快照-1](https://i.gkd.li/i/14546047)

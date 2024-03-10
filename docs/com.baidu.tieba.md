@@ -1,8 +1,8 @@
 # 百度贴吧
 
-存在 9 规则组 - [com.baidu.tieba](/src/apps/com.baidu.tieba.ts)
+存在 8 规则组 - [com.baidu.tieba](/src/apps/com.baidu.tieba.ts)
 
-## 权限提示-申请消息提醒弹窗
+## 通知提示-申请消息提醒弹窗
 
 默认禁用
 
@@ -29,12 +29,6 @@
 默认禁用
 
 - [快照-0](https://i.gkd.li/import/13060892)
-
-## 评价提示
-
-默认禁用
-
-- [快照-0](https://i.gkd.li/import/14317054)
 
 ## 分段广告-帖子底部内容推荐卡片
 

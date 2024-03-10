@@ -7,7 +7,6 @@
 | Gmail                  | [com.google.android.gm](/docs/com.google.android.gm.md)                         | 1      |
 | Keep                   | [com.gotokeep.keep](/docs/com.gotokeep.keep.md)                                 | 3      |
 | QQ                     | [com.tencent.mobileqq](/docs/com.tencent.mobileqq.md)                           | 19     |
-| Telegram               | [org.telegram.messenger.web](/docs/org.telegram.messenger.web.md)               | 1      |
 | WPS                    | [cn.wps.moffice_eng](/docs/cn.wps.moffice_eng.md)                               | 7      |
 | youtube                | [com.google.android.youtube](/docs/com.google.android.youtube.md)               | 4      |
 | Android 系统文件选择器 | [com.google.android.documentsui](/docs/com.google.android.documentsui.md)       | 1      |
@@ -15,11 +14,11 @@
 | QQ邮箱                 | [com.tencent.androidqqmail](/docs/com.tencent.androidqqmail.md)                 | 2      |
 | X(推特)                | [com.twitter.android](/docs/com.twitter.android.md)                             | 6      |
 | 阿里云盘               | [com.alicloud.databox](/docs/com.alicloud.databox.md)                           | 6      |
-| 百度贴吧               | [com.baidu.tieba](/docs/com.baidu.tieba.md)                                     | 9      |
+| 百度贴吧               | [com.baidu.tieba](/docs/com.baidu.tieba.md)                                     | 8      |
 | 百度网盘               | [com.baidu.netdisk](/docs/com.baidu.netdisk.md)                                 | 4      |
 | 哔哩哔哩               | [tv.danmaku.bili](/docs/tv.danmaku.bili.md)                                     | 6      |
-| 菜鸟                   | [com.cainiao.wireless](/docs/com.cainiao.wireless.md)                           | 4      |
-| 大学搜题酱             | [com.zmzx.college.search](/docs/com.zmzx.college.search.md)                     | 1      |
+| 菜鸟                   | [com.cainiao.wireless](/docs/com.cainiao.wireless.md)                           | 3      |
+| 大学搜题酱             | [com.zmzx.college.search](/docs/com.zmzx.college.search.md)                     | 2      |
 | 高德地图               | [com.autonavi.minimap](/docs/com.autonavi.minimap.md)                           | 4      |
 | 海南航空               | [com.rytong.hnair](/docs/com.rytong.hnair.md)                                   | 1      |
 | 航旅纵横               | [com.umetrip.android.msky.app](/docs/com.umetrip.android.msky.app.md)           | 3      |
@@ -47,7 +46,7 @@
 | 邮储银行               | [com.yitong.mbank.psbc](/docs/com.yitong.mbank.psbc.md)                         | 1      |
 | 云班课                 | [com.mosoink.teach](/docs/com.mosoink.teach.md)                                 | 1      |
 | 云闪付                 | [com.unionpay](/docs/com.unionpay.md)                                           | 4      |
-| 支付宝                 | [com.eg.android.AlipayGphone](/docs/com.eg.android.AlipayGphone.md)             | 5      |
+| 支付宝                 | [com.eg.android.AlipayGphone](/docs/com.eg.android.AlipayGphone.md)             | 6      |
 | 知乎                   | [com.zhihu.android](/docs/com.zhihu.android.md)                                 | 7      |
 | 智联招聘               | [com.zhaopin.social](/docs/com.zhaopin.social.md)                               | 2      |
 | 智能服务               | [com.miui.systemAdSolution](/docs/com.miui.systemAdSolution.md)                 | 1      |
@@ -57,14 +56,14 @@
 
 ## 全局规则
 
-| 全局规则 | 名称         | 规则组 |
-| -------- | ------------ | ------ |
-| 全局规则 | [开屏广告]   | 2      |
-| 全局规则 | [全屏广告]   | 6      |
-| 全局规则 | [局部广告]   | 13     |
-| 全局规则 | [更新提示]   | 12     |
-| 全局规则 | [评价提示]   | 12     |
-| 全局规则 | [通知提示]   | 12     |
-| 全局规则 | [青少年模式] | 12     |
-| 全局规则 | [权限提示]   | 12     |
-| 全局规则 | [定位提示]   | 12     |
+| 全局规则 | 名称       | 规则组 |
+| -------- | ---------- | ------ |
+| 全局规则 | 开屏广告   | 2      |
+| 全局规则 | 全屏广告   | 6      |
+| 全局规则 | 局部广告   | 13     |
+| 全局规则 | 更新提示   | 4      |
+| 全局规则 | 评价提示   | 4      |
+| 全局规则 | 通知提示   | 4      |
+| 全局规则 | 青少年模式 | 4      |
+| 全局规则 | 权限提示   | 4      |
+| 全局规则 | 定位提示   | 4      |

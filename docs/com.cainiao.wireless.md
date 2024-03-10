@@ -1,6 +1,6 @@
 # 菜鸟
 
-存在 4 规则组 - [com.cainiao.wireless](/src/apps/com.cainiao.wireless.ts)
+存在 3 规则组 - [com.cainiao.wireless](/src/apps/com.cainiao.wireless.ts)
 
 ## 全屏广告-弹窗广告
 
@@ -16,12 +16,6 @@
 默认禁用
 
 - [快照-0](https://i.gkd.li/import/14162159)
-
-## 权限提示-开启消息弹窗
-
-默认禁用 - 自动点击关闭。
-
-- [快照-0](https://i.gkd.li/import/14162211)
 
 ## 全屏广告-发现页新装试用弹窗
 
