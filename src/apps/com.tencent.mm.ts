@@ -363,17 +363,15 @@ export default defineAppConfig({
         {
           key: 0,
           matches: [
-            'RelativeLayout[childCount=1][clickable=true] > [text="提瓦特小助手"]',
-            'FrameLayout[childCount=5] + FrameLayout[childCount=2] >2 FrameLayout[childCount=1]',
+            'ImageView[childCount=0][visibleToUser=true] < FrameLayout < @FrameLayout[visibleToUser=true] <2 * - * >5 [text="查看详情"]',
           ],
           snapshotUrls: 'https://i.gkd.li/import/12926021',
         },
         {
           key: 1,
-          matches: [
-            'FrameLayout > FrameLayout > FrameLayout > TextView[text="广告"]',
-            'FrameLayout[childCount=6] + FrameLayout[childCount=2] > FrameLayout > FrameLayout > ImageView',
-          ],
+          quickFind: true,
+          matches:
+            'ImageView[childCount=0][visibleToUser=true] < FrameLayout < @FrameLayout[visibleToUser=true] <2 * - * >4 [text="广告"]',
           snapshotUrls: 'https://i.gkd.li/import/13459614',
         },
       ],
@@ -524,10 +522,12 @@ export default defineAppConfig({
         {
           quickFind: true,
           activityIds: 'com.tencent.mm.framework.app.UIPageFragmentActivity',
-          matches: '[vid="kinda_button_impl_wrapper"][clickable=true]',
-          exampleUrls:
-            'https://m.gkd.li/57941037/a5177d9d-6745-443f-baf5-af57153430d8',
-          snapshotUrls: 'https://i.gkd.li/i/14399355',
+          matches:
+            '@[vid="kinda_button_impl_wrapper"][clickable=true] > [text="完成"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14399355',
+            'https://i.gkd.li/i/14532946', // 避免在此页面误触
+          ],
         },
       ],
     },
