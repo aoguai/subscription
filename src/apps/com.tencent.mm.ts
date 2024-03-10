@@ -492,10 +492,11 @@ export default defineAppConfig({
           key: 0,
           name: '点击[X]',
           matches:
-            'View >n View[desc$="推​荐​"][childCount=3] > ImageView[index=2][clickable=true][visibleToUser=true]',
+            'View[childCount>=2] >n View[desc$="推​荐​"][childCount>=2] > ImageView[clickable=true][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/14436176',
             'https://i.gkd.li/i/14392392',
+            'https://i.gkd.li/i/14548701',
           ],
         },
         {
