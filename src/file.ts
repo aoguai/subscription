@@ -660,7 +660,7 @@ export const updateReadMeMd = async (
           newConfig
             .globalGroups!.map((a) => {
               // 遍历新配置中的应用列表
-              return `| 全局规则 | [${a.name}] | ${a.rules.length} |`; // 构建全局规则信息行
+              return `| 全局规则 | ${a.name} | ${a.rules.length} |`; // 构建全局规则信息行
             })
             .join('\n'), // 拼接全局规则变更详情信息
       ].join('\n\n') + '\n'; // 拼接变更日志文本并换行
