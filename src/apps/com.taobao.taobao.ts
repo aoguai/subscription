@@ -61,7 +61,7 @@ export default defineAppConfig({
     {
       enable: false,
       key: 8,
-      name: '权限提示-开启系统通知提示',
+      name: '通知提示-开启系统通知提示',
       desc: '自动点击关闭',
       actionMaximum: 1,
       resetMatch: 'app',

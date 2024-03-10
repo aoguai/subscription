@@ -3,7 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.cainiao.wireless',
   name: '菜鸟',
-  deprecatedKeys: [0, 3, 4, 6, 7],
+  deprecatedKeys: [0, 3, 4, 5, 6, 7],
   groups: [
     {
       key: 1,
@@ -47,18 +47,6 @@ export default defineAppConfig({
       ],
       rules: 'View[desc="立即查看"] +2 ImageView[id=null]',
       snapshotUrls: ['https://i.gkd.li/import/14162159'],
-    },
-    {
-      key: 5,
-      name: '权限提示-开启消息弹窗',
-      desc: '自动点击关闭。',
-      enable: false,
-      quickFind: true,
-      activityIds: [
-        'com.cainiao.wireless.homepage.view.activity.HomePageActivity',
-      ],
-      rules: '[id="com.cainiao.wireless:id/gg_dialog_base_close"]',
-      snapshotUrls: ['https://i.gkd.li/import/14162211'],
     },
     {
       key: 8,

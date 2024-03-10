@@ -7,7 +7,7 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '权限提示-申请消息提醒弹窗',
+      name: '通知提示-申请消息提醒弹窗',
       enable: false,
       quickFind: true,
       actionMaximum: 1,
