@@ -83,7 +83,7 @@ export default defineAppConfig({
           preKeys: [1, 2],
           key: 3,
           name: '选择关闭原因-点击不感兴趣',
-          matches: ['@LinearLayout > TextView[text="不感兴趣"]'],
+          matches: '@LinearLayout > TextView[text="不感兴趣"]',
           snapshotUrls: [
             'https://i.gkd.li/import/12472633',
             'https://i.gkd.li/import/12655713',
@@ -91,6 +91,13 @@ export default defineAppConfig({
             'https://i.gkd.li/import/12706437',
             'https://i.gkd.li/import/13786886', // 没有id
           ],
+        },
+        {
+          preKeys: [3],
+          key: 4,
+          name: '选择是否需要今日免广告',
+          matches: '[text*="免广告"] + [text="不感兴趣"]',
+          snapshotUrls: ['https://i.gkd.li/i/14549551'],
         },
       ],
     },
