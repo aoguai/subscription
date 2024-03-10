@@ -420,19 +420,41 @@ export default defineAppConfig({
       name: '分段广告-天气页卡片广告',
       desc: '点击关闭-点击关闭此条广告',
       enable: false,
-      quickFind: true,
-      activityIds: 'com.tencent.mobileqq.activity.QPublicFragmentActivity',
       rules: [
         {
           key: 0,
-          matches: '@LinearLayout[childCount=2] > [text="广告"]',
-          snapshotUrls: 'https://i.gkd.li/import/14019384',
+          quickFind: true,
+          activityIds: 'com.tencent.mobileqq.activity.QPublicFragmentActivity',
+          matches: '[id="com.tencent.mobileqq:id/nca"]',
+          snapshotUrls: 'https://i.gkd.li/i/14019384',
         },
         {
           preKeys: 0,
           key: 1,
+          quickFind: true,
+          activityIds: 'com.tencent.mobileqq.activity.QPublicFragmentActivity',
           matches: '@LinearLayout[childCount=3] > [text="关闭此条广告"]',
-          snapshotUrls: 'https://i.gkd.li/import/14019401',
+          snapshotUrls: 'https://i.gkd.li/i/14019401',
+        },
+        {
+          key: 2,
+          activityIds: 'com.tencent.mobileqq.activity.QQBrowserActivity',
+          matches: [
+            // 限定
+            'ViewGroup[desc="返回"]',
+            'ViewGroup[desc="首页"]',
+            'ViewGroup[desc="分享"]',
+            'ViewGroup[childCount=6] > ViewGroup[childCount=2][clickable=true][visibleToUser=true]',
+          ],
+          snapshotUrls: 'https://i.gkd.li/i/14549503',
+        },
+        {
+          key: 3,
+          preKeys: 2,
+          activityIds: 'com.tencent.mobileqq.activity.QPublicFragmentActivity',
+          matches:
+            'View < @ViewGroup[clickable=true][visibleToUser=true] - ViewGroup > ViewGroup[childCount=6] > ViewGroup[childCount=2]',
+          snapshotUrls: 'https://i.gkd.li/i/14549504',
         },
       ],
     },

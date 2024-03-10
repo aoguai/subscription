@@ -108,5 +108,29 @@ export default defineAppConfig({
         },
       ],
     },
+    {
+      key: 13,
+      name: '分段广告-出行扫码广告',
+      desc: '点击[展开更多]-点击[对该内容不感兴趣]',
+      quickFind: true,
+      activityIds:
+        'com.alipay.android.phone.wallet.aptrip.ui.activity.result.ResultPageActivityV2',
+      rules: [
+        {
+          key: 0,
+          name: '点击[展开更多]',
+          matches: '@[desc="展开更多选项"] - * >2 [text="广告"]',
+          snapshotUrls: 'https://i.gkd.li/i/14546044',
+        },
+        {
+          key: 1,
+          preKeys: [0],
+          name: '点击[对该内容不感兴趣]',
+          matches:
+            '@RelativeLayout[clickable=true] >2 [text="对该内容不感兴趣"]',
+          snapshotUrls: 'https://i.gkd.li/i/14546047',
+        },
+      ],
+    },
   ],
 });

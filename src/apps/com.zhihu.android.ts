@@ -112,6 +112,7 @@ export default defineAppConfig({
             'https://i.gkd.li/import/14232195', // text="创作者小助手"
             'https://i.gkd.li/import/14235024', // text="知乎游戏"
             'https://i.gkd.li/i/14391614',
+            'https://i.gkd.li/i/14548763',
           ],
         },
         {
