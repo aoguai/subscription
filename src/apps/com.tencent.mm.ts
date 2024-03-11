@@ -521,13 +521,12 @@ export default defineAppConfig({
       enable: false,
       rules: [
         {
-          quickFind: true,
           activityIds: 'com.tencent.mm.framework.app.UIPageFragmentActivity',
-          matches:
-            '@[vid="kinda_button_impl_wrapper"][clickable=true] > [text="完成"]',
+          matches: ['[text="支付成功"]', '[text*="￥"]', '[text="完成"]'],
           snapshotUrls: [
             'https://i.gkd.li/i/14399355',
             'https://i.gkd.li/i/14532946', // 避免在此页面误触
+            'https://i.gkd.li/i/14558398',
           ],
         },
       ],
