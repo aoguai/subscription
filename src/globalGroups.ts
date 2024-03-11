@@ -68,14 +68,21 @@ const globalGroups: RawGlobalGroup[] = [
     actionMaximumKey: 0,
     rules: [
       {
-        key: 0,
-        quickFind: true,
-        matches: '[text*="跳过"][text.length<10][visibleToUser=true]',
-      },
-      {
         key: -1,
         matches:
           '[childCount<7] > [childCount=0][visibleToUser=true][(text.length<10&&(text*="跳过"||text*="跳過"||text*="skip"||text*="Skip")) || id$="tt_splash_skip_btn" || vid*="skip" || vid*="Skip" || (vid*="count"&&vid*="down"&&vid!*="load"&&vid!*="Load"&&vid!*="LOAD"&&vid!*="hour"&&vid!*="Hour"&&vid!*="HOUR"&&vid!*="minute"&&vid!*="Minute"&&vid!*="MINUTE"&&vid!*="add"&&vid!*="Add"&&vid!*="ADD"&&vid!*="ead"&&vid!*="EAD") || desc*="跳过" || desc*="skip"]',
+      },
+      {
+        key: 0,
+        quickFind: true,
+        matches:
+          '[text*="跳过"][text.length<10][visibleToUser=true][height>0&&width>0]',
+      },
+      {
+        key: 1,
+        quickFind: true,
+        matches:
+          'FrameLayout[childCount>=2] > FrameLayout[childCount>2] > @View[visibleToUser=true][clickable=true][height>0&&width>0] + TextView[clickable=true][height>0&&width>0][visibleToUser=true] <<n [id="android:id/content"]', // 字节 SDK
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false

@@ -6,41 +6,6 @@ export default defineAppConfig({
   deprecatedKeys: [1, 2, 3],
   groups: [
     {
-      key: -1,
-      name: '开屏广告',
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      actionCdKey: 0,
-      actionMaximumKey: 0,
-      quickFind: true,
-      rules: [
-        {
-          key: 0,
-          matches:
-            '@View[clickable=true] + TextView <<n * <n * > * >n [vid="ad_container"]',
-          snapshotUrls: [
-            'https://i.gkd.li/import/12503773',
-            'https://i.gkd.li/import/13247610',
-            'https://i.gkd.li/import/13264779',
-            'https://i.gkd.li/import/14162294',
-            'https://i.gkd.li/import/12917990',
-            'https://i.gkd.li/import/13826359',
-            'https://i.gkd.li/import/13827095',
-            'https://i.gkd.li/import/13247733', // 误触
-            'https://i.gkd.li/import/13247782', // 可能误触
-            'https://i.gkd.li/import/13296816', // snapshot of excludeMatches
-          ],
-        },
-        {
-          key: 1,
-          matches:
-            '[id$="tt_splash_skip_btn"||text^="跳过"] < * -n [vid="ad_container"]',
-          snapshotUrls: ['https://i.gkd.li/import/13211392'],
-        },
-      ],
-    },
-    {
       key: 0,
       name: '分段广告-卡片广告',
       desc: '点击卡片右上角按钮->免广告-点击不感兴趣->选择关闭原因-点击不感兴趣',
