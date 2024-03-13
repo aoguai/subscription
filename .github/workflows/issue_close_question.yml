@@ -1,4 +1,4 @@
-name: issue_close_question
+name: Issue Close Question
 
 on:
   schedule:
@@ -19,7 +19,8 @@ jobs:
         with:
           actions: 'close-issues'
           labels: 'need info'
-          inactive-day: 5
+          inactive-day: 3
           body: |
-            由于该 Issue 5天未收到回应，现已被自动关闭，若有任何问题，可评论回复。
+            由于该 Issue 3 天未收到回应，现已被自动关闭，若有任何问题，可评论回复。
+
             This issue has been closed automatically because it has not had recent activity for 5 days. If you have any questions, please comment here.
