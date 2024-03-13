@@ -43,12 +43,13 @@ export default defineAppConfig({
         {
           key: 2,
           matches:
-            '[text*="广告"] < [vid="bottom_line"] + [vid="menu_container"] > [vid="menu"]',
+            '[text*="广告"] <<n [vid="bottom_container"] > [vid="menu_container"] > [vid="menu"][visibleToUser!=false]',
           exampleUrls:
             'https://m.gkd.li/57941037/689c77eb-9026-44db-b22e-d890961a0ad6',
           snapshotUrls: [
             'https://i.gkd.li/import/14321041',
             'https://i.gkd.li/i/14468152',
+            'https://i.gkd.li/i/14558110', // 防误触
           ],
         },
         {
