@@ -485,6 +485,7 @@ export default defineAppConfig({
       key: 21,
       name: '分段广告-订阅号消息页面广告',
       desc: '自动点击“x”',
+      enable: false,
       activityIds:
         'com.tencent.mm.plugin.brandservice.ui.flutter.BizFlutterTLFlutterViewActivity',
       rules: [
