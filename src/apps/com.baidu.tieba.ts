@@ -65,12 +65,12 @@ export default defineAppConfig({
     {
       key: 3,
       name: '局部广告-首页、推荐列表顶部卡片式广告',
+      matchTime: 10000,
+      actionMaximum: 1,
       activityIds: [
         'com.baidu.tieba.tblauncher.MainTabActivity',
         'com.baidu.tieba.frs.FrsActivity',
       ],
-      matchTime: 10000,
-      actionMaximum: 1,
       rules: [
         {
           key: 1,
@@ -191,15 +191,13 @@ export default defineAppConfig({
     },
     {
       key: 11,
-      name: '局部广告-帖子内"进吧逛逛"弹窗',
-      enable: false,
-      actionMaximum: 1,
-      resetMatch: 'activity',
+      name: '局部广告-帖子底部浮窗广告',
       rules:
-        'TextView[text!=null] < LinearLayout + LinearLayout > View + ImageView[clickable=true]',
+        'View + @ImageView[clickable=true] <<6 RelativeLayout[childCount>2] > ImageView[clickable=false]',
       snapshotUrls: [
         'https://i.gkd.li/import/13322337',
         'https://i.gkd.li/import/13328738',
+        'https://i.gkd.li/i/14586847',
       ],
     },
     {
