@@ -57,11 +57,6 @@ jobs:
           release_name: Release ${{ steps.version.outputs.version }}
           body_path: ./CHANGELOG.md
 
-      - name: Edit updateUrl in aoguai_gkd.json5
-        if: ${{ steps.commit.outcome == 'success' }}
-        run: |
-          sed -i "s|updateUrl:[^,]*|updateUrl: 'https://registry.npmmirror.com/@aoguai/subscription/latest/files'|g; s|checkUpdateUrl:[^,]*|checkUpdateUrl:'https://registry.npmmirror.com/@aoguai/subscription/latest/files/dist/aoguai_gkd.version.json'|g" ./dist/aoguai_gkd.json5
-
       - name: Publish package
         if: ${{ steps.commit.outcome == 'success' }}
         run: |
