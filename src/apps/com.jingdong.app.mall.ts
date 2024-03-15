@@ -97,10 +97,12 @@ export default defineAppConfig({
         {
           key: 2,
           activityIds: 'com.jingdong.app.mall.MainFrameActivity',
-          matches: '@[desc="关闭按钮"] <n * >n *[desc="弹窗"]',
+          matches:
+            '[id="android:id/content"] > RelativeLayout > RelativeLayout > *[childCount=2] > ImageView[index=1][clickable=true]',
           snapshotUrls: [
             'https://i.gkd.li/import/13241883',
             'https://i.gkd.li/import/132599029',
+            'https://i.gkd.li/i/14612925',
           ],
         },
         {
