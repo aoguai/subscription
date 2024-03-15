@@ -3,7 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'tv.danmaku.bili',
   name: '哔哩哔哩',
-  deprecatedKeys: [0, 1, 3, 5, 6, 9, 11],
+  deprecatedKeys: [0, 1, 3, 5, 6, 9, 10, 11],
   groups: [
     {
       key: -1,
@@ -39,11 +39,11 @@ export default defineAppConfig({
     },
     {
       key: 4,
-      name: '分段广告-视频底部与评论区中间卡片式广告',
-      desc: '需点击二次弹窗 屏蔽原因',
+      name: '分段广告-视频卡片广告',
+      desc: '包括 视频底部与评论区中间卡片式广告, 首页推荐视频卡片广告',
       enable: false,
-      quickFind: true,
       activityIds: [
+        'tv.danmaku.bili.MainActivityV2',
         'com.bilibili.video.videodetail.VideoDetailsActivity',
         'com.bilibili.ship.theseus.all.UnitedBizDetailsActivity',
         'com.bilibili.ship.theseus.detail.UnitedBizDetailsActivity',
@@ -53,23 +53,56 @@ export default defineAppConfig({
           key: 0,
           name: '点击广告卡片右侧菜单图标',
           matches:
-            'FrameLayout[id="tv.danmaku.bili:id/ad_tint_frame"] >n [id^="tv.danmaku.bili:id/more"]',
+            '[(desc*="广告"||desc*="来自淘宝")&&desc*="查看"] >n * >n [id^="tv.danmaku.bili:id/more"] > ImageView',
           snapshotUrls: [
             'https://i.gkd.li/import/12642260', // n = 2
             'https://i.gkd.li/import/12705266', // n = 3
             'https://i.gkd.li/import/12776568', // id="tv.danmaku.bili:id/more_layout"
             'https://i.gkd.li/import/12707070', // 由于 activityId 切换延迟导致规则仍然运行, 使用 FrameLayout 避免误触
+            'https://i.gkd.li/i/14083540',
+            'https://i.gkd.li/i/14059876',
+            'https://i.gkd.li/i/14588315',
           ],
         },
         {
           preKeys: 0,
-          key: 1,
-          name: '点击屏蔽广告',
-          matches:
-            '[id="tv.danmaku.bili:id/dislike_reasons"] @RelativeLayout > [text*="不感兴趣"]',
+          key: 50,
+          quickFind: true,
+          name: '点击[不感兴趣]',
+          matches: '@[clickable=true] > [text="不感兴趣"]',
           snapshotUrls: [
-            'https://i.gkd.li/import/12642261', // 屏蔽广告菜单弹窗
             'https://i.gkd.li/import/13495649',
+            'https://i.gkd.li/i/13742257',
+            'https://i.gkd.li/i/13256605',
+            'https://i.gkd.li/i/14155801',
+            'https://i.gkd.li/i/13742257',
+          ],
+        },
+        {
+          preKeys: 0,
+          key: 51,
+          name: '点击[相似内容过多]',
+          quickFind: true,
+          matches: '@[clickable=true] > [text="相似内容过多"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/acd89b46-45fc-459f-8d17-3913d98dcbad',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13945597',
+            'https://i.gkd.li/i/14155272',
+            'https://i.gkd.li/i/14059882',
+          ],
+        },
+        {
+          preKeys: 0,
+          key: 52,
+          name: '点击[up主不感兴趣]',
+          quickFind: true,
+          matches: '@[clickable=true] > [text="up主不感兴趣"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/9c2f42d7-c262-4e06-b3c6-40f0908e7a94',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13625309',
+            'https://i.gkd.li/i/12642261',
           ],
         },
       ],
@@ -85,15 +118,14 @@ export default defineAppConfig({
         'com.bilibili.ship.theseus.detail.UnitedBizDetailsActivity',
         'com.bilibili.video.videodetail.VideoDetailsActivity',
       ],
-      rules: ['[id="tv.danmaku.bili:id/toast_x"]'],
+      rules: '[id="tv.danmaku.bili:id/toast_x"]',
       snapshotUrls: [
-        'https://i.gkd.li/import/12892611',
-        'https://i.gkd.li/import/13308344',
-        'https://i.gkd.li/import/13538048', // activityIds: 'com.bilibili.video.videodetail.VideoDetailsActivity',
+        'https://i.gkd.li/i/12892611',
+        'https://i.gkd.li/i/13308344',
+        'https://i.gkd.li/i/13538048', // activityIds: 'com.bilibili.video.videodetail.VideoDetailsActivity',
       ],
-      exampleUrls: [
+      exampleUrls:
         'https://github.com/gkd-kit/inspect/assets/38517192/110db806-3f8b-4cd2-a445-06c5f5eb21eb',
-      ],
     },
     {
       key: 8,
@@ -105,69 +137,6 @@ export default defineAppConfig({
       activityIds: 'com.bilibili.bililive.room.ui.roomv3.LiveRoomActivityV3',
       rules: '[id="tv.danmaku.bili:id/shopping_close"]',
       snapshotUrls: 'https://i.gkd.li/import/13200549',
-    },
-    {
-      key: 10,
-      name: '分段广告-首页推荐视频卡片广告', // 流程与 key=4 视频底部广告 基本一致
-      enable: false,
-      activityIds: 'tv.danmaku.bili.MainActivityV2',
-      rules: [
-        {
-          key: 0,
-          name: '点击广告卡片右下角菜单按钮',
-          actionMaximum: 1,
-          actionCd: 500,
-          matches:
-            'RelativeLayout[desc^="广告"] > ViewGroup[childCount=3] > FrameLayout[index=2]',
-          snapshotUrls: 'https://i.gkd.li/import/14083540',
-        },
-        {
-          key: 3,
-          name: '点击巨幅广告卡片右下角菜单按钮',
-          actionMaximum: 1,
-          actionCd: 500,
-          matches:
-            'ViewGroup[desc^="广告"] >2 ViewGroup[childCount=3] > FrameLayout[index=2]',
-          snapshotUrls: 'https://i.gkd.li/import/14059876',
-        },
-        {
-          preKeys: [0],
-          key: 1,
-          quickFind: true,
-          name: '点击[不感兴趣]',
-          matches: '@[clickable=true] > [text="不感兴趣"]',
-          snapshotUrls: [
-            'https://i.gkd.li/import/13742257',
-            'https://i.gkd.li/import/13256605',
-            'https://i.gkd.li/import/14155801',
-            'https://i.gkd.li/import/13742257',
-          ],
-        },
-        {
-          preKeys: [0, 3],
-          key: 4,
-          name: '点击[相似内容过多]',
-          quickFind: true,
-          matches: '@[clickable=true] > [text="相似内容过多"]',
-          exampleUrls:
-            'https://m.gkd.li/57941037/acd89b46-45fc-459f-8d17-3913d98dcbad',
-          snapshotUrls: [
-            'https://i.gkd.li/import/13945597',
-            'https://i.gkd.li/import/14155272',
-            'https://i.gkd.li/import/14059882',
-          ],
-        },
-        {
-          preKeys: [0],
-          key: 5,
-          name: '点击[up主不感兴趣]',
-          quickFind: true,
-          matches: '@[clickable=true] > [text="up主不感兴趣"]',
-          exampleUrls:
-            'https://m.gkd.li/57941037/9c2f42d7-c262-4e06-b3c6-40f0908e7a94',
-          snapshotUrls: 'https://i.gkd.li/import/13625309',
-        },
-      ],
     },
   ],
 });

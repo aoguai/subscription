@@ -112,6 +112,7 @@ export default defineAppConfig({
       key: 13,
       name: '分段广告-出行扫码广告',
       desc: '点击[展开更多]-点击[对该内容不感兴趣]',
+      enable: false,
       quickFind: true,
       activityIds:
         'com.alipay.android.phone.wallet.aptrip.ui.activity.result.ResultPageActivityV2',
