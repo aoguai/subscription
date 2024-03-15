@@ -1,12 +1,6 @@
 # 京东
 
-存在 9 规则组 - [com.jingdong.app.mall](/src/apps/com.jingdong.app.mall.ts)
-
-## 局部广告-购物车页面砸金蛋
-
-默认禁用
-
-- [快照-0](https://i.gkd.li/import/12642266)
+存在 8 规则组 - [com.jingdong.app.mall](/src/apps/com.jingdong.app.mall.ts)
 
 ## 局部广告-我的页面悬浮广告
 
@@ -16,7 +10,7 @@
 - [快照-1](https://i.gkd.li/import/12774910)
 - [快照-2](https://i.gkd.li/import/13242002)
 
-## 局部广告-首页右侧浮层广告
+## 局部广告-右侧浮层广告
 
 默认禁用
 
@@ -24,8 +18,9 @@
 - [快照-1](https://i.gkd.li/import/12837870)
 - [快照-2](https://i.gkd.li/import/13072091)
 - [快照-3](https://i.gkd.li/import/12837870)
+- [快照-4](https://i.gkd.li/import/12642266)
 
-## 通知提示-请求打开通知
+## 通知提示
 
 默认禁用
 
@@ -42,10 +37,11 @@
 - [快照-1](https://i.gkd.li/import/13218034)
 - [快照-2](https://i.gkd.li/import/13241883)
 - [快照-3](https://i.gkd.li/import/132599029)
-- [快照-4](https://i.gkd.li/import/13258996)
-- [快照-5](https://i.gkd.li/import/13336847)
-- [快照-6](https://i.gkd.li/import/14162769)
-- [快照-7](https://i.gkd.li/i/14445257)
+- [快照-4](https://i.gkd.li/i/14612925)
+- [快照-5](https://i.gkd.li/import/13258996)
+- [快照-6](https://i.gkd.li/import/13336847)
+- [快照-7](https://i.gkd.li/import/14162769)
+- [快照-8](https://i.gkd.li/i/14445257)
 
 ## 局部广告-首页底部横幅广告
 

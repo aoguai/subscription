@@ -27,6 +27,4 @@
 
 默认禁用 - 点击关闭
 
-- [示例-0](https://m.gkd.li/57941037/470eec82-ed99-4f50-beba-2587e525cfdf)
-
 - [快照-0](https://i.gkd.li/import/14278618)

@@ -16,15 +16,15 @@
 | 阿里云盘               | [com.alicloud.databox](/docs/com.alicloud.databox.md)                           | 6      |
 | 百度贴吧               | [com.baidu.tieba](/docs/com.baidu.tieba.md)                                     | 8      |
 | 百度网盘               | [com.baidu.netdisk](/docs/com.baidu.netdisk.md)                                 | 4      |
-| 哔哩哔哩               | [tv.danmaku.bili](/docs/tv.danmaku.bili.md)                                     | 6      |
+| 哔哩哔哩               | [tv.danmaku.bili](/docs/tv.danmaku.bili.md)                                     | 5      |
 | 菜鸟                   | [com.cainiao.wireless](/docs/com.cainiao.wireless.md)                           | 3      |
 | 大学搜题酱             | [com.zmzx.college.search](/docs/com.zmzx.college.search.md)                     | 2      |
 | 高德地图               | [com.autonavi.minimap](/docs/com.autonavi.minimap.md)                           | 4      |
 | 海南航空               | [com.rytong.hnair](/docs/com.rytong.hnair.md)                                   | 1      |
 | 航旅纵横               | [com.umetrip.android.msky.app](/docs/com.umetrip.android.msky.app.md)           | 3      |
 | 交管12123              | [com.tmri.app.main](/docs/com.tmri.app.main.md)                                 | 1      |
-| 京东                   | [com.jingdong.app.mall](/docs/com.jingdong.app.mall.md)                         | 9      |
-| 酷安                   | [com.coolapk.market](/docs/com.coolapk.market.md)                               | 2      |
+| 京东                   | [com.jingdong.app.mall](/docs/com.jingdong.app.mall.md)                         | 8      |
+| 酷安                   | [com.coolapk.market](/docs/com.coolapk.market.md)                               | 1      |
 | 蓝岛                   | [com.loyea.adnmb](/docs/com.loyea.adnmb.md)                                     | 1      |
 | miui主题壁纸           | [com.android.thememanager](/docs/com.android.thememanager.md)                   | 1      |
 | 暮瑟                   | [com.maxhom.weibu](/docs/com.maxhom.weibu.md)                                   | 2      |
@@ -58,7 +58,7 @@
 
 | 全局规则 | 名称       | 规则组 |
 | -------- | ---------- | ------ |
-| 全局规则 | 开屏广告   | 2      |
+| 全局规则 | 开屏广告   | 3      |
 | 全局规则 | 全屏广告   | 6      |
 | 全局规则 | 局部广告   | 13     |
 | 全局规则 | 更新提示   | 4      |
