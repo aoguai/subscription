@@ -3,15 +3,8 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.jingdong.app.mall',
   name: '京东',
-  deprecatedKeys: [7],
+  deprecatedKeys: [1, 7],
   groups: [
-    {
-      key: 1,
-      name: '局部广告-购物车页面砸金蛋',
-      activityIds: 'com.jingdong.app.mall.MainFrameActivity',
-      rules: '[id="com.jd.lib.cart.feature:id/iv_egg_close"]',
-      snapshotUrls: 'https://i.gkd.li/import/12642266',
-    },
     {
       key: 2,
       name: '局部广告-我的页面悬浮广告',
@@ -38,22 +31,36 @@ export default defineAppConfig({
     },
     {
       key: 3,
-      name: '局部广告-首页右侧浮层广告',
+      name: '局部广告-右侧浮层广告',
       activityIds: 'com.jingdong.app.mall.MainFrameActivity',
-      rules: 'RelativeLayout >n * > [desc^="关闭浮层"]',
-      snapshotUrls: [
-        'https://i.gkd.li/import/13165659',
-        'https://i.gkd.li/import/12837870',
-        'https://i.gkd.li/import/13072091',
-        'https://i.gkd.li/import/12837870',
+      rules: [
+        {
+          key: 0,
+          name: '首页广告',
+          matches: 'RelativeLayout >n * > [desc^="关闭浮层"]',
+          snapshotUrls: [
+            'https://i.gkd.li/import/13165659',
+            'https://i.gkd.li/import/12837870',
+            'https://i.gkd.li/import/13072091',
+            'https://i.gkd.li/import/12837870',
+          ],
+        },
+        {
+          key: 1,
+          name: '购物车页面砸金蛋',
+          quickFind: true,
+          matches: '[id="com.jd.lib.cart.feature:id/iv_egg_close"]',
+          snapshotUrls: 'https://i.gkd.li/import/12642266',
+        },
       ],
     },
     {
       key: 4,
-      name: '通知提示-请求打开通知',
+      name: '通知提示',
       actionMaximum: 1,
       resetMatch: 'app',
       enable: false,
+      quickFind: true,
       activityIds: [
         'com.jd.lib.message.messagecenter.view.activity.MessageCenterMainActivityNew',
         'com.jd.lib.ordercenter.mygoodsorderlist.view.activity.MyOrderListActivity',
@@ -61,7 +68,8 @@ export default defineAppConfig({
       ],
       rules: [
         {
-          matches: 'TextView[text="开启消息通知"] +n ImageView[clickable=true]',
+          matches:
+            '@ImageView[clickable=true] -n TextView[text="开启消息通知"]',
           snapshotUrls: [
             'https://i.gkd.li/import/12839864', //com.jd.lib.message.messagecenter.view.activity.MessageCenterMainActivityNew
             'https://i.gkd.li/import/13772299', //com.jd.lib.ordercenter.mygoodsorderlist.view.activity.MyOrderListActivity
@@ -70,7 +78,7 @@ export default defineAppConfig({
         },
         {
           matches:
-            'TextView[text ^="打开系统通知"] - FrameLayout[clickable=true]',
+            '@ImageView < FrameLayout[clickable=true] + TextView[text^="打开系统通知"]',
           snapshotUrls: 'https://i.gkd.li/import/12839865',
         },
       ],
