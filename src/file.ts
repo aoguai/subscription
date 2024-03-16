@@ -352,52 +352,59 @@ export const updateAppMd = async (app: RawApp) => {
     `存在 ${app.groups?.length || 0} 规则组 - [${app.id}](/src/apps/${app.id}.ts)`,
   ].join('\n\n');
 
-  let groupMdText = '';
-  for (const group of app.groups || []) {
-    const groupNameMdText = [
-      `## ${group.name}`,
-      [group.enable === false ? '默认禁用' : '', group.desc]
+  const groupMdText = (app.groups || [])
+    .map((group) => {
+      const groupNameMdText = [
+        `## ${group.name}`,
+        [group.enable === false ? '默认禁用' : '', group.desc]
+          .filter((s) => s)
+          .join(' - '),
+      ]
+        .join('\n\n')
+        .trim();
+
+      const exampleUrls: string[] = [];
+      exampleUrls.push(...iArrayToArray(group.exampleUrls));
+      iArrayToArray(group.rules)
+        .map((r) => (typeof r == 'string' ? [] : iArrayToArray(r.exampleUrls)))
+        .flat()
+        .forEach((u) => {
+          if (u) {
+            exampleUrls.push(u);
+          }
+        });
+      const exampleMdText = exampleUrls
+        .map((u, i) => {
+          if (u) {
+            return `- [示例-${i}](${u})`;
+          }
+        })
+        .join('\n');
+
+      const snapshotUrls: string[] = [];
+      snapshotUrls.push(...iArrayToArray(group.snapshotUrls));
+      iArrayToArray(group.rules)
+        .map((r) => (typeof r == 'string' ? [] : iArrayToArray(r.snapshotUrls)))
+        .flat()
+        .forEach((u) => {
+          if (u) {
+            snapshotUrls.push(u);
+          }
+        });
+      const snapshotMdText = snapshotUrls
+        .map((u, i) => {
+          if (u) {
+            return `- [快照-${i}](${u})`;
+          }
+        })
+        .join('\n');
+      return [groupNameMdText, exampleMdText, snapshotMdText]
         .filter((s) => s)
-        .join(' - '),
-    ]
-      .join('\n\n')
-      .trim();
-
-    const exampleUrls: string[] = [];
-    exampleUrls.push(...iArrayToArray(group.exampleUrls));
-    for (const rule of iArrayToArray(group.rules)) {
-      if (typeof rule !== 'string') {
-        exampleUrls.push(...iArrayToArray(rule.exampleUrls));
-      }
-    }
-    const exampleMdText = exampleUrls
-      .map((u, i) => {
-        if (u) {
-          return `- [示例-${i}](${u})`;
-        }
-      })
-      .join('\n');
-
-    const snapshotUrls: string[] = [];
-    snapshotUrls.push(...iArrayToArray(group.snapshotUrls));
-    for (const rule of iArrayToArray(group.rules)) {
-      if (typeof rule !== 'string') {
-        snapshotUrls.push(...iArrayToArray(rule.snapshotUrls));
-      }
-    }
-    const snapshotMdText = snapshotUrls
-      .map((u, i) => {
-        if (u) {
-          return `- [快照-${i}](${u})`;
-        }
-      })
-      .join('\n');
-
-    groupMdText += [groupNameMdText, exampleMdText, snapshotMdText]
-      .filter((s) => s)
-      .join('\n\n')
-      .trim();
-  }
+        .join('\n\n')
+        .trim();
+    })
+    .join('\n\n')
+    .trim();
 
   const appMdText = [appHeadMdText, groupMdText].join('\n\n').trim() + '\n';
   await fs.writeFile(process.cwd() + `/docs/${app.id}.md`, appMdText, 'utf-8');
