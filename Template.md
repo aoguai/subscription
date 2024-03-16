@@ -24,9 +24,9 @@
 
 当前版本: v--VERSION--
 
-当前订阅文件仅需适配 --APP_SIZE-- 个 APP，仅含 --GROUP_SIZE-- 规则组。
+当前订阅文件含 --GROUP_SIZE-- 应用规则组， --GLOBALGROUP_SIZE-- 全局规则组。
 
-**🔍 查看详细的 [适配 APP 列表](./AppList.md)**
+**🔍 查看详细[适配规则列表](./AppList.md)**
 
 **🚀 全局规则已经初步抽取完成，项目将进入稳定维护状态。**
 
