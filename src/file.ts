@@ -536,12 +536,19 @@ export const updateReadMeMd = async (
     globaldiffs.push({ ...globalDiffLog });
   }
 
-  for (const app of newConfig.apps || []) {
-    const oldApp = oldConfig.apps!.find((a) => a.id === app.id);
-    if (!oldApp) {
+  // 遍历新配置中的每个应用程序
+  for (const app of oldConfig.apps || []) {
+    // 查找新配置中具有相同 ID 的应用程序
+    const newApp = newConfig.apps!.find((a) => a.id === app.id);
+    // 如果在旧配置中找不到相同 ID 的应用程序
+    if (!newApp) {
+      // 增加变更计数
       changeCount++;
+      // 更新应用程序的 Markdown 文件
       await updateAppMd(app);
-      const appDiffLog = getAppDiffLog([], app.groups);
+      // 获取应用程序组的差异日志
+      const appDiffLog = getAppDiffLog(app.groups, []);
+      // 如果有新增、修改或删除的组，则将其记录到应用程序差异中
       if (
         appDiffLog.addGroups.length +
           appDiffLog.changeGroups.length +
@@ -550,10 +557,15 @@ export const updateReadMeMd = async (
       ) {
         appDiffs.push({ app, ...appDiffLog });
       }
-    } else if (!isEqual(oldApp, app)) {
+    } else if (!isEqual(newApp, app)) {
+      // 如果旧应用程序与新应用程序不相等
+      // 增加变更计数
       changeCount++;
+      // 更新应用程序的 Markdown 文件
       await updateAppMd(app);
-      const appDiffLog = getAppDiffLog(oldApp.groups, app.groups);
+      // 获取应用程序组的差异日志
+      const appDiffLog = getAppDiffLog(app.groups, newApp.groups);
+      // 如果有新增、修改或删除的组，则将其记录到应用程序差异中
       if (
         appDiffLog.addGroups.length +
           appDiffLog.changeGroups.length +
