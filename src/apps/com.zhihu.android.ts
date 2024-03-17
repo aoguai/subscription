@@ -24,6 +24,7 @@ export default defineAppConfig({
           key: 0,
           matches:
             '@ImageView[id=null][clickable=true] <<n * <n * > * >n [text$="广告"]',
+          excludeMatches: '[text*="启用知了"]',
           exampleUrls:
             'https://m.gkd.li/57941037/f6498773-af55-4ba9-96fa-4c0597523d55',
           snapshotUrls: [
@@ -33,6 +34,7 @@ export default defineAppConfig({
             'https://i.gkd.li/import/13849442',
             'https://i.gkd.li/import/14178979',
             'https://i.gkd.li/import/14206988',
+            'https://i.gkd.li/i/14627437', // 避免在知了页面误触
           ],
         },
         {
