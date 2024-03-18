@@ -267,13 +267,12 @@ export default defineAppConfig({
           preKeys: [0],
           name: '点击「不感兴趣」或 「关闭此广告」',
           matches:
-            '[id^="menu"] > [(id="dislike"&&text="不感兴趣")||(id="closeBtn"&&text="关闭此广告")][visibleToUser=true]',
+            '[text*="广告"&&text.length<5] <n View < View >n [text="不感兴趣"||text="关闭此广告"][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/import/12745280',
-            'https://i.gkd.li/import/12642238',
-            'https://i.gkd.li/import/14006206', // com.tencent.mm.plugin.webview.ui.tools.fts.MMSosWebViewUI
             'https://i.gkd.li/import/14293434',
             'https://i.gkd.li/import/12700191',
+            'https://i.gkd.li/i/14633366',
           ],
         },
         {
@@ -281,12 +280,10 @@ export default defineAppConfig({
           preKeys: [0, 1],
           name: '点击「与我无关」',
           matches:
-            '[id^="menu"] > [id="isdismatch"&&text="与我无关"][visibleToUser=true]',
+            '[text*="广告"&&text.length<5] <n View < View >n [text="与我无关"][visibleToUser=true]',
           snapshotUrls: [
-            'https://i.gkd.li/import/12745280',
             'https://i.gkd.li/import/12642238',
             'https://i.gkd.li/import/14006206', // com.tencent.mm.plugin.webview.ui.tools.fts.MMSosWebViewUI
-            'https://i.gkd.li/import/12700191',
           ],
         },
       ],
