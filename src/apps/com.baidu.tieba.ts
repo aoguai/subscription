@@ -109,11 +109,16 @@ export default defineAppConfig({
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'activity',
+      activityIds: [
+        'com.baidu.tbadk.browser.TBWebContainerActivity',
+        'com.baidu.tieba.frs.FrsActivity',
+        'com.baidu.tieba.tblauncher.MainTabActivity',
+        'com.baidu.tieba.LogoActivity',
+      ],
       rules: [
         {
           key: 0,
           name: '点击右上角x关闭',
-          activityIds: 'com.baidu.tbadk.browser.TBWebContainerActivity',
           matches:
             'View[childCount=3] > @View[clickable=true][childCount=1] > Image',
           snapshotUrls: [
@@ -124,11 +129,6 @@ export default defineAppConfig({
         {
           key: 1,
           name: '点击正下方x关闭',
-          activityIds: [
-            'com.baidu.tieba.frs.FrsActivity',
-            'com.baidu.tieba.tblauncher.MainTabActivity',
-            'com.baidu.tieba.LogoActivity',
-          ],
           matches:
             '@TextView[clickable=true && text=null] - FrameLayout TextView[text="广告"]',
           snapshotUrls: [
@@ -136,6 +136,13 @@ export default defineAppConfig({
             'https://i.gkd.li/import/13322120', // activityIds: com.miui.home.launcher.Launcher
             'https://i.gkd.li/import/13328246', // activityIds: com.baidu.tieba.LogoActivity
           ],
+        },
+        {
+          key: 2,
+          name: '点击正下方x关闭2',
+          matches:
+            '[text$="弹窗"] >3 Image[clickable=true][index=2][text!=null]',
+          snapshotUrls: 'https://i.gkd.li/i/14630806',
         },
       ],
     },
