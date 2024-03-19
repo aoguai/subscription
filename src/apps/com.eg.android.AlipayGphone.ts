@@ -16,6 +16,7 @@ export default defineAppConfig({
         'com.alipay.mobile.nebulax.integration.mpaas.activity.NebulaActivity$Main',
         'com.alipay.android.msp.ui.views', //views.MspContainerActivity & views.MspUniRenderActivity
         'com.alipay.android.msp.ui.views.MspContainerActivity',
+        'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
       ],
       rules: [
         {
@@ -32,6 +33,7 @@ export default defineAppConfig({
             'https://i.gkd.li/import/13631362',
             'https://i.gkd.li/import/13857535',
             'https://i.gkd.li/import/14060628',
+            'https://i.gkd.li/i/14650607',
           ],
         },
       ],
