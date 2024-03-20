@@ -16,6 +16,7 @@ export default defineAppConfig({
         'com.alipay.mobile.nebulax.integration.mpaas.activity.NebulaActivity$Main',
         'com.alipay.android.msp.ui.views', //views.MspContainerActivity & views.MspUniRenderActivity
         'com.alipay.android.msp.ui.views.MspContainerActivity',
+        'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
       ],
       rules: [
         {
@@ -32,6 +33,7 @@ export default defineAppConfig({
             'https://i.gkd.li/import/13631362',
             'https://i.gkd.li/import/13857535',
             'https://i.gkd.li/import/14060628',
+            'https://i.gkd.li/i/14650607',
           ],
         },
       ],
@@ -130,6 +132,24 @@ export default defineAppConfig({
           matches:
             '@RelativeLayout[clickable=true] >2 [text="对该内容不感兴趣"]',
           snapshotUrls: 'https://i.gkd.li/i/14546047',
+        },
+      ],
+    },
+    {
+      key: 14,
+      name: '功能类-关闭免密支付开关',
+      actionMaximum: 1,
+      rules: [
+        {
+          quickFind: true,
+          activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
+          matches: '@[checked=true] < * - [text$="免密支付"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/1e3a5f01-c42b-4d41-9d7d-21ff96c0075f',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14630824', // 关闭前
+            'https://i.gkd.li/i/14630825', // 关闭后
+          ],
         },
       ],
     },

@@ -58,7 +58,7 @@ export default defineAppConfig({
           ],
         },
         {
-          preKeys: [3],
+          preKeys: [1, 2, 3],
           key: 4,
           name: '选择是否需要今日免广告',
           matches: '[text*="免广告"] + [text="不感兴趣"]',
