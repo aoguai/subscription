@@ -1,6 +1,6 @@
 # 适配 APP 列表
 
-## 应用规则
+## 应用规则(共 47 组)
 
 | 名称                   | ID                                                                              | 规则组 |
 | ---------------------- | ------------------------------------------------------------------------------- | ------ |
@@ -33,7 +33,7 @@
 | 淘宝                   | [com.taobao.taobao](/docs/com.taobao.taobao.md)                                 | 13     |
 | 万能遥控               | [com.duokan.phone.remotecontroller](/docs/com.duokan.phone.remotecontroller.md) | 1      |
 | 微博轻享版             | [com.weico.international](/docs/com.weico.international.md)                     | 1      |
-| 微信                   | [com.tencent.mm](/docs/com.tencent.mm.md)                                       | 16     |
+| 微信                   | [com.tencent.mm](/docs/com.tencent.mm.md)                                       | 15     |
 | 闲鱼                   | [com.taobao.idlefish](/docs/com.taobao.idlefish.md)                             | 1      |
 | 小黑盒                 | [com.max.xiaoheihe](/docs/com.max.xiaoheihe.md)                                 | 1      |
 | 小米手机管家           | [com.miui.securitycenter](/docs/com.miui.securitycenter.md)                     | 3      |
@@ -46,15 +46,15 @@
 | 邮储银行               | [com.yitong.mbank.psbc](/docs/com.yitong.mbank.psbc.md)                         | 1      |
 | 云班课                 | [com.mosoink.teach](/docs/com.mosoink.teach.md)                                 | 1      |
 | 云闪付                 | [com.unionpay](/docs/com.unionpay.md)                                           | 4      |
-| 支付宝                 | [com.eg.android.AlipayGphone](/docs/com.eg.android.AlipayGphone.md)             | 6      |
-| 知乎                   | [com.zhihu.android](/docs/com.zhihu.android.md)                                 | 7      |
+| 支付宝                 | [com.eg.android.AlipayGphone](/docs/com.eg.android.AlipayGphone.md)             | 7      |
+| 知乎                   | [com.zhihu.android](/docs/com.zhihu.android.md)                                 | 6      |
 | 智联招聘               | [com.zhaopin.social](/docs/com.zhaopin.social.md)                               | 2      |
 | 智能服务               | [com.miui.systemAdSolution](/docs/com.miui.systemAdSolution.md)                 | 1      |
 | 中国电信               | [com.ct.client](/docs/com.ct.client.md)                                         | 3      |
 
 ---
 
-## 全局规则
+## 全局规则(共 9 组)
 
 | 全局规则 | 名称       | 规则组 |
 | -------- | ---------- | ------ |
