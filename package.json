@@ -39,9 +39,9 @@
     "lodash": "^4.17.21",
     "picocolors": "^1.0.0",
     "pinyin-pro": "3.19.6",
-    "prettier": "^3.2.5",
-    "tsx": "^4.7.1",
-    "typescript": "^5.3.3"
+    "prettier": "3.2.5",
+    "tsx": "4.7.1",
+    "typescript": "5.4.2"
   },
   "author": "aoguai",
   "license": "MIT",
