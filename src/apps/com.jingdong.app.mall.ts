@@ -74,6 +74,8 @@ export default defineAppConfig({
             'https://i.gkd.li/import/12839864', //com.jd.lib.message.messagecenter.view.activity.MessageCenterMainActivityNew
             'https://i.gkd.li/import/13772299', //com.jd.lib.ordercenter.mygoodsorderlist.view.activity.MyOrderListActivity
             'https://i.gkd.li/import/13917163', //com.jingdong.app.mall.MainFrameActivity
+            'https://i.gkd.li/i/13463618',
+            'https://i.gkd.li/i/14692570',
           ],
         },
         {
