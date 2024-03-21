@@ -6,15 +6,17 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '全屏广告-游戏加速广告弹窗',
+      name: '全屏广告-游戏广告弹窗',
       desc: '点击X',
       enable: false,
       rules: [
         {
           activityIds: 'com.miui.gamebooster.GameBoosterRichWebActivity',
-          matches:
-            '[id="com.miui.securityadd:id/webViewContainer"] [text="活动图片"] +2 Image[clickable=true]',
-          snapshotUrls: 'https://i.gkd.li/import/13914659',
+          matches: '[text="活动图片"] +2 Image[clickable=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/import/13914659',
+            'https://i.gkd.li/i/14668629',
+          ],
         },
       ],
     },
