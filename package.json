@@ -1,7 +1,7 @@
 {
   "name": "@aoguai/subscription",
   "type": "module",
-  "version": "1.18.0",
+  "version": "1.19.0",
   "main": "./dist/aoguai_gkd.json5",
   "unpkg": "./dist/aoguai_gkd.json5",
   "jsdelivr": "./dist/aoguai_gkd.json5",
@@ -26,7 +26,7 @@
     "@commitlint/types": "^19.0.3",
     "@gkd-kit/selector": "0.0.22",
     "@types/lodash": "^4.14.202",
-    "@types/node": "^20.11.24",
+    "@types/node": "20.11.30",
     "@typescript-eslint/eslint-plugin": "7.1.0",
     "@typescript-eslint/parser": "7.1.0",
     "dayjs": "^1.11.10",
@@ -41,7 +41,7 @@
     "pinyin-pro": "3.19.6",
     "prettier": "3.2.5",
     "tsx": "4.7.1",
-    "typescript": "5.4.2"
+    "typescript": "5.4.3"
   },
   "author": "aoguai",
   "license": "MIT",
@@ -54,9 +54,9 @@
     "url": "git+https://github.com/aoguai/subscription.git"
   },
   "volta": {
-    "node": "20.9.0"
+    "node": "20.11.0"
   },
-  "packageManager": "pnpm@8.10.2",
+  "packageManager": "pnpm@8.15.5",
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
