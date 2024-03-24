@@ -22,6 +22,7 @@ export default defineAppConfig({
         'https://i.gkd.li/import/12923937', // VIP弹窗
         'https://i.gkd.li/import/13806852', // 幸运券包弹窗
         'https://i.gkd.li/import/12783106', // 看视频免费享极速下载弹窗
+        'https://i.gkd.li/i/14730106',
       ],
     },
     {
