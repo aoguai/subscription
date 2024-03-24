@@ -27,18 +27,19 @@ export default defineAppConfig({
     },
     {
       key: 11,
-      name: '局部广告-首页签到卡片',
-      desc: '点击【x】',
-      actionMaximum: 1,
-      resetMatch: 'app',
+      name: '局部广告-首页广告卡片',
+      desc: '关闭首页的所有可关闭的广告卡片',
       activityIds: 'com.autonavi.map.activity.NewMapActivity',
       rules:
-        'ImageView[visibleToUser=true][width<90][height<90] < @ViewGroup -(2) ViewGroup > ViewGroup > View[text*="签到"||text*="成长值"]',
+        'ViewGroup[index=0][childCount<4] < ViewGroup[childCount<5][visibleToUser=true] > @ViewGroup[index!=0][childCount=1][visibleToUser=true][clickable=true] > ImageView[visibleToUser=true]',
       snapshotUrls: [
         'https://i.gkd.li/import/12642842',
         'https://i.gkd.li/import/12642845',
         'https://i.gkd.li/import/12818770', // 限定 ImageView[visibleToUser=true]，防止控件不可见时触发规则
-        'https://i.gkd.li/import/13764540', // 限定 ImageView[width<90][height<90]，避免在此误触
+        'https://i.gkd.li/import/13764540', // 避免在此误触
+        'https://i.gkd.li/i/14715295',
+        'https://i.gkd.li/i/14730914',
+        'https://i.gkd.li/i/14730915',
       ],
     },
     {
