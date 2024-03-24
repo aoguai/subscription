@@ -62,6 +62,7 @@ export default defineAppConfig({
             'https://i.gkd.li/i/14083540',
             'https://i.gkd.li/i/14059876',
             'https://i.gkd.li/i/14588315',
+            'https://i.gkd.li/i/14729855',
           ],
         },
         {
