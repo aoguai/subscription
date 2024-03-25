@@ -1,6 +1,6 @@
 # 知乎
 
-存在 7 规则组 - [com.zhihu.android](/src/apps/com.zhihu.android.ts)
+存在 6 规则组 - [com.zhihu.android](/src/apps/com.zhihu.android.ts)
 
 ## 分段广告-信息流广告
 
@@ -15,27 +15,21 @@
 - [快照-3](https://i.gkd.li/import/13849442)
 - [快照-4](https://i.gkd.li/import/14178979)
 - [快照-5](https://i.gkd.li/import/14206988)
-- [快照-6](https://i.gkd.li/import/14192451)
-- [快照-7](https://i.gkd.li/import/14321041)
-- [快照-8](https://i.gkd.li/i/14468152)
-- [快照-9](https://i.gkd.li/i/14558110)
-- [快照-10](https://i.gkd.li/import/13849689)
+- [快照-6](https://i.gkd.li/i/14627437)
+- [快照-7](https://i.gkd.li/i/14645530)
+- [快照-8](https://i.gkd.li/import/14192451)
+- [快照-9](https://i.gkd.li/import/14321041)
+- [快照-10](https://i.gkd.li/i/14468152)
+- [快照-11](https://i.gkd.li/i/14558110)
+- [快照-12](https://i.gkd.li/import/13849689)
 
-## 全屏广告-会员页面月卡红包
-
-默认禁用 - 点击关闭
-
-- [示例-0](https://m.gkd.li/57941037/335dee89-4b55-40f1-8316-b7b4f86a8ee6)
-
-- [快照-0](https://i.gkd.li/import/12647421)
-
-## 全屏广告-会员页面广告弹窗
+## 全屏广告-广告弹窗
 
 默认禁用 - 点击关闭
 
-- [示例-0](https://m.gkd.li/57941037/9eb78a95-c2dc-4a8b-9b86-f9d0fc0ed6fd)
-
-- [快照-0](https://i.gkd.li/import/12707676)
+- [快照-0](https://i.gkd.li/i/12707676)
+- [快照-1](https://i.gkd.li/i/14648128)
+- [快照-2](https://i.gkd.li/i/12647421)
 
 ## 局部广告-信息流广告
 

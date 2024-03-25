@@ -34,7 +34,7 @@
 | 万能遥控               | [com.duokan.phone.remotecontroller](/docs/com.duokan.phone.remotecontroller.md) | 1      |
 | 微博轻享版             | [com.weico.international](/docs/com.weico.international.md)                     | 1      |
 | 微信                   | [com.tencent.mm](/docs/com.tencent.mm.md)                                       | 15     |
-| 闲鱼                   | [com.taobao.idlefish](/docs/com.taobao.idlefish.md)                             | 1      |
+| 闲鱼                   | [com.taobao.idlefish](/docs/com.taobao.idlefish.md)                             | 3      |
 | 小黑盒                 | [com.max.xiaoheihe](/docs/com.max.xiaoheihe.md)                                 | 1      |
 | 小米手机管家           | [com.miui.securitycenter](/docs/com.miui.securitycenter.md)                     | 3      |
 | 小米应用商店           | [com.xiaomi.market](/docs/com.xiaomi.market.md)                                 | 3      |
