@@ -50,7 +50,10 @@ export default defineAppConfig({
           name: '购物车页面砸金蛋',
           quickFind: true,
           matches: '[id="com.jd.lib.cart.feature:id/iv_egg_close"]',
-          snapshotUrls: 'https://i.gkd.li/import/12642266',
+          snapshotUrls: [
+            'https://i.gkd.li/import/12642266',
+            'https://i.gkd.li/i/14731003',
+          ],
         },
       ],
     },
@@ -74,6 +77,8 @@ export default defineAppConfig({
             'https://i.gkd.li/import/12839864', //com.jd.lib.message.messagecenter.view.activity.MessageCenterMainActivityNew
             'https://i.gkd.li/import/13772299', //com.jd.lib.ordercenter.mygoodsorderlist.view.activity.MyOrderListActivity
             'https://i.gkd.li/import/13917163', //com.jingdong.app.mall.MainFrameActivity
+            'https://i.gkd.li/i/13463618',
+            'https://i.gkd.li/i/14692570',
           ],
         },
         {
@@ -87,24 +92,25 @@ export default defineAppConfig({
       key: 5,
       name: '全屏广告-广告弹窗',
       enable: false,
+      activityIds: [
+        'com.jingdong.app.mall.MainFrameActivity',
+        'com.jd.lib.cashier.complete.view.CashierCompleteActivity',
+      ],
       rules: [
         {
           key: 0,
-          activityIds: 'com.jingdong.app.mall.MainFrameActivity',
           matches: 'FrameLayout > [desc="关闭"]',
           snapshotUrls: 'https://i.gkd.li/import/13165721',
         },
         {
           key: 1,
-          activityIds:
-            'com.jd.lib.cashier.complete.view.CashierCompleteActivity',
+          quickFind: true,
           matches:
             '[id="com.jingdong.app.mall:id/webview"] + [id="com.jingdong.app.mall:id/close"][desc="关闭页面"]',
           snapshotUrls: 'https://i.gkd.li/import/13218034',
         },
         {
           key: 2,
-          activityIds: 'com.jingdong.app.mall.MainFrameActivity',
           matches:
             '[id="android:id/content"] > RelativeLayout > RelativeLayout > *[childCount=2] > ImageView[index=1][clickable=true]',
           snapshotUrls: [

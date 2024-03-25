@@ -23,8 +23,7 @@ export default defineAppConfig({
         {
           key: 0,
           matches:
-            '@ImageView[id=null][clickable=true] <<n * <n * > * >n [text$="广告"][visibleToUser=true]',
-          excludeMatches: '[text*="启用知了"]',
+            '@ImageView[id=null][clickable=true] -n TextView[text=null] <<n * <n * > * >n [text$="广告"][visibleToUser=true]',
           exampleUrls:
             'https://m.gkd.li/57941037/f6498773-af55-4ba9-96fa-4c0597523d55',
           snapshotUrls: [
@@ -34,21 +33,22 @@ export default defineAppConfig({
             'https://i.gkd.li/import/13849442',
             'https://i.gkd.li/import/14178979',
             'https://i.gkd.li/import/14206988',
-            'https://i.gkd.li/i/14627437', // 避免在知了页面误触
             'https://i.gkd.li/i/14645530',
+            'https://i.gkd.li/i/14627437', // 避免在知了页面误触
           ],
         },
         {
           key: 1,
-          matches: '@ViewGroup[clickable=true] <4 * -3 * >2 [text*="广告"]',
-          snapshotUrls: 'https://i.gkd.li/import/14192451',
+          matches: '@ImageView[id=null] <<n * -3 * >2 [text*="广告"]',
+          snapshotUrls: [
+            'https://i.gkd.li/import/14192451',
+            'https://i.gkd.li/i/14730741',
+          ],
         },
         {
           key: 2,
           matches:
             '[text*="广告"] <<n [vid="bottom_container"] > [vid="menu_container"] > [vid="menu"][visibleToUser!=false]',
-          exampleUrls:
-            'https://m.gkd.li/57941037/689c77eb-9026-44db-b22e-d890961a0ad6',
           snapshotUrls: [
             'https://i.gkd.li/import/14321041',
             'https://i.gkd.li/i/14468152',
