@@ -12,14 +12,14 @@ export default defineAppConfig({
       rules: [
         {
           key: 1,
-          name: '腾讯广告-1',
+          name: '腾讯广告',
           activityIds: [
             'com.xyhui.start.PUMainActivity',
             'com.xyhui.start.LoadingActivity',
             'com.huawei.permissioncontroller.hwcust.appjump.AppJumpActivity',
           ],
           matches:
-            '[id="android:id/content"] >(4,5) FrameLayout[index=1] > ImageView',
+            '[id="android:id/content"] >(4,5) @FrameLayout[index=1] > ImageView',
           snapshotUrls: [
             'https://i.gkd.li/import/12642482',
             'https://i.gkd.li/import/12646519',
@@ -36,6 +36,7 @@ export default defineAppConfig({
             'https://i.gkd.li/import/12793177',
             'https://i.gkd.li/import/12868157', // com.xyhui.start.LoadingActivity
             'https://i.gkd.li/import/13348807', // com.bbk.launcher2.Launcher
+            'https://i.gkd.li/i/14766902',
           ],
         },
         {
