@@ -8,9 +8,9 @@
 
 将以下任意链接添加至 [GKD](https://github.com/gkd-kit/gkd) 内即可使用此规则：
 
-| GitHub 源（推荐）                                                                             | npmmirror 源                                                            | gitmirror 源                                                                      | jsDelivr 源                    |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | -------------------------------------------------------------------------------- | ----------------------------- |
-| [复制](https://raw.githubusercontent.com/aoguai/subscription/custom/dist/aoguai_gkd.json5) | [复制](https://registry.npmmirror.com/@aoguai/subscription/latest/files) | [复制](https://raw.gitmirror.com/aoguai/subscription/custom/dist/aoguai_gkd.json5) | [复制](https://gkd.aoguai.top/) |
+| GitHub 源（推荐）                                                                          | npmmirror 源                                                             | gitmirror 源                                                                       | jsDelivr 源                     |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ---------------------------------------------------------------------------------- | ------------------------------- |
+| [复制](https://raw.githubusercontent.com/aoguai/subscription/custom/dist/aoguai_gkd.json5) | [复制](https://registry.npmmirror.com/@aoguai/subscription/latest/files/dist/aoguai_gkd.json5) | [复制](https://raw.gitmirror.com/aoguai/subscription/custom/dist/aoguai_gkd.json5) | [复制](https://cdn.jsdelivr.net/gh/aoguai/subscription@custom/dist/aoguai_gkd.json5) |
 
 **请注意：**
 
