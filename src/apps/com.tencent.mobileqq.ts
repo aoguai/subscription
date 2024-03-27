@@ -3,7 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.tencent.mobileqq',
   name: 'QQ',
-  deprecatedKeys: [4, 6, 17, 18, 22],
+  deprecatedKeys: [4, 6, 17, 18, 19, 22],
   groups: [
     {
       key: 0,
@@ -138,14 +138,15 @@ export default defineAppConfig({
       key: 3,
       name: '全屏广告-频道页面广告',
       enable: false,
+      activityIds: [
+        'com.tencent.mobileqq.activity.SplashActivity',
+        'com.tencent.qqlive.module.videoreport.inject.dialog.ReportDialog',
+      ],
       rules: [
         {
+          key: 0,
           name: '弹窗广告',
           quickFind: true,
-          activityIds: [
-            'com.tencent.mobileqq.activity.SplashActivity',
-            'com.tencent.qqlive.module.videoreport.inject.dialog.ReportDialog',
-          ],
           matches:
             'ImageView[id="com.tencent.mobileqq:id/close"][clickable=true]',
           snapshotUrls: [
@@ -154,8 +155,8 @@ export default defineAppConfig({
           ],
         },
         {
+          key: 1,
           name: '右侧悬浮广告',
-          activityIds: 'com.tencent.mobileqq.activity.SplashActivity',
           matches:
             'FrameLayout[desc="发表帖子"] - LinearLayout[id!=null] >3 ImageView[id!=null][clickable=false] - View[id!=null][clickable=true]',
           snapshotUrls: 'https://i.gkd.li/import/12708844',
@@ -204,23 +205,30 @@ export default defineAppConfig({
           activityIds: [
             'com.tencent.biz.qrcode.activity.QRLoginAuthActivity',
             'com.tencent.mobileqq.activity.DevlockQuickLoginActivity',
+            'com.tencent.open.agent.PublicFragmentActivityForOpenSDK',
           ],
           matches:
-            'TextView[text="登录确认"||text="一键验证"] <n * +n * >n Button[text*="登录"]',
+            'Button[text*="登录"][clickable=true][visibleToUser=true][text.length<10]',
           snapshotUrls: [
             'https://i.gkd.li/import/13623520',
             'https://i.gkd.li/import/12789287',
             'https://i.gkd.li/import/13063027',
+            'https://i.gkd.li/import/13166314',
           ],
         },
         {
+          preKeys: [1],
           key: 2,
-          name: 'QQ 互联登录确认',
-          activityIds: [
-            'com.tencent.mobileqq.activity.DevLockQuickVerifyActivity',
-          ],
-          matches: 'Button[text="拒绝"] - Button[text="登录"]',
-          snapshotUrls: ['https://i.gkd.li/import/13166314'],
+          name: '点击同意',
+          matches: 'Button[text="同意"][clickable=true][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/14752498',
+        },
+        {
+          preKeys: [2],
+          key: 3,
+          name: '点击确认',
+          matches: 'Button[text="确认"]',
+          snapshotUrls: 'https://i.gkd.li/i/14752519',
         },
       ],
     },
@@ -237,6 +245,7 @@ export default defineAppConfig({
       name: '功能类-自动勾选原图',
       desc: '发送图片时自动勾选原图',
       enable: false,
+      quickFind: true,
       activityIds: [
         'com.tencent.mobileqq.activity.SplashActivity',
         'com.tencent.qqnt.qbasealbum.WinkHomeActivity',
@@ -255,11 +264,13 @@ export default defineAppConfig({
       name: '功能类-自动查看原图',
       desc: '查看图片时自动点击原图',
       enable: false,
+      quickFind: true,
       activityIds: 'com.tencent.richframework.gallery.QQGalleryActivity',
-      rules: '[desc="查看原图"][checked=false]',
+      rules: '[text^="查看原图"][checked=false]',
       snapshotUrls: [
         'https://i.gkd.li/import/12840632', // 点击原图前
         'https://i.gkd.li/import/12840633', // 点击原图后
+        'https://i.gkd.li/i/14757735',
       ],
     },
     {
@@ -346,20 +357,6 @@ export default defineAppConfig({
             'https://i.gkd.li/import/12929619',
             'https://i.gkd.li/import/13387605', //
           ],
-        },
-      ],
-    },
-    {
-      key: 19,
-      name: '全屏广告-内测邀请弹窗',
-      enable: false,
-      quickFind: true,
-      activityIds: 'com.tencent.mobileqq.activity.SplashActivity',
-      rules: [
-        {
-          key: 0,
-          matches: '@ImageView[desc="关闭"] <2 * >2 [text="QQ测试版"]',
-          snapshotUrls: 'https://i.gkd.li/import/13526551',
         },
       ],
     },
@@ -501,8 +498,6 @@ export default defineAppConfig({
       rules: [
         {
           matches: 'RelativeLayout[childCount=2] > [text="关闭"]',
-          exampleUrls:
-            'https://m.gkd.li/57941037/df526685-8a68-48cd-8328-0292079ff030',
           snapshotUrls: 'https://i.gkd.li/import/14235163',
         },
       ],
