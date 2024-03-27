@@ -20,8 +20,8 @@ devDependencies:
     specifier: ^19.0.3
     version: 19.0.3
   '@gkd-kit/selector':
-    specifier: 0.0.22
-    version: 0.0.22
+    specifier: 0.0.25
+    version: 0.0.25
   '@types/lodash':
     specifier: ^4.17.0
     version: 4.17.0
@@ -514,8 +514,8 @@ packages:
     resolution: {integrity: sha512-bLq2vWd9vbXBWgRJlvWCcXcLb/qbDZIfvqSAf/jqcqvfxxsxY89pJhy+lN5F6oOeKfRb7lxOTC0FOjs0XaxdsA==}
     dev: false
 
-  /@gkd-kit/selector@0.0.22:
-    resolution: {integrity: sha512-ru+QzuraI3ITzeUH9INp8/oNVcyK+WQhlanSu+unspMCeMnXc0cF1uEQtm7utIKNSCOUTfuWlHDxR4rROZKnLw==}
+  /@gkd-kit/selector@0.0.25:
+    resolution: {integrity: sha512-bW3nFcvKZH5I/DasukPcKEbnSCrEI1ioup9+mUUTj0RoPwPBZri/MRKIu8fQg2WWfZ3D38otpwO1ilG7fJI/cA==}
     dev: true
 
   /@humanwhocodes/config-array@0.11.14:
