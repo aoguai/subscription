@@ -13,14 +13,14 @@ jobs:
       contains(github.event.issue.body, '.zip') == false
     steps:
       - name: Add labels
-        uses: actions-cool/issues-helper@v2
+        uses: actions-cool/issues-helper@v3
         with:
           actions: 'add-labels'
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.issue.number }}
           labels: 'need info'
       - name: Create comment
-        uses: actions-cool/issues-helper@v2
+        uses: actions-cool/issues-helper@v3
         with:
           actions: 'create-comment'
           token: ${{ secrets.GITHUB_TOKEN }}
