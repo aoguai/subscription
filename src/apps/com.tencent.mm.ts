@@ -238,7 +238,7 @@ export default defineAppConfig({
           key: 0,
           name: '点击「广告」按钮',
           matches: [
-            '@[name$=".View"||name$=".TextView"][text^="广告"][visibleToUser=true] <n View < View[childCount=1] <<3 View[childCount=1] <<2 View[childCount=1]',
+            '[name$=".View"||name$=".TextView"][text^="广告"][visibleToUser=true] <n @View < View[childCount=1] <<3 View[childCount=1] <<2 View[childCount=1]',
           ],
           snapshotUrls: [
             'https://i.gkd.li/import/12642232', // ui.TmplWebViewMMUI
@@ -248,6 +248,7 @@ export default defineAppConfig({
             'https://i.gkd.li/import/12700183',
             'https://i.gkd.li/import/12714424',
             'https://i.gkd.li/import/14293295',
+            'https://i.gkd.li/i/14802057',
             'https://i.gkd.li/import/12678937', // 防误触, 文章未浏览至页面底部，广告反馈按钮不可见，使用 [visibleToUser=true] 进行限定，防止打开文章就频繁触发规则
             'https://i.gkd.li/import/12646837', // 防误触, 事件完成后，反馈按钮仍然存在，使用 View[childCount=1] 进行限定，防止频繁触发规则
             'https://i.gkd.li/import/12642234', // 防误触, 出现反馈菜单后应该不匹配
@@ -434,7 +435,6 @@ export default defineAppConfig({
       desc: '点击“验证密码”以申请临时访问',
       enable: false,
       actionMaximum: 1,
-      resetMatch: 'activity',
       matchTime: 10000,
       activityIds: [
         'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
