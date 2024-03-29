@@ -217,7 +217,6 @@ export default defineAppConfig({
           ],
         },
         {
-          preKeys: [1],
           key: 2,
           name: '点击同意',
           matches: 'Button[text="同意"][clickable=true][visibleToUser=true]',
