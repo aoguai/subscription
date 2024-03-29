@@ -9,7 +9,7 @@ const subsConfig: RawSubscription = {
   name: '奥怪的GKD订阅',
   author: 'aoguai',
   supportUri: 'https://github.com/aoguai/subscription/tree/custom',
-  checkUpdateUrl: './aoguai_gkd.version.json',
+  checkUpdateUrl: './aoguai_gkd.version.json5',
   globalGroups,
   categories,
   apps,
