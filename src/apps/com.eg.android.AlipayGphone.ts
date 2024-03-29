@@ -153,5 +153,26 @@ export default defineAppConfig({
         },
       ],
     },
+    {
+      key: 15,
+      name: '分段广告-服务消息页面-卡片广告',
+      desc: '点击[关闭]-点击[不感兴趣]',
+      quickFind: true,
+      activityIds:
+        'com.alipay.android.phone.messageboxapp.ui.MsgBoxTabActivity',
+      rules: [
+        {
+          key: 0,
+          matches: '@[clickable=true] > [text="广告"]',
+          snapshotUrls: 'https://i.gkd.li/i/14787644',
+        },
+        {
+          preKeys: [0],
+          key: 1,
+          matches: '@[clickable=true] >2 [text="不感兴趣"]',
+          snapshotUrls: 'https://i.gkd.li/i/14787585',
+        },
+      ],
+    },
   ],
 });
