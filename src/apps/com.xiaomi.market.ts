@@ -52,5 +52,15 @@ export default defineAppConfig({
         },
       ],
     },
+    {
+      key: 13,
+      name: '功能类-自动点击[查看全部升级]',
+      desc: '应用升级页面',
+      quickFind: true,
+      enable: false,
+      activityIds: 'com.xiaomi.market.ui.UpdateListActivity',
+      rules: '@[clickable=true] > [text^="查看全部升级"]',
+      snapshotUrls: 'https://i.gkd.li/i/14782814',
+    },
   ],
 });
