@@ -52,5 +52,15 @@ export default defineAppConfig({
         '@ImageView < [desc="关闭"][clickable=true] <n * > * >n View[text="立即领取"]',
       snapshotUrls: ['https://i.gkd.li/import/12642857'],
     },
+    {
+      key: 13,
+      name: '全屏广告-[欢迎]弹窗',
+      desc: '点击关闭',
+      quickFind: true,
+      activityIds: 'com.autonavi.map.activity.NewMapActivity',
+      rules:
+        'ViewGroup[childCount=6] >4 ViewGroup[childCount=5] > @ImageView + View[text!=null] <<n [vid="fragment_container"]',
+      snapshotUrls: 'https://i.gkd.li/i/14800704',
+    },
   ],
 });
