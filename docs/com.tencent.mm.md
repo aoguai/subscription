@@ -1,10 +1,10 @@
 # 微信
 
-存在 16 规则组 - [com.tencent.mm](/src/apps/com.tencent.mm.ts)
+存在 15 规则组 - [com.tencent.mm](/src/apps/com.tencent.mm.ts)
 
 ## 分段广告-朋友圈广告
 
-默认禁用 - 点击广告卡片右上角广告,直接关闭/出现菜单,确认关闭
+默认禁用 - 点击广告卡片右上角,直接关闭/出现菜单,确认关闭
 
 - [示例-0](https://github.com/gkd-kit/subscription/assets/38517192/c9ae4bba-a748-4755-b5e4-c7ad3d489a79)
 
@@ -12,26 +12,30 @@
 - [快照-1](https://i.gkd.li/import/12888129)
 - [快照-2](https://i.gkd.li/import/12907641)
 - [快照-3](https://i.gkd.li/import/13000395)
-- [快照-4](https://i.gkd.li/import/14164508)
-- [快照-5](https://i.gkd.li/import/12905837)
-- [快照-6](https://i.gkd.li/import/13791200)
-- [快照-7](https://i.gkd.li/import/14193379)
-- [快照-8](https://i.gkd.li/import/14193181)
-- [快照-9](https://i.gkd.li/import/12642584)
-- [快照-10](https://i.gkd.li/import/14164530)
-- [快照-11](https://i.gkd.li/import/14164548)
-- [快照-12](https://i.gkd.li/import/12663984)
-- [快照-13](https://i.gkd.li/import/14164574)
-- [快照-14](https://i.gkd.li/import/12905838)
-- [快照-15](https://i.gkd.li/import/13791202)
-- [快照-16](https://i.gkd.li/import/12907642)
-- [快照-17](https://i.gkd.li/import/13926578)
-- [快照-18](https://i.gkd.li/import/12905846)
-- [快照-19](https://i.gkd.li/import/14164601)
+- [快照-4](https://i.gkd.li/i/14647413)
+- [快照-5](https://i.gkd.li/import/14164508)
+- [快照-6](https://i.gkd.li/import/12905837)
+- [快照-7](https://i.gkd.li/import/13791200)
+- [快照-8](https://i.gkd.li/import/14193379)
+- [快照-9](https://i.gkd.li/import/14193181)
+- [快照-10](https://i.gkd.li/import/12642584)
+- [快照-11](https://i.gkd.li/import/14164530)
+- [快照-12](https://i.gkd.li/import/14164548)
+- [快照-13](https://i.gkd.li/import/12663984)
+- [快照-14](https://i.gkd.li/import/14164574)
+- [快照-15](https://i.gkd.li/import/12905838)
+- [快照-16](https://i.gkd.li/import/13791202)
+- [快照-17](https://i.gkd.li/i/14647839)
+- [快照-18](https://i.gkd.li/import/12907642)
+- [快照-19](https://i.gkd.li/import/13926578)
+- [快照-20](https://i.gkd.li/i/14207480)
+- [快照-21](https://i.gkd.li/import/14164601)
+- [快照-22](https://i.gkd.li/import/12905846)
+- [快照-23](https://i.gkd.li/i/14647940)
 
 ## 功能类-微信自动授权
 
-默认禁用 - 包括：PC 微信, 浏览器微信, 网页版文件传输助手, 微信表情开发平台, 微信红包封面开放平台, 微信开发者工具 扫码登录动授权
+默认禁用 - 微信相关平台扫码登录动授权
 
 - [快照-0](https://i.gkd.li/import/13522625)
 - [快照-1](https://i.gkd.li/import/13522577)
@@ -40,7 +44,9 @@
 - [快照-4](https://i.gkd.li/import/14164954)
 - [快照-5](https://i.gkd.li/import/14164990)
 - [快照-6](https://i.gkd.li/i/14472990)
-- [快照-7](https://i.gkd.li/import/14193413)
+- [快照-7](https://i.gkd.li/import/12506197)
+- [快照-8](https://i.gkd.li/import/14193413)
+- [快照-9](https://i.gkd.li/import/12506201)
 
 ## 功能类-第三方 APP 申请使用授权弹窗
 
@@ -48,13 +54,6 @@
 
 - [快照-0](https://i.gkd.li/import/12663602)
 - [快照-1](https://i.gkd.li/import/14164920)
-
-## 功能类-微信读书网页版扫码登录自动授权
-
-默认禁用
-
-- [快照-0](https://i.gkd.li/import/12506197)
-- [快照-1](https://i.gkd.li/import/12506201)
 
 ## 功能类-微信红包自动领取
 
@@ -87,14 +86,11 @@
 - [快照-13](https://i.gkd.li/import/12701503)
 - [快照-14](https://i.gkd.li/import/14292844)
 - [快照-15](https://i.gkd.li/import/12745280)
-- [快照-16](https://i.gkd.li/import/12642238)
-- [快照-17](https://i.gkd.li/import/14006206)
-- [快照-18](https://i.gkd.li/import/14293434)
-- [快照-19](https://i.gkd.li/import/12700191)
-- [快照-20](https://i.gkd.li/import/12745280)
-- [快照-21](https://i.gkd.li/import/12642238)
-- [快照-22](https://i.gkd.li/import/14006206)
-- [快照-23](https://i.gkd.li/import/12700191)
+- [快照-16](https://i.gkd.li/import/14293434)
+- [快照-17](https://i.gkd.li/import/12700191)
+- [快照-18](https://i.gkd.li/i/14633366)
+- [快照-19](https://i.gkd.li/import/12642238)
+- [快照-20](https://i.gkd.li/import/14006206)
 
 ## 功能类-自动选中发送原图
 
@@ -103,12 +99,14 @@
 - [快照-0](https://i.gkd.li/import/12686641)
 - [快照-1](https://i.gkd.li/import/12840865)
 - [快照-2](https://i.gkd.li/import/12686640)
+- [快照-3](https://i.gkd.li/i/14661734)
 
 ## 功能类-自动查看原图
 
-默认禁用 - 自动点击底部左侧[查看原图（*M）]按钮
+默认禁用 - 自动点击底部左侧[查看原图]按钮
 
 - [快照-0](https://i.gkd.li/import/13523031)
+- [快照-1](https://i.gkd.li/i/14661736)
 
 ## 全屏广告-微信小程序-开屏广告
 
@@ -171,10 +169,11 @@
 - [快照-3](https://i.gkd.li/i/14444654)
 - [快照-4](https://i.gkd.li/i/14436190)
 
-## 功能类-付款后自动点击完成
+## 功能类-付款后自动点击完成/返回商家
 
 默认禁用
 
 - [快照-0](https://i.gkd.li/i/14399355)
 - [快照-1](https://i.gkd.li/i/14532946)
 - [快照-2](https://i.gkd.li/i/14558398)
+- [快照-3](https://i.gkd.li/i/14662147)

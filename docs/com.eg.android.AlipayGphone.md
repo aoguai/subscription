@@ -1,6 +1,6 @@
 # 支付宝
 
-存在 6 规则组 - [com.eg.android.AlipayGphone](/src/apps/com.eg.android.AlipayGphone.ts)
+存在 7 规则组 - [com.eg.android.AlipayGphone](/src/apps/com.eg.android.AlipayGphone.ts)
 
 ## 通知提示-关闭花呗, 借呗弹窗
 
@@ -15,6 +15,7 @@
 - [快照-6](https://i.gkd.li/import/13631362)
 - [快照-7](https://i.gkd.li/import/13857535)
 - [快照-8](https://i.gkd.li/import/14060628)
+- [快照-9](https://i.gkd.li/i/14650607)
 
 ## 更新提示
 
@@ -47,3 +48,12 @@
 
 - [快照-0](https://i.gkd.li/i/14546044)
 - [快照-1](https://i.gkd.li/i/14546047)
+
+## 功能类-关闭免密支付开关
+
+默认禁用
+
+- [示例-0](https://m.gkd.li/57941037/1e3a5f01-c42b-4d41-9d7d-21ff96c0075f)
+
+- [快照-0](https://i.gkd.li/i/14630824)
+- [快照-1](https://i.gkd.li/i/14630825)

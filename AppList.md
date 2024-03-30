@@ -6,7 +6,7 @@
 | ---------------------- | ------------------------------------------------------------------------------- | ------ |
 | Gmail                  | [com.google.android.gm](/docs/com.google.android.gm.md)                         | 1      |
 | Keep                   | [com.gotokeep.keep](/docs/com.gotokeep.keep.md)                                 | 3      |
-| QQ                     | [com.tencent.mobileqq](/docs/com.tencent.mobileqq.md)                           | 19     |
+| QQ                     | [com.tencent.mobileqq](/docs/com.tencent.mobileqq.md)                           | 18     |
 | WPS                    | [cn.wps.moffice_eng](/docs/cn.wps.moffice_eng.md)                               | 7      |
 | youtube                | [com.google.android.youtube](/docs/com.google.android.youtube.md)               | 4      |
 | Android 系统文件选择器 | [com.google.android.documentsui](/docs/com.google.android.documentsui.md)       | 1      |
@@ -17,9 +17,9 @@
 | 百度贴吧               | [com.baidu.tieba](/docs/com.baidu.tieba.md)                                     | 8      |
 | 百度网盘               | [com.baidu.netdisk](/docs/com.baidu.netdisk.md)                                 | 4      |
 | 哔哩哔哩               | [tv.danmaku.bili](/docs/tv.danmaku.bili.md)                                     | 5      |
-| 菜鸟                   | [com.cainiao.wireless](/docs/com.cainiao.wireless.md)                           | 3      |
+| 菜鸟                   | [com.cainiao.wireless](/docs/com.cainiao.wireless.md)                           | 2      |
 | 大学搜题酱             | [com.zmzx.college.search](/docs/com.zmzx.college.search.md)                     | 2      |
-| 高德地图               | [com.autonavi.minimap](/docs/com.autonavi.minimap.md)                           | 4      |
+| 高德地图               | [com.autonavi.minimap](/docs/com.autonavi.minimap.md)                           | 5      |
 | 海南航空               | [com.rytong.hnair](/docs/com.rytong.hnair.md)                                   | 1      |
 | 航旅纵横               | [com.umetrip.android.msky.app](/docs/com.umetrip.android.msky.app.md)           | 3      |
 | 交管12123              | [com.tmri.app.main](/docs/com.tmri.app.main.md)                                 | 1      |
@@ -37,7 +37,7 @@
 | 闲鱼                   | [com.taobao.idlefish](/docs/com.taobao.idlefish.md)                             | 3      |
 | 小黑盒                 | [com.max.xiaoheihe](/docs/com.max.xiaoheihe.md)                                 | 1      |
 | 小米手机管家           | [com.miui.securitycenter](/docs/com.miui.securitycenter.md)                     | 3      |
-| 小米应用商店           | [com.xiaomi.market](/docs/com.xiaomi.market.md)                                 | 3      |
+| 小米应用商店           | [com.xiaomi.market](/docs/com.xiaomi.market.md)                                 | 4      |
 | 小米音乐               | [com.miui.player](/docs/com.miui.player.md)                                     | 3      |
 | 小米云服务             | [com.miui.cloudservice](/docs/com.miui.cloudservice.md)                         | 1      |
 | 系统服务组件           | [com.miui.securityadd](/docs/com.miui.securityadd.md)                           | 1      |
@@ -46,7 +46,7 @@
 | 邮储银行               | [com.yitong.mbank.psbc](/docs/com.yitong.mbank.psbc.md)                         | 1      |
 | 云班课                 | [com.mosoink.teach](/docs/com.mosoink.teach.md)                                 | 1      |
 | 云闪付                 | [com.unionpay](/docs/com.unionpay.md)                                           | 4      |
-| 支付宝                 | [com.eg.android.AlipayGphone](/docs/com.eg.android.AlipayGphone.md)             | 7      |
+| 支付宝                 | [com.eg.android.AlipayGphone](/docs/com.eg.android.AlipayGphone.md)             | 8      |
 | 知乎                   | [com.zhihu.android](/docs/com.zhihu.android.md)                                 | 6      |
 | 智联招聘               | [com.zhaopin.social](/docs/com.zhaopin.social.md)                               | 2      |
 | 智能服务               | [com.miui.systemAdSolution](/docs/com.miui.systemAdSolution.md)                 | 1      |
