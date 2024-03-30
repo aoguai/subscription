@@ -199,6 +199,7 @@ export default defineAppConfig({
     {
       key: 11,
       name: '局部广告-帖子底部浮窗广告',
+      activityIds: 'com.baidu.tieba.pb.pb.main.PbActivity',
       rules:
         'View + @ImageView[clickable=true] <<6 RelativeLayout[childCount>2] > ImageView[clickable=false]',
       snapshotUrls: [

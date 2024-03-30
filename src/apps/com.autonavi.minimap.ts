@@ -40,6 +40,7 @@ export default defineAppConfig({
         'https://i.gkd.li/i/14715295',
         'https://i.gkd.li/i/14730914',
         'https://i.gkd.li/i/14730915',
+        'https://i.gkd.li/i/14784970',
       ],
     },
     {
@@ -54,13 +55,26 @@ export default defineAppConfig({
     },
     {
       key: 13,
-      name: '全屏广告-[欢迎]弹窗',
+      name: '全屏广告-广告弹窗',
       desc: '点击关闭',
+      enable: false,
       quickFind: true,
       activityIds: 'com.autonavi.map.activity.NewMapActivity',
-      rules:
-        'ViewGroup[childCount=6] >4 ViewGroup[childCount=5] > @ImageView + View[text!=null] <<n [vid="fragment_container"]',
-      snapshotUrls: 'https://i.gkd.li/i/14800704',
+      rules: [
+        {
+          key: 0,
+          name: '【欢迎】弹窗',
+          matches:
+            'ViewGroup[childCount=6] >4 ViewGroup[childCount=5] > @ImageView + View[text!=null] <<n [vid="fragment_container"]',
+          snapshotUrls: 'https://i.gkd.li/i/14800704',
+        },
+        {
+          key: 1,
+          name: '签到弹窗',
+          matches: '[desc="弹窗"] + [vid="main_map_msg_dialog_close"]',
+          snapshotUrls: 'https://i.gkd.li/i/14809993',
+        },
+      ],
     },
   ],
 });
