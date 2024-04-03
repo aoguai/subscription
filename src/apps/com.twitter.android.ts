@@ -3,16 +3,18 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.twitter.android',
   name: 'X(推特)',
-  deprecatedKeys: [5],
+  deprecatedKeys: [2, 3, 5],
   groups: [
     {
       key: 1,
-      name: '分段广告-主页信息流广告',
+      name: '分段广告-信息流广告',
       desc: '点击右上角关闭,点击我不喜欢',
       enable: false,
       activityIds: [
         'com.twitter.app.main.MainActivity',
         'com.twitter.app.profiles.ProfileActivity',
+        'com.twitter.tweetdetail.TweetDetailActivity',
+        'com.twitter.android.search.implementation.results.SearchActivity',
       ],
       actionCd: 3000, // https://github.com/gkd-kit/subscription/issues/832
       quickFind: true,
@@ -30,70 +32,33 @@ export default defineAppConfig({
         {
           key: 1,
           name: '推荐广告-点击右上角关闭',
-          matches: '@[vid="tweet_curation_action"] <2 * + * > [text="推荐"]',
+          matches:
+            '@[id="com.twitter.android:id/tweet_curation_action"] <<(2,5) * <n * > * >n [id="com.twitter.android:id/tweet_promoted_badge_bottom"]',
           snapshotUrls: [
             'https://i.gkd.li/import/12813235',
             'https://i.gkd.li/i/14782897',
-          ],
-        },
-        {
-          preKeys: [0, 1],
-          key: 10,
-          name: '点击[我不喜欢这个广告]',
-          matches: '@ViewGroup[clickable=true] > [text="我不喜欢这个广告"]',
-          snapshotUrls: [
-            'https://i.gkd.li/import/12798810',
-            'https://i.gkd.li/i/14782902',
-          ],
-        },
-      ],
-    },
-    {
-      key: 2,
-      name: '分段广告-帖子详情页、搜索页信息流广告',
-      desc: '点击右上角关闭,点击屏蔽用户,确认屏蔽.点击[我不喜欢]会返回主页,因此点击[屏蔽]',
-      enable: false,
-      quickFind: true,
-      activityIds: [
-        'com.twitter.tweetdetail.TweetDetailActivity',
-        'com.twitter.android.search.implementation.results.SearchActivity',
-      ],
-      actionCd: 3000,
-      rules: [
-        {
-          name: '点击右上角关闭',
-          key: 0,
-          matches:
-            '@[id="com.twitter.android:id/tweet_curation_action"] +n [id="com.twitter.android:id/tweet_promoted_badge_bottom"][text="推荐"]',
-          snapshotUrls: [
             'https://i.gkd.li/import/12825969', // com.twitter.tweetdetail.TweetDetailActivity
             'https://i.gkd.li/import/12847584', // com.twitter.android.search.implementation.results.SearchActivity
-          ],
-        },
-        {
-          name: '点击右上角关闭',
-          key: 1,
-          matches:
-            '@[id="com.twitter.android:id/tweet_curation_action"] <2 * + [id="com.twitter.android:id/tweet_auto_playable_content_parent"] > [id="com.twitter.android:id/tweet_promoted_badge_bottom"][text$="推荐"]',
-          snapshotUrls: [
             'https://i.gkd.li/import/12882676', // com.twitter.tweetdetail.TweetDetailActivity
             'https://i.gkd.li/import/12904603', // com.twitter.app.profiles.ProfileActivity
           ],
         },
         {
-          name: '点击右上角关闭-英文',
           key: 2,
+          name: '点击右上角关闭-英文',
           matches:
             '[id="com.twitter.android:id/tweet_ad_badge_top_right"] + [id="com.twitter.android:id/tweet_curation_action"]',
-          snapshotUrls: ['https://i.gkd.li/import/13680756'],
+          snapshotUrls: 'https://i.gkd.li/import/13680756',
         },
         {
           preKeys: [0, 1, 2],
           key: 10,
           name: '点击屏蔽',
           matches:
-            '@ViewGroup > [id="com.twitter.android:id/action_sheet_item_title"][text^="屏蔽"||text^="屏蔽"||text^="Block"]',
+            '@ViewGroup > [id="com.twitter.android:id/action_sheet_item_title"][text^="屏蔽"||text^="Block"]',
           snapshotUrls: [
+            'https://i.gkd.li/import/12798810',
+            'https://i.gkd.li/i/14782902',
             'https://i.gkd.li/import/12828815', // com.twitter.tweetdetail.TweetDetailActivity
             'https://i.gkd.li/import/12847600', // com.twitter.android.search.implementation.results.SearchActivity
             'https://i.gkd.li/import/12904602', // com.twitter.app.profiles.ProfileActivity
@@ -111,45 +76,6 @@ export default defineAppConfig({
             'https://i.gkd.li/import/12904601', // com.twitter.app.profiles.ProfileActivity
             'https://i.gkd.li/import/13680798', // 兼容英文
           ],
-        },
-      ],
-    },
-    {
-      key: 3,
-      name: '分段广告-用户资料页信息流广告',
-      desc: '点击右上角关闭,点击我不喜欢',
-      enable: false,
-      quickFind: true,
-      activityIds: ['com.twitter.app.profiles.ProfileActivity'],
-      actionCd: 3000,
-      rules: [
-        {
-          name: '点击右上角关闭',
-          key: 0,
-          matches:
-            '@[id="com.twitter.android:id/tweet_curation_action"] +n [id="com.twitter.android:id/tweet_promoted_badge_bottom"][text="推荐"]',
-          snapshotUrls: [
-            'https://i.gkd.li/import/12825969', // com.twitter.tweetdetail.TweetDetailActivity
-            'https://i.gkd.li/import/12847584', // com.twitter.android.search.implementation.results.SearchActivity
-          ],
-        },
-        {
-          name: '点击右上角关闭',
-          key: 1,
-          matches:
-            '@[id="com.twitter.android:id/tweet_curation_action"] <2 * + [id="com.twitter.android:id/tweet_auto_playable_content_parent"] > [id="com.twitter.android:id/tweet_promoted_badge_bottom"][text$="推荐"]',
-          snapshotUrls: [
-            'https://i.gkd.li/import/12882676', // com.twitter.tweetdetail.TweetDetailActivity
-            'https://i.gkd.li/import/12904603', // com.twitter.app.profiles.ProfileActivity
-          ],
-        },
-        {
-          preKeys: [0, 1],
-          key: 10,
-          name: '点击[我不喜欢这个广告]',
-          matches:
-            '@ViewGroup > [id="com.twitter.android:id/action_sheet_item_title"][text="我不喜欢这个广告"]',
-          snapshotUrls: 'https://i.gkd.li/import/12798810',
         },
       ],
     },
