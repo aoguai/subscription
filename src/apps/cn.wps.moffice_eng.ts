@@ -3,12 +3,13 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'cn.wps.moffice_eng',
   name: 'WPS',
-  deprecatedKeys: [0],
+  deprecatedKeys: [0, 7],
   groups: [
     {
       key: 1,
       name: '分段广告-首页文档列表广告',
       enable: false,
+      quickFind: true,
       exampleUrls: [
         'https://github.com/gkd-kit/subscription/assets/38517192/57787554-0443-4bc0-9f29-1759aae07b9b',
       ],
@@ -28,7 +29,7 @@ export default defineAppConfig({
         },
         {
           preKeys: 0,
-          matches: '[text="关闭当前广告"||text="不喜欢此广告"]',
+          matches: '[text="不喜欢此广告"]',
           snapshotUrls: [
             'https://i.gkd.li/import/12505365',
             'https://i.gkd.li/import/13259090',
@@ -39,22 +40,35 @@ export default defineAppConfig({
     {
       key: 2,
       name: '全屏广告-弹窗广告',
-      quickFind: true,
       enable: false,
       activityIds: [
         'cn.wps.moffice.main.AfterLoginActivity',
         'com.android.packageinstaller.permission.ui.GrantPermissionsActivity',
+        'cn.wps.moffice.main.local.HomeRootActivity',
       ],
-      rules: '[id="cn.wps.moffice_eng:id/afterlogin_cancel"]',
-      snapshotUrls: [
-        'https://i.gkd.li/import/13259097',
-        'https://i.gkd.li/import/12882712',
+      rules: [
+        {
+          key: 1,
+          quickFind: true,
+          matches: '[id="cn.wps.moffice_eng:id/afterlogin_cancel"]',
+          snapshotUrls: [
+            'https://i.gkd.li/import/13259097',
+            'https://i.gkd.li/import/12882712',
+          ],
+        },
+        {
+          key: 2,
+          name: '体验超级会员弹窗',
+          matches:
+            '[id="cn.wps.moffice_eng:id/push_tips_ptr_super_webview"] >6 TextView[index=2]',
+          snapshotUrls: 'https://i.gkd.li/import/13945835',
+        },
       ],
     },
     {
-      enable: false,
       key: 3,
       name: '更新提示',
+      enable: false,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -96,6 +110,7 @@ export default defineAppConfig({
       key: 5,
       name: '分段广告-文档末尾广告',
       enable: false,
+      quickFind: true,
       activityIds: [
         'cn.wps.moffice.writer.multiactivity.Writer', //Writer1,Writer2...
       ],
@@ -121,19 +136,6 @@ export default defineAppConfig({
       activityIds: 'cn.wps.moffice.main.local.HomeRootActivity',
       rules: '[id="cn.wps.moffice_eng:id/home_banner_ad_spread_close"]',
       snapshotUrls: 'https://i.gkd.li/import/13804525',
-    },
-    {
-      key: 7,
-      name: '全屏广告-体验超级会员弹窗',
-      enable: false,
-      rules: [
-        {
-          activityIds: 'cn.wps.moffice.main.local.HomeRootActivity',
-          matches:
-            '[id="cn.wps.moffice_eng:id/push_tips_ptr_super_webview"] >6 TextView[index=2]',
-          snapshotUrls: 'https://i.gkd.li/import/13945835',
-        },
-      ],
     },
   ],
 });
