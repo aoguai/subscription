@@ -26,7 +26,7 @@
     "@commitlint/types": "^19.0.3",
     "@gkd-kit/selector": "0.0.25",
     "@types/lodash": "^4.17.0",
-    "@types/node": "20.12.3",
+    "@types/node": "20.12.4",
     "@typescript-eslint/eslint-plugin": "7.5.0",
     "@typescript-eslint/parser": "7.5.0",
     "dayjs": "^1.11.10",
@@ -54,7 +54,7 @@
     "url": "git+https://github.com/aoguai/subscription.git"
   },
   "volta": {
-    "node": "20.12.0"
+    "node": "20.12.1"
   },
   "packageManager": "pnpm@8.15.6",
   "commitlint": {
