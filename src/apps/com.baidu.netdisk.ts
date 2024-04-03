@@ -3,7 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.baidu.netdisk',
   name: '百度网盘',
-  deprecatedKeys: [0, 2, 3, 4, 6, 8, 10, 11],
+  deprecatedKeys: [0, 2, 3, 4, 5, 6, 8, 10, 11],
   groups: [
     {
       key: 1,
@@ -14,27 +14,28 @@ export default defineAppConfig({
       activityIds: [
         'com.baidu.netdisk.ui.MainActivity',
         'com.baidu.netdisk.business.guide.dialog.lifeproduct.',
-      ],
-      rules:
-        'ImageView[id="com.baidu.netdisk:id/iv_close"][visibleToUser=true]',
-      snapshotUrls: [
-        'https://i.gkd.li/import/12642505', // 一刻相册推广弹窗
-        'https://i.gkd.li/import/12923937', // VIP弹窗
-        'https://i.gkd.li/import/13806852', // 幸运券包弹窗
-        'https://i.gkd.li/import/12783106', // 看视频免费享极速下载弹窗
-        'https://i.gkd.li/i/14730106',
-      ],
-    },
-    {
-      key: 5,
-      name: '全屏广告-相册页面激活无限空间弹窗',
-      enable: false,
-      quickFind: true,
-      activityIds:
         'com.baidu.netdisk.cloudimage.ui.album.AlbumGuideOneImageDialog',
-      rules:
-        '@ImageView[id="com.baidu.netdisk:id/close_btn"] + ImageView[id="com.baidu.netdisk:id/bg_image"]',
-      snapshotUrls: 'https://i.gkd.li/import/12648987',
+      ],
+      rules: [
+        {
+          key: 0,
+          matches: '[vid="iv_close"]',
+          snapshotUrls: [
+            'https://i.gkd.li/import/12642505', // 一刻相册推广弹窗
+            'https://i.gkd.li/import/12923937', // VIP弹窗
+            'https://i.gkd.li/import/13806852', // 幸运券包弹窗
+            'https://i.gkd.li/import/12783106', // 看视频免费享极速下载弹窗
+            'https://i.gkd.li/i/14730106',
+          ],
+        },
+        {
+          key: 1,
+          name: '相册页面激活无限空间弹窗',
+          matches:
+            '@ImageView[id="com.baidu.netdisk:id/close_btn"] + ImageView[id="com.baidu.netdisk:id/bg_image"]',
+          snapshotUrls: 'https://i.gkd.li/import/12648987',
+        },
+      ],
     },
     {
       key: 7,
@@ -54,9 +55,9 @@ export default defineAppConfig({
       name: '局部广告-右下角悬浮卡片',
       desc: '点击关闭',
       quickFind: true,
+      activityIds: 'com.baidu.netdisk.ui.MainActivity',
       rules: [
         {
-          activityIds: 'com.baidu.netdisk.ui.MainActivity',
           matches:
             '[vid="float_btn_close"][clickable=true][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/import/14278618',
