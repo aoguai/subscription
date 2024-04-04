@@ -1,6 +1,6 @@
 # QQ
 
-存在 19 规则组 - [com.tencent.mobileqq](/src/apps/com.tencent.mobileqq.ts)
+存在 18 规则组 - [com.tencent.mobileqq](/src/apps/com.tencent.mobileqq.ts)
 
 ## 开屏广告
 
@@ -79,6 +79,8 @@
 - [快照-1](https://i.gkd.li/import/12789287)
 - [快照-2](https://i.gkd.li/import/13063027)
 - [快照-3](https://i.gkd.li/import/13166314)
+- [快照-4](https://i.gkd.li/i/14752498)
+- [快照-5](https://i.gkd.li/i/14752519)
 
 ## 局部广告-我的等级页面浮窗广告
 
@@ -101,6 +103,7 @@
 
 - [快照-0](https://i.gkd.li/import/12840632)
 - [快照-1](https://i.gkd.li/import/12840633)
+- [快照-2](https://i.gkd.li/i/14757735)
 
 ## 分段广告-QQ小世界评论区广告
 
@@ -132,12 +135,6 @@
 - [快照-1](https://i.gkd.li/import/13387606)
 - [快照-2](https://i.gkd.li/import/12929619)
 - [快照-3](https://i.gkd.li/import/13387605)
-
-## 全屏广告-内测邀请弹窗
-
-默认禁用
-
-- [快照-0](https://i.gkd.li/import/13526551)
 
 ## 分段广告-钱包页卡片广告
 
@@ -180,7 +177,5 @@
 ## 功能类-申请入群后自动点击右上角关闭
 
 默认禁用
-
-- [示例-0](https://m.gkd.li/57941037/df526685-8a68-48cd-8328-0292079ff030)
 
 - [快照-0](https://i.gkd.li/import/14235163)

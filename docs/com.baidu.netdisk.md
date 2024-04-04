@@ -10,6 +10,7 @@
 - [快照-1](https://i.gkd.li/import/12923937)
 - [快照-2](https://i.gkd.li/import/13806852)
 - [快照-3](https://i.gkd.li/import/12783106)
+- [快照-4](https://i.gkd.li/i/14730106)
 
 ## 全屏广告-相册页面激活无限空间弹窗
 

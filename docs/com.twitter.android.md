@@ -7,8 +7,11 @@
 默认禁用 - 点击右上角关闭,点击我不喜欢
 
 - [快照-0](https://i.gkd.li/import/12798795)
-- [快照-1](https://i.gkd.li/import/12813235)
-- [快照-2](https://i.gkd.li/import/12798810)
+- [快照-1](https://i.gkd.li/i/14782884)
+- [快照-2](https://i.gkd.li/import/12813235)
+- [快照-3](https://i.gkd.li/i/14782897)
+- [快照-4](https://i.gkd.li/import/12798810)
+- [快照-5](https://i.gkd.li/i/14782902)
 
 ## 分段广告-帖子详情页、搜索页信息流广告
 
@@ -47,15 +50,11 @@
 
 默认禁用
 
-- [示例-0](https://m.gkd.li/57941037/40ece44f-883f-429a-aa0c-17dac15a50e4)
-
 - [快照-0](https://i.gkd.li/i/14189817)
 - [快照-1](https://i.gkd.li/i/14615911)
 
 ## 功能类-自动点击"显示更多帖子"
 
 默认禁用
-
-- [示例-0](https://m.gkd.li/57941037/7efa8af7-90d3-42b4-bf5d-3d83775f175a)
 
 - [快照-0](https://i.gkd.li/import/14189847)

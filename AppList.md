@@ -6,16 +6,16 @@
 | ---------------------- | ------------------------------------------------------------------------------- | ------ |
 | Gmail                  | [com.google.android.gm](/docs/com.google.android.gm.md)                         | 1      |
 | Keep                   | [com.gotokeep.keep](/docs/com.gotokeep.keep.md)                                 | 3      |
-| QQ                     | [com.tencent.mobileqq](/docs/com.tencent.mobileqq.md)                           | 18     |
-| WPS                    | [cn.wps.moffice_eng](/docs/cn.wps.moffice_eng.md)                               | 7      |
+| QQ                     | [com.tencent.mobileqq](/docs/com.tencent.mobileqq.md)                           | 16     |
+| WPS                    | [cn.wps.moffice_eng](/docs/cn.wps.moffice_eng.md)                               | 6      |
 | youtube                | [com.google.android.youtube](/docs/com.google.android.youtube.md)               | 4      |
 | Android 系统文件选择器 | [com.google.android.documentsui](/docs/com.google.android.documentsui.md)       | 1      |
 | PU口袋校园             | [com.xyhui](/docs/com.xyhui.md)                                                 | 1      |
 | QQ邮箱                 | [com.tencent.androidqqmail](/docs/com.tencent.androidqqmail.md)                 | 2      |
-| X(推特)                | [com.twitter.android](/docs/com.twitter.android.md)                             | 6      |
+| X(推特)                | [com.twitter.android](/docs/com.twitter.android.md)                             | 4      |
 | 阿里云盘               | [com.alicloud.databox](/docs/com.alicloud.databox.md)                           | 6      |
 | 百度贴吧               | [com.baidu.tieba](/docs/com.baidu.tieba.md)                                     | 8      |
-| 百度网盘               | [com.baidu.netdisk](/docs/com.baidu.netdisk.md)                                 | 4      |
+| 百度网盘               | [com.baidu.netdisk](/docs/com.baidu.netdisk.md)                                 | 3      |
 | 哔哩哔哩               | [tv.danmaku.bili](/docs/tv.danmaku.bili.md)                                     | 5      |
 | 菜鸟                   | [com.cainiao.wireless](/docs/com.cainiao.wireless.md)                           | 2      |
 | 大学搜题酱             | [com.zmzx.college.search](/docs/com.zmzx.college.search.md)                     | 2      |
