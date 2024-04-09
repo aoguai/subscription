@@ -263,7 +263,6 @@ export default defineAppConfig({
           key: 1,
           preKeys: [0],
           name: '点击「不感兴趣」或 「关闭此广告」',
-          action: 'clickCenter', // 使用 clickCenter 事件点击，期望在快照 https://i.gkd.li/i/12745280 中成功点击 [与我无关]
           matches:
             '[text*="广告"&&text.length<5] <n View < View >n [text="不感兴趣"||text="关闭此广告"][visibleToUser=true]',
           snapshotUrls: [
