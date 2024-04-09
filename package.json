@@ -1,7 +1,7 @@
 {
   "name": "@aoguai/subscription",
   "type": "module",
-  "version": "1.21.0",
+  "version": "1.22.0",
   "main": "./dist/aoguai_gkd.json5",
   "unpkg": "./dist/aoguai_gkd.json5",
   "jsdelivr": "./dist/aoguai_gkd.json5",

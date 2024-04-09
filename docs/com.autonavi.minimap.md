@@ -1,6 +1,6 @@
 # 高德地图
 
-存在 4 规则组 - [com.autonavi.minimap](/src/apps/com.autonavi.minimap.ts)
+存在 5 规则组 - [com.autonavi.minimap](/src/apps/com.autonavi.minimap.ts)
 
 ## 功能类-截屏分享
 
@@ -25,9 +25,17 @@
 - [快照-4](https://i.gkd.li/i/14715295)
 - [快照-5](https://i.gkd.li/i/14730914)
 - [快照-6](https://i.gkd.li/i/14730915)
+- [快照-7](https://i.gkd.li/i/14784970)
 
 ## 全屏广告-加油页面优惠券弹窗
 
 默认禁用
 
 - [快照-0](https://i.gkd.li/import/12642857)
+
+## 全屏广告-广告弹窗
+
+默认禁用 - 点击关闭
+
+- [快照-0](https://i.gkd.li/i/14800704)
+- [快照-1](https://i.gkd.li/i/14809993)
