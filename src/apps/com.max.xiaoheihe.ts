@@ -22,5 +22,20 @@ export default defineAppConfig({
         },
       ],
     },
+    {
+      key: 2,
+      name: '局部广告-卡片广告',
+      desc: '点击关闭',
+      rules: [
+        {
+          name: '收藏帖子后底部推荐关注卡片',
+          quickFind: true,
+          activityIds:
+            'com.max.xiaoheihe.module.bbs.post.ui.activitys.WebNewsPostPageActivity',
+          matches: '[vid="iv_notify_close"]',
+          snapshotUrls: 'https://i.gkd.li/i/14914139',
+        },
+      ],
+    },
   ],
 });
