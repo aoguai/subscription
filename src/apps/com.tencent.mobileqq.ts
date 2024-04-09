@@ -223,15 +223,15 @@ export default defineAppConfig({
       name: '功能类-自动授权',
       desc: '自动点击登录。包括 PC 登录确认、QQ 互联登录确认。',
       quickFind: true,
+      activityIds: [
+        'com.tencent.biz.qrcode.activity.QRLoginAuthActivity',
+        'com.tencent.mobileqq.activity.DevlockQuickLoginActivity',
+        'com.tencent.open.agent.PublicFragmentActivityForOpenSDK',
+      ],
       rules: [
         {
           key: 1,
           name: 'PC 登录确认',
-          activityIds: [
-            'com.tencent.biz.qrcode.activity.QRLoginAuthActivity',
-            'com.tencent.mobileqq.activity.DevlockQuickLoginActivity',
-            'com.tencent.open.agent.PublicFragmentActivityForOpenSDK',
-          ],
           matches:
             'Button[text*="登录"][clickable=true][visibleToUser=true][text.length<10]',
           snapshotUrls: [
