@@ -24,10 +24,11 @@ export default defineAppConfig({
           key: 1,
           preKeys: [0],
           name: '在签到后，关闭弹窗',
-          matches: '[id="com.alicloud.databox:id/ivClose"]',
+          matches: '[vid="ivClose"]',
           snapshotUrls: [
             'https://i.gkd.li/import/13038304',
             'https://i.gkd.li/import/14235221', // com.alicloud.databox.navigation.NavigationFragmentContainerActivity
+            'https://i.gkd.li/i/14895886',
           ],
         },
       ],
