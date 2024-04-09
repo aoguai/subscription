@@ -3,7 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.taobao.taobao',
   name: '淘宝',
-  deprecatedKeys: [11, 15],
+  deprecatedKeys: [11, 15, 17],
   groups: [
     {
       key: 0,
@@ -16,27 +16,44 @@ export default defineAppConfig({
     },
     {
       key: 1,
-      name: '全屏广告-限时福利弹窗',
+      name: '全屏广告-弹窗广告',
       enable: false,
+      quickFind: true,
+      activityIds: [
+        'com.taobao.tao.welcome.Welcome',
+        'com.taobao.tao.TBMainActivity',
+        'com.taobao.android.tbabilitykit.pop.StdPopContainerActivity',
+        'com.taobao.android.detail.wrapper.activity.DetailActivity',
+        'com.alibaba.triver.container.TriverMainActivity',
+      ],
       rules: [
         {
           key: 1,
           name: '88VIP开通优惠弹窗',
-          activityIds: [
-            'com.taobao.tao.welcome.Welcome',
-            'com.taobao.tao.TBMainActivity',
-          ],
-          matches: '[desc="淘气值冲刺成功"] < FrameLayout + [desc="关闭按钮"]',
+          matches: '@[desc="关闭按钮"] - [vid="poplayer_native_state_id"]',
           snapshotUrls: [
             'https://i.gkd.li/import/13198052', //com.taobao.tao.welcome.Welcome
             'https://i.gkd.li/import/13249418', //com.taobao.tao.TBMainActivity
+            'https://i.gkd.li/i/12642792',
+            'https://i.gkd.li/i/13180826',
+            'https://i.gkd.li/i/12648734',
+            'https://i.gkd.li/i/12648746',
+            'https://i.gkd.li/i/13198239',
+            'https://i.gkd.li/i/14905372',
           ],
+        },
+        {
+          key: 2,
+          name: '抢天降补贴弹窗',
+          matches: '@[desc="关闭按钮"] - [vid="poplayer_native_state_id"]',
+          snapshotUrls: 'https://i.gkd.li/import/14060521',
         },
       ],
     },
     {
       key: 2,
       name: '局部广告-消息页面热门活动卡片',
+      quickFind: true,
       activityIds: 'com.taobao.tao.welcome.Welcome',
       rules: 'View[desc.length>0] +2n FrameLayout > TextView[text="퀺"]',
       snapshotUrls: ['https://i.gkd.li/import/13197877'],
@@ -59,10 +76,11 @@ export default defineAppConfig({
       ],
     },
     {
-      enable: false,
       key: 8,
-      name: '通知提示-开启系统通知提示',
+      name: '通知提示',
       desc: '自动点击关闭',
+      enable: false,
+      quickFind: true,
       actionMaximum: 1,
       resetMatch: 'app',
       activityIds: [
@@ -71,7 +89,8 @@ export default defineAppConfig({
         'com.taobao.android.tbabilitykit.pop.StdPopContainerActivity',
         'com.taobao.tao.TBMainActivity',
       ],
-      rules: '[text^="开启系统通知"] + Image[clickable=true]',
+      rules:
+        '[text^="开启系统通知"] + @Image[clickable=true] <<n [id="com.taobao.taobao:id/poplayer_inner_view"]',
       snapshotUrls: [
         'https://i.gkd.li/import/13197594', //com.taobao.tao.welcome.Welcome
         'https://i.gkd.li/import/13222946', //com.taobao.android.order.bundle.TBOrderDetailActivity
@@ -128,7 +147,6 @@ export default defineAppConfig({
       name: '更新提示',
       enable: false,
       quickFind: true,
-      matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
       activityIds: [
@@ -136,11 +154,12 @@ export default defineAppConfig({
         'com.taobao.android.order.bundle.TBOrderListActivity',
         'com.taobao.search.sf.MainSearchResultActivity',
       ],
-      rules: '[id="com.taobao.taobao:id/update_imageview_cancel_v2"]',
+      rules: '[vid="update_imageview_cancel_v2"]',
       snapshotUrls: [
         'https://i.gkd.li/import/13336760',
         'https://i.gkd.li/import/13695520',
         'https://i.gkd.li/import/13965740',
+        'https://i.gkd.li/i/14899863',
       ],
     },
     {
@@ -209,20 +228,6 @@ export default defineAppConfig({
           matches:
             '[id="com.taobao.taobao:id/flybird_userinfo"] + * [text="暂不升级，继续付款"]',
           snapshotUrls: 'https://i.gkd.li/import/13898735',
-        },
-      ],
-    },
-    {
-      key: 17,
-      name: '全屏广告-抢天降补贴弹窗',
-      desc: '点击X',
-      enable: false,
-      rules: [
-        {
-          quickFind: true,
-          activityIds: 'com.taobao.tao.welcome.Welcome',
-          matches: '@[desc="关闭按钮"] - [vid="poplayer_native_state_id"]',
-          snapshotUrls: 'https://i.gkd.li/import/14060521',
         },
       ],
     },
