@@ -95,6 +95,7 @@ export default defineAppConfig({
       activityIds: [
         'com.jingdong.app.mall.MainFrameActivity',
         'com.jd.lib.cashier.complete.view.CashierCompleteActivity',
+        'com.jd.lib.jshop.jshop.JshopMainShopActivity',
       ],
       rules: [
         {
@@ -105,9 +106,11 @@ export default defineAppConfig({
         {
           key: 1,
           quickFind: true,
-          matches:
-            '[id="com.jingdong.app.mall:id/webview"] + [id="com.jingdong.app.mall:id/close"][desc="关闭页面"]',
-          snapshotUrls: 'https://i.gkd.li/import/13218034',
+          matches: '[vid="webview"] + [vid="close"][desc="关闭页面"]',
+          snapshotUrls: [
+            'https://i.gkd.li/import/13218034',
+            'https://i.gkd.li/i/14927060',
+          ],
         },
         {
           key: 2,
@@ -115,7 +118,7 @@ export default defineAppConfig({
             '[id="android:id/content"] > RelativeLayout > RelativeLayout > *[childCount=2] > ImageView[index=1][clickable=true]',
           snapshotUrls: [
             'https://i.gkd.li/import/13241883',
-            'https://i.gkd.li/import/132599029',
+            'https://i.gkd.li/import/13259029',
             'https://i.gkd.li/i/14612925',
           ],
         },
