@@ -12,6 +12,7 @@ export default defineAppConfig({
       activityIds: [
         'com.xuexiaoyi.entrance.main.MainActivity',
         'com.xuexiaoyi.platform.base.arch.RouterFragmentActivity',
+        'com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Activity_T',
       ],
       rules: [
         {
@@ -60,13 +61,22 @@ export default defineAppConfig({
           ],
         },
         {
-          preKeys: [0, 1, 2, 3],
+          key: 4,
+          name: '点击[反馈]',
+          matches:
+            '[text="广告"][visibleToUser=true] < * <n View +n [text="反馈"][visibleToUser=true]',
+          snapshotUrls: ['https://i.gkd.li/i/14965789'],
+        },
+        {
+          preKeys: [0, 1, 2, 3, 4],
           key: 10,
           name: '点击不感兴趣',
+          quickFind: true,
           matches: 'TextView[text="不感兴趣"]',
           snapshotUrls: [
             'https://i.gkd.li/import/13068819',
             'https://i.gkd.li/import/13457380',
+            'https://i.gkd.li/i/14965790',
           ],
         },
       ],
