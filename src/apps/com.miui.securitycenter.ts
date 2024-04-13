@@ -5,10 +5,10 @@ export default defineAppConfig({
   name: '小米手机管家',
   groups: [
     {
-      enable: false,
       key: 10,
       name: '功能类-自动继续安装',
       desc: 'USB安装应用,点击继续安装',
+      enable: false,
       quickFind: true,
       activityIds: 'com.miui.permcenter.install.AdbInstallActivity',
       rules: [
@@ -19,10 +19,10 @@ export default defineAppConfig({
       ],
     },
     {
-      enable: false,
       key: 11,
       name: '功能类-禁止获取定位',
       desc: '关闭【允许联网及定位】后，每次打开手机管家都会出现',
+      enable: false,
       quickFind: true,
       activityIds: [
         'com.miui.securityscan.MainActivity', // app版本v8
@@ -42,10 +42,10 @@ export default defineAppConfig({
       ],
     },
     {
-      enable: false,
       key: 12,
       name: '功能类-忽略体检分数',
       desc: '退出时忽略体检优化分数',
+      enable: false,
       quickFind: true,
       activityIds: 'com.miui.securityscan.MainActivity',
       rules: [
@@ -58,6 +58,29 @@ export default defineAppConfig({
             'https://i.gkd.li/import/13474504', // app版本v5
             'https://i.gkd.li/import/13476770', // app版本v8
           ],
+        },
+      ],
+    },
+    {
+      key: 13,
+      name: '功能类-高敏感权限自动确定',
+      desc: '勾选[我已知晓可能存在的风险]-10s后点击[确定]',
+      enable: false,
+      quickFind: true,
+      activityIds:
+        'com.miui.permcenter.privacymanager.SpecialPermissionInterceptActivity',
+      rules: [
+        {
+          key: 0,
+          matches:
+            '@[checked=false] + [text="我已知晓可能存在的风险，并自愿承担可能导致的后果"]',
+          snapshotUrls: 'https://i.gkd.li/i/14965657',
+        },
+        {
+          preKeys: [0],
+          key: 1,
+          matches: '[text="确定"]',
+          snapshotUrls: 'https://i.gkd.li/i/14965656',
         },
       ],
     },
