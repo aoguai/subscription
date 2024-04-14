@@ -22,13 +22,11 @@ export default defineAppConfig({
       snapshotUrls: 'https://i.gkd.li/import/13197334',
     },
     {
-      enable: false,
       key: 10,
       name: '功能类-忽略升级',
-      quickFind: true,
       desc: '应用升级界面-自动点击忽略',
-      exampleUrls:
-        'https://github.com/gkd-kit/subscription/assets/45487685/a3a61df9-7757-428e-b4fe-a960e09a0bbe',
+      quickFind: true,
+      enable: false,
       activityIds: 'com.xiaomi.market.ui.UpdateListActivity',
       rules: [
         {
@@ -39,16 +37,21 @@ export default defineAppConfig({
         },
         {
           key: 1,
-          matches:
-            '[id="com.xiaomi.market:id/expandable_textview"] + [id="com.xiaomi.market:id/expand_button"][desc="更多"]',
-          snapshotUrls: 'https://i.gkd.li/import/12674264',
+          matches: '[vid="expand_button"][visibleToUser=true]',
+          excludeMatches: '[text="忽略本次"][visibleToUser=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/import/12674264',
+            'https://i.gkd.li/i/14931577',
+          ],
         },
         {
           preKeys: [1],
           key: 2,
-          matches:
-            '@[id="com.xiaomi.market:id/ignore_this"][text="忽略本次"] + [id="com.xiaomi.market:id/ignore_permanently"][text="永久忽略"]',
-          snapshotUrls: 'https://i.gkd.li/import/12674269',
+          matches: '[text="忽略本次"][visibleToUser=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/import/12674269',
+            'https://i.gkd.li/i/14931578',
+          ],
         },
       ],
     },

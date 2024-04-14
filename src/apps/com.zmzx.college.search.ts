@@ -19,6 +19,7 @@ export default defineAppConfig({
             'com.zmzx.college.search.activity.questionsearch.camera.activity.PicSearchResultActivity',
             'com.zmzx.college.search.activity.camerasdk.ZybCameraSDKActivity',
             'com.zmzx.college.search.activity.common.CommonCacheHybridActivity',
+            'com.bytedance.sdk.openadsdk.core.component.reward.activity.TTFullScreenVideoActivity',
           ],
           matches: '[vid="iv_close"]',
           snapshotUrls: [
@@ -32,8 +33,12 @@ export default defineAppConfig({
           name: '字节广告-2',
           activityIds:
             'com.bytedance.sdk.openadsdk.core.component.reward.activity.TTFullScreenVideoActivity',
-          matches: '@Image < View +3 View > View > TextView[text$="广告"]',
-          snapshotUrls: 'https://i.gkd.li/import/13523288',
+          matches:
+            '@Image[text.length=0] < View +(3,5) View > View > TextView[text$="广告"]',
+          snapshotUrls: [
+            'https://i.gkd.li/import/13523288',
+            'https://i.gkd.li/i/14965922',
+          ],
         },
       ],
     },

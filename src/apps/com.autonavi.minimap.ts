@@ -31,7 +31,7 @@ export default defineAppConfig({
       desc: '关闭首页的所有可关闭的广告卡片',
       activityIds: 'com.autonavi.map.activity.NewMapActivity',
       rules:
-        'ViewGroup[index=0][childCount<4] <<2 ViewGroup[childCount<3] > ViewGroup[childCount<5][visibleToUser=true] > ViewGroup + @ViewGroup[index!=0][childCount=1][visibleToUser=true][clickable=true] > ImageView[visibleToUser=true]',
+        'ScrollView >n ViewGroup[childCount<5][visibleToUser=true] > ViewGroup[childCount>0] + @ViewGroup[index!=0][childCount=1][visibleToUser=true][clickable=true][desc=null||desc="关闭"] > ImageView[visibleToUser=true][desc=null||desc="关闭"]',
       snapshotUrls: [
         'https://i.gkd.li/import/12642842',
         'https://i.gkd.li/import/12642845',
@@ -40,10 +40,11 @@ export default defineAppConfig({
         'https://i.gkd.li/i/14730915',
         'https://i.gkd.li/i/14784970',
         'https://i.gkd.li/import/12818770', // 限定 ImageView[visibleToUser=true]，防止控件不可见时触发规则
-        'https://i.gkd.li/import/13764540', // 避免在此误触
+        'https://i.gkd.li/import/13764540', // 误触
         'https://i.gkd.li/i/14912831', // 误触
         'https://i.gkd.li/i/14912902', // 误触
         'https://i.gkd.li/i/14912925', // 误触
+        'https://i.gkd.li/i/14965850', // 误触
       ],
     },
     {

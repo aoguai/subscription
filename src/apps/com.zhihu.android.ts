@@ -7,7 +7,7 @@ export default defineAppConfig({
   groups: [
     {
       key: 6,
-      name: '分段广告-信息流广告',
+      name: '分段广告-首页信息流广告',
       desc: '点击关闭-点击内容不感兴趣',
       enable: false,
       quickFind: true,
@@ -17,15 +17,12 @@ export default defineAppConfig({
         'com.zhihu.android.app.ui.activity.HostActivity',
         'com.zhihu.android.feature.short_container_feature.ui.ShortContainerHostActivity',
         'com.zhihu.android.ContentActivity',
-        'com.zhihu.android.app.ui.activity.MainActivity',
       ],
       rules: [
         {
           key: 0,
           matches:
             '@ImageView[id=null][clickable=true] -n TextView[text=null] <<n * <n * > * >n [text$="广告"][visibleToUser=true]',
-          exampleUrls:
-            'https://m.gkd.li/57941037/f6498773-af55-4ba9-96fa-4c0597523d55',
           snapshotUrls: [
             'https://i.gkd.li/import/13849671',
             'https://i.gkd.li/import/12647525',
@@ -47,17 +44,22 @@ export default defineAppConfig({
         },
         {
           key: 2,
-          matches:
-            '[text*="广告"] <<n [vid="bottom_container"] > [vid="menu_container"] > [vid="menu"][visibleToUser!=false]',
+          matches: '@[vid="menu"][visibleToUser=true] < * - * > [text^="广告"]',
           snapshotUrls: [
             'https://i.gkd.li/import/14321041',
+            'https://i.gkd.li/import/14296163',
             'https://i.gkd.li/i/14468152',
             'https://i.gkd.li/i/14558110', // 防误触
           ],
         },
         {
+          key: 3,
+          matches: '@ViewGroup[clickable=true] <3 * < * -2 * >2 [text$="广告"]',
+          snapshotUrls: 'https://i.gkd.li/import/14332161',
+        },
+        {
           key: 90,
-          preKeys: [0, 1, 2],
+          preKeys: [0, 1, 2, 3],
           matches: '@[clickable=true] >3 [text$="不感兴趣"]',
           snapshotUrls: 'https://i.gkd.li/import/13849689',
         },
@@ -67,11 +69,11 @@ export default defineAppConfig({
       key: 11,
       name: '全屏广告-广告弹窗',
       desc: '点击关闭',
+      quickFind: true,
       activityIds: [
         'com.zhihu.android.app.ui.activity.MainActivity',
         'com.zhihu.android.app.ui.activity.AdAlphaVideoActivity',
       ],
-      quickFind: true,
       rules: [
         {
           key: 0,
@@ -95,7 +97,7 @@ export default defineAppConfig({
     },
     {
       key: 14,
-      name: '局部广告-信息流广告',
+      name: '局部广告-回答底部广告',
       desc: '点击关闭',
       activityIds: [
         'com.zhihu.android.feature.short_container_feature.ui.ShortContainerHostActivity',
@@ -105,44 +107,48 @@ export default defineAppConfig({
         {
           key: 0,
           matches:
-            '@[name$=".ImageView"||name$=".Image"][clickable=true] <n * > [text$="广告"||text="创作者小助手"||text="知乎游戏"]',
-          exampleUrls:
-            'https://m.gkd.li/57941037/0443d5cb-aa24-4447-afd7-58c5a09af835',
+            '@[name$=".ImageView"||name$=".Image"||text="×"][clickable=true] <n * > [text$="广告"||text="创作者小助手"||text^="知乎"][clickable=false][text.length<20]',
           snapshotUrls: [
             'https://i.gkd.li/import/14178980',
             'https://i.gkd.li/import/14206949',
             'https://i.gkd.li/import/14232195', // text="创作者小助手"
             'https://i.gkd.li/import/14235024', // text="知乎游戏"
+            'https://i.gkd.li/i/14944631', // text="知乎问题商店"
             'https://i.gkd.li/i/14391614',
             'https://i.gkd.li/i/14548763',
+            'https://i.gkd.li/i/14220104',
+            'https://i.gkd.li/i/14421277',
           ],
-        },
-        {
-          key: 2,
-          quickFind: true,
-          matches: '@[vid="menu"][visibleToUser=true] < * - * > [text^="广告"]',
-          snapshotUrls: 'https://i.gkd.li/import/14296163',
-        },
-        {
-          key: 3,
-          activityIds: 'com.zhihu.android.app.ui.activity.MainActivity',
-          quickFind: true,
-          matches: '@ViewGroup[clickable=true] <3 * < * -2 * >2 [text$="广告"]',
-          snapshotUrls: 'https://i.gkd.li/import/14332161',
         },
       ],
     },
     {
       key: 15,
-      name: '局部广告-悬浮小广告',
+      name: '局部广告-悬浮广告',
+      quickFind: true,
+      activityIds: [
+        'com.zhihu.android.app.ui.activity.MainActivity',
+        'com.zhihu.android.feature.short_container_feature.ui.ShortContainerHostActivity',
+      ],
       rules: [
         {
           key: 0,
           name: '发现页面-右侧年卡折扣悬浮窗',
-          activityIds: 'com.zhihu.android.app.ui.activity.MainActivity',
-          quickFind: true,
           matches: '@[vid="activity_close"] + * > [vid="activity_img"]',
           snapshotUrls: 'https://i.gkd.li/import/14296251',
+        },
+        {
+          key: 1,
+          name: '首页-右侧悬浮窗广告',
+          matches:
+            '@ImageView[clickable=true][visibleToUser=true] + * >2 [text="广告"]',
+          snapshotUrls: 'https://i.gkd.li/i/14635636',
+        },
+        {
+          key: 2,
+          name: '回答页-底部关注悬浮窗',
+          matches: '[vid="close_img"]',
+          snapshotUrls: 'https://i.gkd.li/i/14970008',
         },
       ],
     },
