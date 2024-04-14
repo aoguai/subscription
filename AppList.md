@@ -36,7 +36,7 @@
 | 微信                   | [com.tencent.mm](/docs/com.tencent.mm.md)                                       | 15     |
 | 闲鱼                   | [com.taobao.idlefish](/docs/com.taobao.idlefish.md)                             | 3      |
 | 小黑盒                 | [com.max.xiaoheihe](/docs/com.max.xiaoheihe.md)                                 | 2      |
-| 小米手机管家           | [com.miui.securitycenter](/docs/com.miui.securitycenter.md)                     | 3      |
+| 小米手机管家           | [com.miui.securitycenter](/docs/com.miui.securitycenter.md)                     | 4      |
 | 小米应用商店           | [com.xiaomi.market](/docs/com.xiaomi.market.md)                                 | 4      |
 | 小米音乐               | [com.miui.player](/docs/com.miui.player.md)                                     | 3      |
 | 小米云服务             | [com.miui.cloudservice](/docs/com.miui.cloudservice.md)                         | 1      |

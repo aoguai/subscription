@@ -1,6 +1,6 @@
 # 小米应用商店
 
-存在 3 规则组 - [com.xiaomi.market](/src/apps/com.xiaomi.market.ts)
+存在 4 规则组 - [com.xiaomi.market](/src/apps/com.xiaomi.market.ts)
 
 ## 全屏广告-首页悬浮窗广告
 
@@ -23,3 +23,9 @@
 - [快照-0](https://i.gkd.li/import/12674261)
 - [快照-1](https://i.gkd.li/import/12674264)
 - [快照-2](https://i.gkd.li/import/12674269)
+
+## 功能类-自动点击[查看全部升级]
+
+默认禁用 - 应用升级页面
+
+- [快照-0](https://i.gkd.li/i/14782814)

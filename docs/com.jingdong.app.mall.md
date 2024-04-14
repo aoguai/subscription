@@ -19,6 +19,7 @@
 - [快照-2](https://i.gkd.li/import/13072091)
 - [快照-3](https://i.gkd.li/import/12837870)
 - [快照-4](https://i.gkd.li/import/12642266)
+- [快照-5](https://i.gkd.li/i/14731003)
 
 ## 通知提示
 
@@ -27,7 +28,9 @@
 - [快照-0](https://i.gkd.li/import/12839864)
 - [快照-1](https://i.gkd.li/import/13772299)
 - [快照-2](https://i.gkd.li/import/13917163)
-- [快照-3](https://i.gkd.li/import/12839865)
+- [快照-3](https://i.gkd.li/i/13463618)
+- [快照-4](https://i.gkd.li/i/14692570)
+- [快照-5](https://i.gkd.li/import/12839865)
 
 ## 全屏广告-广告弹窗
 
