@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.coolapk.market',
   name: '酷安',
-  deprecatedKeys: [1, 2, 3],
   groups: [
     {
       key: 0,

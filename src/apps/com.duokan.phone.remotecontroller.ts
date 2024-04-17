@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.duokan.phone.remotecontroller',
   name: '万能遥控',
-  deprecatedKeys: [4],
   groups: [
     {
       key: 0,

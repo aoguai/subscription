@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.unionpay',
   name: '云闪付',
-  deprecatedKeys: [1, 9, 10, 11, 12],
   groups: [
     {
       key: 2,

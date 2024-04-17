@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.zmzx.college.search',
   name: '大学搜题酱',
-  deprecatedKeys: [1, 3, 4, 5, 6, 7, 8, 9, 10],
   groups: [
     {
       key: 2,

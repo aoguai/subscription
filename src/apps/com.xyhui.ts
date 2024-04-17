@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.xyhui',
   name: 'PU口袋校园',
-  deprecatedKeys: [2, 3, 4],
   groups: [
     {
       key: 1,

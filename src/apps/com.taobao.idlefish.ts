@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.taobao.idlefish',
   name: '闲鱼',
-  deprecatedKeys: [2, 3],
   groups: [
     {
       key: 1,

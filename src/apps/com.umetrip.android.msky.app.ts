@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.umetrip.android.msky.app',
   name: '航旅纵横',
-  deprecatedKeys: [9],
   groups: [
     {
       key: 8,

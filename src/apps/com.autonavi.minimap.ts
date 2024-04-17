@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.autonavi.minimap',
   name: '高德地图',
-  deprecatedKeys: [0, 1],
   groups: [
     {
       key: 4,

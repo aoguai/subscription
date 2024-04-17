@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.miui.player',
   name: '小米音乐',
-  deprecatedKeys: [1, 2, 4, 5, 10],
   groups: [
     {
       key: 3,

@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.xiaomi.market',
   name: '小米应用商店',
-  deprecatedKeys: [11, 12],
   groups: [
     {
       key: 0,
