@@ -22,7 +22,7 @@
 
 当前订阅文件含 --GROUP_SIZE-- 应用规则组， --GLOBALGROUP_SIZE-- 全局规则组。
 
-**🔍 查看详细[适配规则列表](./AppList.md)**
+**🔍 查看详细[适配规则列表](./dist/README.md)**
 
 **❗️ 此仓库仅接受与全局规则相关的维护或改进的 issues 或 PR 提交。**
 

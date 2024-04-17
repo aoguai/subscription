@@ -1,6 +1,6 @@
-import { RawCategory } from '@gkd-kit/api';
+import { defineGkdCategories } from '@gkd-kit/define';
 
-const categories: RawCategory[] = [
+export default defineGkdCategories([
   {
     key: -1,
     name: '权限提示',
@@ -61,6 +61,4 @@ const categories: RawCategory[] = [
     name: '功能类',
     enable: false,
   },
-];
-
-export default categories;
+]);

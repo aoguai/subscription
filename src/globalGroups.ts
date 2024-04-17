@@ -1,6 +1,18 @@
-import apps from './rawApps';
-import { RawGlobalGroup } from '@gkd-kit/api';
-import * as utils from './utils';
+import { defineGkdGlobalGroups } from '@gkd-kit/define';
+import { batchImportApps } from '@gkd-kit/tools';
+
+export const OPEN_AD_ORDER = -10; // 开屏广告
+export const YOUTH_MODE = -9; // 青少年模式
+export const UPDATE_PROMPT = -8; // 更新提示
+export const REVIEW_PROMPT = -7; // 评价提示
+export const NOTIFICATION_PROMPT = -6; // 通知提示
+export const LOCATION_PROMPT = -5; // 定位提示
+export const PERMISSION_PROMPT = -4; // 权限提示
+export const PARTIAL_AD = -3; // 局部广告
+export const FULLSCREEN_AD = -2; // 全屏广告
+export const SEGMENTED_AD = -1; // 分段广告
+
+const apps = await batchImportApps(`${import.meta.dirname}/apps`);
 
 const diabledAppIds: string[] = [
   // 在一些常见的应用中禁用
@@ -56,11 +68,11 @@ const PA_commonTextPatterns =
 const PA_commonDescPatterns =
   '[desc^="广告"||desc$="广告"||desc^="廣告"||desc$="廣告"||desc$="限时福利"||desc^="热门活动"||desc$="热门活动"||desc$="限時福利"||desc^="限时福利"||desc^="限時福利"||((desc~="(?is).*AD"||desc~="ad")&&((desc!~="(?is).*load.*")&&(desc!~="(?is).*read.*")&&(desc!~="(?is).*add.*")&&(desc!~="(?is).*ead.*")))||(desc*="申请"||desc*="开启"||desc*="打开"||desc*="获取"||desc*="订阅"||desc*="接收"||desc~="(?is).*Turn on.*")&&(desc*="个性化"||desc*="推荐"||desc*="感兴趣"||desc*="個性化"||desc*="推薦"||desc*="感興趣"||desc*="感興趣")]';
 
-const globalGroups: RawGlobalGroup[] = [
+export default defineGkdGlobalGroups([
   {
     key: 0,
     name: '开屏广告',
-    order: utils.OPEN_AD_ORDER,
+    order: OPEN_AD_ORDER,
     actionMaximum: 2,
     matchTime: 8000,
     resetMatch: 'app',
@@ -90,7 +102,7 @@ const globalGroups: RawGlobalGroup[] = [
     key: 1,
     name: '全屏广告',
     enable: false,
-    order: utils.FULLSCREEN_AD,
+    order: FULLSCREEN_AD,
     matchTime: 10000,
     resetMatch: 'activity',
     actionCdKey: 0,
@@ -133,7 +145,7 @@ const globalGroups: RawGlobalGroup[] = [
     key: 2,
     name: '局部广告',
     enable: false,
-    order: utils.PARTIAL_AD,
+    order: PARTIAL_AD,
     matchTime: 10000,
     resetMatch: 'activity',
     actionCdKey: 0,
@@ -198,7 +210,7 @@ const globalGroups: RawGlobalGroup[] = [
     key: 3,
     name: '更新提示',
     enable: false,
-    order: utils.UPDATE_PROMPT,
+    order: UPDATE_PROMPT,
     actionMaximum: 2,
     matchTime: 10000,
     resetMatch: 'app',
@@ -245,7 +257,7 @@ const globalGroups: RawGlobalGroup[] = [
     key: 4,
     name: '评价提示',
     enable: false,
-    order: utils.REVIEW_PROMPT,
+    order: REVIEW_PROMPT,
     actionMaximum: 2,
     matchTime: 10000,
     resetMatch: 'app',
@@ -292,7 +304,7 @@ const globalGroups: RawGlobalGroup[] = [
     key: 5,
     name: '通知提示',
     enable: false,
-    order: utils.NOTIFICATION_PROMPT,
+    order: NOTIFICATION_PROMPT,
     matchTime: 10000,
     resetMatch: 'app',
     actionCdKey: 0,
@@ -337,7 +349,7 @@ const globalGroups: RawGlobalGroup[] = [
     key: 6,
     name: '青少年模式',
     enable: false,
-    order: utils.YOUTH_MODE,
+    order: YOUTH_MODE,
     actionMaximum: 2,
     matchTime: 10000,
     resetMatch: 'app',
@@ -385,7 +397,7 @@ const globalGroups: RawGlobalGroup[] = [
     name: '权限提示',
     desc: '! 该规则会自动拒绝 APP 一些权限申请弹窗提示，如果有影响请关闭',
     enable: false,
-    order: utils.YOUTH_MODE,
+    order: YOUTH_MODE,
     matchTime: 10000,
     resetMatch: 'app',
     actionCdKey: 0,
@@ -431,7 +443,7 @@ const globalGroups: RawGlobalGroup[] = [
     name: '定位提示',
     desc: '! 该规则会自动拒绝 APP 的位置权限申请弹窗提示，如果有影响请关闭',
     enable: false,
-    order: utils.LOCATION_PROMPT,
+    order: LOCATION_PROMPT,
     matchTime: 10000,
     resetMatch: 'app',
     actionCdKey: 0,
@@ -472,5 +484,4 @@ const globalGroups: RawGlobalGroup[] = [
     // 将 Set 转换为数组，并设置 enable 为 false
     apps: diabledAppIds.map((id) => ({ id, enable: false })),
   },
-];
-export default globalGroups;
+]);
