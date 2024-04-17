@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.cainiao.wireless',
   name: '菜鸟',
-  deprecatedKeys: [0, 3, 4, 5, 6, 7],
   groups: [
     {
       key: 1,

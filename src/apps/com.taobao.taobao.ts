@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.taobao.taobao',
   name: '淘宝',
-  deprecatedKeys: [11, 15, 17],
   groups: [
     {
       key: 0,

@@ -1,8 +1,7 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.zhaopin.social',
-  deprecatedKeys: [1, 4],
   name: '智联招聘',
   groups: [
     {

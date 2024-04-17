@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.twitter.android',
   name: 'X(推特)',
-  deprecatedKeys: [2, 3, 5],
   groups: [
     {
       key: 1,
