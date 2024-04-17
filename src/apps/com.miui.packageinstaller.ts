@@ -143,7 +143,7 @@ export default defineGkdApp({
         },
         {
           key: 1,
-          name: '点击【继续更新】',
+          name: '点击【继续更新】-2',
           activityIds: 'com.miui.packageInstaller.NewInstallerPrepareActivity',
           matches: '@[text="继续更新"] + [text="取消更新"]',
           snapshotUrls: [
