@@ -20,13 +20,14 @@ export default defineGkdApp({
         {
           key: 1,
           name: '点击右上角x按钮',
-          matches: '[id="com.coolapk.market:id/close_view"]',
+          matches: 'TextView + [vid="close_view"]',
           snapshotUrls: [
             'https://i.gkd.li/import/12707506',
             'https://i.gkd.li/import/12642094',
             'https://i.gkd.li/import/12642148',
             'https://i.gkd.li/import/12774771',
             'https://i.gkd.li/import/13257987',
+            'https://i.gkd.li/i/14996359', // 误触
           ],
         },
         {
