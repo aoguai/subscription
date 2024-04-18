@@ -62,6 +62,23 @@ export default defineGkdApp({
           matches: '@[clickable=true] >3 [text$="不感兴趣"]',
           snapshotUrls: 'https://i.gkd.li/import/13849689',
         },
+        {
+          key: 91,
+          preKeys: [90],
+          matches: '[vid="uninterest_reason"][index=0]',
+          snapshotUrls: [
+            'https://i.gkd.li/import/13849689',
+            'https://i.gkd.li/i/15024017',
+          ]
+        },
+        {
+          key: 92,
+          preKeys: [91],
+          matches: '[vid="confirm_uninterest"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/15024032',
+          ]
+        },
       ],
     },
     {
@@ -106,7 +123,7 @@ export default defineGkdApp({
         {
           key: 0,
           matches:
-            '@[name$=".ImageView"||name$=".Image"||text="×"][clickable=true] <n * > [text$="广告"||text="创作者小助手"||text^="知乎"][clickable=false][text.length<20]',
+            '@[text="×"||(name*=".Image"&&clickable=true)][visibleToUser=true] <n * > [text$="广告"||text="创作者小助手"||(text^="知乎"&&text!*="·")][clickable=false][text.length>2&&text.length<20]',
           snapshotUrls: [
             'https://i.gkd.li/import/14178980',
             'https://i.gkd.li/import/14206949',
@@ -117,6 +134,8 @@ export default defineGkdApp({
             'https://i.gkd.li/i/14548763',
             'https://i.gkd.li/i/14220104',
             'https://i.gkd.li/i/14421277',
+            'https://i.gkd.li/i/15024185',
+            'https://i.gkd.li/i/15024288',
           ],
         },
       ],
