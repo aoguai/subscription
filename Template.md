@@ -26,15 +26,13 @@
 
 **❗️ 此仓库仅接受与全局规则相关的维护或改进的 issues 或 PR 提交。**
 
-如果您需要任何额外的 APP 规则，您需要自行编写规则并将其添加到本地规则中使用。
+如果您需要任何额外的 APP 规则，您需要[自行编写规则](https://github.com/gkd-kit/subscription-template)并将其添加到本地规则中使用。
 
 如果您希望参与贡献此项目，请参阅 [CONTRIBUTING.md](./CONTRIBUTING.md)。
 
 ## 相关 ⭐️
 
-### 感谢原项目
-
-🌟 [gkd-kit/subscription](https://github.com/gkd-kit/subscription)
+此仓库 基于 [GKD 默认订阅规则](https://github.com/gkd-kit/subscription) 与 [GKD 订阅模板](https://github.com/gkd-kit/subscription-template) 构建
 
 ### 感谢原开发者们的贡献
 
