@@ -301,12 +301,16 @@ export default defineGkdApp({
       desc: '查看图片时自动点击原图',
       enable: false,
       quickFind: true,
-      activityIds: 'com.tencent.richframework.gallery.QQGalleryActivity',
+      activityIds: [
+        'com.tencent.richframework.gallery.QQGalleryActivity',
+        'com.tencent.mobileqq.richmediabrowser.AIOGalleryActivity',
+      ],
       rules: '[text^="查看原图"][checked=false]',
       snapshotUrls: [
         'https://i.gkd.li/import/12840632', // 点击原图前
         'https://i.gkd.li/import/12840633', // 点击原图后
         'https://i.gkd.li/i/14757735',
+        'https://i.gkd.li/i/15024319',
       ],
     },
     {
