@@ -41,21 +41,33 @@ export default defineGkdApp({
       key: 3,
       name: '更新提示',
       enable: false,
+      quickFind: true,
+      matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
-      quickFind: true,
-      activityIds: [
-        'com.alipay.mobile.alipassapp.alkb.kb.ALPMainPage63',
-        'com.eg.android.AlipayGphone.AlipayLogin',
-        'com.alipay.mobile.about.ui.AboutAlipayActivity',
-      ],
       rules: [
         {
           key: 0,
-          name: '卡片-【x】',
+          matches: '[text="立即更新" || text="马上体验"] <n * > [text*="稍后"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13327095',
+            'https://i.gkd.li/i/15010554',
+          ],
+        },
+        {
+          key: 1,
+          matches:
+            '[text="版本更新"||text^="Version"] - [id="com.alipay.mobile.antui:id/btn_close"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13490805',
+            'https://i.gkd.li/i/13580594',
+          ],
+        },
+        {
+          key: 2,
           matches:
             '[text="立即升级最新版支付宝客户端"] < LinearLayout + [id="com.alipay.mobile.advertisement:id/announcementview_righticon"]',
-          snapshotUrls: 'https://i.gkd.li/import/13490797',
+          snapshotUrls: 'https://i.gkd.li/i/13490797',
         },
       ],
     },

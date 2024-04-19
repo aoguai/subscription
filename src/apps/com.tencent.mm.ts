@@ -454,18 +454,16 @@ export default defineGkdApp({
       key: 19,
       name: '功能类-订阅号-展开更早的消息',
       enable: false,
-      activityIds:
-        'com.tencent.mm.plugin.brandservice.ui.timeline.BizTimeLineUI',
+      activityIds: 'com.tencent.mm.plugin.brandservice.ui.timeline.BizTimeLineUI',
       rules: [
         {
           key: 0,
-          name: '8.0.44以下',
-          matches: '[text="展开更早的消息"] + ImageView',
+          quickFind: true,
+          matches: '@[clickable=true] > [text="展开更早的消息"]',
           snapshotUrls: 'https://i.gkd.li/import/13790550',
         },
         {
           key: 1,
-          name: '8.0.44',
           matches: '[desc="展开更早的消息"]',
           snapshotUrls: 'https://i.gkd.li/import/13790949',
         },
