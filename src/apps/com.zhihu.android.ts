@@ -69,15 +69,13 @@ export default defineGkdApp({
           snapshotUrls: [
             'https://i.gkd.li/import/13849689',
             'https://i.gkd.li/i/15024017',
-          ]
+          ],
         },
         {
           key: 92,
           preKeys: [91],
           matches: '[vid="confirm_uninterest"]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/15024032',
-          ]
+          snapshotUrls: ['https://i.gkd.li/i/15024032'],
         },
       ],
     },

@@ -454,7 +454,8 @@ export default defineGkdApp({
       key: 19,
       name: '功能类-订阅号-展开更早的消息',
       enable: false,
-      activityIds: 'com.tencent.mm.plugin.brandservice.ui.timeline.BizTimeLineUI',
+      activityIds:
+        'com.tencent.mm.plugin.brandservice.ui.timeline.BizTimeLineUI',
       rules: [
         {
           key: 0,
