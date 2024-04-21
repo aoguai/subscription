@@ -9,9 +9,6 @@ export default defineGkdApp({
       name: '分段广告-首页文档列表广告',
       enable: false,
       quickFind: true,
-      exampleUrls: [
-        'https://github.com/gkd-kit/subscription/assets/38517192/57787554-0443-4bc0-9f29-1759aae07b9b',
-      ],
       activityIds: [
         'cn.wps.moffice.main.StartPublicActivity',
         'cn.wps.moffice.documentmanager.PreStartActivity',
@@ -20,14 +17,15 @@ export default defineGkdApp({
       rules: [
         {
           key: 0,
-          matches: '[id$="/nativeclose"]',
+          matches: '[id="com.mopub.ad.xiaomi:id/nativeclose"]',
           snapshotUrls: [
             'https://i.gkd.li/import/12505350',
             'https://i.gkd.li/import/12505286',
           ],
         },
         {
-          preKeys: 0,
+          preKeys: [0],
+          key: 99,
           matches: '[text="不喜欢此广告"]',
           snapshotUrls: [
             'https://i.gkd.li/import/12505365',
@@ -68,6 +66,7 @@ export default defineGkdApp({
       key: 3,
       name: '更新提示',
       enable: false,
+      quickFind: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -75,8 +74,7 @@ export default defineGkdApp({
         'com.android.packageinstaller.permission.ui.GrantPermissionsActivity',
         'cn.wps.moffice.main.local.HomeRootActivity',
       ],
-      rules:
-        '[id="cn.wps.moffice_eng:id/close_new_func_guide_dialog_imageView"]',
+      rules: '[id="cn.wps.moffice_eng:id/close_new_func_guide_dialog_imageView"]',
       snapshotUrls: 'https://i.gkd.li/import/12882371',
     },
     {
@@ -84,6 +82,7 @@ export default defineGkdApp({
       name: '全屏广告-开启WPS云服务',
       desc: '自动点击不开启',
       enable: false,
+      quickFind: true,
       activityIds: [
         'cn.wps.moffice.main.cloud.roaming.login.core.QingLoginActivity',
         'com.tencent.mm.plugin.webview.ui.tools.SDKOAuthUI',
@@ -91,8 +90,7 @@ export default defineGkdApp({
       ],
       rules: [
         {
-          matches:
-            '[id="cn.wps.moffice_eng:id/cloud_protocol_dialog_not_start_btn"]',
+          matches: '[id="cn.wps.moffice_eng:id/cloud_protocol_dialog_not_start_btn"]',
           snapshotUrls: [
             'https://i.gkd.li/import/12882536',
             'https://i.gkd.li/import/12882610',
