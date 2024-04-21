@@ -6,16 +6,23 @@ export default defineGkdApp({
   groups: [
     {
       key: 0,
-      name: '全屏广告-首页-班课列表广告',
+      name: '全屏广告-班课列表弹窗广告',
       enable: false,
-      activityIds: ['com.mosoink.teach.MainMenuActivity'],
+      activityIds: [
+        'com.mosoink.teach.MainMenuActivity',
+        'com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity',
+      ],
       rules: [
         {
+          key: 1,
           matches:
             'TextView - View <1 FrameLayout - FrameLayout >1 FrameLayout > ImageView < FrameLayout',
-          exampleUrls:
-            'https://m.gkd.li/64072399/69bb91ee-5367-4819-94d7-90e357dd9d3c',
-          snapshotUrls: 'https://i.gkd.li/import/13784406', //极少触发
+          snapshotUrls: 'https://i.gkd.li/import/13784406',
+        },
+        {
+          key: 2,
+          matches: '@Image[text.length=0] < View <n * > [text="反馈"]',
+          snapshotUrls: 'https://i.gkd.li/i/15051392',
         },
       ],
     },
