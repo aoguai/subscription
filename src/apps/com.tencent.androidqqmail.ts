@@ -49,7 +49,7 @@ export default defineGkdApp({
           snapshotUrls: [
             'https://i.gkd.li/import/12775862',
             'https://i.gkd.li/i/15051479',
-          ]
+          ],
         },
       ],
     },
