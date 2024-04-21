@@ -74,7 +74,8 @@ export default defineGkdApp({
         'com.android.packageinstaller.permission.ui.GrantPermissionsActivity',
         'cn.wps.moffice.main.local.HomeRootActivity',
       ],
-      rules: '[id="cn.wps.moffice_eng:id/close_new_func_guide_dialog_imageView"]',
+      rules:
+        '[id="cn.wps.moffice_eng:id/close_new_func_guide_dialog_imageView"]',
       snapshotUrls: 'https://i.gkd.li/import/12882371',
     },
     {
@@ -90,7 +91,8 @@ export default defineGkdApp({
       ],
       rules: [
         {
-          matches: '[id="cn.wps.moffice_eng:id/cloud_protocol_dialog_not_start_btn"]',
+          matches:
+            '[id="cn.wps.moffice_eng:id/cloud_protocol_dialog_not_start_btn"]',
           snapshotUrls: [
             'https://i.gkd.li/import/12882536',
             'https://i.gkd.li/import/12882610',
