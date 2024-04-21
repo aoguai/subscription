@@ -146,7 +146,7 @@ export default defineGkdApp({
     },
     {
       key: 6,
-      name: '局部广告-首页底部横幅广告',
+      name: '局部广告-底部横幅广告',
       activityIds: 'com.jingdong.app.mall.MainFrameActivity',
       rules: [
         {
@@ -166,6 +166,13 @@ export default defineGkdApp({
           matches:
             '@View[clickable=true][longClickable=false] -n ImageView <n RelativeLayout',
           snapshotUrls: 'https://i.gkd.li/import/14163014',
+        },
+        {
+          key: 2,
+          name: '类型3',
+          quickFind: true,
+          matches: '@ViewGroup[clickable=true] - * > [text="去续费"]',
+          snapshotUrls: 'https://i.gkd.li/i/15047238',
         },
       ],
     },
