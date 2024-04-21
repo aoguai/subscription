@@ -184,6 +184,33 @@ export default defineGkdApp({
       ],
     },
     {
+      key: 4,
+      name: '更新提示',
+      enable: false,
+      quickFind: true,
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      actionMaximumKey: 0,
+      rules: [
+        {
+          key: 0,
+          matches: '@[desc="关闭"] - * > [text="发现新版本"]',
+          snapshotUrls: 'https://i.gkd.li/i/13386719',
+        },
+        {
+          key: 1,
+          matches: '@[text="稍后处理"] +2 [text="立即升级"]',
+          snapshotUrls: 'https://i.gkd.li/i/14724108',
+        },
+        {
+          key: 3,
+          matches: '@[desc="关闭"] - * > [text="QQ测试版"]',
+          snapshotUrls: 'https://i.gkd.li/i/13526551',
+        },
+      ],
+    },
+    {
       key: 5,
       name: '分段广告-好友热播',
       desc: '好友动态中的好友热播，自动选择“减少好友热播” - 默认关闭',
@@ -214,6 +241,22 @@ export default defineGkdApp({
             'https://i.gkd.li/import/12894375', // com.tencent.mobileqq.activity.SplashActivity
             'https://i.gkd.li/i/14822576',
           ],
+        },
+      ],
+    },
+    {
+      key: 6,
+      name: '通知提示',
+      enable: false,
+      quickFind: true,
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
+        {
+          key: 0,
+          matches: '@[desc*="关闭"] - * > [text="开启消息推送"]',
+          snapshotUrls: 'https://i.gkd.li/i/15051308',
         },
       ],
     },
