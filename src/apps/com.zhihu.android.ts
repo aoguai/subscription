@@ -121,7 +121,7 @@ export default defineGkdApp({
         {
           key: 0,
           matches:
-            '@[text="×"||(name*=".Image"&&clickable=true)][visibleToUser=true] <n * > [text$="广告"||text="创作者小助手"||(text^="知乎"&&text!*="·")][clickable=false][text.length>2&&text.length<20]',
+            '@[text="×"||(name*=".Image"&&clickable=true)][visibleToUser=true] <n *[vid!="msg_view"] > [text$="广告"||text="创作者小助手"||(text^="知乎"&&text!*="·")][clickable=false][text.length>2&&text.length<20]',
           snapshotUrls: [
             'https://i.gkd.li/import/14178980',
             'https://i.gkd.li/import/14206949',
