@@ -32,11 +32,7 @@
 
 ## 相关 ⭐️
 
-此仓库 基于 [GKD 默认订阅规则](https://github.com/gkd-kit/subscription) 与 [GKD 订阅模板](https://github.com/gkd-kit/subscription-template) 构建
-
-### 感谢原开发者们的贡献
-
-![img](https://contrib.rocks/image?repo=gkd-kit/subscription&_v=185)
+此仓库 基于 [GKD 默认订阅规则](https://github.com/gkd-kit/subscription) 与 [GKD 订阅模板](https://github.com/gkd-kit/subscription-template) 构建，感谢原开发者们的贡献。
 
 ### Wiki
 
