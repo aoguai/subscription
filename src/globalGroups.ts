@@ -80,14 +80,8 @@ export default defineGkdGlobalGroups([
     actionMaximumKey: 0,
     rules: [
       {
-        key: -1,
-        matches: `[childCount<7] > ${COMMON_PREFIX}[(text.length<10&&(text*="跳过"||text*="跳過"||text~="(?is).*skip.*"))||id~="(?is).*tt_splash_skip_btn"||vid~="(?is).*skip.*"||(vid~="(?is).*count.*"&&vid~="(?is).*down.*"&&vid!~="(?is).*load.*"&&vid!~="(?is).*hour.*"&&vid!~="(?is).*minute.*"&&vid!~="(?is).*add.*"&&vid!~="(?is).*ead.*")||desc*="跳过"||desc~="(?is).*skip.*"]`,
-      },
-      {
         key: 0,
-        quickFind: true,
-        matches:
-          '[text*="跳过"][text.length<10][visibleToUser=true][height>0&&width>0]',
+        matches: `[childCount<7] > ${COMMON_PREFIX}[(text.length<10&&(text*="跳过"||text*="跳過"||text~="(?is).*skip.*"))||id~="(?is).*tt_splash_skip_btn"||vid~="(?is).*skip.*"||(vid~="(?is).*count.*"&&vid~="(?is).*down.*"&&vid!~="(?is).*load.*"&&vid!~="(?is).*hour.*"&&vid!~="(?is).*minute.*"&&vid!~="(?is).*add.*"&&vid!~="(?is).*ead.*")||desc*="跳过"||desc~="(?is).*skip.*"]`,
       },
       {
         key: 1,
