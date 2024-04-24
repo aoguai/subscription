@@ -36,7 +36,8 @@ export default defineGkdApp({
         {
           key: 0,
           name: '首页广告',
-          matches: 'RelativeLayout >n * > [desc^="关闭浮层"][clickable=true][visibleToUser=true]',
+          matches:
+            'RelativeLayout >n * > [desc^="关闭浮层"][clickable=true][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/import/13165659',
             'https://i.gkd.li/import/12837870',
