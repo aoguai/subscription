@@ -30,18 +30,20 @@ export default defineGkdApp({
     },
     {
       key: 3,
-      name: '局部广告-右侧浮层广告',
+      name: '局部广告-悬浮广告',
       activityIds: 'com.jingdong.app.mall.MainFrameActivity',
       rules: [
         {
           key: 0,
           name: '首页广告',
-          matches: 'RelativeLayout >n * > [desc^="关闭浮层"]',
+          matches:
+            'RelativeLayout >n * > [desc^="关闭浮层"][clickable=true][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/import/13165659',
             'https://i.gkd.li/import/12837870',
             'https://i.gkd.li/import/13072091',
             'https://i.gkd.li/import/12837870',
+            'https://i.gkd.li/i/15077913', // 防止误触
           ],
         },
         {
@@ -146,7 +148,7 @@ export default defineGkdApp({
     },
     {
       key: 6,
-      name: '局部广告-首页底部横幅广告',
+      name: '局部广告-底部横幅广告',
       activityIds: 'com.jingdong.app.mall.MainFrameActivity',
       rules: [
         {
@@ -166,6 +168,13 @@ export default defineGkdApp({
           matches:
             '@View[clickable=true][longClickable=false] -n ImageView <n RelativeLayout',
           snapshotUrls: 'https://i.gkd.li/import/14163014',
+        },
+        {
+          key: 2,
+          name: '类型3',
+          quickFind: true,
+          matches: '@ViewGroup[clickable=true] - * > [text="去续费"]',
+          snapshotUrls: 'https://i.gkd.li/i/15047238',
         },
       ],
     },

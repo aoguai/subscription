@@ -28,12 +28,6 @@ export default defineGkdApp({
           snapshotUrls: 'https://i.gkd.li/import/12842757',
         },
         {
-          name: '英文版邮箱广告-点击Not interested',
-          preKeys: [0],
-          matches: '@FrameLayout > TextView[text="Not interested"]',
-          snapshotUrls: 'https://i.gkd.li/import/12842775',
-        },
-        {
           key: 1,
           name: '点击[广告]',
           matches:
@@ -41,12 +35,21 @@ export default defineGkdApp({
           snapshotUrls: 'https://i.gkd.li/import/12775857',
         },
         {
+          name: '英文版邮箱广告-点击Not interested',
+          key: 8,
+          preKeys: [0],
+          matches: '@FrameLayout > TextView[text="Not interested"]',
+          snapshotUrls: 'https://i.gkd.li/import/12842775',
+        },
+        {
           preKeys: [0, 1], // https://github.com/gkd-kit/subscription/issues/1776
           key: 9,
           name: '点击[不感兴趣]',
-          matches:
-            '[text="赞助商提供的广告"] < FrameLayout + @FrameLayout > [text="不感兴趣"]',
-          snapshotUrls: 'https://i.gkd.li/import/12775862',
+          matches: '[text="赞助商提供的广告"] < * < * >2 [text="不感兴趣"]',
+          snapshotUrls: [
+            'https://i.gkd.li/import/12775862',
+            'https://i.gkd.li/i/15051479',
+          ],
         },
       ],
     },
