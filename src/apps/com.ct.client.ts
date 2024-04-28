@@ -35,7 +35,7 @@ export default defineGkdApp({
         {
           matches: 'ImageView[id="com.ct.client:id/ivFloatClose"]',
           snapshotUrls: [
-            'https://i.gkd.li/import/13043345'
+            'https://i.gkd.li/import/13043345',
             'https://i.gkd.li/i/15137220',
           ],
         },

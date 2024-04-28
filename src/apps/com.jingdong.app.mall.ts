@@ -175,7 +175,7 @@ export default defineGkdApp({
           snapshotUrls: 'https://i.gkd.li/i/15047238',
         },
         {
-          key: 2,
+          key: 3,
           matches:
             '[desc="吸顶楼层"] > [desc="关闭按钮"][clickable=true][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/15112953',
