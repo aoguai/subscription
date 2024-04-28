@@ -96,6 +96,7 @@ export default defineGkdApp({
         'com.tencent.mm.plugin.webview.ui.tools.SDKOAuthUI',
         'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
         'com.tencent.mm.ui.LauncherUI',
+        'com.tencent.mm.plugin.base.stub.UIEntryStub',
       ],
       rules: [
         {
@@ -110,9 +111,11 @@ export default defineGkdApp({
         {
           key: 1,
           name: '浏览器扫码登录',
-          matches: 'Button[text="拒绝"] - Button[text="允许"]',
+          matches: ['[text^="获取你的"]', '[text="允许"]'],
           snapshotUrls: [
             'https://i.gkd.li/import/13065462', //com.tencent.mm.ui.LauncherUI
+            'https://i.gkd.li/import/12663602',
+            'https://i.gkd.li/import/14164920',
           ],
         },
         {
@@ -160,25 +163,6 @@ export default defineGkdApp({
             'https://i.gkd.li/import/12506201',
           ],
         },
-      ],
-    },
-    {
-      key: 3,
-      name: '功能类-第三方 APP 申请使用授权弹窗',
-      desc: '由于此界面可以额外新建昵称头像,默认不启用',
-      enable: false,
-      quickFind: true,
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'activity',
-      activityIds: [
-        'com.tencent.mm.plugin.base.stub.UIEntryStub',
-        'com.tencent.mm.plugin.webview.ui.tools.SDKOAuthUI',
-      ],
-      rules: 'Button[text="拒绝"] - Button[text="允许"]',
-      snapshotUrls: [
-        'https://i.gkd.li/import/12663602',
-        'https://i.gkd.li/import/14164920',
       ],
     },
     {
