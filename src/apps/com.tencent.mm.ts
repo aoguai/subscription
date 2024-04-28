@@ -61,11 +61,12 @@ export default defineGkdApp({
           key: 2,
           name: '选择关闭该广告的原因->关闭该广告',
           matches:
-            'TextView[(text^="关闭"&&text$="广告")||(text^="關閉"&&text$="廣告")||text~="Close.*"][clickable=true]',
+            'TextView[(text^="关闭"&&text$="广告")||(text^="關閉"&&text$="廣告")||text~="(?is).*Close.*"][clickable=true]',
           snapshotUrls: [
             'https://i.gkd.li/import/12907642',
             'https://i.gkd.li/import/13926578',
             'https://i.gkd.li/i/14207480',
+            'https://i.gkd.li/i/15137016',
           ],
         },
         // 情况3 - 点击[确认]关闭该广告
