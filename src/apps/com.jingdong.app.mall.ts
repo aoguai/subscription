@@ -149,12 +149,11 @@ export default defineGkdApp({
     },
     {
       key: 6,
-      name: '局部广告-底部横幅广告',
+      name: '局部广告-横幅广告',
       activityIds: 'com.jingdong.app.mall.MainFrameActivity',
       rules: [
         {
           key: 0,
-          name: '类型1',
           matches:
             'ImageView < FrameLayout - FrameLayout > ImageView[desc="关闭"]',
           snapshotUrls: [
@@ -165,17 +164,21 @@ export default defineGkdApp({
         },
         {
           key: 1,
-          name: '类型2',
           matches:
-            '@View[clickable=true][longClickable=false] -n ImageView <n RelativeLayout',
+            '@View[desc.length=null][clickable=true][longClickable=false] -n ImageView <n RelativeLayout',
           snapshotUrls: 'https://i.gkd.li/import/14163014',
         },
         {
           key: 2,
-          name: '类型3',
           quickFind: true,
           matches: '@ViewGroup[clickable=true] - * > [text="去续费"]',
           snapshotUrls: 'https://i.gkd.li/i/15047238',
+        },
+        {
+          key: 2,
+          matches:
+            '[desc="吸顶楼层"] > [desc="关闭按钮"][clickable=true][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/15112953',
         },
       ],
     },
