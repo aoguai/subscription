@@ -386,17 +386,21 @@ export default defineGkdApp({
       name: '全屏广告-QQ小程序开屏广告',
       enable: false,
       quickFind: true,
+      actionMaximum: 1,
       activityIds: [
         'com.tencent.mobileqq.mini.appbrand.ui.AppBrandUI',
         'com.tencent.mobileqq.activity.miniaio.MiniChatActivity',
       ],
       rules: [
         {
-          matches:
-            'TextView[text = "广告"] < RelativeLayout + RelativeLayout TextView[text = "跳过"]',
+          matches: [
+            '[text="广告"][visibleToUser=true]',
+            '[text="跳过"][visibleToUser=true]',
+          ],
           snapshotUrls: [
             'https://i.gkd.li/import/12877215',
             'https://i.gkd.li/import/12919195',
+            'https://i.gkd.li/i/15130235',
           ],
         },
       ],
@@ -544,7 +548,10 @@ export default defineGkdApp({
       activityIds: 'com.tencent.mobileqq.activity.QQBrowserActivity',
       rules: [
         {
-          matches: 'RelativeLayout[childCount=2] > [text="关闭"]',
+          matches: [
+            'TextView[text="入群申请中"][visibleToUser=true]',
+            'TextView[text="关闭"][visibleToUser=true]',
+          ],
           snapshotUrls: 'https://i.gkd.li/import/14235163',
         },
       ],
