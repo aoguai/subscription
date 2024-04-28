@@ -141,7 +141,12 @@ export default defineGkdApp({
           name: '点击正下方x关闭2',
           matches:
             '[text$="弹窗"] >3 Image[clickable=true][index=2][text!=null]',
-          snapshotUrls: 'https://i.gkd.li/i/14630806',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14630806',
+            'https://i.gkd.li/i/14630806',
+            'https://i.gkd.li/i/15119439',
+            'https://i.gkd.li/i/15119451',
+          ]
         },
       ],
     },
