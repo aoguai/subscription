@@ -68,9 +68,7 @@ export default defineGkdApp({
             '[text$="释放存储空间"][id$="id/message"]',
             '[text="退出"]',
           ],
-          snapshotUrls: [
-            'https://i.gkd.li/i/15137908',
-          ],
+          snapshotUrls: ['https://i.gkd.li/i/15137908'],
         },
       ],
     },
