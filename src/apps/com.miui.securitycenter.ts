@@ -43,21 +43,32 @@ export default defineGkdApp({
     },
     {
       key: 12,
-      name: '功能类-忽略体检分数',
-      desc: '退出时忽略体检优化分数',
+      name: '功能类-忽略体检优化提示',
+      desc: '退出时忽略[体检优化分数]/忽略[存储空间预警]',
       enable: false,
       quickFind: true,
       activityIds: 'com.miui.securityscan.MainActivity',
       rules: [
         {
+          key: 1,
+          name: '忽略优化分数',
           matches: [
-            '[text="手机体检分数不足75分，是否立即优化？"][id$="id/message"]',
+            '[text^="手机体检分数不足"][id$="id/message"]',
             '[text="退出"]',
           ],
           snapshotUrls: [
             'https://i.gkd.li/import/13474504', // app版本v5
             'https://i.gkd.li/import/13476770', // app版本v8
           ],
+        },
+        {
+          key: 2,
+          name: '忽略存储空间预警',
+          matches: [
+            '[text$="释放存储空间"][id$="id/message"]',
+            '[text="退出"]',
+          ],
+          snapshotUrls: ['https://i.gkd.li/i/15137908'],
         },
       ],
     },

@@ -61,11 +61,12 @@ export default defineGkdApp({
           key: 2,
           name: '选择关闭该广告的原因->关闭该广告',
           matches:
-            'TextView[(text^="关闭"&&text$="广告")||(text^="關閉"&&text$="廣告")||text~="Close.*"][clickable=true]',
+            'TextView[(text^="关闭"&&text$="广告")||(text^="關閉"&&text$="廣告")||text~="(?is).*Close.*"][clickable=true]',
           snapshotUrls: [
             'https://i.gkd.li/import/12907642',
             'https://i.gkd.li/import/13926578',
             'https://i.gkd.li/i/14207480',
+            'https://i.gkd.li/i/15137016',
           ],
         },
         // 情况3 - 点击[确认]关闭该广告
@@ -96,6 +97,7 @@ export default defineGkdApp({
         'com.tencent.mm.plugin.webview.ui.tools.SDKOAuthUI',
         'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
         'com.tencent.mm.ui.LauncherUI',
+        'com.tencent.mm.plugin.base.stub.UIEntryStub',
       ],
       rules: [
         {
@@ -110,9 +112,11 @@ export default defineGkdApp({
         {
           key: 1,
           name: '浏览器扫码登录',
-          matches: 'Button[text="拒绝"] - Button[text="允许"]',
+          matches: ['[text^="获取你的"]', '[text="允许"]'],
           snapshotUrls: [
             'https://i.gkd.li/import/13065462', //com.tencent.mm.ui.LauncherUI
+            'https://i.gkd.li/import/12663602',
+            'https://i.gkd.li/import/14164920',
           ],
         },
         {
@@ -160,25 +164,6 @@ export default defineGkdApp({
             'https://i.gkd.li/import/12506201',
           ],
         },
-      ],
-    },
-    {
-      key: 3,
-      name: '功能类-第三方 APP 申请使用授权弹窗',
-      desc: '由于此界面可以额外新建昵称头像,默认不启用',
-      enable: false,
-      quickFind: true,
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'activity',
-      activityIds: [
-        'com.tencent.mm.plugin.base.stub.UIEntryStub',
-        'com.tencent.mm.plugin.webview.ui.tools.SDKOAuthUI',
-      ],
-      rules: 'Button[text="拒绝"] - Button[text="允许"]',
-      snapshotUrls: [
-        'https://i.gkd.li/import/12663602',
-        'https://i.gkd.li/import/14164920',
       ],
     },
     {
@@ -321,8 +306,6 @@ export default defineGkdApp({
       enable: false,
       quickFind: true,
       matchTime: 10000,
-      // actionMaximum: 1, // 经常需要点2次，首次点击过早大概率跳不过
-      // resetMatch: 'activity',
       activityIds: [
         'com.tencent.mm.plugin.appbrand.ui.AppBrandUI',
         'com.tencent.mm.plugin.appbrand.launching.AppBrandLaunchProxyUI',
@@ -331,8 +314,8 @@ export default defineGkdApp({
         {
           actionDelay: 800, // 过早点击首次大概率跳不过
           matches: [
-            'FrameLayout > TextView + FrameLayout > TextView[text="广告"]',
-            'FrameLayout > TextView + FrameLayout > TextView[text="跳过"]',
+            '[text="广告"][visibleToUser=true]',
+            '[text="跳过"][visibleToUser=true]',
           ],
           snapshotUrls: [
             'https://i.gkd.li/import/12701979',
@@ -342,6 +325,7 @@ export default defineGkdApp({
             'https://i.gkd.li/import/13306883',
             'https://i.gkd.li/import/12785246',
             'https://i.gkd.li/import/13407275',
+            'https://i.gkd.li/i/15108441',
           ],
         },
       ],

@@ -29,11 +29,15 @@ export default defineGkdApp({
           snapshotUrls: [
             'https://i.gkd.li/import/12819676',
             'https://i.gkd.li/import/12913735',
+            'https://i.gkd.li/i/15104434',
           ],
         },
         {
           matches: 'ImageView[id="com.ct.client:id/ivFloatClose"]',
-          snapshotUrls: ['https://i.gkd.li/import/13043345'],
+          snapshotUrls: [
+            'https://i.gkd.li/import/13043345',
+            'https://i.gkd.li/i/15137220',
+          ],
         },
       ],
     },

@@ -150,7 +150,7 @@ export default defineGkdApp({
         {
           key: 0,
           name: '发现页面-右侧年卡折扣悬浮窗',
-          matches: '@[vid="activity_close"] + * > [vid="activity_img"]',
+          matches: ['[vid="activity_img"]', '[vid="activity_close"]'],
           snapshotUrls: 'https://i.gkd.li/import/14296251',
         },
         {

@@ -13,10 +13,11 @@ export default defineGkdApp({
           key: 0,
           name: '参与调研',
           matches:
-            'FrameLayout + RelativeLayout > RelativeLayout > ImageView + ImageView[desc!="返回"][visibleToUser=true]',
+            'FrameLayout + RelativeLayout > RelativeLayout > ImageView[visibleToUser=true] + ImageView[desc!="返回"][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/import/12642270',
             'https://i.gkd.li/import/12774910', // 使用 [desc!="返回"] 进行限定，防止在进入商品详情页时点击返回按钮
+            'https://i.gkd.li/i/15110548', // 避免误触
           ],
         },
         {
@@ -148,12 +149,11 @@ export default defineGkdApp({
     },
     {
       key: 6,
-      name: '局部广告-底部横幅广告',
+      name: '局部广告-横幅广告',
       activityIds: 'com.jingdong.app.mall.MainFrameActivity',
       rules: [
         {
           key: 0,
-          name: '类型1',
           matches:
             'ImageView < FrameLayout - FrameLayout > ImageView[desc="关闭"]',
           snapshotUrls: [
@@ -164,17 +164,21 @@ export default defineGkdApp({
         },
         {
           key: 1,
-          name: '类型2',
           matches:
-            '@View[clickable=true][longClickable=false] -n ImageView <n RelativeLayout',
+            '@View[desc.length=null][clickable=true][longClickable=false] -n ImageView <n RelativeLayout',
           snapshotUrls: 'https://i.gkd.li/import/14163014',
         },
         {
           key: 2,
-          name: '类型3',
           quickFind: true,
           matches: '@ViewGroup[clickable=true] - * > [text="去续费"]',
           snapshotUrls: 'https://i.gkd.li/i/15047238',
+        },
+        {
+          key: 3,
+          matches:
+            '[desc="吸顶楼层"] > [desc="关闭按钮"][clickable=true][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/15112953',
         },
       ],
     },

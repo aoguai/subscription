@@ -182,6 +182,15 @@ export default defineGkdApp({
             'RelativeLayout >5 ViewGroup[childCount=6] > ViewGroup[index=2][clickable=true]',
           snapshotUrls: 'https://i.gkd.li/import/14207286',
         },
+        {
+          key: 5,
+          quickFind: true,
+          activityIds:
+            'com.tencent.mobileqq.activity.QPublicTransFragmentActivity',
+          matches:
+            'ViewGroup[childCount=6] > @ViewGroup[index=2][clickable=true][visibleToUser=true] <<n [id="android:id/content"]',
+          snapshotUrls: 'https://i.gkd.li/i/15136939',
+        },
       ],
     },
     {
@@ -386,17 +395,21 @@ export default defineGkdApp({
       name: '全屏广告-QQ小程序开屏广告',
       enable: false,
       quickFind: true,
+      actionMaximum: 1,
       activityIds: [
         'com.tencent.mobileqq.mini.appbrand.ui.AppBrandUI',
         'com.tencent.mobileqq.activity.miniaio.MiniChatActivity',
       ],
       rules: [
         {
-          matches:
-            'TextView[text = "广告"] < RelativeLayout + RelativeLayout TextView[text = "跳过"]',
+          matches: [
+            '[text="广告"][visibleToUser=true]',
+            '[text="跳过"][visibleToUser=true]',
+          ],
           snapshotUrls: [
             'https://i.gkd.li/import/12877215',
             'https://i.gkd.li/import/12919195',
+            'https://i.gkd.li/i/15130235',
           ],
         },
       ],
@@ -544,8 +557,35 @@ export default defineGkdApp({
       activityIds: 'com.tencent.mobileqq.activity.QQBrowserActivity',
       rules: [
         {
-          matches: 'RelativeLayout[childCount=2] > [text="关闭"]',
+          matches: [
+            'TextView[text="入群申请中"][visibleToUser=true]',
+            'TextView[text="关闭"][visibleToUser=true]',
+          ],
           snapshotUrls: 'https://i.gkd.li/import/14235163',
+        },
+      ],
+    },
+    {
+      key: 26,
+      name: '全屏广告-个人主页广告',
+      desc: '点击关闭',
+      rules: [
+        {
+          key: 0,
+          name: '迷你窝弹窗',
+          quickFind: true,
+          action: 'back',
+          activityIds:
+            'com.tencent.mobileqq.profilecard.activity.FriendProfileCardActivity',
+          matches: '[text="开启迷你窝"]',
+          snapshotUrls: 'https://i.gkd.li/i/14188980',
+        },
+        {
+          key: 1,
+          name: '个性装扮弹窗',
+          activityIds: 'cooperation.vip.ad.UserLeadingActivity',
+          matches: '[desc="关闭"][visibleToUser=true]', // 右侧关闭按钮无效
+          snapshotUrls: 'https://i.gkd.li/i/15137056',
         },
       ],
     },
