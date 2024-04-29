@@ -139,6 +139,7 @@ export default defineGkdApp({
         {
           key: 2,
           name: '点击正下方x关闭2',
+          forcedTime: 5000,
           matches:
             '[text$="弹窗"] >3 Image[clickable=true][index=2][text!=null]',
           snapshotUrls: [
