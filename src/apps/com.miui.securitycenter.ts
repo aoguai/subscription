@@ -78,20 +78,30 @@ export default defineGkdApp({
       desc: '勾选[我已知晓可能存在的风险]-10s后点击[确定]',
       enable: false,
       quickFind: true,
-      activityIds:
+      activityIds: [
         'com.miui.permcenter.privacymanager.SpecialPermissionInterceptActivity',
+        'com.miui.permcenter.privacymanager.DeviceManagerApplyActivity',
+      ],
       rules: [
         {
           key: 0,
-          matches:
-            '@[checked=false] + [text="我已知晓可能存在的风险，并自愿承担可能导致的后果"]',
-          snapshotUrls: 'https://i.gkd.li/i/14965657',
+          matches: [
+            '[text="我已知晓可能存在的风险，并自愿承担可能导致的后果"]',
+            '@[vid="check_box"][checked=false]',
+          ],
+          snapshotUrls: [
+            'https://i.gkd.li/i/14965657',
+            'https://i.gkd.li/i/15242826',
+          ],
         },
         {
           preKeys: [0],
           key: 1,
           matches: '[text="确定"]',
-          snapshotUrls: 'https://i.gkd.li/i/14965656',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14965656',
+            'https://i.gkd.li/i/15242825',
+          ],
         },
       ],
     },
