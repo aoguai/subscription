@@ -141,9 +141,11 @@ export default defineGkdApp({
           key: 1,
           preKeys: [0],
           name: '点击[对该内容不感兴趣]',
-          matches:
-            '@RelativeLayout[clickable=true] >2 [text="对该内容不感兴趣"]',
-          snapshotUrls: 'https://i.gkd.li/i/14546047',
+          matches: '@RelativeLayout[clickable=true] >2 [text$="内容不感兴趣"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14546047',
+            'https://i.gkd.li/i/15209602',
+          ],
         },
       ],
     },

@@ -20,7 +20,7 @@ export default defineGkdApp({
         {
           key: 1,
           name: '点击右上角x按钮',
-          matches: 'TextView + [vid="close_view"]',
+          matches: 'TextView + [vid="close_view"][childCount=0]',
           snapshotUrls: [
             'https://i.gkd.li/import/12707506',
             'https://i.gkd.li/import/12642094',
@@ -28,6 +28,7 @@ export default defineGkdApp({
             'https://i.gkd.li/import/12774771',
             'https://i.gkd.li/import/13257987',
             'https://i.gkd.li/i/14996359', // 误触
+            'https://i.gkd.li/i/15259305', // 误触
           ],
         },
         {
