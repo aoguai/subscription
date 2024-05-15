@@ -49,7 +49,8 @@ export default defineGkdApp({
         {
           key: 0,
           name: '弹窗广告',
-          activityIds: 'com.tencent.qqmusic.activity.TranslucentWebViewActivity',
+          activityIds:
+            'com.tencent.qqmusic.activity.TranslucentWebViewActivity',
           forcedTime: 5000,
           matches: 'View[id="js_close_btn"][desc="关闭"]',
           snapshotUrls: [
