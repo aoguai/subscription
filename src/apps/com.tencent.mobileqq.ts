@@ -513,8 +513,8 @@ export default defineGkdApp({
     },
     {
       key: 24,
-      name: '功能类-自动抢红包',
-      desc: '自己发的红包、专属红包、口令红包、私聊红包不抢',
+      name: '功能类-自动领红包',
+      desc: '自己发的红包、专属红包、口令红包、私聊红包不领',
       enable: false,
       activityIds: [
         'com.tencent.mobileqq.activity.SplashActivity',
@@ -524,7 +524,7 @@ export default defineGkdApp({
         {
           key: 0,
           matches:
-            'ImageView <<2 FrameLayout +2 * >3 TextView[text*="红包"] - @ViewGroup[childCount=5] > TextView[text!="已领取"]',
+            'ImageView < * < FrameLayout +2 * >3 TextView[text*="红包"] - @ViewGroup[childCount=5] > TextView[text!="已领取"]',
           exampleUrls:
             'https://m.gkd.li/57941037/7a933a7f-dc5a-4eb7-8a6f-fe3cc4e8fb5e',
           snapshotUrls: 'https://i.gkd.li/import/14221309',

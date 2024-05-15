@@ -121,7 +121,7 @@ export default defineGkdApp({
         {
           key: 0,
           matches:
-            '@[text="×"||(name*=".Image"&&clickable=true)][index!=0][visibleToUser=true] <n [vid!="msg_view"] > [name!*="WebView"][text$="热度"||text$="广告"||text="创作者小助手"||(text^="知乎"&&text!*="·")][clickable=false][text.length>2&&text.length<20]',
+            '@[text="×"||(name*=".Image"&&clickable=true)][index!=0][visibleToUser=true] <n [vid!="msg_view"] > [name!*="WebView"][(text$="热度"||text$="广告"||text="创作者小助手"||(text^="知乎"&&text!*="·"))||(text="查看详情")][text.length>2&&text.length<20]',
           snapshotUrls: [
             'https://i.gkd.li/import/14178980',
             'https://i.gkd.li/import/14206949',
@@ -134,6 +134,8 @@ export default defineGkdApp({
             'https://i.gkd.li/i/14421277',
             'https://i.gkd.li/i/15024185',
             'https://i.gkd.li/i/15024288',
+            'https://i.gkd.li/i/15282584',
+            'https://i.gkd.li/i/15285359',
           ],
         },
       ],

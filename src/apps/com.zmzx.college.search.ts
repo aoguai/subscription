@@ -8,18 +8,21 @@ export default defineGkdApp({
       key: 2,
       name: '全屏广告',
       enable: false,
-      quickFind: true,
+      activityIds: [
+        'com.zmzx.college.search.activity.main.activity.MainActivity',
+        'com.zmzx.college.search.activity.questionsearch.camera.activity.PicSearchResultActivity',
+        'com.zmzx.college.search.activity.camerasdk.ZybCameraSDKActivity',
+        'com.zmzx.college.search.activity.common.CommonCacheHybridActivity',
+        'com.bytedance.sdk.openadsdk.core.component.reward.activity.TTFullScreenVideoActivity',
+        'com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity',
+        'com.bytedance.sdk.openadsdk.core.component.reward.activity.TTFullScreenVideoActivity',
+        'com.zmzx.college.search.activity.common.DialogWebActivity',
+      ],
       rules: [
         {
           key: 0,
           name: '广告-1',
-          activityIds: [
-            'com.zmzx.college.search.activity.main.activity.MainActivity',
-            'com.zmzx.college.search.activity.questionsearch.camera.activity.PicSearchResultActivity',
-            'com.zmzx.college.search.activity.camerasdk.ZybCameraSDKActivity',
-            'com.zmzx.college.search.activity.common.CommonCacheHybridActivity',
-            'com.bytedance.sdk.openadsdk.core.component.reward.activity.TTFullScreenVideoActivity',
-          ],
+          quickFind: true,
           matches: '[vid="iv_close"]',
           snapshotUrls: [
             'https://i.gkd.li/import/12867751',
@@ -28,16 +31,23 @@ export default defineGkdApp({
           ],
         },
         {
-          key: 2,
+          key: 1,
           name: '字节广告-2',
-          activityIds:
-            'com.bytedance.sdk.openadsdk.core.component.reward.activity.TTFullScreenVideoActivity',
+          quickFind: true,
           matches:
             '@Image[text.length=0] < View +(3,5) View > View > TextView[text$="广告"]',
           snapshotUrls: [
             'https://i.gkd.li/import/13523288',
             'https://i.gkd.li/i/14965922',
+            'https://i.gkd.li/i/15316457',
           ],
+        },
+        {
+          key: 2,
+          preKeys: [0, 1],
+          name: '关闭开通会员免广告打扰弹窗',
+          matches: '@TextView[text.length=0] <n View > [text*="免广告"]',
+          snapshotUrls: ['https://i.gkd.li/i/15316467'],
         },
       ],
     },

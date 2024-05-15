@@ -53,6 +53,7 @@ export default defineGkdApp({
             'https://i.gkd.li/import/12905838', // text="Close the ad"
             'https://i.gkd.li/import/13791202', // text="關閉此廣告"
             'https://i.gkd.li/i/14647839',
+            'https://i.gkd.li/i/15284966',
           ],
         },
         // 情况2 - 选择关闭该广告的原因->关闭该广告
@@ -117,6 +118,7 @@ export default defineGkdApp({
             'https://i.gkd.li/import/13065462', //com.tencent.mm.ui.LauncherUI
             'https://i.gkd.li/import/12663602',
             'https://i.gkd.li/import/14164920',
+            'https://i.gkd.li/i/15271716',
           ],
         },
         {

@@ -17,7 +17,7 @@ export default defineGkdApp({
         {
           key: 0,
           name: '自动点击签到',
-          matches: '[id="com.alicloud.databox:id/tvTaskAction"][text="领取"]',
+          matches: '[vid="tvTaskAction"][text="领取"]',
           snapshotUrls: 'https://i.gkd.li/import/12929318',
         },
         {
