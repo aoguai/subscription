@@ -45,6 +45,7 @@ export default defineGkdApp({
     {
       key: 2,
       name: '全屏广告',
+      enable: false,
       rules: [
         {
           key: 0,
@@ -74,9 +75,10 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 4,
+      key: 3,
       name: '全屏广告-看广告免费听歌弹窗',
       desc: '点击X',
+      enable: false,
       rules: [
         {
           activityIds: 'com.tencent.qqmusiccommon.hybrid.HybridViewActivity',
@@ -86,9 +88,10 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 5,
+      key: 4,
       name: '全屏广告-VIP弹窗',
       desc: '点击关闭',
+      enable: false,
       rules: [
         {
           key: 0,
@@ -110,9 +113,10 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 6,
+      key: 5,
       name: '全屏广告-推荐开启高品质音质弹窗',
       desc: '点击关闭',
+      enable: false,
       rules: [
         {
           key: 0,
@@ -125,9 +129,10 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 7,
+      key: 6,
       name: '分段广告-评论区广告',
       desc: '点击右下角展开-点击[不感兴趣]',
+      enable: false,
       activityIds:
         'com.tencent.qqmusic.activity.base.FragmentActivityWithMinibar',
       rules: [
