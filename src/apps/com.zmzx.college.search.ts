@@ -34,7 +34,8 @@ export default defineGkdApp({
           key: 1,
           name: '字节广告-2',
           quickFind: true,
-          matches: '@Image[text.length=0] < View +(3,5) View > View > TextView[text$="广告"]',
+          matches:
+            '@Image[text.length=0] < View +(3,5) View > View > TextView[text$="广告"]',
           snapshotUrls: [
             'https://i.gkd.li/import/13523288',
             'https://i.gkd.li/i/14965922',
@@ -46,9 +47,7 @@ export default defineGkdApp({
           preKeys: [0, 1],
           name: '关闭开通会员免广告打扰弹窗',
           matches: '@TextView[text.length=0] <n View > [text*="免广告"]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/15316467',
-          ],
+          snapshotUrls: ['https://i.gkd.li/i/15316467'],
         },
       ],
     },
