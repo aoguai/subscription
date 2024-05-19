@@ -17,6 +17,7 @@ export default defineGkdApp({
         'com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity',
         'com.bytedance.sdk.openadsdk.core.component.reward.activity.TTFullScreenVideoActivity',
         'com.zmzx.college.search.activity.common.DialogWebActivity',
+        'com.mercury.sdk.activity.InterstitialPortraitActivity',
       ],
       rules: [
         {
@@ -32,7 +33,14 @@ export default defineGkdApp({
         },
         {
           key: 1,
-          name: '字节广告-2',
+          name: '广告-2',
+          quickFind: true,
+          matches: '[vid="iv_itr_close"]',
+          snapshotUrls: 'https://i.gkd.li/i/15360368',
+        },
+        {
+          key: 2,
+          name: '字节广告',
           quickFind: true,
           matches:
             '@Image[text.length=0] < View +(3,5) View > View > TextView[text$="广告"]',
@@ -43,8 +51,8 @@ export default defineGkdApp({
           ],
         },
         {
-          key: 2,
-          preKeys: [0, 1],
+          key: 3,
+          preKeys: [0, 1, 2],
           name: '关闭开通会员免广告打扰弹窗',
           matches: '@TextView[text.length=0] <n View > [text*="免广告"]',
           snapshotUrls: ['https://i.gkd.li/i/15316467'],
