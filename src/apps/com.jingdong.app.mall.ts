@@ -102,8 +102,11 @@ export default defineGkdApp({
       rules: [
         {
           key: 0,
-          matches: 'FrameLayout > [desc="关闭"]',
-          snapshotUrls: 'https://i.gkd.li/import/13165721',
+          matches: '@FrameLayout[clickable=true] > [desc="关闭"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13165721',
+            'https://i.gkd.li/i/15364514',
+          ],
         },
         {
           key: 1,
