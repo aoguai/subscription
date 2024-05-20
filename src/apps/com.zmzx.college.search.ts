@@ -41,7 +41,8 @@ export default defineGkdApp({
         {
           key: 2,
           name: '广告-3',
-          matches: 'ImageView - FrameLayout >3 FrameLayout[childCount=1] > ImageView',
+          matches:
+            'ImageView - FrameLayout >3 FrameLayout[childCount=1] > ImageView',
           snapshotUrls: 'https://i.gkd.li/i/15372979',
         },
         {
