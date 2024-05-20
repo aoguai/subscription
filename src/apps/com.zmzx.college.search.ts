@@ -40,6 +40,12 @@ export default defineGkdApp({
         },
         {
           key: 2,
+          name: '广告-3',
+          matches: 'ImageView - FrameLayout >3 FrameLayout[childCount=1] > ImageView',
+          snapshotUrls: 'https://i.gkd.li/i/15372979',
+        },
+        {
+          key: 3,
           name: '字节广告',
           quickFind: true,
           matches:
@@ -51,13 +57,21 @@ export default defineGkdApp({
           ],
         },
         {
-          key: 3,
-          preKeys: [0, 1, 2],
+          key: 4,
+          preKeys: [0, 1, 2, 3],
           name: '关闭开通会员免广告打扰弹窗',
           matches: '@TextView[text.length=0] <n View > [text*="免广告"]',
           snapshotUrls: ['https://i.gkd.li/i/15316467'],
         },
       ],
+    },
+    {
+      key: 10,
+      name: '局部广告-信息流广告',
+      activityIds:
+        'com.zmzx.college.search.activity.main.activity.MainActivity',
+      rules: 'ImageView < FrameLayout > FrameLayout[childCount=1] > ImageView',
+      snapshotUrls: 'https://i.gkd.li/i/15373051',
     },
     {
       key: 11,
