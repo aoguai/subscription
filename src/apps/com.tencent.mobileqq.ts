@@ -104,8 +104,16 @@ export default defineGkdApp({
           ],
         },
         {
-          preKeys: 0,
           key: 2,
+          matches: 
+            'FrameLayout[clickable=false] >2 @ImageView[text=null][visibleToUser=true] - FrameLayout[clickable=false][childCount=0]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/15388608',
+          ],
+        },
+        {
+          preKeys: 0,
+          key: 10,
           quickFind: true,
           matches: '@[clickable=true] > * > ImageView + [text="隐藏此条动态"]',
           snapshotUrls: [
