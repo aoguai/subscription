@@ -105,11 +105,9 @@ export default defineGkdApp({
         },
         {
           key: 2,
-          matches: 
+          matches:
             'FrameLayout[clickable=false] >2 @ImageView[text=null][visibleToUser=true] - FrameLayout[clickable=false][childCount=0]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/15388608',
-          ],
+          snapshotUrls: ['https://i.gkd.li/i/15388608'],
         },
         {
           preKeys: 0,
