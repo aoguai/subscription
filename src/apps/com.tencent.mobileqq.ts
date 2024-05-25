@@ -14,20 +14,21 @@ export default defineGkdApp({
       excludeActivityIds: [
         'com.tencent.mobileqq.activity.ChatActivity', // 在聊天界面禁用
         'com.tencent.mobileqq.search.activity.UniteSearchActivity', // 在搜索页面禁用
-        'com.tencent.mobileqq.activity.SplashActivity', // 在聊天界面禁用
       ],
-      rules: {
-        excludeMatches: '[vid="chat_item_content_layout"]', // 在聊天界面禁用
-        matches: 'TextView[text^="跳过"][text.length<=10][vid!="title"]',
-      },
-      snapshotUrls: [
-        'https://i.gkd.li/import/13062244',
-        'https://i.gkd.li/import/13093155',
-        'https://i.gkd.li/import/13207731',
-        'https://i.gkd.li/import/13217807', // 避免在聊天界面误触
-        'https://i.gkd.li/import/13856647', // 误触
-        'https://i.gkd.li/import/13868177', // 误触
-        'https://i.gkd.li/import/14341023', // 误触
+      rules: [
+        {
+          excludeMatches: '[vid="root"]', // 在聊天界面禁用，若排除EditText[vid="input"]则滑动消息时会造成误触
+          matches: 'TextView[text^="跳过"][text.length<=10][vid!="title"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13093155',
+            'https://i.gkd.li/i/13207731',
+            'https://i.gkd.li/i/13217807', // 避免在聊天界面误触
+            'https://i.gkd.li/i/13856647', // 误触
+            'https://i.gkd.li/i/13868177', // 误触
+            'https://i.gkd.li/i/14341023', // 误触
+            'https://i.gkd.li/i/15334565', // 误触
+          ],
+        },
       ],
     },
     {
@@ -103,8 +104,14 @@ export default defineGkdApp({
           ],
         },
         {
-          preKeys: 0,
           key: 2,
+          matches:
+            'FrameLayout[clickable=false] >2 @ImageView[text=null][visibleToUser=true] - FrameLayout[clickable=false][childCount=0]',
+          snapshotUrls: ['https://i.gkd.li/i/15388608'],
+        },
+        {
+          preKeys: 0,
+          key: 10,
           quickFind: true,
           matches: '@[clickable=true] > * > ImageView + [text="隐藏此条动态"]',
           snapshotUrls: [

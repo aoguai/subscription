@@ -102,13 +102,16 @@ export default defineGkdApp({
       rules: [
         {
           key: 0,
-          matches: 'FrameLayout > [desc="关闭"]',
-          snapshotUrls: 'https://i.gkd.li/import/13165721',
+          matches: '@FrameLayout[clickable=true] > [desc="关闭"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13165721',
+            'https://i.gkd.li/i/15364514',
+          ],
         },
         {
           key: 1,
           quickFind: true,
-          matches: '[vid="webview"] + [vid="close"][desc="关闭页面"]',
+          matches: '[vid="close"][desc="关闭页面"]',
           snapshotUrls: [
             'https://i.gkd.li/import/13218034',
             'https://i.gkd.li/i/14927060',
@@ -126,13 +129,13 @@ export default defineGkdApp({
         },
         {
           key: 3,
-          quickFind: true,
           activityIds: 'com.jingdong.app.mall.MainFrameActivity',
-          matches: 'RelativeLayout > ImageView[desc="关闭页面"]',
+          matches: 'RelativeLayout > ImageView[desc*="关闭"]',
           excludeMatches: 'ImageView[desc="关闭页面"] - [text="优惠券"]',
           snapshotUrls: [
             'https://i.gkd.li/import/13258996',
             'https://i.gkd.li/import/13336847', // 增加excludeMatches: 'ImageView[desc="关闭页面"] - [text="优惠券"]', 避免在该快照误触
+            'https://i.gkd.li/i/15416926',
           ],
         },
         {
