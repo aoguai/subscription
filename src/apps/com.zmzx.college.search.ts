@@ -48,13 +48,13 @@ export default defineGkdApp({
         {
           key: 3,
           name: '字节广告',
-          quickFind: true,
           matches:
             '@Image[text.length=0] < View +(3,5) View > View > TextView[text$="广告"]',
           snapshotUrls: [
             'https://i.gkd.li/import/13523288',
             'https://i.gkd.li/i/14965922',
             'https://i.gkd.li/i/15316457',
+            'https://i.gkd.li/i/15442099',
           ],
         },
         {
