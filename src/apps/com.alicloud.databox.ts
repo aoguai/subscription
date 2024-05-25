@@ -113,6 +113,7 @@ export default defineGkdApp({
     {
       key: 5,
       name: '功能类-自动授权',
+      enable: false,
       desc: '包括扫码登录',
       actionMaximum: 1,
       resetMatch: 'app',
@@ -129,12 +130,29 @@ export default defineGkdApp({
       key: 6,
       name: '全屏广告-[容量使用超限]提示',
       desc: '点击关闭',
+      enable: false,
       quickFind: true,
       activityIds: 'com.alicloud.databox.MainActivity',
       rules: [
         {
           matches: ['[text="容量使用超限"]', '[vid="layout_close"]'],
           snapshotUrls: 'https://i.gkd.li/i/15158788',
+        },
+      ],
+    },
+    {
+      key: 7,
+      name: '局部广告-卡片广告',
+      quickFind: true,
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      activityIds: 'com.alicloud.databox.transferpage.TransferListActivity',
+      rules: [
+        {
+          key: 0,
+          matches: '[vid="close"]',
+          snapshotUrls: 'https://i.gkd.li/i/15433289',
         },
       ],
     },
