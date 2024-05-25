@@ -50,9 +50,9 @@ export default defineGkdApp({
         {
           key: 0,
           name: '弹窗广告',
+          forcedTime: 5000,
           activityIds:
             'com.tencent.qqmusic.activity.TranslucentWebViewActivity',
-          forcedTime: 5000,
           matches: 'View[id="js_close_btn"][desc="关闭"]',
           snapshotUrls: [
             'https://i.gkd.li/i/13115121',
@@ -72,6 +72,17 @@ export default defineGkdApp({
             'https://i.gkd.li/i/13197868',
             'https://i.gkd.li/i/15285647',
           ],
+        },
+        {
+          key: 2,
+          name: '签到弹窗',
+          matchTime: 10000,
+          actionMaximum: 1,
+          resetMatch: 'app',
+          activityIds: 'com.tencent.qqmusic.activity.AppStarterActivity',
+          matches:
+            '[id="android:id/content"] > FrameLayout > FrameLayout > ViewGroup[childCount=2] > ViewGroup > ViewGroup[clickable=true][childCount=0]',
+          snapshotUrls: 'https://i.gkd.li/i/15443191',
         },
       ],
     },
