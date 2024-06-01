@@ -18,7 +18,7 @@ export default defineGkdApp({
           key: 0,
           name: '点击在下方的X',
           matches: [
-            'View[text="广告"] < View <2 View <n View[childCount>4] > View[childCount=1] > Image[text.length=0]', // longClickable=null为了与 key:3 区别防止误触
+            '[text="广告"] < View <2 View <n View[childCount>4] > View[childCount=1] > Image[text.length=0]',
           ],
           snapshotUrls: [
             'https://i.gkd.li/import/13068836',
