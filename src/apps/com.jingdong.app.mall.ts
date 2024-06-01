@@ -6,7 +6,7 @@ export default defineGkdApp({
   groups: [
     {
       key: 2,
-      name: '局部广告-我的页面悬浮广告',
+      name: '局部广告-悬浮广告',
       activityIds: 'com.jingdong.app.mall.MainFrameActivity',
       rules: [
         {
@@ -27,15 +27,8 @@ export default defineGkdApp({
             '@ImageView[id!=null] + FrameLayout[childCount=3] > ImageView + LinearLayout + TextView',
           snapshotUrls: 'https://i.gkd.li/import/13242002',
         },
-      ],
-    },
-    {
-      key: 3,
-      name: '局部广告-悬浮广告',
-      activityIds: 'com.jingdong.app.mall.MainFrameActivity',
-      rules: [
         {
-          key: 0,
+          key: 2,
           name: '首页广告',
           matches:
             'RelativeLayout >n * > [desc^="关闭浮层"][clickable=true][visibleToUser=true]',
@@ -48,7 +41,7 @@ export default defineGkdApp({
           ],
         },
         {
-          key: 1,
+          key: 3,
           name: '购物车页面砸金蛋',
           quickFind: true,
           matches: '[id="com.jd.lib.cart.feature:id/iv_egg_close"]',

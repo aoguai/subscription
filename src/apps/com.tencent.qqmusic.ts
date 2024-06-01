@@ -14,12 +14,14 @@ export default defineGkdApp({
       rules: [
         {
           key: 1,
+          quickFind: true,
           matches: '[text^="广告"] + [text="跳过"][clickable=true]',
           snapshotUrls: 'https://i.gkd.li/i/13985169', // 播放界面
         },
         {
           key: 2,
-          matches: '[text="广告"] +n [desc="关闭"]',
+          quickFind: true,
+          matches: '@[desc="关闭"] -n [text="广告"]',
           snapshotUrls: [
             'https://i.gkd.li/i/13206534', //歌单页
             'https://i.gkd.li/i/13797001', //我的页

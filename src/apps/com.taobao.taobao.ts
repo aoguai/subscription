@@ -164,8 +164,8 @@ export default defineGkdApp({
     },
     {
       key: 13,
-      name: '功能类-关闭小额免密支付',
-      desc: '在支付的时候出现，自动点击关闭和不开通',
+      name: '功能类-关闭支付相关推荐开通',
+      desc: '在支付时候出现的小额免密支付，花呗支付等，自动点击关闭和不开通',
       enable: false,
       quickFind: true,
       activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
@@ -173,8 +173,12 @@ export default defineGkdApp({
         {
           key: 0,
           name: '类型1',
-          matches: '@[text="关闭"] < * <3 * < * + * >3 [text$="小额免密支付"]',
-          snapshotUrls: 'https://i.gkd.li/import/13438414',
+          matches:
+            '@[text="关闭"] < FrameLayout -n FrameLayout > [text$="推荐你"]',
+          snapshotUrls: [
+            'https://i.gkd.li/import/13438414',
+            'https://i.gkd.li/i/15520321',
+          ],
         },
         {
           key: 1,
