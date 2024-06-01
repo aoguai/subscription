@@ -15,9 +15,9 @@ export default defineGkdApp({
         'com.zmzx.college.search.activity.common.CommonCacheHybridActivity',
         'com.bytedance.sdk.openadsdk.core.component.reward.activity.TTFullScreenVideoActivity',
         'com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity',
-        'com.bytedance.sdk.openadsdk.core.component.reward.activity.TTFullScreenVideoActivity',
         'com.zmzx.college.search.activity.common.DialogWebActivity',
         'com.mercury.sdk.activity.InterstitialPortraitActivity',
+        'com.baidu.mobads.sdk.api.MobRewardVideoActivity',
       ],
       rules: [
         {
@@ -47,6 +47,14 @@ export default defineGkdApp({
         },
         {
           key: 3,
+          name: '广告-4',
+          quickFind: true,
+          matches:
+            '@ImageView <n RelativeLayout > RelativeLayout > RelativeLayout > [text="反馈"]',
+          snapshotUrls: 'https://i.gkd.li/i/15521123',
+        },
+        {
+          key: 4,
           name: '字节广告',
           matches:
             '@Image[text.length=0] < View +(3,5) View > View > TextView[text$="广告"]',
@@ -58,8 +66,8 @@ export default defineGkdApp({
           ],
         },
         {
-          key: 4,
-          preKeys: [0, 1, 2, 3],
+          key: 5,
+          preKeys: [0, 1, 2, 3, 4],
           name: '关闭开通会员免广告打扰弹窗',
           matches: '@TextView[text.length=0] <n View > [text*="免广告"]',
           snapshotUrls: ['https://i.gkd.li/i/15316467'],
@@ -71,8 +79,18 @@ export default defineGkdApp({
       name: '局部广告-信息流广告',
       activityIds:
         'com.zmzx.college.search.activity.main.activity.MainActivity',
-      rules: 'ImageView < FrameLayout > FrameLayout[childCount=1] > ImageView',
-      snapshotUrls: 'https://i.gkd.li/i/15373051',
+      rules: [
+        {
+          key: 0,
+          matches: 'ImageView < FrameLayout > FrameLayout[childCount=1] > ImageView',
+          snapshotUrls: 'https://i.gkd.li/i/15373051',
+        },
+        {
+          key: 1,
+          matches: '[text="广告"] <<n View +n View > Image[text.length=0]',
+          snapshotUrls: 'https://i.gkd.li/i/15521151',
+        },
+      ],
     },
     {
       key: 11,
