@@ -82,7 +82,8 @@ export default defineGkdApp({
       rules: [
         {
           key: 0,
-          matches: 'ImageView < FrameLayout > FrameLayout[childCount=1] > ImageView',
+          matches:
+            'ImageView < FrameLayout > FrameLayout[childCount=1] > ImageView',
           snapshotUrls: 'https://i.gkd.li/i/15373051',
         },
         {
