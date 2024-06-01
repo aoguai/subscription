@@ -50,5 +50,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 6,
+      name: '功能类-自动查看原图',
+      enable: false,
+      activityIds:
+      'com.idlefish.flutterbridge.flutterboost.boost.FishFlutterBoostActivity',
+      rules: [
+        {
+          matches: '[desc="查看原图"][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/15463399',
+        },
+      ],
+    },
   ],
 });
