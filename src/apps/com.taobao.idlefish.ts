@@ -55,7 +55,7 @@ export default defineGkdApp({
       name: '功能类-自动查看原图',
       enable: false,
       activityIds:
-      'com.idlefish.flutterbridge.flutterboost.boost.FishFlutterBoostActivity',
+        'com.idlefish.flutterbridge.flutterboost.boost.FishFlutterBoostActivity',
       rules: [
         {
           matches: '[desc="查看原图"][visibleToUser=true]',

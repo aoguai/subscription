@@ -173,11 +173,12 @@ export default defineGkdApp({
         {
           key: 0,
           name: '类型1',
-          matches: '@[text="关闭"] < FrameLayout -n FrameLayout > [text$="推荐你"]',
+          matches:
+            '@[text="关闭"] < FrameLayout -n FrameLayout > [text$="推荐你"]',
           snapshotUrls: [
             'https://i.gkd.li/import/13438414',
             'https://i.gkd.li/i/15520321',
-          ]
+          ],
         },
         {
           key: 1,
