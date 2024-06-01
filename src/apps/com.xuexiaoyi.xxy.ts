@@ -6,7 +6,7 @@ export default defineGkdApp({
   groups: [
     {
       key: 1,
-      name: '分段广告-首页底部广告',
+      name: '分段广告-首页信息流广告',
       enable: false,
       activityIds: [
         'com.xuexiaoyi.entrance.main.MainActivity',
@@ -25,6 +25,7 @@ export default defineGkdApp({
             'https://i.gkd.li/import/13375502',
             'https://i.gkd.li/import/13375559',
             'https://i.gkd.li/i/14472483',
+            'https://i.gkd.li/i/15521090',
           ],
         },
         {
