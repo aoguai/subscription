@@ -38,26 +38,10 @@ export default defineGkdApp({
       rules: [
         {
           key: 0,
-          name: '顶部卡片广告',
-          matches:
-            'RelativeLayout[visibleToUser=true] > ImageView[clickable=true] +n RelativeLayout[childCount=2] > ImageView[childCount=0][visibleToUser=true][vid!="pic"][desc="关闭"||desc=null]',
-          snapshotUrls: [
-            'https://i.gkd.li/import/12892726',
-            'https://i.gkd.li/import/12774870',
-            'https://i.gkd.li/import/13207766',
-            'https://i.gkd.li/import/13386518',
-            'https://i.gkd.li/import/13476400',
-            'https://i.gkd.li/import/14155603',
-            'https://i.gkd.li/import/14217033',
-            'https://i.gkd.li/i/14414585', //  误触
-            'https://i.gkd.li/i/15075866', // 误触
-          ],
-        },
-        {
-          key: 1,
           name: '顶部横幅',
           matches:
-            'TextView[text^="当前无法接收"||text="发现QQ版本更新"||text*="礼包"||text*="SVIP"||text*="超级会员"||text*="QQ会员"][childCount=0][visibleToUser=true] <n * > [name$="ImageView"||name$="Button"][desc="关闭"||(desc=null&&text=null)][childCount=0][visibleToUser=true][clickable=true][longClickable=false]',
+            'ImageView <n * >n TextView[text.length>0] <<n * > [name$="ImageView"||name$="Button"][desc="关闭"||(desc=null&&text=null)][childCount=0][visibleToUser=true][clickable=true][longClickable!=true][left>0&&top>0]',
+          excludeMatches: '[vid="chat_item_head_icon"]',  // 聊天界面头像
           snapshotUrls: [
             'https://i.gkd.li/import/13426912',
             'https://i.gkd.li/import/12706907',
@@ -72,6 +56,15 @@ export default defineGkdApp({
             'https://i.gkd.li/import/13931212',
             'https://i.gkd.li/import/14178669',
             'https://i.gkd.li/import/14178667',
+            'https://i.gkd.li/import/12892726',
+            'https://i.gkd.li/import/12774870',
+            'https://i.gkd.li/import/13207766',
+            'https://i.gkd.li/import/13386518',
+            'https://i.gkd.li/import/13476400',
+            'https://i.gkd.li/import/14155603',
+            'https://i.gkd.li/import/14217033',
+            'https://i.gkd.li/i/14414585', //  误触
+            'https://i.gkd.li/i/15075866', // 误触
           ],
         },
       ],
