@@ -188,14 +188,13 @@ export default defineGkdApp({
       name: '功能类-自动展开回答',
       desc: '自动点击展开',
       enable: false,
+      quickFind: true,
       rules: [
         {
           activityIds:
             'com.zhihu.android.mixshortcontainer.MixShortContainerActivity',
           matches:
-            'ImageView[id="com.zhihu.android:id/iv_expand"] - TextView[id="com.zhihu.android:id/tv_expand"][text="展开"][visibleToUser=true]',
-          exampleUrls:
-            'https://m.gkd.li/57941037/6f6e5fd0-98a8-4a92-be02-7f34e3c5b8bd',
+            'ImageView[id="com.zhihu.android:id/iv_expand"] - TextView[text="展开"][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/import/12647688',
             'https://i.gkd.li/import/12707687', // 使用 [visibleToUser=true] 进行限定，防止在控件不可见时提前触发规则
