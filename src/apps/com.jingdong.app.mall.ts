@@ -87,14 +87,10 @@ export default defineGkdApp({
       key: 5,
       name: '全屏广告-广告弹窗',
       enable: false,
-      activityIds: [
-        'com.jingdong.app.mall.MainFrameActivity',
-        'com.jd.lib.cashier.complete.view.CashierCompleteActivity',
-        'com.jd.lib.jshop.jshop.JshopMainShopActivity',
-      ],
       rules: [
         {
           key: 0,
+          activityIds: 'com.jingdong.app.mall.MainFrameActivity',
           matches: '@FrameLayout[clickable=true] > [desc="关闭"]',
           snapshotUrls: [
             'https://i.gkd.li/i/13165721',
@@ -103,6 +99,10 @@ export default defineGkdApp({
         },
         {
           key: 1,
+          activityIds: [
+            'com.jd.lib.cashier.complete.view.CashierCompleteActivity',
+            'com.jd.lib.jshop.jshop.JshopMainShopActivity',
+          ],
           quickFind: true,
           matches: '[vid="close"][desc="关闭页面"]',
           snapshotUrls: [
@@ -112,6 +112,7 @@ export default defineGkdApp({
         },
         {
           key: 2,
+          activityIds: 'com.jingdong.app.mall.MainFrameActivity',
           matches:
             '[id="android:id/content"] > RelativeLayout > RelativeLayout > *[childCount=2] > ImageView[index=1][clickable=true]',
           snapshotUrls: [
