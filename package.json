@@ -46,7 +46,7 @@
     "@gkd-kit/api": "0.0.5",
     "@gkd-kit/define": "0.0.1",
     "@gkd-kit/tools": "0.2.0",
-    "@types/node": "20.14.0",
+    "@types/node": "20.14.1",
     "@typescript-eslint/eslint-plugin": "7.12.0",
     "@typescript-eslint/parser": "7.12.0",
     "eslint": "9.4.0",
