@@ -31,12 +31,8 @@ export default defineGkdApp({
         {
           key: 1,
           name: '点击在下方的X-2',
-          matches: [
-            '[text="广告"] <<n FrameLayout > [desc^="dislike"] > View',
-          ],
-          snapshotUrls: [
-            'https://i.gkd.li/i/15782668',
-          ],
+          matches: ['[text="广告"] <<n FrameLayout > [desc^="dislike"] > View'],
+          snapshotUrls: ['https://i.gkd.li/i/15782668'],
         },
         {
           key: 2,
