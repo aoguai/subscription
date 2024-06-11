@@ -42,6 +42,13 @@ export default defineGkdApp({
           matches: '@[clickable=true] > [text="广告"]',
           snapshotUrls: 'https://i.gkd.li/i/15041019',
         },
+        {
+          key: 5,
+          quickFind: true,
+          matches:
+            '@ViewGroup[childCount=1][clickable=true] <<n RecyclerView >2 [text="最近播放"]',
+          snapshotUrls: 'https://i.gkd.li/i/15756931',
+        },
       ],
     },
     {
