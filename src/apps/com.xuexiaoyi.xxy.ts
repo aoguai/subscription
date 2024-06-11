@@ -30,6 +30,12 @@ export default defineGkdApp({
         },
         {
           key: 1,
+          name: '点击在下方的X-2',
+          matches: ['[text="广告"] <<n FrameLayout > [desc^="dislike"] > View'],
+          snapshotUrls: ['https://i.gkd.li/i/15782668'],
+        },
+        {
+          key: 2,
           name: '点击在上方的X-类型1',
           matches: [
             'Image[text.length>=20] < View < View + View > Image[text.length=0]',
@@ -44,7 +50,7 @@ export default defineGkdApp({
           ],
         },
         {
-          key: 2,
+          key: 3,
           name: '点击在上方的X-类型2',
           matches: [
             '[text.length>=2&&text.length<=6] < FrameLayout -n FrameLayout > View',
@@ -52,7 +58,7 @@ export default defineGkdApp({
           snapshotUrls: ['https://i.gkd.li/import/13266689'],
         },
         {
-          key: 3,
+          key: 4,
           name: '点击在内部的X',
           matches: 'View[text.length=4] - View > View > Image[text.length=0]',
           snapshotUrls: [
@@ -61,14 +67,14 @@ export default defineGkdApp({
           ],
         },
         {
-          key: 4,
+          key: 5,
           name: '点击[反馈]',
           matches:
             '[text="广告"][visibleToUser=true] < * <n View +n [text="反馈"][visibleToUser=true]',
           snapshotUrls: ['https://i.gkd.li/i/14965789'],
         },
         {
-          preKeys: [0, 1, 2, 3, 4],
+          preKeys: [0, 1, 2, 3, 4, 5],
           key: 10,
           name: '点击不感兴趣',
           quickFind: true,

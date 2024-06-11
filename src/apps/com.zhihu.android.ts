@@ -35,10 +35,11 @@ export default defineGkdApp({
         },
         {
           key: 1,
-          matches: '@ImageView[id=null] <<n * -3 * >2 [text*="广告"]',
+          matches: '@ImageView[id=null] <<n * -3 * >2 [text*="广告"][id=null]',
           snapshotUrls: [
             'https://i.gkd.li/import/14192451',
             'https://i.gkd.li/i/14730741',
+            'https://i.gkd.li/i/15782386', // 误触
           ],
         },
         {

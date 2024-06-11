@@ -40,10 +40,10 @@ export default defineGkdApp({
           key: 0,
           name: '顶部横幅',
           matches:
-            'ImageView[clickable=false] <n * >n TextView[clickable=false][text.length>0] <<n * > [name$="ImageView"||name$="Button"][desc="关闭"||(desc=null&&text=null)][childCount=0][visibleToUser=true][clickable=true][longClickable!=true][left>0&&top>0]',
+            'ImageView <n * >n TextView[clickable=false][text.length>0][text!~="(?is).*([01]?[0-9]|2[0-3])[:：][0-5][0-9].*"] <<n * > [name$="ImageView"||name$="Button"][desc="关闭"||(desc=null&&text=null)][childCount=0][visibleToUser=true][clickable=true][longClickable!=true]',
           excludeMatches: [
-            '[vid="chat_item_head_icon"]', // 聊天界面头像
             '[id^="com.tencent.mobileqq.qzone"]', // QQ空间
+            '[vid="chat_item_head_icon"]', // 聊天界面头像
           ],
           snapshotUrls: [
             'https://i.gkd.li/import/13426912',
@@ -68,6 +68,7 @@ export default defineGkdApp({
             'https://i.gkd.li/import/14217033',
             'https://i.gkd.li/i/14414585', //  误触
             'https://i.gkd.li/i/15075866', // 误触
+            'https://i.gkd.li/i/15782476', // 误触
           ],
         },
       ],
