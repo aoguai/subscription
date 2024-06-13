@@ -66,8 +66,8 @@ importers:
         specifier: 2.11.1
         version: 2.11.1
       tsx:
-        specifier: 4.15.2
-        version: 4.15.2
+        specifier: 4.15.4
+        version: 4.15.4
       typescript:
         specifier: 5.4.5
         version: 5.4.5
@@ -1222,8 +1222,8 @@ packages:
     peerDependencies:
       typescript: '>=4.2.0'
 
-  tsx@4.15.2:
-    resolution: {integrity: sha512-kIZTOCmR37nEw0qxQks2dR+eZWSXydhTGmz7yx94vEiJtJGBTkUl0D/jt/5fey+CNdm6i3Cp+29WKRay9ScQUw==}
+  tsx@4.15.4:
+    resolution: {integrity: sha512-d++FLCwJLrXaBFtRcqdPBzu6FiVOJ2j+UsvUZPtoTrnYtCGU5CEW7iHXtNZfA2fcRTvJFWPqA6SWBuB0GSva9w==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -2384,7 +2384,7 @@ snapshots:
     dependencies:
       typescript: 5.4.5
 
-  tsx@4.15.2:
+  tsx@4.15.4:
     dependencies:
       esbuild: 0.21.5
       get-tsconfig: 4.7.5
