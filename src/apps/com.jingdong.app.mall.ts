@@ -123,13 +123,17 @@ export default defineGkdApp({
         },
         {
           key: 3,
-          activityIds: 'com.jingdong.app.mall.MainFrameActivity',
+          activityIds: [
+            'com.jingdong.app.mall.MainFrameActivity',
+            'com.jd.lib.jshop.jshop.JshopMainShopActivity',
+          ],
           matches: 'RelativeLayout > ImageView[desc*="关闭"]',
           excludeMatches: 'ImageView[desc="关闭页面"] - [text="优惠券"]',
           snapshotUrls: [
             'https://i.gkd.li/import/13258996',
             'https://i.gkd.li/import/13336847', // 增加excludeMatches: 'ImageView[desc="关闭页面"] - [text="优惠券"]', 避免在该快照误触
             'https://i.gkd.li/i/15416926',
+            'https://i.gkd.li/i/15862131',
           ],
         },
         {
