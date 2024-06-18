@@ -114,7 +114,7 @@ export default defineGkdApp({
           key: 2,
           activityIds: 'com.jingdong.app.mall.MainFrameActivity',
           matches:
-            '[id="android:id/content"] > RelativeLayout > RelativeLayout > *[childCount=2] > ImageView[index=1][clickable=true]',
+            '[id="android:id/content"] > RelativeLayout > RelativeLayout > *[childCount=2] > ImageView[index=1][clickable=true][desc!="拍照购"]',
           snapshotUrls: [
             'https://i.gkd.li/import/13241883',
             'https://i.gkd.li/import/13259029',
