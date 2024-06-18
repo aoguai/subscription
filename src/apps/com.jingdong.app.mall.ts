@@ -114,7 +114,7 @@ export default defineGkdApp({
           key: 2,
           activityIds: 'com.jingdong.app.mall.MainFrameActivity',
           matches:
-            '[id="android:id/content"] > RelativeLayout > RelativeLayout > *[childCount=2] > ImageView[index=1][clickable=true]',
+            '[id="android:id/content"] > RelativeLayout > RelativeLayout > *[childCount=2] > ImageView[index=1][clickable=true][desc!="拍照购"]',
           snapshotUrls: [
             'https://i.gkd.li/import/13241883',
             'https://i.gkd.li/import/13259029',
@@ -123,13 +123,17 @@ export default defineGkdApp({
         },
         {
           key: 3,
-          activityIds: 'com.jingdong.app.mall.MainFrameActivity',
+          activityIds: [
+            'com.jingdong.app.mall.MainFrameActivity',
+            'com.jd.lib.jshop.jshop.JshopMainShopActivity',
+          ],
           matches: 'RelativeLayout > ImageView[desc*="关闭"]',
           excludeMatches: 'ImageView[desc="关闭页面"] - [text="优惠券"]',
           snapshotUrls: [
             'https://i.gkd.li/import/13258996',
             'https://i.gkd.li/import/13336847', // 增加excludeMatches: 'ImageView[desc="关闭页面"] - [text="优惠券"]', 避免在该快照误触
             'https://i.gkd.li/i/15416926',
+            'https://i.gkd.li/i/15862131',
           ],
         },
         {

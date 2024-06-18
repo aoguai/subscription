@@ -96,6 +96,11 @@ export default defineGkdApp({
           matches: '[vid="iv_native_close"]',
           snapshotUrls: 'https://i.gkd.li/i/15527866',
         },
+        {
+          key: 3,
+          matches: '@Image < View + View > View >n [text="广告"]',
+          snapshotUrls: 'https://i.gkd.li/i/15885694',
+        },
       ],
     },
     {

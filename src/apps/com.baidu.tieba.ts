@@ -235,11 +235,12 @@ export default defineGkdApp({
           key: 1,
           name: '关闭签到成功弹窗',
           activityIds: 'com.baidu.tbadk.browser.TBWebContainerActivity',
-          matches:
-            'WebView[text="签到弹窗"] > View > View > TextView[text=""][index=2][visibleToUser=true]',
+          action: 'back',
+          matches: 'WebView[text="签到弹窗"]',
           snapshotUrls: [
             'https://i.gkd.li/import/13776424',
             'https://i.gkd.li/i/15087327',
+            'https://i.gkd.li/i/15881225',
           ],
         },
       ],

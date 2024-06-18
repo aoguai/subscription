@@ -40,10 +40,9 @@ export default defineGkdApp({
           key: 0,
           name: '顶部横幅',
           matches:
-            'ImageView <n * >n TextView[clickable=false][text.length>0][text!~="(?is).*([01]?[0-9]|2[0-3])[:：][0-5][0-9].*"] <<n * > [name$="ImageView"||name$="Button"][desc="关闭"||(desc=null&&text=null)][childCount=0][visibleToUser=true][clickable=true][longClickable!=true]',
+            'ImageView[longClickable!=true] <n *[left=0][vid!="root"] >n TextView[clickable=false][text.length>0][text!~="(?is).*([01]?[0-9]|2[0-3])[:：][0-5][0-9].*"] <<n * > [name$="ImageView"||name$="Button"][desc="关闭"||(desc=null&&text=null)][childCount=0][visibleToUser=true][clickable=true][longClickable!=true][left>0]',
           excludeMatches: [
             '[id^="com.tencent.mobileqq.qzone"]', // QQ空间
-            '[vid="chat_item_head_icon"]', // 聊天界面头像
           ],
           snapshotUrls: [
             'https://i.gkd.li/import/13426912',
@@ -69,6 +68,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/14414585', //  误触
             'https://i.gkd.li/i/15075866', // 误触
             'https://i.gkd.li/i/15782476', // 误触
+            'https://i.gkd.li/i/15883390', // 误触
           ],
         },
       ],
@@ -280,8 +280,10 @@ export default defineGkdApp({
       desc: '自动点击登录。包括 PC 登录确认、QQ 互联登录确认。',
       quickFind: true,
       activityIds: [
+        'com.tencent.mobileqq.activity.SplashActivity',
         'com.tencent.biz.qrcode.activity.QRLoginAuthActivity',
         'com.tencent.mobileqq.activity.DevlockQuickLoginActivity',
+        'com.tencent.mobileqq.activity.DevLockQuickVerifyActivity',
         'com.tencent.open.agent.PublicFragmentActivityForOpenSDK',
       ],
       rules: [
@@ -295,6 +297,8 @@ export default defineGkdApp({
             'https://i.gkd.li/import/12789287',
             'https://i.gkd.li/import/13063027',
             'https://i.gkd.li/import/13166314',
+            'https://i.gkd.li/i/15884502',
+            'https://i.gkd.li/i/15884520',
           ],
         },
         {
