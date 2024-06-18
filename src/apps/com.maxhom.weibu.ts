@@ -36,7 +36,7 @@ export default defineGkdApp({
         {
           key: 2,
           name: '类型2-点击右侧X',
-          matches: ['[id="com.maxhom.weibu:id/anythink_myoffer_banner_close"]'],
+          matches: ['[id="com.maxhom.weibu:id/anythink_myoffer_banner_close"][visibleToUser=true]'],
           snapshotUrls: [
             'https://i.gkd.li/import/13702305',
             'https://i.gkd.li/import/13702339',
