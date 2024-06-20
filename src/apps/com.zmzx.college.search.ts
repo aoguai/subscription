@@ -107,9 +107,7 @@ export default defineGkdApp({
           name: '点击不感兴趣',
           quickFind: true,
           matches: 'TextView[text="不感兴趣"]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/15913004',
-          ],
+          snapshotUrls: ['https://i.gkd.li/i/15913004'],
         },
       ],
     },
@@ -123,7 +121,7 @@ export default defineGkdApp({
           key: 0,
           name: '首页底部广告',
           activityIds:
-          'com.zmzx.college.search.activity.main.activity.MainActivity',
+            'com.zmzx.college.search.activity.main.activity.MainActivity',
           matches: '[vid="tvClose"]',
           snapshotUrls: 'https://i.gkd.li/i/14518991',
         },
@@ -131,7 +129,7 @@ export default defineGkdApp({
           key: 1,
           name: '教材底部广告',
           activityIds:
-          'com.zmzx.college.search.activity.booksearch.result.activity.AnswerBrowseActivity',
+            'com.zmzx.college.search.activity.booksearch.result.activity.AnswerBrowseActivity',
           matches: '@[desc$="dislike"] <<n [vid="rlBottomADContainer"]',
           snapshotUrls: 'https://i.gkd.li/i/15902162',
         },
@@ -140,7 +138,7 @@ export default defineGkdApp({
           key: 10,
           name: '点击不感兴趣',
           activityIds:
-          'com.zmzx.college.search.activity.booksearch.result.activity.AnswerBrowseActivity',
+            'com.zmzx.college.search.activity.booksearch.result.activity.AnswerBrowseActivity',
           matches: '@[clickable=true] > [text="不感兴趣"]',
           snapshotUrls: 'https://i.gkd.li/i/15902298',
         },
