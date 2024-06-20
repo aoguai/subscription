@@ -24,14 +24,14 @@ importers:
         specifier: ^9.0.0
         version: 9.5.0
       '@gkd-kit/api':
-        specifier: 0.0.5
-        version: 0.0.5
+        specifier: 0.1.0
+        version: 0.1.0
       '@gkd-kit/define':
         specifier: 0.0.1
-        version: 0.0.1(@gkd-kit/api@0.0.5)
+        version: 0.0.1(@gkd-kit/api@0.1.0)
       '@gkd-kit/tools':
         specifier: 0.2.0
-        version: 0.2.0(@gkd-kit/api@0.0.5)(json5@2.2.3)
+        version: 0.2.0(@gkd-kit/api@0.1.0)(json5@2.2.3)
       '@types/node':
         specifier: 20.14.6
         version: 20.14.6
@@ -323,8 +323,8 @@ packages:
     resolution: {integrity: sha512-BsWiH1yFGjXXS2yvrf5LyuoSIIbPrGUWob917o+BTKuZ7qJdxX8aJLRxs1fS9n6r7vESrq1OUqb68dANcFXuQQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@gkd-kit/api@0.0.5':
-    resolution: {integrity: sha512-eKHkqcjlhUiQgg1WUepq7CNxVR/Q3PQWr8TMmfbYTqeq0pO7ABYNDuGkOptR+u2jQ1Qr+8bbX/ODfdB6jK8UfQ==}
+  '@gkd-kit/api@0.1.0':
+    resolution: {integrity: sha512-BtsXMjQma0luqSuK8TOWswiBcBrJEdlubdXJ1Gqcy83hNDN0HNKr6vBELGYSFNbGOu2UBs+Q9Y8jyaluwqtahw==}
 
   '@gkd-kit/define@0.0.1':
     resolution: {integrity: sha512-ql/f0TIlBQOSaJS6e9c8B4rLHYWyCzDctP0vRpc6aYaWGJXnZKZIbuTUr2ET45eNzD4dviCjTU6cSv/wcA07IQ==}
@@ -1522,17 +1522,17 @@ snapshots:
 
   '@eslint/object-schema@2.1.4': {}
 
-  '@gkd-kit/api@0.0.5': {}
+  '@gkd-kit/api@0.1.0': {}
 
-  '@gkd-kit/define@0.0.1(@gkd-kit/api@0.0.5)':
+  '@gkd-kit/define@0.0.1(@gkd-kit/api@0.1.0)':
     dependencies:
-      '@gkd-kit/api': 0.0.5
+      '@gkd-kit/api': 0.1.0
 
   '@gkd-kit/selector@0.0.25': {}
 
-  '@gkd-kit/tools@0.2.0(@gkd-kit/api@0.0.5)(json5@2.2.3)':
+  '@gkd-kit/tools@0.2.0(@gkd-kit/api@0.1.0)(json5@2.2.3)':
     dependencies:
-      '@gkd-kit/api': 0.0.5
+      '@gkd-kit/api': 0.1.0
       '@gkd-kit/selector': 0.0.25
       json5: 2.2.3
 
