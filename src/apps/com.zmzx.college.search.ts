@@ -76,7 +76,7 @@ export default defineGkdApp({
     },
     {
       key: 10,
-      name: '局部广告-信息流广告',
+      name: '分段广告-信息流广告',
       activityIds:
         'com.zmzx.college.search.activity.main.activity.MainActivity',
       rules: [
@@ -101,16 +101,48 @@ export default defineGkdApp({
           matches: '@Image < View + View > View >n [text="广告"]',
           snapshotUrls: 'https://i.gkd.li/i/15885694',
         },
+        {
+          preKeys: [0, 1, 2, 3],
+          key: 10,
+          name: '点击不感兴趣',
+          quickFind: true,
+          matches: 'TextView[text="不感兴趣"]',
+          snapshotUrls: ['https://i.gkd.li/i/15913004'],
+        },
       ],
     },
     {
       key: 11,
-      name: '局部广告-首页底部广告',
+      name: '分段广告-底部卡片广告',
+      desc: '点击关闭-点击不感兴趣',
       quickFind: true,
-      activityIds:
-        'com.zmzx.college.search.activity.main.activity.MainActivity',
-      rules: '[vid="tvClose"]',
-      snapshotUrls: 'https://i.gkd.li/i/14518991',
+      rules: [
+        {
+          key: 0,
+          name: '首页底部广告',
+          activityIds:
+            'com.zmzx.college.search.activity.main.activity.MainActivity',
+          matches: '[vid="tvClose"]',
+          snapshotUrls: 'https://i.gkd.li/i/14518991',
+        },
+        {
+          key: 1,
+          name: '教材底部广告',
+          activityIds:
+            'com.zmzx.college.search.activity.booksearch.result.activity.AnswerBrowseActivity',
+          matches: '@[desc$="dislike"] <<n [vid="rlBottomADContainer"]',
+          snapshotUrls: 'https://i.gkd.li/i/15902162',
+        },
+        {
+          preKeys: [1],
+          key: 10,
+          name: '点击不感兴趣',
+          activityIds:
+            'com.zmzx.college.search.activity.booksearch.result.activity.AnswerBrowseActivity',
+          matches: '@[clickable=true] > [text="不感兴趣"]',
+          snapshotUrls: 'https://i.gkd.li/i/15902298',
+        },
+      ],
     },
   ],
 });

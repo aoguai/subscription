@@ -40,7 +40,7 @@ export default defineGkdApp({
           key: 0,
           name: '顶部横幅',
           matches:
-            'ImageView[longClickable!=true] <n *[left=0][vid!="root"] >n TextView[clickable=false][text.length>0][text!~="(?is).*([01]?[0-9]|2[0-3])[:：][0-5][0-9].*"] <<n * > [name$="ImageView"||name$="Button"][desc="关闭"||(desc=null&&text=null)][childCount=0][visibleToUser=true][clickable=true][longClickable!=true][left>0]',
+            'ImageView[longClickable!=true] <n *[left=0][vid!="root"] >n TextView[clickable=false][text.length>0][text!~="(?is).*([01]?[0-9]|2[0-3])[:：][0-5][0-9].*"] <<n * > [name$="ImageView"||name$="Button"][desc="关闭"||(desc=null&&text=null)][childCount=0][visibleToUser=true][clickable=true][longClickable!=true][left>0][vid!="chat_item_head_icon"]',
           excludeMatches: [
             '[id^="com.tencent.mobileqq.qzone"]', // QQ空间
           ],
