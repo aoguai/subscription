@@ -93,6 +93,7 @@ export default defineGkdApp({
         },
         {
           key: 2,
+          quickFind: true,
           matches: '[vid="iv_native_close"]',
           snapshotUrls: 'https://i.gkd.li/i/15527866',
         },
