@@ -310,9 +310,8 @@ export default defineGkdApp({
     },
     {
       key: 10,
-      name: '全屏广告-微信小程序-开屏广告',
+      name: '全屏广告-小程序部分广告',
       enable: false,
-      quickFind: true,
       matchTime: 10000,
       activityIds: [
         'com.tencent.mm.plugin.appbrand.ui.AppBrandUI',
@@ -320,7 +319,10 @@ export default defineGkdApp({
       ],
       rules: [
         {
+          key: 0,
+          name: '开屏广告',
           actionDelay: 800, // 过早点击首次大概率跳不过
+          quickFind: true,
           matches: [
             '[text="广告"][visibleToUser=true]',
             '[text="跳过"][visibleToUser=true]',
@@ -336,27 +338,34 @@ export default defineGkdApp({
             'https://i.gkd.li/i/15108441',
           ],
         },
-      ],
-    },
-    {
-      key: 13,
-      name: '全屏广告-提瓦特助手小程序-弹窗广告',
-      enable: false,
-      activityIds: 'com.tencent.mm.plugin.appbrand.ui.AppBrandUI',
-      rules: [
         {
-          key: 0,
+          key: 1,
+          name: '提瓦特助手小程序-弹窗广告1',
           matches: [
             'ImageView[childCount=0][visibleToUser=true] < FrameLayout < @FrameLayout[visibleToUser=true] <2 * - * >5 [text="查看详情"]',
           ],
           snapshotUrls: 'https://i.gkd.li/import/12926021',
         },
         {
-          key: 1,
+          key: 2,
+          name: '提瓦特助手小程序-弹窗广告2',
           quickFind: true,
           matches:
             'ImageView[childCount=0][visibleToUser=true] < FrameLayout < @FrameLayout[visibleToUser=true] <2 * - * >4 [text="广告"]',
           snapshotUrls: 'https://i.gkd.li/import/13459614',
+        },
+        {
+          key: 3,
+          name: '京东购物小程序-低价包邮广告',
+          actionDelay: 500,
+          actionMaximum: 1,
+          resetMatch: 'activity',
+          matches:
+            'View[childCount=8] > View[index=6] > View[childCount=4] > Image[visibleToUser=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/import/13298294',
+            'https://i.gkd.li/import/14156176', // 误触快照
+          ],
         },
       ],
     },
@@ -400,24 +409,6 @@ export default defineGkdApp({
           snapshotUrls: 'https://i.gkd.li/import/13200048',
         },
       ],
-    },
-    {
-      key: 16,
-      name: '全屏广告-小程序-京东购物',
-      enable: false,
-      desc: '低价包邮广告',
-      actionDelay: 500,
-      actionMaximum: 1,
-      resetMatch: 'activity',
-      activityIds: 'com.tencent.mm.plugin.appbrand.ui.AppBrandUI',
-      rules: {
-        matches:
-          'View[childCount=8] > View[index=6] > View[childCount=4] > Image[visibleToUser=true]',
-        snapshotUrls: [
-          'https://i.gkd.li/import/13298294',
-          'https://i.gkd.li/import/14156176', // 误触快照
-        ],
-      },
     },
     {
       key: 18,
