@@ -13,12 +13,6 @@ export default defineGkdApp({
       ],
       rules: [
         {
-          key: 1,
-          quickFind: true,
-          matches: '[text^="广告"] + [text="跳过"][clickable=true]',
-          snapshotUrls: 'https://i.gkd.li/i/13985169', // 播放界面
-        },
-        {
           key: 2,
           quickFind: true,
           matches: '@[desc="关闭"] -n [text="广告"]',
