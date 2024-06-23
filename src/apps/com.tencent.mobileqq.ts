@@ -40,7 +40,7 @@ export default defineGkdApp({
           key: 0,
           name: '顶部横幅',
           matches:
-            'ImageView[longClickable!=true] <n *[left=0][vid!="root"] >n TextView[clickable=false][text.length>0][text!~="(?is).*([01]?[0-9]|2[0-3])[:：][0-5][0-9].*"] <<n * > [name$="ImageView"||name$="Button"][desc="关闭"||(desc=null&&text=null)][childCount=0][visibleToUser=true][clickable=true][longClickable!=true][left>0][vid!="chat_item_head_icon"]',
+            'ImageView[longClickable!=true][vid!="chat_item_head_icon"][visibleToUser=true] <n *[left=0][vid!="root"][visibleToUser=true] >n TextView[clickable=false][text.length>0][text!~="(?is).*([01]?[0-9]|2[0-3])[:：][0-5][0-9].*"][text!$="G"&&text!$="M"&&text!$="k"][visibleToUser=true] <<n * > [name$="ImageView"||name$="Button"][desc="关闭"||(desc=null&&text=null)][childCount=0][visibleToUser=true][clickable=true][longClickable!=true][left>0][vid!="chat_item_head_icon"][visibleToUser=true]',
           excludeMatches: [
             '[id^="com.tencent.mobileqq.qzone"]', // QQ空间
           ],
@@ -279,17 +279,16 @@ export default defineGkdApp({
       name: '功能类-自动授权',
       desc: '自动点击登录。包括 PC 登录确认、QQ 互联登录确认。',
       quickFind: true,
-      activityIds: [
-        'com.tencent.mobileqq.activity.SplashActivity',
-        'com.tencent.biz.qrcode.activity.QRLoginAuthActivity',
-        'com.tencent.mobileqq.activity.DevlockQuickLoginActivity',
-        'com.tencent.mobileqq.activity.DevLockQuickVerifyActivity',
-        'com.tencent.open.agent.PublicFragmentActivityForOpenSDK',
-      ],
       rules: [
         {
           key: 1,
           name: 'PC 登录确认',
+          activityIds: [
+            'com.tencent.mobileqq.activity.SplashActivity',
+            'com.tencent.biz.qrcode.activity.QRLoginAuthActivity',
+            'com.tencent.mobileqq.activity.DevlockQuickLoginActivity',
+            'com.tencent.mobileqq.activity.DevLockQuickVerifyActivity',
+          ],
           matches:
             'Button[text*="登录"][clickable=true][visibleToUser=true][text.length<10]',
           snapshotUrls: [
@@ -304,12 +303,21 @@ export default defineGkdApp({
         {
           key: 2,
           name: '点击同意',
+          activityIds: [
+            'com.tencent.open.agent.PublicFragmentActivityForOpenSDK',
+          ],
           matches: 'Button[text="同意"][clickable=true][visibleToUser=true]',
+          excludeMatches:[
+            '[text="群通知"]',  //  群消息通知误触
+          ],
           snapshotUrls: 'https://i.gkd.li/i/14752498',
         },
         {
           preKeys: [2],
           key: 3,
+          activityIds: [
+            'com.tencent.open.agent.PublicFragmentActivityForOpenSDK',
+          ],
           name: '点击确认',
           matches: 'Button[text="确认"]',
           snapshotUrls: 'https://i.gkd.li/i/14752519',
