@@ -15,6 +15,7 @@ export default defineGkdApp({
       activityIds: [
         'com.alicloud.databox.MainActivity',
         'com.alicloud.databox.navigation.NavigationFragmentContainerActivity',
+        'com.alicloud.databox.account.login.LoginActivity',
       ],
       rules: [
         {
@@ -24,6 +25,7 @@ export default defineGkdApp({
           snapshotUrls: [
             'https://i.gkd.li/import/12929318',
             'https://i.gkd.li/i/15573070',
+            'https://i.gkd.li/i/15942837',
           ],
         },
         {
