@@ -30,7 +30,7 @@ export default defineGkdApp({
       desc: '关闭首页的所有可关闭的广告卡片',
       activityIds: 'com.autonavi.map.activity.NewMapActivity',
       rules:
-        'ScrollView >n ViewGroup[childCount<5][visibleToUser=true] > ViewGroup[childCount>0] + @ViewGroup[index!=0][childCount=1][visibleToUser=true][clickable=true][desc=null||desc="关闭"] > ImageView[visibleToUser=true][desc=null||desc="关闭"]',
+        'ScrollView >n ViewGroup[childCount<5][visibleToUser=true] > ViewGroup[childCount>0] + ViewGroup[index!=0][childCount=1][visibleToUser=true][clickable=true][desc=null||desc="关闭"] > ImageView[visibleToUser=true][desc=null||desc="关闭"]',
       snapshotUrls: [
         'https://i.gkd.li/import/12642842',
         'https://i.gkd.li/import/12642845',
