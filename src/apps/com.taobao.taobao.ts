@@ -16,19 +16,20 @@ export default defineGkdApp({
     {
       key: 1,
       name: '全屏广告-弹窗广告',
+      desc: '各种全屏广告弹窗',
       enable: false,
-      quickFind: true,
-      activityIds: [
-        'com.taobao.tao.welcome.Welcome',
-        'com.taobao.tao.TBMainActivity',
-        'com.taobao.android.tbabilitykit.pop.StdPopContainerActivity',
-        'com.taobao.android.detail.wrapper.activity.DetailActivity',
-        'com.alibaba.triver.container.TriverMainActivity',
-      ],
       rules: [
         {
           key: 1,
           name: '88VIP开通优惠弹窗',
+          activityIds: [
+            'com.taobao.tao.welcome.Welcome',
+            'com.taobao.tao.TBMainActivity',
+            'com.taobao.android.tbabilitykit.pop.StdPopContainerActivity',
+            'com.taobao.android.detail.wrapper.activity.DetailActivity',
+            'com.alibaba.triver.container.TriverMainActivity',
+          ],
+          quickFind: true,
           matches: '@[desc="关闭按钮"] - [vid="poplayer_native_state_id"]',
           snapshotUrls: [
             'https://i.gkd.li/import/13198052', //com.taobao.tao.welcome.Welcome
@@ -44,8 +45,74 @@ export default defineGkdApp({
         {
           key: 2,
           name: '抢天降补贴弹窗',
+          activityIds: [
+            'com.taobao.tao.welcome.Welcome',
+            'com.taobao.tao.TBMainActivity',
+            'com.taobao.android.tbabilitykit.pop.StdPopContainerActivity',
+            'com.taobao.android.detail.wrapper.activity.DetailActivity',
+            'com.alibaba.triver.container.TriverMainActivity',
+          ],
+          quickFind: true,
           matches: '@[desc="关闭按钮"] - [vid="poplayer_native_state_id"]',
           snapshotUrls: 'https://i.gkd.li/import/14060521',
+        },
+        {
+          key: 3,
+          name: '"「0元下单」权益"弹窗',
+          activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
+          quickFind: true,
+          matches:
+            '[text="关闭"] < @FrameLayout[clickable=true] <3 FrameLayout[childCount=3] < * + FrameLayout[childCount=3] [text*="0元下单"]',
+          snapshotUrls: 'https://i.gkd.li/import/14155537',
+        },
+        {
+          key: 4,
+          name: '视频页面-弹窗-类型1',
+          activityIds: [
+            'com.taobao.tao.welcome.Welcome',
+            'com.taobao.tao.TBMainActivity',
+          ],
+          matches:
+            'View[id=null] > [text="立即参加"] + TextView[id=null][clickable=true]',
+          snapshotUrls: 'https://i.gkd.li/import/12642813',
+        },
+        {
+          key: 5,
+          name: '视频页面-签到弹窗',
+          activityIds: [
+            'com.taobao.tao.welcome.Welcome',
+            'com.taobao.tao.TBMainActivity',
+          ],
+          matches:
+            '@Image[text.length>40] < View - View >n TextView[text*="立即"]',
+          snapshotUrls: [
+            'https://i.gkd.li/import/12642798',
+            'https://i.gkd.li/import/14163734',
+          ],
+        },
+        {
+          key: 6,
+          name: '将小组件添加到手机桌面',
+          activityIds: 'com.alibaba.triver.container.TriverMainActivity',
+          matches: 'View[childCount=2] >3 View[text="立即添加"] + View[text="取消"]',
+          snapshotUrls: [
+            'https://i.gkd.li/import/13598578',
+            'https://i.gkd.li/import/13853510', //误触快照
+          ],
+        },
+        {
+          key: 7,
+          name: '各级页面-添加到首页弹窗',
+          quickFind: true,
+          activityIds: [
+            'com.taobao.themis.container.app.TMSActivity',
+            'com.alibaba.triver.container.TriverMainActivity',
+          ],
+          matches: 'TextView[text="去首页"] + TextView[text="退出"]',
+          snapshotUrls: [
+            'https://i.gkd.li/import/13197553',
+            'https://i.gkd.li/import/13197546',
+          ],
         },
       ],
     },
@@ -100,49 +167,6 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 9,
-      name: '局部广告-各级页面-添加到首页弹窗',
-      desc: '自动点击退出',
-      quickFind: true,
-      activityIds: [
-        'com.taobao.themis.container.app.TMSActivity',
-        'com.alibaba.triver.container.TriverMainActivity',
-      ],
-      rules: 'TextView[text="去首页"] + TextView[text="退出"]',
-      snapshotUrls: [
-        'https://i.gkd.li/import/13197553',
-        'https://i.gkd.li/import/13197546',
-      ],
-    },
-    {
-      key: 10,
-      name: '全屏广告-视频页面-弹窗',
-      enable: false,
-      activityIds: [
-        'com.taobao.tao.welcome.Welcome',
-        'com.taobao.tao.TBMainActivity',
-      ],
-      rules: [
-        {
-          key: 0,
-          name: '类型1',
-          matches:
-            'View[id=null] > [text="立即参加"] + TextView[id=null][clickable=true]',
-          snapshotUrls: 'https://i.gkd.li/import/12642813',
-        },
-        {
-          key: 1,
-          name: '签到弹窗',
-          matches:
-            '@Image[text.length>40] < View - View >n TextView[text*="立即"]',
-          snapshotUrls: [
-            'https://i.gkd.li/import/12642798',
-            'https://i.gkd.li/import/14163734',
-          ],
-        },
-      ],
-    },
-    {
       key: 12,
       name: '更新提示',
       enable: false,
@@ -192,18 +216,6 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 14,
-      name: '全屏广告-将小组件添加到手机桌面',
-      desc: '点击取消',
-      enable: false,
-      activityIds: 'com.alibaba.triver.container.TriverMainActivity',
-      rules: 'View[childCount=2] >3 View[text="立即添加"] + View[text="取消"]',
-      snapshotUrls: [
-        'https://i.gkd.li/import/13598578',
-        'https://i.gkd.li/import/13853510', //误触快照
-      ],
-    },
-    {
       key: 16,
       name: '全屏广告-花呗升级报送征信',
       enable: false,
@@ -232,23 +244,6 @@ export default defineGkdApp({
           matches:
             '[id="com.taobao.taobao:id/flybird_userinfo"] + * [text="暂不升级，继续付款"]',
           snapshotUrls: 'https://i.gkd.li/import/13898735',
-        },
-      ],
-    },
-    {
-      key: 18,
-      name: '全屏广告-"「0元下单」权益"弹窗',
-      desc: '点击关闭',
-      enable: false,
-      rules: [
-        {
-          quickFind: true,
-          activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
-          matches:
-            '[text="关闭"] < @FrameLayout[clickable=true] <3 FrameLayout[childCount=3] < * + FrameLayout[childCount=3] [text*="0元下单"]',
-          exampleUrls:
-            'https://m.gkd.li/57941037/a35c954d-5162-463c-aee3-b72b9c2d6625',
-          snapshotUrls: 'https://i.gkd.li/import/14155537',
         },
       ],
     },
