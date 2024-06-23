@@ -44,25 +44,25 @@ export default defineGkdApp({
     },
     {
       key: 2,
-      name: '局部广告-包裹页面-地图底部横条广告',
+      name: '局部广告-包裹页面广告',
       activityIds: [
         'com.taobao.cainiao.logistic.ui.view.LogisticDetailActivity',
       ],
-      rules: 'View[desc="立即查看"] +2 ImageView[id=null]',
-      snapshotUrls: ['https://i.gkd.li/import/14162159'],
-    },
-    {
-      key: 3,
-      name: '局部广告-包裹页面-物流信息底部横条广告',
-      desc: '点击右上角关闭',
-      quickFind: true,
-      activityIds: 'com.taobao.cainiao.logistic.ui.view.LogisticDetailActivity',
       rules: [
         {
+          key: 0,
+          name: '地图底部横条广告',
+          matches: 'View[desc="立即查看"] +2 ImageView[id=null]',
+          snapshotUrls: 'https://i.gkd.li/import/14162159',
+        },
+        {
+          key: 1,
+          name: '物流信息底部横条广告',
+          quickFind: true,
           matches: '[vid="iv_banner_close"]',
           snapshotUrls: 'https://i.gkd.li/i/15879126',
         },
-      ],
+      ]
     },
     {
       key: 10,
