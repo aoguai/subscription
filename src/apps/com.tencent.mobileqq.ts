@@ -307,8 +307,8 @@ export default defineGkdApp({
             'com.tencent.open.agent.PublicFragmentActivityForOpenSDK',
           ],
           matches: 'Button[text="同意"][clickable=true][visibleToUser=true]',
-          excludeMatches:[
-            '[text="群通知"]',  //  群消息通知误触
+          excludeMatches: [
+            '[text="群通知"]', //  群消息通知误触
           ],
           snapshotUrls: 'https://i.gkd.li/i/14752498',
         },

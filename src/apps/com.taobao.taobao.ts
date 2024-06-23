@@ -94,7 +94,8 @@ export default defineGkdApp({
           key: 6,
           name: '将小组件添加到手机桌面',
           activityIds: 'com.alibaba.triver.container.TriverMainActivity',
-          matches: 'View[childCount=2] >3 View[text="立即添加"] + View[text="取消"]',
+          matches:
+            'View[childCount=2] >3 View[text="立即添加"] + View[text="取消"]',
           snapshotUrls: [
             'https://i.gkd.li/import/13598578',
             'https://i.gkd.li/import/13853510', //误触快照

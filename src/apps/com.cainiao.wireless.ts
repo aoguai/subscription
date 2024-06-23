@@ -62,7 +62,7 @@ export default defineGkdApp({
           matches: '[vid="iv_banner_close"]',
           snapshotUrls: 'https://i.gkd.li/i/15879126',
         },
-      ]
+      ],
     },
     {
       key: 10,

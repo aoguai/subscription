@@ -361,7 +361,7 @@ export default defineGkdApp({
           actionMaximum: 1,
           resetMatch: 'activity',
           matches:
-          'View[childCount=8] > View[index=6] > View[childCount=4] > Image[visibleToUser=true]',
+            'View[childCount=8] > View[index=6] > View[childCount=4] > Image[visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/import/13298294',
             'https://i.gkd.li/import/14156176', // 误触快照
