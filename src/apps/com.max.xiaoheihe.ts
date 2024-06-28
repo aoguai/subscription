@@ -40,5 +40,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 10,
+      name: '功能类-自动查看原图',
+      enable: false,
+      quickFind: true,
+      activityIds:
+      'com.max.xiaoheihe.module.bbs.post.ui.activitys.PicturePostPageActivity',
+      rules: [
+        {
+          matches: '[vid="tv_original"][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/16028159',
+        },
+      ],
+    },
   ],
 });
