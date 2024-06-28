@@ -74,7 +74,8 @@ export default defineGkdApp({
         {
           key: 3,
           quickFind: true,
-          matches: 'FrameLayout[childCount=8] > @FrameLayout[clickable=true][childCount=0][text=null] <<n [vid="layout_root"]',
+          matches:
+            'FrameLayout[childCount=8] > @FrameLayout[clickable=true][childCount=0][text=null] <<n [vid="layout_root"]',
           snapshotUrls: 'https://i.gkd.li/i/16024305',
         },
       ],

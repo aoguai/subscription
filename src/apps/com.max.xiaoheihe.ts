@@ -46,7 +46,7 @@ export default defineGkdApp({
       enable: false,
       quickFind: true,
       activityIds:
-      'com.max.xiaoheihe.module.bbs.post.ui.activitys.PicturePostPageActivity',
+        'com.max.xiaoheihe.module.bbs.post.ui.activitys.PicturePostPageActivity',
       rules: [
         {
           matches: '[vid="tv_original"][visibleToUser=true]',
