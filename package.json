@@ -49,7 +49,7 @@
     "@types/node": "20.14.9",
     "@typescript-eslint/eslint-plugin": "7.14.1",
     "@typescript-eslint/parser": "7.14.1",
-    "eslint": "9.5.0",
+    "eslint": "9.6.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-define-config": "2.1.0",
     "eslint-plugin-unused-imports": "4.0.0",
