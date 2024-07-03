@@ -64,9 +64,9 @@ const NEGATION_PART_RULE_DESC = `${COMMON_PREFIX}[((desc^="不"&&desc$="谢谢")
 const NEGATION_PART_RULE_BUTTON = `${COMMON_PREFIX}[(vid~="(?is).*iv.*"||vid~="(?is).*guide.*"||vid~="(?is).*alert"||vid~="(?is).*notific.*"||vid~="(?is).*dialog.*"||vid~="(?is).*btn.*"||vid~="(?is).*ad.*"||vid~="(?is).*ab.*")&&(vid~="(?is).*close"||vid~="(?is).*delete"||vid~="(?is).*cancel"||vid~="(?is).*cancle"||vid~="(?is).*exit")||vid~="(?is)close.*"||vid~="(?is)ab.*"||vid~="(?is)closeIv.*"||vid~="(?is)ivDelete.*"||vid~="(?is)deleteIv.*"||vid~="(?is)iv_close_bt.*"||vid~="(?is).*_close"||text=""||desc=""||text="×"||desc="×"||text="퀺"||desc="퀺"]`;
 
 const PA_commonTextPatterns =
-  '[text^="广告"||text$="广告"||text^="廣告"||text$="廣告"||text$="限时福利"||text^="热门活动"||text$="热门活动"||text$="限時福利"||text^="限时福利"||text^="限時福利"||((text~="(?is).*AD"||text~="ad")&&((!(text~="(?is).*load.*"))&&(!(text~="(?is).*read.*"))&&(!(text~="(?is).*add.*"))&&(!(text~="(?is).*ead.*"))))||(text*="申请"||text*="开启"||text*="打开"||text*="获取"||text*="订阅"||text*="接收"||text~="(?is).*Turn on.*")&&(text*="个性化"||text*="推荐"||text*="感兴趣"||text*="個性化"||text*="推薦"||text*="感興趣"||text*="感興趣")]';
+  '[text^="广告"||text$="广告"||text^="廣告"||text$="廣告"||text$="限时福利"||text^="热门活动"||text$="热门活动"||text$="限時福利"||text^="限时福利"||text^="限時福利"||((text~="(?is).*AD"||text~="ad")&&((!(text~="(?is).*load.*"))&&(!(text~="(?is).*read.*"))&&(!(text~="(?is).*add.*"))&&!(text~="(?is).*ead.*")))||(text*="申请"||text*="开启"||text*="打开"||text*="获取"||text*="订阅"||text*="接收"||text~="(?is).*Turn on.*")&&(text*="个性化"||text*="推荐"||text*="感兴趣"||text*="個性化"||text*="推薦"||text*="感興趣"||text*="感興趣")]';
 const PA_commonDescPatterns =
-  '[desc^="广告"||desc$="广告"||desc^="廣告"||desc$="廣告"||desc$="限时福利"||desc^="热门活动"||desc$="热门活动"||desc$="限時福利"||desc^="限时福利"||desc^="限時福利"||((desc~="(?is).*AD"||desc~="ad")&&((!(desc~="(?is).*load.*"))&&(!(desc~="(?is).*read.*"))&&(!(desc~="(?is).*add.*"))&&(!(desc~="(?is).*ead.*"))))||(desc*="申请"||desc*="开启"||desc*="打开"||desc*="获取"||desc*="订阅"||desc*="接收"||desc~="(?is).*Turn on.*")&&(desc*="个性化"||desc*="推荐"||desc*="感兴趣"||desc*="個性化"||desc*="推薦"||desc*="感興趣"||desc*="感興趣")]';
+  '[desc^="广告"||desc$="广告"||desc^="廣告"||desc$="廣告"||desc$="限时福利"||desc^="热门活动"||desc$="热门活动"||desc$="限時福利"||desc^="限时福利"||desc^="限時福利"||((desc~="(?is).*AD"||desc~="ad")&&((!(desc~="(?is).*load.*"))&&(!(desc~="(?is).*read.*"))&&(!(desc~="(?is).*add.*"))&&!(desc~="(?is).*ead.*")))||(desc*="申请"||desc*="开启"||desc*="打开"||desc*="获取"||desc*="订阅"||desc*="接收"||desc~="(?is).*Turn on.*")&&(desc*="个性化"||desc*="推荐"||desc*="感兴趣"||desc*="個性化"||desc*="推薦"||desc*="感興趣"||desc*="感興趣")]';
 
 export default defineGkdGlobalGroups([
   {
@@ -146,7 +146,7 @@ export default defineGkdGlobalGroups([
     rules: [
       {
         key: 0,
-        matches: `[(((vid~="(?is)ad.*"||vid~="(?is).*ad")&&vid*="_")||vid~="adIv"||vid~="(?is).*_ad_.*")&&(!(vid~="(?is).*load.*"))&&(!(vid~="(?is).*read.*"))&&(!(vid~="(?is).*add.*"))&&(!(vid~="(?is).*ead.*"))][height>0&&width>0] <<n * <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
+        matches: `[(((vid~="(?is)ad.*"||vid~="(?is).*ad")&&vid*="_")||vid~="adIv"||vid~="(?is).*_ad_.*")&&(!(vid~="(?is).*load.*"))&&(!(vid~="(?is).*read.*"))&&(!(vid~="(?is).*add.*"))&&!(vid~="(?is).*ead.*")][height>0&&width>0] <<n * <n * > * >n ${NEGATION_PART_RULE_BUTTON}`,
       },
       {
         key: 1,
