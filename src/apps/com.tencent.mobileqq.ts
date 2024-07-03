@@ -40,7 +40,7 @@ export default defineGkdApp({
           key: 0,
           name: '顶部横幅',
           matches:
-            'ImageView[longClickable!=true][vid!="chat_item_head_icon"][visibleToUser=true] <n *[left=0][vid!="root"][visibleToUser=true] >n TextView[clickable=false][text.length>0][text!~="(?is).*([01]?[0-9]|2[0-3])[:：][0-5][0-9].*"][text!$="G"&&text!$="M"&&text!$="k"][visibleToUser=true] <<n * > [name$="ImageView"||name$="Button"][desc="关闭"||(desc=null&&text=null)][childCount=0][visibleToUser=true][clickable=true][longClickable!=true][left>0][vid!="chat_item_head_icon"][visibleToUser=true]',
+            'ImageView[longClickable!=true][vid!="chat_item_head_icon"][visibleToUser=true] <n *[left=0][vid!="root"][visibleToUser=true] >n TextView[clickable=false][text.length>0][!(text~="(?is).*([01]?[0-9]|2[0-3])[:：][0-5][0-9].*")][text!$="G"&&text!$="M"&&text!$="k"][visibleToUser=true] <<n * > [name$="ImageView"||name$="Button"][desc="关闭"||(desc=null&&text=null)][childCount=0][visibleToUser=true][clickable=true][longClickable!=true][left>0][vid!="chat_item_head_icon"][visibleToUser=true]',
           excludeMatches: [
             '[id^="com.tencent.mobileqq.qzone"]', // QQ空间
           ],
@@ -551,7 +551,7 @@ export default defineGkdApp({
         {
           key: 0,
           matches:
-            'ImageView < * < FrameLayout +2 * >3 TextView[text*="红包"] - @ViewGroup[childCount=5] > TextView[text!="已领取"]',
+            'ImageView < * < FrameLayout +2 * >3 TextView[text*="红包"] - @ViewGroup[childCount=5] > TextView[!(text="已领取")]',
           exampleUrls:
             'https://m.gkd.li/57941037/7a933a7f-dc5a-4eb7-8a6f-fe3cc4e8fb5e',
           snapshotUrls: 'https://i.gkd.li/import/14221309',

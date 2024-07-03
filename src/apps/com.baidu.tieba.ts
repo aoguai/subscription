@@ -53,7 +53,19 @@ export default defineGkdApp({
           ],
         },
         {
-          preKeys: 0,
+          key: 1,
+          quickFind: true,
+          matches:
+            '@FrameLayout[clickable=true] <n RelativeLayout + * [text="广告"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/16038470',
+            'https://i.gkd.li/i/16038471',
+            'https://i.gkd.li/i/16038472',
+          ],
+        },
+        {
+          preKeys: [0, 1],
+          key: 10,
           name: '关闭原因-【不感兴趣】',
           matches:
             '@View[text=null] - TextView[text="选择不喜欢理由"][index=0]',

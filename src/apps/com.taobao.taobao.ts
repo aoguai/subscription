@@ -134,7 +134,7 @@ export default defineGkdApp({
           name: '商品详情右侧悬浮广告',
           activityIds: 'com.taobao.browser.BrowserActivity',
           matches:
-            'View[childCount=2] > @Image[text!=""][clickable=true] + View[childCount>1]',
+            'View[childCount=2] > @Image[!(text="")][clickable=true] + View[childCount>1]',
           snapshotUrls: [
             'https://i.gkd.li/import/13521702',
             'https://i.gkd.li/import/14236602', // 防止误触

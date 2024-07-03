@@ -13,10 +13,10 @@ export default defineGkdApp({
           key: 0,
           name: '参与调研',
           matches:
-            'FrameLayout + RelativeLayout > RelativeLayout > ImageView[visibleToUser=true] + ImageView[desc!="返回"][visibleToUser=true]',
+            'FrameLayout + RelativeLayout > RelativeLayout > ImageView[visibleToUser=true] + ImageView[!(desc="返回")][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/import/12642270',
-            'https://i.gkd.li/import/12774910', // 使用 [desc!="返回"] 进行限定，防止在进入商品详情页时点击返回按钮
+            'https://i.gkd.li/import/12774910', // 使用 [!(desc="返回")] 进行限定，防止在进入商品详情页时点击返回按钮
             'https://i.gkd.li/i/15110548', // 避免误触
           ],
         },
@@ -114,7 +114,7 @@ export default defineGkdApp({
           key: 2,
           activityIds: 'com.jingdong.app.mall.MainFrameActivity',
           matches:
-            '[id="android:id/content"] > RelativeLayout > RelativeLayout > *[childCount=2] > ImageView[index=1][clickable=true][desc!="拍照购"]',
+            '[id="android:id/content"] > RelativeLayout > RelativeLayout > *[childCount=2] > ImageView[index=1][clickable=true][!(desc="拍照购")]',
           snapshotUrls: [
             'https://i.gkd.li/import/13241883',
             'https://i.gkd.li/import/13259029',

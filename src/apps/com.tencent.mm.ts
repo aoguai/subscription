@@ -311,6 +311,7 @@ export default defineGkdApp({
     {
       key: 10,
       name: '全屏广告-小程序部分广告',
+      desc: '包括部分开屏广告',
       enable: false,
       matchTime: 10000,
       activityIds: [
@@ -322,6 +323,7 @@ export default defineGkdApp({
           key: 0,
           name: '开屏广告',
           actionDelay: 800, // 过早点击首次大概率跳不过
+          forcedTime: 10000,
           quickFind: true,
           matches: [
             '[text="广告"][visibleToUser=true]',
