@@ -8,6 +8,7 @@ export default defineGkdApp({
       key: 1,
       name: '全屏广告-弹窗广告',
       enable: false,
+      forcedTime: 10000,
       activityIds: [
         'com.cainiao.wireless.homepage.view.activity.HomePageActivity',
         'com.taobao.cainiao.logistic.ui.view.LogisticDetailActivity',
@@ -17,10 +18,11 @@ export default defineGkdApp({
         {
           key: 0,
           quickFind: true,
-          matches: '[id="com.cainiao.wireless:id/draw_dialog_iv_close"]',
+          matches: '[vid="draw_dialog_iv_close"]',
           snapshotUrls: [
             'https://i.gkd.li/import/14162087',
             'https://i.gkd.li/import/14162238',
+            'https://i.gkd.li/i/16118156',
           ],
         },
         {
@@ -39,6 +41,14 @@ export default defineGkdApp({
           key: 3,
           matches: 'View[childCount=2][clickable=true] > [text="关闭"]',
           snapshotUrls: 'https://i.gkd.li/import/14033859',
+        },
+        {
+          key: 4,
+          quickFind: true,
+          activityIds:
+            'com.taobao.cainiao.logistic.ui.view.LogisticDetailActivity',
+          matches: '[vid="cn_bottom_sheet_close"]',
+          snapshotUrls: 'https://i.gkd.li/i/16118155',
         },
       ],
     },
