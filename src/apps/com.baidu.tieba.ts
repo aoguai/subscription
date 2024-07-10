@@ -25,6 +25,7 @@ export default defineGkdApp({
       name: '分段广告-信息流广告',
       desc: '推荐帖子列表, 评论区列表, 关闭时弹窗选原因',
       enable: false,
+      forcedTime: 10000,
       activityIds: [
         'com.baidu.tieba.pb.pb.main.PbActivity',
         'com.baidu.tieba.frs.FrsActivity',

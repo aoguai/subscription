@@ -45,12 +45,17 @@ export default defineGkdApp({
       name: '功能类-自动查看原图',
       enable: false,
       quickFind: true,
-      activityIds:
+      activityIds: [
         'com.max.xiaoheihe.module.bbs.post.ui.activitys.PicturePostPageActivity',
+        'com.max.xiaoheihe.module.bbs.post.ui.activitys.WebNewsPostPageActivity',
+      ],
       rules: [
         {
           matches: '[vid="tv_original"][visibleToUser=true]',
-          snapshotUrls: 'https://i.gkd.li/i/16028159',
+          snapshotUrls: [
+            'https://i.gkd.li/i/16028159',
+            'https://i.gkd.li/i/16156806',
+          ],
         },
       ],
     },
