@@ -103,7 +103,12 @@ export default defineGkdApp({
           snapshotUrls: 'https://i.gkd.li/i/15885694',
         },
         {
-          preKeys: [0, 1, 2, 3],
+          key: 4,
+          matches: '@ImageView - ImageView <(2) * > TextView[text.length>0] < * <n * > TextView[text.length>0]',
+          snapshotUrls: 'https://i.gkd.li/i/16157056',
+        },
+        {
+          preKeys: [0, 1, 2, 3, 4],
           key: 10,
           name: '点击不感兴趣',
           quickFind: true,
