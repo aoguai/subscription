@@ -104,7 +104,8 @@ export default defineGkdApp({
         },
         {
           key: 4,
-          matches: '@ImageView - ImageView <(2) * > TextView[text.length>0] < * <n * > TextView[text.length>0]',
+          matches:
+            '@ImageView - ImageView <(2) * > TextView[text.length>0] < * <n * > TextView[text.length>0]',
           snapshotUrls: 'https://i.gkd.li/i/16157056',
         },
         {
