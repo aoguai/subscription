@@ -30,8 +30,8 @@ importers:
         specifier: 0.0.1
         version: 0.0.1(@gkd-kit/api@0.2.2)
       '@gkd-kit/tools':
-        specifier: 0.3.0
-        version: 0.3.0(@gkd-kit/api@0.2.2)(json5@2.2.3)
+        specifier: 0.4.0
+        version: 0.4.0(@gkd-kit/api@0.2.2)(json5@2.2.3)
       '@types/node':
         specifier: 20.14.10
         version: 20.14.10
@@ -331,11 +331,11 @@ packages:
     peerDependencies:
       '@gkd-kit/api': '*'
 
-  '@gkd-kit/selector@0.2.2':
-    resolution: {integrity: sha512-tZ20wrGOL8zJF7CsJZbp5tGhsQEqPo+YkbASIrBaK/ey5OcUzWWwtNixsWc2StrdYZaqAwsvl6KRX5WE288N7A==}
+  '@gkd-kit/selector@0.3.3':
+    resolution: {integrity: sha512-iyUiYFbwAYJ6s6C0vRPMYPT/plxK9fQd9/lSd1wt1+f7UYzDInAvh900+4DqgUZrfPq4ysunomRS9FfXnCgX4w==}
 
-  '@gkd-kit/tools@0.3.0':
-    resolution: {integrity: sha512-xVuKYqdp0KeDpSBgAUx9HAHjpp/YeHjDsW54vjMIZEZfCnbJkbPgCySRtkyZL7Ui1zk65MP4ZaTFUZzoutMfnQ==}
+  '@gkd-kit/tools@0.4.0':
+    resolution: {integrity: sha512-iAtkXh35GS2PVUl3qkY8D1wmOUo4vF+Wa2bqtMaQsrQseJhKYZF3vYV18stvzfaZzX7oyzOdmnVCg7N75a7NKg==}
     peerDependencies:
       '@gkd-kit/api': '*'
       json5: '*'
@@ -1540,12 +1540,12 @@ snapshots:
     dependencies:
       '@gkd-kit/api': 0.2.2
 
-  '@gkd-kit/selector@0.2.2': {}
+  '@gkd-kit/selector@0.3.3': {}
 
-  '@gkd-kit/tools@0.3.0(@gkd-kit/api@0.2.2)(json5@2.2.3)':
+  '@gkd-kit/tools@0.4.0(@gkd-kit/api@0.2.2)(json5@2.2.3)':
     dependencies:
       '@gkd-kit/api': 0.2.2
-      '@gkd-kit/selector': 0.2.2
+      '@gkd-kit/selector': 0.3.3
       '@gkd-kit/wasm_matches': 0.0.1
       json5: 2.2.3
 
