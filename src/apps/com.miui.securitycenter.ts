@@ -9,7 +9,7 @@ export default defineGkdApp({
       name: '功能类-自动继续安装',
       desc: 'USB安装应用,点击继续安装',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.miui.permcenter.install.AdbInstallActivity',
       rules: [
         {
@@ -23,7 +23,7 @@ export default defineGkdApp({
       name: '功能类-禁止获取定位',
       desc: '关闭【允许联网及定位】后，每次打开手机管家都会出现',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       activityIds: [
         'com.miui.securityscan.MainActivity', // app版本v8
         'com.miui.permcenter.permissions.SystemAppPermissionDialogActivity', // app版本v5
@@ -46,7 +46,7 @@ export default defineGkdApp({
       name: '功能类-忽略体检优化提示',
       desc: '退出时忽略[体检优化分数]/忽略[存储空间预警]',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.miui.securityscan.MainActivity',
       rules: [
         {
@@ -77,7 +77,7 @@ export default defineGkdApp({
       name: '功能类-高敏感权限自动确定',
       desc: '勾选[我已知晓可能存在的风险]-10s后点击[确定]',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       activityIds: [
         'com.miui.permcenter.privacymanager.SpecialPermissionInterceptActivity',
         'com.miui.permcenter.privacymanager.DeviceManagerApplyActivity',

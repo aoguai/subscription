@@ -9,7 +9,7 @@ export default defineGkdApp({
       name: '分段广告-信息流广告',
       desc: '包括主页,搜索页',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       activityIds: [
         'com.weico.international.activity.MainFragmentActivity',
         'com.weico.international.ui.search.SearchActivity',

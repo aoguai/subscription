@@ -43,7 +43,7 @@ export default defineGkdApp({
       key: 3,
       name: '更新提示',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -78,7 +78,7 @@ export default defineGkdApp({
       name: '全屏广告-设置支付宝小组件',
       desc: '点击关闭',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
       rules: [
         {
@@ -103,7 +103,7 @@ export default defineGkdApp({
         {
           preKeys: 0,
           key: 1,
-          quickFind: true,
+          fastQuery: true,
           matches: '[text="对该内容不感兴趣"]',
           snapshotUrls: 'https://i.gkd.li/import/13763315',
         },
@@ -113,7 +113,7 @@ export default defineGkdApp({
       key: 12,
       name: '功能类-支付后自动点击完成',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
@@ -128,7 +128,7 @@ export default defineGkdApp({
       name: '分段广告-出行扫码广告',
       desc: '点击[展开更多]-点击[对该内容不感兴趣]',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       activityIds:
         'com.alipay.android.phone.wallet.aptrip.ui.activity.result.ResultPageActivityV2',
       rules: [
@@ -156,7 +156,7 @@ export default defineGkdApp({
       actionMaximum: 1,
       rules: [
         {
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
           matches: '@[checked=true] < * - [text$="免密支付"]',
           exampleUrls:
@@ -172,7 +172,7 @@ export default defineGkdApp({
       key: 15,
       name: '分段广告-服务消息页面-卡片广告',
       desc: '点击[关闭]-点击[不感兴趣]',
-      quickFind: true,
+      fastQuery: true,
       activityIds:
         'com.alipay.android.phone.messageboxapp.ui.MsgBoxTabActivity',
       rules: [

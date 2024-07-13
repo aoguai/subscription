@@ -8,7 +8,7 @@ export default defineGkdApp({
       key: -1,
       name: '开屏广告',
       desc: '开屏广告,任意界面切回APP开屏广告',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -20,7 +20,7 @@ export default defineGkdApp({
       name: '分段广告-动态推荐广告卡片',
       desc: '点击卡片右上角[广告]按钮-点击不感兴趣',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       matchDelay: 5000,
       activityIds: 'tv.danmaku.bili.MainActivityV2',
       rules: [
@@ -67,7 +67,7 @@ export default defineGkdApp({
         {
           preKeys: 0,
           key: 50,
-          quickFind: true,
+          fastQuery: true,
           name: '点击[不感兴趣]',
           matches: '@[clickable=true] > [text="不感兴趣"]',
           snapshotUrls: [
@@ -82,7 +82,7 @@ export default defineGkdApp({
           preKeys: 0,
           key: 51,
           name: '点击[相似内容过多]',
-          quickFind: true,
+          fastQuery: true,
           matches: '@[clickable=true] > [text="相似内容过多"]',
           exampleUrls:
             'https://m.gkd.li/57941037/acd89b46-45fc-459f-8d17-3913d98dcbad',
@@ -96,7 +96,7 @@ export default defineGkdApp({
           preKeys: 0,
           key: 52,
           name: '点击[up主不感兴趣]',
-          quickFind: true,
+          fastQuery: true,
           matches: '@[clickable=true] > [text="up主不感兴趣"]',
           exampleUrls:
             'https://m.gkd.li/57941037/9c2f42d7-c262-4e06-b3c6-40f0908e7a94',
@@ -111,7 +111,7 @@ export default defineGkdApp({
       key: 7,
       name: '局部广告-视频悬浮广告',
       desc: '领取大会员月卡,B站免流星卡',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       activityIds: [
@@ -131,7 +131,7 @@ export default defineGkdApp({
       key: 8,
       name: '局部广告-直播间卡片广告',
       desc: '点击关闭',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       activityIds: 'com.bilibili.bililive.room.ui.roomv3.LiveRoomActivityV3',
@@ -145,7 +145,7 @@ export default defineGkdApp({
         {
           key: 1,
           name: '[关注]弹窗',
-          quickFind: true,
+          fastQuery: true,
           matches: '@[vid="close"] -2 * >2 [text="关注"]',
           snapshotUrls: 'https://i.gkd.li/i/14782965',
         },

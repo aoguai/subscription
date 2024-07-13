@@ -9,7 +9,7 @@ export default defineGkdApp({
       name: '分段广告-首页信息流广告',
       desc: '点击关闭-点击内容不感兴趣',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       activityIds: [
         'com.zhihu.android.mixshortcontainer.MixShortContainerActivity',
         'com.zhihu.android.app.ui.activity.MainActivity',
@@ -84,7 +84,7 @@ export default defineGkdApp({
       key: 11,
       name: '全屏广告-广告弹窗',
       desc: '点击关闭',
-      quickFind: true,
+      fastQuery: true,
       activityIds: [
         'com.zhihu.android.app.ui.activity.MainActivity',
         'com.zhihu.android.app.ui.activity.AdAlphaVideoActivity',
@@ -144,7 +144,7 @@ export default defineGkdApp({
     {
       key: 15,
       name: '局部广告-悬浮广告',
-      quickFind: true,
+      fastQuery: true,
       activityIds: [
         'com.zhihu.android.app.ui.activity.MainActivity',
         'com.zhihu.android.feature.short_container_feature.ui.ShortContainerHostActivity',
@@ -189,7 +189,7 @@ export default defineGkdApp({
       name: '功能类-自动展开回答',
       desc: '自动点击展开',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           activityIds:

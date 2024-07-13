@@ -8,7 +8,7 @@ export default defineGkdApp({
       key: 0,
       name: '全屏广告-视频播放-跳过广告',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       activityIds: [
         'com.google.android.apps.youtube.app.watchwhile.WatchWhileActivity',
         'com.google.android.apps.youtube.app.watchwhile.MainActivity',
@@ -36,7 +36,7 @@ export default defineGkdApp({
       key: 1,
       name: '全屏广告-视频播放-赞助商广告',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       activityIds: [
         'com.google.android.apps.youtube.app.watchwhile.WatchWhileActivity',
         'com.google.android.apps.youtube.app.watchwhile.MainActivity',

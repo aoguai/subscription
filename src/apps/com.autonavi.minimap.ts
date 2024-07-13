@@ -18,7 +18,7 @@ export default defineGkdApp({
       key: 10,
       name: '通知提示-首页地图页面上方消息提醒',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.autonavi.map.activity.NewMapActivity',
       rules:
         'RelativeLayout[desc="弹窗"] > [id="com.autonavi.minimap:id/msgbox_popup_clear"]',
@@ -50,7 +50,7 @@ export default defineGkdApp({
       key: 12,
       name: '全屏广告-加油页面优惠券弹窗',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.autonavi.map.activity.NewMapActivity',
       rules:
         '@ImageView < [desc="关闭"][clickable=true] <n * > * >n View[text="立即领取"]',
@@ -61,7 +61,7 @@ export default defineGkdApp({
       name: '全屏广告-广告弹窗',
       desc: '点击关闭',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.autonavi.map.activity.NewMapActivity',
       rules: [
         {

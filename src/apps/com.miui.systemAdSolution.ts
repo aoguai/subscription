@@ -8,7 +8,7 @@ export default defineGkdApp({
       key: 1,
       name: '局部广告-miui-为什么不希望看到这条推广',
       desc: '点击【不感兴趣】',
-      quickFind: true,
+      fastQuery: true,
       activityIds: [
         'com.xiaomi.ad.feedback',
         'com.android.thememanager.module.detail.view.ThemeDetailActivity',

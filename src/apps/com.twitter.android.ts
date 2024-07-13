@@ -16,7 +16,7 @@ export default defineGkdApp({
         'com.twitter.android.search.implementation.results.SearchActivity',
       ],
       actionCd: 3000, // https://github.com/gkd-kit/subscription/issues/832
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           key: 0,
@@ -82,7 +82,7 @@ export default defineGkdApp({
       key: 4,
       name: '评价提示-评价弹窗',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -94,7 +94,7 @@ export default defineGkdApp({
       key: 6,
       name: '功能类-自动点击翻译',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.twitter.tweetdetail.TweetDetailActivity',
       rules: '[vid="translation_link"][text^="翻译"]',
       snapshotUrls: [
@@ -106,7 +106,7 @@ export default defineGkdApp({
       key: 7,
       name: '功能类-自动点击"显示更多帖子"',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.twitter.app.main.MainActivity',
       rules: '@FrameLayout[clickable=true] > [text="显示更多帖子"]',
       snapshotUrls: 'https://i.gkd.li/import/14189847',

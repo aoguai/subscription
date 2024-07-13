@@ -7,7 +7,7 @@ export default defineGkdApp({
     {
       key: 0,
       name: '开屏广告',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -29,7 +29,7 @@ export default defineGkdApp({
             'com.taobao.android.detail.wrapper.activity.DetailActivity',
             'com.alibaba.triver.container.TriverMainActivity',
           ],
-          quickFind: true,
+          fastQuery: true,
           matches: '@[desc="关闭按钮"] - [vid="poplayer_native_state_id"]',
           snapshotUrls: [
             'https://i.gkd.li/import/13198052', //com.taobao.tao.welcome.Welcome
@@ -52,7 +52,7 @@ export default defineGkdApp({
             'com.taobao.android.detail.wrapper.activity.DetailActivity',
             'com.alibaba.triver.container.TriverMainActivity',
           ],
-          quickFind: true,
+          fastQuery: true,
           matches: '@[desc="关闭按钮"] - [vid="poplayer_native_state_id"]',
           snapshotUrls: 'https://i.gkd.li/import/14060521',
         },
@@ -60,7 +60,7 @@ export default defineGkdApp({
           key: 3,
           name: '"「0元下单」权益"弹窗',
           activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
-          quickFind: true,
+          fastQuery: true,
           matches:
             '[text="关闭"] < @FrameLayout[clickable=true] <3 FrameLayout[childCount=3] < * + FrameLayout[childCount=3] [text*="0元下单"]',
           snapshotUrls: 'https://i.gkd.li/import/14155537',
@@ -104,7 +104,7 @@ export default defineGkdApp({
         {
           key: 7,
           name: '各级页面-添加到首页弹窗',
-          quickFind: true,
+          fastQuery: true,
           activityIds: [
             'com.taobao.themis.container.app.TMSActivity',
             'com.alibaba.triver.container.TriverMainActivity',
@@ -120,7 +120,7 @@ export default defineGkdApp({
     {
       key: 2,
       name: '局部广告-消息页面热门活动卡片',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.taobao.tao.welcome.Welcome',
       rules: 'View[desc.length>0] +2n FrameLayout > TextView[text="퀺"]',
       snapshotUrls: ['https://i.gkd.li/import/13197877'],
@@ -147,7 +147,7 @@ export default defineGkdApp({
       name: '通知提示',
       desc: '自动点击关闭',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       actionMaximum: 1,
       resetMatch: 'app',
       activityIds: [
@@ -171,7 +171,7 @@ export default defineGkdApp({
       key: 12,
       name: '更新提示',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       actionMaximum: 1,
       resetMatch: 'app',
       activityIds: [
@@ -192,7 +192,7 @@ export default defineGkdApp({
       name: '功能类-关闭支付相关推荐开通',
       desc: '在支付时候出现的小额免密支付，花呗支付等，自动点击关闭和不开通',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
       rules: [
         {
@@ -220,7 +220,7 @@ export default defineGkdApp({
       key: 16,
       name: '全屏广告-花呗升级报送征信',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',

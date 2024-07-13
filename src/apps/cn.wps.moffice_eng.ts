@@ -8,7 +8,7 @@ export default defineGkdApp({
       key: 1,
       name: '分段广告-首页文档列表广告',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       activityIds: [
         'cn.wps.moffice.main.StartPublicActivity',
         'cn.wps.moffice.documentmanager.PreStartActivity',
@@ -46,7 +46,7 @@ export default defineGkdApp({
       rules: [
         {
           key: 1,
-          quickFind: true,
+          fastQuery: true,
           matches: '[id="cn.wps.moffice_eng:id/afterlogin_cancel"]',
           snapshotUrls: [
             'https://i.gkd.li/import/13259097',
@@ -66,7 +66,7 @@ export default defineGkdApp({
       key: 3,
       name: '更新提示',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -83,7 +83,7 @@ export default defineGkdApp({
       name: '全屏广告-开启WPS云服务',
       desc: '自动点击不开启',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       activityIds: [
         'cn.wps.moffice.main.cloud.roaming.login.core.QingLoginActivity',
         'com.tencent.mm.plugin.webview.ui.tools.SDKOAuthUI',
@@ -109,7 +109,7 @@ export default defineGkdApp({
       key: 5,
       name: '分段广告-文档末尾广告',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       activityIds: [
         'cn.wps.moffice.writer.multiactivity.Writer', //Writer1,Writer2...
       ],
@@ -131,7 +131,7 @@ export default defineGkdApp({
     {
       key: 6,
       name: '局部广告-首页底部广告',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'cn.wps.moffice.main.local.HomeRootActivity',
       rules: '[id="cn.wps.moffice_eng:id/home_banner_ad_spread_close"]',
       snapshotUrls: 'https://i.gkd.li/import/13804525',

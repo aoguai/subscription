@@ -18,7 +18,7 @@ export default defineGkdApp({
       key: 0,
       name: '分段广告-列表卡片广告',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.tencent.qqmail.fragment.base.MailFragmentActivity',
       rules: [
         {

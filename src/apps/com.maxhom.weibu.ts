@@ -50,7 +50,7 @@ export default defineGkdApp({
     {
       key: 4,
       name: '通知提示-漂流瓶页面提示弹窗',
-      quickFind: true,
+      fastQuery: true,
       activityIds: [
         'com.maxhom.weibu.tool.home.activity.ToolBottleActivity',
         'com.maxhom.weibu.tool.home.activity.NewMainActivity',

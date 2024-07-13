@@ -8,7 +8,7 @@ export default defineGkdApp({
       key: 2,
       name: '全屏广告-首页广告弹窗',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       activityIds:
         'com.yitong.mbank.psbc.module.home.view.activity.MainActivity',
       rules:

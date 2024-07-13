@@ -8,7 +8,7 @@ export default defineGkdApp({
       key: 1,
       name: '全屏广告-软件更新/安装后的用户引导',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.ct.client.activity.UserGuideActivity',
       rules: '[id="com.ct.client:id/tvSkip"]',
       snapshotUrls: ['https://i.gkd.li/import/12508971'],
@@ -18,7 +18,7 @@ export default defineGkdApp({
       name: '全屏广告-浮窗广告',
       desc: '会出现在首页、查询办理页面',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       activityIds: [
         'com.ct.client.common.ConfirmDialogActivity',
         'com.ct.client.activity.MainActivity',

@@ -43,7 +43,7 @@ export default defineGkdApp({
         {
           key: 3,
           name: '购物车页面砸金蛋',
-          quickFind: true,
+          fastQuery: true,
           matches: '[id="com.jd.lib.cart.feature:id/iv_egg_close"]',
           snapshotUrls: [
             'https://i.gkd.li/import/12642266',
@@ -58,7 +58,7 @@ export default defineGkdApp({
       actionMaximum: 1,
       resetMatch: 'app',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       activityIds: [
         'com.jd.lib.message.messagecenter.view.activity.MessageCenterMainActivityNew',
         'com.jd.lib.ordercenter.mygoodsorderlist.view.activity.MyOrderListActivity',
@@ -103,7 +103,7 @@ export default defineGkdApp({
             'com.jd.lib.cashier.complete.view.CashierCompleteActivity',
             'com.jd.lib.jshop.jshop.JshopMainShopActivity',
           ],
-          quickFind: true,
+          fastQuery: true,
           matches: '[vid="close"][desc="关闭页面"]',
           snapshotUrls: [
             'https://i.gkd.li/import/13218034',
@@ -138,7 +138,7 @@ export default defineGkdApp({
         },
         {
           key: 4,
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'com.jingdong.app.mall.MainFrameActivity',
           matches: '[vid="close"]',
           snapshotUrls: [
@@ -171,7 +171,7 @@ export default defineGkdApp({
         },
         {
           key: 2,
-          quickFind: true,
+          fastQuery: true,
           matches: '@ViewGroup[clickable=true] - * > [text="去续费"]',
           snapshotUrls: 'https://i.gkd.li/i/15047238',
         },
@@ -183,7 +183,7 @@ export default defineGkdApp({
         },
         {
           key: 4,
-          quickFind: true,
+          fastQuery: true,
           matches: '[id="com.jd.lib.cart.feature:id/plus_close"]',
           snapshotUrls: 'https://i.gkd.li/i/15229577',
         },
@@ -212,7 +212,7 @@ export default defineGkdApp({
       name: '全屏广告-购物车页面支付成功广告弹窗',
       desc: '自动点击正下方的【x】',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           activityIds: 'com.jd.lib.cart.ShoppingCartNewActivity',

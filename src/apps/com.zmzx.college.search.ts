@@ -23,7 +23,7 @@ export default defineGkdApp({
         {
           key: 0,
           name: '广告-1',
-          quickFind: true,
+          fastQuery: true,
           matches: '[vid="iv_close"]',
           snapshotUrls: [
             'https://i.gkd.li/import/12867751',
@@ -34,7 +34,7 @@ export default defineGkdApp({
         {
           key: 1,
           name: '广告-2',
-          quickFind: true,
+          fastQuery: true,
           matches: '[vid="iv_itr_close"]',
           snapshotUrls: 'https://i.gkd.li/i/15360368',
         },
@@ -48,7 +48,7 @@ export default defineGkdApp({
         {
           key: 3,
           name: '广告-4',
-          quickFind: true,
+          fastQuery: true,
           matches:
             '@ImageView <n RelativeLayout > RelativeLayout > RelativeLayout > [text="反馈"]',
           snapshotUrls: 'https://i.gkd.li/i/15521123',
@@ -93,7 +93,7 @@ export default defineGkdApp({
         },
         {
           key: 2,
-          quickFind: true,
+          fastQuery: true,
           matches: '[vid="iv_native_close"]',
           snapshotUrls: 'https://i.gkd.li/i/15527866',
         },
@@ -112,7 +112,7 @@ export default defineGkdApp({
           preKeys: [0, 1, 2, 3, 4],
           key: 10,
           name: '点击不感兴趣',
-          quickFind: true,
+          fastQuery: true,
           matches: 'TextView[text="不感兴趣"]',
           snapshotUrls: ['https://i.gkd.li/i/15913004'],
         },
@@ -122,7 +122,7 @@ export default defineGkdApp({
       key: 11,
       name: '分段广告-底部卡片广告',
       desc: '点击关闭-点击不感兴趣',
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           key: 0,

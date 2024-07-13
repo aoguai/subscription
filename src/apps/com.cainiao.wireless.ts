@@ -17,7 +17,7 @@ export default defineGkdApp({
       rules: [
         {
           key: 0,
-          quickFind: true,
+          fastQuery: true,
           matches: '[vid="draw_dialog_iv_close"]',
           snapshotUrls: [
             'https://i.gkd.li/import/14162087',
@@ -33,7 +33,7 @@ export default defineGkdApp({
         },
         {
           key: 2,
-          quickFind: true,
+          fastQuery: true,
           matches: '[vid="dialog_full_image_close"]',
           snapshotUrls: 'https://i.gkd.li/import/13842492',
         },
@@ -44,7 +44,7 @@ export default defineGkdApp({
         },
         {
           key: 4,
-          quickFind: true,
+          fastQuery: true,
           activityIds:
             'com.taobao.cainiao.logistic.ui.view.LogisticDetailActivity',
           matches: '[vid="cn_bottom_sheet_close"]',
@@ -70,20 +70,20 @@ export default defineGkdApp({
         {
           key: 1,
           name: '物流信息底部横条广告',
-          quickFind: true,
+          fastQuery: true,
           matches: '[vid="iv_banner_close"]',
           snapshotUrls: 'https://i.gkd.li/i/15879126',
         },
         {
           key: 2,
           name: '首页底部横条广告',
-          quickFind: true,
+          fastQuery: true,
           matches: '[vid="home_task_action_close"]',
           snapshotUrls: 'https://i.gkd.li/i/16028234',
         },
         {
           key: 3,
-          quickFind: true,
+          fastQuery: true,
           matches:
             'FrameLayout[childCount=8] > @FrameLayout[clickable=true][childCount=0][text=null] <<n [vid="layout_root"]',
           snapshotUrls: 'https://i.gkd.li/i/16024305',
@@ -95,7 +95,7 @@ export default defineGkdApp({
       name: '功能类-包裹页面-自动展开更多物流信息',
       desc: '点击[展开]',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.taobao.cainiao.logistic.ui.view.LogisticDetailActivity',
       rules: [
         {

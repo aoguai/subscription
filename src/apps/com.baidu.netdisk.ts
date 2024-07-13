@@ -9,7 +9,7 @@ export default defineGkdApp({
       name: '全屏广告-活动弹窗',
       desc: '关闭各种活动弹窗信息',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       activityIds: [
         'com.baidu.netdisk.ui.MainActivity',
         'com.baidu.netdisk.business.guide.dialog.lifeproduct.',
@@ -40,7 +40,7 @@ export default defineGkdApp({
       key: 7,
       name: '局部广告-续费横幅提示',
       desc: '关闭续费横幅提示',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.baidu.netdisk.ui.MainActivity',
       rules: [
         {
@@ -53,7 +53,7 @@ export default defineGkdApp({
       key: 12,
       name: '局部广告-右下角悬浮卡片',
       desc: '点击关闭',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.baidu.netdisk.ui.MainActivity',
       rules: [
         {

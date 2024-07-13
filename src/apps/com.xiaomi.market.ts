@@ -15,7 +15,7 @@ export default defineGkdApp({
     {
       key: 9,
       name: '局部广告-应用升级界面顶部广告横幅',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.xiaomi.market.ui.UpdateListActivity',
       rules: '[id="com.xiaomi.market:id/iv_close_tip"]',
       snapshotUrls: 'https://i.gkd.li/import/13197334',
@@ -24,7 +24,7 @@ export default defineGkdApp({
       key: 10,
       name: '功能类-忽略升级',
       desc: '应用升级界面-自动点击忽略',
-      quickFind: true,
+      fastQuery: true,
       enable: false,
       activityIds: 'com.xiaomi.market.ui.UpdateListActivity',
       rules: [
@@ -58,7 +58,7 @@ export default defineGkdApp({
       key: 13,
       name: '功能类-自动点击[查看全部升级]',
       desc: '应用升级页面',
-      quickFind: true,
+      fastQuery: true,
       enable: false,
       activityIds: 'com.xiaomi.market.ui.UpdateListActivity',
       rules: '@[clickable=true] > [text^="查看全部升级"]',

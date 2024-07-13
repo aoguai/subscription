@@ -56,7 +56,7 @@ export default defineGkdApp({
           key: 1,
           name: '点击【继续】',
           activityIds: 'com.miui.packageInstaller.NewInstallerPrepareActivity',
-          quickFind: true,
+          fastQuery: true,
           matches: '[text="取消"] - @*[clickable=true] >2 [text="继续"]',
           snapshotUrls: 'https://i.gkd.li/i/14392314',
         },

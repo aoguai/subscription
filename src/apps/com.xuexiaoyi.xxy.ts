@@ -77,7 +77,7 @@ export default defineGkdApp({
           preKeys: [0, 1, 2, 3, 4, 5],
           key: 10,
           name: '点击不感兴趣',
-          quickFind: true,
+          fastQuery: true,
           matches: 'TextView[text="不感兴趣"]',
           snapshotUrls: [
             'https://i.gkd.li/import/13068819',

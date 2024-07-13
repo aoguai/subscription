@@ -14,7 +14,7 @@ export default defineGkdApp({
       rules: [
         {
           key: 2,
-          quickFind: true,
+          fastQuery: true,
           matches: '@[desc="关闭"] -n [text="广告"]',
           snapshotUrls: [
             'https://i.gkd.li/i/13206534', //歌单页
@@ -32,7 +32,7 @@ export default defineGkdApp({
         },
         {
           key: 4,
-          quickFind: true,
+          fastQuery: true,
           matches: '@[clickable=true] > [text="广告"]',
           snapshotUrls: 'https://i.gkd.li/i/15041019',
         },
@@ -64,7 +64,7 @@ export default defineGkdApp({
         {
           key: 1,
           name: '免流弹窗',
-          quickFind: true,
+          fastQuery: true,
           activityIds: [
             'com.tencent.qqmusic.activity.AppStarterActivity',
             'com.tencent.qqmusic.business.playernew.view.NewPlayerActivity',
@@ -159,7 +159,7 @@ export default defineGkdApp({
         {
           preKeys: [0],
           key: 99,
-          quickFind: true,
+          fastQuery: true,
           matches: '@[clickable=true] > [text="不感兴趣"]',
           snapshotUrls: 'https://i.gkd.li/i/15010226',
         },

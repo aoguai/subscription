@@ -10,7 +10,7 @@ export default defineGkdApp({
       name: '功能类-签到成功弹窗',
       desc: '返回关闭弹窗',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -32,7 +32,7 @@ export default defineGkdApp({
       rules: [
         {
           name: '收藏帖子后底部推荐关注卡片',
-          quickFind: true,
+          fastQuery: true,
           activityIds:
             'com.max.xiaoheihe.module.bbs.post.ui.activitys.WebNewsPostPageActivity',
           matches: '[vid="iv_notify_close"]',
@@ -44,7 +44,7 @@ export default defineGkdApp({
       key: 10,
       name: '功能类-自动查看原图',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       activityIds: [
         'com.max.xiaoheihe.module.bbs.post.ui.activitys.PicturePostPageActivity',
         'com.max.xiaoheihe.module.bbs.post.ui.activitys.WebNewsPostPageActivity',

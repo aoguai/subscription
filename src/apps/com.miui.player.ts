@@ -16,7 +16,7 @@ export default defineGkdApp({
         {
           key: 0,
           name: '类型1',
-          quickFind: true,
+          fastQuery: true,
           matches: '[id="com.miui.player:id/iv_close_dialog_button"]',
           snapshotUrls: 'https://i.gkd.li/import/13623503',
         },
@@ -38,7 +38,7 @@ export default defineGkdApp({
       key: 11,
       name: '局部广告-我的页面顶部 banner 广告',
       activityIds: 'com.tencent.qqmusiclite.activity.MainActivity',
-      quickFind: true,
+      fastQuery: true,
       rules:
         '[id="com.miui.player:id/banner_image"] + [id="com.miui.player:id/close_banner"]',
       snapshotUrls: 'https://i.gkd.li/import/12700984',
@@ -51,7 +51,7 @@ export default defineGkdApp({
       rules: [
         {
           actionDelay: 15000,
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'com.tencentmusic.ad.tmead.reward.TMERewardActivity',
           matches: '[id="com.miui.player:id/tme_ad_skip_button"]',
           snapshotUrls: 'https://i.gkd.li/import/13610667',

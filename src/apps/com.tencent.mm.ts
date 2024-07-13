@@ -282,7 +282,7 @@ export default defineGkdApp({
       name: '功能类-自动选中发送原图',
       desc: '图片和视频选择器-自动选中底部中间的发送原图',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       activityIds: [
         'com.tencent.mm.plugin.gallery.ui.AlbumPreviewUI',
         'com.tencent.mm.plugin.gallery.ui.ImagePreviewUI',
@@ -300,7 +300,7 @@ export default defineGkdApp({
       name: '功能类-自动查看原图',
       desc: '自动点击底部左侧[查看原图]按钮',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.tencent.mm.ui.chatting.gallery.ImageGalleryUI',
       rules: '[text^="查看原图"][clickable=true]',
       snapshotUrls: [
@@ -324,7 +324,7 @@ export default defineGkdApp({
           name: '开屏广告',
           actionDelay: 800, // 过早点击首次大概率跳不过
           forcedTime: 10000,
-          quickFind: true,
+          fastQuery: true,
           matches: [
             '[text="广告"][visibleToUser=true]',
             '[text="跳过"][visibleToUser=true]',
@@ -351,7 +351,7 @@ export default defineGkdApp({
         {
           key: 2,
           name: '提瓦特助手小程序-弹窗广告2',
-          quickFind: true,
+          fastQuery: true,
           matches:
             'ImageView[childCount=0][visibleToUser=true] < FrameLayout < @FrameLayout[visibleToUser=true] <2 * - * >4 [text="广告"]',
           snapshotUrls: 'https://i.gkd.li/import/13459614',
@@ -375,7 +375,7 @@ export default defineGkdApp({
       key: 14,
       name: '分段广告-小程序-内部广告',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.tencent.mm.plugin.appbrand.ui.AppBrandUI',
       rules: [
         {
@@ -444,7 +444,7 @@ export default defineGkdApp({
       rules: [
         {
           key: 0,
-          quickFind: true,
+          fastQuery: true,
           matches: '@[clickable=true] > [text="展开更早的消息"]',
           snapshotUrls: 'https://i.gkd.li/import/13790550',
         },

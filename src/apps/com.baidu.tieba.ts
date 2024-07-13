@@ -8,7 +8,7 @@ export default defineGkdApp({
       key: 1,
       name: '通知提示-申请消息提醒弹窗',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       actionMaximum: 1,
       resetMatch: 'app',
       rules: [
@@ -55,7 +55,7 @@ export default defineGkdApp({
         },
         {
           key: 1,
-          quickFind: true,
+          fastQuery: true,
           matches:
             '@FrameLayout[clickable=true] <n RelativeLayout + * [text="广告"]',
           snapshotUrls: [
@@ -194,7 +194,7 @@ export default defineGkdApp({
         {
           key: 2,
           name: '评论区左侧悬浮广告',
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'com.baidu.tieba.pb.pb.main.PbActivity',
           matches: 'LinearLayout[childCount=2] > @ImageView + [text="广告"]',
           snapshotUrls: 'https://i.gkd.li/import/13296280',

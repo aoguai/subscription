@@ -9,7 +9,7 @@ export default defineGkdApp({
       name: '分段广告-卡片广告',
       desc: '点击卡片右上角按钮->免广告-点击关闭->选择关闭原因-点击不感兴趣',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       activityIds: [
         'com.coolapk.market.view.main.MainActivity', // 缺少快照
         'com.coolapk.market.view.base.SimpleAlphaActivity', // 缺少快照
@@ -66,7 +66,7 @@ export default defineGkdApp({
       name: '功能类-自动查看原图',
       desc: '查看图片时自动点击原图',
       enable: false,
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.coolapk.market.view.photo.PhotoViewActivity',
       rules: '[vid="load_source_button"][checked=false]',
       snapshotUrls: ['https://i.gkd.li/i/14913023'],
