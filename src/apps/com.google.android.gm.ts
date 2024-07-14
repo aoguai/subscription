@@ -38,6 +38,7 @@ export default defineGkdApp({
           preKeys: 1,
           key: 2,
           name: '点击继续确认屏蔽',
+          fastQuery: true,
           matches: 'Button[text="继续"||text="Continue"]', // TODO Button[text="继续"] <<n [id="com.google.android.gm:id/design_bottom_sheet"]
           snapshotUrls: [
             'https://i.gkd.li/import/13255701',

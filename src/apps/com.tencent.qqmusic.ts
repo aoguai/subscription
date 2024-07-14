@@ -23,6 +23,7 @@ export default defineGkdApp({
         },
         {
           key: 3,
+          fastQuery: true,
           matches:
             '@ImageView - ImageView - RelativeLayout >n [text="听歌入会赢绿钻"||text="摇动点击广告跳转"]',
           snapshotUrls: [
