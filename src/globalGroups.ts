@@ -74,7 +74,7 @@ export default defineGkdGlobalGroups([
     name: '开屏广告',
     order: OPEN_AD_ORDER,
     actionMaximum: 2,
-    matchTime: 8000,
+    matchTime: 10000,
     resetMatch: 'app',
     actionCdKey: 0,
     actionMaximumKey: 0,
@@ -306,7 +306,7 @@ export default defineGkdGlobalGroups([
       {
         key: 0,
         matches: [
-          `${COMMON_PREFIX}[(text*="可能错过"||text*="是否允许"||text*="申请"||text*="开启"||text*="打开"||text*="获取"||text*="获得"||text*="订阅"||text*="接收"||text~="(?is).*Turn on.*"||text~="(?is).*Enable.*")&&(text*="通知"||text*="推送"||text*="消息"||text~="(?is).*notification.*")&&(text!*="定位"&&text!*="位置"&&!(text~="(?is).*location.*")&&(text!*="权限"||text*="通知权限"||text*="通知栏权限")&&text!*="成功"&&text!*="失败"&&(text!*="已"||text*="已知"))]`,
+          `${COMMON_PREFIX}[(text*="将使用"||text*="可能错过"||text*="是否允许"||text*="申请"||text*="开启"||text*="打开"||text*="获取"||text*="获得"||text*="订阅"||text*="接收"||text~="(?is).*Turn on.*"||text~="(?is).*Enable.*")&&(text*="通知"||text*="推送"||text*="消息"||text~="(?is).*notification.*")&&(text!*="定位"&&text!*="位置"&&!(text~="(?is).*location.*")&&(text!*="权限"||text*="通知权限"||text*="通知栏权限")&&text!*="成功"&&text!*="失败"&&(text!*="已"||text*="已知"))]`,
           `${COMMON_PREFIX}[(((text*="打开"||text*="開啟"||text*="开启"||text*="设置"||text*="允许")&&(text*="通知"||text*="推送"))||text="是"||text="好"||text="启用"||text="确认"||text="确定"||text="同意"||text="开启"||text="设置"||text="允许"||text="好的"||((text*="去"||text*="立即"||text*="立刻"||text*="马上"||text*="前往"||text*="现在")&&(text*="开启"||text*="设置"||text*="授权"))||text="尝试一下"||text="开启设置"||text="立即打开"||text~="Authorize"||text~="Let’s go")&&text.length<10]`,
           `${NEGATION_PART_RULE_TEXT}`,
         ],
@@ -314,7 +314,7 @@ export default defineGkdGlobalGroups([
       {
         key: 1,
         matches: [
-          `${COMMON_PREFIX}[(desc*="可能错过"||desc*="是否允许"||desc*="申请"||desc*="开启"||desc*="打开"||desc*="获取"||desc*="获得"||desc*="订阅"||desc*="接收"||desc~="(?is).*Turn on.*"||desc~="(?is).*Enable.*")&&(desc*="通知"||desc*="推送"||desc*="消息"||desc~="(?is).*notification.*")&&(desc!*="定位"&&desc!*="位置"&&!(desc~="(?is).*location.*")&&(desc!*="权限"||desc*="通知权限"||desc*="通知栏权限")&&desc!*="成功"&&desc!*="失败"&&(desc!*="已"||desc*="已知"))]`,
+          `${COMMON_PREFIX}[(desc*="将使用"||desc*="可能错过"||desc*="是否允许"||desc*="申请"||desc*="开启"||desc*="打开"||desc*="获取"||desc*="获得"||desc*="订阅"||desc*="接收"||desc~="(?is).*Turn on.*"||desc~="(?is).*Enable.*")&&(desc*="通知"||desc*="推送"||desc*="消息"||desc~="(?is).*notification.*")&&(desc!*="定位"&&desc!*="位置"&&!(desc~="(?is).*location.*")&&(desc!*="权限"||desc*="通知权限"||desc*="通知栏权限")&&desc!*="成功"&&desc!*="失败"&&(desc!*="已"||desc*="已知"))]`,
           `${COMMON_PREFIX}[(((desc*="打开"||desc*="開啟"||desc*="开启"||desc*="设置"||desc*="允许")&&(desc*="通知"||desc*="推送"))||desc="是"||desc="好"||desc="启用"||desc="确认"||desc="确定"||desc="同意"||desc="开启"||desc="设置"||desc="允许"||desc="好的"||((desc*="去"||desc*="立即"||desc*="立刻"||desc*="马上"||desc*="前往"||desc*="现在")&&(desc*="开启"||desc*="设置"||desc*="授权"))||desc="尝试一下"||desc="开启设置"||desc="立即打开"||desc~="Authorize"||desc~="Let’s go")&&desc.length<10]`,
           `${NEGATION_PART_RULE_DESC}`,
         ],
@@ -322,7 +322,7 @@ export default defineGkdGlobalGroups([
       {
         key: 2,
         matches: [
-          `${COMMON_PREFIX}[(text*="可能错过"||text*="是否允许"||text*="申请"||text*="开启"||text*="打开"||text*="获取"||text*="获得"||text*="订阅"||text*="接收"||text~="(?is).*Turn on.*"||text~="(?is).*Enable.*")&&(text*="通知"||text*="推送"||text*="消息"||text~="(?is).*notification.*")&&(text!*="定位"&&text!*="位置"&&!(text~="(?is).*location.*")&&(text!*="权限"||text*="通知权限"||text*="通知栏权限")&&text!*="成功"&&text!*="失败"&&(text!*="已"||text*="已知"))]`,
+          `${COMMON_PREFIX}[(text*="将使用"||text*="可能错过"||text*="是否允许"||text*="申请"||text*="开启"||text*="打开"||text*="获取"||text*="获得"||text*="订阅"||text*="接收"||text~="(?is).*Turn on.*"||text~="(?is).*Enable.*")&&(text*="通知"||text*="推送"||text*="消息"||text~="(?is).*notification.*")&&(text!*="定位"&&text!*="位置"&&!(text~="(?is).*location.*")&&(text!*="权限"||text*="通知权限"||text*="通知栏权限")&&text!*="成功"&&text!*="失败"&&(text!*="已"||text*="已知"))]`,
           `${COMMON_PREFIX}[(((text*="打开"||text*="開啟"||text*="开启"||text*="设置"||text*="允许")&&(text*="通知"||text*="推送"))||text="是"||text="好"||text="启用"||text="确认"||text="确定"||text="同意"||text="开启"||text="设置"||text="允许"||text="好的"||((text*="去"||text*="立即"||text*="立刻"||text*="马上"||text*="前往"||text*="现在")&&(text*="开启"||text*="设置"||text*="授权"))||text="尝试一下"||text="开启设置"||text="立即打开"||text~="Authorize"||text~="Let’s go")&&text.length<10]`,
           `${NEGATION_PART_RULE_BUTTON}`,
         ],
@@ -330,7 +330,7 @@ export default defineGkdGlobalGroups([
       {
         key: 3,
         matches: [
-          `${COMMON_PREFIX}[(desc*="可能错过"||desc*="是否允许"||desc*="申请"||desc*="开启"||desc*="打开"||desc*="获取"||desc*="获得"||desc*="订阅"||desc*="接收"||desc~="(?is).*Turn on.*"||desc~="(?is).*Enable.*")&&(desc*="通知"||desc*="推送"||desc*="消息"||desc~="(?is).*notification.*")&&(desc!*="定位"&&desc!*="位置"&&!(desc~="(?is).*location.*")&&(desc!*="权限"||desc*="通知权限"||desc*="通知栏权限")&&desc!*="成功"&&desc!*="失败"&&(desc!*="已"||desc*="已知"))]`,
+          `${COMMON_PREFIX}[(desc*="将使用"||desc*="可能错过"||desc*="是否允许"||desc*="申请"||desc*="开启"||desc*="打开"||desc*="获取"||desc*="获得"||desc*="订阅"||desc*="接收"||desc~="(?is).*Turn on.*"||desc~="(?is).*Enable.*")&&(desc*="通知"||desc*="推送"||desc*="消息"||desc~="(?is).*notification.*")&&(desc!*="定位"&&desc!*="位置"&&!(desc~="(?is).*location.*")&&(desc!*="权限"||desc*="通知权限"||desc*="通知栏权限")&&desc!*="成功"&&desc!*="失败"&&(desc!*="已"||desc*="已知"))]`,
           `${COMMON_PREFIX}[(((desc*="打开"||desc*="開啟"||desc*="开启"||desc*="设置"||desc*="允许")&&(desc*="通知"||desc*="推送"))||desc="是"||desc="好"||desc="启用"||desc="确认"||desc="确定"||desc="同意"||desc="开启"||desc="设置"||desc="允许"||desc="好的"||((desc*="去"||desc*="立即"||desc*="立刻"||desc*="马上"||desc*="前往"||desc*="现在")&&(desc*="开启"||desc*="设置"||desc*="授权"))||desc="尝试一下"||desc="开启设置"||desc="立即打开"||desc~="Authorize"||desc~="Let’s go")&&desc.length<10]`,
           `${NEGATION_PART_RULE_BUTTON}`,
         ],
@@ -399,7 +399,7 @@ export default defineGkdGlobalGroups([
       {
         key: 0,
         matches: [
-          `${COMMON_PREFIX}[(text*="是否允许"||text*="申请"||text*="需要"||text*="开启"||text*="打开"||text*="获取"||text*="Allow")&&(text*="权限"||text~="(?is).*Permissions.*"||((text*="剪切板"||text*="剪贴板"||text*="粘贴")&&(text*="内容"||text*="信息")))&&(text!*="定位"&&text!*="位置"&&!(text~="(?is).*location.*")&&text!*="通知"&&text!*="成功"&&text!*="失败"&&(text!*="已"||text*="已知"))]`,
+          `${COMMON_PREFIX}[(text*="将使用"||text*="是否允许"||text*="申请"||text*="需要"||text*="开启"||text*="打开"||text*="获取"||text*="Allow")&&(text*="权限"||text~="(?is).*Permissions.*"||((text*="剪切板"||text*="剪贴板"||text*="粘贴")&&(text*="内容"||text*="信息"))||(text*="通讯录"))&&(text!*="定位"&&text!*="位置"&&!(text~="(?is).*location.*")&&text!*="通知"&&text!*="成功"&&text!*="失败"&&(text!*="已"||text*="已知"))]`,
           `${COMMON_PREFIX}[(((text*="打开"||text*="開啟"||text*="开启"||text*="设置"||text*="允许")&&(text*="定位"))||text="是"||text="好"||text="启用"||text="确认"||text="确定"||text="同意"||text="开启"||text="设置"||text="允许"||text="好的"||((text*="去"||text*="立即"||text*="立刻"||text*="马上"||text*="前往"||text*="现在")&&(text*="开启"||text*="设置"||text*="授权"))||text="尝试一下"||text="开启设置"||text="立即打开"||text~="Authorize"||text~="Let’s go")&&text.length<6]`,
           `${NEGATION_PART_RULE_TEXT}`,
         ],
@@ -407,7 +407,7 @@ export default defineGkdGlobalGroups([
       {
         key: 1,
         matches: [
-          `${COMMON_PREFIX}[(desc*="是否允许"||desc*="申请"||desc*="需要"||desc*="开启"||desc*="打开"||desc*="获取"||desc*="Allow")&&(desc*="权限"||desc~="(?is).*Permissions.*"||((desc*="剪切板"||desc*="剪贴板"||desc*="粘贴")&&(desc*="内容"||desc*="信息")))&&(desc!*="定位"&&desc!*="位置"&&!(desc~="(?is).*location.*")&&desc!*="通知"&&desc!*="成功"&&desc!*="失败"&&(desc!*="已"||desc*="已知"))]`,
+          `${COMMON_PREFIX}[(desc*="将使用"||desc*="是否允许"||desc*="申请"||desc*="需要"||desc*="开启"||desc*="打开"||desc*="获取"||desc*="Allow")&&(desc*="权限"||desc~="(?is).*Permissions.*"||((desc*="剪切板"||desc*="剪贴板"||desc*="粘贴")&&(desc*="内容"||desc*="信息"))||(text*="通讯录"))&&(desc!*="定位"&&desc!*="位置"&&!(desc~="(?is).*location.*")&&desc!*="通知"&&desc!*="成功"&&desc!*="失败"&&(desc!*="已"||desc*="已知"))]`,
           `${COMMON_PREFIX}[(((desc*="打开"||desc*="開啟"||desc*="开启"||desc*="设置"||desc*="允许")&&(desc*="定位"))||desc="是"||desc="好"||desc="启用"||desc="确认"||desc="确定"||desc="同意"||desc="开启"||desc="设置"||desc="允许"||desc="好的"||((desc*="去"||desc*="立即"||desc*="立刻"||desc*="马上"||desc*="前往"||desc*="现在")&&(desc*="开启"||desc*="设置"||desc*="授权"))||desc="尝试一下"||desc="开启设置"||desc="立即打开"||desc~="Authorize"||desc~="Let’s go")&&desc.length<6]`,
           `${NEGATION_PART_RULE_DESC}`,
         ],
@@ -415,7 +415,7 @@ export default defineGkdGlobalGroups([
       {
         key: 2,
         matches: [
-          `${COMMON_PREFIX}[(text*="是否允许"||text*="申请"||text*="需要"||text*="开启"||text*="打开"||text*="获取"||text*="Allow")&&(text*="权限"||text~="(?is).*Permissions.*"||((text*="剪切板"||text*="剪贴板"||text*="粘贴")&&(text*="内容"||text*="信息")))&&(text!*="定位"&&text!*="位置"&&!(text~="(?is).*location.*")&&text!*="通知"&&text!*="成功"&&text!*="失败"&&(text!*="已"||text*="已知"))]`,
+          `${COMMON_PREFIX}[(text*="将使用"||text*="是否允许"||text*="申请"||text*="需要"||text*="开启"||text*="打开"||text*="获取"||text*="Allow")&&(text*="权限"||text~="(?is).*Permissions.*"||((text*="剪切板"||text*="剪贴板"||text*="粘贴")&&(text*="内容"||text*="信息"))||(text*="通讯录"))&&(text!*="定位"&&text!*="位置"&&!(text~="(?is).*location.*")&&text!*="通知"&&text!*="成功"&&text!*="失败"&&(text!*="已"||text*="已知"))]`,
           `${COMMON_PREFIX}[(((text*="打开"||text*="開啟"||text*="开启"||text*="设置"||text*="允许")&&(text*="定位"))||text="是"||text="好"||text="启用"||text="确认"||text="确定"||text="同意"||text="开启"||text="设置"||text="允许"||text="好的"||((text*="去"||text*="立即"||text*="立刻"||text*="马上"||text*="前往"||text*="现在")&&(text*="开启"||text*="设置"||text*="授权"))||text="尝试一下"||text="开启设置"||text="立即打开"||text~="Authorize"||text~="Let’s go")&&text.length<6]`,
           `${NEGATION_PART_RULE_BUTTON}`,
         ],
@@ -423,7 +423,7 @@ export default defineGkdGlobalGroups([
       {
         key: 3,
         matches: [
-          `${COMMON_PREFIX}[(desc*="是否允许"||desc*="申请"||desc*="需要"||desc*="开启"||desc*="打开"||desc*="获取"||desc*="Allow")&&(desc*="权限"||desc~="(?is).*Permissions.*"||((desc*="剪切板"||desc*="剪贴板"||desc*="粘贴")&&(desc*="内容"||desc*="信息")))&&(desc!*="定位"&&desc!*="位置"&&!(desc~="(?is).*location.*")&&desc!*="通知"&&desc!*="成功"&&desc!*="失败"&&(desc!*="已"||desc*="已知"))]`,
+          `${COMMON_PREFIX}[(desc*="将使用"||desc*="是否允许"||desc*="申请"||desc*="需要"||desc*="开启"||desc*="打开"||desc*="获取"||desc*="Allow")&&(desc*="权限"||desc~="(?is).*Permissions.*"||((desc*="剪切板"||desc*="剪贴板"||desc*="粘贴")&&(desc*="内容"||desc*="信息"))||(text*="通讯录"))&&(desc!*="定位"&&desc!*="位置"&&!(desc~="(?is).*location.*")&&desc!*="通知"&&desc!*="成功"&&desc!*="失败"&&(desc!*="已"||desc*="已知"))]`,
           `${COMMON_PREFIX}[(((desc*="打开"||desc*="開啟"||desc*="开启"||desc*="设置"||desc*="允许")&&(desc*="定位"))||desc="是"||desc="好"||desc="启用"||desc="确认"||desc="确定"||desc="同意"||desc="开启"||desc="设置"||desc="允许"||desc="好的"||((desc*="去"||desc*="立即"||desc*="立刻"||desc*="马上"||desc*="前往"||desc*="现在")&&(desc*="开启"||desc*="设置"||desc*="授权"))||desc="尝试一下"||desc="开启设置"||desc="立即打开"||desc~="Authorize"||desc~="Let’s go")&&desc.length<6]`,
           `${NEGATION_PART_RULE_BUTTON}`,
         ],
@@ -445,7 +445,7 @@ export default defineGkdGlobalGroups([
       {
         key: 0,
         matches: [
-          `${COMMON_PREFIX}[(text*="是否允许"||text*="访问"||text*="申请"||text*="开启"||text*="打开"||text*="获取"||text*="请求")&&(text*="定位"||text*="位置"||text~="(?is).*location.*")&&(text!*="通知"&&text!*="成功"&&text!*="失败"&&(text!*="已"||text*="已知"))]`,
+          `${COMMON_PREFIX}[(text*="将使用"||text*="是否允许"||text*="访问"||text*="申请"||text*="开启"||text*="打开"||text*="获取"||text*="请求")&&(text*="定位"||text*="位置"||text~="(?is).*location.*")&&(text!*="通知"&&text!*="成功"&&text!*="失败"&&(text!*="已"||text*="已知"))]`,
           `${COMMON_PREFIX}[(((text*="打开"||text*="開啟"||text*="开启"||text*="设置"||text*="允许")&&(text*="定位"))||text="是"||text="好"||text="启用"||text="确认"||text="确定"||text="同意"||text="开启"||text="设置"||text="允许"||text="好的"||((text*="去"||text*="立即"||text*="立刻"||text*="马上"||text*="前往"||text*="现在")&&(text*="开启"||text*="设置"||text*="授权"))||text="尝试一下"||text="开启设置"||text="立即打开"||text~="Authorize"||text~="Let’s go")&&text.length<6]`,
           `${NEGATION_PART_RULE_TEXT}`,
         ],
@@ -453,7 +453,7 @@ export default defineGkdGlobalGroups([
       {
         key: 1,
         matches: [
-          `${COMMON_PREFIX}[(desc*="是否允许"||desc*="访问"||desc*="申请"||desc*="开启"||desc*="打开"||desc*="获取"||desc*="请求")&&(desc*="定位"||desc*="位置"||desc~="(?is).*location.*")&&(desc!*="通知"&&desc!*="成功"&&desc!*="失败"&&(desc!*="已"||desc*="已知"))]`,
+          `${COMMON_PREFIX}[(desc*="将使用"||desc*="是否允许"||desc*="访问"||desc*="申请"||desc*="开启"||desc*="打开"||desc*="获取"||desc*="请求")&&(desc*="定位"||desc*="位置"||desc~="(?is).*location.*")&&(desc!*="通知"&&desc!*="成功"&&desc!*="失败"&&(desc!*="已"||desc*="已知"))]`,
           `${COMMON_PREFIX}[(((desc*="打开"||desc*="開啟"||desc*="开启"||desc*="设置"||desc*="允许")&&(desc*="定位"))||desc="是"||desc="好"||desc="启用"||desc="确认"||desc="确定"||desc="同意"||desc="开启"||desc="设置"||desc="允许"||desc="好的"||((desc*="去"||desc*="立即"||desc*="立刻"||desc*="马上"||desc*="前往"||desc*="现在")&&(desc*="开启"||desc*="设置"||desc*="授权"))||desc="尝试一下"||desc="开启设置"||desc="立即打开"||desc~="Authorize"||desc~="Let’s go")&&desc.length<6]`,
           `${NEGATION_PART_RULE_DESC}`,
         ],
@@ -461,7 +461,7 @@ export default defineGkdGlobalGroups([
       {
         key: 2,
         matches: [
-          `${COMMON_PREFIX}[(text*="是否允许"||text*="访问"||text*="申请"||text*="开启"||text*="打开"||text*="获取"||text*="请求")&&(text*="定位"||text*="位置"||text~="(?is).*location.*")&&(text!*="通知"&&text!*="成功"&&text!*="失败"&&(text!*="已"||text*="已知"))]`,
+          `${COMMON_PREFIX}[(text*="将使用"||text*="是否允许"||text*="访问"||text*="申请"||text*="开启"||text*="打开"||text*="获取"||text*="请求")&&(text*="定位"||text*="位置"||text~="(?is).*location.*")&&(text!*="通知"&&text!*="成功"&&text!*="失败"&&(text!*="已"||text*="已知"))]`,
           `${COMMON_PREFIX}[(((text*="打开"||text*="開啟"||text*="开启"||text*="设置"||text*="允许")&&(text*="定位"))||text="是"||text="好"||text="启用"||text="确认"||text="确定"||text="同意"||text="开启"||text="设置"||text="允许"||text="好的"||((text*="去"||text*="立即"||text*="立刻"||text*="马上"||text*="前往"||text*="现在")&&(text*="开启"||text*="设置"||text*="授权"))||text="尝试一下"||text="开启设置"||text="立即打开"||text~="Authorize"||text~="Let’s go")&&text.length<6]`,
           `${NEGATION_PART_RULE_BUTTON}`,
         ],
@@ -469,7 +469,7 @@ export default defineGkdGlobalGroups([
       {
         key: 3,
         matches: [
-          `${COMMON_PREFIX}[(desc*="是否允许"||desc*="访问"||desc*="申请"||desc*="开启"||desc*="打开"||desc*="获取"||desc*="请求")&&(desc*="定位"||desc*="位置"||desc~="(?is).*location.*")&&(desc!*="通知"&&desc!*="成功"&&desc!*="失败"&&(desc!*="已"||desc*="已知"))]`,
+          `${COMMON_PREFIX}[(desc*="将使用"||desc*="是否允许"||desc*="访问"||desc*="申请"||desc*="开启"||desc*="打开"||desc*="获取"||desc*="请求")&&(desc*="定位"||desc*="位置"||desc~="(?is).*location.*")&&(desc!*="通知"&&desc!*="成功"&&desc!*="失败"&&(desc!*="已"||desc*="已知"))]`,
           `${COMMON_PREFIX}[(((desc*="打开"||desc*="開啟"||desc*="开启"||desc*="设置"||desc*="允许")&&(desc*="定位"))||desc="是"||desc="好"||desc="启用"||desc="确认"||desc="确定"||desc="同意"||desc="开启"||desc="设置"||desc="允许"||desc="好的"||((desc*="去"||desc*="立即"||desc*="立刻"||desc*="马上"||desc*="前往"||desc*="现在")&&(desc*="开启"||desc*="设置"||desc*="授权"))||desc="尝试一下"||desc="开启设置"||desc="立即打开"||desc~="Authorize"||desc~="Let’s go")&&desc.length<6]`,
           `${NEGATION_PART_RULE_BUTTON}`,
         ],

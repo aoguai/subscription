@@ -57,6 +57,13 @@ export default defineGkdApp({
           matches: '@View[clickable=true] < FrameLayout +4 * >2 [text="反馈"]',
           snapshotUrls: 'https://i.gkd.li/import/13259183',
         },
+        {
+          key: 4,
+          name: '美数广告',
+          activityIds: 'com.meishu.sdk.activity.SdkInterstitialActivity',
+          matches: '[vid~="(?is).*ms_activity_sdk_interstitial_cacel"]',
+          snapshotUrls: 'https://i.gkd.li/i/16216011',
+        },
       ],
     },
   ],

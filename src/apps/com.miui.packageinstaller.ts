@@ -36,6 +36,7 @@ export default defineGkdApp({
       name: '功能类-自动安装应用',
       desc: '启用后安装高风险应用将自动完成，请自行评估风险决定是否启用',
       enable: false,
+      fastQuery: true,
       rules: [
         // 正常安装
         {
@@ -56,7 +57,6 @@ export default defineGkdApp({
           key: 1,
           name: '点击【继续】',
           activityIds: 'com.miui.packageInstaller.NewInstallerPrepareActivity',
-          fastQuery: true,
           matches: '[text="取消"] - @*[clickable=true] >2 [text="继续"]',
           snapshotUrls: 'https://i.gkd.li/i/14392314',
         },
@@ -65,11 +65,11 @@ export default defineGkdApp({
           key: 2,
           name: '勾选【已了解此应用未经安全检测】',
           activityIds: 'com.miui.packageInstaller.NewInstallerPrepareActivity',
-          matches:
-            '[id="com.miui.packageinstaller:id/install_checked"][checked=false]',
+          matches: '[text^="已了解此"][checked=false]',
           snapshotUrls: [
             'https://i.gkd.li/import/12888410', // 未勾选
             'https://i.gkd.li/import/12889120', // 已勾选
+            'https://i.gkd.li/i/16171390',
           ],
         },
 
@@ -97,9 +97,15 @@ export default defineGkdApp({
           preKeys: 4,
           key: 5,
           name: '点击【仍然安装】',
-          activityIds: 'com.miui.packageInstaller.NewInstallerPrepareActivity',
-          matches: '@[text="仍然安装"] + [text="取消安装"]',
-          snapshotUrls: 'https://i.gkd.li/import/12889148',
+          activityIds: [
+            'com.miui.packageInstaller.NewInstallerPrepareActivity',
+            'com.miui.packageInstaller.ui.InstallPrepareAlertActivity',
+          ],
+          matches: '[text="仍然安装"]',
+          snapshotUrls: [
+            'https://i.gkd.li/import/12889148',
+            'https://i.gkd.li/i/16187625',
+          ],
         },
 
         // 安装完成
@@ -160,11 +166,11 @@ export default defineGkdApp({
             'com.miui.packageInstaller.ui.InstallPrepareAlertActivity',
             'com.miui.packageInstaller.NewInstallerPrepareActivity',
           ],
-          matches:
-            '[id="com.miui.packageinstaller:id/install_checked"][checked=false][text="已了解此安装包未经安全检测"]',
+          matches: '[text="已了解此安装包未经安全检测"][checked=false]',
           snapshotUrls: [
             'https://i.gkd.li/import/13024730', // 未勾选
             'https://i.gkd.li/import/13024731', // 已勾选
+            'https://i.gkd.li/i/16171390',
           ],
         },
 

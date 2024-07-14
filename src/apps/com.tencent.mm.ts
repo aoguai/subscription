@@ -75,6 +75,7 @@ export default defineGkdApp({
           preKeys: [1, 2],
           key: 3,
           name: '点击[确认]关闭该广告',
+          fastQuery: true,
           matches: '[text="确认"||text="Close"][clickable=true]',
           snapshotUrls: [
             'https://i.gkd.li/import/14164601',
@@ -251,6 +252,7 @@ export default defineGkdApp({
           key: 1,
           preKeys: [0],
           name: '点击「不感兴趣」或「关闭此广告」',
+          fastQuery: true,
           matches:
             '[text*="广告"&&text.length<5] <n View < View >n [text="不感兴趣"||text="关闭此广告"][visibleToUser=true]',
           snapshotUrls: [
@@ -494,12 +496,13 @@ export default defineGkdApp({
       key: 22,
       name: '功能类-付款后自动点击完成/返回商家',
       enable: false,
+      fastQuery: true,
       activityIds: 'com.tencent.mm.framework.app.UIPageFragmentActivity',
       rules: [
         {
           matches: [
             '[text="支付成功"]',
-            '[text*="￥"]',
+            '[text*="￥"||text*="¥"]',
             '[text="完成"||text="返回商家"]',
           ],
           snapshotUrls: [
@@ -507,6 +510,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/14532946', // 避免在此页面误触
             'https://i.gkd.li/i/14558398',
             'https://i.gkd.li/i/14662147',
+            'https://i.gkd.li/i/16215946',
           ],
         },
       ],
