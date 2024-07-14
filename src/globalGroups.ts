@@ -74,7 +74,7 @@ export default defineGkdGlobalGroups([
     name: '开屏广告',
     order: OPEN_AD_ORDER,
     actionMaximum: 2,
-    matchTime: 8000,
+    matchTime: 10000,
     resetMatch: 'app',
     actionCdKey: 0,
     actionMaximumKey: 0,
