@@ -499,7 +499,7 @@ export default defineGkdApp({
         {
           matches: [
             '[text="支付成功"]',
-            '[text*="￥"]',
+            '[text*="￥"||text*="¥"]',
             '[text="完成"||text="返回商家"]',
           ],
           snapshotUrls: [
@@ -507,6 +507,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/14532946', // 避免在此页面误触
             'https://i.gkd.li/i/14558398',
             'https://i.gkd.li/i/14662147',
+            'https://i.gkd.li/i/16215946',
           ],
         },
       ],
