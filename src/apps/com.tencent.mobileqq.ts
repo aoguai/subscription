@@ -43,7 +43,7 @@ export default defineGkdApp({
             'ImageView[longClickable!=true][vid!="chat_item_head_icon"][visibleToUser=true] <n *[left=0][vid!="root"][visibleToUser=true] >n TextView[clickable=false][text.length>0][!(text~="(?is).*([01]?[0-9]|2[0-3])[:：][0-5][0-9].*")][text!$="G"&&text!$="M"&&text!$="k"][visibleToUser=true] <<n * > [name$="ImageView"||name$="Button"][desc="关闭"||(desc=null&&text=null)][childCount=0][visibleToUser=true][clickable=true][longClickable!=true][left>0][vid!="chat_item_head_icon"]',
           excludeMatches: [
             '[id^="com.tencent.mobileqq.qzone"]', // QQ空间
-            '[text="互动标识"]',  // 侧滑抽屉
+            '[text="互动标识"]', // 侧滑抽屉
           ],
           snapshotUrls: [
             'https://i.gkd.li/import/13426912',
