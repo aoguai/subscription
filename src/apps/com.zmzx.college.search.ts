@@ -88,11 +88,12 @@ export default defineGkdApp({
         },
         {
           key: 1,
-          matches: '[text="广告"] <<n [name*=".View"] +n [name*=".View"] >(1, 2) [name*=".Image"][index=0]',
+          matches:
+            '[text="广告"] <<n [name*=".View"] +n [name*=".View"] >(1, 2) [name*=".Image"][index=0]',
           snapshotUrls: [
             'https://i.gkd.li/i/15521151',
             'https://i.gkd.li/i/16319245',
-          ]
+          ],
         },
         {
           key: 2,

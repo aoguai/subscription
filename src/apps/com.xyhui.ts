@@ -54,7 +54,8 @@ export default defineGkdApp({
           name: '字节广告',
           activityIds:
             'com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity',
-          matches: '*[childCount=5] - *[childCount=5] < * < * -n * > [name$=".View"||name$=".Image"][text=""||text=null]',
+          matches:
+            '*[childCount=5] - *[childCount=5] < * < * -n * > [name$=".View"||name$=".Image"][text=""||text=null]',
           snapshotUrls: [
             'https://i.gkd.li/import/13259183',
             'https://i.gkd.li/i/16319383',
