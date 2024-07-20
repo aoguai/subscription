@@ -88,8 +88,12 @@ export default defineGkdApp({
         },
         {
           key: 1,
-          matches: '[text="广告"] <<n View +n View > Image[text.length=0]',
-          snapshotUrls: 'https://i.gkd.li/i/15521151',
+          matches:
+            '[text="广告"] <<n [name*=".View"] +n [name*=".View"] >(1, 2) [name*=".Image"][index=0]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/15521151',
+            'https://i.gkd.li/i/16319245',
+          ],
         },
         {
           key: 2,
@@ -115,6 +119,13 @@ export default defineGkdApp({
           fastQuery: true,
           matches: 'TextView[text="不感兴趣"]',
           snapshotUrls: ['https://i.gkd.li/i/15913004'],
+        },
+        {
+          preKeys: [0, 1, 2, 3, 4, 10],
+          key: 11,
+          name: '关闭开通会员免广告打扰弹窗',
+          matches: '@TextView[text.length=0] <n View > [text*="免广告"]',
+          snapshotUrls: ['https://i.gkd.li/i/16319260'],
         },
       ],
     },
