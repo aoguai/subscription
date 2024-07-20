@@ -252,7 +252,6 @@ export default defineGkdApp({
           key: 1,
           preKeys: [0],
           name: '点击「不感兴趣」或「关闭此广告」',
-          fastQuery: true,
           matches:
             '[text*="广告"&&text.length<5] <n View < View >n [text="不感兴趣"||text="关闭此广告"][visibleToUser=true]',
           snapshotUrls: [
