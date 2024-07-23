@@ -52,7 +52,7 @@
     "eslint": "9.7.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-define-config": "2.1.0",
-    "eslint-plugin-unused-imports": "4.0.0",
+    "eslint-plugin-unused-imports": "4.0.1",
     "json5": "2.2.3",
     "lint-staged": "15.2.7",
     "prettier": "3.3.3",
