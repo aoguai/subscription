@@ -113,7 +113,12 @@ export default defineGkdApp({
           snapshotUrls: 'https://i.gkd.li/i/16157056',
         },
         {
-          preKeys: [0, 1, 2, 3, 4],
+          key: 5,
+          matches: '[vid="ms_item_pre_render_smallimage_close"]',
+          snapshotUrls: 'https://i.gkd.li/i/16398731',
+        },
+        {
+          preKeys: [0, 1, 2, 3, 4, 5],
           key: 10,
           name: '点击不感兴趣',
           fastQuery: true,
