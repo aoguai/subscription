@@ -24,7 +24,7 @@ export default defineGkdSubscription({
   version: 0,
   author: 'aoguai',
   checkUpdateUrl: './gkd.version.json5',
-  supportUri: 'https://github.com/aoguai/subscription/tree/custom',
+  supportUri: 'https://github.com/aoguai/subscription/issues/new/choose',
   categories,
   globalGroups,
   apps: rawApps,
