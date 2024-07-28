@@ -171,41 +171,34 @@ export default defineGkdApp({
         },
         {
           key: 3,
-          name: '元梦之星广告弹窗',
+          matchTime: 10000,
+          actionMaximum: 1,
+          resetMatch: 'app',
+          name: '推广游戏广告弹窗',
           activityIds:
             'com.tencent.mobileqq.activity.QPublicTransFragmentActivity',
           matches:
             'ViewGroup[childCount=2] > ViewGroup[childCount=3][index=1] > ViewGroup[clickable=true][visibleToUser=true][index=1][childCount=0]',
-          snapshotUrls: 'https://i.gkd.li/import/13797876',
+          snapshotUrls: [
+            'https://i.gkd.li/import/13797876',
+            'https://i.gkd.li/i/15981784',
+          ],
         },
         {
           key: 4,
-          name: '现金瓜分弹窗',
-          activityIds:
-            'com.tencent.mobileqq.activity.QPublicTransFragmentActivity',
-          matches:
-            'RelativeLayout >5 ViewGroup[childCount=6] > ViewGroup[index=2][clickable=true]',
-          snapshotUrls: 'https://i.gkd.li/import/14207286',
-        },
-        {
-          key: 5,
+          name: '小Q提醒',
+          matchTime: 10000,
+          actionMaximum: 1,
+          resetMatch: 'app',
           fastQuery: true,
           activityIds:
             'com.tencent.mobileqq.activity.QPublicTransFragmentActivity',
           matches:
             'ViewGroup[childCount=6] > @ViewGroup[index=2][clickable=true][visibleToUser=true] <<n [id="android:id/content"]',
-          snapshotUrls: 'https://i.gkd.li/i/15136939',
-        },
-        {
-          key: 6,
-          matchTime: 10000,
-          actionMaximum: 1,
-          resetMatch: 'app',
-          activityIds:
-            'com.tencent.mobileqq.activity.QPublicTransFragmentActivity',
-          matches:
-            'RelativeLayout >3 ViewGroup[childCount=2] > ViewGroup[childCount=3] > ViewGroup[clickable=true][childCount=0][text=null]',
-          snapshotUrls: 'https://i.gkd.li/i/15981784',
+          snapshotUrls: [
+            'https://i.gkd.li/import/14207286',
+            'https://i.gkd.li/i/15136939',
+          ],
         },
       ],
     },
