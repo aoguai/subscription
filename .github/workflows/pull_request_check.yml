@@ -3,7 +3,7 @@ name: pull_request_check
 on:
   pull_request:
     branches:
-      - custom
+      - '**'
 
 jobs:
   check:
@@ -22,6 +22,7 @@ jobs:
             src/subscription.ts
 
       - name: Check changed files
+        if: github.ref != 'refs/heads/dev'
         run: |
           for file in ${{ steps.changed_files.outputs.all_changed_files }}; do
             echo "$file was changed"
