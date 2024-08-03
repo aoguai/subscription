@@ -78,13 +78,22 @@ export default defineGkdApp({
       name: '全屏广告-设置支付宝小组件',
       desc: '点击关闭',
       enable: false,
-      fastQuery: true,
-      activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
       rules: [
         {
+          key: 0,
+          fastQuery: true,
+          activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
           matches:
             '@TextView[text="关闭"] < * <3 * < * + * >3 TextView[text="设置支付宝小组件"]',
           snapshotUrls: 'https://i.gkd.li/import/13327349',
+        },
+        {
+          key: 1,
+          activityIds:
+            'com.alipay.mobile.nebulax.integration.mpaas.activity.NebulaActivity$Main',
+          matches:
+            '[text="添加会员小组件"] < View +3 View[childCount=2] > [text="近期不再提醒我"]',
+          snapshotUrls: 'https://i.gkd.li/i/16427922',
         },
       ],
     },
