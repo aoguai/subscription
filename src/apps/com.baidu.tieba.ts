@@ -152,14 +152,15 @@ export default defineGkdApp({
         {
           key: 2,
           name: '点击正下方x关闭2',
-          forcedTime: 5000,
+          forcedTime: 10000,
           matches:
-            '[text$="弹窗"] >3 Image[clickable=true][index=2][text!=null]',
+            'WebView[text="会员弹窗" || text="一键签到"] >(3,4) TextView + Image[text!=null][childCount=0][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/14630806',
             'https://i.gkd.li/i/14630806',
             'https://i.gkd.li/i/15119439',
             'https://i.gkd.li/i/15119451',
+            'https://i.gkd.li/i/16426630',
           ],
         },
       ],
