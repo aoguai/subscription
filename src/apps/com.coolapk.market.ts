@@ -71,5 +71,24 @@ export default defineGkdApp({
       rules: '[vid="load_source_button"][checked=false]',
       snapshotUrls: ['https://i.gkd.li/i/14913023'],
     },
+    {
+      key: 5,
+      name: '局部广告-应用推荐',
+      desc: '点击关闭[大家还下载了]应用推荐',
+      rules: [
+        {
+          fastQuery: true,
+          activityIds: [
+            '.view.search.SuperSearchResultActivity',
+            '.view.node.DynamicNodePageActivity',
+          ],
+          matches: '[text="大家还下载了"] + [vid="close_view"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/16448265',
+            'https://i.gkd.li/i/16448385',
+          ],
+        },
+      ],
+    },
   ],
 });
