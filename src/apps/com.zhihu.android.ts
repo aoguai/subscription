@@ -169,6 +169,15 @@ export default defineGkdApp({
           matches: '[vid="close_img"]',
           snapshotUrls: 'https://i.gkd.li/i/14970008',
         },
+        {
+          key: 3,
+          name: '回答页-底部关注悬浮窗-2',
+          activityIds:
+            'com.zhihu.android.mix.activity.ContentMixProfileActivity',
+          matches:
+            'View[childCount=3] > @View[clickable=true][childCount=1][text=""] > Image[childCount=0][text=""] <<n [vid="view_content"]',
+          snapshotUrls: 'https://i.gkd.li/i/16422471',
+        },
       ],
     },
     {
