@@ -27,7 +27,7 @@ export default defineGkdApp({
     },
     {
       key: 5,
-      name: '分段广告-搜索结果页广告',
+      name: '分段广告-信息流广告',
       activityIds:
         'com.idlefish.flutterbridge.flutterboost.boost.FishFlutterBoostActivity',
       rules: [
@@ -45,8 +45,11 @@ export default defineGkdApp({
           key: 1,
           preKeys: 0,
           matches:
-            '[desc^="不喜欢该商品"] > ImageView[index=1][visibleToUser=true]',
-          snapshotUrls: 'https://i.gkd.li/i/14723632',
+            'View[childCount=6] > ImageView[index=1][visibleToUser=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14723632',
+            'https://i.gkd.li/i/16486792',
+          ]
         },
       ],
     },
