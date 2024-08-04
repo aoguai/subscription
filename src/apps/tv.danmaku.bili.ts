@@ -5,17 +5,6 @@ export default defineGkdApp({
   name: '哔哩哔哩',
   groups: [
     {
-      key: -1,
-      name: '开屏广告',
-      desc: '开屏广告,任意界面切回APP开屏广告',
-      fastQuery: true,
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      rules: '[id="tv.danmaku.bili:id/count_down"][text^="跳"]',
-      snapshotUrls: 'https://i.gkd.li/import/12705270',
-    },
-    {
       key: 2,
       name: '分段广告-动态推荐广告卡片',
       desc: '点击卡片右上角[广告]按钮-点击不感兴趣',
