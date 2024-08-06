@@ -1,4 +1,5 @@
 import { defineGkdGlobalGroups } from '@gkd-kit/define';
+import { RawApp } from '@gkd-kit/api';
 import { batchImportApps } from '@gkd-kit/tools';
 
 export const OPEN_AD_ORDER = -10; // 开屏广告
@@ -27,7 +28,7 @@ const diabledAppIds: string[] = [
   'com.mycompany.app.soulbrowser', // soul浏览器
 ];
 
-function filterAppsByGroup(apps: any[], groupNamePrefix: string): string[] {
+function filterAppsByGroup(apps: RawApp[], groupNamePrefix: string): string[] {
   return apps
     .filter(
       (a) =>
