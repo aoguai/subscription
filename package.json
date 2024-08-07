@@ -59,7 +59,7 @@
     "typescript-eslint": "8.0.1"
   },
   "volta": {
-    "node": "22.5.1"
+    "node": "22.6.0"
   },
   "packageManager": "pnpm@9.6.0",
   "engineStrict": true,
