@@ -78,7 +78,7 @@ export default defineGkdApp({
       key: 10,
       name: '分段广告-信息流广告',
       desc: '包括首页和教程页面等',
-      activityIds:[
+      activityIds: [
         'com.zmzx.college.search.activity.main.activity.MainActivity',
         '.activity.booksearch.result.activity.TextbookDetailActivity',
         '.activity.common.DialogWebActivity',
@@ -116,8 +116,8 @@ export default defineGkdApp({
           matches:
             '@ImageView - ImageView <(2) * > TextView[text.length>0] < * <n * > TextView[text.length>0]',
           snapshotUrls: [
-          'https://i.gkd.li/i/16157056',
-          'https://i.gkd.li/i/16571916',
+            'https://i.gkd.li/i/16157056',
+            'https://i.gkd.li/i/16571916',
           ],
         },
         {
