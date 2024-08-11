@@ -191,5 +191,28 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 12,
+      name: '功能类-放弃开启安全守护',
+      enable: false,
+      fastQuery: true,
+      activityIds:
+        'com.miui.packageInstaller.ui.normalmode.InstallProgressActivity',
+      rules: [
+        {
+          key: 0,
+          matches: '[text="30天内不再提示"][checked=false]',
+          exampleUrls: 'https://e.gkd.li/fe6682cd-a27a-4183-8717-15fd373bafcf',
+          snapshotUrls: 'https://i.gkd.li/i/16487140',
+        },
+        {
+          preKeys: [0],
+          key: 1,
+          matches: '[text="放弃"]',
+          exampleUrls: 'https://e.gkd.li/859dac99-62ca-4876-bdfb-c84795254111',
+          snapshotUrls: 'https://i.gkd.li/i/16487142',
+        },
+      ],
+    },
   ],
 });
