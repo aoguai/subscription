@@ -74,24 +74,30 @@ export default defineGkdGlobalGroups([
     key: 0,
     name: '开屏广告',
     order: OPEN_AD_ORDER,
+    fastQuery: true,
     matchRoot: true,
-    actionMaximum: 2,
+    actionMaximum: 1,
     matchTime: 10000,
     resetMatch: 'app',
-    actionCdKey: 0,
     actionMaximumKey: 0,
     rules: [
       {
         key: 0,
-        excludeMatches:
-          '[(text*="搜索" && text.length<6) || vid~="(?is).*search.*" || (desc*="搜索" && desc.length<6)][visibleToUser=true]', // 防止在应用的搜索页面误触
         action: 'clickCenter',
+        excludeMatches: [
+          // 防止在应用的搜索页面误触
+          '[text*="搜索"][text.length<6][visibleToUser=true]',
+          '[(text*="搜索" && text.length<6) || vid~="(?is).*search.*" || (desc*="搜索" && desc.length<6)][visibleToUser=true]',
+        ],
         matches: `${COMMON_PREFIX}[(text.length<10&&(text*="跳过"||text*="跳過"||text~="(?is).*skip.*"))||id~="(?is).*tt_splash_skip_btn"||vid~="(?is).*skip.*"||(vid~="(?is).*count.*"&&vid~="(?is).*down.*"&&!(vid~="(?is).*load.*")&&!(vid~="(?is).*hour.*")&&!(vid~="(?is).*minute.*")&&!(vid~="(?is).*add.*")&&!(vid~="(?is).*ead.*"))||desc*="跳过"||desc~="(?is).*skip.*"][!(text~="([01]?[0-9]|2[0-3])[:：][0-5][0-9]")][!(desc~="([01]?[0-9]|2[0-3])[:：][0-5][0-9]")]`,
       },
       {
         key: 1,
-        excludeMatches:
-          '[(text*="搜索" && text.length<6) || vid~="(?is).*search.*" || (desc*="搜索" && desc.length<6)][visibleToUser=true]', // 防止在应用的搜索页面误触
+        excludeMatches: [
+          // 防止在应用的搜索页面误触
+          '[text*="搜索"][text.length<6][visibleToUser=true]',
+          '[(text*="搜索" && text.length<6) || vid~="(?is).*search.*" || (desc*="搜索" && desc.length<6)][visibleToUser=true]',
+        ],
         matches:
           'FrameLayout[visibleToUser=true][height>0&&width>0][childCount>=2] > FrameLayout[visibleToUser=true][height>0&&width>0][childCount>2] > @View[clickable=true][height>0&&width>0][visibleToUser=true] + TextView[clickable=true][height>0&&width>0][visibleToUser=true]', // 字节 SDK
       },

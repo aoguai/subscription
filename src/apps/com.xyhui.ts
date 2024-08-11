@@ -61,13 +61,6 @@ export default defineGkdApp({
             'https://i.gkd.li/i/16319383',
           ],
         },
-        {
-          key: 4,
-          name: '美数广告',
-          activityIds: 'com.meishu.sdk.activity.SdkInterstitialActivity',
-          matches: '[vid~="(?is).*ms_activity_sdk_interstitial_cacel"]',
-          snapshotUrls: 'https://i.gkd.li/i/16216011',
-        },
       ],
     },
   ],

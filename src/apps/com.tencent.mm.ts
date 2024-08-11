@@ -12,9 +12,7 @@ export default defineGkdApp({
       activityIds: [
         'com.tencent.mm.plugin.sns.ui.SnsTimeLineUI',
         'com.tencent.mm.plugin.sns.ui.improve.ImproveSnsTimelineUI',
-      ],
-      exampleUrls: [
-        'https://github.com/gkd-kit/subscription/assets/38517192/c9ae4bba-a748-4755-b5e4-c7ad3d489a79',
+        'com.tencent.mm.plugin.profile.ui.ContactInfoUI',
       ],
       rules: [
         {
@@ -28,6 +26,8 @@ export default defineGkdApp({
             'https://i.gkd.li/import/12907641',
             'https://i.gkd.li/import/13000395',
             'https://i.gkd.li/i/14647413',
+            'https://i.gkd.li/i/16568338',
+            'https://i.gkd.li/i/14647413',
             'https://i.gkd.li/import/14164508', // TextView[text.length!=null] +1 LinearLayout[text.length=null&&clickable=true&&focusable=true]
             'https://i.gkd.li/import/12905837', // 英文
             'https://i.gkd.li/import/13791200', // 繁体
@@ -35,11 +35,24 @@ export default defineGkdApp({
             'https://i.gkd.li/import/14193181', // 误触，用 desc=null 排除
           ],
         },
+        {
+          key: 1,
+          fastQuery: true,
+          position: {
+            left: 'width * 0.9223',
+            top: 'width * 0.0349',
+          },
+          matches: '@LinearLayout >2 [text="广告"][visibleToUser=false]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14783802',
+            'https://i.gkd.li/i/15531539',
+          ],
+        },
         // 以下是点击广告卡片右上角后出现的情况
         // 情况1 - 选择关闭该广告的原因->直接关闭
         {
-          preKeys: 0,
-          key: 1,
+          preKeys: [0, 1],
+          key: 2,
           name: '关闭该广告的原因-点击[直接关闭]',
           matches: [
             '[(name$=".LinearLayout")||((name$=".TextView")&&text.length>3)][visibleToUser=true] + [(name$=".LinearLayout")||((name$=".TextView")&&(text="直接关闭"||text~="Repetitive.*"||text="關閉此廣告"))][visibleToUser=true][clickable=true]',
@@ -58,8 +71,8 @@ export default defineGkdApp({
         },
         // 情况2 - 选择关闭该广告的原因->关闭该广告
         {
-          preKeys: 0,
-          key: 2,
+          preKeys: [0, 1],
+          key: 3,
           name: '选择关闭该广告的原因->关闭该广告',
           matches:
             'TextView[(text^="关闭"&&text$="广告")||(text^="關閉"&&text$="廣告")||text~="(?is).*Close.*"][clickable=true]',
@@ -72,8 +85,8 @@ export default defineGkdApp({
         },
         // 情况3 - 点击[确认]关闭该广告
         {
-          preKeys: [1, 2],
-          key: 3,
+          preKeys: [2, 3],
+          key: 4,
           name: '点击[确认]关闭该广告',
           fastQuery: true,
           matches: '[text="确认"||text="Close"][clickable=true]',

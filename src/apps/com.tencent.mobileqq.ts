@@ -610,5 +610,28 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 27,
+      name: '局部广告-聊天页面广告',
+      rules: [
+        {
+          key: 1,
+          name: '关键词广告',
+          fastQuery: true,
+          activityIds: [
+            'com.tencent.mobileqq.profilecard.activity.FriendProfileCardActivity',
+            'com.tencent.mobileqq.activity.ChatActivity',
+            'com.tencent.mobileqq.activity.SplashActivity',
+          ],
+          matches:
+            'FrameLayout[childCount=2] >2 FrameLayout[childCount=2] >3 FrameLayout[childCount=2] > [text="跳过" || text="关闭"][clickable=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14183188',
+            'https://i.gkd.li/i/16549500',
+            'https://i.gkd.li/i/16555184',
+          ],
+        },
+      ],
+    },
   ],
 });
