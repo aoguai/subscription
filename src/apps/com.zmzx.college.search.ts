@@ -77,8 +77,13 @@ export default defineGkdApp({
     {
       key: 10,
       name: '分段广告-信息流广告',
-      activityIds:
+      desc: '包括首页和教程页面等',
+      activityIds:[
         'com.zmzx.college.search.activity.main.activity.MainActivity',
+        '.activity.booksearch.result.activity.TextbookDetailActivity',
+        '.activity.common.DialogWebActivity',
+        'com.zmzx.college.search.activity.booksearch.result.activity.AnswerBrowseActivity',
+      ],
       rules: [
         {
           key: 0,
@@ -110,7 +115,10 @@ export default defineGkdApp({
           key: 4,
           matches:
             '@ImageView - ImageView <(2) * > TextView[text.length>0] < * <n * > TextView[text.length>0]',
-          snapshotUrls: 'https://i.gkd.li/i/16157056',
+          snapshotUrls: [
+          'https://i.gkd.li/i/16157056',
+          'https://i.gkd.li/i/16571916',
+          ],
         },
         {
           key: 5,
@@ -118,52 +126,36 @@ export default defineGkdApp({
           snapshotUrls: 'https://i.gkd.li/i/16398731',
         },
         {
-          preKeys: [0, 1, 2, 3, 4, 5],
-          key: 10,
-          name: '点击不感兴趣',
-          fastQuery: true,
-          matches: 'TextView[text="不感兴趣"]',
-          snapshotUrls: ['https://i.gkd.li/i/15913004'],
-        },
-        {
-          preKeys: [0, 1, 2, 3, 4, 10],
-          key: 11,
-          name: '关闭开通会员免广告打扰弹窗',
-          matches: '@TextView[text.length=0] <n View > [text*="免广告"]',
-          snapshotUrls: ['https://i.gkd.li/i/16319260'],
-        },
-      ],
-    },
-    {
-      key: 11,
-      name: '分段广告-底部卡片广告',
-      desc: '点击关闭-点击不感兴趣',
-      fastQuery: true,
-      rules: [
-        {
-          key: 0,
+          key: 6,
           name: '首页底部广告',
-          activityIds:
-            'com.zmzx.college.search.activity.main.activity.MainActivity',
+          fastQuery: true,
           matches: '[vid="tvClose"]',
           snapshotUrls: 'https://i.gkd.li/i/14518991',
         },
         {
-          key: 1,
+          key: 7,
           name: '教材底部广告',
-          activityIds:
-            'com.zmzx.college.search.activity.booksearch.result.activity.AnswerBrowseActivity',
+          fastQuery: true,
           matches: '@[desc$="dislike"] <<n [vid="rlBottomADContainer"]',
           snapshotUrls: 'https://i.gkd.li/i/15902162',
         },
         {
-          preKeys: [1],
+          preKeys: [0, 1, 2, 3, 4, 5, 6, 7],
           key: 10,
           name: '点击不感兴趣',
-          activityIds:
-            'com.zmzx.college.search.activity.booksearch.result.activity.AnswerBrowseActivity',
-          matches: '@[clickable=true] > [text="不感兴趣"]',
-          snapshotUrls: 'https://i.gkd.li/i/15902298',
+          fastQuery: true,
+          matches: 'TextView[text="不感兴趣"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/15913004',
+            'https://i.gkd.li/i/15902298',
+          ],
+        },
+        {
+          preKeys: [0, 1, 2, 3, 4, 5, 6, 7, 10],
+          key: 11,
+          name: '关闭开通会员免广告打扰弹窗',
+          matches: '@TextView[text.length=0] <n View > [text*="免广告"]',
+          snapshotUrls: ['https://i.gkd.li/i/16319260'],
         },
       ],
     },
