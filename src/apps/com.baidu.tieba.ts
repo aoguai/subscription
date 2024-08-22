@@ -134,7 +134,7 @@ export default defineGkdApp({
           matches:
             'View[childCount=3] > @View[clickable=true][childCount=1] > Image',
           snapshotUrls: [
-            'https://i.gkd.li/import/13060891', // activityIds: com.baidu.tbadk.browser.TBWebContainerActivity
+            'https://i.gkd.li/import/13060891',
             'https://i.gkd.li/import/13222361', // childCount=1否则误触这里
           ],
         },
@@ -144,9 +144,9 @@ export default defineGkdApp({
           matches:
             '@TextView[clickable=true && text=null] - FrameLayout TextView[text="广告"]',
           snapshotUrls: [
-            'https://i.gkd.li/import/13168383', // activityIds: com.baidu.tieba.tblauncher.MainTabActivity
-            'https://i.gkd.li/import/13322120', // activityIds: com.miui.home.launcher.Launcher
-            'https://i.gkd.li/import/13328246', // activityIds: com.baidu.tieba.LogoActivity
+            'https://i.gkd.li/import/13168383',
+            'https://i.gkd.li/import/13322120',
+            'https://i.gkd.li/import/13328246',
           ],
         },
         {
@@ -162,6 +162,12 @@ export default defineGkdApp({
             'https://i.gkd.li/i/15119451',
             'https://i.gkd.li/i/16426630',
           ],
+        },
+        {
+          key: 3,
+          name: '点击正下方x关闭3',
+          matches: '@TextView[visibleToUser=true][text=""] -2 [text="广告"]',
+          snapshotUrls: 'https://i.gkd.li/i/16703244',
         },
       ],
     },

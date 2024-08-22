@@ -41,7 +41,7 @@ export default defineGkdApp({
           key: 0,
           name: '点击广告卡片右侧菜单图标',
           matches:
-            '[(desc*="广告"||desc*="来自淘宝")&&desc*="查看"] >n * >n [id^="tv.danmaku.bili:id/more"] > ImageView',
+            '[(desc*="广告"||desc*="来自淘宝")&&desc*="查看"][visibleToUser=true] >n * >n [id^="tv.danmaku.bili:id/more"][visibleToUser=true] > ImageView[visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/import/12642260', // n = 2
             'https://i.gkd.li/import/12705266', // n = 3
