@@ -89,7 +89,7 @@ export default defineGkdApp({
       rules: [
         {
           matches:
-          '[text^="立即了解"] -3 @View[clickable=true] <<n [vid="webContainer"]',
+            '[text^="立即了解"] -3 @View[clickable=true] <<n [vid="webContainer"]',
           snapshotUrls: 'https://i.gkd.li/import/13806865',
         },
       ],
