@@ -13,18 +13,19 @@ export default defineGkdApp({
       activityIds: [
         'com.weico.international.activity.MainFragmentActivity',
         'com.weico.international.ui.search.SearchActivity',
+        'com.weico.international.ui.detail.StatusDetailV3Activity',
       ],
-      exampleUrls:
-        'https://github.com/gkd-kit/subscription/assets/38517192/e713a2ca-5048-486a-874f-dd876d53c49b',
       rules: [
         {
           key: 0,
           name: '点击广告卡片右上角[x]',
-          matches: '[id="com.weico.international:id/item_timeline_ad_action"]',
+          matches: '[vid="item_timeline_ad_action"]',
           snapshotUrls: [
             'https://i.gkd.li/import/12505753',
             'https://i.gkd.li/import/12505763',
             'https://i.gkd.li/import/12857202',
+            'https://i.gkd.li/i/14444744',
+            'https://i.gkd.li/i/16667201',
           ],
         },
         {
@@ -35,6 +36,8 @@ export default defineGkdApp({
           snapshotUrls: [
             'https://i.gkd.li/import/12505755',
             'https://i.gkd.li/import/12505764',
+            'https://i.gkd.li/i/14798365',
+            'https://i.gkd.li/i/16667202',
           ],
         },
       ],
