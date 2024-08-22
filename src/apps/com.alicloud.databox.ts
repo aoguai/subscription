@@ -88,7 +88,8 @@ export default defineGkdApp({
       activityIds: 'com.alicloud.databox.MainActivity',
       rules: [
         {
-          matches: '[text^="立即了解"] -3 View[clickable=true]',
+          matches:
+          '[text^="立即了解"] -3 @View[clickable=true] <<n [vid="webContainer"]',
           snapshotUrls: 'https://i.gkd.li/import/13806865',
         },
       ],
