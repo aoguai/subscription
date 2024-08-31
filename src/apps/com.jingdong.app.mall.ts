@@ -127,13 +127,17 @@ export default defineGkdApp({
             'com.jingdong.app.mall.MainFrameActivity',
             'com.jd.lib.jshop.jshop.JshopMainShopActivity',
           ],
-          matches: 'RelativeLayout > ImageView[desc*="关闭"]',
-          excludeMatches: 'ImageView[desc="关闭页面"] - [text="优惠券"]',
+          excludeMatches: [
+            'ImageView[desc="关闭页面"] - [text="优惠券"]',
+            'TextView[text="退换/售后"][id=null]',
+          ],
+          matches: 'RelativeLayout[childCount=2] > ImageView[desc*="关闭"]',
           snapshotUrls: [
             'https://i.gkd.li/import/13258996',
-            'https://i.gkd.li/import/13336847', // 增加excludeMatches: 'ImageView[desc="关闭页面"] - [text="优惠券"]', 避免在该快照误触
             'https://i.gkd.li/i/15416926',
             'https://i.gkd.li/i/15862131',
+            'https://i.gkd.li/import/13336847', // 增加excludeMatches: 'ImageView[desc="关闭页面"] - [text="优惠券"]', 避免在该快照误触
+            'https://i.gkd.li/i/16818580', // 增加excludeMatches: 'TextView[text="退换/售后"]', 避免在刚刚打开该快照页面时误触（此时activityId并未改变）
           ],
         },
         {
