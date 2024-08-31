@@ -198,5 +198,27 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 16,
+      name: '全屏广告-弹窗广告',
+      desc: '点击X',
+      rules: [
+        {
+          key: 0,
+          activityIds: 'com.eg.android.AlipayGphone.AlipayLogin',
+          matches:
+            'RelativeLayout[childCount=2][desc="全屏广告"] ImageView[desc="关闭"]',
+          snapshotUrls: 'https://i.gkd.li/i/14034152',
+        },
+        {
+          key: 1,
+          activityIds:
+            'com.alipay.mobile.nebulax.integration.mpaas.activity.NebulaActivity$Main',
+          matches:
+            'WebView > View > View > View > View > @TextView[clickable=true][visibleToUser=true][text=""] <<n [id="com.alipay.mobile.nebula:id/h5_pc_container"]',
+          snapshotUrls: 'https://i.gkd.li/i/16812751',
+        },
+      ],
+    },
   ],
 });
