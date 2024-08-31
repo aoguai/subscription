@@ -46,7 +46,7 @@ export default defineGkdApp({
           snapshotUrls: 'https://i.gkd.li/import/12700984',
         },
         {
-          key: 0,
+          key: 1,
           matches: '[visibleToUser=true][vid="ad_close"]',
           snapshotUrls: 'https://i.gkd.li/i/16773614',
         },
