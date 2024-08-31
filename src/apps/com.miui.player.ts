@@ -39,10 +39,11 @@ export default defineGkdApp({
       name: '局部广告-banner 广告',
       activityIds: 'com.tencent.qqmusiclite.activity.MainActivity',
       fastQuery: true,
-      rules:[
+      rules: [
         {
           key: 0,
-          matches: '[id="com.miui.player:id/banner_image"] + [id="com.miui.player:id/close_banner"]',
+          matches:
+            '[id="com.miui.player:id/banner_image"] + [id="com.miui.player:id/close_banner"]',
           snapshotUrls: 'https://i.gkd.li/import/12700984',
         },
         {

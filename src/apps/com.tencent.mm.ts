@@ -501,11 +501,12 @@ export default defineGkdApp({
           preKeys: 0,
           key: 1,
           name: '点击[不喜欢此类视频]',
-          matches: '[desc="不喜欢此类视频"||desc="不看此类内容"][clickable=true]',
+          matches:
+            '[desc="不喜欢此类视频"||desc="不看此类内容"][clickable=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/14444654',
             'https://i.gkd.li/i/14549566',
-          ]
+          ],
         },
         {
           preKeys: 1,
@@ -515,7 +516,7 @@ export default defineGkdApp({
           snapshotUrls: [
             'https://i.gkd.li/i/14436190',
             'https://i.gkd.li/i/14549567',
-          ]
+          ],
         },
       ],
     },
