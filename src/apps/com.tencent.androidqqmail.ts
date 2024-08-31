@@ -45,10 +45,11 @@ export default defineGkdApp({
           preKeys: [0, 1], // https://github.com/gkd-kit/subscription/issues/1776
           key: 9,
           name: '点击[不感兴趣]',
-          matches: '[text="赞助商提供的广告"] < * < * >2 [text="不感兴趣"]',
+          matches: '[text="不感兴趣"]',
           snapshotUrls: [
             'https://i.gkd.li/import/12775862',
             'https://i.gkd.li/i/15051479',
+            'https://i.gkd.li/i/16824453',
           ],
         },
       ],

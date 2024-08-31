@@ -44,6 +44,7 @@ export default defineGkdApp({
           excludeMatches: [
             '[id^="com.tencent.mobileqq.qzone"]', // QQ空间
             '[text="互动标识"]', // 侧滑抽屉
+            '[text="群标签"]', // 群资料
           ],
           snapshotUrls: [
             'https://i.gkd.li/import/13426912',
