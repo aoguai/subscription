@@ -265,5 +265,30 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 13,
+      name: '局部广告-帖子推广',
+      desc: '关闭首页、吧内游戏推广帖子',
+      rules: [
+        {
+          fastQuery: true,
+          activityIds: [
+            'com.baidu.tieba.forum.ForumActivity',
+            'com.baidu.tieba.tblauncher.MainTabActivity',
+          ],
+          // 防止误触标题以“游戏”开头的帖子，此页面推广帖子和正常帖子节点没有区别；[childCount=2]区分是否在热门页面
+          excludeMatches: 'RelativeLayout[childCount=2] > [text="热门"]',
+          matches:
+            '@ImageView[clickable=true][visibleToUser=true] < LinearLayout <4 RelativeLayout + FrameLayout > [text^="游戏"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/16828309',
+            'https://i.gkd.li/i/16828230',
+            'https://i.gkd.li/i/16828318',
+            'https://i.gkd.li/i/16828401',
+            'https://i.gkd.li/i/16828436',
+          ],
+        },
+      ],
+    },
   ],
 });
