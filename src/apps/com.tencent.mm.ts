@@ -329,7 +329,7 @@ export default defineGkdApp({
         anyMatches: [
           '[text^="查看原图"][clickable=true][visibleToUser=true]',
           '[text^="查看原视频"][clickable=true][visibleToUser=true]',
-        ]
+        ],
       },
       snapshotUrls: [
         'https://i.gkd.li/import/13523031',

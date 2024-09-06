@@ -46,7 +46,8 @@ export default defineGkdApp({
             'com.xyhui.start.PUMainActivity',
             'com.xyhui.start.LoadingActivity',
           ],
-          matches: 'ImageView < @ViewGroup[clickable=true] < * <2 * +n * >(1,3) [text="广告"]',
+          matches:
+            'ImageView < @ViewGroup[clickable=true] < * <2 * +n * >(1,3) [text="广告"]',
           snapshotUrls: [
             'https://i.gkd.li/import/13259198',
             'https://i.gkd.li/i/16837806',

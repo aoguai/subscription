@@ -35,7 +35,7 @@ export default defineGkdApp({
             'com.baidu.tieba.forum.ForumActivity',
           ],
           matches:
-          '@ImageView[clickable=true][visibleToUser=true] <(1,2) LinearLayout <4 RelativeLayout +2 RelativeLayout >2 [text="直播中"]',
+            '@ImageView[clickable=true][visibleToUser=true] <(1,2) LinearLayout <4 RelativeLayout +2 RelativeLayout >2 [text="直播中"]',
           snapshotUrls: [
             'https://i.gkd.li/i/16595137',
             'https://i.gkd.li/i/16596473',
@@ -49,7 +49,7 @@ export default defineGkdApp({
             'com.baidu.tieba.tblauncher.MainTabActivity',
           ],
           matches:
-          '@FrameLayout[clickable=true][visibleToUser=true] < LinearLayout < RelativeLayout <3 LinearLayout < RelativeLayout + LinearLayout >2 [text$="广告"]',
+            '@FrameLayout[clickable=true][visibleToUser=true] < LinearLayout < RelativeLayout <3 LinearLayout < RelativeLayout + LinearLayout >2 [text$="广告"]',
           snapshotUrls: [
             'https://i.gkd.li/i/16595127',
             'https://i.gkd.li/i/16595515',
@@ -101,7 +101,7 @@ export default defineGkdApp({
           ],
         },
         {
-          preKeys: [0, 1, 2, 3, 4 ,5],
+          preKeys: [0, 1, 2, 3, 4, 5],
           key: 10,
           activityIds: [
             'com.baidu.tieba.tblauncher.MainTabActivity',
