@@ -174,15 +174,20 @@ export default defineGkdApp({
           key: 3,
           matchTime: 10000,
           actionMaximum: 1,
-          resetMatch: 'app',
+          resetMatch: 'activity',
           name: '推广游戏广告弹窗',
-          activityIds:
+          activityIds: [
             'com.tencent.mobileqq.activity.QPublicTransFragmentActivity',
-          matches:
+            'cooperation.vip.ad.UserLeadingActivity',
+          ],
+          anyMatches: [
             'ViewGroup[childCount=2] > ViewGroup[childCount=3][index=1] > ViewGroup[clickable=true][visibleToUser=true][index=1][childCount=0]',
+            'Button[text.length>0][visibleToUser=true] < * -n * > [text*="欢迎回来"][visibleToUser=true] +n ImageView[visibleToUser=true]',
+          ],
           snapshotUrls: [
             'https://i.gkd.li/import/13797876',
             'https://i.gkd.li/i/15981784',
+            'https://i.gkd.li/i/16922256',
           ],
         },
         {
