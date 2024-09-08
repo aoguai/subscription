@@ -320,15 +320,21 @@ export default defineGkdApp({
     },
     {
       key: 9,
-      name: '功能类-自动查看原图',
-      desc: '自动点击底部左侧[查看原图]按钮',
+      name: '功能类-自动查看原图/原视频',
+      desc: '自动点击[查看原图]/[查看原视频]按钮',
       enable: false,
       fastQuery: true,
-      activityIds: 'com.tencent.mm.ui.chatting.gallery.ImageGalleryUI',
-      rules: '[text^="查看原图"][clickable=true]',
+      activityIds: '.ui.chatting.gallery.ImageGalleryUI',
+      rules: {
+        anyMatches: [
+          '[text^="查看原图"][clickable=true][visibleToUser=true]',
+          '[text^="查看原视频"][clickable=true][visibleToUser=true]',
+        ],
+      },
       snapshotUrls: [
         'https://i.gkd.li/import/13523031',
         'https://i.gkd.li/i/14661736',
+        'https://i.gkd.li/i/16833732',
       ],
     },
     {
