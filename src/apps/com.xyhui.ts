@@ -16,6 +16,7 @@ export default defineGkdApp({
             'com.xyhui.start.PUMainActivity',
             'com.xyhui.start.LoadingActivity',
             'com.huawei.permissioncontroller.hwcust.appjump.AppJumpActivity',
+            '.lut.act.LutMainActivity',
           ],
           matches:
             '[id="android:id/content"] >(4,5) @FrameLayout[index=1] > ImageView',
@@ -36,6 +37,7 @@ export default defineGkdApp({
             'https://i.gkd.li/import/12868157', // com.xyhui.start.LoadingActivity
             'https://i.gkd.li/import/13348807', // com.bbk.launcher2.Launcher
             'https://i.gkd.li/i/14766902',
+            'https://i.gkd.li/i/16921838',
           ],
         },
         {
