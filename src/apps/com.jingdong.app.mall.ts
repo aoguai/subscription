@@ -175,9 +175,12 @@ export default defineGkdApp({
         },
         {
           key: 2,
-          fastQuery: true,
-          matches: '@ViewGroup[clickable=true] - * > [text="去续费"]',
-          snapshotUrls: 'https://i.gkd.li/i/15047238',
+          matches:
+            'ImageView +n ViewGroup >2 [text.length>0] < ViewGroup + @ViewGroup > ImageView',
+          snapshotUrls: [
+            'https://i.gkd.li/i/15047238',
+            'https://i.gkd.li/i/17001455',
+          ],
         },
         {
           key: 3,
