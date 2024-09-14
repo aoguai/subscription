@@ -310,15 +310,20 @@ export default defineGkdApp({
       desc: '图片和视频选择器-自动选中底部中间的发送原图',
       enable: false,
       fastQuery: true,
+      actionMaximum: 1,
       activityIds: [
         'com.tencent.mm.plugin.gallery.ui.AlbumPreviewUI',
         'com.tencent.mm.plugin.gallery.ui.ImagePreviewUI',
       ],
-      rules: '@[desc="未选中,原图,复选框"] + [text="原图"]',
+      rules: '@[desc="未选中,原图,复选框"][visibleToUser=true] + [text="原图"]',
       snapshotUrls: [
         'https://i.gkd.li/import/12686641', // 未选中
+        'https://i.gkd.li/i/16987145', // 未选中
+        'https://i.gkd.li/i/16987144', // 未选中
         'https://i.gkd.li/import/12840865', // 未选中
         'https://i.gkd.li/import/12686640', // 已选中
+        'https://i.gkd.li/i/16987141', // 已选中
+        'https://i.gkd.li/i/16987147', // 已选中
         'https://i.gkd.li/i/14661734',
       ],
     },

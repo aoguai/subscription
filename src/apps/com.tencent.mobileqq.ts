@@ -362,12 +362,13 @@ export default defineGkdApp({
       desc: '发送图片时自动勾选原图',
       enable: false,
       fastQuery: true,
+      actionMaximum: 1,
       activityIds: [
         'com.tencent.mobileqq.activity.SplashActivity',
         'com.tencent.qqnt.qbasealbum.WinkHomeActivity',
         'com.tencent.mobileqq.activity.photo.album.NewPhotoListActivity',
       ],
-      rules: '@CheckBox[checked=false] + [text="原图"]',
+      rules: '@CheckBox[checked=false][visibleToUser=true] + [text="原图"]',
       snapshotUrls: [
         'https://i.gkd.li/import/12705556', // 未勾选原图
         'https://i.gkd.li/import/12705559', // 已勾选原图
