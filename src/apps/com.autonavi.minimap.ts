@@ -48,16 +48,6 @@ export default defineGkdApp({
     },
     {
       key: 12,
-      name: '全屏广告-加油页面优惠券弹窗',
-      enable: false,
-      fastQuery: true,
-      activityIds: 'com.autonavi.map.activity.NewMapActivity',
-      rules:
-        '@ImageView < [desc="关闭"][clickable=true] <n * > * >n View[text="立即领取"]',
-      snapshotUrls: ['https://i.gkd.li/import/12642857'],
-    },
-    {
-      key: 13,
       name: '全屏广告-广告弹窗',
       desc: '点击关闭',
       enable: false,
@@ -76,6 +66,36 @@ export default defineGkdApp({
           name: '签到弹窗',
           matches: '[desc="弹窗"] + [vid="main_map_msg_dialog_close"]',
           snapshotUrls: 'https://i.gkd.li/i/14809993',
+        },
+        {
+          key: 2,
+          name: '加油页面优惠券弹窗',
+          matches:
+            '@ImageView < [desc="关闭"][clickable=true] <n * > * >n View[text="立即领取"]',
+          snapshotUrls: ['https://i.gkd.li/import/12642857'],
+        },
+      ],
+    },
+    {
+      key: 13,
+      name: '局部广告-卡片广告',
+      desc: '点击关闭',
+      rules: [
+        {
+          key: 1,
+          fastQuery: true,
+          activityIds: 'com.autonavi.map.activity.NewMapActivity',
+          matches:
+            'ViewGroup[desc="图片"][childCount=2] > ViewGroup[clickable=true] > @ImageView[childCount=0] <<n [vid="tab_container_id"]',
+          snapshotUrls: 'https://i.gkd.li/i/16960367',
+        },
+        {
+          key: 2,
+          fastQuery: true,
+          activityIds: 'com.autonavi.map.activity.NewMapActivity',
+          matches:
+            '@ImageView < ViewGroup[clickable=true] -2 * > View[text^="高德购票" && text$="优惠"] <<n [vid="mapInteractiveRelativeLayout"]',
+          snapshotUrls: 'https://i.gkd.li/i/16960157',
         },
       ],
     },

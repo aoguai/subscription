@@ -18,6 +18,10 @@ export default defineGkdApp({
         {
           key: 0,
           name: '点击广告卡片右上角',
+          excludeMatches: [
+            '[text="设置备注和标签"]', // 设置备注页面
+            '[text="朋友权限"]', // 资料页面
+          ],
           matches:
             'LinearLayout[visibleToUser=true][checked=false] >2 LinearLayout[visibleToUser=true][focusable=false] > TextView[text.length!=null] +1 LinearLayout[text.length=null&&desc=null&&clickable=true&&focusable=true]',
           snapshotUrls: [
@@ -306,15 +310,20 @@ export default defineGkdApp({
       desc: '图片和视频选择器-自动选中底部中间的发送原图',
       enable: false,
       fastQuery: true,
+      actionMaximum: 1,
       activityIds: [
         'com.tencent.mm.plugin.gallery.ui.AlbumPreviewUI',
         'com.tencent.mm.plugin.gallery.ui.ImagePreviewUI',
       ],
-      rules: '@[desc="未选中,原图,复选框"] + [text="原图"]',
+      rules: '@[desc="未选中,原图,复选框"][visibleToUser=true] + [text="原图"]',
       snapshotUrls: [
         'https://i.gkd.li/import/12686641', // 未选中
+        'https://i.gkd.li/i/16987145', // 未选中
+        'https://i.gkd.li/i/16987144', // 未选中
         'https://i.gkd.li/import/12840865', // 未选中
         'https://i.gkd.li/import/12686640', // 已选中
+        'https://i.gkd.li/i/16987141', // 已选中
+        'https://i.gkd.li/i/16987147', // 已选中
         'https://i.gkd.li/i/14661734',
       ],
     },
@@ -339,8 +348,8 @@ export default defineGkdApp({
     },
     {
       key: 10,
-      name: '全屏广告-小程序部分广告',
-      desc: '包括部分开屏广告',
+      name: '全屏广告-小程序部分通用广告',
+      desc: '包括部分开屏广告，弹窗广告等',
       enable: false,
       matchTime: 10000,
       activityIds: [
@@ -371,22 +380,25 @@ export default defineGkdApp({
         },
         {
           key: 1,
-          name: '提瓦特助手小程序-弹窗广告1',
+          name: '弹窗广告',
+          matchTime: 20000,
+          actionMaximum: 1,
+          resetMatch: 'app',
+          fastQuery: true,
+          excludeMatches: '[text="跳过"][visibleToUser=true]', // 防止提前触发导致失效
           matches: [
-            'ImageView[childCount=0][visibleToUser=true] < FrameLayout < @FrameLayout[visibleToUser=true] <2 * - * >5 [text="查看详情"]',
+            'ImageView[childCount=0][visibleToUser=true] < FrameLayout < @FrameLayout[visibleToUser=true] <2 * - * >(4,5) [text="广告"||text="查看详情"]',
           ],
-          snapshotUrls: 'https://i.gkd.li/import/12926021',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13459614',
+            'https://i.gkd.li/i/16943989',
+            'https://i.gkd.li/i/16920797',
+            'https://i.gkd.li/import/12926021',
+          ],
+          excludeSnapshotUrls: 'https://i.gkd.li/i/16958795',
         },
         {
           key: 2,
-          name: '提瓦特助手小程序-弹窗广告2',
-          fastQuery: true,
-          matches:
-            'ImageView[childCount=0][visibleToUser=true] < FrameLayout < @FrameLayout[visibleToUser=true] <2 * - * >4 [text="广告"]',
-          snapshotUrls: 'https://i.gkd.li/import/13459614',
-        },
-        {
-          key: 3,
           name: '京东购物小程序-低价包邮广告',
           actionDelay: 500,
           actionMaximum: 1,
