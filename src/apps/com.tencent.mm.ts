@@ -18,6 +18,10 @@ export default defineGkdApp({
         {
           key: 0,
           name: '点击广告卡片右上角',
+          excludeMatches: [
+            '[text="设置备注和标签"]', // 设置备注页面
+            '[text="朋友权限"]', // 资料页面
+          ],
           matches:
             'LinearLayout[visibleToUser=true][checked=false] >2 LinearLayout[visibleToUser=true][focusable=false] > TextView[text.length!=null] +1 LinearLayout[text.length=null&&desc=null&&clickable=true&&focusable=true]',
           snapshotUrls: [
