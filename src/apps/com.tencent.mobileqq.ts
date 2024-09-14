@@ -639,5 +639,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 28,
+      name: '功能类-授权登录时关闭获取QQ好友关系',
+      rules: [
+        {
+          fastQuery: true,
+          activityIds:
+            'com.tencent.open.agent.PublicFragmentActivityForOpenSDK',
+          matches:
+            '@CompoundButton[checked=true] - RelativeLayout > [text="你的QQ好友关系"]',
+          snapshotUrls: 'https://i.gkd.li/i/16929347',
+        },
+      ],
+    },
   ],
 });
