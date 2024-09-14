@@ -339,8 +339,8 @@ export default defineGkdApp({
     },
     {
       key: 10,
-      name: '全屏广告-小程序部分广告',
-      desc: '包括部分开屏广告',
+      name: '全屏广告-小程序部分通用广告',
+      desc: '包括部分开屏广告，弹窗广告等',
       enable: false,
       matchTime: 10000,
       activityIds: [
@@ -371,22 +371,25 @@ export default defineGkdApp({
         },
         {
           key: 1,
-          name: '提瓦特助手小程序-弹窗广告1',
+          name: '弹窗广告',
+          matchTime: 20000,
+          actionMaximum: 1,
+          resetMatch: 'app',
+          fastQuery: true,
+          excludeMatches: '[text="跳过"][visibleToUser=true]', // 防止提前触发导致失效
           matches: [
-            'ImageView[childCount=0][visibleToUser=true] < FrameLayout < @FrameLayout[visibleToUser=true] <2 * - * >5 [text="查看详情"]',
+            'ImageView[childCount=0][visibleToUser=true] < FrameLayout < @FrameLayout[visibleToUser=true] <2 * - * >(4,5) [text="广告"||text="查看详情"]',
           ],
-          snapshotUrls: 'https://i.gkd.li/import/12926021',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13459614',
+            'https://i.gkd.li/i/16943989',
+            'https://i.gkd.li/i/16920797',
+            'https://i.gkd.li/import/12926021',
+          ],
+          excludeSnapshotUrls: 'https://i.gkd.li/i/16958795',
         },
         {
           key: 2,
-          name: '提瓦特助手小程序-弹窗广告2',
-          fastQuery: true,
-          matches:
-            'ImageView[childCount=0][visibleToUser=true] < FrameLayout < @FrameLayout[visibleToUser=true] <2 * - * >4 [text="广告"]',
-          snapshotUrls: 'https://i.gkd.li/import/13459614',
-        },
-        {
-          key: 3,
           name: '京东购物小程序-低价包邮广告',
           actionDelay: 500,
           actionMaximum: 1,
