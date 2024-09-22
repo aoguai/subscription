@@ -129,8 +129,8 @@ export default defineGkdApp({
     },
     {
       key: 5,
-      name: '全屏广告-高品质音质弹窗',
-      desc: '点击关闭',
+      name: '全屏广告-音质音效弹窗',
+      desc: '推广音质音效相关弹窗，自动点击关闭',
       enable: false,
       rules: [
         {
@@ -148,6 +148,12 @@ export default defineGkdApp({
           matches:
             '[id="android:id/content"] >4 FrameLayout[childCount=6] > FrameLayout[childCount=1][text=null][index=1] > ImageView[visibleToUser=true][childCount=0]',
           snapshotUrls: 'https://i.gkd.li/i/16914135',
+        },
+        {
+          key: 2,
+          activityIds: '.activity.AppStarterActivity',
+          matches: '[desc="关闭弹窗"][clickable=true][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/17057551',
         },
       ],
     },
