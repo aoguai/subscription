@@ -130,7 +130,7 @@ export default defineGkdApp({
         },
         {
           preKeys: 0,
-          key: 3,
+          key: 20,
           fastQuery: true,
           matches: '@[clickable=true] >(1,2) ImageView + [text="关闭此条广告"]',
           snapshotUrls: [
