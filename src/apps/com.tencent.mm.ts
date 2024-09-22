@@ -382,7 +382,8 @@ export default defineGkdApp({
           key: 1,
           name: '弹窗广告',
           matchTime: 20000,
-          actionMaximum: 1,
+          actionCd: 300, // 有时候需要点击多次
+          actionDelay: 300, // 过早触发有概率无效
           resetMatch: 'app',
           fastQuery: true,
           excludeMatches: '[text="跳过"][visibleToUser=true]', // 防止提前触发导致失效

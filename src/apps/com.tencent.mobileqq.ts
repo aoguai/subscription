@@ -105,8 +105,18 @@ export default defineGkdApp({
         {
           key: 2,
           matches:
-            'FrameLayout[clickable=false] >2 @ImageView[text=null][visibleToUser=true] - FrameLayout[clickable=false][childCount=0]',
-          snapshotUrls: ['https://i.gkd.li/i/15388608'],
+            'FrameLayout[childCount=7] > FrameLayout[childCount=2] > @ImageView[childCount=0]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/15388608',
+            'https://i.gkd.li/i/16154341',
+          ],
+        },
+        {
+          key: 3,
+          name: '好友动态详情页广告',
+          fastQuery: true,
+          matches: '@[desc="关闭广告"][visibleToUser=true] -3 [text^="活动"]',
+          snapshotUrls: 'https://i.gkd.li/i/17009847',
         },
         {
           preKeys: 0,
@@ -120,7 +130,7 @@ export default defineGkdApp({
         },
         {
           preKeys: 0,
-          key: 3,
+          key: 20,
           fastQuery: true,
           matches: '@[clickable=true] >(1,2) ImageView + [text="关闭此条广告"]',
           snapshotUrls: [

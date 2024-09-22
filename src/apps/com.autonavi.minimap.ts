@@ -58,8 +58,11 @@ export default defineGkdApp({
           key: 0,
           name: '【欢迎】弹窗',
           matches:
-            'ViewGroup[childCount=6] >4 ViewGroup[childCount=5] > @ImageView + View[text!=null] <<n [vid="fragment_container"]',
-          snapshotUrls: 'https://i.gkd.li/i/14800704',
+            'ViewGroup[childCount=6] >4 ViewGroup[childCount=5] > @ImageView[clickable=true] + View[text!=null] <<n [vid="fragment_container"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14800704',
+            'https://i.gkd.li/i/17079025', // add @ImageView[clickable=true]避免在此误触
+          ],
         },
         {
           key: 1,
@@ -96,6 +99,22 @@ export default defineGkdApp({
           matches:
             '@ImageView < ViewGroup[clickable=true] -2 * > View[text^="高德购票" && text$="优惠"] <<n [vid="mapInteractiveRelativeLayout"]',
           snapshotUrls: 'https://i.gkd.li/i/16960157',
+        },
+      ],
+    },
+    {
+      key: 14,
+      name: '权限提示-授权蓝牙',
+      desc: '要求提升室内定位精度时，点击关闭',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
+        {
+          fastQuery: true,
+          activityIds: 'com.autonavi.map.activity.NewMapActivity',
+          matches: '@ImageView[clickable=true] -2 [text="授权蓝牙"]',
+          snapshotUrls: 'https://i.gkd.li/i/17002003',
         },
       ],
     },
