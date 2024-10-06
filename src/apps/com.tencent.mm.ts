@@ -232,10 +232,9 @@ export default defineGkdApp({
       desc: '自动点击关闭',
       enable: false,
       activityIds: [
-        'com.tencent.mm.plugin.brandservice.ui.timeline.preload.ui.TmplWebView', //调整为TmplWebView, 同时兼容多种ID
-        'com.tencent.mm.plugin.brandservice.ui.timeline.preload.ui.TmplWebViewMMUI',
-        'com.tencent.mm.plugin.brandservice.ui.timeline.preload.ui.TmplWebViewTooLMpUI',
-        'com.tencent.mm.plugin.webview.ui.tools.fts.MMSosWebViewUI',
+        '.plugin.brandservice.ui.timeline.preload.ui.TmplWebView', //调整为TmplWebView, 同时兼容多种ID
+        '.plugin.webview.ui.tools.fts.MMSosWebViewUI',
+        '.plugin.webview.ui.tools.MMWebViewUI',
       ],
       rules: [
         {
@@ -253,6 +252,7 @@ export default defineGkdApp({
             'https://i.gkd.li/import/12700183',
             'https://i.gkd.li/import/12714424',
             'https://i.gkd.li/import/14293295',
+            'https://i.gkd.li/i/17093010', // com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI
             'https://i.gkd.li/i/14802057',
             'https://i.gkd.li/i/16798663',
             'https://i.gkd.li/i/15198413', // 无id
