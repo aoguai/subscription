@@ -36,6 +36,7 @@ export default defineGkdApp({
           snapshotUrls: [
             'https://i.gkd.li/import/12813235',
             'https://i.gkd.li/i/14782897',
+            'https://i.gkd.li/i/17182889',
             'https://i.gkd.li/import/12825969', // com.twitter.tweetdetail.TweetDetailActivity
             'https://i.gkd.li/import/12847584', // com.twitter.android.search.implementation.results.SearchActivity
             'https://i.gkd.li/import/12882676', // com.twitter.tweetdetail.TweetDetailActivity
