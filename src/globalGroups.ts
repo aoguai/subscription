@@ -96,6 +96,7 @@ export default defineGkdGlobalGroups([
           '[text*="搜索"][text.length<6][visibleToUser=true]',
           '[(text*="搜索" && text.length<6) || vid~="(?is).*search.*" || (desc*="搜索" && desc.length<6)][visibleToUser=true]',
         ],
+        action: 'clickCenter',
         matches:
           'FrameLayout[visibleToUser=true][height>0&&width>0][childCount>=2] > FrameLayout[visibleToUser=true][height>0&&width>0][childCount>2] > @View[clickable=true][height>0&&width>0][visibleToUser=true] + TextView[clickable=true][height>0&&width>0][visibleToUser=true]', // 字节 SDK
       },
