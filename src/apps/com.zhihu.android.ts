@@ -49,11 +49,15 @@ export default defineGkdApp({
         },
         {
           key: 2,
-          matches: '@[vid="menu"][visibleToUser=true] < * - * > [text^="广告"]',
+          matches:
+            '@[vid="menu"][visibleToUser=true] < * - * > [text^="广告"|| text$="商品介绍"]',
           snapshotUrls: [
             'https://i.gkd.li/import/14321041',
             'https://i.gkd.li/import/14296163',
             'https://i.gkd.li/i/14468152',
+            'https://i.gkd.li/i/17237944',
+          ],
+          excludeSnapshotUrls: [
             'https://i.gkd.li/i/14558110', // 防误触
           ],
         },
@@ -63,10 +67,23 @@ export default defineGkdApp({
           snapshotUrls: 'https://i.gkd.li/import/14332161',
         },
         {
+          key: 4,
+          matches: '@[vid="remove"] - [vid="subtitle"][text*="广告"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/17268845',
+            'https://i.gkd.li/i/17268869',
+          ],
+        },
+        {
           key: 90,
           preKeys: [0, 1, 2, 3],
-          matches: '@[clickable=true] >3 [text$="不感兴趣"]',
-          snapshotUrls: 'https://i.gkd.li/import/13849689',
+          matches:
+            '@[clickable=true] >(1,3) [text$="不感兴趣"|| text^="屏蔽作者"]',
+          snapshotUrls: [
+            'https://i.gkd.li/import/13849689',
+            'https://i.gkd.li/i/17237940',
+            'https://i.gkd.li/i/17268849',
+          ],
         },
         {
           key: 91,
