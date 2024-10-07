@@ -68,5 +68,23 @@ export default defineGkdApp({
         'ViewGroup[desc="免费试用 1 个月"] < * - * > ViewGroup[text="不用了，谢谢"]', // 缺少英文快照
       snapshotUrls: 'https://i.gkd.li/import/13797512',
     },
+    {
+      key: 4,
+      name: '功能类-自动翻译评论',
+      desc: '评论区自动点击[翻译成中文]',
+      rules: [
+        {
+          fastQuery: true,
+          activityIds:
+            'com.google.android.apps.youtube.app.watchwhile.MainActivity',
+          matches:
+            '@Button[desc^="翻译成中文"][clickable=true][visibleToUser=true] <<n [vid="results"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/17068544', // 翻译前
+            'https://i.gkd.li/i/17068647', // 翻译后
+          ],
+        },
+      ],
+    },
   ],
 });

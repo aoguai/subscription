@@ -229,13 +229,12 @@ export default defineGkdApp({
     {
       key: 6,
       name: '分段广告-订阅号文章广告',
-      desc: '自动点击关闭',
+      desc: '点击下拉框-[关闭此广告]/[不感兴趣]-[与我无关]',
       enable: false,
       activityIds: [
-        'com.tencent.mm.plugin.brandservice.ui.timeline.preload.ui.TmplWebView', //调整为TmplWebView, 同时兼容多种ID
-        'com.tencent.mm.plugin.brandservice.ui.timeline.preload.ui.TmplWebViewMMUI',
-        'com.tencent.mm.plugin.brandservice.ui.timeline.preload.ui.TmplWebViewTooLMpUI',
-        'com.tencent.mm.plugin.webview.ui.tools.fts.MMSosWebViewUI',
+        '.plugin.brandservice.ui.timeline.preload.ui.TmplWebView', //调整为TmplWebView, 同时兼容多种ID
+        '.plugin.webview.ui.tools.fts.MMSosWebViewUI',
+        '.plugin.webview.ui.tools.MMWebViewUI',
       ],
       rules: [
         {
@@ -253,11 +252,13 @@ export default defineGkdApp({
             'https://i.gkd.li/import/12700183',
             'https://i.gkd.li/import/12714424',
             'https://i.gkd.li/import/14293295',
+            'https://i.gkd.li/i/17093010', // com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI
             'https://i.gkd.li/i/14802057',
             'https://i.gkd.li/i/16798663',
             'https://i.gkd.li/i/15198413', // 无id
             'https://i.gkd.li/i/15198455', // 无id
-            'https://i.gkd.li/i/15198455', // 无id
+          ],
+          excludeSnapshotUrls: [
             'https://i.gkd.li/import/12678937', // 防误触, 文章未浏览至页面底部，广告反馈按钮不可见，使用 [visibleToUser=true] 进行限定，防止打开文章就频繁触发规则
             'https://i.gkd.li/import/12646837', // 防误触, 事件完成后，反馈按钮仍然存在，使用 View[childCount=1] 进行限定，防止频繁触发规则
             'https://i.gkd.li/import/12642234', // 防误触, 出现反馈菜单后应该不匹配
@@ -266,15 +267,16 @@ export default defineGkdApp({
             'https://i.gkd.li/import/14006203', // 防误触
             'https://i.gkd.li/import/12701503', // 防误触, 事件完成后，采用[childCount=1]进行限定，防止频繁触发规则
             'https://i.gkd.li/import/14292844', // 防误触, 出现反馈菜单后应该不匹配
+            'https://i.gkd.li/i/15198464', // 防止在文章末尾广告关闭后误触
           ],
         },
         {
-          key: 1,
           preKeys: [0],
-          name: '点击「不感兴趣」或「关闭此广告」',
+          key: 1,
+          name: '点击「关闭此广告」',
           excludeMatches: '[text="感谢你的反馈"][visibleToUser=true]',
           matches:
-            '[text*="广告"&&text.length<5] <n View < View >n [text="不感兴趣"||text="关闭此广告"][visibleToUser=true]',
+            '[text*="广告"&&text.length<5] <n View < View >n [text="关闭此广告"][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/import/12745280',
             'https://i.gkd.li/import/14293434',
@@ -284,13 +286,23 @@ export default defineGkdApp({
             'https://i.gkd.li/i/16798661',
             'https://i.gkd.li/i/15198422', // 无id
             'https://i.gkd.li/i/15198459', // 无id
-            'https://i.gkd.li/i/15198459', // 无id
-            'https://i.gkd.li/i/15061424', // 使用excludeMatches防止在文章末尾广告关闭后误触
+            'https://i.gkd.li/i/16796729', // 内容中部广告
           ],
         },
         {
+          preKeys: [0],
           key: 2,
-          preKeys: [0, 1],
+          name: '点击「不感兴趣」',
+          excludeMatches: '[text="感谢你的反馈"][visibleToUser=true]',
+          matches:
+            '[text*="广告"&&text.length<5] <n View < View >n [text="不感兴趣"][visibleToUser=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/17113565', // 在某些情况下，点击“不感兴趣”会导致无法执行下一步操作
+          ],
+        },
+        {
+          preKeys: [0, 1, 2],
+          key: 10,
           name: '点击「与我无关」',
           matches:
             '[text*="广告"&&text.length<5] <n View < View >n [text="与我无关"][visibleToUser=true]',
@@ -298,7 +310,9 @@ export default defineGkdApp({
             'https://i.gkd.li/import/12642238',
             'https://i.gkd.li/import/14006206', // com.tencent.mm.plugin.webview.ui.tools.fts.MMSosWebViewUI
             'https://i.gkd.li/i/15198461', // 无id
-            'https://i.gkd.li/i/15198461', // 无id
+          ],
+          excludeSnapshotUrls: [
+            'https://i.gkd.li/i/15061424', // 使用excludeMatches防止在文章末尾广告关闭后误触
             'https://i.gkd.li/i/16798658', // clickable=false，使用clickable=true避免误触
           ],
         },

@@ -167,12 +167,14 @@ export default defineGkdApp({
         {
           fastQuery: true,
           activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
-          matches: '@[checked=true] < * - [text$="免密支付"]',
+          matches:
+            '@[checked=true] < FrameLayout - [text*="免密"][text$="支付"]',
           exampleUrls:
             'https://m.gkd.li/57941037/1e3a5f01-c42b-4d41-9d7d-21ff96c0075f',
           snapshotUrls: [
             'https://i.gkd.li/i/14630824', // 关闭前
             'https://i.gkd.li/i/14630825', // 关闭后
+            'https://i.gkd.li/i/17107841',
           ],
         },
       ],
