@@ -68,6 +68,15 @@ export default defineGkdApp({
             'https://i.gkd.li/i/16319383',
           ],
         },
+        {
+          key: 4,
+          name: '倍孜广告',
+          fastQuery: true,
+          activityIds:
+            'com.beizi.ad.internal.activity.BeiZiInterstitialActivity',
+          matches: '[vid="beizi_interstitial_ad_close_iv"]',
+          snapshotUrls: ['https://i.gkd.li/i/17391799'],
+        },
       ],
     },
   ],
