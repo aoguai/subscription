@@ -16,34 +16,24 @@ export default defineGkdApp({
     },
     {
       key: 10,
-      name: '通知提示-首页地图页面上方消息提醒',
+      name: '通知提示-地图横条广告',
       enable: false,
       fastQuery: true,
       activityIds: 'com.autonavi.map.activity.NewMapActivity',
-      rules:
-        'RelativeLayout[desc="弹窗"] > [id="com.autonavi.minimap:id/msgbox_popup_clear"]',
-      snapshotUrls: 'https://i.gkd.li/import/12642830',
-    },
-    {
-      key: 11,
-      name: '局部广告-首页广告卡片',
-      desc: '关闭首页的所有可关闭的广告卡片',
-      activityIds: 'com.autonavi.map.activity.NewMapActivity',
-      rules:
-        'ScrollView >n ViewGroup[childCount<5][visibleToUser=true] > ViewGroup[childCount>0] + ViewGroup[index!=0][childCount=1][visibleToUser=true][clickable=true][desc=null||desc="关闭"] > ImageView[visibleToUser=true][desc=null||desc="关闭"]',
-      snapshotUrls: [
-        'https://i.gkd.li/import/12642842',
-        'https://i.gkd.li/import/12642845',
-        'https://i.gkd.li/i/14715295',
-        'https://i.gkd.li/i/14730914',
-        'https://i.gkd.li/i/14730915',
-        'https://i.gkd.li/i/14784970',
-        'https://i.gkd.li/import/12818770', // 限定 ImageView[visibleToUser=true]，防止控件不可见时触发规则
-        'https://i.gkd.li/import/13764540', // 误触
-        'https://i.gkd.li/i/14912831', // 误触
-        'https://i.gkd.li/i/14912902', // 误触
-        'https://i.gkd.li/i/14912925', // 误触
-        'https://i.gkd.li/i/14965850', // 误触
+      rules: [
+        {
+          key: 0,
+          name: '弹窗1',
+          matches:
+            'RelativeLayout[desc="弹窗"] > [id="com.autonavi.minimap:id/msgbox_popup_clear"]',
+          snapshotUrls: 'https://i.gkd.li/import/12642830',
+        },
+        {
+          key: 1,
+          name: '弹窗2',
+          matches: '@ImageView[text=null] <n [vid="activity_icon_bar"]',
+          snapshotUrls: 'https://i.gkd.li/i/17391938',
+        },
       ],
     },
     {
