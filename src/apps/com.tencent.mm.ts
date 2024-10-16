@@ -257,6 +257,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/16798663',
             'https://i.gkd.li/i/15198413', // 无id
             'https://i.gkd.li/i/15198455', // 无id
+            'https://i.gkd.li/i/17276697', // text="广告 "，有空格
           ],
           excludeSnapshotUrls: [
             'https://i.gkd.li/import/12678937', // 防误触, 文章未浏览至页面底部，广告反馈按钮不可见，使用 [visibleToUser=true] 进行限定，防止打开文章就频繁触发规则
