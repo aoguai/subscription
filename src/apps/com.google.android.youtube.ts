@@ -75,13 +75,15 @@ export default defineGkdApp({
       rules: [
         {
           fastQuery: true,
+          actionCd: 500,
           activityIds:
             'com.google.android.apps.youtube.app.watchwhile.MainActivity',
           matches:
-            '@Button[desc^="翻译成中文"][clickable=true][visibleToUser=true] <<n [vid="results"]',
+            '@Button[desc^="翻译成中文"][clickable=true][visibleToUser=true] <<n [vid="results" || vid="section_list"]',
           snapshotUrls: [
             'https://i.gkd.li/i/17068544', // 翻译前
             'https://i.gkd.li/i/17068647', // 翻译后
+            'https://i.gkd.li/i/17501400',
           ],
         },
       ],
