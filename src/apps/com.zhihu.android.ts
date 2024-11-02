@@ -76,7 +76,7 @@ export default defineGkdApp({
         },
         {
           key: 90,
-          preKeys: [0, 1, 2, 3],
+          preKeys: [0, 1, 2, 3, 4],
           matches:
             '@[clickable=true] >(1,3) [text$="不感兴趣"|| text^="屏蔽作者"]',
           snapshotUrls: [
@@ -99,6 +99,12 @@ export default defineGkdApp({
           preKeys: [91],
           matches: '[vid="confirm_uninterest"]',
           snapshotUrls: ['https://i.gkd.li/i/15024032'],
+        },
+        {
+          key: 93,
+          preKeys: [0, 1, 2, 3, 4],
+          matches: '[text="减少相似内容推荐"]',
+          snapshotUrls: ['https://i.gkd.li/i/17606926'],
         },
       ],
     },
