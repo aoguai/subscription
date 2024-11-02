@@ -110,7 +110,6 @@ export default defineGkdApp({
       enable: false,
       matchTime: 10000,
       actionMaximum: 2,
-      resetMatch: 'activity',
       activityIds: [
         '.plugin.webwx.ui.ExtDeviceWXLoginUI',
         'com.tencent.mm.plugin.webview.ui.tools.SDKOAuthUI',

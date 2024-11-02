@@ -142,7 +142,6 @@ export default defineGkdApp({
       enable: false,
       matchTime: 10000,
       actionMaximum: 1,
-      resetMatch: 'activity',
       activityIds: [
         'com.baidu.tbadk.browser.TBWebContainerActivity',
         'com.baidu.tieba.frs.FrsActivity',
@@ -199,7 +198,6 @@ export default defineGkdApp({
       matchDelay: 500,
       matchTime: 10000,
       actionMaximum: 1,
-      resetMatch: 'activity',
       rules: [
         {
           key: 0,
@@ -263,7 +261,6 @@ export default defineGkdApp({
       key: 12,
       name: '功能类-贴吧内签到并关闭弹窗',
       enable: false,
-      resetMatch: 'activity',
       rules: [
         {
           key: 0,
