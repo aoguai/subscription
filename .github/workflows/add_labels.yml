@@ -10,6 +10,7 @@ jobs:
     if: |
       contains(github.event.issue.body, 'i.gkd.li/import') == false &&
       contains(github.event.issue.body, 'i.gkd.li/i/') == false &&
+      contains(github.event.issue.body, 'f.gkd.li') == false &&
       contains(github.event.issue.body, '.zip') == false
     steps:
       - name: Add labels
@@ -26,6 +27,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.issue.number }}
           body: |
-            你好 ${{ github.event.issue.user.login }}。由于您的 Issue 缺少必要的快照信息。请在评论中提供更多信息，以便我们更好地帮助您。谢谢！
+            您好 ${{ github.event.issue.user.login }}。由于您的 Issue 缺少必要的快照或信息。请在评论中提供更多相关且必要的信息，以便我们更好地帮助您。否则该 Issue 将在 3 天后关闭，谢谢！
 
-            Hello ${{ github.event.issue.user.login }}. Due to the lack of necessary snapshot information in your Issue, please provide more information in the comment so that we can better assist you. Thank you!
+            Hello, ${{ github.event.issue.user.login }}. Your issue lacks necessary snapshots or information. Please provide additional relevant and necessary details in the comments to help us assist you better. Otherwise, this issue will be closed in 3 days. Thank you!
