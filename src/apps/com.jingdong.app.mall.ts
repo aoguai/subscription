@@ -31,14 +31,15 @@ export default defineGkdApp({
           key: 2,
           name: '首页广告',
           matches:
-            'RelativeLayout >n * > [desc^="关闭浮层"][clickable=true][visibleToUser=true]',
+            'RelativeLayout >n * > [desc^="关闭"][clickable=true][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/import/13165659',
             'https://i.gkd.li/import/12837870',
             'https://i.gkd.li/import/13072091',
             'https://i.gkd.li/import/12837870',
-            'https://i.gkd.li/i/15077913', // 防止误触
+            'https://i.gkd.li/i/17690650',
           ],
+          excludeSnapshotUrls: 'https://i.gkd.li/i/15077913',
         },
         {
           key: 3,
