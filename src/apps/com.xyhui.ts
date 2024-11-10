@@ -72,10 +72,27 @@ export default defineGkdApp({
           key: 4,
           name: '倍孜广告',
           fastQuery: true,
-          activityIds:
+          activityIds: [
             'com.beizi.ad.internal.activity.BeiZiInterstitialActivity',
+            '.lut.act.LutMainActivity',
+          ],
           matches: '[vid="beizi_interstitial_ad_close_iv"]',
-          snapshotUrls: ['https://i.gkd.li/i/17391799'],
+          snapshotUrls: [
+            'https://i.gkd.li/i/17391799',
+            'https://i.gkd.li/i/17690662',
+          ],
+        },
+        {
+          key: 5,
+          name: '拼多多广告',
+          fastQuery: true,
+          activityIds: ['.lut.act.LutMainActivity'],
+          matches:
+            '@ImageView[desc.length=null][clickable=false] < ViewGroup[childCount=1] <<(36,37) [id="com.kwad.dy.sdk:id/ksad_tk_view"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/17690703',
+            'https://i.gkd.li/i/17690704',
+          ],
         },
       ],
     },
