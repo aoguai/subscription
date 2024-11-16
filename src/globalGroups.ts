@@ -77,25 +77,18 @@ export default defineGkdGlobalGroups([
     matchRoot: true,
     actionMaximum: 2,
     matchTime: 10000,
+    fastQuery: true,
     resetMatch: 'app',
     actionMaximumKey: 0,
     rules: [
       {
         key: 0,
-        excludeMatches: [
-          // 防止在应用的搜索页面误触
-          '[text*="搜索"][text.length<6][visibleToUser=true]',
-          '[(text*="搜索" && text.length<6) || vid~="(?is).*search.*" || (desc*="搜索" && desc.length<6)][visibleToUser=true]',
-        ],
+        excludeMatches: '[text*="搜索"][text.length<6][visibleToUser=true]', // 防止在应用的搜索页面误触
         matches: `${COMMON_PREFIX}[(text.length<10&&(text*="跳过"||text*="跳過"||text~="(?is).*skip.*"))||id~="(?is).*tt_splash_skip_btn"||vid~="(?is).*skip.*"||(vid~="(?is).*count.*"&&vid~="(?is).*down.*"&&!(vid~="(?is).*load.*")&&!(vid~="(?is).*hour.*")&&!(vid~="(?is).*minute.*")&&!(vid~="(?is).*timing.*")&&!(vid~="(?is).*add.*")&&!(vid~="(?is).*ead.*"))||desc*="跳过"||desc~="(?is).*skip.*"][!(text~="([01]?[0-9]|2[0-3])[:：][0-5][0-9]")][!(desc~="([01]?[0-9]|2[0-3])[:：][0-5][0-9]")]`,
       },
       {
         key: 1,
-        excludeMatches: [
-          // 防止在应用的搜索页面误触
-          '[text*="搜索"][text.length<6][visibleToUser=true]',
-          '[(text*="搜索" && text.length<6) || vid~="(?is).*search.*" || (desc*="搜索" && desc.length<6)][visibleToUser=true]',
-        ],
+        excludeMatches: '[text*="搜索"][text.length<6][visibleToUser=true]', // 防止在应用的搜索页面误触
         action: 'clickCenter',
         matches:
           'FrameLayout[visibleToUser=true][height>0&&width>0][childCount>=2] > FrameLayout[visibleToUser=true][height>0&&width>0][childCount>2] > @View[clickable=true][height>0&&width>0][visibleToUser=true] + TextView[clickable=true][height>0&&width>0][visibleToUser=true]', // 字节 SDK
@@ -226,7 +219,7 @@ export default defineGkdGlobalGroups([
       {
         key: 0,
         matches: [
-          `${COMMON_PREFIX}[(text*="内测"||text*="测试版"||text*="新版"||text*="更新"||text*="升级"||text*="体验"||text*="內測"||text*="測試版"||text*="升級"||text*="體驗"||text~="(?is).*Update.*"||text~="(?is).*Upgrade.*"||text~="(?is).*Experience.*")&&text!*="自动"&&text!*="自動"&&(text!*="成功"&&text!*="失败"&&text!*="失敗"&&(text!*="已"||text*="已知")&&text!*="检查更新")]`,
+          `${COMMON_PREFIX}[(text*="内测"||text*="测试版"||text*="新版"||text*="更新"||text*="升级"||text*="体验"||text*="內測"||text*="測試版"||text*="升級"||text*="體驗"||text~="(?is).*Update.*"||text~="(?is).*Upgrade.*"||text~="(?is).*Experience.*")&&text!*="自动"&&text!*="自動"&&(text!*="成功"&&text!*="失败"&&text!*="失敗"&&(text!*="已"||text*="已知")&&text!*="检查更新"&&text!*="卸载")]`,
           `${COMMON_PREFIX}[((((text*="立即"||text*="马上"||text*="并"||text*="现在"||text*="立刻"||text*="抢先")&&(text*="更新"||text*="下载"||text*="安装"||text*="升级"||text*="查看"||text*="体验"))||text="更新"||text="下载"||text="安装"||text="升级"||text="确定"||text="好,升级")&&text.length<6)||((text~="(?is).*(更新.*?)(\\\\(|（)\\\\d+(\\\\.\\\\d+)?(K|M|G|KB|MB|GB)(\\\\)|）)")&&text.length<15)]`,
           `${NEGATION_PART_RULE_TEXT}`,
         ],
@@ -234,7 +227,7 @@ export default defineGkdGlobalGroups([
       {
         key: 1,
         matches: [
-          `${COMMON_PREFIX}[(desc*="内测"||desc*="测试版"||desc*="新版"||desc*="更新"||desc*="升级"||desc*="体验"||desc*="內測"||desc*="測試版"||desc*="升級"||desc*="體驗"||desc~="(?is).*Update.*"||desc~="(?is).*Upgrade.*"||desc~="(?is).*Experience.*")&&desc!*="自动"&&desc!*="自動"&&(desc!*="成功"&&desc!*="失败"&&desc!*="失敗"&&(desc!*="已"||desc*="已知")&&desc!*="检查更新")]`,
+          `${COMMON_PREFIX}[(desc*="内测"||desc*="测试版"||desc*="新版"||desc*="更新"||desc*="升级"||desc*="体验"||desc*="內測"||desc*="測試版"||desc*="升級"||desc*="體驗"||desc~="(?is).*Update.*"||desc~="(?is).*Upgrade.*"||desc~="(?is).*Experience.*")&&desc!*="自动"&&desc!*="自動"&&(desc!*="成功"&&desc!*="失败"&&desc!*="失敗"&&(desc!*="已"||desc*="已知")&&desc!*="检查更新"&&desc!*="卸载")]`,
           `${COMMON_PREFIX}[((((desc*="立即"||desc*="马上"||desc*="并"||desc*="现在"||desc*="立刻"||desc*="抢先")&&(desc*="更新"||desc*="下载"||desc*="安装"||desc*="升级"||desc*="查看"||desc*="体验"))||desc="更新"||desc="下载"||desc="安装"||desc="升级"||desc="确定"||desc="好,升级")&&desc.length<6)||((desc~="(?is).*(更新.*?)(\\\\(|（)\\\\d+(\\\\.\\\\d+)?(K|M|G|KB|MB|GB)(\\\\)|）)")&&desc.length<15)]`,
           `${NEGATION_PART_RULE_DESC}`,
         ],
@@ -242,7 +235,7 @@ export default defineGkdGlobalGroups([
       {
         key: 2,
         matches: [
-          `${COMMON_PREFIX}[(text*="内测"||text*="测试版"||text*="新版"||text*="更新"||text*="升级"||text*="体验"||text*="內測"||text*="測試版"||text*="升級"||text*="體驗"||text~="(?is).*Update.*"||text~="(?is).*Upgrade.*"||text~="(?is).*Experience.*")&&text!*="自动"&&text!*="自動"&&(text!*="成功"&&text!*="失败"&&text!*="失敗"&&(text!*="已"||text*="已知")&&text!*="检查更新")]`,
+          `${COMMON_PREFIX}[(text*="内测"||text*="测试版"||text*="新版"||text*="更新"||text*="升级"||text*="体验"||text*="內測"||text*="測試版"||text*="升級"||text*="體驗"||text~="(?is).*Update.*"||text~="(?is).*Upgrade.*"||text~="(?is).*Experience.*")&&text!*="自动"&&text!*="自動"&&(text!*="成功"&&text!*="失败"&&text!*="失敗"&&(text!*="已"||text*="已知")&&text!*="检查更新"&&text!*="卸载")]`,
           `${COMMON_PREFIX}[((((text*="立即"||text*="马上"||text*="并"||text*="现在"||text*="立刻"||text*="抢先")&&(text*="更新"||text*="下载"||text*="安装"||text*="升级"||text*="查看"||text*="体验"))||text="更新"||text="下载"||text="安装"||text="升级"||text="确定"||text="好,升级")&&text.length<6)||((text~="(?is).*(更新.*?)(\\\\(|（)\\\\d+(\\\\.\\\\d+)?(K|M|G|KB|MB|GB)(\\\\)|）)")&&text.length<15)]`,
           `${NEGATION_PART_RULE_BUTTON}`,
         ],
@@ -250,11 +243,14 @@ export default defineGkdGlobalGroups([
       {
         key: 3,
         matches: [
-          `${COMMON_PREFIX}[(desc*="内测"||desc*="测试版"||desc*="新版"||desc*="更新"||desc*="升级"||desc*="体验"||desc*="內測"||desc*="測試版"||desc*="升級"||desc*="體驗"||desc~="(?is).*Update.*"||desc~="(?is).*Upgrade.*"||desc~="(?is).*Experience.*")&&desc!*="自动"&&desc!*="自動"&&(desc!*="成功"&&desc!*="失败"&&desc!*="失敗"&&(desc!*="已"||desc*="已知")&&desc!*="检查更新")]`,
+          `${COMMON_PREFIX}[(desc*="内测"||desc*="测试版"||desc*="新版"||desc*="更新"||desc*="升级"||desc*="体验"||desc*="內測"||desc*="測試版"||desc*="升級"||desc*="體驗"||desc~="(?is).*Update.*"||desc~="(?is).*Upgrade.*"||desc~="(?is).*Experience.*")&&desc!*="自动"&&desc!*="自動"&&(desc!*="成功"&&desc!*="失败"&&desc!*="失敗"&&(desc!*="已"||desc*="已知")&&desc!*="检查更新"&&desc!*="卸载")]`,
           `${COMMON_PREFIX}[((((desc*="立即"||desc*="马上"||desc*="并"||desc*="现在"||desc*="立刻"||desc*="抢先")&&(desc*="更新"||desc*="下载"||desc*="安装"||desc*="升级"||desc*="查看"||desc*="体验"))||desc="更新"||desc="下载"||desc="安装"||desc="升级"||desc="确定"||desc="好,升级")&&desc.length<6)||((desc~="(?is).*(更新.*?)(\\\\(|（)\\\\d+(\\\\.\\\\d+)?(K|M|G|KB|MB|GB)(\\\\)|）)")&&desc.length<15)]`,
           `${NEGATION_PART_RULE_BUTTON}`,
         ],
       },
+    ],
+    excludeSnapshotUrls: [
+      'https://i.gkd.li/i/17710149', // text!*="卸载"
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
     apps: [...uniqueAppIdsUP].map((id) => ({ id, enable: false })),
