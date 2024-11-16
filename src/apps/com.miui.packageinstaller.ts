@@ -28,17 +28,22 @@ export default defineGkdApp({
       key: 13,
       name: '功能类-自动安装/更新应用',
       desc: '该规则仅适配关闭小米系统[安全守护]的情况',
+      matchRoot: true,
       fastQuery: true,
       rules: [
         {
           key: 0,
           name: '点击[安装]/[更新]',
-          activityIds: 'com.miui.packageInstaller.NewInstallerPrepareActivity',
+          activityIds: [
+            'com.miui.packageInstaller.NewInstallerPrepareActivity',
+            'com.miui.packageInstaller.ui.InstallPrepareAlertActivity',
+          ],
           matches:
             '@FrameLayout[clickable=true] > LinearLayout[childCount=1] > [text^="继续"][text.length=4]',
           snapshotUrls: [
             'https://i.gkd.li/i/16487278',
             'https://i.gkd.li/i/16487282',
+            'https://i.gkd.li/i/17691996',
           ],
         },
         {
