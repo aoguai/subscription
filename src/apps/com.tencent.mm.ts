@@ -347,7 +347,7 @@ export default defineGkdApp({
       desc: '自动点击[查看原图]/[查看原视频]按钮',
       enable: false,
       fastQuery: true,
-      activityIds: '.ui.chatting.gallery.ImageGalleryUI',
+      activityIds: ['.ui.chatting.gallery.ImageGalleryUI', '.ui.LauncherUI'],
       rules: {
         anyMatches: [
           '[text^="查看原图"][clickable=true][visibleToUser=true]',
@@ -358,6 +358,7 @@ export default defineGkdApp({
         'https://i.gkd.li/import/13523031',
         'https://i.gkd.li/i/14661736',
         'https://i.gkd.li/i/16833732',
+        'https://i.gkd.li/i/17698956',
       ],
     },
     {
