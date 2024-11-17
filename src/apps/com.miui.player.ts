@@ -32,6 +32,14 @@ export default defineGkdApp({
           matches: 'ViewGroup > @ViewGroup + ViewGroup[childCount=5]',
           snapshotUrls: ['https://i.gkd.li/import/13304343'],
         },
+        {
+          key: 3,
+          name: '免费试听弹窗',
+          fastQuery: true,
+          matches:
+            '@ViewGroup[clickable=true][childCount=0][visibleToUser=true] < ViewGroup[childCount=1] < ViewGroup[childCount=2] < FrameLayout < FrameLayout < [vid="webview_container"]',
+          snapshotUrls: 'https://i.gkd.li/i/17783777',
+        },
       ],
     },
     {
