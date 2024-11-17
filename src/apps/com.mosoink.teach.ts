@@ -14,12 +14,6 @@ export default defineGkdApp({
       ],
       rules: [
         {
-          key: 1,
-          matches:
-            'TextView - View <1 FrameLayout - FrameLayout >1 FrameLayout > ImageView < FrameLayout',
-          snapshotUrls: 'https://i.gkd.li/import/13784406',
-        },
-        {
           key: 2,
           matches: '@Image[text.length=0] < View <n * > [text="反馈"]',
           snapshotUrls: 'https://i.gkd.li/i/15051392',
