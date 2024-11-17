@@ -122,24 +122,37 @@ export default defineGkdGlobalGroups([
         key: 2,
         name: '快手SDK-类型3',
         matches: `[text="广告"]  <<n ViewGroup +2 ViewGroup[childCount=3][checked=false] >n ImageView${COMMON_PREFIX}`,
+        snapshotUrls: ['https://i.gkd.li/i/13625303'],
       },
       {
         key: 3,
+        name: '快手SDK-类型4',
+        matches:
+          'ImageView[childCount=0][text=null] < @ViewGroup[childCount=1][clickable=true][visibleToUser=true] <<(1, 3) ViewGroup +(1, 2, 4) ViewGroup[childCount=2] >(1,3) [text="广告"]',
+        snapshotUrls: [
+          'https://i.gkd.li/import/13259198',
+          'https://i.gkd.li/i/16837806',
+          'https://i.gkd.li/i/13259196',
+          'https://i.gkd.li/i/15362927',
+        ],
+      },
+      {
+        key: 4,
         name: '字节SDK-类型1',
         matches: `[id~="(?is).*tt_reward_full_count_down_after_close"]${COMMON_PREFIX}`,
       },
       {
-        key: 4,
+        key: 5,
         name: '字节SDK-类型2',
         matches: `[vid~="(?is).*ad_flag_source_layout"] + [vid~="(?is).*iv_close"]${COMMON_PREFIX}`,
       },
       {
-        key: 5,
+        key: 6,
         name: '美数SDK-类型1',
         matches: `[vid~="(?is).*ms_activity_sdk_interstitial_cacel"]${COMMON_PREFIX}`,
       },
       {
-        key: 5,
+        key: 7,
         name: '腾讯广告-类型1',
         matches:
           'ImageView[childCount=0][text=null][desc=null][id=null][visibleToUser=true][width<90 && height<90] < @FrameLayout[index=1||index=2][text=null][desc=null][id=null] <<n FrameLayout > [name$="FrameLayout"||name$="ImageView"][index=parent.childCount.minus(1)] -(1, 2) FrameLayout[childCount>=2] >(2, 3) [text^="立即" || text="查看详情" || text="了解更多" || text="去逛逛" || text="去微信看看" || text$="应用" || text="进入小程序" || text="领取优惠" || text="跳转微信"]',
