@@ -73,6 +73,7 @@ export default defineGkdGlobalGroups([
   {
     key: 0,
     name: '开屏广告',
+    desc: '关闭打开应用时的开屏广告',
     order: OPEN_AD_ORDER,
     matchRoot: true,
     actionMaximum: 2,
@@ -100,6 +101,7 @@ export default defineGkdGlobalGroups([
   {
     key: 1,
     name: '全屏广告',
+    desc: '关闭通用的全屏广告弹窗',
     enable: false,
     order: FULLSCREEN_AD,
     matchTime: 10000,
@@ -143,6 +145,7 @@ export default defineGkdGlobalGroups([
   {
     key: 2,
     name: '局部广告',
+    desc: '关闭通用的局部广告弹窗',
     enable: false,
     order: PARTIAL_AD,
     matchTime: 10000,
@@ -208,6 +211,7 @@ export default defineGkdGlobalGroups([
   {
     key: 3,
     name: '更新提示',
+    desc: '关闭通用的更新提示弹窗',
     enable: false,
     order: UPDATE_PROMPT,
     actionMaximum: 2,
@@ -258,6 +262,7 @@ export default defineGkdGlobalGroups([
   {
     key: 4,
     name: '评价提示',
+    desc: '关闭通用的评价提示弹窗',
     enable: false,
     order: REVIEW_PROMPT,
     actionMaximum: 2,
@@ -305,6 +310,7 @@ export default defineGkdGlobalGroups([
   {
     key: 5,
     name: '通知提示',
+    desc: '! 该规则会自动拒绝 APP 一些申请通知提示，如果有影响请关闭',
     enable: false,
     order: NOTIFICATION_PROMPT,
     matchTime: 10000,
@@ -350,6 +356,7 @@ export default defineGkdGlobalGroups([
   {
     key: 6,
     name: '青少年模式',
+    desc: '关闭通用的青少年模式提示弹窗',
     enable: false,
     order: YOUTH_MODE,
     actionMaximum: 2,
