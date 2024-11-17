@@ -104,8 +104,10 @@ export default defineGkdApp({
         {
           key: 0,
           name: '首页',
+          excludeMatches: '[vid="layoutBanner"] > [text$=">>"]',
           matches: ['[id="com.alicloud.databox:id/ivTitleAction"]'],
           snapshotUrls: 'https://i.gkd.li/import/14161399',
+          excludeSnapshotUrls: 'https://i.gkd.li/i/17556779',
         },
         {
           key: 1,
