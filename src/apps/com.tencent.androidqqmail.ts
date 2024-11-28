@@ -43,10 +43,10 @@ export default defineGkdApp({
           preKeys: [0, 1, 2], // https://github.com/gkd-kit/subscription/issues/1776
           key: 8,
           name: '点击[不感兴趣]',
-          anymatches: [
+          anyMatches: [
             '[text="不感兴趣"]',
             '@FrameLayout > TextView[text="Not interested"]',
-          ]
+          ],
           snapshotUrls: [
             'https://i.gkd.li/import/12775862',
             'https://i.gkd.li/import/12842775',
