@@ -1,6 +1,6 @@
 # @aoguai/subscription
 
-此仓库由 aoguai 维护，提供 GKD 订阅规则。
+此仓库由 aoguai 维护，提供 GKD 第三方订阅规则。
 
 ✨避免臃肿冗余耗电，提供更**全面**的订阅体验✨
 
@@ -14,7 +14,7 @@
 
 **请注意：**
 
-- **本项目维护的规则仅启用 `开屏广告` 一类规则, 其它所有规则均需用户手动打开**
+- **本项目维护的规则仅默认启用 `开屏广告` 一类规则, 其它所有规则均需用户手动打开**
 
 ## 说明 📝
 
@@ -26,7 +26,7 @@
 
 **❗️ 此仓库仅接受与全局规则相关的维护或改进的 issues 或 PR 提交。**
 
-如果您需要任何额外的 APP 规则，您需要[自行编写规则](https://github.com/gkd-kit/subscription-template)并将其添加到本地规则中使用。
+如果您需要任何额外的 APP 规则，您可以参考[官方语法介绍](https://gkd.li/guide/selector)并将其添加到**本地规则**中或执行搭建 [GKD 订阅模板](https://github.com/gkd-kit/subscription-template) 使用。
 
 如果您希望参与贡献此项目，请参阅 [CONTRIBUTING.md](./CONTRIBUTING.md)。
 
