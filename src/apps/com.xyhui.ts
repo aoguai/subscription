@@ -47,6 +47,16 @@ export default defineGkdApp({
             'https://i.gkd.li/i/17690704',
           ],
         },
+        {
+          key: 6,
+          name: '拼多多广告2',
+          activityIds: ['.lut.act.LutMainActivity'],
+          matches:
+            '@[desc="top_close_button"] <<n [id="com.kwad.dy.sdk:id/ksad_tk_view"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/17945057',
+          ],
+        },
       ],
     },
   ],
