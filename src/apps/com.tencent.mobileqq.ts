@@ -123,7 +123,8 @@ export default defineGkdApp({
           key: 3,
           name: '好友动态详情页广告',
           fastQuery: true,
-          matches: '@[desc="关闭广告"][visibleToUser=true] <4 RelativeLayout <2 LinearLayout <2 LinearLayout < FrameLayout <(n) RecyclerView < FrameLayout - FrameLayout >2 [text="详情"]',
+          matches:
+            '@[desc="关闭广告"][visibleToUser=true] <4 RelativeLayout <2 LinearLayout <2 LinearLayout < FrameLayout <(n) RecyclerView < FrameLayout - FrameLayout >2 [text="详情"]',
           snapshotUrls: [
             'https://i.gkd.li/i/17009847',
             'https://i.gkd.li/i/17815694',
