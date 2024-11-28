@@ -6,8 +6,8 @@ export default defineGkdApp({
   groups: [
     {
       key: 0,
-      name: '通知提示-关闭花呗, 借呗，还款升级弹窗',
-      desc: '包括升级和开通弹窗',
+      name: '通知提示-关闭花呗,借呗,还款升级,信用卡推荐弹窗',
+      desc: '支付成功后的包括升级，开通，推荐的弹窗',
       enable: false,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -21,7 +21,7 @@ export default defineGkdApp({
         {
           key: 0,
           matches:
-            '@[(name$=".Image")||((text^="暂不升级"||text^="放弃升级")||text="关闭")][visibleToUser=true][desc.length=null] <<n * <n * > * >n [((text^="同意")&&((text*="协议并"||text*="升级并")))&&(text$="确认交易"||text$="升级"||text$="开通"||text$="刷脸验证"||text$="付款")||text="确认"]',
+            '@[(name$=".Image")||((text^="暂不升级"||text^="放弃升级")||text="关闭")][visibleToUser=true][desc.length=null] <<n * <n * > * >n [((text^="同意")&&((text*="协议并"||text*="升级并")))&&(text$="确认交易"||text$="升级"||text$="开通"||text$="刷脸验证"||text$="付款")||text="确认"||text="立即领取"]',
           snapshotUrls: [
             'https://i.gkd.li/import/12737055', //com.alipay.mobile.nebulax.integration.mpaas.activity.NebulaActivity$Main
             'https://i.gkd.li/import/13915022',
@@ -36,6 +36,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/15050300',
             'https://i.gkd.li/i/16106615',
             'https://i.gkd.li/i/17391739',
+            'https://i.gkd.li/i/17945065',
           ],
         },
       ],
