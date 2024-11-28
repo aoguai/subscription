@@ -83,10 +83,13 @@ export default defineGkdApp({
     {
       key: 2,
       name: '分段广告-好友动态广告卡片',
+      matchRoot: true,
       enable: false,
       activityIds: [
         'com.tencent.mobileqq.activity.SplashActivity',
         'com.qzone.reborn.feedx.activity.QZoneFriendFeedXActivity',
+        'com.qzone.reborn.base.QZoneTransparentShellActivity',
+        'com.qzone.reborn.base.QZoneShellActivity',
       ],
       rules: [
         {
@@ -120,8 +123,12 @@ export default defineGkdApp({
           key: 3,
           name: '好友动态详情页广告',
           fastQuery: true,
-          matches: '@[desc="关闭广告"][visibleToUser=true] -3 [text^="活动"]',
-          snapshotUrls: 'https://i.gkd.li/i/17009847',
+          matches: '@[desc="关闭广告"][visibleToUser=true] <4 RelativeLayout <2 LinearLayout <2 LinearLayout < FrameLayout <(n) RecyclerView < FrameLayout - FrameLayout >2 [text="详情"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/17009847',
+            'https://i.gkd.li/i/17815694',
+            'https://i.gkd.li/i/17827969',
+          ],
         },
         {
           preKeys: 0,
