@@ -190,9 +190,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/13060891',
             'https://i.gkd.li/i/16703244',
           ],
-          excludeSnapshotUrls: [
-            'https://i.gkd.li/i/13222361',
-          ],
+          excludeSnapshotUrls: ['https://i.gkd.li/i/13222361'],
         },
       ],
     },

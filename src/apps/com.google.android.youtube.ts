@@ -54,7 +54,7 @@ export default defineGkdApp({
       name: '全屏广告-会员广告',
       desc: '包括首页信息流里的会员广告',
       enable: false,
-      activityIds:[
+      activityIds: [
         'com.google.android.apps.youtube.app.watchwhile.MainActivity',
         'com.google.android.apps.youtube.app.watchwhile.WatchWhileActivity',
       ],
