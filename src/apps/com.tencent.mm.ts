@@ -306,15 +306,16 @@ export default defineGkdApp({
           key: 10,
           name: '点击「与我无关」',
           matches:
-            '[text*="广告"&&text.length<5] <n View < View >n [text="与我无关"][visibleToUser=true]',
+            '[text*="广告"&&text.length<5] <<n View >n [text="与我无关"][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/import/12642238',
             'https://i.gkd.li/import/14006206', // com.tencent.mm.plugin.webview.ui.tools.fts.MMSosWebViewUI
             'https://i.gkd.li/i/15198461', // 无id
+            'https://i.gkd.li/i/16798658',
+            'https://i.gkd.li/i/18108538',
           ],
           excludeSnapshotUrls: [
             'https://i.gkd.li/i/15061424', // 使用excludeMatches防止在文章末尾广告关闭后误触
-            'https://i.gkd.li/i/16798658', // clickable=false，使用clickable=true避免误触
           ],
         },
       ],
