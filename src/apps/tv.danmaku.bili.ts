@@ -19,7 +19,7 @@ export default defineGkdApp({
           snapshotUrls: 'https://i.gkd.li/import/12700222',
         },
         {
-          preKeys: 1,
+          preKeys: [1],
           matches: '[text="不感兴趣"][id^="tv.danmaku.bili:id/reason"]',
           snapshotUrls: 'https://i.gkd.li/import/12700243',
         },
@@ -135,10 +135,12 @@ export default defineGkdApp({
         },
         {
           key: 1,
-          name: '[关注]弹窗',
-          fastQuery: true,
-          matches: '@[vid="close"] -2 * >2 [text="关注"]',
-          snapshotUrls: 'https://i.gkd.li/i/14782965',
+          name: '[关注/投喂]弹窗',
+          matches: '@[vid="close"] - [vid="up_avatar" || vid="gift_icon"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14782965',
+            'https://i.gkd.li/i/18046573',
+          ],
         },
       ],
     },
@@ -152,13 +154,19 @@ export default defineGkdApp({
         {
           key: 1,
           matches:
-            '@[vid="more"][clickable=true][visibleToUser=true] -3 [vid="tag_layout"] > [vid="ad_tag_with_dot"]',
-          snapshotUrls: 'https://i.gkd.li/i/17269053',
+            '@[vid="more"][clickable=true][visibleToUser=true] -(3,4) [vid="tag_layout"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/17269053',
+            'https://i.gkd.li/i/17964354',
+          ],
         },
         {
           preKeys: [1],
           matches: '@[clickable=true] > [text="不感兴趣"]',
-          snapshotUrls: 'https://i.gkd.li/i/17269055',
+          snapshotUrls: [
+            'https://i.gkd.li/i/17269055',
+            'https://i.gkd.li/i/17964356',
+          ],
         },
       ],
     },
