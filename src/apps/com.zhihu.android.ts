@@ -21,7 +21,7 @@ export default defineGkdApp({
         {
           key: 0,
           matches:
-            '@ImageView[id=null][clickable=true] -n TextView[text=null] <<n * <n * > * >n [text$="广告"][visibleToUser=true]',
+            '@[clickable=true][visibleToUser=true] -(1,2) TextView[childCount=0][id=null][text=null][desc=null] <n * >n [text*="广告"][childCount=0][id=null][desc=null]',
           snapshotUrls: [
             'https://i.gkd.li/import/13849671',
             'https://i.gkd.li/import/12647525',
@@ -30,6 +30,7 @@ export default defineGkdApp({
             'https://i.gkd.li/import/14178979',
             'https://i.gkd.li/import/14206988',
             'https://i.gkd.li/i/14645530',
+            'https://i.gkd.li/i/18008867',
           ],
           excludeSnapshotUrls: [
             'https://i.gkd.li/i/14627437', // 避免在知了页面误触
