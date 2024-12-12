@@ -33,8 +33,12 @@ export default defineGkdApp({
           preKeys: [0],
           name: '在签到后，关闭弹窗',
           action: 'back',
-          matches: '[vid="ivCardBackBackground"][visibleToUser=true]',
+          anyMatches: [
+            '[vid="ivCardBackBackground"][visibleToUser=true]',
+            '[vid="ivClose"][visibleToUser=true]',
+          ],
           snapshotUrls: [
+            'https://i.gkd.li/i/18108340',
             'https://i.gkd.li/i/15573070', // 签到前
             'https://i.gkd.li/i/15573233', // 签到后
           ],
@@ -49,18 +53,17 @@ export default defineGkdApp({
       rules: [
         {
           key: 0,
-          matches:
-            'WebView >3 View > Image + TextView[clickable=true&&text.length=0]',
+          anyMatches: [
+            'WebView[text!=null && text!=""] > View[id="root"] >2 View > TextView[index=parent.childCount.minus(2)]',
+            'WebView[text=null] > View[id="root"] >2 View > TextView[index=parent.childCount.minus(1)]',
+          ],
           snapshotUrls: [
             'https://i.gkd.li/import/13228610',
             'https://i.gkd.li/import/14161216',
             'https://i.gkd.li/import/14235204',
+            'https://i.gkd.li/i/14414446',
+            'https://i.gkd.li/i/18108117',
           ],
-        },
-        {
-          key: 1,
-          matches: 'WebView >3 View > TextView[index=3][clickable=true]',
-          snapshotUrls: ['https://i.gkd.li/i/14414446'],
         },
       ],
     },
