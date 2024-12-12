@@ -51,27 +51,26 @@ export default defineGkdApp({
     },
     {
       key: 2,
-      name: '局部广告-首页会员广告',
-      activityIds:
-        'com.google.android.apps.youtube.app.watchwhile.WatchWhileActivity',
-      rules:
-        'ImageView < @Button < ViewGroup +3 Button[desc*="YouTube Premium"]',
-      snapshotUrls: 'https://i.gkd.li/import/12877357',
-    },
-    {
-      key: 3,
-      name: '全屏广告-订阅浮窗广告',
+      name: '全屏广告-会员广告',
+      desc: '包括首页信息流里的会员广告',
       enable: false,
-      activityIds:
+      activityIds:[
         'com.google.android.apps.youtube.app.watchwhile.MainActivity',
+        'com.google.android.apps.youtube.app.watchwhile.WatchWhileActivity',
+      ],
       rules:
-        'ViewGroup[desc="免费试用 1 个月"] < * - * > ViewGroup[text="不用了，谢谢"]', // 缺少英文快照
-      snapshotUrls: 'https://i.gkd.li/import/13797512',
+        '@[desc="不用了，谢谢" || desc="关闭"][visibleToUser=true] <<n [vid="bottom_ui_container" || vid="custom" || vid="loading_layout"]',
+      snapshotUrls: [
+        'https://i.gkd.li/import/12877357',
+        'https://i.gkd.li/i/13797512',
+        'https://i.gkd.li/i/18017075',
+      ],
     },
     {
       key: 4,
       name: '功能类-自动翻译评论',
       desc: '评论区自动点击[翻译成中文]',
+      enable: false,
       rules: [
         {
           fastQuery: true,
