@@ -157,20 +157,10 @@ export default defineGkdApp({
       ],
       rules: [
         {
-          key: 0,
-          name: '点击右上角x关闭',
-          matches:
-            'View[childCount=3] > @View[clickable=true][childCount=1] > Image',
-          snapshotUrls: [
-            'https://i.gkd.li/import/13060891',
-            'https://i.gkd.li/import/13222361', // childCount=1否则误触这里
-          ],
-        },
-        {
           key: 1,
           name: '点击正下方x关闭',
           matches:
-            '@TextView[clickable=true && text=null] - FrameLayout TextView[text="广告"]',
+            '@TextView[id="com.baidu.tieba:id/obfuscated"][clickable=true][childCount=0][visibleToUser=true] - FrameLayout[childCount=2][getChild(1).text="广告"] < RelativeLayout[childCount=2] < [parent=null]',
           snapshotUrls: [
             'https://i.gkd.li/import/13168383',
             'https://i.gkd.li/import/13322120',
@@ -194,8 +184,15 @@ export default defineGkdApp({
         {
           key: 3,
           name: '点击正下方x关闭3',
-          matches: '@TextView[visibleToUser=true][text=""] -2 [text="广告"]',
-          snapshotUrls: 'https://i.gkd.li/i/16703244',
+          matches:
+            'WebView[text!=null] > View[childCount=1] > View[childCount=3] > @[visibleToUser=true][index=2]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13060891',
+            'https://i.gkd.li/i/16703244',
+          ],
+          excludeSnapshotUrls: [
+            'https://i.gkd.li/i/13222361',
+          ],
         },
       ],
     },
@@ -255,18 +252,28 @@ export default defineGkdApp({
     },
     {
       key: 11,
-      name: '局部广告-帖子底部浮窗广告',
-      activityIds: 'com.baidu.tieba.pb.pb.main.PbActivity',
-      rules:
-        '* + @ImageView[clickable=true] <<(6,7,8) RelativeLayout[childCount>=2] > [name="android.widget.LinearLayout"||name="android.widget.ImageView"][index=1][clickable=false]',
-      snapshotUrls: [
-        'https://i.gkd.li/import/13322337',
-        'https://i.gkd.li/import/13328738',
-        'https://i.gkd.li/i/14571741',
-        'https://i.gkd.li/i/14586847',
-        'https://i.gkd.li/i/16595234',
-        'https://i.gkd.li/i/16619736',
-        'https://i.gkd.li/i/16647874',
+      name: '局部广告-[帖子内/吧内]底部悬浮窗',
+      fastQuery: true,
+      actionMaximum: 1,
+      rules: [
+        {
+          key: 0,
+          activityIds: '.pb.pb.main.PbActivity',
+          matches:
+            '@ImageView[clickable=true][visibleToUser=true] <2 LinearLayout - * > [text$="热议中" || text^="猜你喜欢" || text*="进吧逛逛"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/16595234',
+            'https://i.gkd.li/i/16619736',
+            'https://i.gkd.li/i/16647874',
+          ],
+        },
+        {
+          key: 1,
+          activityIds: '.forum.ForumActivity',
+          matches:
+            '@ImageView[clickable=true][visibleToUser=true] <2 LinearLayout - * > [text^="关注本吧"]',
+          snapshotUrls: 'https://i.gkd.li/i/17992981',
+        },
       ],
     },
     {
