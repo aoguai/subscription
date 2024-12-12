@@ -6,8 +6,8 @@ export default defineGkdApp({
   groups: [
     {
       key: 0,
-      name: '通知提示-关闭花呗,借呗,还款升级,信用卡推荐弹窗',
-      desc: '支付成功后的包括升级，开通，推荐的弹窗',
+      name: '通知提示-关闭花呗,借呗,还款升级,推荐等弹窗',
+      desc: '自动支付成功后的包括升级，开通，推荐的弹窗',
       enable: false,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -37,6 +37,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/16106615',
             'https://i.gkd.li/i/17391739',
             'https://i.gkd.li/i/17945065',
+            'https://i.gkd.li/i/14893122',
           ],
         },
       ],
