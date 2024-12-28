@@ -70,7 +70,7 @@ export default defineGkdApp({
           fastQuery: true,
           name: '点击[不感兴趣]',
           matches:
-            '@[clickable=true] > [text="不感兴趣" || text="相似内容过多" || text="up主不感兴趣"]',
+            '@[clickable=true] > [text="不感兴趣" || text="相似内容过多" || text="up主不感兴趣" || text="此类内容过多"]',
           snapshotUrls: [
             'https://i.gkd.li/import/13495649',
             'https://i.gkd.li/i/13742257',
@@ -86,6 +86,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/17676149',
             'https://i.gkd.li/i/17677147',
             'https://i.gkd.li/i/17786753',
+            'https://i.gkd.li/i/18266291',
           ],
         },
         {
