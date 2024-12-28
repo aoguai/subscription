@@ -7,15 +7,22 @@ export default defineGkdApp({
     {
       key: 1,
       name: '局部广告-卡片广告',
-      activityIds: [
-        'com.tencent.qqmusic.activity.AppStarterActivity',
-        'com.tencent.qqmusic.business.playernew.view.NewPlayerActivity',
-      ],
       rules: [
+        {
+          key: 1,
+          fastQuery: true,
+          activityIds:
+            'com.tencent.qqmusic.business.playernew.view.NewPlayerActivity',
+          matches:
+            '[text^="广告"] + [text="跳过"][clickable=true][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/13985169', // 播放界面
+        },
         {
           key: 2,
           fastQuery: true,
-          matches: '@[desc="关闭"] -n [text="广告"]',
+          activityIds: 'com.tencent.qqmusic.activity.AppStarterActivity',
+          matches:
+            '@[desc="关闭"][clickable=true] -(1,2) [text="广告"][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/13206534', //歌单页
             'https://i.gkd.li/i/13797001', //我的页
@@ -24,8 +31,9 @@ export default defineGkdApp({
         {
           key: 3,
           fastQuery: true,
+          activityIds: 'com.tencent.qqmusic.activity.AppStarterActivity',
           matches:
-            '@ImageView - ImageView - RelativeLayout >n [text="听歌入会赢绿钻"||text="摇动点击广告跳转"]',
+            '@ImageView - ImageView - RelativeLayout >n [text="听歌入会赢绿钻"||text="摇动点击广告跳转"][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/13206982',
             'https://i.gkd.li/i/13218134',
@@ -34,14 +42,36 @@ export default defineGkdApp({
         {
           key: 4,
           fastQuery: true,
-          matches: '@[clickable=true] > [text="广告"]',
-          snapshotUrls: 'https://i.gkd.li/i/15041019',
+          activityIds: 'com.tencent.qqmusic.activity.AppStarterActivity',
+          matches:
+            '@[clickable=true][visibleToUser=true] > [text="广告"][visibleToUser=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/15041019',
+            'https://i.gkd.li/i/18227243',
+          ],
+          excludeSnapshotUrls: 'https://i.gkd.li/i/18219557',
         },
         {
           key: 5,
+          activityIds: 'com.tencent.qqmusic.activity.AppStarterActivity',
           matches:
-            'RecyclerView > LinearLayout[childCount=3] >5 ViewGroup[childCount=3] > @ViewGroup[clickable=true] >2 ImageView[text=null][desc=null]',
+            'RecyclerView > LinearLayout[childCount=3] >5 ViewGroup[childCount=3] > @ViewGroup[clickable=true] >2 ImageView[text=null][desc=null][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/15756931',
+        },
+        {
+          key: 6,
+          fastQuery: true,
+          activityIds: '.activity.AppStarterActivity',
+          matches:
+            '@ImageView[clickable=true] - [text="广告"][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/17450309',
+        },
+        {
+          key: 7,
+          fastQuery: true,
+          activityIds: '.activity.AppStarterActivity',
+          matches: '[text="广告 | 关闭"][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/18227204',
         },
       ],
     },
