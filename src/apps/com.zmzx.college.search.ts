@@ -78,6 +78,7 @@ export default defineGkdApp({
       key: 10,
       name: '分段广告-信息流广告',
       desc: '包括首页和教程页面等',
+      enable: false,
       activityIds: [
         'com.zmzx.college.search.activity.main.activity.MainActivity',
         '.activity.booksearch.result.activity.TextbookDetailActivity',

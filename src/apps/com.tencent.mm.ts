@@ -190,6 +190,7 @@ export default defineGkdApp({
       key: 5,
       name: '功能类-自动领取微信红包',
       desc: '自动领取私聊红包,群聊红包',
+      enable: false,
       fastQuery: true,
       rules: [
         {

@@ -8,6 +8,7 @@ export default defineGkdApp({
       key: 6,
       name: '分段广告-信息流广告',
       desc: '点击关闭-点击内容不感兴趣',
+      enable: false,
       fastQuery: true,
       rules: [
         {
@@ -99,6 +100,7 @@ export default defineGkdApp({
       key: 11,
       name: '全屏广告-广告弹窗',
       desc: '点击关闭',
+      enable: false,
       fastQuery: true,
       activityIds: [
         'com.zhihu.android.app.ui.activity.MainActivity',

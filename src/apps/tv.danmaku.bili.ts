@@ -160,6 +160,7 @@ export default defineGkdApp({
       key: 9,
       name: '分段广告-搜索结果广告',
       desc: '点击右下角[菜单]-点击[不感兴趣]',
+      enable: false,
       fastQuery: true,
       activityIds: 'com.bilibili.search2.main.BiliMainSearchActivity',
       rules: [

@@ -7,6 +7,7 @@ export default defineGkdApp({
     {
       key: 1,
       name: '通知提示-请求通知弹窗',
+      enable: false,
       fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,

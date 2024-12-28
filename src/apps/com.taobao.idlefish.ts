@@ -7,6 +7,7 @@ export default defineGkdApp({
     {
       key: 1,
       name: '通知提示',
+      enable: false,
       actionMaximum: 1,
       resetMatch: 'app',
       activityIds:
@@ -18,6 +19,7 @@ export default defineGkdApp({
       key: 4,
       name: '全屏广告-红包弹窗',
       desc: '点击关闭',
+      enable: false,
       actionMaximum: 1,
       resetMatch: 'app',
       activityIds: 'com.taobao.idlefish.maincontainer.activity.MainActivity',
@@ -28,6 +30,7 @@ export default defineGkdApp({
     {
       key: 5,
       name: '分段广告-信息流广告',
+      enable: false,
       activityIds:
         'com.idlefish.flutterbridge.flutterboost.boost.FishFlutterBoostActivity',
       rules: [

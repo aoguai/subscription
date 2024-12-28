@@ -96,6 +96,7 @@ export default defineGkdApp({
       key: 14,
       name: '权限提示-授权蓝牙',
       desc: '要求提升室内定位精度时，点击关闭',
+      enable: false,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',

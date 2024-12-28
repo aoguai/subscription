@@ -172,6 +172,7 @@ export default defineGkdApp({
     {
       key: 14,
       name: '功能类-关闭免密支付开关',
+      enable: false,
       actionMaximum: 1,
       rules: [
         {
@@ -193,6 +194,7 @@ export default defineGkdApp({
       key: 15,
       name: '分段广告-服务消息页面-卡片广告',
       desc: '点击[关闭]-点击[不感兴趣]',
+      enable: false,
       fastQuery: true,
       activityIds:
         'com.alipay.android.phone.messageboxapp.ui.MsgBoxTabActivity',
@@ -214,6 +216,7 @@ export default defineGkdApp({
       key: 16,
       name: '全屏广告-弹窗广告',
       desc: '点击X',
+      enable: false,
       rules: [
         {
           key: 0,

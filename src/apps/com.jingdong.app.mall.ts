@@ -228,6 +228,7 @@ export default defineGkdApp({
     {
       key: 13,
       name: '功能类-支付订单后点击[完成]',
+      enable: false,
       rules: [
         {
           fastQuery: true,

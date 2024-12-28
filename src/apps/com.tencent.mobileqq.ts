@@ -324,6 +324,7 @@ export default defineGkdApp({
       key: 7,
       name: '功能类-自动授权',
       desc: '自动点击登录。包括 PC 登录确认、QQ 互联登录确认。',
+      enable: false,
       fastQuery: true,
       rules: [
         {
@@ -548,6 +549,7 @@ export default defineGkdApp({
       key: 24,
       name: '功能类-自动领红包',
       desc: '自己发的红包、专属红包、口令红包、私聊红包不领',
+      enable: false,
       rules: [
         {
           key: 0,
@@ -601,6 +603,7 @@ export default defineGkdApp({
       key: 26,
       name: '全屏广告-个人主页广告',
       desc: '点击关闭',
+      enable: false,
       rules: [
         {
           key: 0,
@@ -647,6 +650,7 @@ export default defineGkdApp({
     {
       key: 28,
       name: '功能类-授权登录时关闭获取QQ好友关系',
+      enable: false,
       rules: [
         {
           fastQuery: true,

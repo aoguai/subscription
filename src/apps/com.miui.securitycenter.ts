@@ -45,6 +45,7 @@ export default defineGkdApp({
       key: 12,
       name: '功能类-使用返回退出时直接点击[退出]',
       desc: '退出时忽略[体检优化分数]/忽略[存储空间预警]',
+      enable: false,
       rules: [
         {
           fastQuery: true,

@@ -46,6 +46,7 @@ export default defineGkdApp({
       key: 11,
       name: '局部广告-banner 广告',
       activityIds: 'com.tencent.qqmusiclite.activity.MainActivity',
+      enable: false,
       fastQuery: true,
       rules: [
         {
@@ -62,10 +63,10 @@ export default defineGkdApp({
       ],
     },
     {
-      enable: false,
       key: 12,
       name: '功能类-看广告视频领VIP',
       desc: '等待15s自动点击【退出】',
+      enable: false,
       rules: [
         {
           actionDelay: 15000,
