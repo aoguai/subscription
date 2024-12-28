@@ -6,69 +6,71 @@ export default defineGkdApp({
   groups: [
     {
       key: 6,
-      name: '分段广告-首页信息流广告',
+      name: '分段广告-信息流广告',
       desc: '点击关闭-点击内容不感兴趣',
-      enable: false,
       fastQuery: true,
-      activityIds: [
-        'com.zhihu.android.mixshortcontainer.MixShortContainerActivity',
-        'com.zhihu.android.app.ui.activity.MainActivity',
-        'com.zhihu.android.app.ui.activity.HostActivity',
-        'com.zhihu.android.feature.short_container_feature.ui.ShortContainerHostActivity',
-        'com.zhihu.android.ContentActivity',
-      ],
       rules: [
         {
           key: 0,
+          activityIds: [
+            '.feature.short_container_feature.ui.ShortContainerHostActivity',
+            '.ContentActivity',
+          ],
           matches:
-            '@[clickable=true][visibleToUser=true] -(1,2) TextView[childCount=0][id=null][text=null][desc=null] <n * >n [text*="广告"][childCount=0][id=null][desc=null]',
+            '@[clickable=true][visibleToUser=true] -(1,2) TextView[childCount=0][id=null][text=null][desc=null] <n ViewGroup >n [text*="广告"][childCount=0][id=null][desc=null]',
           snapshotUrls: [
-            'https://i.gkd.li/import/13849671',
-            'https://i.gkd.li/import/12647525',
-            'https://i.gkd.li/import/14178516', //activityId: com.zhihu.android.feature.short_container_feature.ui.ShortContainerHostActivity
-            'https://i.gkd.li/import/13849442',
-            'https://i.gkd.li/import/14178979',
-            'https://i.gkd.li/import/14206988',
+            'https://i.gkd.li/i/13849671',
             'https://i.gkd.li/i/14645530',
+            'https://i.gkd.li/i/14178516',
+            'https://i.gkd.li/i/13849442',
+            'https://i.gkd.li/i/14178979',
+            'https://i.gkd.li/i/14178980',
+            'https://i.gkd.li/i/14206949',
+            'https://i.gkd.li/i/14206988',
             'https://i.gkd.li/i/18008867',
           ],
           excludeSnapshotUrls: [
-            'https://i.gkd.li/i/14627437', // 避免在知了页面误触
             'https://i.gkd.li/i/17002118',
             'https://i.gkd.li/i/17002119',
             'https://i.gkd.li/i/17002120',
           ],
         },
         {
-          key: 1,
-          matches: '@ImageView[id=null] <<n * -3 * >2 [text*="广告"][id=null]',
-          snapshotUrls: [
-            'https://i.gkd.li/import/14192451',
-            'https://i.gkd.li/i/14730741',
-            'https://i.gkd.li/i/15782386', // 误触
-          ],
-        },
-        {
           key: 2,
+          activityIds: '.app.ui.activity.MainActivity',
           matches:
-            '@[vid="menu"][visibleToUser=true] < * - * > [text^="广告"|| text$="商品介绍"]',
+            '@ImageView[clickable=true][childCount=0] < FrameLayout[childCount=1] - * > [text*="广告" || text$="商品介绍"]',
           snapshotUrls: [
-            'https://i.gkd.li/import/14321041',
-            'https://i.gkd.li/import/14296163',
+            'https://i.gkd.li/i/14296163',
+            'https://i.gkd.li/i/14321041',
             'https://i.gkd.li/i/14468152',
             'https://i.gkd.li/i/17237944',
-          ],
-          excludeSnapshotUrls: [
-            'https://i.gkd.li/i/14558110', // 防误触
           ],
         },
         {
           key: 3,
-          matches: '@ViewGroup[clickable=true] <3 * < * -2 * >2 [text$="广告"]',
-          snapshotUrls: 'https://i.gkd.li/import/14332161',
+          activityIds: ['.app.ui.activity.MainActivity', '.ContentActivity'],
+          matches:
+            '@ViewGroup[clickable=true][childCount=1] <4 ViewGroup -(2,3) ViewGroup[childCount>1] >(1,2) [text*="广告"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14192451',
+            'https://i.gkd.li/i/18217217',
+          ],
         },
         {
           key: 4,
+          activityIds: '.app.ui.activity.MainActivity',
+          matches:
+            '@ViewGroup[clickable=true][childCount=1] <3 ViewGroup < ViewGroup -(2,3) ViewGroup >2 [text*="广告"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14332161',
+            'https://i.gkd.li/i/14730741',
+          ],
+        },
+        {
+          key: 5,
+          activityIds:
+            '.feature.short_container_feature.ui.ShortContainerHostActivity',
           matches: '@[vid="remove"] - [vid="subtitle"][text*="广告"]',
           snapshotUrls: [
             'https://i.gkd.li/i/17268845',
@@ -76,36 +78,20 @@ export default defineGkdApp({
           ],
         },
         {
+          preKeys: [0, 2, 3, 4, 5],
           key: 90,
-          preKeys: [0, 1, 2, 3, 4],
+          activityIds: [
+            '.feature.short_container_feature.ui.ShortContainerHostActivity',
+            '.ContentActivity',
+            '.app.ui.activity.MainActivity',
+          ],
           matches:
-            '@[clickable=true] >(1,3) [text$="不感兴趣"|| text^="屏蔽作者"]',
+            '@[clickable=true] >(1,3) [text$="不感兴趣" || text^="屏蔽作者"]',
           snapshotUrls: [
-            'https://i.gkd.li/import/13849689',
+            'https://i.gkd.li/i/13849689',
             'https://i.gkd.li/i/17237940',
             'https://i.gkd.li/i/17268849',
           ],
-        },
-        {
-          key: 91,
-          preKeys: [90],
-          matches: '[vid="uninterest_reason"][index=0]',
-          snapshotUrls: [
-            'https://i.gkd.li/import/13849689',
-            'https://i.gkd.li/i/15024017',
-          ],
-        },
-        {
-          key: 92,
-          preKeys: [91],
-          matches: '[vid="confirm_uninterest"]',
-          snapshotUrls: ['https://i.gkd.li/i/15024032'],
-        },
-        {
-          key: 93,
-          preKeys: [0, 1, 2, 3, 4],
-          matches: '[text="减少相似内容推荐"]',
-          snapshotUrls: ['https://i.gkd.li/i/17606926'],
         },
       ],
     },
