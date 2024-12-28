@@ -53,7 +53,10 @@ export default defineGkdApp({
           activityIds: ['.lut.act.LutMainActivity'],
           matches:
             '@[desc="top_close_button"] <<n [id="com.kwad.dy.sdk:id/ksad_tk_view"]',
-          snapshotUrls: ['https://i.gkd.li/i/17945057'],
+          snapshotUrls: [
+            'https://i.gkd.li/i/17945057',
+            'https://i.gkd.li/i/18245369',
+          ],
         },
       ],
     },
