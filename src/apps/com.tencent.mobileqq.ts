@@ -672,5 +672,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 30,
+      name: '全屏广告-关闭开启通讯录',
+      desc: '弹出开启通讯录建议页面时自动关闭',
+      enable: false,
+      rules: [
+        {
+          fastQuery: true,
+          activityIds: '.activity.phone.PhoneMatchActivity',
+          matches: ['[text="开启通讯录"]', '[text="关闭"]'],
+          snapshotUrls: 'https://i.gkd.li/i/18266370',
+        },
+      ],
+    },
   ],
 });
