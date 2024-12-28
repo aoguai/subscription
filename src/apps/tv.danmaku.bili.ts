@@ -100,23 +100,34 @@ export default defineGkdApp({
     },
     {
       key: 7,
-      name: '局部广告-视频悬浮广告',
+      name: '局部广告-视频页广告',
       desc: '领取大会员月卡,B站免流星卡',
       fastQuery: true,
-      matchTime: 10000,
-      actionMaximum: 1,
-      activityIds: [
-        'com.bilibili.ship.theseus.detail.UnitedBizDetailsActivity',
-        'com.bilibili.video.videodetail.VideoDetailsActivity',
+      rules: [
+        {
+          key: 1,
+          matchTime: 10000,
+          actionMaximum: 1,
+          activityIds: [
+            'com.bilibili.ship.theseus.detail.UnitedBizDetailsActivity',
+            'com.bilibili.video.videodetail.VideoDetailsActivity',
+          ],
+          matches: '[id="tv.danmaku.bili:id/toast_x"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/12892611',
+            'https://i.gkd.li/i/13308344',
+            'https://i.gkd.li/i/13538048',
+          ],
+        },
+        {
+          key: 2,
+          activityIds:
+            'com.bilibili.ship.theseus.detail.UnitedBizDetailsActivity',
+          matches:
+            '@[vid="close"][visibleToUser=true] - [text$="免费领B站大会员"]',
+          snapshotUrls: 'https://i.gkd.li/i/18165189',
+        },
       ],
-      rules: '[id="tv.danmaku.bili:id/toast_x"]',
-      snapshotUrls: [
-        'https://i.gkd.li/i/12892611',
-        'https://i.gkd.li/i/13308344',
-        'https://i.gkd.li/i/13538048', // activityIds: 'com.bilibili.video.videodetail.VideoDetailsActivity',
-      ],
-      exampleUrls:
-        'https://github.com/gkd-kit/inspect/assets/38517192/110db806-3f8b-4cd2-a445-06c5f5eb21eb',
     },
     {
       key: 8,
@@ -167,6 +178,22 @@ export default defineGkdApp({
             'https://i.gkd.li/i/17269055',
             'https://i.gkd.li/i/17964356',
           ],
+        },
+      ],
+    },
+    {
+      key: 10,
+      name: '功能类-自动关闭故事模式',
+      desc: '播放视频时退出竖屏模式',
+      enable: false,
+      matchTime: 10000,
+      actionMaximum: 1,
+      rules: [
+        {
+          fastQuery: true,
+          activityIds: 'com.bilibili.video.story.StoryVideoActivity',
+          matches: '[vid="story_ctrl_router"][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/18164075',
         },
       ],
     },
