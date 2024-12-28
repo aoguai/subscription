@@ -55,7 +55,7 @@ export default defineGkdApp({
           key: 0,
           anyMatches: [
             'WebView[text!=null && text!=""] > View[id="root"] >2 View > TextView[index=parent.childCount.minus(2)]',
-            'WebView[text=null] > View[id="root"] >2 View > TextView[index=parent.childCount.minus(1)]',
+            'WebView[text=null || text=""] > View[id="root"] >2 View > TextView[index=parent.childCount.minus(1)]',
           ],
           snapshotUrls: [
             'https://i.gkd.li/import/13228610',
