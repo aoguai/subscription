@@ -328,6 +328,7 @@ export default defineGkdApp({
         {
           key: 0,
           fastQuery: true,
+          activityIds: ['.tblauncher.MainTabActivity', '.forum.ForumActivity'],
           matches:
             '@ImageView[childCount=0][clickable=true][visibleToUser=true] - [text="你可能感兴趣的吧" || text^="本吧的人都在逛"]',
           snapshotUrls: [
