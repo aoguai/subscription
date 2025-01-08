@@ -240,6 +240,13 @@ export default defineGkdApp({
             'https://i.gkd.li/i/15136939',
           ],
         },
+        {
+          key: 5,
+          name: '资料卡个性装扮弹窗',
+          activityIds: '.activity.VisitorsActivity',
+          matches: '[desc^="资料卡可展示"] + [desc="关闭浮层"]',
+          snapshotUrls: ['https://i.gkd.li/i/18348068'],
+        },
       ],
     },
     {
@@ -343,8 +350,10 @@ export default defineGkdApp({
             'com.tencent.mobileqq.activity.DevlockQuickLoginActivity',
             'com.tencent.mobileqq.activity.DevLockQuickVerifyActivity',
           ],
-          matches:
+          matches: [
+            '[text="登录确认" || text="一键验证"][visibleToUser=true]',
             'Button[text*="登录"][clickable=true][visibleToUser=true][text.length<10]',
+          ],
           snapshotUrls: [
             'https://i.gkd.li/import/13623520',
             'https://i.gkd.li/import/12789287',
@@ -430,12 +439,24 @@ export default defineGkdApp({
         'com.tencent.richframework.gallery.QQGalleryActivity',
         'com.tencent.mobileqq.richmediabrowser.AIOGalleryActivity',
       ],
-      rules: '[text^="查看原图"][checked=false]',
-      snapshotUrls: [
-        'https://i.gkd.li/import/12840632', // 点击原图前
-        'https://i.gkd.li/import/12840633', // 点击原图后
-        'https://i.gkd.li/i/14757735',
-        'https://i.gkd.li/i/15024319',
+      rules: [
+        {
+          key: 0,
+          name: '点击查看原图',
+          matches: '[text^="查看原图"][checked=false]',
+          snapshotUrls: [
+            'https://i.gkd.li/import/12840632', // 点击原图前
+            'https://i.gkd.li/import/12840633', // 点击原图后
+            'https://i.gkd.li/i/14757735',
+            'https://i.gkd.li/i/15024319',
+          ],
+        },
+        {
+          key: 1,
+          name: '关闭流量提示弹窗',
+          matches: ['[text="流量提醒"]', '[text="继续"]'],
+          snapshotUrls: 'https://i.gkd.li/i/18344117',
+        },
       ],
     },
     {
