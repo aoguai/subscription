@@ -563,7 +563,10 @@ export default defineGkdApp({
       desc: '支付完成后自动点击完成或返回商家按钮',
       enable: false,
       fastQuery: true,
-      activityIds: 'com.tencent.mm.framework.app.UIPageFragmentActivity',
+      activityIds: [
+        'com.tencent.mm.framework.app.UIPageFragmentActivity',
+        '.ui.LauncherUI',
+      ],
       rules: [
         {
           matches: [
@@ -573,10 +576,13 @@ export default defineGkdApp({
           ],
           snapshotUrls: [
             'https://i.gkd.li/i/14399355',
-            'https://i.gkd.li/i/14532946', // 避免在此页面误触
             'https://i.gkd.li/i/14558398',
             'https://i.gkd.li/i/14662147',
             'https://i.gkd.li/i/16215946',
+            'https://i.gkd.li/i/18348017',
+          ],
+          excludeSnapshotUrls: [
+            'https://i.gkd.li/i/14532946', // 避免在此页面误触
           ],
         },
       ],
