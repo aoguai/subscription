@@ -106,6 +106,17 @@ export default defineGkdApp({
             'https://i.gkd.li/import/13197546',
           ],
         },
+        {
+          key: 8,
+          fastQuery: true,
+          matchTime: 10000,
+          actionMaximum: 1,
+          resetMatch: 'app',
+          activityIds: 'com.taobao.tao.welcome.Welcome',
+          matches:
+            '@ImageView[desc="图片"][childCount=0][clickable=true][visibleToUser=true] <<n [vid="poplayer_native_state_id"]',
+          snapshotUrls: 'https://i.gkd.li/i/18218537',
+        },
       ],
     },
     {
@@ -212,34 +223,39 @@ export default defineGkdApp({
     },
     {
       key: 16,
-      name: '全屏广告-花呗升级报送征信',
+      name: '全屏广告-花呗相关弹窗',
       desc: '关闭花呗升级及征信授权相关弹窗',
       enable: false,
       fastQuery: true,
-      matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
       rules: [
         {
           key: 0,
           activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
-          matches:
-            '[text="花呗服务未升级，将影响后续使用"] <<n FrameLayout @FrameLayout[clickable=true] [text="暂不升级，继续付款"]',
-          snapshotUrls: 'https://i.gkd.li/import/13628020',
+          matches: [
+            '[text*="花呗升级" || text*="花呗服务" || text$="开通花呗"][visibleToUser=true]',
+            '@[clickable=true] >n [text="暂不升级，继续付款" || text="关闭"][visibleToUser=true]',
+          ],
+          snapshotUrls: [
+            'https://i.gkd.li/import/13628020',
+            'https://i.gkd.li/import/13691864',
+            'https://i.gkd.li/import/13898735',
+            'https://i.gkd.li/i/18296345',
+          ],
         },
+      ],
+    },
+    {
+      key: 20,
+      name: '功能类-登录授权',
+      desc: '点击确认授权按钮',
+      rules: [
         {
-          key: 1,
-          activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
-          matches:
-            '[text="根据相关法律法规要求，请尽快完成花呗升级"] <<n FrameLayout FrameLayout @[text="关闭"]',
-          snapshotUrls: 'https://i.gkd.li/import/13691864',
-        },
-        {
-          key: 2,
-          activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
-          matches:
-            '[id="com.taobao.taobao:id/flybird_userinfo"] + * [text="暂不升级，继续付款"]',
-          snapshotUrls: 'https://i.gkd.li/import/13898735',
+          activityIds: 'com.taobao.browser.BrowserActivity',
+          matches: '[text="确认授权"][visibleToUser=true]',
+          exampleUrls: 'https://e.gkd.li/e6250a9c-3fee-4470-8c7c-1d28ea63d2a5',
+          snapshotUrls: 'https://i.gkd.li/i/18271783',
         },
       ],
     },
