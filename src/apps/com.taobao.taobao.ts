@@ -161,7 +161,7 @@ export default defineGkdApp({
         'com.taobao.tao.TBMainActivity',
       ],
       rules:
-        '[text^="开启系统通知"] + @Image[visibleToUser=true] <<n [id="com.taobao.taobao:id/poplayer_inner_view"]',
+        '@Image[visibleToUser=true][text!=null] +2 View > [visibleToUser=true][text="消息通知" || text="发货通知"] <<n [vid="poplayer_inner_view"]',
       snapshotUrls: [
         'https://i.gkd.li/import/13197594', //com.taobao.tao.welcome.Welcome
         'https://i.gkd.li/import/13222946', //com.taobao.android.order.bundle.TBOrderDetailActivity
@@ -169,6 +169,7 @@ export default defineGkdApp({
         'https://i.gkd.li/import/13446901',
         'https://i.gkd.li/import/13455424', //com.taobao.tao.TBMainActivity
         'https://i.gkd.li/i/15104645',
+        'https://i.gkd.li/i/18407606',
       ],
     },
     {
