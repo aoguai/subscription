@@ -29,6 +29,7 @@ export default defineGkdApp({
           activityIds: [
             'com.beizi.ad.internal.activity.BeiZiInterstitialActivity',
             '.lut.act.LutMainActivity',
+            '.start.LoadingActivity',
           ],
           matches: '[vid="beizi_interstitial_ad_close_iv"]',
           snapshotUrls: [
@@ -40,7 +41,7 @@ export default defineGkdApp({
           key: 5,
           name: '拼多多广告',
           fastQuery: true,
-          activityIds: ['.lut.act.LutMainActivity'],
+          activityIds: ['.lut.act.LutMainActivity', '.start.LoadingActivity'],
           matches:
             '@ImageView[desc.length=null][clickable=false] < ViewGroup[childCount=1] <<(36,37) [id="com.kwad.dy.sdk:id/ksad_tk_view"]',
           snapshotUrls: [
@@ -51,12 +52,13 @@ export default defineGkdApp({
         {
           key: 6,
           name: '拼多多广告2',
-          activityIds: ['.lut.act.LutMainActivity'],
+          activityIds: ['.lut.act.LutMainActivity', '.start.LoadingActivity'],
           matches:
             '@[desc="top_close_button"] <<n [id="com.kwad.dy.sdk:id/ksad_tk_view"]',
           snapshotUrls: [
             'https://i.gkd.li/i/17945057',
             'https://i.gkd.li/i/18245369',
+            'https://i.gkd.li/i/18501469',
           ],
         },
       ],
