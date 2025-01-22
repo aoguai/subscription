@@ -74,6 +74,15 @@ export default defineGkdApp({
           matches: '[text="广告 | 关闭"][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/18227204',
         },
+        {
+          key: 8,
+          name: '播放页[猜你也会喜欢]推荐',
+          fastQuery: true,
+          activityIds: '.business.playernew.view.NewPlayerActivity',
+          matches:
+            '@ImageView[childCount=0][clickable=true] -2 [text="猜你也会喜欢"][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/18410610',
+        },
       ],
     },
     {
@@ -142,8 +151,10 @@ export default defineGkdApp({
       rules: [
         {
           key: 0,
+          fastQuery: true,
           activityIds: 'com.tencent.qqmusic.activity.AppStarterActivity',
-          matches: '[id="android:id/content"] >4 ViewGroup[childCount=0]',
+          matches:
+            '@ViewGroup[childCount=0][clickable=true] <2 ViewGroup[childCount=2] < FrameLayout < FrameLayout < [id="android:id/content"]',
           snapshotUrls: 'https://i.gkd.li/i/13806782',
         },
         {
@@ -156,6 +167,15 @@ export default defineGkdApp({
             'https://i.gkd.li/i/15209764',
             'https://i.gkd.li/i/15261116',
           ],
+        },
+        {
+          key: 2,
+          matchTime: 10000,
+          actionMaximum: 1,
+          resetMatch: 'app',
+          activityIds: '.activity.AppStarterActivity',
+          matches: '[desc$="不再提示"][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/18428240',
         },
       ],
     },
@@ -186,6 +206,17 @@ export default defineGkdApp({
           activityIds: '.activity.AppStarterActivity',
           matches: '[desc="关闭弹窗"][clickable=true][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/17057551',
+        },
+        {
+          key: 3,
+          fastQuery: true,
+          matchTime: 10000,
+          actionMaximum: 1,
+          resetMatch: 'app',
+          activityIds: '.activity.AppStarterActivity',
+          matches:
+            '@ImageView[childCount=0][visibleToUser=true] <3 FrameLayout[childCount=3] <2 FrameLayout < FrameLayout < FrameLayout < FrameLayout < [id="android:id/content"]',
+          snapshotUrls: 'https://i.gkd.li/i/18439138',
         },
       ],
     },
