@@ -42,7 +42,7 @@
     "@gkd-kit/define": "0.0.1",
     "@gkd-kit/tools": "0.5.2",
     "@types/eslint__js": "8.42.3",
-    "@types/node": "22.10.7",
+    "@types/node": "22.10.9",
     "eslint": "9.18.0",
     "eslint-config-prettier": "10.0.1",
     "eslint-plugin-unused-imports": "4.1.4",
