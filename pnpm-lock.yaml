@@ -18,8 +18,8 @@ importers:
         specifier: 0.0.1
         version: 0.0.1(@gkd-kit/api@0.6.0)
       '@gkd-kit/tools':
-        specifier: 0.5.2
-        version: 0.5.2(@gkd-kit/api@0.6.0)(json5@2.2.3)
+        specifier: 0.6.0
+        version: 0.6.0(@gkd-kit/api@0.6.0)(json5@2.2.3)
       '@types/eslint__js':
         specifier: 8.42.3
         version: 8.42.3
@@ -253,11 +253,11 @@ packages:
     peerDependencies:
       '@gkd-kit/api': '*'
 
-  '@gkd-kit/selector@0.4.1':
-    resolution: {integrity: sha512-3OxUl5jQpdZbf7zaVi0+hq2hLlCEmmPljowSIHk78Ko09hTQ7RQ/MAyybTVEUNNKT6Xgm6NxLCj+5shOBe7gbg==}
+  '@gkd-kit/selector@0.5.4':
+    resolution: {integrity: sha512-lEm9A67nqNC3/fPvWS4t+YoqXb4TFB3P9AevDdNP7RyIJTXs8piSqr0Wc/Tqwgy+VNNpZmkUygu0LNbWSMbtSg==}
 
-  '@gkd-kit/tools@0.5.2':
-    resolution: {integrity: sha512-tkmAjzw+VYJXbdO2iKu1VLR81EXsmxg9yDVapoJfgh+uaiK8ubKM2y/7d1Z98ILxUs89NxLa0orXdX+GvOUJqA==}
+  '@gkd-kit/tools@0.6.0':
+    resolution: {integrity: sha512-A+q/+X+Z55JeM/9IW84Zrt5I24uZzGxSn1VPwnCvhmCWDyV0XGljc7yK5wNmrUypTrLDgNvwiYXoEB+xZpJcqw==}
     peerDependencies:
       '@gkd-kit/api': '*'
       json5: '*'
@@ -1067,12 +1067,12 @@ snapshots:
     dependencies:
       '@gkd-kit/api': 0.6.0
 
-  '@gkd-kit/selector@0.4.1': {}
+  '@gkd-kit/selector@0.5.4': {}
 
-  '@gkd-kit/tools@0.5.2(@gkd-kit/api@0.6.0)(json5@2.2.3)':
+  '@gkd-kit/tools@0.6.0(@gkd-kit/api@0.6.0)(json5@2.2.3)':
     dependencies:
       '@gkd-kit/api': 0.6.0
-      '@gkd-kit/selector': 0.4.1
+      '@gkd-kit/selector': 0.5.4
       '@gkd-kit/wasm_matches': 0.0.1
       json5: 2.2.3
 
