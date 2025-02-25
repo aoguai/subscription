@@ -572,6 +572,7 @@ export default defineGkdApp({
       name: '功能类-付款后自动点击完成/返回商家',
       desc: '支付完成后自动点击完成或返回商家按钮',
       enable: false,
+      matchRoot: true,
       fastQuery: true,
       activityIds: [
         'com.tencent.mm.framework.app.UIPageFragmentActivity',
