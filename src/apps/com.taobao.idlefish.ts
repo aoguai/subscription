@@ -11,9 +11,12 @@ export default defineGkdApp({
       enable: false,
       actionMaximum: 1,
       resetMatch: 'app',
-      activityIds:
+      activityIds: [
         'com.idlefish.flutterbridge.flutterboost.boost.FishFlutterBoostTransparencyActivity',
-      rules: '[desc^="开启系统通知"] > ImageView[clickable=true][desc=null]',
+        '.maincontainer.activity.MainActivity',
+      ],
+      rules:
+        '[desc^="开启系统通知"||desc^="开启消息通知"] > ImageView[clickable=true][desc=null]',
       snapshotUrls: 'https://i.gkd.li/import/13538351',
     },
     {
@@ -69,6 +72,20 @@ export default defineGkdApp({
         {
           matches: '[desc="查看原图"][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/15463399',
+        },
+      ],
+    },
+    {
+      key: 7,
+      name: '功能类-自动选中发送原图',
+      desc: '图片和视频选择器-自动选中底部中间的发送原图',
+      actionMaximum: 1,
+      rules: [
+        {
+          activityIds:
+            'com.idlefish.flutterbridge.flutterboost.boost.FishFlutterBoostActivity',
+          matches: 'View[childCount=2] > @View[clickable=true] + [desc="原图"]',
+          snapshotUrls: 'https://i.gkd.li/i/18824808',
         },
       ],
     },
