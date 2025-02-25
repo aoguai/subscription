@@ -325,7 +325,7 @@ export default defineGkdGlobalGroups([
       {
         key: 0,
         matches: [
-          `${COMMON_PREFIX}[((text*="给"||text*="赏"||text*="来个"||text*="一下"||text*="app"||text*="喜欢"||text*="诚邀")&&(text*="好评"||text*="评分"||text*="评价"||text*="鼓励"||text*="Rate"||text*="吗？"||text*="调研"))&&(text!*="成功"&&text!*="失败"&&(text!*="已"||text*="已知"))||name$=".RatingBar"]`,
+          `${COMMON_PREFIX}[((text*="给"||text*="赏"||text*="来个"||text*="一下"||text*="app"||text*="喜欢"||text*="诚邀"||text*="前进的动力")&&(text*="好评"||text*="评分"||text*="评价"||text*="鼓励"||text*="Rate"||text*="吗？"||text*="调研"))&&(text!*="成功"&&text!*="失败"&&(text!*="已"||text*="已知"))||name$=".RatingBar"]`,
           `${COMMON_PREFIX}[(((text*="吐槽"||text*="好评"||text*="鼓励一下"||text*="评价"||text*="评分"||text*="提意见")||(text="确定"||text="提交"||text="满意"||text="马上参加"||text~="RATE NOW"||text~="(?is).*Love it.*"))&&text.length<9)||vid~="(?is).*star.*"]`,
           `${NEGATION_PART_RULE_TEXT}`,
         ],
@@ -333,7 +333,7 @@ export default defineGkdGlobalGroups([
       {
         key: 1,
         matches: [
-          `${COMMON_PREFIX}[((desc*="给"||desc*="赏"||desc*="来个"||desc*="一下"||desc*="app"||desc*="喜欢"||desc*="诚邀")&&(desc*="好评"||desc*="评分"||desc*="评价"||desc*="鼓励"||desc*="Rate"||desc*="吗？"||desc*="调研"))&&(desc!*="成功"&&desc!*="失败"&&(desc!*="已"||desc*="已知"))||name$=".RatingBar"]`,
+          `${COMMON_PREFIX}[((desc*="给"||desc*="赏"||desc*="来个"||desc*="一下"||desc*="app"||desc*="喜欢"||desc*="诚邀"||desc*="前进的动力")&&(desc*="好评"||desc*="评分"||desc*="评价"||desc*="鼓励"||desc*="Rate"||desc*="吗？"||desc*="调研"))&&(desc!*="成功"&&desc!*="失败"&&(desc!*="已"||desc*="已知"))||name$=".RatingBar"]`,
           `${COMMON_PREFIX}[(((desc*="吐槽"||desc*="好评"||desc*="鼓励一下"||desc*="评价"||desc*="评分"||desc*="提意见")||(desc="确定"||desc="提交"||desc="满意"||desc="马上参加"||desc~="RATE NOW"||desc~="(?is).*Love it.*"))&&desc.length<9)||vid~="(?is).*star.*"]`,
           `${NEGATION_PART_RULE_DESC}`,
         ],
@@ -341,7 +341,7 @@ export default defineGkdGlobalGroups([
       {
         key: 2,
         matches: [
-          `${COMMON_PREFIX}[((text*="给"||text*="赏"||text*="来个"||text*="一下"||text*="app"||text*="喜欢"||text*="诚邀")&&(text*="好评"||text*="评分"||text*="评价"||text*="鼓励"||text*="Rate"||text*="吗？"||text*="调研"))&&(text!*="成功"&&text!*="失败"&&(text!*="已"||text*="已知"))||name$=".RatingBar"]`,
+          `${COMMON_PREFIX}[((text*="给"||text*="赏"||text*="来个"||text*="一下"||text*="app"||text*="喜欢"||text*="诚邀"||text*="前进的动力")&&(text*="好评"||text*="评分"||text*="评价"||text*="鼓励"||text*="Rate"||text*="吗？"||text*="调研"))&&(text!*="成功"&&text!*="失败"&&(text!*="已"||text*="已知"))||name$=".RatingBar"]`,
           `${COMMON_PREFIX}[(((text*="吐槽"||text*="好评"||text*="鼓励一下"||text*="评价"||text*="评分"||text*="提意见")||(text="确定"||text="提交"||text="满意"||text="马上参加"||text~="RATE NOW"||text~="(?is).*Love it.*"))&&text.length<9)||vid~="(?is).*star.*"]`,
           `${NEGATION_PART_RULE_BUTTON}`,
         ],
@@ -349,7 +349,7 @@ export default defineGkdGlobalGroups([
       {
         key: 3,
         matches: [
-          `${COMMON_PREFIX}[((desc*="给"||desc*="赏"||desc*="来个"||desc*="一下"||desc*="app"||desc*="喜欢"||desc*="诚邀")&&(desc*="好评"||desc*="评分"||desc*="评价"||desc*="鼓励"||desc*="Rate"||desc*="吗？"||desc*="调研"))&&(desc!*="成功"&&desc!*="失败"&&(desc!*="已"||desc*="已知"))||name$=".RatingBar"]`,
+          `${COMMON_PREFIX}[((desc*="给"||desc*="赏"||desc*="来个"||desc*="一下"||desc*="app"||desc*="喜欢"||desc*="诚邀"||desc*="前进的动力")&&(desc*="好评"||desc*="评分"||desc*="评价"||desc*="鼓励"||desc*="Rate"||desc*="吗？"||desc*="调研"))&&(desc!*="成功"&&desc!*="失败"&&(desc!*="已"||desc*="已知"))||name$=".RatingBar"]`,
           `${COMMON_PREFIX}[(((desc*="吐槽"||desc*="好评"||desc*="鼓励一下"||desc*="评价"||desc*="评分"||desc*="提意见")||(desc="确定"||desc="提交"||desc="满意"||desc="马上参加"||desc~="RATE NOW"||desc~="(?is).*Love it.*"))&&desc.length<9)||vid~="(?is).*star.*"]`,
           `${NEGATION_PART_RULE_BUTTON}`,
         ],
