@@ -63,5 +63,21 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 3,
+      name: '功能类-成长值页面签到',
+      desc: '自动点击成长值页面签到按钮',
+      fastQuery: true,
+      actionMaximum: 1,
+      rules: [
+        {
+          key: 1,
+          activityIds: '.ui.cloudp2p.RichMediaActivity',
+          matches:
+            'View[childCount=7] + TextView[clickable=true][text^="签到"]',
+          snapshotUrls: 'https://i.gkd.li/i/18762226',
+        },
+      ],
+    },
   ],
 });
