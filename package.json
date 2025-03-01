@@ -41,7 +41,7 @@
     "@gkd-kit/api": "0.6.0",
     "@gkd-kit/define": "0.0.1",
     "@gkd-kit/tools": "0.6.0",
-    "@types/node": "22.13.5",
+    "@types/node": "22.13.8",
     "eslint": "9.21.0",
     "eslint-config-prettier": "10.0.2",
     "eslint-plugin-unused-imports": "4.1.4",
