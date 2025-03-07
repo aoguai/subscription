@@ -60,8 +60,8 @@ const uniqueAppIdsYM = new Set([
 const COMMON_PREFIX =
   '[name!$=".CheckBox"][name!$=".EditText"][childCount=0][visibleToUser=true][height>0&&width>0]';
 
-const NEGATION_PART_RULE_TEXT = `${COMMON_PREFIX}[((text^="不"&&text$="谢谢")||text="没兴趣"||text="否"||text="关闭"||text="跳过"||text="关闭按钮"||text="我没空"||text="不开启"||text="暂时不用"||text="暂时不要"||text="我已知晓"||text="不用了"||text="本次忽略"||text="考虑一下"||text="考慮一下"||text="先不了"||text="不允许"||text^="不了"||text^="不再"||(text^="稍后"&&text!="稍后再看")||text^="忽略"||text^="暂不"||text^="放弃"||text^="取消"||text$="再说"||text$="拒绝"||text$="再想想"||text$="知道了"||text$="稍后提醒我"||text$="稍後提醒我"||(text^="不"&&text$="謝謝")||text="關閉"||text="關閉按鈕"||text="我已知曉"||text="不開啟"||text$="再說"||text$="拒絕"||text^="暫不"||text~="close"||text~="not now"||text~="(?is)Ignore.*"||text~="(?is)cancel.*"||text~="(?is).*later"||text~="(?is).*refuse"||text~="(?is).*i see")&&(text!*="取消全部")&&text.length<=7]`;
-const NEGATION_PART_RULE_DESC = `${COMMON_PREFIX}[((desc^="不"&&desc$="谢谢")||desc="没兴趣"||desc="否"||desc="关闭"||desc="跳过"||desc="关闭按钮"||desc="我没空"||desc="不开启"||desc="暂时不用"||desc="暂时不要"||desc="我已知晓"||desc="不用了"||desc="本次忽略"||desc="考虑一下"||desc="考慮一下"||desc="先不了"||desc="不允许"||desc^="不了"||desc^="不再"||(desc^="稍后"&&desc!="稍后再看")||desc^="忽略"||desc^="暂不"||desc^="放弃"||desc^="取消"||desc$="再说"||desc$="拒绝"||desc$="再想想"||desc$="知道了"||desc$="稍后提醒我"||desc$="稍後提醒我"||(desc^="不"&&desc$="謝謝")||desc="關閉"||desc="關閉按鈕"||desc="我已知曉"||desc="不開啟"||desc$="再說"||desc$="拒絕"||desc^="暫不"||desc~="close"||desc~="not now"||desc~="(?is)Ignore.*"||desc~="(?is)cancel.*"||desc~="(?is).*later"||desc~="(?is).*refuse"||desc~="(?is).*i see")&&(desc!*="取消全部")&&desc.length<=7]`;
+const NEGATION_PART_RULE_TEXT = `${COMMON_PREFIX}[((text^="不"&&text$="谢谢")||text="别再烦我"||text="没兴趣"||text="否"||text="关闭"||text="跳过"||text="关闭按钮"||text="我没空"||text="不开启"||text="暂时不用"||text="暂时不要"||text="我已知晓"||text="不用了"||text="本次忽略"||text="考虑一下"||text="考慮一下"||text="先不了"||text="不允许"||text^="不了"||text^="不再"||(text^="稍后"&&text!="稍后再看")||text^="忽略"||text^="暂不"||text^="放弃"||text^="取消"||text$="再说"||text$="拒绝"||text$="再想想"||text$="知道了"||text$="稍后提醒我"||text$="稍後提醒我"||(text^="不"&&text$="謝謝")||text="關閉"||text="關閉按鈕"||text="我已知曉"||text="不開啟"||text$="再說"||text$="拒絕"||text^="暫不"||text~="close"||text~="not now"||text~="(?is)Ignore.*"||text~="(?is)cancel.*"||text~="(?is).*later"||text~="(?is).*refuse"||text~="(?is).*i see")&&(text!*="取消全部")&&text.length<=7]`;
+const NEGATION_PART_RULE_DESC = `${COMMON_PREFIX}[((desc^="不"&&desc$="谢谢")||desc="别再烦我"||desc="没兴趣"||desc="否"||desc="关闭"||desc="跳过"||desc="关闭按钮"||desc="我没空"||desc="不开启"||desc="暂时不用"||desc="暂时不要"||desc="我已知晓"||desc="不用了"||desc="本次忽略"||desc="考虑一下"||desc="考慮一下"||desc="先不了"||desc="不允许"||desc^="不了"||desc^="不再"||(desc^="稍后"&&desc!="稍后再看")||desc^="忽略"||desc^="暂不"||desc^="放弃"||desc^="取消"||desc$="再说"||desc$="拒绝"||desc$="再想想"||desc$="知道了"||desc$="稍后提醒我"||desc$="稍後提醒我"||(desc^="不"&&desc$="謝謝")||desc="關閉"||desc="關閉按鈕"||desc="我已知曉"||desc="不開啟"||desc$="再說"||desc$="拒絕"||desc^="暫不"||desc~="close"||desc~="not now"||desc~="(?is)Ignore.*"||desc~="(?is)cancel.*"||desc~="(?is).*later"||desc~="(?is).*refuse"||desc~="(?is).*i see")&&(desc!*="取消全部")&&desc.length<=7]`;
 const NEGATION_PART_RULE_BUTTON = `${COMMON_PREFIX}[(vid~="(?is).*dismiss.*"||vid~="(?is).*iv.*"||vid~="(?is).*guide.*"||vid~="(?is).*alert"||vid~="(?is).*notific.*"||vid~="(?is).*dialog.*"||vid~="(?is).*btn.*"||vid~="(?is).*ad.*"||vid~="(?is).*ab.*")&&(vid~="(?is).*close"||vid~="(?is).*delete"||vid~="(?is).*cancel"||vid~="(?is).*cancle"||vid~="(?is).*exit")||vid~="(?is)close.*"||vid~="(?is)ab.*"||vid~="(?is)closeIv.*"||vid~="(?is)ivDelete.*"||vid~="(?is)deleteIv.*"||vid~="(?is)iv_close_bt.*"||vid~="(?is).*_close"||text=""||desc=""||text="×"||desc="×"||text="✕"||desc="✕"||text="퀺"||desc="퀺"||text=""||desc=""]`;
 
 const PA_commonTextPatterns =
@@ -156,12 +156,22 @@ export default defineGkdGlobalGroups([
       },
       {
         key: 6,
+        name: '字节SDK-类型3',
+        matches:
+          '*[childCount=5] - *[childCount=5] < * < * -n @* > [name$=".View"||name$=".Image"][text=""||text=null]',
+        snapshotUrls: [
+          'https://i.gkd.li/import/13259183',
+          'https://i.gkd.li/i/16319383',
+        ],
+      },
+      {
+        key: 7,
         name: '美数SDK-类型1',
         matches: `[vid~="(?is).*ms_activity_sdk_interstitial_cacel"]${COMMON_PREFIX}`,
       },
       {
-        key: 7,
-        name: '腾讯广告-类型1',
+        key: 8,
+        name: '腾讯SDK-类型1',
         matches:
           'ImageView[childCount=0][text=null][desc=null][id=null][visibleToUser=true][width<90 && height<90] < @FrameLayout[index=1||index=2][text=null][desc=null][id=null] <<n FrameLayout > [name$="FrameLayout"||name$="ImageView"][index=parent.childCount.minus(1)] -(1, 2) FrameLayout[childCount>=2] >(2, 3) [text^="立即" || text="查看详情" || text="了解更多" || text="去逛逛" || text="去微信看看" || text$="应用" || text="进入小程序" || text="领取优惠" || text="跳转微信"]',
         snapshotUrls: [
@@ -196,6 +206,47 @@ export default defineGkdGlobalGroups([
           'https://i.gkd.li/i/15173845',
           'https://i.gkd.li/import/13784406',
         ],
+      },
+      {
+        key: 9,
+        name: '倍孜SDK-类型1',
+        fastQuery: true,
+        matches: '[vid="beizi_interstitial_ad_close_iv"]',
+        snapshotUrls: [
+          'https://i.gkd.li/i/17391799',
+          'https://i.gkd.li/i/17690662',
+        ],
+      },
+      {
+        key: 10,
+        name: '拼多多SDK-类型1',
+        fastQuery: true,
+        matches:
+          '@ImageView[desc.length=null][clickable=false] < ViewGroup[childCount=1] <<(36,37) [id$="ksad_tk_view"]',
+        snapshotUrls: [
+          'https://i.gkd.li/i/17690703',
+          'https://i.gkd.li/i/17690704',
+        ],
+      },
+      {
+        key: 11,
+        name: '拼多多SDK-类型2',
+        fastQuery: true,
+        matches: '@[desc="top_close_button"] <<n [id$="ksad_tk_view"]',
+        snapshotUrls: [
+          'https://i.gkd.li/i/18810025',
+          'https://i.gkd.li/i/18245369',
+          'https://i.gkd.li/i/18501469',
+          'https://i.gkd.li/i/18807884',
+          'https://i.gkd.li/i/18810035',
+        ],
+      },
+      {
+        key: 12,
+        name: '拼多多SDK-类型3',
+        fastQuery: true,
+        matches: '[vid="ksad_auto_close_btn"]',
+        snapshotUrls: ['https://i.gkd.li/i/18807624'],
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
