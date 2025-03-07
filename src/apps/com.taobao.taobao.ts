@@ -130,18 +130,9 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 2,
-      name: '局部广告-消息页面热门活动卡片',
-      desc: '关闭消息页面中的热门活动推广卡片',
-      fastQuery: true,
-      activityIds: 'com.taobao.tao.welcome.Welcome',
-      rules: 'View[desc.length>0] +2n FrameLayout > TextView[text="퀺"]',
-      snapshotUrls: ['https://i.gkd.li/import/13197877'],
-    },
-    {
       key: 3,
-      name: '局部广告-悬浮广告',
-      desc: '关闭商品详情页等位置的悬浮广告',
+      name: '局部广告-悬浮/卡片广告',
+      desc: '关闭各种悬浮或卡片广告',
       rules: [
         {
           key: 0,
@@ -153,6 +144,23 @@ export default defineGkdApp({
             'https://i.gkd.li/import/13521702',
             'https://i.gkd.li/import/14236602', // 防止误触
           ],
+        },
+        {
+          key: 1,
+          name: '首页底部浮条广告',
+          fastQuery: true,
+          activityIds: 'com.taobao.tao.welcome.Welcome',
+          matches:
+            '@ImageView[id=null&&text=null&&desc=null][clickable=true] - [text="去使用"] <<n [vid="poplayer_native_state_id"]',
+          snapshotUrls: ['https://i.gkd.li/i/19121544'],
+        },
+        {
+          key: 2,
+          name: '消息页面热门活动卡片',
+          fastQuery: true,
+          activityIds: 'com.taobao.tao.welcome.Welcome',
+          matches: 'View[desc.length>0] +2n FrameLayout > TextView[text="퀺"]',
+          snapshotUrls: ['https://i.gkd.li/import/13197877'],
         },
       ],
     },
