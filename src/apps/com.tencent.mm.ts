@@ -232,6 +232,7 @@ export default defineGkdApp({
       name: '分段广告-订阅号文章广告',
       desc: '点击下拉框-[关闭此广告]/[不感兴趣]-[与我无关]',
       enable: false,
+      matchRoot: true,
       activityIds: [
         '.plugin.brandservice.ui.timeline.preload.ui.TmplWebView', //调整为TmplWebView, 同时兼容多种ID
         '.plugin.webview.ui.tools.fts.MMSosWebViewUI',
@@ -297,7 +298,7 @@ export default defineGkdApp({
           name: '点击「不感兴趣」',
           excludeMatches: '[text="感谢你的反馈"][visibleToUser=true]',
           matches:
-            '[text*="广告"&&text.length<5] <<n View >n [text="不感兴趣"][visibleToUser=true]',
+            '[text*="广告"&&text.length<5] <<n View >n [text="与我无关"||text="不感兴趣"||text="关闭此广告"][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/17113565', // 在某些情况下，点击“不感兴趣”会导致无法执行下一步操作
             'https://i.gkd.li/i/18702161',
@@ -310,13 +311,14 @@ export default defineGkdApp({
           key: 10,
           name: '点击「与我无关」',
           matches:
-            '[text*="广告"&&text.length<5] <<n View >n [text="与我无关"][visibleToUser=true]',
+            '[text*="广告"&&text.length<5] <<n View >n [text="与我无关"||text="不感兴趣"||text="关闭此广告"][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/import/12642238',
             'https://i.gkd.li/import/14006206', // com.tencent.mm.plugin.webview.ui.tools.fts.MMSosWebViewUI
             'https://i.gkd.li/i/15198461', // 无id
             'https://i.gkd.li/i/16798658',
             'https://i.gkd.li/i/18108538',
+            'https://i.gkd.li/i/19121995',
           ],
           excludeSnapshotUrls: [
             'https://i.gkd.li/i/15061424', // 使用excludeMatches防止在文章末尾广告关闭后误触
