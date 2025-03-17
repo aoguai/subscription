@@ -310,6 +310,7 @@ export default defineGkdApp({
           preKeys: [0, 1, 2],
           key: 10,
           name: '点击「与我无关」',
+          action: 'clickCenter',
           matches:
             '[text*="广告"&&text.length<5] <<n View >n [text="与我无关"||text="不感兴趣"||text="关闭此广告"][visibleToUser=true]',
           snapshotUrls: [
@@ -319,6 +320,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/16798658',
             'https://i.gkd.li/i/18108538',
             'https://i.gkd.li/i/19121995',
+            'https://i.gkd.li/i/19281051',
           ],
           excludeSnapshotUrls: [
             'https://i.gkd.li/i/15061424', // 使用excludeMatches防止在文章末尾广告关闭后误触
