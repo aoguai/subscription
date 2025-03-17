@@ -173,7 +173,7 @@ export default defineGkdApp({
         {
           key: 1,
           matches:
-            '@View[desc.length=null][clickable=true][longClickable=false] -n ImageView <n RelativeLayout',
+            '@View[desc.length=null][clickable=true][longClickable=false][visibleToUser=true][id=null] -n ImageView[id=null] <n RelativeLayout[id=null]',
           snapshotUrls: 'https://i.gkd.li/import/14163014',
         },
         {
