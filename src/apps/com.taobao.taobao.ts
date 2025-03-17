@@ -269,11 +269,30 @@ export default defineGkdApp({
       key: 20,
       name: '功能类-登录授权',
       desc: '点击确认授权按钮',
+      enable: false,
+      fastQuery: true,
       rules: [
         {
           activityIds: 'com.taobao.browser.BrowserActivity',
           matches: '[text="确认授权"][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/18271783',
+        },
+      ],
+    },
+    {
+      key: 21,
+      name: '功能类-自动选中发送原图',
+      desc: '图片和视频选择器-自动选中底部中间的发送原图',
+      enable: false,
+      fastQuery: true,
+      actionMaximum: 1,
+      rules: [
+        {
+          activityIds:
+            'com.taobao.taopai.business.image.album.ImageGalleryActivity',
+          matches:
+            '[text="预览"] + [text="原图"][clickable=true][width!=height]',
+          snapshotUrls: 'https://i.gkd.li/i/19126601',
         },
       ],
     },
