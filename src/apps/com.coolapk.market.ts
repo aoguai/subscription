@@ -28,8 +28,16 @@ export default defineGkdApp({
             'https://i.gkd.li/import/12642148',
             'https://i.gkd.li/import/12774771',
             'https://i.gkd.li/import/13257987',
-            'https://i.gkd.li/i/14996359', // 误触
-            'https://i.gkd.li/i/15259305', // 误触
+            'https://i.gkd.li/i/19004644',
+            'https://i.gkd.li/i/19004652',
+            'https://i.gkd.li/i/19004663',
+            'https://i.gkd.li/i/19005176',
+          ],
+          excludeSnapshotUrls: [
+            'https://i.gkd.li/i/14996359',
+            'https://i.gkd.li/i/15259305',
+            'https://i.gkd.li/i/15159886',
+            'https://i.gkd.li/i/15587119',
           ],
         },
         {
@@ -58,6 +66,8 @@ export default defineGkdApp({
             'https://i.gkd.li/import/12660759',
             'https://i.gkd.li/import/12706437',
             'https://i.gkd.li/import/13786886', // 没有id
+            'https://i.gkd.li/i/19004649',
+            'https://i.gkd.li/i/19004661',
           ],
         },
       ],
