@@ -150,9 +150,11 @@ export default defineGkdApp({
           name: '首页底部浮条广告',
           fastQuery: true,
           activityIds: 'com.taobao.tao.welcome.Welcome',
-          matches:
-            '@ImageView[id=null&&text=null&&desc=null][clickable=true] - [text="去使用"] <<n [vid="poplayer_native_state_id"]',
-          snapshotUrls: ['https://i.gkd.li/i/19121544'],
+          matches: '@[desc="关闭浮条"] <<n [vid="poplayer_native_state_id"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/19121544',
+            'https://i.gkd.li/i/19399328',
+          ],
         },
         {
           key: 2,
