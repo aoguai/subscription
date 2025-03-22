@@ -14,7 +14,7 @@ export default defineGkdApp({
       actionMaximum: 1,
       resetMatch: 'app',
       activityIds: 'com.loyea.adnmb.activity.MainActivity',
-      rules: 'LinearLayout > Button[text="确定"]',
+      rules: 'LinearLayout > Button[text="确定"||text="確定"]',
       snapshotUrls: 'https://i.gkd.li/import/13623450',
     },
   ],
