@@ -106,8 +106,8 @@ export default defineGkdApp({
     {
       // Key 1,3,4 均为授权类的规则
       key: 1,
-      name: '功能类-微信自动授权',
-      desc: '微信相关平台扫码登录动授权',
+      name: '功能类-登录自动授权',
+      desc: '微信相关平台扫码登录自动授权',
       enable: false,
       matchTime: 10000,
       actionMaximum: 2,
@@ -122,10 +122,12 @@ export default defineGkdApp({
         {
           key: 0,
           name: 'PC 微信扫码登录',
-          matches: 'TextView[text="取消登录"] - Button[text="登录"]',
+          matches:
+            'TextView[text="取消登录"||text="取消登入"] - Button[text="登录"||text="登入"]',
           snapshotUrls: [
             'https://i.gkd.li/import/13522625', // activityIds: 'com.tencent.mm.plugin.webwx.ui.ExtDeviceWXLoginUI'
             'https://i.gkd.li/import/13522577', // activityIds: 'com.tencent.mm.ui.LauncherUI'
+            'https://i.gkd.li/i/19399694',
           ],
         },
         {
@@ -149,7 +151,8 @@ export default defineGkdApp({
         {
           key: 3,
           name: '微信表情开发平台扫码登录',
-          matches: 'View[desc="取消登录"] - Button[text="登录"]',
+          matches:
+            'View[desc="取消登录"||desc="取消登入"] - Button[text="登录"||text="登入"]',
           snapshotUrls: [
             'https://i.gkd.li/import/14164954', // com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI
           ],
