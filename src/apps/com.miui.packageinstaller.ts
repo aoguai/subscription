@@ -52,11 +52,13 @@ export default defineGkdApp({
           ],
         },
         {
-          // preKeys: [0], 有概率不触发
+          preKeys: [0],
           key: 1,
           name: '点击[完成]',
-          activityIds:
-            'com.miui.packageInstaller.ui.normalmode.InstallProgressActivity',
+          activityIds: [
+            'com.miui.packageInstaller.ui.InstallPrepareAlertActivity',
+            'com.miui.packageInstaller.NewInstallerPrepareActivity',
+          ],
           matches: '[text="完成"]',
           snapshotUrls: 'https://i.gkd.li/i/16487274',
         },
@@ -81,13 +83,17 @@ export default defineGkdApp({
           snapshotUrls: [
             'https://i.gkd.li/i/16487366',
             'https://i.gkd.li/i/16487389',
+            'https://i.gkd.li/i/18937578',
           ],
         },
         {
           preKeys: [0],
           name: '点击[允许]',
           matches: '[text="允许"]',
-          snapshotUrls: 'https://i.gkd.li/i/16487365',
+          snapshotUrls: [
+            'https://i.gkd.li/i/16487365',
+            'https://i.gkd.li/i/18937576',
+          ],
         },
       ],
     },
