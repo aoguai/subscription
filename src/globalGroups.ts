@@ -93,14 +93,17 @@ export default defineGkdGlobalGroups([
       },
       {
         key: 1,
+        name: '字节SDK',
         excludeMatches: [
           '[text*="搜索"][text.length<6][visibleToUser=true][height>0&&width>0][top>0&&left>0]',
           '[id~="(?is).*search.*"] < * > [(id~="(?is).*clear.*")||(id~="(?is).*close.*")||(id~="(?is).*back.*")||(text~="(?is).*取消.*")][height>0&&width>0][top>0&&left>0]',
           '[name!$=".EditText"] < * > [(id~="(?is).*clear.*")||(id~="(?is).*close.*")||(id~="(?is).*back.*")||(text~="(?is).*取消.*")][height>0&&width>0][top>0&&left>0]',
         ], // 防止在应用的搜索页面误触
         action: 'clickCenter',
-        matches:
-          'FrameLayout[visibleToUser=true][height>0&&width>0][childCount>=2] > FrameLayout[visibleToUser=true][height>0&&width>0][childCount>2] > @View[clickable=true][height>0&&width>0][visibleToUser=true] + TextView[clickable=true][height>0&&width>0][visibleToUser=true]', // 字节 SDK
+        anyMatches: [
+          '@View[clickable=true][text=null][visibleToUser=true] + TextView[index=parent.childCount.minus(1)][text=null] <n FrameLayout[childCount>2] >(7,8,9,10) [text*="第三方应用" || text*="扭动手机" || text*="点击或上滑"][visibleToUser=true]',
+          'FrameLayout[visibleToUser=true][height>0&&width>0] > FrameLayout[visibleToUser=true][height>0&&width>0][childCount>2] > @View[clickable=true][height>0&&width>0][visibleToUser=true] + TextView[clickable=true][height>0&&width>0][visibleToUser=true]',
+        ],
       },
     ],
     // 将 Set 转换为数组，并设置 enable 为 false
