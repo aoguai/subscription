@@ -431,7 +431,7 @@ export default defineGkdGlobalGroups([
         key: 0,
         matches: [
           `${COMMON_PREFIX}[(text*="未成年"||text*="儿童"||text*="青少年"||text*="守护")&&text*="模式"&&text.length<15]`,
-          `${COMMON_PREFIX}[(text*="开启"||text*="啟用"||text="開啟"||text*="进入"||text*="设置"||text*="设计"||text*="查看")&&(text*="模式"||text*="去")&&text.length<15]`,
+          `${COMMON_PREFIX}[(text*="开启"||text*="啟用"||text="開啟"||text*="进入"||text*="進入"||text*="设置"||text*="设计"||text*="查看")&&(text*="模式"||text*="去")&&text.length<15]`,
           `${NEGATION_PART_RULE_TEXT}`,
         ],
       },
@@ -439,7 +439,7 @@ export default defineGkdGlobalGroups([
         key: 1,
         matches: [
           `${COMMON_PREFIX}[(desc*="未成年"||desc*="儿童"||desc*="青少年"||desc*="守护")&&desc*="模式"&&desc.length<15]`,
-          `${COMMON_PREFIX}[(desc*="开启"||desc*="啟用"||desc="開啟"||desc*="进入"||desc*="设置"||desc*="设计"||desc*="查看")&&(desc*="模式"||desc*="去")&&desc.length<15]`,
+          `${COMMON_PREFIX}[(desc*="开启"||desc*="啟用"||desc="開啟"||desc*="进入"||desc*="進入"||desc*="设置"||desc*="设计"||desc*="查看")&&(desc*="模式"||desc*="去")&&desc.length<15]`,
           `${NEGATION_PART_RULE_DESC}`,
         ],
       },
@@ -447,7 +447,7 @@ export default defineGkdGlobalGroups([
         key: 2,
         matches: [
           `${COMMON_PREFIX}[(text*="未成年"||text*="儿童"||text*="青少年"||text*="守护")&&text*="模式"&&text.length<15]`,
-          `${COMMON_PREFIX}[(text*="开启"||text*="啟用"||text="開啟"||text*="进入"||text*="设置"||text*="设计"||text*="查看")&&(text*="模式"||text*="去")&&text.length<15]`,
+          `${COMMON_PREFIX}[(text*="开启"||text*="啟用"||text="開啟"||text*="进入"||text*="進入"||text*="设置"||text*="设计"||text*="查看")&&(text*="模式"||text*="去")&&text.length<15]`,
           `${NEGATION_PART_RULE_BUTTON}`,
         ],
       },
@@ -455,7 +455,7 @@ export default defineGkdGlobalGroups([
         key: 3,
         matches: [
           `${COMMON_PREFIX}[(desc*="未成年"||desc*="儿童"||desc*="青少年"||desc*="守护")&&desc*="模式"&&desc.length<15]`,
-          `${COMMON_PREFIX}[(desc*="开启"||desc*="啟用"||desc="開啟"||desc*="进入"||desc*="设置"||desc*="设计"||desc*="查看")&&(desc*="模式"||desc*="去")&&desc.length<15]`,
+          `${COMMON_PREFIX}[(desc*="开启"||desc*="啟用"||desc="開啟"||desc*="进入"||desc*="進入"||desc*="设置"||desc*="设计"||desc*="查看")&&(desc*="模式"||desc*="去")&&desc.length<15]`,
           `${NEGATION_PART_RULE_BUTTON}`,
         ],
       },
