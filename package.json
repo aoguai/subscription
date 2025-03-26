@@ -55,9 +55,9 @@
   },
   "volta": {
     "node": "22.14.0",
-    "pnpm": "10.6.5"
+    "pnpm": "10.7.0"
   },
-  "packageManager": "pnpm@10.6.5",
+  "packageManager": "pnpm@10.7.0",
   "engineStrict": true,
   "engines": {
     "node": ">=22"
