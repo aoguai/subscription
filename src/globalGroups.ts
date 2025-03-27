@@ -1,6 +1,4 @@
 import { defineGkdGlobalGroups } from '@gkd-kit/define';
-import { RawApp } from '@gkd-kit/api';
-import { batchImportApps } from '@gkd-kit/tools';
 
 export const OPEN_AD_ORDER = -10; // 开屏广告
 export const YOUTH_MODE = -9; // 青少年模式
@@ -12,8 +10,6 @@ export const PERMISSION_PROMPT = -4; // 权限提示
 export const PARTIAL_AD = -3; // 局部广告
 export const FULLSCREEN_AD = -2; // 全屏广告
 export const SEGMENTED_AD = -1; // 分段广告
-
-const apps = await batchImportApps(`${import.meta.dirname}/apps`);
 
 const diabledAppIds: string[] = [
   // 在一些常见的应用中禁用
@@ -28,21 +24,6 @@ const diabledAppIds: string[] = [
   'com.mycompany.app.soulbrowser', // soul浏览器
 ];
 
-function filterAppsByGroup(apps: RawApp[], groupNamePrefix: string): string[] {
-  return apps
-    .filter(
-      (a) =>
-        a.groups.filter((g: { name: string }) =>
-          g.name.startsWith(groupNamePrefix),
-        ).length === 1,
-    )
-    .map((a) => a.id);
-}
-
-const uniqueAppIdsAD = new Set([
-  ...diabledAppIds,
-  ...filterAppsByGroup(apps, '开屏广告'),
-]);
 const uniqueAppIdsUP = new Set([
   ...diabledAppIds,
   'com.android.packageinstaller', // 排除软件包安装程序
@@ -50,11 +31,6 @@ const uniqueAppIdsUP = new Set([
   'com.miui.packageinstaller', // 小米系
   'com.samsung.android.packageinstaller', // 三星系
   'com.oplus.appdetail', // 一加系
-  ...filterAppsByGroup(apps, '更新提示'),
-]);
-const uniqueAppIdsYM = new Set([
-  ...diabledAppIds,
-  ...filterAppsByGroup(apps, '青少年模式'),
 ]);
 
 const COMMON_PREFIX =
@@ -75,6 +51,7 @@ export default defineGkdGlobalGroups([
     name: '开屏广告',
     desc: '点击跳过应用启动时的开屏广告',
     order: OPEN_AD_ORDER,
+    disableIfAppGroupMatch: '开屏广告',
     matchRoot: true,
     actionMaximum: 2,
     matchTime: 9000,
@@ -106,8 +83,7 @@ export default defineGkdGlobalGroups([
         ],
       },
     ],
-    // 将 Set 转换为数组，并设置 enable 为 false
-    apps: [...uniqueAppIdsAD].map((id) => ({ id, enable: false })),
+    apps: diabledAppIds.map((id) => ({ id, enable: false })),
   },
   {
     key: 1,
@@ -201,7 +177,6 @@ export default defineGkdGlobalGroups([
         ],
       },
     ],
-    // 将 Set 转换为数组，并设置 enable 为 false
     apps: diabledAppIds.map((id) => ({ id, enable: false })),
   },
   {
@@ -276,6 +251,7 @@ export default defineGkdGlobalGroups([
     desc: '关闭应用更新提示弹窗',
     enable: false,
     order: UPDATE_PROMPT,
+    disableIfAppGroupMatch: '更新提示',
     actionMaximum: 2,
     matchTime: 10000,
     resetMatch: 'app',
@@ -318,7 +294,6 @@ export default defineGkdGlobalGroups([
     excludeSnapshotUrls: [
       'https://i.gkd.li/i/17710149', // text!*="卸载"
     ],
-    // 将 Set 转换为数组，并设置 enable 为 false
     apps: [...uniqueAppIdsUP].map((id) => ({ id, enable: false })),
   },
   {
@@ -327,6 +302,7 @@ export default defineGkdGlobalGroups([
     desc: '关闭通用的评价提示弹窗',
     enable: false,
     order: REVIEW_PROMPT,
+    disableIfAppGroupMatch: '评价提示',
     actionMaximum: 2,
     matchTime: 10000,
     resetMatch: 'app',
@@ -366,7 +342,6 @@ export default defineGkdGlobalGroups([
         ],
       },
     ],
-    // 将 Set 转换为数组，并设置 enable 为 false
     apps: diabledAppIds.map((id) => ({ id, enable: false })),
   },
   {
@@ -375,6 +350,7 @@ export default defineGkdGlobalGroups([
     desc: '! 该规则会自动拒绝 APP 一些申请通知提示，如果有影响请关闭',
     enable: false,
     order: NOTIFICATION_PROMPT,
+    disableIfAppGroupMatch: '通知提示',
     matchTime: 10000,
     resetMatch: 'app',
     actionCdKey: 0,
@@ -412,7 +388,6 @@ export default defineGkdGlobalGroups([
         ],
       },
     ],
-    // 将 Set 转换为数组，并设置 enable 为 false
     apps: diabledAppIds.map((id) => ({ id, enable: false })),
   },
   {
@@ -421,6 +396,7 @@ export default defineGkdGlobalGroups([
     desc: '关闭通用的青少年模式提示弹窗',
     enable: false,
     order: YOUTH_MODE,
+    disableIfAppGroupMatch: '青少年模式',
     actionMaximum: 2,
     matchTime: 10000,
     resetMatch: 'app',
@@ -460,8 +436,7 @@ export default defineGkdGlobalGroups([
         ],
       },
     ],
-    // 将 Set 转换为数组，并设置 enable 为 false
-    apps: [...uniqueAppIdsYM].map((id) => ({ id, enable: false })),
+    apps: diabledAppIds.map((id) => ({ id, enable: false })),
   },
   {
     key: 7,
@@ -469,6 +444,7 @@ export default defineGkdGlobalGroups([
     desc: '! 该规则会自动拒绝 APP 包括但不限于蓝牙、剪切板、通讯录、悬浮窗权限申请弹窗提示，如果有影响请关闭',
     enable: false,
     order: YOUTH_MODE,
+    disableIfAppGroupMatch: '权限提示',
     matchTime: 10000,
     resetMatch: 'app',
     actionCdKey: 0,
@@ -506,7 +482,6 @@ export default defineGkdGlobalGroups([
         ],
       },
     ],
-    // 将 Set 转换为数组，并设置 enable 为 false
     apps: diabledAppIds.map((id) => ({ id, enable: false })),
   },
   {
@@ -515,6 +490,7 @@ export default defineGkdGlobalGroups([
     desc: '! 该规则会自动拒绝 APP 的位置权限申请弹窗提示，如果有影响请关闭',
     enable: false,
     order: LOCATION_PROMPT,
+    disableIfAppGroupMatch: '定位提示',
     matchTime: 10000,
     resetMatch: 'app',
     actionCdKey: 0,
@@ -552,7 +528,6 @@ export default defineGkdGlobalGroups([
         ],
       },
     ],
-    // 将 Set 转换为数组，并设置 enable 为 false
     apps: diabledAppIds.map((id) => ({ id, enable: false })),
   },
 ]);

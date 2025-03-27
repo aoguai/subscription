@@ -9,6 +9,7 @@ export default defineGkdApp({
       name: '通知提示-关闭花呗,借呗,还款升级,推荐等弹窗',
       desc: '关闭支付成功后的升级、开通、推荐等弹窗',
       enable: false,
+      ignoreGlobalGroupMatch: true,
       actionMaximum: 1,
       resetMatch: 'app',
       activityIds: [

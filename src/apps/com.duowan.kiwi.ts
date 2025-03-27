@@ -66,6 +66,7 @@ export default defineGkdApp({
       name: '通知提示-root提示',
       desc: '点击确认',
       enable: false,
+      ignoreGlobalGroupMatch: true,
       fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,

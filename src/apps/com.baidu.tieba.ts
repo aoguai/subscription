@@ -9,6 +9,7 @@ export default defineGkdApp({
       name: '通知提示-申请消息提醒弹窗',
       desc: '关闭消息通知开启提示弹窗',
       enable: false,
+      ignoreGlobalGroupMatch: true,
       fastQuery: true,
       actionMaximum: 1,
       resetMatch: 'app',

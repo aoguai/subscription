@@ -53,6 +53,7 @@ export default defineGkdApp({
       name: '通知提示-漂流瓶页面提示弹窗',
       desc: '关闭漂流瓶功能页面的各类提示弹窗',
       enable: false,
+      ignoreGlobalGroupMatch: true,
       fastQuery: true,
       activityIds: [
         'com.maxhom.weibu.tool.home.activity.ToolBottleActivity',

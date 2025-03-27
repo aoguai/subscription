@@ -260,6 +260,7 @@ export default defineGkdApp({
       name: '权限提示-通知权限',
       desc: '关闭通知权限申请弹窗',
       enable: false,
+      ignoreGlobalGroupMatch: true,
       actionMaximum: 1,
       resetMatch: 'app',
       rules: [

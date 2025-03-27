@@ -104,6 +104,7 @@ export default defineGkdApp({
       name: '通知提示-顶端横幅”',
       desc: '出现在首页、备份盘、资源库',
       enable: false,
+      ignoreGlobalGroupMatch: true,
       fastQuery: true,
       activityIds: ['com.alicloud.databox.MainActivity'],
       rules: [

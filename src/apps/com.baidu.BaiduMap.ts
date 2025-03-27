@@ -71,6 +71,7 @@ export default defineGkdApp({
       name: '权限提示-通知权限',
       desc: '点击关闭',
       enable: false,
+      ignoreGlobalGroupMatch: true,
       fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,

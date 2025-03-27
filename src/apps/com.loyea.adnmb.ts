@@ -9,6 +9,7 @@ export default defineGkdApp({
       name: '通知提示-通知弹窗',
       desc: '点击通知弹窗的【确定】按钮',
       enable: false,
+      ignoreGlobalGroupMatch: true,
       fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,

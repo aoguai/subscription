@@ -22,6 +22,7 @@ export default defineGkdApp({
       name: '通知提示-VPN风险弹窗',
       desc: '点击[知晓风险，继续使用]',
       enable: false,
+      ignoreGlobalGroupMatch: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',

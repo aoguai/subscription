@@ -9,6 +9,7 @@ export default defineGkdApp({
       name: '通知提示-消息中心-系统通知请求',
       desc: '关闭消息推送开启提示',
       enable: false,
+      ignoreGlobalGroupMatch: true,
       actionMaximum: 1, // 限制只能点击一次
       resetMatch: 'app',
       activityIds:

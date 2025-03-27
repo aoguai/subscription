@@ -19,6 +19,7 @@ export default defineGkdApp({
       name: '通知提示-地图横条广告',
       desc: '关闭地图页面的横条广告和弹窗提示',
       enable: false,
+      ignoreGlobalGroupMatch: true,
       fastQuery: true,
       activityIds: 'com.autonavi.map.activity.NewMapActivity',
       rules: [
@@ -106,6 +107,7 @@ export default defineGkdApp({
       name: '权限提示-授权蓝牙',
       desc: '关闭室内定位蓝牙授权提示',
       enable: false,
+      ignoreGlobalGroupMatch: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
