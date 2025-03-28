@@ -19,9 +19,9 @@ export default defineGkdApp({
           key: 0,
           name: '点击广告卡片右上角',
           excludeMatches: [
-            '[text="设置备注和标签"]', // 设置备注页面
-            '[text="朋友权限"]', // 资料页面
-            '[text="申请添加朋友"]', // 添加好友页面
+            '[text="设置备注和标签"||text="設定備註和標籤"]', // 设置备注页面
+            '[text="朋友权限"||text="朋友權限"]', // 资料页面
+            '[text="申请添加朋友"||text="申請添加朋友"]', // 添加好友页面
           ],
           matches:
             'LinearLayout[visibleToUser=true][checked=false] >2 LinearLayout[visibleToUser=true][focusable=false] > TextView[text.length!=null] +1 LinearLayout[text.length=null&&desc=null&&clickable=true&&focusable=true]',
@@ -36,6 +36,8 @@ export default defineGkdApp({
             'https://i.gkd.li/import/14164508', // TextView[text.length!=null] +1 LinearLayout[text.length=null&&clickable=true&&focusable=true]
             'https://i.gkd.li/import/12905837', // 英文
             'https://i.gkd.li/import/13791200', // 繁体
+          ],
+          excludeSnapshotUrls: [
             'https://i.gkd.li/import/14193379', // 误触，用 LinearLayout[visibleToUser=true] 排除
             'https://i.gkd.li/import/14193181', // 误触，用 desc=null 排除
           ],
@@ -133,13 +135,17 @@ export default defineGkdApp({
         {
           key: 1,
           name: '浏览器扫码登录',
-          matches: ['[text^="获取你的"||text^="申请使用"]', '[text="允许"]'],
+          matches: [
+            '[text^="获取你的"||text^="取得你的"||text^="申请使用"]',
+            '[text="允许"||text="允許"]',
+          ],
           snapshotUrls: [
             'https://i.gkd.li/import/13065462', //com.tencent.mm.ui.LauncherUI
             'https://i.gkd.li/import/12663602',
             'https://i.gkd.li/import/14164920',
             'https://i.gkd.li/i/15271716',
             'https://i.gkd.li/i/18809991',
+            'https://i.gkd.li/i/19496823',
           ],
         },
         {
