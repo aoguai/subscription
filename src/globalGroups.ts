@@ -254,7 +254,7 @@ export default defineGkdGlobalGroups([
     disableIfAppGroupMatch: '更新提示',
     actionMaximum: 2,
     matchTime: 10000,
-    resetMatch: 'app',
+    resetMatch: 'activity',
     actionCdKey: 0,
     actionMaximumKey: 0,
     rules: [
@@ -305,7 +305,7 @@ export default defineGkdGlobalGroups([
     disableIfAppGroupMatch: '评价提示',
     actionMaximum: 2,
     matchTime: 10000,
-    resetMatch: 'app',
+    resetMatch: 'activity',
     actionCdKey: 0,
     actionMaximumKey: 0,
     rules: [
@@ -352,7 +352,7 @@ export default defineGkdGlobalGroups([
     order: NOTIFICATION_PROMPT,
     disableIfAppGroupMatch: '通知提示',
     matchTime: 10000,
-    resetMatch: 'app',
+    resetMatch: 'activity',
     actionCdKey: 0,
     rules: [
       {
@@ -446,7 +446,7 @@ export default defineGkdGlobalGroups([
     order: YOUTH_MODE,
     disableIfAppGroupMatch: '权限提示',
     matchTime: 10000,
-    resetMatch: 'app',
+    resetMatch: 'activity',
     actionCdKey: 0,
     rules: [
       {
@@ -492,7 +492,7 @@ export default defineGkdGlobalGroups([
     order: LOCATION_PROMPT,
     disableIfAppGroupMatch: '定位提示',
     matchTime: 10000,
-    resetMatch: 'app',
+    resetMatch: 'activity',
     actionCdKey: 0,
     rules: [
       {
