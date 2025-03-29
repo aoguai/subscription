@@ -375,8 +375,8 @@ export default defineGkdApp({
       activityIds: ['.ui.chatting.gallery.ImageGalleryUI', '.ui.LauncherUI'],
       rules: {
         anyMatches: [
-          '[text^="查看原图"][clickable=true][visibleToUser=true]',
-          '[text^="查看原视频"][clickable=true][visibleToUser=true]',
+          '[text^="查看原图"||text^="查看原圖"][clickable=true][visibleToUser=true]',
+          '[text^="查看原视频"||text^="查看原視頻"][clickable=true][visibleToUser=true]',
         ],
       },
       snapshotUrls: [
@@ -384,6 +384,7 @@ export default defineGkdApp({
         'https://i.gkd.li/i/14661736',
         'https://i.gkd.li/i/16833732',
         'https://i.gkd.li/i/17698956',
+        'https://i.gkd.li/i/19515095',
       ],
     },
     {
