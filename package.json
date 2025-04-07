@@ -51,7 +51,7 @@
     "simple-git-hooks": "2.12.1",
     "tsx": "4.19.3",
     "typescript": "5.8.3",
-    "typescript-eslint": "8.29.0"
+    "typescript-eslint": "8.29.1"
   },
   "volta": {
     "node": "22.14.0",
