@@ -374,10 +374,7 @@ export default defineGkdApp({
       fastQuery: true,
       activityIds: ['.ui.chatting.gallery.ImageGalleryUI', '.ui.LauncherUI'],
       rules: {
-        anyMatches: [
-          '[text^="查看原图"||text^="查看原圖"][clickable=true][visibleToUser=true]',
-          '[text^="查看原视频"||text^="查看原視頻"][clickable=true][visibleToUser=true]',
-        ],
+        matches: ['[text^="查看"][clickable=true][visibleToUser=true]'],
       },
       snapshotUrls: [
         'https://i.gkd.li/import/13523031',
@@ -385,6 +382,7 @@ export default defineGkdApp({
         'https://i.gkd.li/i/16833732',
         'https://i.gkd.li/i/17698956',
         'https://i.gkd.li/i/19515095',
+        'https://i.gkd.li/i/19645122',
       ],
     },
     {
@@ -621,7 +619,7 @@ export default defineGkdApp({
         {
           fastQuery: true,
           activityIds: '.ui.LauncherUI',
-          matches: '@[clickable=true] >(1,2) [text="转文字"]',
+          matches: '@[clickable=true] >(1,2) [text$="文字"&&text.length<=4]',
           snapshotUrls: [
             'https://i.gkd.li/i/14497389',
             'https://i.gkd.li/i/14538322',
