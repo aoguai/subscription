@@ -96,64 +96,48 @@ export default defineGkdApp({
       rules: [
         {
           key: 0,
-          activityIds: 'com.jingdong.app.mall.MainFrameActivity',
-          matches:
-            '@FrameLayout[text=null][desc=null][clickable=true] > [desc="关闭"]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/13165721',
-            'https://i.gkd.li/i/15364514',
-            'https://i.gkd.li/i/17974166',
-          ],
-          excludeSnapshotUrls: 'https://i.gkd.li/i/18455760',
-        },
-        {
-          key: 1,
+          resetMatch: 'activity',
+          matchTime: 10000,
           activityIds: [
+            'com.jingdong.app.mall.MainFrameActivity',
+            'com.jd.lib.jshop.jshop.JshopMainShopActivity',
             'com.jd.lib.cashier.complete.view.CashierCompleteActivity',
-            'com.jd.lib.jshop.jshop.JshopMainShopActivity',
-            'com.jingdong.app.mall.MainFrameActivity',
-          ],
-          fastQuery: true,
-          matches: '[vid="close"][desc="关闭页面"]',
-          snapshotUrls: [
-            'https://i.gkd.li/import/13218034',
-            'https://i.gkd.li/i/14927060',
-            'https://i.gkd.li/import/14162769',
-            'https://i.gkd.li/i/14445257',
-          ],
-        },
-        {
-          key: 2,
-          activityIds: 'com.jingdong.app.mall.MainFrameActivity',
-          matches:
-            '[id="android:id/content"] > RelativeLayout > RelativeLayout > *[childCount=2] > ImageView[index=1][clickable=true][!(desc="拍照购")]',
-          snapshotUrls: [
-            'https://i.gkd.li/import/13241883',
-            'https://i.gkd.li/import/13259029',
-            'https://i.gkd.li/i/14612925',
-          ],
-        },
-        {
-          key: 3,
-          activityIds: [
-            'com.jingdong.app.mall.MainFrameActivity',
-            'com.jd.lib.jshop.jshop.JshopMainShopActivity',
           ],
           excludeMatches: [
             'ImageView[desc="关闭页面"] - [text="优惠券"]',
             'TextView[text="退换/售后"][id=null]',
           ],
           matches:
-            'RelativeLayout[childCount=2][visibleToUser=true] > ImageView[desc*="关闭"][visibleToUser=true]',
+            '[name$="Layout"][childCount=2][text=null][desc=null][visibleToUser=true] > ImageView[desc*="关闭"][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/import/13258996',
+            'https://i.gkd.li/import/13218034',
+            'https://i.gkd.li/import/14162769',
+            'https://i.gkd.li/import/13241883',
+            'https://i.gkd.li/import/13259029',
             'https://i.gkd.li/i/15416926',
             'https://i.gkd.li/i/15862131',
+            'https://i.gkd.li/i/14927060',
+            'https://i.gkd.li/i/14445257',
           ],
           excludeSnapshotUrls: [
             'https://i.gkd.li/import/13336847', // 增加excludeMatches: 'ImageView[desc="关闭页面"] - [text="优惠券"]', 避免在该快照误触
+            'https://i.gkd.li/i/18455760',
             'https://i.gkd.li/i/16818580', // 增加excludeMatches: 'TextView[text="退换/售后"]', 避免在刚刚打开该快照页面时误触（此时activityId并未改变）
-            'https://i.gkd.li/i/19399304',
+          ],
+        },
+        {
+          key: 2,
+          activityIds: 'com.jingdong.app.mall.MainFrameActivity',
+          anyMatches: [
+            '[id="android:id/content"] > RelativeLayout > RelativeLayout > *[childCount=2] > ImageView[index=1][clickable=true][!(desc="拍照购")]',
+            'ViewGroup[childCount>=2] > FrameLayout + FrameLayout > ImageView[desc="关闭"]',
+          ],
+          snapshotUrls: [
+            'https://i.gkd.li/i/14612925',
+            'https://i.gkd.li/i/17974166',
+            'https://i.gkd.li/i/15364514',
+            'https://i.gkd.li/i/13165721',
           ],
         },
       ],
