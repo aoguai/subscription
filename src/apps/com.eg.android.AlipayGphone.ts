@@ -249,5 +249,23 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 17,
+      name: '功能类-自动授权登录',
+      desc: '自动点击登录确认',
+      enable: false,
+      rules: [
+        {
+          fastQuery: true,
+          actionMaximum: 1,
+          action: 'clickCenter', // clickNode可能无效
+          activityIds:
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
+          matches:
+            '[text="支付宝授权"] >3 @[childCount=0][text="同意"] <<n [id="com.alipay.mobile.nebula:id/h5_pc_container"]',
+          snapshotUrls: 'https://i.gkd.li/i/17376764',
+        },
+      ],
+    },
   ],
 });
