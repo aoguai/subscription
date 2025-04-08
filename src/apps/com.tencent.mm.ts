@@ -24,17 +24,18 @@ export default defineGkdApp({
             '[text="申请添加朋友"||text="申請添加朋友"]', // 添加好友页面
           ],
           matches:
-            'LinearLayout[visibleToUser=true][checked=false] >2 LinearLayout[visibleToUser=true][focusable=false] > TextView[text.length!=null] +1 LinearLayout[text.length=null&&desc=null&&clickable=true&&focusable=true]',
+            '@LinearLayout[text.length=null&&desc=null&&clickable=true&&focusable=true][index=parent.childCount.minus(1)] <2 LinearLayout[visibleToUser=true][focusable=false] ->1 LinearLayout[visibleToUser=true][checked=false] >2 LinearLayout[visibleToUser=true][focusable=false] >(1,2) TextView[text.length!=null]',
           snapshotUrls: [
             'https://i.gkd.li/import/12642588',
             'https://i.gkd.li/import/12888129', // ImageView - TextView[text="广告"][id!=null][index=0]这个规则无法匹配该广告，需要删除[index=0]
             'https://i.gkd.li/import/12907641',
             'https://i.gkd.li/import/13000395',
-            'https://i.gkd.li/i/16568338',
-            'https://i.gkd.li/i/14647413',
             'https://i.gkd.li/import/14164508', // TextView[text.length!=null] +1 LinearLayout[text.length=null&&clickable=true&&focusable=true]
             'https://i.gkd.li/import/12905837', // 英文
             'https://i.gkd.li/import/13791200', // 繁体
+            'https://i.gkd.li/i/16568338',
+            'https://i.gkd.li/i/14647413',
+            'https://i.gkd.li/i/19633571',
           ],
           excludeSnapshotUrls: [
             'https://i.gkd.li/import/14193379', // 误触，用 LinearLayout[visibleToUser=true] 排除
