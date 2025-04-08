@@ -30,7 +30,6 @@ export default defineGkdApp({
             'https://i.gkd.li/import/12888129', // ImageView - TextView[text="广告"][id!=null][index=0]这个规则无法匹配该广告，需要删除[index=0]
             'https://i.gkd.li/import/12907641',
             'https://i.gkd.li/import/13000395',
-            'https://i.gkd.li/i/14647413',
             'https://i.gkd.li/i/16568338',
             'https://i.gkd.li/i/14647413',
             'https://i.gkd.li/import/14164508', // TextView[text.length!=null] +1 LinearLayout[text.length=null&&clickable=true&&focusable=true]
@@ -86,6 +85,8 @@ export default defineGkdApp({
           snapshotUrls: [
             'https://i.gkd.li/import/12907642',
             'https://i.gkd.li/import/13926578',
+            'https://i.gkd.li/i/15531274',
+            'https://i.gkd.li/i/19633486',
             'https://i.gkd.li/i/14207480',
             'https://i.gkd.li/i/15137016',
           ],
@@ -358,6 +359,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/16987144', // 未选中
             'https://i.gkd.li/i/18413281',
             'https://i.gkd.li/i/14661734',
+            'https://i.gkd.li/i/19625049',
           ],
           excludeSnapshotUrls: [
             'https://i.gkd.li/i/16987141', // 已选中
