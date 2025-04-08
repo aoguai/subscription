@@ -59,7 +59,10 @@ export default defineGkdApp({
           preKeys: [1, 2],
           key: 3,
           name: '选择关闭原因-点击不感兴趣',
-          matches: '@LinearLayout > TextView[text="不感兴趣"]',
+          anyMatches: [
+            '@[clickable=true] > [text="不感兴趣"][visibleToUser=true]',
+            '[text="不感兴趣"][clickable=true][visibleToUser=true]',
+          ],
           snapshotUrls: [
             'https://i.gkd.li/import/12472633',
             'https://i.gkd.li/import/12655713',
@@ -68,6 +71,9 @@ export default defineGkdApp({
             'https://i.gkd.li/import/13786886', // 没有id
             'https://i.gkd.li/i/19004649',
             'https://i.gkd.li/i/19004661',
+            'https://i.gkd.li/i/19643258',
+            'https://i.gkd.li/i/19643262',
+            'https://i.gkd.li/i/19534649',
           ],
         },
       ],
@@ -88,6 +94,7 @@ export default defineGkdApp({
       desc: '关闭搜索结果页面的应用推荐广告',
       rules: [
         {
+          key: 1,
           fastQuery: true,
           activityIds: [
             '.view.search.SuperSearchResultActivity',
@@ -98,6 +105,14 @@ export default defineGkdApp({
             'https://i.gkd.li/i/16448265',
             'https://i.gkd.li/i/16448385',
           ],
+        },
+        {
+          key: 2,
+          fastQuery: true,
+          activityIds: ['.view.search.SuperSearchResultActivity'],
+          matches:
+            '@[desc="关闭"] <<n [vid="item_view"] <<n [vid="to_native_ad_view"][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/19643150',
         },
       ],
     },
