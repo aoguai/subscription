@@ -41,7 +41,7 @@ export default defineGkdApp({
           key: 0,
           name: '点击广告卡片右侧菜单图标',
           matches:
-            '[((desc*="广告"||desc*="来自淘宝")&&desc*="查看")||desc$=",,轻点两下查看详情"][visibleToUser=true] >(2,3,4) @ImageView[visibleToUser=true] < [vid$="more"][visibleToUser=true]',
+            '[((desc*="广告"||desc*="来自淘宝")&&desc*="查看")||desc$=",,轻点两下查看详情"||(desc^="【有奖调研】"&&desc.length=22)][visibleToUser=true] >(2,3,4) @ImageView[visibleToUser=true] < [vid$="more"][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/import/12642260', // n = 2
             'https://i.gkd.li/import/12705266', // n = 3
@@ -55,6 +55,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/17690800',
             'https://i.gkd.li/i/17675629',
             'https://i.gkd.li/i/18274379',
+            'https://i.gkd.li/i/19777632',
           ],
         },
         {
@@ -71,7 +72,7 @@ export default defineGkdApp({
           fastQuery: true,
           name: '点击[不感兴趣]',
           matches:
-            '@[clickable=true] > [text="不感兴趣" || text="相似内容过多" || text="up主不感兴趣" || text="此类内容过多" || text="对该up的直播不感兴趣"]',
+            '@[clickable=true] > [text="这个内容" || text="不感兴趣" || text="相似内容过多" || text="up主不感兴趣" || text="此类内容过多" || text="对该up的直播不感兴趣"]',
           snapshotUrls: [
             'https://i.gkd.li/import/13495649',
             'https://i.gkd.li/i/13742257',
@@ -92,6 +93,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/18292926',
             'https://i.gkd.li/i/18296940',
             'https://i.gkd.li/i/18306839',
+            'https://i.gkd.li/i/19777674',
           ],
         },
         {
