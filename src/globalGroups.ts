@@ -78,8 +78,12 @@ export default defineGkdGlobalGroups([
         ], // 防止在应用的搜索页面误触
         action: 'clickCenter',
         anyMatches: [
-          '@View[clickable=true][text=null][visibleToUser=true] + TextView[index=parent.childCount.minus(1)][text=null] <n FrameLayout[childCount>2] >(7,8,9,10) [text*="第三方应用" || text*="扭动手机" || text*="点击或上滑"][visibleToUser=true]',
-          'FrameLayout[visibleToUser=true][height>0&&width>0] > FrameLayout[visibleToUser=true][height>0&&width>0][childCount>2] > @View[clickable=true][height>0&&width>0][visibleToUser=true] + TextView[clickable=true][height>0&&width>0][visibleToUser=true]',
+          '@View[clickable=true][childCount=0][text=null][visibleToUser=true][width<200&&height<200] +(1,2) TextView[index=parent.childCount.minus(1)][text=null] <n FrameLayout[childCount>2] >(7,8,9,10) [text*="第三方应用" || text*="扭动手机" || text*="点击或上滑"][visibleToUser=true]',
+          'FrameLayout[visibleToUser=true][height>0&&width>0] > FrameLayout[visibleToUser=true][height>0&&width>0][childCount>2] > @View[text=null][clickable=true][childCount=0][height>0&&width>0][visibleToUser=true][width<200&&height<200] +(1,2) TextView[index=parent.childCount.minus(1)][text=null][height>0&&width>0][visibleToUser=true]',
+        ],
+        snapshotUrls: [
+          'https://i.gkd.li/i/19685971', // +(1,2)
+          'https://i.gkd.li/i/19701216', // +(1,2)
         ],
       },
     ],
