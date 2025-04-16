@@ -32,7 +32,7 @@ export default defineGkdApp({
           key: 2,
           name: '首页广告',
           matches:
-            'RelativeLayout >n * > [desc^="关闭"][clickable=true][visibleToUser=true]',
+            'RelativeLayout >n * > [desc^="关闭" && !(id*="egg")][clickable=true][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/import/13165659',
             'https://i.gkd.li/import/12837870',
@@ -108,7 +108,7 @@ export default defineGkdApp({
             'TextView[text="退换/售后"][id=null]',
           ],
           matches:
-            '[name$="Layout"][childCount=2][text=null][desc=null][visibleToUser=true] > ImageView[desc*="关闭"][visibleToUser=true]',
+            '[name$="Layout"][childCount=2][text=null][desc=null][visibleToUser=true] > @ImageView[desc*="关闭"][visibleToUser=true] - [name$="Layout"||desc="弹窗"]',
           snapshotUrls: [
             'https://i.gkd.li/import/13258996',
             'https://i.gkd.li/import/13218034',
