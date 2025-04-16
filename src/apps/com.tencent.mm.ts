@@ -376,16 +376,22 @@ export default defineGkdApp({
       enable: false,
       fastQuery: true,
       activityIds: ['.ui.chatting.gallery.ImageGalleryUI', '.ui.LauncherUI'],
-      rules: {
-        matches: ['[text^="查看"][clickable=true][visibleToUser=true]'],
-      },
-      snapshotUrls: [
-        'https://i.gkd.li/import/13523031',
-        'https://i.gkd.li/i/14661736',
-        'https://i.gkd.li/i/16833732',
-        'https://i.gkd.li/i/17698956',
-        'https://i.gkd.li/i/19515095',
-        'https://i.gkd.li/i/19645122',
+      rules: [
+        {
+          key: 0,
+          anyMatches: [
+            'Button[text^="查看"][clickable=true][visibleToUser=true]',
+            'Button[clickable=true][text^="查看"][visibleToUser=true]',
+          ],
+          snapshotUrls: [
+            'https://i.gkd.li/import/13523031',
+            'https://i.gkd.li/i/14661736',
+            'https://i.gkd.li/i/16833732',
+            'https://i.gkd.li/i/17698956',
+            'https://i.gkd.li/i/19515095',
+            'https://i.gkd.li/i/19645122',
+          ],
+        },
       ],
     },
     {
@@ -493,6 +499,31 @@ export default defineGkdApp({
           name: '点击原因【与我无关】',
           matches: '[text="与我无关"][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/import/13200048',
+        },
+      ],
+    },
+    {
+      key: 17,
+      name: '青少年模式',
+      desc: '关闭青少年模式提示弹窗',
+      enable: false,
+      fastQuery: true,
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
+        {
+          activityIds: ['.plugin.finder.', '.ui.LauncherUI'],
+          matches:
+            '@[text="我知道了"][index=parent.childCount.minus(1)] <n LinearLayout > [text^="为呵护未成年人健康成长"][visibleToUser=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13538145',
+            'https://i.gkd.li/i/13575195',
+            'https://i.gkd.li/i/14735456',
+            'https://i.gkd.li/i/14896723',
+            'https://i.gkd.li/i/18135103',
+            'https://i.gkd.li/i/19683937',
+          ],
         },
       ],
     },
