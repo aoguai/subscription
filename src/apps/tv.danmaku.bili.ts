@@ -41,7 +41,7 @@ export default defineGkdApp({
           key: 0,
           name: '点击广告卡片右侧菜单图标',
           matches:
-            '[((desc*="广告"||desc*="来自淘宝")&&desc*="查看")||desc$=",,轻点两下查看详情"||(desc^="【有奖调研】"&&desc.length=22)][visibleToUser=true] >(2,3,4) @ImageView[visibleToUser=true] < [vid$="more"][visibleToUser=true]',
+            '[((desc*="广告"||desc*="来自淘宝")&&desc*="查看")||desc$=",,轻点两下查看详情"||(desc^="【有奖调研】"&&desc.length=22)][visibleToUser=true] >(2,3,4) @ImageView[visibleToUser=true] < [vid^="more"][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/import/12642260', // n = 2
             'https://i.gkd.li/import/12705266', // n = 3
@@ -56,6 +56,8 @@ export default defineGkdApp({
             'https://i.gkd.li/i/17675629',
             'https://i.gkd.li/i/18274379',
             'https://i.gkd.li/i/19777632',
+            'https://i.gkd.li/i/19919163',
+            'https://i.gkd.li/i/19919168',
           ],
         },
         {
@@ -94,6 +96,8 @@ export default defineGkdApp({
             'https://i.gkd.li/i/18296940',
             'https://i.gkd.li/i/18306839',
             'https://i.gkd.li/i/19777674',
+            'https://i.gkd.li/i/19919165',
+            'https://i.gkd.li/i/19919169',
           ],
         },
         {
