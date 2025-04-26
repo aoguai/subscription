@@ -652,11 +652,13 @@ export default defineGkdApp({
       rules: [
         {
           fastQuery: true,
-          activityIds: '.ui.LauncherUI',
+          activityIds: ['.ui.LauncherUI', '.ui.chatting.ChattingUI'],
           matches: '@[clickable=true] >(1,2) [text$="文字"&&text.length<=4]',
           snapshotUrls: [
             'https://i.gkd.li/i/14497389',
             'https://i.gkd.li/i/14538322',
+            'https://i.gkd.li/i/19774491',
+            'https://i.gkd.li/i/19792042',
           ],
         },
       ],
