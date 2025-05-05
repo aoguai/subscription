@@ -245,24 +245,17 @@ export default defineGkdApp({
       resetMatch: 'app',
       activityIds: [
         'com.wangyin.payment.jdpaysdk.counter.ui.pay.CounterActivity',
+        'com.jingdong.manto.card.MantoLightActivity',
       ],
       rules: [
         {
           key: 0,
-          name: '免密支付',
           fastQuery: true,
-          matches: ['[text*="免密支付"]', '[text="暂不设置"]'],
-          snapshotUrls: ['https://i.gkd.li/i/19918601'],
-        },
-        {
-          key: 1,
-          name: '京东快付',
-          fastQuery: true,
-          matches: [
-            '[text="立即开通"]',
-            '@ImageView[id!=null] + [text="京东快付开通"]',
+          matches: ['[text*="《"&&text*="协议"]', '[text*="暂不"]'],
+          snapshotUrls: [
+            'https://i.gkd.li/i/19918601',
+            'https://i.gkd.li/i/20033983',
           ],
-          snapshotUrls: ['https://i.gkd.li/i/19918601'],
         },
       ],
     },
