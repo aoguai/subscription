@@ -55,7 +55,7 @@ export default defineGkdApp({
           key: 10,
           name: '点击屏蔽',
           matches:
-            '@ViewGroup > [id="com.twitter.android:id/action_sheet_item_title"][text^="屏蔽"||text^="Block"]',
+            '@ViewGroup > [id="com.twitter.android:id/action_sheet_item_title"][text^="屏蔽"||text^="Block"||text^="封鎖"]',
           snapshotUrls: [
             'https://i.gkd.li/import/12798810',
             'https://i.gkd.li/i/14782902',
@@ -63,6 +63,7 @@ export default defineGkdApp({
             'https://i.gkd.li/import/12847600', // com.twitter.android.search.implementation.results.SearchActivity
             'https://i.gkd.li/import/12904602', // com.twitter.app.profiles.ProfileActivity
             'https://i.gkd.li/import/13680783', // 兼容英文
+            'https://i.gkd.li/i/20034038', // 封鎖
           ],
         },
         {
@@ -70,7 +71,7 @@ export default defineGkdApp({
           key: 11,
           name: '二次确认-点击屏蔽',
           matches:
-            '[text="取消"||text^="Cancel"] + [text="屏蔽"||text^="Block"]',
+            '[text="取消"||text^="Cancel"] + [text="屏蔽"||text^="Block"||text^="封鎖"]',
           snapshotUrls: [
             'https://i.gkd.li/import/12828832', // com.twitter.tweetdetail.TweetDetailActivity
             'https://i.gkd.li/import/12904601', // com.twitter.app.profiles.ProfileActivity
