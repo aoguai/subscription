@@ -170,6 +170,7 @@ export default defineGkdApp({
       key: 8,
       name: '通知提示',
       desc: '关闭消息推送开启提示',
+      ignoreGlobalGroupMatch: true,
       enable: false,
       fastQuery: true,
       actionMaximum: 1,
@@ -256,7 +257,7 @@ export default defineGkdApp({
           activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
           matches: [
             '[text*="花呗升级" || text*="花呗服务" || text$="开通花呗"][visibleToUser=true]',
-            '@[clickable=true] >n [text="暂不升级，继续付款" || text="关闭"][visibleToUser=true]',
+            '[text="暂不升级，继续付款" || text="关闭"][visibleToUser=true] <n [clickable=true]',
           ],
           snapshotUrls: [
             'https://i.gkd.li/import/13628020',
