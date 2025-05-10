@@ -43,7 +43,7 @@
     "@gkd-kit/tools": "0.6.0",
     "@types/node": "22.15.17",
     "eslint": "9.26.0",
-    "eslint-config-prettier": "10.1.2",
+    "eslint-config-prettier": "10.1.5",
     "eslint-plugin-unused-imports": "4.1.4",
     "json5": "2.2.3",
     "lint-staged": "15.5.2",

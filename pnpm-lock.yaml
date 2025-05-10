@@ -27,8 +27,8 @@ importers:
         specifier: 9.26.0
         version: 9.26.0(jiti@1.21.0)
       eslint-config-prettier:
-        specifier: 10.1.2
-        version: 10.1.2(eslint@9.26.0(jiti@1.21.0))
+        specifier: 10.1.5
+        version: 10.1.5(eslint@9.26.0(jiti@1.21.0))
       eslint-plugin-unused-imports:
         specifier: 4.1.4
         version: 4.1.4(@typescript-eslint/eslint-plugin@8.32.0(@typescript-eslint/parser@8.32.0(eslint@9.26.0(jiti@1.21.0))(typescript@5.8.3))(eslint@9.26.0(jiti@1.21.0))(typescript@5.8.3))(eslint@9.26.0(jiti@1.21.0))
@@ -550,8 +550,8 @@ packages:
     resolution: {integrity: sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==}
     engines: {node: '>=10'}
 
-  eslint-config-prettier@10.1.2:
-    resolution: {integrity: sha512-Epgp/EofAUeEpIdZkW60MHKvPyru1ruQJxPL+WIycnaPApuseK0Zpkrh/FwL9oIpQvIhJwV7ptOy0DWUjTlCiA==}
+  eslint-config-prettier@10.1.5:
+    resolution: {integrity: sha512-zc1UmCpNltmVY34vuLRV61r1K27sWuX39E+uyUnY8xS2Bex88VV9cugG+UZbRSRGtGyFboj+D8JODyme1plMpw==}
     hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
@@ -1679,7 +1679,7 @@ snapshots:
 
   escape-string-regexp@4.0.0: {}
 
-  eslint-config-prettier@10.1.2(eslint@9.26.0(jiti@1.21.0)):
+  eslint-config-prettier@10.1.5(eslint@9.26.0(jiti@1.21.0)):
     dependencies:
       eslint: 9.26.0(jiti@1.21.0)
 
