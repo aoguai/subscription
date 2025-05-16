@@ -21,7 +21,7 @@ export default defineGkdApp({
           excludeMatches: [
             '[text="设置备注和标签"||text="設定備註和標籤"]', // 设置备注页面
             '[text="朋友权限"||text="朋友權限"]', // 资料页面
-            '[text="申请添加朋友"||text="申請添加朋友"]', // 添加好友页面
+            '[text="申请添加朋友"||text="申請添加朋友"||text="新增朋友"]', // 添加好友页面
           ],
           matches:
             '@LinearLayout[text.length=null&&desc=null&&clickable=true&&focusable=true][index=parent.childCount.minus(1)] <2 LinearLayout[visibleToUser=true][focusable=false] ->1 LinearLayout[visibleToUser=true][checked=false] >2 LinearLayout[visibleToUser=true][focusable=false] >(1,2) TextView[text.length!=null]',
@@ -40,6 +40,7 @@ export default defineGkdApp({
           excludeSnapshotUrls: [
             'https://i.gkd.li/import/14193379', // 误触，用 LinearLayout[visibleToUser=true] 排除
             'https://i.gkd.li/import/14193181', // 误触，用 desc=null 排除
+            'https://i.gkd.li/i/20239268',
           ],
         },
         {
