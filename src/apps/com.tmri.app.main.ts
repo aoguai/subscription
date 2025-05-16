@@ -6,7 +6,7 @@ export default defineGkdApp({
   groups: [
     {
       key: 1,
-      name: '通知提示-请求通知弹窗',
+      name: '通知提示-通知弹窗',
       desc: '关闭消息推送开启提示',
       enable: false,
       ignoreGlobalGroupMatch: true,
@@ -18,12 +18,14 @@ export default defineGkdApp({
         {
           activityIds: [
             'com.tmri.app.ui.activity.main.MainTabHostNewActivity',
+            'com.tmri.app.ui.activity.login.FingerLockActivity',
             'com.tmri.app.ui.activity.main.TmriNewActivity',
           ],
           matches: 'ImageButton[id="com.tmri.app.main:id/btn_cancel"]',
           snapshotUrls: [
-            'https://i.gkd.li/import/13315944', //com.tmri.app.ui.activity.main.MainTabHostNewActivity
-            'https://i.gkd.li/import/13779215', //com.tmri.app.ui.activity.main.TmriNewActivity
+            'https://i.gkd.li/import/13315944', // com.tmri.app.ui.activity.main.MainTabHostNewActivity
+            'https://i.gkd.li/import/13779215', // com.tmri.app.ui.activity.main.TmriNewActivity
+            'https://i.gkd.li/i/20239810', // com.tmri.app.ui.activity.login.FingerLockActivity
           ],
         },
       ],
