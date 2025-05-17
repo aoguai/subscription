@@ -246,6 +246,7 @@ export default defineGkdApp({
       activityIds: [
         'com.wangyin.payment.jdpaysdk.counter.ui.pay.CounterActivity',
         'com.jingdong.manto.card.MantoLightActivity',
+        'com.jd.lib.jdpaysdk.JDPayActivity',
       ],
       rules: [
         {
@@ -255,6 +256,7 @@ export default defineGkdApp({
           snapshotUrls: [
             'https://i.gkd.li/i/19918601',
             'https://i.gkd.li/i/20033983',
+            'https://i.gkd.li/i/20265504',
           ],
         },
       ],
