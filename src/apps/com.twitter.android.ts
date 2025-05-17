@@ -55,7 +55,7 @@ export default defineGkdApp({
           key: 10,
           name: '点击屏蔽',
           matches:
-            '@ViewGroup > [id="com.twitter.android:id/action_sheet_item_title"][text^="屏蔽"||text^="Block"||text^="封鎖"]',
+            '@ViewGroup > [id="com.twitter.android:id/action_sheet_item_title"][text^="屏蔽"||text^="Block"||text^="封鎖"][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/import/12798810',
             'https://i.gkd.li/i/14782902',
@@ -64,6 +64,7 @@ export default defineGkdApp({
             'https://i.gkd.li/import/12904602', // com.twitter.app.profiles.ProfileActivity
             'https://i.gkd.li/import/13680783', // 兼容英文
             'https://i.gkd.li/i/20034038', // 封鎖
+            'https://i.gkd.li/i/20239421',
           ],
         },
         {
