@@ -154,8 +154,12 @@ export default defineGkdApp({
         {
           key: 2,
           name: '网页版文件传输助手扫码登录',
-          matches: '[text="打开网页版文件传输助手"] + * > Button[text="打开"]',
-          snapshotUrls: ['https://i.gkd.li/import/12793745'],
+          matches:
+            '[text="打开网页版文件传输助手"||text="開啟網頁版檔案傳輸助手"] + * > Button[text="打开"||text="開啟"]',
+          snapshotUrls: [
+            'https://i.gkd.li/import/12793745',
+            'https://i.gkd.li/i/20532303',
+          ],
         },
         {
           key: 3,
