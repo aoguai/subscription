@@ -108,14 +108,16 @@ export default defineGkdApp({
         },
         {
           key: 8,
-          fastQuery: true,
           matchTime: 10000,
           actionMaximum: 1,
           resetMatch: 'app',
           activityIds: 'com.taobao.tao.welcome.Welcome',
           matches:
-            '@ImageView[desc="图片"][childCount=0][clickable=true][visibleToUser=true] <<n [vid="poplayer_native_state_id"]',
-          snapshotUrls: 'https://i.gkd.li/i/18218537',
+            '@ImageView[desc="图片"][childCount=0][clickable=true][visibleToUser=true][index=parent.childCount.minus(1)][width<200&&height<200]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/18218537',
+            'https://i.gkd.li/i/20277438',
+          ],
         },
         {
           key: 9,
