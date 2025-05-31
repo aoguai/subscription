@@ -44,23 +44,24 @@ export default defineGkdApp({
             'com.miui.packageInstaller.ui.InstallPrepareAlertActivity',
           ],
           matches:
-            '@FrameLayout[clickable=true] > LinearLayout[childCount=1] > [text^="继续"][text.length=4]',
+            '@FrameLayout[clickable=true] > LinearLayout[childCount=1] > [text^="继续" || text^="仍然"][text.length=4][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/16487278',
             'https://i.gkd.li/i/16487282',
             'https://i.gkd.li/i/17691996',
+            'https://i.gkd.li/i/20053957',
           ],
         },
         {
           preKeys: [0],
           key: 1,
           name: '点击[完成]',
-          activityIds: [
-            'com.miui.packageInstaller.ui.InstallPrepareAlertActivity',
-            'com.miui.packageInstaller.NewInstallerPrepareActivity',
-          ],
+          activityIds:
+            'com.miui.packageInstaller.ui.normalmode.InstallProgressActivity',
+          excludeMatches: '[text*="安装失败"]', // 安装失败时排除匹配，此节点比 [text="完成"] 延迟出现，未出现时 visibleToUser=false，因此去掉[visibleToUser=true]限制
           matches: '[text="完成"]',
           snapshotUrls: 'https://i.gkd.li/i/16487274',
+          excludeSnapshotUrls: 'https://i.gkd.li/i/20282424',
         },
       ],
     },
@@ -71,36 +72,62 @@ export default defineGkdApp({
       enable: false,
       fastQuery: true,
       actionMaximum: 1,
-      activityIds: 'com.miui.packageInstaller.ui.InstallPrepareAlertActivity',
+      activityIds: [
+        'com.miui.packageInstaller.ui.InstallPrepareAlertActivity',
+        'com.miui.packageInstaller.NewInstallerPrepareActivity',
+      ],
       rules: [
         {
           key: 0,
           name: '点击[记住我的选择]',
           matches: [
-            '[text$="安装应用？"]',
-            'CheckBox[text="记住我的选择"][checked=false]',
+            '[text^="是否允许"][text*="安装应用"][visibleToUser=true]',
+            'CheckBox[text="记住我的选择"][checked=false][visibleToUser=true]',
           ],
           snapshotUrls: [
             'https://i.gkd.li/i/16487366',
             'https://i.gkd.li/i/16487389',
             'https://i.gkd.li/i/18937578',
+            'https://i.gkd.li/i/20287209',
           ],
         },
         {
           preKeys: [0],
           name: '点击[允许]',
-          matches: '[text="允许"]',
+          matches: '[text="允许"][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/16487365',
             'https://i.gkd.li/i/18937576',
+            'https://i.gkd.li/i/20287160',
           ],
         },
       ],
     },
     {
       key: 15,
+      name: '功能类-安装来源不可信',
+      desc: '点击[授权本次安装]',
+      enable: false,
+      actionMaximum: 1,
+      rules: [
+        {
+          fastQuery: true,
+          position: {
+            left: 'width * 0.3511',
+            top: 'height * 0.5',
+          },
+          activityIds:
+            'com.miui.packageInstaller.ui.InstallPrepareAlertActivity',
+          matches: '[text$="授权本次安装"]',
+          exampleUrls: 'https://e.gkd.li/e470baf2-56dc-4e3c-8da0-9747eeec602f',
+          snapshotUrls: 'https://i.gkd.li/i/17898736',
+        },
+      ],
+    },
+    {
+      key: 16,
       name: '功能类-备案信息弹窗',
-      desc: '自动点击备案信息弹窗的继续安装按钮',
+      desc: '点击[继续安装]',
       enable: false,
       actionMaximum: 1,
       rules: [
@@ -114,7 +141,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 16,
+      key: 17,
       name: '功能类-无视风险继续安装',
       desc: '(存在安全风险)自动点击无视风险继续安装并授权',
       enable: false,
