@@ -37,29 +37,32 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 7,
-      name: '局部广告-续费横幅提示',
-      desc: '关闭首页续费提醒横幅',
+      key: 2,
+      name: '局部广告-各类局部广告',
+      desc: '关闭各类局部广告，包括续费横幅、悬浮广告卡片等',
       fastQuery: true,
-      activityIds: 'com.baidu.netdisk.ui.MainActivity',
       rules: [
         {
+          key: 0,
+          name: '续费横幅提示',
+          activityIds: 'com.baidu.netdisk.ui.MainActivity',
           matches: 'View[desc="续费"] + ImageView',
           snapshotUrls: 'https://i.gkd.li/import/12924036',
         },
-      ],
-    },
-    {
-      key: 12,
-      name: '局部广告-右下角悬浮卡片',
-      desc: '关闭首页右下角悬浮广告卡片',
-      fastQuery: true,
-      activityIds: 'com.baidu.netdisk.ui.MainActivity',
-      rules: [
         {
+          key: 1,
+          name: '右下角悬浮卡片',
+          activityIds: 'com.baidu.netdisk.ui.MainActivity',
           matches:
             '[vid="float_btn_close"][clickable=true][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/import/14278618',
+        },
+        {
+          key: 2,
+          name: '播放界面下方广告',
+          activityIds: '.video.VideoPlayerActivity',
+          matches: '[vid="rl_ad_root"] > [vid="iv_close"][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/20414230',
         },
       ],
     },
