@@ -52,6 +52,16 @@ export default defineGkdApp({
             'https://i.gkd.li/i/14731003',
           ],
         },
+        {
+          key: 4,
+          name: '推推红包',
+          matches:
+            'LinearLayout[childCount=2] > ImageView[id^="com.jd.lib.personal.feature"][index=parent.childCount.minus(1)]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/20532279',
+            'https://i.gkd.li/i/20532280',
+          ],
+        },
       ],
     },
     {
@@ -258,6 +268,13 @@ export default defineGkdApp({
             'https://i.gkd.li/i/20033983',
             'https://i.gkd.li/i/20265504',
           ],
+        },
+        {
+          key: 1,
+          fastQuery: true,
+          matches:
+            '@ImageView[id!=""][clickable=true] <n * > [text*="京东快付"&&text.length<=6]',
+          snapshotUrls: ['https://i.gkd.li/i/20516256'],
         },
       ],
     },
