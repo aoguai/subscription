@@ -44,6 +44,29 @@ export default defineGkdApp({
       ],
     },
     {
+      key: 4,
+      name: '分段广告-首页卡片广告',
+      desc: '关闭首页分段卡片广告',
+      enable: false,
+      rules: [
+        {
+          key: 0,
+          fastQuery: true,
+          activityIds: 'com.tencent.qqmusiclite.activity.MainActivity',
+          matches: '[vid="ad_more"]',
+          snapshotUrls: 'https://i.gkd.li/i/20420265',
+        },
+        {
+          preKeys: [0],
+          key: 20,
+          fastQuery: true,
+          activityIds: 'com.tencent.qqmusiclite.activity.MainActivity',
+          matches: '[vid="ad_close"][text="不感兴趣"]',
+          snapshotUrls: 'https://i.gkd.li/i/20420322',
+        },
+      ],
+    },
+    {
       key: 11,
       name: '局部广告-banner 广告',
       desc: '关闭页面内的 banner 广告',
@@ -55,7 +78,10 @@ export default defineGkdApp({
           key: 0,
           matches:
             '[id="com.miui.player:id/banner_image"] + [id="com.miui.player:id/close_banner"]',
-          snapshotUrls: 'https://i.gkd.li/import/12700984',
+          snapshotUrls: [
+            'https://i.gkd.li/import/12700984',
+            'https://i.gkd.li/i/20420253',
+          ],
         },
         {
           key: 1,
