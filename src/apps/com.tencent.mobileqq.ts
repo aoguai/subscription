@@ -352,7 +352,7 @@ export default defineGkdApp({
           ],
           matches: [
             '[text="登录确认" || text="一键验证"][visibleToUser=true]',
-            'Button[text*="登录"][clickable=true][visibleToUser=true][text.length<10]',
+            'Button[text*="登录" || text="确认" || text^="允许登录"][clickable=true][visibleToUser=true]',
           ],
           snapshotUrls: [
             'https://i.gkd.li/import/13623520',
@@ -361,6 +361,7 @@ export default defineGkdApp({
             'https://i.gkd.li/import/13166314',
             'https://i.gkd.li/i/15884502',
             'https://i.gkd.li/i/15884520',
+            'https://i.gkd.li/i/20737651',
           ],
         },
         {
