@@ -177,6 +177,17 @@ export default defineGkdApp({
           matches: '[desc$="不再提示"][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/18428240',
         },
+        {
+          key: 3,
+          fastQuery: true,
+          matchTime: 10000,
+          actionMaximum: 1,
+          resetMatch: 'app',
+          activityIds: '.activity.AppStarterActivity',
+          matches:
+            '@ImageView[childCount=0][visibleToUser=true][width<120 && height<120] < FrameLayout < FrameLayout < FrameLayout <2 FrameLayout < FrameLayout < FrameLayout < FrameLayout < [id="android:id/content"]',
+          snapshotUrls: 'https://i.gkd.li/i/20745872',
+        },
       ],
     },
     {
@@ -215,7 +226,7 @@ export default defineGkdApp({
           resetMatch: 'app',
           activityIds: '.activity.AppStarterActivity',
           matches:
-            '@ImageView[childCount=0][visibleToUser=true] <3 FrameLayout[childCount=3] <2 FrameLayout < FrameLayout < FrameLayout < FrameLayout < [id="android:id/content"]',
+            '@ImageView[childCount=0][visibleToUser=true][width<120 && height<120] <3 FrameLayout[childCount=3] <2 FrameLayout < FrameLayout < FrameLayout < FrameLayout < [id="android:id/content"]',
           snapshotUrls: 'https://i.gkd.li/i/18439138',
         },
       ],
