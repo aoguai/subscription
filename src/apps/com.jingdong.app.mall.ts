@@ -247,8 +247,8 @@ export default defineGkdApp({
     },
     {
       key: 14,
-      name: '通知提示-关闭支付时免密、快付等弹窗',
-      desc: '关闭支付时弹出的免密、快付等弹窗',
+      name: '通知提示-关闭支付时各类开通弹窗',
+      desc: '关闭支付时弹出的免密、快付、人脸等弹窗',
       enable: false,
       ignoreGlobalGroupMatch: true,
       actionMaximum: 1,
@@ -262,11 +262,15 @@ export default defineGkdApp({
         {
           key: 0,
           fastQuery: true,
-          matches: ['[text*="《"&&text*="协议"]', '[text*="暂不"]'],
+          matches: [
+            '[text*="《"&&text*="协议"]',
+            '[text*="暂不"||desc="关闭"]',
+          ],
           snapshotUrls: [
             'https://i.gkd.li/i/19918601',
             'https://i.gkd.li/i/20033983',
             'https://i.gkd.li/i/20265504',
+            'https://i.gkd.li/i/20709175',
           ],
         },
         {
