@@ -141,7 +141,7 @@ export default defineGkdApp({
         {
           key: 0,
           matches:
-            '@[text="×"||(name*=".Image"&&clickable=true)][index!=0][visibleToUser=true][!(vid="medal")] <n [!(vid!=null)] > [name!*="WebView"][(text$="热度"||text$="广告"||text="创作者小助手"||(text^="知乎"&&text!*="·"))||(text="查看详情")][text.length>2&&text.length<20]',
+            '@[text="×"||(name*=".Image"&&id=null)][index!=0][visibleToUser=true][!(vid="medal")] <n [!(vid!=null)] > [name!*="WebView"][(text$="热度"||text$="广告"||text="创作者小助手"||(text^="知乎"&&text!*="·"))||(text="查看详情")][text.length>2&&text.length<20]',
           snapshotUrls: [
             'https://i.gkd.li/import/14178980',
             'https://i.gkd.li/import/14206949',
@@ -156,6 +156,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/15024288',
             'https://i.gkd.li/i/15282584',
             'https://i.gkd.li/i/15285359',
+            'https://i.gkd.li/i/20648888',
           ],
           excludeSnapshotUrls: ['https://i.gkd.li/i/17088832'],
         },
@@ -165,21 +166,20 @@ export default defineGkdApp({
       key: 15,
       name: '局部广告-悬浮广告',
       desc: '关闭首页、发现页等位置的悬浮广告和关注提示',
-      fastQuery: true,
-      activityIds: [
-        'com.zhihu.android.app.ui.activity.MainActivity',
-        'com.zhihu.android.feature.short_container_feature.ui.ShortContainerHostActivity',
-      ],
       rules: [
         {
           key: 0,
           name: '发现页面-右侧年卡折扣悬浮窗',
+          fastQuery: true,
+          activityIds: ['com.zhihu.android.app.ui.activity.MainActivity'],
           matches: ['[vid="activity_img"]', '[vid="activity_close"]'],
           snapshotUrls: 'https://i.gkd.li/import/14296251',
         },
         {
           key: 1,
           name: '首页-右侧悬浮窗广告',
+          activityIds: ['com.zhihu.android.app.ui.activity.MainActivity'],
+          fastQuery: true,
           matches:
             '@ImageView[clickable=true][visibleToUser=true] + * >2 [text="广告"]',
           snapshotUrls: 'https://i.gkd.li/i/14635636',
@@ -187,6 +187,10 @@ export default defineGkdApp({
         {
           key: 2,
           name: '回答页-底部关注悬浮窗',
+          activityIds: [
+            'com.zhihu.android.feature.short_container_feature.ui.ShortContainerHostActivity',
+          ],
+          fastQuery: true,
           matches: '[vid="close_img"]',
           snapshotUrls: 'https://i.gkd.li/i/14970008',
         },
@@ -195,9 +199,18 @@ export default defineGkdApp({
           name: '回答页-底部关注悬浮窗-2',
           activityIds:
             'com.zhihu.android.mix.activity.ContentMixProfileActivity',
+          fastQuery: true,
           matches:
             'View[childCount=3] > @View[clickable=true][childCount=1][text=""] > Image[childCount=0][text=""] <<n [vid="view_content"]',
           snapshotUrls: 'https://i.gkd.li/i/16422471',
+        },
+        {
+          key: 4,
+          name: '搜索栏上方广告',
+          activityIds: 'com.zhihu.android.app.ui.activity.MainActivity',
+          fastQuery: true,
+          matches: ['[vid="ad_container"]', '[vid="img_close_focus"]'],
+          snapshotUrls: 'https://i.gkd.li/i/14156887',
         },
       ],
     },
@@ -235,17 +248,28 @@ export default defineGkdApp({
     },
     {
       key: 18,
-      name: '评价提示-评论区氛围评价卡片',
+      name: '局部广告-评论区卡片广告',
       desc: '点击关闭',
       enable: false,
       actionMaximum: 1,
       rules: [
         {
+          key: 0,
+          name: '氛围评价卡片',
           fastQuery: true,
           activityIds: '.comment.ui.activity.CommentListActivity',
           matches:
             '@ViewGroup[clickable=true] - [text^="你对该内容下的评论氛围是否满意"][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/20473238',
+        },
+        {
+          key: 1,
+          name: '评论区广告',
+          fastQuery: true,
+          activityIds: '.comment.ui.activity.CommentListActivity',
+          matches:
+            '@ViewGroup[childCount=1][clickable=true][visibleToUser=true][getChild(0).name$="SvgView"] - [text="广告"]',
+          snapshotUrls: 'https://i.gkd.li/i/20711018',
         },
       ],
     },
