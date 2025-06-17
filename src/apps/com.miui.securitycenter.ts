@@ -2,11 +2,11 @@ import { defineGkdApp } from '@gkd-kit/define';
 
 export default defineGkdApp({
   id: 'com.miui.securitycenter',
-  name: '小米手机管家',
+  name: '安全服务/小米手机管家',
   groups: [
     {
       key: 10,
-      name: '功能类-自动继续安装',
+      name: '功能类-USB安装时自动继续安装',
       desc: '点击USB安装应用时的【继续安装】按钮',
       enable: false,
       fastQuery: true,
