@@ -41,7 +41,7 @@ export default defineGkdApp({
           key: 0,
           name: '点击广告卡片右侧菜单图标',
           matches:
-            '[((desc*="广告"||desc*="来自淘宝")&&desc*="查看")||desc$=",,轻点两下查看详情"||(desc^="【有奖调研】"&&desc.length=22)][visibleToUser=true] >(2,3,4) @ImageView[visibleToUser=true] < [vid^="more"][visibleToUser=true]',
+            '[(((desc*="广告"||desc*="来自淘宝")&&desc*="查看")||desc$=",,轻点两下查看详情"||(desc^="【有奖调研】"&&desc.length=22))||(id*="/ad_")][visibleToUser=true] >(2,3,4) @ImageView[visibleToUser=true] < [vid^="more" || id="tv.danmaku.bili.adbiz:id/more"][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/import/12642260', // n = 2
             'https://i.gkd.li/import/12705266', // n = 3
@@ -58,6 +58,8 @@ export default defineGkdApp({
             'https://i.gkd.li/i/19777632',
             'https://i.gkd.li/i/19919163',
             'https://i.gkd.li/i/19919168',
+            'https://i.gkd.li/i/20739380',
+            'https://i.gkd.li/i/20744764',
           ],
         },
         {
@@ -74,7 +76,7 @@ export default defineGkdApp({
           fastQuery: true,
           name: '点击[不感兴趣]',
           matches:
-            '@[clickable=true] > [text="这个内容" || text="不感兴趣" || text="相似内容过多" || text="up主不感兴趣" || text="此类内容过多" || text="对该up的直播不感兴趣"]',
+            '@[clickable=true] > [text="这个内容" || text="不感兴趣" || text="相似内容过多" || text="up主不感兴趣" || text="此类内容过多" || text="对该up的直播不感兴趣"|| text="我不想看"]',
           snapshotUrls: [
             'https://i.gkd.li/import/13495649',
             'https://i.gkd.li/i/13742257',
@@ -98,6 +100,10 @@ export default defineGkdApp({
             'https://i.gkd.li/i/19777674',
             'https://i.gkd.li/i/19919165',
             'https://i.gkd.li/i/19919169',
+            'https://i.gkd.li/i/20710223',
+            'https://i.gkd.li/i/20718890',
+            'https://i.gkd.li/i/20720187',
+            'https://i.gkd.li/i/20739391',
           ],
         },
         {
