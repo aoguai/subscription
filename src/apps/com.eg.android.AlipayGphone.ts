@@ -40,6 +40,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/17945065',
             'https://i.gkd.li/i/14893122',
             'https://i.gkd.li/i/19449399',
+            'https://i.gkd.li/i/20684144',
           ],
           excludeSnapshotUrls: ['https://i.gkd.li/i/19478718'],
         },
