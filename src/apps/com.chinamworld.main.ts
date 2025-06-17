@@ -8,12 +8,21 @@ export default defineGkdApp({
       key: 1,
       name: '全屏广告-我的页面弹窗广告',
       enable: false,
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules: [
         {
+          fastQuery: true,
           activityIds: 'com.ccb.start.view.startdialog.StartDialogActivity',
-          matches:
-            '[id="com.chinamworld.main:id/indicator_container_container"] + [id="com.chinamworld.main:id/close"]',
-          snapshotUrls: 'https://i.gkd.li/i/12726961',
+          matches: [
+            '[vid="tip_view_pager"][visibleToUser=true]',
+            '[vid="close"][visibleToUser=true]',
+          ],
+          snapshotUrls: [
+            'https://i.gkd.li/i/12726961',
+            'https://i.gkd.li/i/20649291',
+          ],
         },
       ],
     },
