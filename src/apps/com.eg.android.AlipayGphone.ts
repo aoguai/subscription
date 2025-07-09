@@ -248,6 +248,13 @@ export default defineGkdApp({
             '@[text*="跳过"] + [visibleToUser=true][text^="账单分期还"] <<n [id="com.alipay.mobile.nebula:id/h5_pc_container"]',
           snapshotUrls: 'https://i.gkd.li/i/18409779',
         },
+        {
+          key: 3,
+          name: '外卖红包',
+          activityIds: '.AlipayLogin',
+          matches: '[desc="推荐广告"] + * > [desc="关闭"]',
+          snapshotUrls: 'https://i.gkd.li/i/21138908',
+        },
       ],
     },
     {
