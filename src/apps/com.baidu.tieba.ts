@@ -12,10 +12,10 @@ export default defineGkdApp({
       ignoreGlobalGroupMatch: true,
       fastQuery: true,
       actionMaximum: 1,
-      resetMatch: 'app',
       rules: [
         {
           key: 0,
+          activityIds: '.pb.pb.main.PbActivity',
           matches:
             '@ImageView[clickable=true] -2 LinearLayout > [text^="打开通知"]',
           snapshotUrls: 'https://i.gkd.li/import/13536170',
