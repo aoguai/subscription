@@ -41,7 +41,7 @@ export default defineGkdApp({
           key: 0,
           name: '点击广告卡片右侧菜单图标',
           matches:
-            '[(((desc*="广告"||desc*="来自淘宝")&&desc*="查看")||desc$=",,轻点两下查看详情"||(desc^="【有奖调研】"&&desc.length=22))||(id*="/ad_")][visibleToUser=true] >(2,3,4) @ImageView[visibleToUser=true] < [vid^="more" || id="tv.danmaku.bili.adbiz:id/more"][visibleToUser=true]',
+            '[(((desc*="广告"||desc*="来自淘宝")&&desc*="查看")||desc$=",,轻点两下查看详情"||(desc^="【有奖调研】"&&desc.length=22))||(id*="/ad_")][visibleToUser=true] >(2,3,4) @ImageView[visibleToUser=true] < [vid^="more" || id^="tv.danmaku.bili.adbiz:id/more"][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/import/12642260', // n = 2
             'https://i.gkd.li/import/12705266', // n = 3
@@ -60,6 +60,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/19919168',
             'https://i.gkd.li/i/20739380',
             'https://i.gkd.li/i/20744764',
+            'https://i.gkd.li/i/20794380',
           ],
         },
         {
