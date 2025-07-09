@@ -62,24 +62,33 @@ export default defineGkdGlobalGroups([
       {
         key: 0,
         excludeMatches: [
-          '[text*="搜索"][text.length<6][visibleToUser=true][height>0&&width>0][top>0&&left>0]',
+          '([text*="搜索" || text^="猜你想" || text^="猜你喜欢" || text="历史记录" || text$="在搜"][text.length>3 && text.length<7][visibleToUser=true][height>0&&width>0][top>0&&left>0]) || ([text="设置" || text="退款详情" || text="Submit"][visibleToUser=true][height>0&&width>0][top>0&&left>0])',
           '[id~="(?is).*search.*"] < * > [(id~="(?is).*clear.*")||(id~="(?is).*close.*")||(id~="(?is).*back.*")||(text~="(?is).*取消.*")][height>0&&width>0][top>0&&left>0]',
           '[name!$=".EditText"] < * > [(id~="(?is).*clear.*")||(id~="(?is).*close.*")||(id~="(?is).*back.*")||(text~="(?is).*取消.*")][height>0&&width>0][top>0&&left>0]',
-        ], // 防止在应用的搜索页面误触
+        ],
         matches: `${COMMON_PREFIX}[(text.length<=6&&(text*="跳过"||text*="跳過"||text~="(?is).*skip.*"))||id~="(?is).*tt_splash_skip_btn"||vid~="(?is).*skip.*"||(vid~="(?is).*count.*"&&vid~="(?is).*down.*"&&!(vid~="(?is).*load.*")&&!(vid~="(?is).*hour.*")&&!(vid~="(?is).*minute.*")&&!(vid~="(?is).*timing.*")&&!(vid~="(?is).*add.*")&&!(vid~="(?is).*ead.*"))||desc*="跳过"||desc~="(?is).*skip.*"][!(text~="([01]?[0-9]|2[0-3])[:：][0-5][0-9]")][!(desc~="([01]?[0-9]|2[0-3])[:：][0-5][0-9]")]`,
+        excludeSnapshotUrls: [
+          // 避免误触
+          'https://i.gkd.li/i/17108010', // text!="帮助"
+          'https://i.gkd.li/i/18265000', // text!="取消"
+          'https://i.gkd.li/i/19580951', // text="退款详情"
+          'https://i.gkd.li/i/19952277', // text="Submit"
+          'https://i.gkd.li/i/20946730', // text="设置"
+          'https://i.gkd.li/i/20949002', // vid!~="(?is).*video.*"
+        ],
       },
       {
         key: 1,
         name: '字节SDK',
         excludeMatches: [
-          '[text*="搜索"][text.length<6][visibleToUser=true][height>0&&width>0][top>0&&left>0]',
+          '([text*="搜索" || text^="猜你想" || text^="猜你喜欢" || text="历史记录" || text$="在搜"][text.length>3 && text.length<7][visibleToUser=true][height>0&&width>0][top>0&&left>0]) || ([text="设置" || text="退款详情" || text="Submit"][visibleToUser=true][height>0&&width>0][top>0&&left>0])',
           '[id~="(?is).*search.*"] < * > [(id~="(?is).*clear.*")||(id~="(?is).*close.*")||(id~="(?is).*back.*")||(text~="(?is).*取消.*")][height>0&&width>0][top>0&&left>0]',
           '[name!$=".EditText"] < * > [(id~="(?is).*clear.*")||(id~="(?is).*close.*")||(id~="(?is).*back.*")||(text~="(?is).*取消.*")][height>0&&width>0][top>0&&left>0]',
-        ], // 防止在应用的搜索页面误触
+        ],
         action: 'clickCenter',
         anyMatches: [
-          '@View[clickable=true][childCount=0][text=null][visibleToUser=true][width<200&&height<200] +(1,2) TextView[index=parent.childCount.minus(1)][childCount=0] <n FrameLayout[childCount>2] >(7,8,9,10) [text*="第三方应用" || text*="扭动手机" || text*="点击或上滑"][visibleToUser=true]',
-          'FrameLayout[visibleToUser=true][height>0&&width>0] > FrameLayout[visibleToUser=true][height>0&&width>0][childCount>2] > @View[text=null][clickable=true][childCount=0][height>0&&width>0][visibleToUser=true][width<200&&height<200] +(1,2) TextView[index=parent.childCount.minus(1)][childCount=0][height>0&&width>0][visibleToUser=true]',
+          '@View[text=null][clickable=true][childCount=0][visibleToUser=true][width<200&&height<200] +(1,2) TextView[index=parent.childCount.minus(1)][childCount=0] <n FrameLayout[childCount>2][text=null][desc=null] >(n+6) [text*="第三方应用" || text*="扭动手机" || text*="点击或上滑" || text*="省钱好物"][visibleToUser=true]',
+          'FrameLayout > FrameLayout[childCount>2][text=null][desc=null] > @View[text=null][clickable=true][childCount=0][visibleToUser=true][width<200&&height<200] +(1,2) TextView[index=parent.childCount.minus(1)][childCount=0][visibleToUser=true]',
         ],
         snapshotUrls: [
           'https://i.gkd.li/i/19685971', // +(1,2)
