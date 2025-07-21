@@ -56,11 +56,12 @@ export default defineGkdApp({
           key: 4,
           name: '推推红包',
           matches:
-            'LinearLayout[childCount=2] > ImageView[id^="com.jd.lib.personal.feature"][index=parent.childCount.minus(1)]',
+            'LinearLayout[id=null][childCount=2] > ImageView[id^="com.jd.lib.personal.feature"] + ImageView[id^="com.jd.lib.personal.feature"][index=parent.childCount.minus(1)]',
           snapshotUrls: [
             'https://i.gkd.li/i/20532279',
             'https://i.gkd.li/i/20532280',
           ],
+          excludeSnapshotUrls: ['https://i.gkd.li/i/21343338'],
         },
       ],
     },
@@ -177,11 +178,14 @@ export default defineGkdApp({
         },
         {
           key: 2,
-          matches:
+          anyMatches: [
             'ImageView +n ViewGroup >2 [text.length>0] < ViewGroup + @ViewGroup > ImageView',
+            '@ViewGroup[index=parent.childCount.minus(1)] -2 ViewGroup[childCount=0][index=0] + ViewGroup[childCount=2] >2 [text.length>0&&text.length<=3]',
+          ],
           snapshotUrls: [
             'https://i.gkd.li/i/15047238',
             'https://i.gkd.li/i/17001455',
+            'https://i.gkd.li/i/21344132',
           ],
         },
         {
