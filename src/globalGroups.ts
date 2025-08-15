@@ -96,6 +96,23 @@ export default defineGkdGlobalGroups([
           'https://i.gkd.li/i/20262130',
         ],
       },
+      {
+        key: 2,
+        name: '互动广告SDK',
+        excludeMatches: [
+          '([text*="搜索" || text^="猜你想" || text^="猜你喜欢" || text="历史记录" || text$="在搜"][text.length>3 && text.length<7][visibleToUser=true][height>0&&width>0][top>0&&left>0]) || ([text="设置" || text="退款详情" || text="Submit"][visibleToUser=true][height>0&&width>0][top>0&&left>0])',
+          '[id~="(?is).*search.*"] < * > [(id~="(?is).*clear.*")||(id~="(?is).*close.*")||(id~="(?is).*back.*")||(text~="(?is).*取消.*")][height>0&&width>0][top>0&&left>0]',
+          '[name!$=".EditText"] < * > [(id~="(?is).*clear.*")||(id~="(?is).*close.*")||(id~="(?is).*back.*")||(text~="(?is).*取消.*")][height>0&&width>0][top>0&&left>0]',
+        ],
+        matches: [
+          '[text="广告"]',
+          '@View[clickable=true][childCount=0] - [text="互动广告"][visibleToUser=true]',
+        ],
+        snapshotUrls: [
+          'https://i.gkd.li/i/21499354',
+          'https://i.gkd.li/i/21617612',
+        ],
+      },
     ],
     apps: diabledAppIds.map((id) => ({ id, enable: false })),
   },
