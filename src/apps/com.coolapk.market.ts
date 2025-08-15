@@ -16,6 +16,7 @@ export default defineGkdApp({
         'com.coolapk.market.view.base.SimpleAlphaActivity', // 缺少快照
         'com.coolapk.market.view.node.DynamicNodePageActivity',
         'com.coolapk.market.view.feed.FeedDetailActivityV8',
+        '.view.search.SuperSearchResultActivity',
       ],
       rules: [
         {
@@ -32,6 +33,8 @@ export default defineGkdApp({
             'https://i.gkd.li/i/19004652',
             'https://i.gkd.li/i/19004663',
             'https://i.gkd.li/i/19005176',
+            'https://i.gkd.li/i/20776874',
+            'https://i.gkd.li/i/21693917',
           ],
           excludeSnapshotUrls: [
             'https://i.gkd.li/i/14996359',
@@ -54,6 +57,8 @@ export default defineGkdApp({
             'https://i.gkd.li/i/14959519',
             'https://i.gkd.li/i/14964859',
             'https://i.gkd.li/i/14549551',
+            'https://i.gkd.li/i/21693916',
+            'https://i.gkd.li/i/21693917',
           ],
         },
         {
@@ -75,6 +80,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/19643258',
             'https://i.gkd.li/i/19643262',
             'https://i.gkd.li/i/19534649',
+            'https://i.gkd.li/i/20776872',
           ],
         },
       ],
