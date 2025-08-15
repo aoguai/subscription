@@ -13,6 +13,7 @@ export default defineGkdApp({
         'com.tencent.mm.plugin.sns.ui.SnsTimeLineUI',
         'com.tencent.mm.plugin.sns.ui.improve.ImproveSnsTimelineUI',
         'com.tencent.mm.plugin.profile.ui.ContactInfoUI',
+        'com.tencent.mm.plugin.sns.ui.SnsBrowseUI',
       ],
       rules: [
         {
@@ -36,6 +37,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/16568338',
             'https://i.gkd.li/i/14647413',
             'https://i.gkd.li/i/19633571',
+            'https://i.gkd.li/i/21792635',
           ],
           excludeSnapshotUrls: [
             'https://i.gkd.li/import/14193379', // 误触，用 LinearLayout[visibleToUser=true] 排除
@@ -75,6 +77,7 @@ export default defineGkdApp({
             'https://i.gkd.li/import/13791202', // text="關閉此廣告"
             'https://i.gkd.li/i/14647839',
             'https://i.gkd.li/i/15284966',
+            'https://i.gkd.li/i/21792666',
           ],
         },
         // 情况2 - 选择关闭该广告的原因->关闭该广告
@@ -139,7 +142,7 @@ export default defineGkdApp({
           key: 1,
           name: '浏览器扫码登录',
           matches: [
-            '[text^="获取你的"||text^="取得你的"||text^="申请使用"]',
+            '[text^="获取你的"||text^="取得你的"||text^="申请使用"||text^="請求使用"]',
             '[text="允许"||text="允許"]',
           ],
           snapshotUrls: [
@@ -149,6 +152,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/15271716',
             'https://i.gkd.li/i/18809991',
             'https://i.gkd.li/i/19496823',
+            'https://i.gkd.li/i/21792855',
           ],
         },
         {
@@ -300,6 +304,7 @@ export default defineGkdApp({
           preKeys: [0],
           key: 1,
           name: '点击「关闭此广告」',
+          activityIds: [],
           excludeMatches: '[text="感谢你的反馈"][visibleToUser=true]',
           matches:
             '[text*="广告"&&text.length<5] <n View < View >n [text="关闭此广告"][visibleToUser=true]',
@@ -319,6 +324,7 @@ export default defineGkdApp({
           preKeys: [0, 1],
           key: 2,
           name: '点击「不感兴趣」',
+          activityIds: [],
           excludeMatches: '[text="感谢你的反馈"][visibleToUser=true]',
           matches:
             '[text*="广告"&&text.length<5] <<n View >n [text="与我无关"||text="不感兴趣"||text="关闭此广告"][visibleToUser=true]',
@@ -333,6 +339,7 @@ export default defineGkdApp({
           preKeys: [0, 1, 2],
           key: 10,
           name: '点击「与我无关」',
+          activityIds: [],
           action: 'clickCenter',
           matches:
             '[text*="广告"&&text.length<5] <<n View >n [text="与我无关"||text="不感兴趣"||text="关闭此广告"][visibleToUser=true]',
@@ -606,6 +613,7 @@ export default defineGkdApp({
           preKeys: 0,
           key: 1,
           name: '点击[不喜欢此类视频]',
+          activityIds: [],
           matches:
             '[desc="不喜欢此类视频"||desc="不看此类内容"||desc="不看此類內容"||desc="不看此官方賬號內容"][clickable=true]',
           snapshotUrls: [
@@ -618,11 +626,13 @@ export default defineGkdApp({
           preKeys: 1,
           key: 2,
           name: '点击[确定]',
+          activityIds: [],
           matches: '[desc="确定"||desc="確定"][clickable=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/14436190',
             'https://i.gkd.li/i/14549567',
             'https://i.gkd.li/i/21343507',
+            'https://i.gkd.li/i/21792697',
           ],
         },
       ],
@@ -667,13 +677,14 @@ export default defineGkdApp({
         {
           fastQuery: true,
           activityIds: ['.ui.LauncherUI', '.ui.chatting.ChattingUI'],
-          matches: '@[clickable=true] >(1,2) [text$="文字"&&text.length<=4]',
+          matches: '@[clickable=true] >(1,2) [text="转文字"]',
           snapshotUrls: [
             'https://i.gkd.li/i/14497389',
             'https://i.gkd.li/i/14538322',
             'https://i.gkd.li/i/19774491',
             'https://i.gkd.li/i/19792042',
           ],
+          excludeSnapshotUrls: ['https://i.gkd.li/i/21792783'],
         },
       ],
     },
