@@ -94,11 +94,13 @@ export default defineGkdApp({
             'com.baidu.tieba.tblauncher.MainTabActivity',
           ],
           matches:
-            '@FrameLayout[clickable=true][visibleToUser=true] <4 RelativeLayout + FrameLayout >7 [text="广告"]',
+            '@FrameLayout[clickable=true][visibleToUser=true] <4 RelativeLayout + FrameLayout >(7,8,9) [text="广告"]',
           snapshotUrls: [
             'https://i.gkd.li/i/16595301',
             'https://i.gkd.li/i/16596195',
             'https://i.gkd.li/i/16596775',
+            'https://i.gkd.li/i/21524232',
+            'https://i.gkd.li/i/21529443',
           ],
         },
         {
