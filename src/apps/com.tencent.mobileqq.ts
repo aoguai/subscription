@@ -654,8 +654,12 @@ export default defineGkdApp({
           key: 1,
           name: '个性装扮弹窗',
           activityIds: 'cooperation.vip.ad.UserLeadingActivity',
-          matches: '[desc="关闭"][visibleToUser=true]', // 右侧关闭按钮无效
+          matches: [
+            '[desc="关闭浮层"]',
+            '[desc="关闭"][visibleToUser=true]', // 右侧关闭按钮无效
+          ],
           snapshotUrls: 'https://i.gkd.li/i/15137056',
+          excludeSnapshotUrls: 'https://i.gkd.li/i/21792204',
         },
       ],
     },
