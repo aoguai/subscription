@@ -44,7 +44,7 @@
     "@types/node": "22.17.2",
     "eslint": "9.33.0",
     "eslint-config-prettier": "10.1.8",
-    "eslint-plugin-unused-imports": "4.1.4",
+    "eslint-plugin-unused-imports": "4.2.0",
     "json5": "2.2.3",
     "lint-staged": "16.1.5",
     "prettier": "3.6.2",
