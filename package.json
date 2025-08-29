@@ -54,7 +54,7 @@
     "typescript-eslint": "8.41.0"
   },
   "volta": {
-    "node": "22.18.0",
+    "node": "22.19.0",
     "pnpm": "10.15.0"
   },
   "packageManager": "pnpm@10.15.0",
