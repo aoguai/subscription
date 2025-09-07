@@ -46,7 +46,7 @@
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-unused-imports": "4.2.0",
     "json5": "2.2.3",
-    "lint-staged": "16.1.5",
+    "lint-staged": "16.1.6",
     "prettier": "3.6.2",
     "simple-git-hooks": "2.13.1",
     "tsx": "4.20.5",
