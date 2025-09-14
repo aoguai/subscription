@@ -21,7 +21,7 @@ export default defineGkdApp({
       snapshotUrls: 'https://i.gkd.li/import/13538351',
     },
     {
-      key: 1,
+      key: 2,
       name: '通知提示-开启个性化',
       desc: '关闭开启个性化提示',
       ignoreGlobalGroupMatch: true,
