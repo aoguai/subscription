@@ -168,11 +168,12 @@ export default defineGkdApp({
         {
           key: 0,
           matches:
-            'ImageView < FrameLayout - FrameLayout > ImageView[desc="关闭"]',
+            'ImageView < FrameLayout[index=0] < ViewGroup[childCount=3] > FrameLayout[index=parent.childCount.minus(1)||index=parent.childCount.minus(2)][childCount=1] > ImageView[desc="关闭"]',
           snapshotUrls: [
             'https://i.gkd.li/import/13258973',
             'https://i.gkd.li/import/13258980',
             'https://i.gkd.li/import/13258981',
+            'https://i.gkd.li/i/22319329',
           ],
         },
         {
