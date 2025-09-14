@@ -21,6 +21,18 @@ export default defineGkdApp({
       snapshotUrls: 'https://i.gkd.li/import/13538351',
     },
     {
+      key: 1,
+      name: '通知提示-开启个性化',
+      desc: '关闭开启个性化提示',
+      ignoreGlobalGroupMatch: true,
+      enable: false,
+      resetMatch: 'app',
+      activityIds: ['.maincontainer.activity.MainActivity'],
+      rules:
+        '[text*="开启个性化"] +n View[childCount=1] > Image[text.length>20]',
+      snapshotUrls: 'https://i.gkd.li/i/22319225',
+    },
+    {
       key: 4,
       name: '全屏广告-红包弹窗',
       desc: '关闭首页红包弹窗广告',
