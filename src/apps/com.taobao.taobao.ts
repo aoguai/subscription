@@ -45,7 +45,10 @@ export default defineGkdApp({
           ],
           fastQuery: true,
           matches: '@[desc="关闭按钮"] - [vid="poplayer_native_state_id"]',
-          snapshotUrls: 'https://i.gkd.li/import/14060521',
+          snapshotUrls: [
+            'https://i.gkd.li/import/14060521',
+            'https://i.gkd.li/i/22319206',
+          ],
         },
         {
           key: 3,
@@ -129,6 +132,13 @@ export default defineGkdApp({
             'https://i.gkd.li/i/18587159',
           ],
         },
+        {
+          key: 10,
+          activityIds: 'com.taobao.tao.welcome.Welcome',
+          matches:
+            '[text*="淘宝闪购"] <n View + View[childCount=1] > Image[text.length>20]',
+          snapshotUrls: ['https://i.gkd.li/i/22319191'],
+        },
       ],
     },
     {
@@ -139,13 +149,12 @@ export default defineGkdApp({
         {
           key: 0,
           name: '商品详情右侧悬浮广告',
+          fastQuery: true,
           activityIds: 'com.taobao.browser.BrowserActivity',
           matches:
-            'View[childCount=2] > @Image[!(text="")][clickable=true] + View[childCount>1]',
-          snapshotUrls: [
-            'https://i.gkd.li/import/13521702',
-            'https://i.gkd.li/import/14236602', // 防止误触
-          ],
+            '@Image[childCount=0][clickable=true][text!=null] < View <2 View < WebView < o0 <2 WebView < [id="android:id/content"]',
+          snapshotUrls: ['https://i.gkd.li/import/13521702'],
+          excludeSnapshotUrls: 'https://i.gkd.li/import/14236602',
         },
         {
           key: 1,
@@ -166,6 +175,14 @@ export default defineGkdApp({
           matches: 'View[desc.length>0] +2n FrameLayout > TextView[text="퀺"]',
           snapshotUrls: ['https://i.gkd.li/import/13197877'],
         },
+        {
+          key: 3,
+          fastQuery: true,
+          activityIds: 'com.taobao.themis.container.app.TMSActivity',
+          matches:
+            '@Image[childCount=0][clickable=true][text!=null] <2 View < View < View <9 View < WebView < m0 <2 WebView < RelativeLayout < [vid="tms_tab_content_view"]',
+          snapshotUrls: 'https://i.gkd.li/i/22291107',
+        },
       ],
     },
     {
@@ -184,7 +201,7 @@ export default defineGkdApp({
         'com.taobao.tao.TBMainActivity',
       ],
       rules:
-        '@Image[visibleToUser=true][text!=null] +2 View > [visibleToUser=true][text="消息通知" || text="发货通知"] <<n [vid="poplayer_inner_view"]',
+        '@Image[childCount=0][visibleToUser=true][text!=null] <n View >(1,2) [visibleToUser=true][text*="消息通知" || text*="系统通知"] <<n [vid="poplayer_inner_view"]',
       snapshotUrls: [
         'https://i.gkd.li/import/13197594', //com.taobao.tao.welcome.Welcome
         'https://i.gkd.li/import/13222946', //com.taobao.android.order.bundle.TBOrderDetailActivity
@@ -193,6 +210,7 @@ export default defineGkdApp({
         'https://i.gkd.li/import/13455424', //com.taobao.tao.TBMainActivity
         'https://i.gkd.li/i/15104645',
         'https://i.gkd.li/i/18407606',
+        'https://i.gkd.li/i/21789921',
       ],
     },
     {
