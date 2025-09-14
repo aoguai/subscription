@@ -61,7 +61,7 @@ export default defineGkdApp({
         'com.google.android.apps.youtube.app.watchwhile.WatchWhileActivity',
       ],
       rules:
-        '@[desc="不用了，谢谢" || desc="关闭" || desc="Close" || desc="No thanks"][visibleToUser=true] <<n [vid="bottom_ui_container" || vid="custom"]',
+        '[getChild(0).getChild(0).desc!="Image attachment"] + @[desc="不用了，谢谢" || desc="关闭" || desc="Close" || desc="No thanks"][visibleToUser=true] <<n [vid="bottom_ui_container" || vid="custom"]',
       snapshotUrls: [
         'https://i.gkd.li/import/12877357',
         'https://i.gkd.li/i/13797512',
@@ -69,6 +69,7 @@ export default defineGkdApp({
         'https://i.gkd.li/i/18549944',
         'https://i.gkd.li/i/19578085',
       ],
+      excludeSnapshotUrls: 'https://i.gkd.li/i/21978683',
     },
     {
       key: 4,
