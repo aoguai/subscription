@@ -51,10 +51,8 @@ export default defineGkdApp({
           name: '【欢迎】弹窗',
           matches:
             'ViewGroup[childCount=6] >4 ViewGroup[childCount=5] > @ImageView[clickable=true] + View[text!=null] <<n [vid="fragment_container"]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/14800704',
-            'https://i.gkd.li/i/17079025', // add @ImageView[clickable=true]避免在此误触
-          ],
+          snapshotUrls: ['https://i.gkd.li/i/14800704'],
+          excludeSnapshotUrls: 'https://i.gkd.li/i/17079025',
         },
         {
           key: 1,
@@ -68,6 +66,13 @@ export default defineGkdApp({
           matches:
             '@ImageView < [desc="关闭"][clickable=true] <n * > * >n View[text="立即领取"]',
           snapshotUrls: ['https://i.gkd.li/import/12642857'],
+        },
+        {
+          key: 3,
+          fastQuery: true,
+          matches:
+            '@ViewGroup[clickable=true] > View[visibleToUser=true][text^="关闭"] <<n [vid="mapInteractiveRelativeLayout"]',
+          snapshotUrls: 'https://i.gkd.li/i/22287641',
         },
       ],
     },
