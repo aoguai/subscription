@@ -41,7 +41,7 @@
     "@gkd-kit/api": "0.7.3",
     "@gkd-kit/define": "0.0.1",
     "@gkd-kit/tools": "0.8.0",
-    "@types/node": "22.18.3",
+    "@types/node": "22.18.6",
     "eslint": "9.36.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-unused-imports": "4.2.0",
@@ -54,7 +54,7 @@
     "typescript-eslint": "8.43.0"
   },
   "volta": {
-    "node": "22.19.0",
+    "node": "22.20.0",
     "pnpm": "10.17.1"
   },
   "packageManager": "pnpm@10.17.1",
