@@ -255,6 +255,13 @@ export default defineGkdApp({
           matches: '[desc="推荐广告"] + * > [desc="关闭"]',
           snapshotUrls: 'https://i.gkd.li/i/21138908',
         },
+        {
+          key: 4,
+          activityIds:
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
+          matches: 'Image[text="关闭弹屏"]',
+          snapshotUrls: 'https://i.gkd.li/i/22531246',
+        },
       ],
     },
     {
