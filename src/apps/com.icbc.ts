@@ -19,5 +19,17 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 2,
+      name: '局部广告-右下角浮标广告',
+      rules: [
+        {
+          fastQuery: true,
+          activityIds: 'com.icbc.activity.web.ICBCWebView',
+          matches: '[vid="iv_close_task_center"]',
+          snapshotUrls: 'https://i.gkd.li/i/22616307',
+        },
+      ],
+    },
   ],
 });
