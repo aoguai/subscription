@@ -188,6 +188,17 @@ export default defineGkdApp({
             '@ImageView[childCount=0][visibleToUser=true][width<120 && height<120] < FrameLayout < FrameLayout < FrameLayout <2 FrameLayout < FrameLayout < FrameLayout < FrameLayout < [id="android:id/content"]',
           snapshotUrls: 'https://i.gkd.li/i/20745872',
         },
+        {
+          key: 4,
+          fastQuery: true,
+          matchTime: 10000,
+          actionMaximum: 1,
+          resetMatch: 'app',
+          activityIds: '.activity.AppStarterActivity',
+          matches:
+            '@ViewGroup[childCount=0][clickable=true][visibleToUser=true][width<150 && height<150] < ViewGroup[childCount=1] < ViewGroup < FrameLayout < FrameLayout < [id="android:id/content"]',
+          snapshotUrls: 'https://i.gkd.li/i/22699207',
+        },
       ],
     },
     {
@@ -228,6 +239,14 @@ export default defineGkdApp({
           matches:
             '@ImageView[childCount=0][visibleToUser=true][width<120 && height<120] <3 FrameLayout[childCount=3] <2 FrameLayout < FrameLayout < FrameLayout < FrameLayout < [id="android:id/content"]',
           snapshotUrls: 'https://i.gkd.li/i/18439138',
+        },
+        {
+          key: 4,
+          fastQuery: true,
+          activityIds: '.activity.AppStarterActivity',
+          matches:
+            '@ImageView[childCount=0][visibleToUser=true][width<150 && height<150] < FrameLayout <2 FrameLayout < FrameLayout < FrameLayout < FrameLayout < FrameLayout < [id="android:id/content"]',
+          snapshotUrls: 'https://i.gkd.li/i/22699223',
         },
       ],
     },
