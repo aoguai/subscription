@@ -175,7 +175,10 @@ export default defineGkdApp({
           snapshotUrls: [
             'https://i.gkd.li/import/12914978',
             'https://i.gkd.li/import/12914886',
+          ],
+          excludeSnapshotUrls: [
             'https://i.gkd.li/import/14229202', // childCount<=1 防误触
+            'https://i.gkd.li/i/22869121',
           ],
         },
         {
@@ -247,7 +250,10 @@ export default defineGkdApp({
         {
           key: 3,
           matches: '@[desc="关闭"] - * > [text="QQ测试版"]',
-          snapshotUrls: 'https://i.gkd.li/i/13526551',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13526551',
+            'https://i.gkd.li/i/22455760',
+          ],
         },
       ],
     },
@@ -338,19 +344,25 @@ export default defineGkdApp({
             'https://i.gkd.li/i/15884520',
             'https://i.gkd.li/i/20737651',
             'https://i.gkd.li/i/22319172',
+            'https://i.gkd.li/i/20737721',
           ],
         },
         {
           key: 2,
-          name: '点击同意',
+          name: 'QQ 互联登录确认',
           activityIds: [
             'com.tencent.open.agent.PublicFragmentActivityForOpenSDK',
+            'com.tencent.open.agent.QuickLoginAuthorityActivity',
           ],
           matches: 'Button[text="同意"][clickable=true][visibleToUser=true]',
           excludeMatches: [
             '[text="群通知"]', //  群消息通知误触
           ],
-          snapshotUrls: 'https://i.gkd.li/i/14752498',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14752498',
+            'https://i.gkd.li/i/20737675',
+            'https://i.gkd.li/i/22631619',
+          ],
         },
         {
           preKeys: [2],
@@ -364,6 +376,7 @@ export default defineGkdApp({
           snapshotUrls: [
             'https://i.gkd.li/i/14752519',
             'https://i.gkd.li/i/22319176',
+            'https://i.gkd.li/i/20737673',
           ],
         },
       ],
