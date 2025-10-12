@@ -199,10 +199,11 @@ export default defineGkdApp({
         },
         {
           preKeys: [1],
-          matches: '@[clickable=true] > [text="不感兴趣"]',
+          matches: '@[clickable=true] > [text$="不感兴趣"]',
           snapshotUrls: [
             'https://i.gkd.li/i/17269055',
             'https://i.gkd.li/i/17964356',
+            'https://i.gkd.li/i/22657666', // 直播
           ],
         },
       ],
