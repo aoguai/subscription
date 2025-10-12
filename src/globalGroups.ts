@@ -62,7 +62,7 @@ export default defineGkdGlobalGroups([
       {
         key: 0,
         excludeMatches: [
-          '([text*="搜索" || text^="猜你想" || text^="猜你喜欢" || text="历史记录" || text$="在搜"][text.length>3 && text.length<7][visibleToUser=true][height>0&&width>0][top>0&&left>0]) || ([text="设置" || text="退款详情" || text="Submit"][visibleToUser=true][height>0&&width>0][top>0&&left>0])',
+          '([text*="搜索" || text^="猜你想" || text^="猜你喜欢" || text="历史记录" || text$="在搜" || text*="登录"][text.length>3 && text.length<7][visibleToUser=true][height>0&&width>0][top>0&&left>0]) || ([text="设置" || text="退款详情" || text="Submit" || text*="阅读并同意"][visibleToUser=true][height>0&&width>0][top>0&&left>0])',
           '[id~="(?is).*search.*"] < * > [(id~="(?is).*clear.*")||(id~="(?is).*close.*")||(id~="(?is).*back.*")||(text~="(?is).*取消.*")][height>0&&width>0][top>0&&left>0]',
           '[name!$=".EditText"] < * > [(id~="(?is).*clear.*")||(id~="(?is).*close.*")||(id~="(?is).*back.*")||(text~="(?is).*取消.*")][height>0&&width>0][top>0&&left>0]',
         ],
@@ -75,6 +75,7 @@ export default defineGkdGlobalGroups([
           'https://i.gkd.li/i/19952277', // text="Submit"
           'https://i.gkd.li/i/20946730', // text="设置"
           'https://i.gkd.li/i/20949002', // vid!~="(?is).*video.*"
+          'https://i.gkd.li/i/22634992', // text*="登录"
         ],
       },
       {
