@@ -71,6 +71,14 @@ export default defineGkdApp({
           matches: '[vid="ksad_auto_close_btn"]',
           snapshotUrls: ['https://i.gkd.li/i/18807624'],
         },
+        {
+          key: 8,
+          activityIds:
+            'com.bytedance.sdk.openadsdk.core.component.reward.activity.TTFullScreenVideoActivity',
+          matches:
+            '@Image[childCount=0][text=""] < View[childCount=1] < View[childCount=1] - View[childCount=1] > [text="反馈"][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/22863858',
+        },
       ],
     },
   ],
