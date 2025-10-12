@@ -130,12 +130,15 @@ export default defineGkdApp({
         {
           key: 0,
           name: 'PC 微信扫码登录',
-          matches:
-            'TextView[text="取消登录"||text="取消登入"] - Button[text="登录"||text="登入"]',
+          matches: [
+            '[text="登录 Windows 微信" || text="登入 微信 for Windows" || text^="Log in to Weixin for"][visibleToUser=true]',
+            '[text="登录" || text="登入" || text="Log In"][visibleToUser=true]',
+          ],
           snapshotUrls: [
             'https://i.gkd.li/import/13522625', // activityIds: 'com.tencent.mm.plugin.webwx.ui.ExtDeviceWXLoginUI'
             'https://i.gkd.li/import/13522577', // activityIds: 'com.tencent.mm.ui.LauncherUI'
             'https://i.gkd.li/i/19399694',
+            'https://i.gkd.li/i/22356438',
           ],
         },
         {
