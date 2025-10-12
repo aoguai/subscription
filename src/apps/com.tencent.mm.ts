@@ -7,107 +7,112 @@ export default defineGkdApp({
     {
       key: 0,
       name: '分段广告-朋友圈广告',
-      desc: '点击广告卡片右上角,直接关闭/出现菜单,确认关闭',
+      desc: '点击卡片广告右上角,直接关闭/出现菜单,确认关闭',
       enable: false,
       activityIds: [
-        'com.tencent.mm.plugin.sns.ui.SnsTimeLineUI',
-        'com.tencent.mm.plugin.sns.ui.improve.ImproveSnsTimelineUI',
-        'com.tencent.mm.plugin.profile.ui.ContactInfoUI',
-        'com.tencent.mm.plugin.sns.ui.SnsBrowseUI',
+        '.plugin.sns.ui.SnsTimeLineUI',
+        '.plugin.sns.ui.improve.ImproveSnsTimelineUI',
+        '.plugin.profile.ui.ContactInfoUI',
       ],
       rules: [
         {
           key: 0,
-          name: '点击广告卡片右上角',
-          excludeMatches: [
-            '[text="设置备注和标签"||text="設定備註和標籤"]', // 设置备注页面
-            '[text="朋友权限"||text="朋友權限"]', // 资料页面
-            '[text="申请添加朋友"||text="申請添加朋友"||text="新增朋友"]', // 添加好友页面
+          fastQuery: true,
+          matches: [
+            '@LinearLayout[clickable=true] > [text="广告" || text="廣告" || text="Sponsored"][visibleToUser=true]',
           ],
-          matches:
-            '@LinearLayout[text.length=null&&desc=null&&clickable=true&&focusable=true][index=parent.childCount.minus(1)] <2 LinearLayout[visibleToUser=true][focusable=false] ->1 LinearLayout[visibleToUser=true][checked=false] >2 LinearLayout[visibleToUser=true][focusable=false] >(1,2) TextView[text.length!=null]',
           snapshotUrls: [
-            'https://i.gkd.li/import/12642588',
-            'https://i.gkd.li/import/12888129', // ImageView - TextView[text="广告"][id!=null][index=0]这个规则无法匹配该广告，需要删除[index=0]
-            'https://i.gkd.li/import/12907641',
-            'https://i.gkd.li/import/13000395',
-            'https://i.gkd.li/import/14164508', // TextView[text.length!=null] +1 LinearLayout[text.length=null&&clickable=true&&focusable=true]
-            'https://i.gkd.li/import/12905837', // 英文
-            'https://i.gkd.li/import/13791200', // 繁体
+            'https://i.gkd.li/i/13000395',
+            'https://i.gkd.li/i/12905837',
+            'https://i.gkd.li/i/13791200',
             'https://i.gkd.li/i/16568338',
-            'https://i.gkd.li/i/14647413',
-            'https://i.gkd.li/i/19633571',
-            'https://i.gkd.li/i/21792635',
-          ],
-          excludeSnapshotUrls: [
-            'https://i.gkd.li/import/14193379', // 误触，用 LinearLayout[visibleToUser=true] 排除
-            'https://i.gkd.li/import/14193181', // 误触，用 desc=null 排除
-            'https://i.gkd.li/i/20239268',
           ],
         },
         {
           key: 1,
           fastQuery: true,
+          actionDelay: 300,
           position: {
             left: 'width * 0.9223',
-            top: 'width * 0.0349',
+            top: 'height * 0.5',
           },
-          matches: '@LinearLayout >2 [text="广告"][visibleToUser=false]',
+          anyMatches: [
+            '@LinearLayout >2 [text="广告"][visibleToUser=false]',
+            'RecyclerView > FrameLayout[childCount=1] > RelativeLayout > FrameLayout > LinearLayout > LinearLayout > LinearLayout > @LinearLayout[childCount=2][getChild(0).getChild(0).text!=null] > LinearLayout[index=1][clickable=false][visibleToUser=false]',
+          ],
           snapshotUrls: [
             'https://i.gkd.li/i/14783802',
             'https://i.gkd.li/i/15531539',
+            'https://i.gkd.li/i/19665911',
           ],
+          excludeSnapshotUrls: 'https://i.gkd.li/i/19717709',
         },
-        // 以下是点击广告卡片右上角后出现的情况
-        // 情况1 - 选择关闭该广告的原因->直接关闭
         {
-          preKeys: [0, 1],
           key: 2,
-          name: '关闭该广告的原因-点击[直接关闭]',
-          matches: [
-            '[(name$=".LinearLayout")||((name$=".TextView")&&text.length>3)][visibleToUser=true] + [(name$=".LinearLayout")||((name$=".TextView")&&(text="直接关闭"||text~="Repetitive.*"||text="關閉此廣告"))][visibleToUser=true][clickable=true]',
-          ],
+          matches:
+            '[name$="RecyclerView"||name$="ListView"] >(1,2) RelativeLayout >3 LinearLayout > LinearLayout > LinearLayout[childCount=2] > LinearLayout[index=1][clickable=true][visibleToUser=true]',
           snapshotUrls: [
-            'https://i.gkd.li/import/12642584',
-            'https://i.gkd.li/import/14164530', // @LinearLayout[clickable=true][childCount=2] > [text="关闭该广告"]无法匹配
-            'https://i.gkd.li/import/14164548', // 选择后将减少该类推荐
-            'https://i.gkd.li/import/12663984',
-            'https://i.gkd.li/import/14164574',
-            'https://i.gkd.li/import/12905838', // text="Close the ad"
-            'https://i.gkd.li/import/13791202', // text="關閉此廣告"
-            'https://i.gkd.li/i/14647839',
-            'https://i.gkd.li/i/15284966',
-            'https://i.gkd.li/i/21792666',
+            'https://i.gkd.li/i/14647413',
+            'https://i.gkd.li/i/19633571',
           ],
         },
-        // 情况2 - 选择关闭该广告的原因->关闭该广告
+
+        // 预留key
+        // 第二段
         {
-          preKeys: [0, 1],
-          key: 3,
-          name: '选择关闭该广告的原因->关闭该广告',
-          matches:
-            'TextView[(text^="关闭"&&text$="广告")||(text^="關閉"&&text$="廣告")||text~="(?is).*Close.*"][clickable=true]',
+          preKeys: [0, 1, 2],
+          key: 25,
+          name: '点击[关闭]',
+          fastQuery: true,
+          anyMatches: [
+            '[text^="关闭" || text*="Close" || text="關閉此廣告"][clickable=true][visibleToUser=true]', //1
+            '@LinearLayout[clickable=true] > [text="关闭该广告" || text*="Close"][visibleToUser=true]', //2
+            '@LinearLayout[index=1][clickable=true] <2 * < * - [text*="广告"]', //3
+            '@[text="关闭该广告"] -2 [text^="对这条广告不感兴趣"][visibleToUser=true]', //4
+          ],
           snapshotUrls: [
-            'https://i.gkd.li/import/12907642',
-            'https://i.gkd.li/import/13926578',
+            //1
+            'https://i.gkd.li/i/13926578',
             'https://i.gkd.li/i/15531274',
-            'https://i.gkd.li/i/19633486',
             'https://i.gkd.li/i/14207480',
             'https://i.gkd.li/i/15137016',
+            'https://i.gkd.li/i/13791202',
+            //2
+            'https://i.gkd.li/i/14783820',
+            'https://i.gkd.li/i/15284966',
+            //3
+            'https://i.gkd.li/i/14647839',
+            'https://i.gkd.li/i/19666176',
+            //4
+            'https://i.gkd.li/i/19633486',
           ],
         },
-        // 情况3 - 点击[确认]关闭该广告
+
+        // 预留key
+        // 第三段
         {
-          preKeys: [2, 3],
-          key: 4,
-          name: '点击[确认]关闭该广告',
-          fastQuery: true,
-          matches: '[text="确认"||text="Close"][clickable=true]',
+          preKeys: [25],
+          key: 50,
+          name: '点击[关闭]',
+          matches: '[text*="关闭" || text="Close"][clickable=true]',
           snapshotUrls: [
-            'https://i.gkd.li/import/14164601',
-            'https://i.gkd.li/import/12905846', // text="Close"
+            'https://i.gkd.li/i/12663984',
+            'https://i.gkd.li/i/12905846',
             'https://i.gkd.li/i/14647940',
+            'https://i.gkd.li/i/14783534',
           ],
+        },
+
+        // 预留key
+        // 第四段
+        {
+          preKeys: [50],
+          key: 75,
+          name: '点击[确认]',
+          fastQuery: true,
+          matches:
+            '@[text="确认"][visibleToUser=true] -2 [text="不感兴趣原因"]',
+          snapshotUrls: 'https://i.gkd.li/i/14647940',
         },
       ],
     },
@@ -598,37 +603,60 @@ export default defineGkdApp({
       name: '分段广告-订阅号消息页面广告',
       desc: '自动点击“x”',
       enable: false,
-      activityIds:
-        'com.tencent.mm.plugin.brandservice.ui.flutter.BizFlutterTLFlutterViewActivity',
+      activityIds: [
+        '.plugin.brandservice.ui.flutter.BizFlutterTLFlutterViewActivity',
+      ],
       rules: [
         {
           key: 0,
-          name: '点击[X]',
+          name: '点击[X]-1',
+          actionDelay: 500,
           matches:
-            'View[childCount>=2] >n View[desc$="推​荐​"][childCount>=2] > ImageView[clickable=true][visibleToUser=true]',
+            'View[childCount>=2] >n View[desc$="推​荐​"][childCount>=2] > ImageView[clickable=true][visibleToUser=true][index=parent.childCount.minus(1)][width<155&&height<155]',
           snapshotUrls: [
             'https://i.gkd.li/i/14436176',
             'https://i.gkd.li/i/14392392',
             'https://i.gkd.li/i/14548701',
+            'https://i.gkd.li/i/22870358',
           ],
         },
         {
-          preKeys: 0,
           key: 1,
-          name: '点击[不喜欢此类视频]',
-          activityIds: [],
+          name: '点击[X]-2',
+          actionDelay: 500,
           matches:
-            '[desc="不喜欢此类视频"||desc="不看此类内容"||desc="不看此類內容"||desc="不看此官方賬號內容"][clickable=true]',
+            'Button[childCount>=2][desc.length>=1] >n ImageView[desc.length>=1][childCount>0] + ImageView[clickable=true][visibleToUser=true][width<155&&height<155]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/22870407',
+            'https://i.gkd.li/i/22870408',
+            'https://i.gkd.li/i/22870410',
+          ],
+        },
+        {
+          preKeys: [0, 1],
+          key: 10,
+          name: '点击[不喜欢此类视频]',
+          actionDelay: 500,
+          activityIds: [],
+          anyMatches: [
+            '[desc="不喜欢此类视频"][clickable=true]',
+            '[desc="不看此类内容"][clickable=true]',
+            '[desc="不看此類內容"][clickable=true]',
+            '[desc="不看此官方賬號內容"][clickable=true]',
+          ],
           snapshotUrls: [
             'https://i.gkd.li/i/14444654',
             'https://i.gkd.li/i/14549566',
             'https://i.gkd.li/i/21343537',
+            'https://i.gkd.li/i/22870531',
+            'https://i.gkd.li/i/22870532',
           ],
         },
         {
-          preKeys: 1,
-          key: 2,
+          preKeys: 10,
+          key: 15,
           name: '点击[确定]',
+          actionDelay: 500,
           activityIds: [],
           matches: '[desc="确定"||desc="確定"][clickable=true]',
           snapshotUrls: [
@@ -636,6 +664,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/14549567',
             'https://i.gkd.li/i/21343507',
             'https://i.gkd.li/i/21792697',
+            'https://i.gkd.li/i/22870535',
           ],
         },
       ],
