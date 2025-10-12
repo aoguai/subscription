@@ -19,11 +19,13 @@ export default defineGkdApp({
         {
           key: 0,
           fastQuery: true,
-          matches: '[vid="draw_dialog_iv_close"]',
+          matches:
+            '[vid="draw_dialog_iv_close" || vid="package_import_ad_dialog_iv_close"]',
           snapshotUrls: [
             'https://i.gkd.li/import/14162087',
             'https://i.gkd.li/import/14162238',
             'https://i.gkd.li/i/16118156',
+            'https://i.gkd.li/i/22570634',
           ],
         },
         {
@@ -50,6 +52,17 @@ export default defineGkdApp({
             'com.taobao.cainiao.logistic.ui.view.LogisticDetailActivity',
           matches: '[vid="cn_bottom_sheet_close"]',
           snapshotUrls: 'https://i.gkd.li/i/16118155',
+        },
+        {
+          key: 5,
+          fastQuery: true,
+          activityIds: '.homepage.view.activity.HomePageActivity',
+          matches:
+            '[desc="恭喜你获得" || desc="你想买的"] - @ImageView[id=null][text=null][clickable=true][visibleToUser=true][width<150&&height<150] <2 FrameLayout <2 FrameLayout < FrameLayout < [vid="fl_guide_ad_get_reward_dialog_dx_container"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/22441306',
+            'https://i.gkd.li/i/22570632',
+          ],
         },
       ],
     },
