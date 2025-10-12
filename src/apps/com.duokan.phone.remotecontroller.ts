@@ -8,10 +8,15 @@ export default defineGkdApp({
       key: 0,
       name: '局部广告-底部横幅广告',
       desc: '关闭主界面底部的横幅广告',
-      activityIds:
-        'com.xiaomi.mitv.phone.remotecontroller.HoriWidgetMainActivityV2',
-      rules:
-        'ImageView[id=`com.duokan.phone.remotecontroller:id/image_close_banner`]',
+      rules: [
+        {
+          fastQuery: true,
+          activityIds:
+            'com.xiaomi.mitv.phone.remotecontroller.HoriWidgetMainActivityV2',
+          matches: '[vid="image_close_banner"][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/22451785',
+        },
+      ],
     },
   ],
 });
