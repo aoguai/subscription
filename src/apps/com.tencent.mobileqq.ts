@@ -365,7 +365,7 @@ export default defineGkdApp({
           ],
         },
         {
-          preKeys: [2],
+          preKeys: [1, 2],
           key: 3,
           activityIds: [
             'com.tencent.open.agent.PublicFragmentActivityForOpenSDK',
@@ -377,6 +377,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/14752519',
             'https://i.gkd.li/i/22319176',
             'https://i.gkd.li/i/20737673',
+            'https://i.gkd.li/i/22870545',
           ],
         },
       ],
