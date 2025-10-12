@@ -49,7 +49,7 @@
     "lint-staged": "16.2.4",
     "prettier": "3.6.2",
     "simple-git-hooks": "2.13.1",
-    "tsx": "4.20.5",
+    "tsx": "4.20.6",
     "typescript": "5.9.3",
     "typescript-eslint": "8.46.0"
   },
