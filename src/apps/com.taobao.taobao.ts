@@ -139,6 +139,14 @@ export default defineGkdApp({
             '[text*="淘宝闪购"] <n View + View[childCount=1] > Image[text.length>20]',
           snapshotUrls: ['https://i.gkd.li/i/22319191'],
         },
+        {
+          key: 11,
+          fastQuery: true,
+          activityIds: 'com.taobao.themis.container.app.TMSActivity',
+          matches:
+            '[text="规则"] +2 @View[childCount=1][clickable=true] > Image[childCount=0][text!=null] <<n [vid="tms_tab_content_view"]',
+          snapshotUrls: 'https://i.gkd.li/i/22308745',
+        },
       ],
     },
     {
