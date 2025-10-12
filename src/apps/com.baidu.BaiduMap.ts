@@ -6,27 +6,51 @@ export default defineGkdApp({
   groups: [
     {
       key: 1,
-      name: '局部广告-地图上方黄页横幅',
-      fastQuery: true,
-      activityIds: [
-        'com.baidu.baidumaps.MapsActivity',
-        'com.android.packageinstaller.permission.ui.GrantPermissionsActivity',
-        'com.lbe.security.ui.CountdownDialogActivity',
+      name: '局部广告-各类局部广告',
+      rules: [
+        {
+          key: 1,
+          name: '地图上方黄页横幅',
+          fastQuery: true,
+          activityIds: [
+            'com.baidu.baidumaps.MapsActivity',
+            'com.android.packageinstaller.permission.ui.GrantPermissionsActivity',
+            'com.lbe.security.ui.CountdownDialogActivity',
+          ],
+          matches: 'ImageView[id="com.baidu.BaiduMap:id/yellow_banner_close"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/12642301',
+            'https://i.gkd.li/i/12801465',
+            'https://i.gkd.li/i/12909281',
+          ],
+        },
+        {
+          key: 2,
+          name: '局部广告-打车界面右侧悬浮球',
+          fastQuery: true,
+          activityIds: 'com.baidu.baidumaps.MapsActivity',
+          matches:
+            'RelativeLayout[id="com.baidu.BaiduMap:id/rl_close_content"]',
+          snapshotUrls: 'https://i.gkd.li/i/12642307',
+        },
+        {
+          key: 3,
+          name: '路线广告-1',
+          fastQuery: true,
+          activityIds: 'com.baidu.baidumaps.MapsActivity',
+          matches: '[vid="banner_ad_close_icon"][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/22656085',
+        },
+        {
+          key: 4,
+          name: '路线广告-2',
+          fastQuery: true,
+          activityIds: 'com.baidu.baidumaps.MapsActivity',
+          matches:
+            'ImageView[childCount=0] < @ViewGroup[childCount=1][clickable=true][visibleToUser=true] + ViewGroup > [text="广告"]',
+          snapshotUrls: 'https://i.gkd.li/i/22616267',
+        },
       ],
-      rules: 'ImageView[id="com.baidu.BaiduMap:id/yellow_banner_close"]',
-      snapshotUrls: [
-        'https://i.gkd.li/i/12642301',
-        'https://i.gkd.li/i/12801465',
-        'https://i.gkd.li/i/12909281',
-      ],
-    },
-    {
-      key: 2,
-      name: '局部广告-打车界面右侧悬浮球',
-      fastQuery: true,
-      activityIds: 'com.baidu.baidumaps.MapsActivity',
-      rules: 'RelativeLayout[id="com.baidu.BaiduMap:id/rl_close_content"]',
-      snapshotUrls: 'https://i.gkd.li/i/12642307',
     },
     {
       key: 3,
@@ -63,6 +87,13 @@ export default defineGkdApp({
             'https://i.gkd.li/i/12909300',
             'https://i.gkd.li/i/12930699',
           ],
+        },
+        {
+          key: 3,
+          fastQuery: true,
+          activityIds: 'com.baidu.baidumaps.MapsActivity',
+          matches: '[vid="img_close"][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/22616256',
         },
       ],
     },
