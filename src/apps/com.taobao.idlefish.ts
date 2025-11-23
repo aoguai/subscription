@@ -34,15 +34,31 @@ export default defineGkdApp({
     },
     {
       key: 4,
-      name: '全屏广告-红包弹窗',
-      desc: '关闭首页红包弹窗广告',
+      name: '全屏广告',
+      desc: '关闭首页各种全屏弹窗广告',
       enable: false,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      activityIds: 'com.taobao.idlefish.maincontainer.activity.MainActivity',
-      rules:
-        'WebView[text="Rax App"] > [id="root"] >6 View[index=2][clickable=true]',
-      snapshotUrls: 'https://i.gkd.li/i/14551046',
+      rules: [
+        {
+          key: 0,
+          name: '红包弹窗',
+          actionMaximum: 1,
+          resetMatch: 'app',
+          activityIds:
+            'com.taobao.idlefish.maincontainer.activity.MainActivity',
+          matches:
+            'WebView[text="Rax App"] > [id="root"] >6 View[index=2][clickable=true]',
+          snapshotUrls: ['https://i.gkd.li/i/14551046'],
+        },
+        {
+          key: 1,
+          name: '夜市弹窗',
+          actionMaximum: 1,
+          resetMatch: 'app',
+          activityIds: '.maincontainer.activity.MainActivity',
+          matches: 'WebView[text="夜市氛围弹框"] > [id="root"] >3 TextView',
+          snapshotUrls: ['https://i.gkd.li/i/23694103'],
+        },
+      ],
     },
     {
       key: 5,
