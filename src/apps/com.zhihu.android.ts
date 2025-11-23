@@ -92,12 +92,13 @@ export default defineGkdApp({
             '.app.ui.activity.MainActivity',
           ],
           matches:
-            '@[clickable=true] >(1,3) [text$="不感兴趣" || text^="屏蔽作者"||text$="内容重复"]',
+            '@[clickable=true] >(1,3) [text$="不感兴趣" || text^="屏蔽作者"||text$="内容重复"||text="不喜欢该内容"]',
           snapshotUrls: [
             'https://i.gkd.li/i/13849689',
             'https://i.gkd.li/i/17237940',
             'https://i.gkd.li/i/17268849',
             'https://i.gkd.li/i/18807610',
+            'https://i.gkd.li/i/23431871',
           ],
         },
       ],
