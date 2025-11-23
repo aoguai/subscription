@@ -64,6 +64,13 @@ export default defineGkdApp({
           matches: '[vid="rl_ad_root"] > [vid="iv_close"][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/20414230',
         },
+        {
+          key: 3,
+          name: '下载界面下方广告',
+          activityIds: '.ui.transfer.TransferListTabActivity',
+          matches: '[vid="close_singkil_tip_layout"][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/23694176',
+        },
       ],
     },
     {
