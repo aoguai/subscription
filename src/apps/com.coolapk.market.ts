@@ -48,7 +48,10 @@ export default defineGkdApp({
           preKeys: [1],
           key: 2,
           name: '点击[不感兴趣]/[关闭]',
-          matches: '@[text="不感兴趣" || text="关闭"] <n * > [text*="广告"]',
+          anyMatches: [
+            '@[text="不感兴趣" || text="关闭"] <n * > [text*="广告"]',
+            '@[clickable=true] >(1,2) [text="不感兴趣"][visibleToUser=true]',
+          ],
           snapshotUrls: [
             'https://i.gkd.li/import/12707509',
             'https://i.gkd.li/import/12642132',
@@ -58,7 +61,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/14964859',
             'https://i.gkd.li/i/14549551',
             'https://i.gkd.li/i/21693916',
-            'https://i.gkd.li/i/21693917',
+            'https://i.gkd.li/i/23046625',
           ],
         },
         {
