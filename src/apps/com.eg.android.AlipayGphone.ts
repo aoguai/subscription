@@ -22,7 +22,7 @@ export default defineGkdApp({
         {
           key: 0,
           matches:
-            '@[(name$=".Image"&&text.length=0)||((text^="暂不升级"||text^="放弃升级")||text="关闭")][visibleToUser=true][desc.length=null] <<n * <n * > * >n [((text^="同意")&&((text*="协议并"||text*="升级并")))&&(text$="确认交易"||text$="升级"||text$="开通"||text$="刷脸验证"||text$="付款")||text="确认"||text="立即领取"]',
+            '@[(name$=".Image"&&text.length=0)||((text^="暂不升级"||text^="放弃升级")||text="关闭")][visibleToUser=true][desc.length=null] <<n * <n * > * >n [((text^="同意")&&((text*="协议并"||text*="升级并")))&&(text$="确认交易"||text$="升级"||text$="开通"||text*="刷脸"||text$="付款")||text="确认"||text="立即领取"||text="立即开通"]',
           snapshotUrls: [
             'https://i.gkd.li/import/12737055', //com.alipay.mobile.nebulax.integration.mpaas.activity.NebulaActivity$Main
             'https://i.gkd.li/import/13915022',
@@ -41,6 +41,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/14893122',
             'https://i.gkd.li/i/19449399',
             'https://i.gkd.li/i/20684144',
+            'https://i.gkd.li/i/23455533',
           ],
           excludeSnapshotUrls: ['https://i.gkd.li/i/19478718'],
         },
@@ -66,11 +67,14 @@ export default defineGkdApp({
         },
         {
           key: 1,
-          matches:
-            '[text="版本更新"||text^="Version"] - [id="com.alipay.mobile.antui:id/btn_close"]',
+          matches: [
+            '[text="版本更新" || text^="Version"]',
+            '[id="com.alipay.mobile.antui:id/btn_close" || id="com.alipay.mobile.accountauthbiz:id/close_dialog_button"]',
+          ],
           snapshotUrls: [
             'https://i.gkd.li/i/13490805',
             'https://i.gkd.li/i/13580594',
+            'https://i.gkd.li/i/23236828',
           ],
         },
         {
@@ -262,6 +266,19 @@ export default defineGkdApp({
           matches: 'Image[text="关闭弹屏"]',
           snapshotUrls: 'https://i.gkd.li/i/22531246',
         },
+        {
+          key: 5,
+          name: '小组件弹窗',
+          activityIds:
+            'com.alipay.mobile.nebulax.integration.mpaas.activity.NebulaActivity$Main',
+          matches: '[text="去添加"] + [text="近期不再提醒我"]',
+          snapshotUrls: [
+            // 弹窗中的文字和图片每隔几秒切换
+            'https://i.gkd.li/i/16427922',
+            'https://i.gkd.li/i/22984695',
+            'https://i.gkd.li/i/22984696',
+          ],
+        },
       ],
     },
     {
@@ -279,6 +296,28 @@ export default defineGkdApp({
           matches:
             '[text="支付宝授权"] >3 @[childCount=0][text="同意"] <<n [id="com.alipay.mobile.nebula:id/h5_pc_container"]',
           snapshotUrls: 'https://i.gkd.li/i/17376764',
+        },
+      ],
+    },
+    {
+      key: 18,
+      name: '功能类-无法访问时点击[返回]',
+      desc: '无法访问时点击[返回]',
+      rules: [
+        {
+          fastQuery: true,
+          activityIds: [
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverTransActivity$Main',
+          ],
+          matches: [
+            '[text="访问被拒绝" || text="人气太旺啦，请稍后再试"][visibleToUser=true]',
+            '[id="com.alipay.mobile.antui:id/back_button"][visibleToUser=true]',
+          ],
+          snapshotUrls: [
+            'https://i.gkd.li/i/23046994',
+            'https://i.gkd.li/i/23096790',
+          ],
         },
       ],
     },
