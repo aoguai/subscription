@@ -225,9 +225,15 @@ export default defineGkdApp({
         },
         {
           key: 2,
-          activityIds: '.activity.AppStarterActivity',
+          activityIds: [
+            '.activity.AppStarterActivity',
+            'com.tencent.qqmusiccommon.hybrid.HybridViewActivity',
+          ],
           matches: '[desc="关闭弹窗"][clickable=true][visibleToUser=true]',
-          snapshotUrls: 'https://i.gkd.li/i/17057551',
+          snapshotUrls: [
+            'https://i.gkd.li/i/17057551',
+            'https://i.gkd.li/i/23495699',
+          ],
         },
         {
           key: 3,
@@ -235,10 +241,16 @@ export default defineGkdApp({
           matchTime: 10000,
           actionMaximum: 1,
           resetMatch: 'app',
-          activityIds: '.activity.AppStarterActivity',
+          activityIds: [
+            '.activity.AppStarterActivity',
+            '.business.playernew.view.NewPlayerActivity',
+          ],
           matches:
-            '@ImageView[childCount=0][visibleToUser=true][width<120 && height<120] <3 FrameLayout[childCount=3] <2 FrameLayout < FrameLayout < FrameLayout < FrameLayout < [id="android:id/content"]',
-          snapshotUrls: 'https://i.gkd.li/i/18439138',
+            '@ImageView[childCount=0][visibleToUser=true][width<130 && height<130] <n FrameLayout <2 FrameLayout < FrameLayout < FrameLayout < FrameLayout < [id="android:id/content"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/18439138',
+            'https://i.gkd.li/i/22924866',
+          ],
         },
         {
           key: 4,
