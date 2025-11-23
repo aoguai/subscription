@@ -64,6 +64,11 @@ export default defineGkdApp({
             'https://i.gkd.li/i/21552836',
             'https://i.gkd.li/i/21705345',
             'https://i.gkd.li/i/21947622',
+            'https://i.gkd.li/i/18306851',
+            'https://i.gkd.li/i/19537979',
+            'https://i.gkd.li/i/23012670',
+            'https://i.gkd.li/i/23123800',
+            'https://i.gkd.li/i/23687196',
           ],
         },
         {
@@ -108,6 +113,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/20718890',
             'https://i.gkd.li/i/20720187',
             'https://i.gkd.li/i/20739391',
+            'https://i.gkd.li/i/23687208',
           ],
         },
         {
@@ -156,26 +162,29 @@ export default defineGkdApp({
     },
     {
       key: 8,
-      name: '局部广告-直播间卡片广告',
-      desc: '关闭直播间的底部售卖卡片和关注/投喂弹窗',
+      name: '局部广告-直播间悬浮窗广告',
+      desc: '关闭直播间的悬浮窗广告',
       fastQuery: true,
-      matchTime: 10000,
-      actionMaximum: 1,
       activityIds: 'com.bilibili.bililive.room.ui.roomv3.LiveRoomActivityV3',
       rules: [
         {
           key: 0,
-          name: '直播间底部售卖卡片',
-          matches: '[id="tv.danmaku.bili:id/shopping_close"]',
-          snapshotUrls: 'https://i.gkd.li/i/13200549',
+          matches:
+            '[id="tv.danmaku.bili:id/shopping_close" || vid="live_game_card_close" || vid="match_close"][visibleToUser=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13200549',
+            'https://i.gkd.li/i/22990081',
+            'https://i.gkd.li/i/23098023',
+          ],
         },
         {
           key: 1,
-          name: '[关注/投喂]弹窗',
-          matches: '@[vid="close"] - [vid="up_avatar" || vid="gift_icon"]',
+          matches:
+            '@[vid="close" || vid="iv_close"] - [vid="up_avatar" || vid="gift_icon" || vid="follow_container"][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/14782965',
             'https://i.gkd.li/i/18046573',
+            'https://i.gkd.li/i/22990105',
           ],
         },
       ],
