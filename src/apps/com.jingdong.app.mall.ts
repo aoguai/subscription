@@ -35,7 +35,7 @@ export default defineGkdApp({
         },
         {
           key: 2,
-          name: '首页广告',
+          name: '首页贴边广告',
           matches:
             'RelativeLayout >n * > [desc^="关闭" && !(id*="egg")][clickable=true][visibleToUser=true]',
           snapshotUrls: [
@@ -61,10 +61,11 @@ export default defineGkdApp({
           key: 4,
           name: '推推红包',
           matches:
-            'LinearLayout[id=null][childCount=2] > ImageView[id^="com.jd.lib.personal.feature"] + ImageView[id^="com.jd.lib.personal.feature"][index=parent.childCount.minus(1)]',
+            '@ImageView[id^="com.jd.lib.personal.feature"][index=parent.childCount.minus(1)] <<(3,4) RelativeLayout > LinearLayout[id=null][childCount=2] > ImageView[id^="com.jd.lib.personal.feature"][index=0]',
           snapshotUrls: [
             'https://i.gkd.li/i/20532279',
             'https://i.gkd.li/i/20532280',
+            'https://i.gkd.li/i/23693918',
           ],
           excludeSnapshotUrls: ['https://i.gkd.li/i/21343338'],
         },
@@ -186,12 +187,13 @@ export default defineGkdApp({
           key: 2,
           anyMatches: [
             'ImageView +n ViewGroup >2 [text.length>0] < ViewGroup + @ViewGroup > ImageView',
-            '@ViewGroup[index=parent.childCount.minus(1)] -2 ViewGroup[childCount=0][index=0] + ViewGroup[childCount=2] >2 [text.length>0&&text.length<=3]',
+            '@ViewGroup[index=parent.childCount.minus(1)] -2 ViewGroup[childCount<=1][index=0] + ViewGroup[childCount=2] >2 [text.length>0&&text.length<=3]',
           ],
           snapshotUrls: [
             'https://i.gkd.li/i/15047238',
             'https://i.gkd.li/i/17001455',
             'https://i.gkd.li/i/21344132',
+            'https://i.gkd.li/i/23694139',
           ],
         },
         {
@@ -271,7 +273,6 @@ export default defineGkdApp({
       rules: [
         {
           key: 0,
-          fastQuery: true,
           matches: [
             '[text*="《"&&text*="协议"]',
             '[text*="暂不"||desc="关闭"]',
