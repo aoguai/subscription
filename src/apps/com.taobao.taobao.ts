@@ -12,7 +12,6 @@ export default defineGkdApp({
       rules: [
         {
           key: 1,
-          name: '88VIP开通优惠弹窗',
           activityIds: [
             'com.taobao.tao.welcome.Welcome',
             'com.taobao.tao.TBMainActivity',
@@ -25,28 +24,13 @@ export default defineGkdApp({
           snapshotUrls: [
             'https://i.gkd.li/import/13198052', //com.taobao.tao.welcome.Welcome
             'https://i.gkd.li/import/13249418', //com.taobao.tao.TBMainActivity
+            'https://i.gkd.li/import/14060521',
             'https://i.gkd.li/i/12642792',
             'https://i.gkd.li/i/13180826',
             'https://i.gkd.li/i/12648734',
             'https://i.gkd.li/i/12648746',
             'https://i.gkd.li/i/13198239',
             'https://i.gkd.li/i/14905372',
-          ],
-        },
-        {
-          key: 2,
-          name: '抢天降补贴弹窗',
-          activityIds: [
-            'com.taobao.tao.welcome.Welcome',
-            'com.taobao.tao.TBMainActivity',
-            'com.taobao.android.tbabilitykit.pop.StdPopContainerActivity',
-            'com.taobao.android.detail.wrapper.activity.DetailActivity',
-            'com.alibaba.triver.container.TriverMainActivity',
-          ],
-          fastQuery: true,
-          matches: '@[desc="关闭按钮"] - [vid="poplayer_native_state_id"]',
-          snapshotUrls: [
-            'https://i.gkd.li/import/14060521',
             'https://i.gkd.li/i/22319206',
           ],
         },
@@ -147,6 +131,22 @@ export default defineGkdApp({
             '[text="规则"] +2 @View[childCount=1][clickable=true] > Image[childCount=0][text!=null] <<n [vid="tms_tab_content_view"]',
           snapshotUrls: 'https://i.gkd.li/i/22308745',
         },
+        {
+          key: 12,
+          fastQuery: true,
+          activityIds: [
+            'com.taobao.search.uniform.SearchActivity',
+            'com.taobao.android.detail.alittdetail.TTDetailActivity',
+            'com.taobao.tao.TBMainActivity',
+          ],
+          matches:
+            '@[clickable=true][childCount=0][width<150 && height<150][index=parent.childCount.minus(1)] - TextView[text.length>0] <n View <<n WebView[vid="poplayer_inner_view"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/22949963',
+            'https://i.gkd.li/i/23289412',
+            'https://i.gkd.li/i/23567053',
+          ],
+        },
       ],
     },
     {
@@ -179,9 +179,16 @@ export default defineGkdApp({
           key: 2,
           name: '消息页面热门活动卡片',
           fastQuery: true,
-          activityIds: 'com.taobao.tao.welcome.Welcome',
-          matches: 'View[desc.length>0] +2n FrameLayout > TextView[text="퀺"]',
-          snapshotUrls: ['https://i.gkd.li/import/13197877'],
+          activityIds: [
+            'com.taobao.tao.welcome.Welcome',
+            'com.taobao.tao.TBMainActivity',
+          ],
+          matches:
+            '[desc.length>0 || text.length>0] + @LinearLayout[clickable=true] + FrameLayout > TextView[text="퀺"]',
+          snapshotUrls: [
+            'https://i.gkd.li/import/13197877',
+            'https://i.gkd.li/i/23140899',
+          ],
         },
         {
           key: 3,
@@ -190,6 +197,14 @@ export default defineGkdApp({
           matches:
             '@Image[childCount=0][clickable=true][text!=null] <2 View < View < View <9 View < WebView < m0 <2 WebView < RelativeLayout < [vid="tms_tab_content_view"]',
           snapshotUrls: 'https://i.gkd.li/i/22291107',
+        },
+        {
+          key: 4,
+          fastQuery: true,
+          activityIds: 'com.taobao.android.detail.alittdetail.TTDetailActivity',
+          matches:
+            '@FrameLayout[desc="关闭"][clickable=true] <<n [vid="ll_dinamicx_container"]',
+          snapshotUrls: 'https://i.gkd.li/i/23289445',
         },
       ],
     },
