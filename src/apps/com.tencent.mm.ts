@@ -612,7 +612,7 @@ export default defineGkdApp({
           name: '点击[X]-1',
           actionDelay: 500,
           matches:
-            'View[childCount>=2] >n View[desc$="推​荐​"][childCount>=2] > ImageView[clickable=true][visibleToUser=true][index=parent.childCount.minus(1)][width<155&&height<155]',
+            'View[childCount>=2] >n [name$="View"][desc.length>=1] - View[desc$="推​荐​"][childCount>=2] > ImageView[clickable=true][visibleToUser=true][index=parent.childCount.minus(1)][width<155&&height<155][clickable=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/14436176',
             'https://i.gkd.li/i/14392392',
@@ -625,11 +625,12 @@ export default defineGkdApp({
           name: '点击[X]-2',
           actionDelay: 500,
           matches:
-            'Button[childCount>=2][desc.length>=1] >n ImageView[desc.length>=1][childCount>0] + ImageView[clickable=true][visibleToUser=true][width<155&&height<155]',
+            'Button[childCount>=2][desc.length>=1] >n ImageView[desc.length>=1][childCount>0] + @ImageView[clickable=true][visibleToUser=true][width<155&&height<155][clickable=true] + View',
           snapshotUrls: [
             'https://i.gkd.li/i/22870407',
             'https://i.gkd.li/i/22870408',
             'https://i.gkd.li/i/22870410',
+            'https://i.gkd.li/i/23693851',
           ],
         },
         {
