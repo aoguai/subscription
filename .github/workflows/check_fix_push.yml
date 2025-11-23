@@ -13,7 +13,7 @@ jobs:
     if: |
       ${{ github.event.head_commit.message!='chore(actions): check_format_lint' }}
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - uses: actions/setup-node@v6
         with:
