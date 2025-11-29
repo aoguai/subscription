@@ -253,11 +253,15 @@ export default defineGkdApp({
         {
           preKeys: [1, 2],
           name: '从红包结算界面返回',
-          activityIds: '.plugin.luckymoney.ui.LuckyMoneyDetailUI',
+          activityIds: [
+            '.plugin.luckymoney.ui.LuckyMoneyDetailUI',
+            '.plugin.luckymoney.ui.LuckyMoneyNewDetailUI',
+          ],
           matches: '@ImageView[desc="返回"] +2 LinearLayout >8 [text$="红包"]',
           snapshotUrls: [
             'https://i.gkd.li/i/18134829',
             'https://i.gkd.li/i/18135031',
+            'https://i.gkd.li/i/23825631',
           ],
         },
       ],
@@ -269,7 +273,8 @@ export default defineGkdApp({
       enable: false,
       matchRoot: true,
       activityIds: [
-        '.plugin.brandservice.ui.timeline.preload.ui.TmplWebView', //调整为TmplWebView, 同时兼容多种ID
+        'com.tencent.mm.plugin.brandservice.ui.timeline.preload.ui.TmplWebViewMMUI',
+        '.plugin.brandservice.ui.timeline.preload.ui.TmplWebView',
         '.plugin.webview.ui.tools.fts.MMSosWebViewUI',
         '.plugin.webview.ui.tools.MMWebViewUI',
       ],
@@ -610,7 +615,6 @@ export default defineGkdApp({
         {
           key: 0,
           name: '点击[X]-1',
-          actionDelay: 500,
           matches:
             'View[childCount>=2] >n [name$="View"][desc.length>=1] - View[desc$="推​荐​"][childCount>=2] > ImageView[clickable=true][visibleToUser=true][index=parent.childCount.minus(1)][width<155&&height<155][clickable=true]',
           snapshotUrls: [
@@ -623,21 +627,20 @@ export default defineGkdApp({
         {
           key: 1,
           name: '点击[X]-2',
-          actionDelay: 500,
           matches:
-            'Button[childCount>=2][desc.length>=1] >n ImageView[desc.length>=1][childCount>0] + @ImageView[clickable=true][visibleToUser=true][width<155&&height<155][clickable=true] + View',
+            'Button[desc.length>0][childCount>=2][desc.length>=1] > ImageView[desc.length>=1][childCount>0] + @ImageView[index!=0][clickable=true][visibleToUser=true][width<155&&height<155][clickable=true] + View[desc.length=null]',
           snapshotUrls: [
             'https://i.gkd.li/i/22870407',
             'https://i.gkd.li/i/22870408',
             'https://i.gkd.li/i/22870410',
             'https://i.gkd.li/i/23693851',
+            'https://i.gkd.li/i/23832813',
           ],
         },
         {
           preKeys: [0, 1],
           key: 10,
           name: '点击[不喜欢此类视频]',
-          actionDelay: 500,
           activityIds: [],
           anyMatches: [
             '[desc="不喜欢此类视频"][clickable=true]',
@@ -657,7 +660,6 @@ export default defineGkdApp({
           preKeys: 10,
           key: 15,
           name: '点击[确定]',
-          actionDelay: 500,
           activityIds: [],
           matches: '[desc="确定"||desc="確定"][clickable=true]',
           snapshotUrls: [
