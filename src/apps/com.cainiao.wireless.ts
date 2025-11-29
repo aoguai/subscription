@@ -64,6 +64,15 @@ export default defineGkdApp({
             'https://i.gkd.li/i/22570632',
           ],
         },
+        {
+          key: 6,
+          name: '好友代取功能提示',
+          fastQuery: true,
+          activityIds:
+            'com.cainiao.wireless.homepage.view.activity.HomePageActivity',
+          matches: ['[text^="好友代取"]', '[text="下次再说"][clickable=true]'],
+          snapshotUrls: 'https://i.gkd.li/i/23787455',
+        },
       ],
     },
     {
