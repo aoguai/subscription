@@ -288,8 +288,11 @@ export default defineGkdApp({
           key: 1,
           fastQuery: true,
           matches:
-            '@ImageView[id!=""][clickable=true] <n * > [text*="京东快付"&&text.length<=6]',
-          snapshotUrls: ['https://i.gkd.li/i/20516256'],
+            '@ImageView[id!=""][clickable=true] <n * > [(text*="京东快付"||text="设置默认支付工具")&&text.length<=8]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/20516256',
+            'https://i.gkd.li/i/23832919',
+          ],
         },
       ],
     },
