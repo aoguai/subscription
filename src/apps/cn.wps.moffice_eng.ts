@@ -40,15 +40,14 @@ export default defineGkdApp({
       name: '全屏广告-弹窗广告',
       desc: '关闭登录后弹窗和体验会员提示弹窗',
       enable: false,
-      activityIds: [
-        'cn.wps.moffice.main.AfterLoginActivity',
-        'com.android.packageinstaller.permission.ui.GrantPermissionsActivity',
-        'cn.wps.moffice.main.local.HomeRootActivity',
-      ],
       rules: [
         {
-          key: 1,
+          key: 0,
           fastQuery: true,
+          activityIds: [
+            'cn.wps.moffice.main.AfterLoginActivity',
+            'com.android.packageinstaller.permission.ui.GrantPermissionsActivity',
+          ],
           matches: '[id="cn.wps.moffice_eng:id/afterlogin_cancel"]',
           snapshotUrls: [
             'https://i.gkd.li/import/13259097',
@@ -56,30 +55,22 @@ export default defineGkdApp({
           ],
         },
         {
-          key: 2,
+          key: 1,
           name: '体验超级会员弹窗',
+          activityIds: 'cn.wps.moffice.main.local.HomeRootActivity',
           matches:
-            '[id="cn.wps.moffice_eng:id/push_tips_ptr_super_webview"] >6 TextView[index=2]',
+            'View[childCount=3] > Image[text!=null] +2 @TextView[clickable=true] <<n [vid="push_tips_ptr_super_webview"]',
           snapshotUrls: 'https://i.gkd.li/import/13945835',
         },
+        {
+          key: 2,
+          fastQuery: true,
+          activityIds:
+            'cn.wps.moffice.plugin.cloudPage.newpage.NewCloudSettingNewActivity',
+          matches: '[vid="cloud_popup_close_view"][clickable=true]',
+          snapshotUrls: 'https://i.gkd.li/i/23786698',
+        },
       ],
-    },
-    {
-      key: 3,
-      name: '更新提示',
-      desc: '关闭应用更新提示弹窗',
-      enable: false,
-      fastQuery: true,
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      activityIds: [
-        'com.android.packageinstaller.permission.ui.GrantPermissionsActivity',
-        'cn.wps.moffice.main.local.HomeRootActivity',
-      ],
-      rules:
-        '[id="cn.wps.moffice_eng:id/close_new_func_guide_dialog_imageView"]',
-      snapshotUrls: 'https://i.gkd.li/import/12882371',
     },
     {
       key: 4,
