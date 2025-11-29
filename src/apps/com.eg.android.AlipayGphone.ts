@@ -311,12 +311,13 @@ export default defineGkdApp({
             'com.alipay.mobile.nebulax.xriver.activity.XRiverTransActivity$Main',
           ],
           matches: [
-            '[text="访问被拒绝" || text="人气太旺啦，请稍后再试"][visibleToUser=true]',
+            '[text="访问被拒绝" || text="人气太旺啦，请稍后再试" || text="訪問被拒絕" || text="人氣太旺啦，請稍後再試"][visibleToUser=true]',
             '[id="com.alipay.mobile.antui:id/back_button"][visibleToUser=true]',
           ],
           snapshotUrls: [
             'https://i.gkd.li/i/23046994',
             'https://i.gkd.li/i/23096790',
+            'https://i.gkd.li/i/23832722',
           ],
         },
       ],
