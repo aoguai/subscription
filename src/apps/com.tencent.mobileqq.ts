@@ -23,6 +23,8 @@ export default defineGkdApp({
           snapshotUrls: [
             'https://i.gkd.li/i/13093155',
             'https://i.gkd.li/i/13207731',
+          ],
+          excludeSnapshotUrls: [
             'https://i.gkd.li/i/13217807', // 避免在聊天界面误触
             'https://i.gkd.li/i/13856647', // 误触
             'https://i.gkd.li/i/13868177', // 误触
@@ -34,13 +36,13 @@ export default defineGkdApp({
     },
     {
       key: 1,
-      name: '局部广告-消息页面顶部广告',
-      desc: '关闭消息页面顶部的横幅广告',
-      activityIds: 'com.tencent.mobileqq.activity.SplashActivity',
+      name: '局部广告',
+      desc: '关闭各页面局部广告，包括消息、聊天、联系人、好友动态等页面',
       rules: [
         {
           key: 0,
-          name: '顶部横幅',
+          name: '消息页面顶部广告',
+          activityIds: 'com.tencent.mobileqq.activity.SplashActivity',
           matches:
             'ImageView[longClickable!=true][vid!="chat_item_head_icon"][desc=null&&text=null] <n *[left=0][vid!="root"][visibleToUser=true] >n TextView[clickable=false][text.length>0][!(text~="(?is).*([01]?[0-9]|2[0-3])[:：][0-5][0-9].*")][text!$="G"&&text!$="M"&&text!$="k"][visibleToUser=true] <<n * > [name$="ImageView"||name$="Button"][desc="关闭"||(desc=null&&text=null)][vid!="chat_item_head_icon"][childCount=0][visibleToUser=true][clickable=true][longClickable!=true][left>0]',
           excludeMatches: [
@@ -78,6 +80,59 @@ export default defineGkdApp({
             'https://i.gkd.li/i/15075866', // 误触
             'https://i.gkd.li/i/15782476', // 误触
             'https://i.gkd.li/i/15883390', // 误触
+          ],
+        },
+        {
+          key: 1,
+          name: '好友动态详情页广告',
+          fastQuery: true,
+          activityIds: [
+            'com.qzone.reborn.base.QZoneTransparentShellActivity',
+            'com.qzone.reborn.base.QZoneShellActivity',
+          ],
+          matches:
+            '@[desc="关闭广告"][visibleToUser=true] <4 RelativeLayout <2 LinearLayout <2 LinearLayout < FrameLayout <n RecyclerView < FrameLayout - FrameLayout >2 [text="详情"]',
+          exampleUrls: 'https://e.gkd.li/b78a3e44-3bd9-445d-9199-e989269c2be3',
+          snapshotUrls: [
+            'https://i.gkd.li/i/17009847',
+            'https://i.gkd.li/i/17815694',
+            'https://i.gkd.li/i/17827969',
+          ],
+        },
+        {
+          key: 2,
+          name: '推荐你试试这些玩法',
+          activityIds:
+            'com.qzone.reborn.feedx.activity.QZoneFriendFeedXActivity',
+          fastQuery: true,
+          matches: '@[desc="关闭"] - [text="推荐你试试这些玩法"]',
+          exampleUrls: 'https://e.gkd.li/6cf71a22-0e21-4877-86a7-69d84353ad5a',
+          snapshotUrls: 'https://i.gkd.li/i/18236745',
+        },
+        {
+          key: 3,
+          name: '联系人页面顶部可能认识的人推荐',
+          fastQuery: true,
+          activityIds: '.activity.SplashActivity',
+          matches:
+            '@ImageView[childCount=0][clickable=true][visibleToUser=true] -2 [text*="发现可能认识的人"]',
+          snapshotUrls: 'https://i.gkd.li/i/18237415',
+        },
+        {
+          key: 4,
+          name: '聊天页面关键词广告',
+          fastQuery: true,
+          activityIds: [
+            'com.tencent.mobileqq.profilecard.activity.FriendProfileCardActivity',
+            'com.tencent.mobileqq.activity.ChatActivity',
+            'com.tencent.mobileqq.activity.SplashActivity',
+          ],
+          matches:
+            'FrameLayout[childCount=2] >2 FrameLayout[childCount=2] >3 FrameLayout[childCount=2] > [text="跳过" || text="关闭"][clickable=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14183188',
+            'https://i.gkd.li/i/16549500',
+            'https://i.gkd.li/i/16555184',
           ],
         },
       ],
@@ -223,6 +278,14 @@ export default defineGkdApp({
           activityIds: '.activity.VisitorsActivity',
           matches: '[desc^="资料卡可展示"] + [desc="关闭浮层"]',
           snapshotUrls: ['https://i.gkd.li/i/18348068'],
+        },
+        {
+          key: 6,
+          name: '关闭开启通讯录建议弹窗页面',
+          fastQuery: true,
+          activityIds: '.activity.phone.PhoneMatchActivity',
+          matches: ['[text="开启通讯录"]', '[text="关闭"]'],
+          snapshotUrls: 'https://i.gkd.li/i/18266370',
         },
       ],
     },
@@ -658,30 +721,6 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 27,
-      name: '局部广告-聊天页面广告',
-      desc: '关闭聊天页面中的关键词触发广告',
-      rules: [
-        {
-          key: 1,
-          name: '关键词广告',
-          fastQuery: true,
-          activityIds: [
-            'com.tencent.mobileqq.profilecard.activity.FriendProfileCardActivity',
-            'com.tencent.mobileqq.activity.ChatActivity',
-            'com.tencent.mobileqq.activity.SplashActivity',
-          ],
-          matches:
-            'FrameLayout[childCount=2] >2 FrameLayout[childCount=2] >3 FrameLayout[childCount=2] > [text="跳过" || text="关闭"][clickable=true]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/14183188',
-            'https://i.gkd.li/i/16549500',
-            'https://i.gkd.li/i/16555184',
-          ],
-        },
-      ],
-    },
-    {
       key: 28,
       name: '功能类-授权登录时关闭获取QQ好友关系',
       desc: '自动点击关闭获取QQ好友关系',
@@ -694,34 +733,6 @@ export default defineGkdApp({
           matches:
             '@CompoundButton[checked=true] - RelativeLayout > [text="你的QQ好友关系"]',
           snapshotUrls: 'https://i.gkd.li/i/16929347',
-        },
-      ],
-    },
-    {
-      key: 29,
-      name: '局部广告-顶部可能认识的人推荐',
-      desc: '关闭联系人页面顶部的好友推荐',
-      rules: [
-        {
-          fastQuery: true,
-          activityIds: '.activity.SplashActivity',
-          matches:
-            '@ImageView[childCount=0][clickable=true][visibleToUser=true] -2 [text*="发现可能认识的人"]',
-          snapshotUrls: 'https://i.gkd.li/i/18237415',
-        },
-      ],
-    },
-    {
-      key: 30,
-      name: '全屏广告-关闭开启通讯录',
-      desc: '弹出开启通讯录建议页面时自动关闭',
-      enable: false,
-      rules: [
-        {
-          fastQuery: true,
-          activityIds: '.activity.phone.PhoneMatchActivity',
-          matches: ['[text="开启通讯录"]', '[text="关闭"]'],
-          snapshotUrls: 'https://i.gkd.li/i/18266370',
         },
       ],
     },
