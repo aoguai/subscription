@@ -72,6 +72,20 @@ export default defineGkdApp({
       excludeSnapshotUrls: 'https://i.gkd.li/i/21978683',
     },
     {
+      key: 3,
+      name: '局部广告',
+      rules: [
+        {
+          fastQuery: true,
+          activityIds:
+            'com.google.android.apps.youtube.app.watchwhile.MainActivity',
+          matches:
+            '@ImageView[clickable=true][width<100 && height<100] <<n [vid="panel_header"]',
+          snapshotUrls: 'https://i.gkd.li/i/23787178',
+        },
+      ],
+    },
+    {
       key: 4,
       name: '功能类-自动翻译评论',
       desc: '点击评论区的翻译成中文按钮',
@@ -89,6 +103,30 @@ export default defineGkdApp({
             'https://i.gkd.li/i/17068647', // 翻译后
             'https://i.gkd.li/i/17501400',
           ],
+        },
+      ],
+    },
+    {
+      key: 5,
+      name: '分段广告-播放页广告',
+      rules: [
+        {
+          key: 1,
+          fastQuery: true,
+          activityIds:
+            'com.google.android.apps.youtube.app.watchwhile.MainActivity',
+          matches:
+            '@[vid="overflow_button"][clickable=true] <<n [vid="collapsible_ad_cta_overlay_container"]',
+          snapshotUrls: 'https://i.gkd.li/i/23790199',
+        },
+        {
+          key: 2,
+          preKeys: [1],
+          fastQuery: true,
+          activityIds:
+            'com.google.android.apps.youtube.app.watchwhile.MainActivity',
+          matches: '@[clickable=true] > [text="关闭"]',
+          snapshotUrls: 'https://i.gkd.li/i/23772979',
         },
       ],
     },
