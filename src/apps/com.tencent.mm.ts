@@ -225,10 +225,16 @@ export default defineGkdApp({
         {
           key: 1,
           name: '点击别人发的红包',
-          activityIds: '.ui.LauncherUI',
+          activityIds: [
+            '.ui.LauncherUI',
+            '.ui.chatting.variants.ChattingMainUI',
+          ],
           matches:
             'LinearLayout[childCount=1] >2 @FrameLayout[clickable=true] >2 LinearLayout[getChild(1).childCount=1] +2 RelativeLayout > [text="微信红包"]',
-          snapshotUrls: 'https://i.gkd.li/i/18134826',
+          snapshotUrls: [
+            'https://i.gkd.li/i/18134826',
+            'https://i.gkd.li/i/24347101',
+          ],
           excludeSnapshotUrls: [
             'https://i.gkd.li/i/18134823', // 自己发的， LinearLayout[childCount=1] 区分
             'https://i.gkd.li/i/18134833', // 已领取的， getChild(1).childCount=1 区分
@@ -616,7 +622,7 @@ export default defineGkdApp({
           key: 0,
           name: '点击[X]-1',
           matches:
-            'View[childCount>=2] >n [name$="View"][desc.length>=1] - View[desc$="推​荐​"][childCount>=2] > ImageView[clickable=true][visibleToUser=true][index=parent.childCount.minus(1)][width<155&&height<155][clickable=true]',
+            'View[childCount>=2] >n [name$="View"][desc.length>=1] - View[desc$="推​荐​"][childCount>=2] > ImageView[clickable=true][visibleToUser=true][index=parent.childCount.minus(1)][width<100&&height<100][clickable=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/14436176',
             'https://i.gkd.li/i/14392392',
@@ -628,7 +634,7 @@ export default defineGkdApp({
           key: 1,
           name: '点击[X]-2',
           matches:
-            'Button[desc.length>0][childCount>=2][desc.length>=1] > ImageView[desc.length>=1][childCount>0] + @ImageView[index!=0][clickable=true][visibleToUser=true][width<155&&height<155][clickable=true] + View[desc.length=null]',
+            'Button[desc.length>0][childCount>=2][desc.length>=1] > ImageView[desc.length>=1][childCount>0] + @ImageView[index!=0][clickable=true][visibleToUser=true][width<100&&height<100][clickable=true] + View[desc.length=null]',
           snapshotUrls: [
             'https://i.gkd.li/i/22870407',
             'https://i.gkd.li/i/22870408',
