@@ -84,7 +84,7 @@ export default defineGkdApp({
           snapshotUrls: 'https://i.gkd.li/i/18410610',
         },
         {
-          key: 8,
+          key: 9,
           matchTime: 10000,
           activityIds: '.activity.AppStarterActivity',
           matches:
@@ -95,7 +95,7 @@ export default defineGkdApp({
           ],
         },
         {
-          key: 9,
+          key: 10,
           activityIds: '.activity.AppStarterActivity',
           matches:
             'ImageView[width<80 && height<80] <<2 @ViewGroup[clickable=true] - [text^="hi~"]',
