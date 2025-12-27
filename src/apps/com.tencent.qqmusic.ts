@@ -83,6 +83,24 @@ export default defineGkdApp({
             '@ImageView[childCount=0][clickable=true] -2 [text="猜你也会喜欢"][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/18410610',
         },
+        {
+          key: 8,
+          matchTime: 10000,
+          activityIds: '.activity.AppStarterActivity',
+          matches:
+            'RecyclerView > FrameLayout[desc!=null] >3 LinearLayout[id!=null] > ViewPager > FrameLayout[visibleToUser=true] > ImageView[childCount=0][clickable=true][width<150 && height<100][index=parent.childCount.minus(1)]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/23623581',
+            'https://i.gkd.li/i/23623677',
+          ],
+        },
+        {
+          key: 9,
+          activityIds: '.activity.AppStarterActivity',
+          matches:
+            'ImageView[width<80 && height<80] <<2 @ViewGroup[clickable=true] - [text^="hi~"]',
+          snapshotUrls: 'https://i.gkd.li/i/23930716',
+        },
       ],
     },
     {
