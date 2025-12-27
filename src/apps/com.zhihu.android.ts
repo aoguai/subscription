@@ -56,11 +56,13 @@ export default defineGkdApp({
             '.feature.short_container_feature.ui.ShortContainerHostActivity',
           ],
           matches:
-            '@ViewGroup[clickable=true][childCount=1] <(2,4) ViewGroup -(2,3) ViewGroup[childCount>1] >(1,2) [text*="广告"]',
+            '@ViewGroup[clickable=true][childCount=1] <(2,3,4) ViewGroup -(2,3) ViewGroup[childCount>1] >(1,2) [text*="广告"]',
           snapshotUrls: [
             'https://i.gkd.li/i/14192451',
             'https://i.gkd.li/i/18217217',
             'https://i.gkd.li/i/19591989',
+            'https://i.gkd.li/i/21813914',
+            'https://i.gkd.li/i/24214771',
           ],
         },
         {
@@ -275,6 +277,15 @@ export default defineGkdApp({
           matches:
             '@ViewGroup[childCount=1][clickable=true][visibleToUser=true][getChild(0).name$="SvgView"] - [text="广告"]',
           snapshotUrls: 'https://i.gkd.li/i/20711018',
+        },
+        {
+          key: 2,
+          name: '优质答主推荐',
+          fastQuery: true,
+          activityIds:
+            'com.zhihu.android.feature.short_container_feature.ui.ShortContainerHostActivity',
+          matches: '@[vid="ic_close"][clickable=true] -n [text="更多优质答主"]',
+          snapshotUrls: 'https://i.gkd.li/i/24335648',
         },
       ],
     },
