@@ -202,23 +202,31 @@ export default defineGkdApp({
     },
     {
       key: 15,
-      name: '分段广告-服务消息页面-卡片广告',
+      name: '分段广告-服务消息页面卡片广告',
       desc: '关闭服务消息页面的卡片广告',
       enable: false,
       fastQuery: true,
-      activityIds:
+      activityIds: [
         'com.alipay.android.phone.messageboxapp.ui.MsgBoxTabActivity',
+        'com.alipay.android.phone.msgboxapp.ui.activity.MBoxTabPageActivity',
+      ],
       rules: [
         {
           key: 0,
           matches: '@[clickable=true] > [text="广告"]',
-          snapshotUrls: 'https://i.gkd.li/i/14787644',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14787644',
+            'https://i.gkd.li/i/23935865',
+          ],
         },
         {
           preKeys: [0],
           key: 1,
           matches: '@[clickable=true] >2 [text="不感兴趣"]',
-          snapshotUrls: 'https://i.gkd.li/i/14787585',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14787585',
+            'https://i.gkd.li/i/23935930',
+          ],
         },
       ],
     },
@@ -255,7 +263,7 @@ export default defineGkdApp({
         {
           key: 3,
           name: '外卖红包',
-          activityIds: '.AlipayLogin',
+          activityIds: '.com.eg.android.AlipayGphone.AlipayLogin',
           matches: '[desc="推荐广告"] + * > [desc="关闭"]',
           snapshotUrls: 'https://i.gkd.li/i/21138908',
         },
@@ -309,15 +317,20 @@ export default defineGkdApp({
           activityIds: [
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
             'com.alipay.mobile.nebulax.xriver.activity.XRiverTransActivity$Main',
+            'com.alipay.android.living.activity.LivingNotTransparentDetailActivity',
+            '.AlipayLogin',
           ],
           matches: [
-            '[text="访问被拒绝" || text="人气太旺啦，请稍后再试" || text="訪問被拒絕" || text="人氣太旺啦，請稍後再試"][visibleToUser=true]',
+            '[text="访问被拒绝" || text="人气太旺啦，请稍后再试" || text="訪問被拒絕" || text="人氣太旺啦，請稍後再試" || text="伺服器繁忙，請稍後再試"][visibleToUser=true]',
             '[id="com.alipay.mobile.antui:id/back_button"][visibleToUser=true]',
           ],
           snapshotUrls: [
             'https://i.gkd.li/i/23046994',
             'https://i.gkd.li/i/23096790',
             'https://i.gkd.li/i/23832722',
+            'https://i.gkd.li/i/24353818',
+            'https://i.gkd.li/i/24353826',
+            'https://i.gkd.li/i/24183318',
           ],
         },
       ],
