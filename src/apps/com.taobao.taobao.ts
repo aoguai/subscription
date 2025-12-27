@@ -147,6 +147,15 @@ export default defineGkdApp({
             'https://i.gkd.li/i/23567053',
           ],
         },
+        {
+          key: 13,
+          name: '充值类商品界面广告',
+          fastQuery: true,
+          activityIds: 'com.taobao.weex.WXActivity',
+          matches:
+            '@ImageView[clickable=true][width<150 && height<155] < FrameLayout <2 FrameLayout < FrameLayout < FrameLayout < FrameLayout <2 [vid="weex_render_view"]',
+          snapshotUrls: 'https://i.gkd.li/i/23923991',
+        },
       ],
     },
     {
