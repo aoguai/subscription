@@ -37,12 +37,12 @@
     "./dist"
   ],
   "dependencies": {
-    "@eslint/js": "9.39.1",
+    "@eslint/js": "9.39.2",
     "@gkd-kit/api": "0.8.0",
     "@gkd-kit/define": "0.0.1",
     "@gkd-kit/tools": "0.8.0",
     "@types/node": "24.10.4",
-    "eslint": "9.39.1",
+    "eslint": "9.39.2",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-unused-imports": "4.3.0",
     "json5": "2.2.3",
