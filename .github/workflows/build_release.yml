@@ -2,6 +2,10 @@ name: build_release
 
 on: workflow_dispatch
 
+permissions:
+  id-token: write
+  contents: write
+
 jobs:
   build_release:
     runs-on: ubuntu-latest
@@ -15,7 +19,7 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: 24
-          package-manager-cache: false
+          registry-url: 'https://registry.npmjs.org'
 
       - uses: pnpm/action-setup@v4
 
@@ -48,20 +52,17 @@ jobs:
 
       - name: Create Release
         if: ${{ steps.commit.outcome == 'success' }}
-        uses: actions/create-release@v1.1.4
+        uses: softprops/action-gh-release@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: v${{ steps.version.outputs.version }}
-          release_name: Release ${{ steps.version.outputs.version }}
+          name: Release ${{ steps.version.outputs.version }}
           body_path: ./dist/CHANGELOG.md
 
       - name: Publish package
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        if: ${{ steps.commit.outcome == 'success' && env.NPM_TOKEN != '' }}
+        if: ${{ steps.commit.outcome == 'success' }}
         run: |
-          pnpm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
           node -e "import('@gkd-kit/tools').then((m) => m.updatePkgVersion());"
           pnpm publish --no-git-checks --publish-branch=custom
           node -e "import('@gkd-kit/tools').then((m) => m.syncNpmmirror());"
