@@ -140,11 +140,12 @@ export default defineGkdApp({
             'com.taobao.tao.TBMainActivity',
           ],
           matches:
-            '@[clickable=true][childCount=0][width<150 && height<150][index=parent.childCount.minus(1)] - TextView[text.length>0] <n View <<n WebView[vid="poplayer_inner_view"]',
+            '@[clickable=true][childCount=0][width<150 && height<150][index=parent.childCount.minus(1)] -n TextView[text.length>0] <n View <<n WebView[vid="poplayer_inner_view"]',
           snapshotUrls: [
             'https://i.gkd.li/i/22949963',
             'https://i.gkd.li/i/23289412',
             'https://i.gkd.li/i/23567053',
+            'https://i.gkd.li/i/24982514',
           ],
         },
         {
@@ -257,6 +258,7 @@ export default defineGkdApp({
         'com.taobao.android.detail.wrapper.activity.DetailActivity',
         'com.taobao.android.order.bundle.TBOrderListActivity',
         'com.taobao.search.sf.MainSearchResultActivity',
+        'com.taobao.browser.BrowserActivity',
       ],
       rules: '[vid="update_imageview_cancel_v2"]',
       snapshotUrls: [
@@ -264,6 +266,7 @@ export default defineGkdApp({
         'https://i.gkd.li/import/13695520',
         'https://i.gkd.li/import/13965740',
         'https://i.gkd.li/i/14899863',
+        'https://i.gkd.li/i/24861114',
       ],
     },
     {
