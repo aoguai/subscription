@@ -83,8 +83,9 @@ export default defineGkdApp({
           snapshotUrls: [
             'https://i.gkd.li/i/16595124',
             'https://i.gkd.li/i/16596297',
-            'https://i.gkd.li/i/16632851', // [childCount>1] 防止误触
+            'https://i.gkd.li/i/24541094',
           ],
+          excludeSnapshotUrls: 'https://i.gkd.li/i/16632851', // [childCount>1] 防止误触]
         },
         {
           key: 5,
@@ -94,13 +95,15 @@ export default defineGkdApp({
             'com.baidu.tieba.tblauncher.MainTabActivity',
           ],
           matches:
-            '@FrameLayout[clickable=true][visibleToUser=true] <4 RelativeLayout + FrameLayout >(7,8,9) [text="广告"]',
+            '@FrameLayout[clickable=true][visibleToUser=true] <(3,4) RelativeLayout + FrameLayout >(7,8,9) [text="广告"]',
           snapshotUrls: [
             'https://i.gkd.li/i/16595301',
             'https://i.gkd.li/i/16596195',
             'https://i.gkd.li/i/16596775',
             'https://i.gkd.li/i/21524232',
             'https://i.gkd.li/i/21529443',
+            'https://i.gkd.li/i/21556758',
+            'https://i.gkd.li/i/24520138',
           ],
         },
         {
