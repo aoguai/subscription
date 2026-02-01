@@ -49,6 +49,7 @@ export default defineGkdApp({
             '[id^="com.tencent.mobileqq.qzone"]', // QQ空间
             '[text="互动标识"]', // 侧滑抽屉
             '[text="群标签"]', // 群资料
+            '[text="小程序"]', // 下拉小程序
           ],
           snapshotUrls: [
             'https://i.gkd.li/import/13426912',
@@ -82,6 +83,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/15075866', // 误触
             'https://i.gkd.li/i/15782476', // 误触
             'https://i.gkd.li/i/15883390', // 误触
+            'https://i.gkd.li/i/24989508',
           ],
         },
         {
@@ -155,6 +157,7 @@ export default defineGkdApp({
           snapshotUrls: [
             'https://i.gkd.li/i/12847842',
             'https://i.gkd.li/i/13787345',
+            'https://i.gkd.li/i/24381585',
           ],
         },
         {
@@ -164,16 +167,20 @@ export default defineGkdApp({
           snapshotUrls: 'https://i.gkd.li/i/14138572',
         },
         {
-          key: 5,
+          key: 3,
           fastQuery: true,
-          activityIds:
+          activityIds: [
             'com.qzone.reborn.feedpro.activity.QzoneFriendFeedProActivity',
-          matches:
-            '@[desc="更多"][clickable=true] > [text="广告"][visibleToUser=true]',
-          snapshotUrls: 'https://i.gkd.li/i/21947672',
+            '.guild.base.QPublicFragmentActivityForMainWebActivity',
+          ],
+          matches: '@[clickable=true] > [text="广告"][visibleToUser=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/21947672',
+            'https://i.gkd.li/i/24404962',
+          ],
         },
         {
-          preKeys: [0, 1, 5],
+          preKeys: [0, 1, 3],
           fastQuery: true,
           activityIds: [
             'com.tencent.mobileqq.activity.SplashActivity',
@@ -191,6 +198,8 @@ export default defineGkdApp({
             'https://i.gkd.li/i/13831867',
             'https://i.gkd.li/i/14138571',
             'https://i.gkd.li/i/21947698',
+            'https://i.gkd.li/i/24381598',
+            'https://i.gkd.li/i/24406932',
           ],
         },
       ],
@@ -503,12 +512,13 @@ export default defineGkdApp({
         {
           key: 0,
           name: '点击查看原图',
-          matches: '[text^="查看原图"][checked=false]',
+          matches: '[text^="查看原图"][checked=false][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/import/12840632', // 点击原图前
             'https://i.gkd.li/import/12840633', // 点击原图后
             'https://i.gkd.li/i/14757735',
             'https://i.gkd.li/i/15024319',
+            'https://i.gkd.li/i/24489364',
           ],
         },
         {
@@ -647,32 +657,52 @@ export default defineGkdApp({
           fastQuery: true,
           activityIds: 'com.tencent.mobileqq.activity.SplashActivity',
           matches:
-            'ImageView[childCount=0] < RelativeLayout < FrameLayout +2 LinearLayout >3 @ViewGroup[clickable=true][childCount=5][!(getChild(4).text^="已")] + TextView[text="拼手气红包"]',
+            'ImageView[childCount=0] <<(1,2) RelativeLayout < FrameLayout +2 LinearLayout >3 @ViewGroup[clickable=true][!(getChild(childCount.minus(1)).text^="已")] + TextView[text="拼手气红包"]',
           exampleUrls:
             'https://m.gkd.li/57941037/7a933a7f-dc5a-4eb7-8a6f-fe3cc4e8fb5e',
           snapshotUrls: [
             'https://i.gkd.li/i/14221309',
-            'https://i.gkd.li/i/18574530',
+            'https://i.gkd.li/i/18725007',
+            'https://i.gkd.li/i/24551887',
+          ],
+          excludeSnapshotUrls: [
+            'https://i.gkd.li/i/18574530', // 领完
           ],
         },
         {
           preKeys: [0],
           key: 1,
-          activityIds: 'cooperation.qwallet.plugin.QWalletToolFragmentActivity',
-          matches: '[desc="拆红包"][visibleToUser=true]',
+          activityIds: [
+            'cooperation.qwallet.plugin.QWalletToolFragmentActivity',
+            'com.tencent.biz.TenpayActivity',
+          ],
+          anyMatches: [
+            '@[desc="关闭"][clickable=true] < RelativeLayout -2 ViewGroup >4 [text^="来晚一步"][visibleToUser=true]',
+            '[desc="拆红包"][visibleToUser=true]',
+          ],
           exampleUrls:
             'https://m.gkd.li/57941037/61006833-9806-45b2-b3a1-55b9b248958f',
-          snapshotUrls: 'https://i.gkd.li/i/14221242',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14221242',
+            'https://i.gkd.li/i/18724880',
+            'https://i.gkd.li/i/24551748',
+          ],
         },
         {
           preKeys: [1],
           key: 2,
           fastQuery: true,
-          activityIds: 'cooperation.qwallet.plugin.QWalletToolFragmentActivity',
-          matches: '@[desc="返回"] + [text="红包记录"]',
+          activityIds: [
+            'cooperation.qwallet.plugin.QWalletToolFragmentActivity',
+            'com.tencent.biz.TenpayActivity',
+          ],
+          matches: '@[desc="返回"] +n [text="红包记录"]',
           exampleUrls:
             'https://m.gkd.li/57941037/b90e6a69-ac57-41a5-bd2c-c500b92a58ba',
-          snapshotUrls: 'https://i.gkd.li/i/14221279',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14221279',
+            'https://i.gkd.li/i/24551886',
+          ],
         },
       ],
     },
