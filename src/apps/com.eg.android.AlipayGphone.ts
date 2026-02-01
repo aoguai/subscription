@@ -289,7 +289,7 @@ export default defineGkdApp({
           ],
         },
         {
-          key: 4,
+          key: 6,
           fastQuery: true,
           activityIds: '.AlipayLogin',
           matches:
