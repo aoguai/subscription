@@ -161,6 +161,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/18809991',
             'https://i.gkd.li/i/19496823',
             'https://i.gkd.li/i/21792855',
+            'https://i.gkd.li/i/16972565',
           ],
         },
         {
@@ -213,6 +214,16 @@ export default defineGkdApp({
             'https://i.gkd.li/import/12506201',
           ],
         },
+        {
+          preKeys: [1],
+          key: 20,
+          activityIds: '.plugin.webview.ui.tools.SDKOAuthOtherUI',
+          matches: [
+            '[text="申请获得"][visibleToUser=true]',
+            '[text="允许"][visibleToUser=true]',
+          ],
+          snapshotUrls: 'https://i.gkd.li/i/24560465',
+        },
       ],
     },
     {
@@ -263,11 +274,12 @@ export default defineGkdApp({
             '.plugin.luckymoney.ui.LuckyMoneyDetailUI',
             '.plugin.luckymoney.ui.LuckyMoneyNewDetailUI',
           ],
-          matches: '@ImageView[desc="返回"] +2 LinearLayout >8 [text$="红包"]',
+          matches: '@ImageView[desc="返回"] +n LinearLayout >8 [text$="红包"]',
           snapshotUrls: [
             'https://i.gkd.li/i/18134829',
             'https://i.gkd.li/i/18135031',
             'https://i.gkd.li/i/23825631',
+            'https://i.gkd.li/i/24414957',
           ],
         },
       ],
@@ -549,9 +561,10 @@ export default defineGkdApp({
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
+      activityIds: ['.plugin.finder.', '.ui.LauncherUI'],
       rules: [
         {
-          activityIds: ['.plugin.finder.', '.ui.LauncherUI'],
+          key: 0,
           matches:
             '@[text="我知道了"][index=parent.childCount.minus(1)] <n LinearLayout > [text^="为呵护未成年人健康成长"][visibleToUser=true]',
           snapshotUrls: [
@@ -562,6 +575,12 @@ export default defineGkdApp({
             'https://i.gkd.li/i/18135103',
             'https://i.gkd.li/i/19683937',
           ],
+        },
+        {
+          key: 1,
+          matches:
+            '@[text="不再提醒"][clickable=true] <2 [index=parent.childCount.minus(1)] -n [text^="为呵护未成年人健康成长"][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/24796791',
         },
       ],
     },
@@ -718,12 +737,17 @@ export default defineGkdApp({
         {
           fastQuery: true,
           activityIds: ['.ui.LauncherUI', '.ui.chatting.ChattingUI'],
-          matches: '@[clickable=true] >(1,2) [text="转文字"]',
+          anyMatches: [
+            '@[clickable=true] >(1,2) [text="转文字"]',
+            '@[clickable=true] -2 FrameLayout >2 [desc^="语音" && desc$="未播放"] + [text~="(?is)[0-9].*"]',
+          ],
           snapshotUrls: [
             'https://i.gkd.li/i/14497389',
             'https://i.gkd.li/i/14538322',
             'https://i.gkd.li/i/19774491',
             'https://i.gkd.li/i/19792042',
+            'https://i.gkd.li/i/18135057',
+            'https://i.gkd.li/i/24989479',
           ],
           excludeSnapshotUrls: ['https://i.gkd.li/i/21792783'],
         },
