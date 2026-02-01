@@ -265,7 +265,7 @@ export default defineGkdApp({
       desc: '关闭支付时弹出的免密、快付、人脸等弹窗',
       enable: false,
       ignoreGlobalGroupMatch: true,
-      actionMaximum: 1,
+      actionMaximum: 2,
       resetMatch: 'app',
       activityIds: [
         'com.wangyin.payment.jdpaysdk.counter.ui.pay.CounterActivity',
