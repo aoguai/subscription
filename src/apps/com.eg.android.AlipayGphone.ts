@@ -279,13 +279,22 @@ export default defineGkdApp({
           name: '小组件弹窗',
           activityIds:
             'com.alipay.mobile.nebulax.integration.mpaas.activity.NebulaActivity$Main',
-          matches: '[text="去添加"] + [text="近期不再提醒我"]',
+          matches: '[text^="去"][text.length>2] + [text="近期不再提醒我"]',
           snapshotUrls: [
             // 弹窗中的文字和图片每隔几秒切换
             'https://i.gkd.li/i/16427922',
             'https://i.gkd.li/i/22984695',
             'https://i.gkd.li/i/22984696',
+            'https://i.gkd.li/i/24981728',
           ],
+        },
+        {
+          key: 4,
+          fastQuery: true,
+          activityIds: '.AlipayLogin',
+          matches:
+            '@[text="我知道了"][clickable=true] -n [text^="用碰一下支付"]',
+          snapshotUrls: 'https://i.gkd.li/i/24563264',
         },
       ],
     },
