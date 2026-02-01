@@ -2,7 +2,7 @@ import { defineGkdApp } from '@gkd-kit/define';
 
 export default defineGkdApp({
   id: 'com.twitter.android',
-  name: 'X(推特)',
+  name: 'X',
   groups: [
     {
       key: 1,
@@ -48,7 +48,10 @@ export default defineGkdApp({
           name: '点击右上角关闭-英文',
           matches:
             '[id="com.twitter.android:id/tweet_ad_badge_top_right"] + [id="com.twitter.android:id/tweet_curation_action"]',
-          snapshotUrls: 'https://i.gkd.li/import/13680756',
+          snapshotUrls: [
+            'https://i.gkd.li/import/13680756',
+            'https://i.gkd.li/i/24359526',
+          ],
         },
         {
           preKeys: [0, 1, 2],
@@ -65,6 +68,7 @@ export default defineGkdApp({
             'https://i.gkd.li/import/13680783', // 兼容英文
             'https://i.gkd.li/i/20034038', // 封鎖
             'https://i.gkd.li/i/20239421',
+            'https://i.gkd.li/i/24359537',
           ],
         },
         {
