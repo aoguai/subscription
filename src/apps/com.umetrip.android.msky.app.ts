@@ -6,14 +6,30 @@ export default defineGkdApp({
   groups: [
     {
       key: 8,
-      name: '全屏广告-酒店-弹窗广告',
-      desc: '关闭酒店预订页面的全屏弹窗广告',
+      name: '全屏广告',
+      desc: '关闭各类全屏弹窗广告',
       enable: false,
-      fastQuery: true,
-      activityIds: 'com.ume.lib_weex.view.WeexActivity',
-      rules:
-        'View[desc="立即预订"] <n FrameLayout <n FrameLayout <n FrameLayout <n ViewPager <n FrameLayout + FrameLayout > ImageView[id=null]',
-      snapshotUrls: 'https://i.gkd.li/import/12909632',
+      rules: [
+        {
+          key: 0,
+          name: '全屏广告-酒店-弹窗广告',
+          fastQuery: true,
+          activityIds: 'com.ume.lib_weex.view.WeexActivity',
+          matches:
+            'View[desc="立即预订"] <n FrameLayout <n FrameLayout <n FrameLayout <n ViewPager <n FrameLayout + FrameLayout > ImageView[id=null]',
+          snapshotUrls: 'https://i.gkd.li/import/12909632',
+        },
+        {
+          key: 1,
+          fastQuery: true,
+          matchTime: 10000,
+          actionMaximum: 1,
+          resetMatch: 'app',
+          matches:
+            '@ImageView[clickable=true][childCount=0][visibleToUser=true][width=height] < FrameLayout <2 FrameLayout <3 FrameLayout < [vid="operation_dialog_weex_view"]',
+          snapshotUrls: 'https://i.gkd.li/i/24706615',
+        },
+      ],
     },
     {
       key: 10,
