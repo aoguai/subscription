@@ -115,6 +115,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/20720187',
             'https://i.gkd.li/i/20739391',
             'https://i.gkd.li/i/23687208',
+            'https://i.gkd.li/i/24836772',
           ],
         },
         {
@@ -307,6 +308,24 @@ export default defineGkdApp({
             'https://i.gkd.li/i/23305281', // 动态：评论图片
             'https://i.gkd.li/i/23305275', // 专栏图片
           ],
+        },
+      ],
+    },
+    {
+      key: 20,
+      name: '功能类-登录授权',
+      desc: '点击确认授权按钮',
+      enable: false,
+      rules: [
+        {
+          key: 0,
+          activityIds: '.ui.webview.MWebActivity',
+          fastQuery: true,
+          matches: [
+            '[text="哔哩哔哩扫码登录"]',
+            '[text="确认"][visibleToUser=true]',
+          ],
+          snapshotUrls: 'https://i.gkd.li/i/24989484',
         },
       ],
     },
