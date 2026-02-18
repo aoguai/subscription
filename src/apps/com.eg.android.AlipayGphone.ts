@@ -42,6 +42,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/19449399',
             'https://i.gkd.li/i/20684144',
             'https://i.gkd.li/i/23455533',
+            'https://i.gkd.li/i/25000603',
           ],
           excludeSnapshotUrls: ['https://i.gkd.li/i/19478718'],
         },
@@ -328,6 +329,7 @@ export default defineGkdApp({
             'com.alipay.mobile.nebulax.xriver.activity.XRiverTransActivity$Main',
             'com.alipay.android.living.activity.LivingNotTransparentDetailActivity',
             '.AlipayLogin',
+            'com.alipay.android.phone.wallet.blessingcard_receive.biz.activity.ReceiveDialogActivity',
           ],
           matches: [
             '[text="访问被拒绝" || text="人气太旺啦，请稍后再试" || text="訪問被拒絕" || text="人氣太旺啦，請稍後再試" || text="伺服器繁忙，請稍後再試"][visibleToUser=true]',
@@ -340,6 +342,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/24353818',
             'https://i.gkd.li/i/24353826',
             'https://i.gkd.li/i/24183318',
+            'https://i.gkd.li/i/25199767',
           ],
         },
       ],
