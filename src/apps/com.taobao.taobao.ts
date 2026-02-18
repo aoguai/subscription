@@ -259,6 +259,7 @@ export default defineGkdApp({
         'com.taobao.android.order.bundle.TBOrderListActivity',
         'com.taobao.search.sf.MainSearchResultActivity',
         'com.taobao.browser.BrowserActivity',
+        'com.taobao.themis.container.app.TMSActivity',
       ],
       rules: '[vid="update_imageview_cancel_v2"]',
       snapshotUrls: [
@@ -267,6 +268,7 @@ export default defineGkdApp({
         'https://i.gkd.li/import/13965740',
         'https://i.gkd.li/i/14899863',
         'https://i.gkd.li/i/24861114',
+        'https://i.gkd.li/i/24999523',
       ],
     },
     {
