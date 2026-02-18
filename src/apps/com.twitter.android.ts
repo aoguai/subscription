@@ -47,7 +47,7 @@ export default defineGkdApp({
           key: 2,
           name: '点击右上角关闭-英文',
           matches:
-            '[id="com.twitter.android:id/tweet_ad_badge_top_right"] + [id="com.twitter.android:id/tweet_curation_action"]',
+            '@[vid="tweet_curation_action"] - [vid="tweet_ad_badge_top_right"][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/import/13680756',
             'https://i.gkd.li/i/24359526',
@@ -58,7 +58,7 @@ export default defineGkdApp({
           key: 10,
           name: '点击屏蔽',
           matches:
-            '@ViewGroup > [id="com.twitter.android:id/action_sheet_item_title"][text^="屏蔽"||text^="Block"||text^="封鎖"][visibleToUser=true]',
+            '@ViewGroup > [id="com.twitter.android:id/action_sheet_item_title"][text^="屏蔽"||text^="Block"||text^="封鎖"||text^="隐藏 @"||text^="Hide @"][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/import/12798810',
             'https://i.gkd.li/i/14782902',
@@ -69,6 +69,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/20034038', // 封鎖
             'https://i.gkd.li/i/20239421',
             'https://i.gkd.li/i/24359537',
+            'https://i.gkd.li/i/25089665',
           ],
         },
         {
@@ -76,12 +77,28 @@ export default defineGkdApp({
           key: 11,
           name: '二次确认-点击屏蔽',
           matches:
-            '[text="取消"||text^="Cancel"] + [text="屏蔽"||text^="Block"||text^="封鎖"]',
+            '[text="取消"||text^="Cancel"] + [text="屏蔽"||text^="Block"||text^="封鎖"||text="是的，我确定"||text^="Yes"]',
           snapshotUrls: [
             'https://i.gkd.li/import/12828832', // com.twitter.tweetdetail.TweetDetailActivity
             'https://i.gkd.li/import/12904601', // com.twitter.app.profiles.ProfileActivity
             'https://i.gkd.li/import/13680798', // 兼容英文
+            'https://i.gkd.li/i/25089666',
           ],
+        },
+      ],
+    },
+    {
+      key: 2,
+      name: '全屏广告-关闭[开启个性化广告]弹窗',
+      desc: '关闭[开启个性化广告]弹窗',
+      enable: false,
+      rules: [
+        {
+          fastQuery: true,
+          activityIds: 'com.twitter.app.main.MainActivity',
+          matches:
+            '[vid="secondary_button"][clickable=true][getChild(0).getChild(0).getChild(0).text="保留更少相关广告"]',
+          snapshotUrls: 'https://i.gkd.li/i/25150279',
         },
       ],
     },
