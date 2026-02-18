@@ -48,13 +48,15 @@ export default defineGkdApp({
       activityIds: [
         '.module.bbs.post.ui.activitys.WebNewsPostPageActivity',
         '.module.bbs.post.ui.activitys.PicturePostPageActivity',
+        '.module.bbs.post.ui.activitys.v2.PicturePostPageActivityV2',
       ],
       rules: [
         {
-          matches: '[vid="tv_original"][visibleToUser=true]',
+          matches: '[vid="tv_original"][clickable=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/16646832',
             'https://i.gkd.li/i/17574462',
+            'https://i.gkd.li/i/25336815',
           ],
           excludeSnapshotUrls: 'https://i.gkd.li/i/22377026',
         },
