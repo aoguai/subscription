@@ -147,7 +147,7 @@ export default defineGkdApp({
           ],
         },
         {
-          key: 2,
+          key: 1,
           activityIds: 'com.jingdong.app.mall.MainFrameActivity',
           anyMatches: [
             '[id="android:id/content"] > RelativeLayout > RelativeLayout > *[childCount=2] > ImageView[index=1][clickable=true][!(desc="拍照购")]',
@@ -159,6 +159,22 @@ export default defineGkdApp({
             'https://i.gkd.li/i/15364514',
             'https://i.gkd.li/i/13165721',
           ],
+        },
+        {
+          key: 2,
+          name: '购物车页面支付成功广告弹窗',
+          activityIds: 'com.jd.lib.cart.ShoppingCartNewActivity',
+          fastQuery: true,
+          matches: ['@ImageView - ViewGroup >2 TextView[text="查看订单"]'],
+          snapshotUrls: 'https://i.gkd.li/import/13446362',
+        },
+        {
+          key: 3,
+          name: '加入购物车后出现的弹窗',
+          activityIds: 'com.jd.lib.productdetail.ProductDetailActivity',
+          fastQuery: true,
+          matches: ['[text="继续逛"][clickable=true]'],
+          snapshotUrls: 'https://i.gkd.li/i/15047243',
         },
       ],
     },
@@ -218,7 +234,7 @@ export default defineGkdApp({
       desc: '点击确认登录按钮',
       enable: false,
       activityIds: 'com.jingdong.app.mall.WebActivity',
-      rules: '[text="京东登录"] > [desc="确认登录"]',
+      rules: '@[desc="确认登录"][clickable=true] > [text="确认登录"]',
       snapshotUrls: 'https://i.gkd.li/import/12901734',
     },
     {
@@ -229,20 +245,6 @@ export default defineGkdApp({
         'com.jd.lib.settlement.fillorder.activity.NewFillOrderActivity',
       rules: 'ImageView[clickable=true && desc="关闭"]',
       snapshotUrls: 'https://i.gkd.li/import/13191146',
-    },
-    {
-      key: 12,
-      name: '全屏广告-购物车页面支付成功广告弹窗',
-      desc: '关闭购物车支付成功后的广告弹窗',
-      enable: false,
-      fastQuery: true,
-      rules: [
-        {
-          activityIds: 'com.jd.lib.cart.ShoppingCartNewActivity',
-          matches: '@ImageView - ViewGroup >2 TextView[text="查看订单"]',
-          snapshotUrls: 'https://i.gkd.li/import/13446362',
-        },
-      ],
     },
     {
       key: 13,
