@@ -52,7 +52,7 @@
     "@gkd-kit/api": "0.8.0",
     "@gkd-kit/define": "0.0.1",
     "@gkd-kit/tools": "0.8.0",
-    "@types/node": "24.10.1",
+    "@types/node": "24.10.13",
     "eslint": "9.39.1",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-unused-imports": "4.3.0",
@@ -65,7 +65,7 @@
     "typescript-eslint": "8.46.4"
   },
   "volta": {
-    "node": "24.12.0",
+    "node": "24.13.1",
     "pnpm": "10.26.2"
   },
   "packageManager": "pnpm@10.26.2",
