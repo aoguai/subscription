@@ -144,6 +144,7 @@ export default defineGkdApp({
             'https://i.gkd.li/import/13522577', // activityIds: 'com.tencent.mm.ui.LauncherUI'
             'https://i.gkd.li/i/19399694',
             'https://i.gkd.li/i/22356438',
+            'https://i.gkd.li/i/25315046', //zh_TW
           ],
         },
         {
@@ -260,10 +261,12 @@ export default defineGkdApp({
             '.plugin.luckymoney.ui.LuckyMoneyNotHookReceiveUI',
             '.plugin.luckymoney.ui.LuckyMoneyNewReceiveUI',
           ],
-          matches: '@Button[desc="开"] -3 LinearLayout >2 [text$="红包"]',
+          matches:
+            '@Button[desc="开" || desc="開"] -3 LinearLayout >2 [text$="红包" || text$="紅包"]',
           snapshotUrls: [
             'https://i.gkd.li/i/18134828',
             'https://i.gkd.li/i/21177180',
+            'https://i.gkd.li/i/25315061', //zh_TW
           ],
           excludeSnapshotUrls: 'https://i.gkd.li/i/12567698', // 金币动画的快照
         },
@@ -274,12 +277,14 @@ export default defineGkdApp({
             '.plugin.luckymoney.ui.LuckyMoneyDetailUI',
             '.plugin.luckymoney.ui.LuckyMoneyNewDetailUI',
           ],
-          matches: '@ImageView[desc="返回"] +n LinearLayout >8 [text$="红包"]',
+          matches:
+            '@ImageView[desc="返回"] +n LinearLayout >8 [text$="红包" || text$="紅包"]',
           snapshotUrls: [
             'https://i.gkd.li/i/18134829',
             'https://i.gkd.li/i/18135031',
             'https://i.gkd.li/i/23825631',
             'https://i.gkd.li/i/24414957',
+            'https://i.gkd.li/i/25315062', //zh_TW
           ],
         },
       ],
@@ -394,7 +399,6 @@ export default defineGkdApp({
       name: '功能类-自动选中发送原图',
       desc: '图片和视频选择器-自动选中底部中间的发送原图',
       enable: false,
-      fastQuery: true,
       actionMaximum: 1,
       activityIds: [
         'com.tencent.mm.plugin.gallery.ui.AlbumPreviewUI',
@@ -403,8 +407,9 @@ export default defineGkdApp({
       rules: [
         {
           key: 1,
-          matches:
-            '@[desc="未选中,原图,复选框"][text=null||text=""][visibleToUser=true] <(1,2) [name$="Layout"][childCount=2] > [text="原图"]',
+          anyMatches: [
+            '[desc="未选中,原图,复选框" || desc="未選定，原圖，複選對話方塊"][text=null||text=""][visibleToUser=true] <(1,2) [name$="Layout"][childCount=2] > ImageButton[index=0]',
+          ],
           snapshotUrls: [
             'https://i.gkd.li/i/16987145', // 未选中
             'https://i.gkd.li/i/16987144', // 未选中
@@ -429,9 +434,8 @@ export default defineGkdApp({
       rules: [
         {
           key: 0,
-          anyMatches: [
-            'Button[text^="查看"][clickable=true][visibleToUser=true]',
-            'Button[clickable=true][text^="查看"][visibleToUser=true]',
+          matches: [
+            'Button[text~=".*原.*\\\\d+(\\\\.\\\\d+)?\\\\s*[KMG]B?\\\\)?$"]',
           ],
           snapshotUrls: [
             'https://i.gkd.li/import/13523031',
@@ -440,6 +444,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/17698956',
             'https://i.gkd.li/i/19515095',
             'https://i.gkd.li/i/19645122',
+            'https://i.gkd.li/i/25009442',
           ],
         },
       ],
@@ -462,8 +467,8 @@ export default defineGkdApp({
           forcedTime: 10000,
           fastQuery: true,
           matches: [
-            '[text="广告"][visibleToUser=true]',
-            '[text="跳过"][visibleToUser=true]',
+            '[text="广告" || text="廣告"][visibleToUser=true]',
+            '[text="跳过" || text="跳過"][visibleToUser=true]',
           ],
           snapshotUrls: [
             'https://i.gkd.li/import/12701979',
@@ -484,7 +489,7 @@ export default defineGkdApp({
           actionDelay: 300, // 过早触发有概率无效
           resetMatch: 'app',
           fastQuery: true,
-          excludeMatches: '[text="跳过"][visibleToUser=true]', // 防止提前触发导致失效
+          excludeMatches: '[text="跳过" || text="跳過"][visibleToUser=true]', // 防止提前触发导致失效
           matches: [
             'ImageView[childCount=0][visibleToUser=true] < FrameLayout < @FrameLayout[visibleToUser=true] <2 * - * >(4,5) [text="广告"||text="查看详情"]',
           ],
@@ -641,7 +646,7 @@ export default defineGkdApp({
           key: 0,
           name: '点击[X]-1',
           matches:
-            'View[childCount>=2] >n [name$="View"][desc.length>=1] - View[desc$="推​荐​"][childCount>=2] > ImageView[clickable=true][visibleToUser=true][index=parent.childCount.minus(1)][width<100&&height<100][clickable=true]',
+            'View[childCount>=2] >n [name$="View"][desc.length>=1] - View[desc$="推​荐​" || desc$="推​薦​"][childCount>=2] > ImageView[clickable=true][visibleToUser=true][index=parent.childCount.minus(1)][width<100&&height<100][clickable=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/14436176',
             'https://i.gkd.li/i/14392392',
@@ -736,7 +741,11 @@ export default defineGkdApp({
       rules: [
         {
           fastQuery: true,
-          activityIds: ['.ui.LauncherUI', '.ui.chatting.ChattingUI'],
+          activityIds: [
+            '.ui.LauncherUI',
+            '.ui.chatting.ChattingUI',
+            '.ui.chatting.variants.ChattingMainUI',
+          ],
           anyMatches: [
             '@[clickable=true] >(1,2) [text="转文字"]',
             '@[clickable=true] -2 FrameLayout >2 [desc^="语音" && desc$="未播放"] + [text~="(?is)[0-9].*"]',
@@ -748,6 +757,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/19792042',
             'https://i.gkd.li/i/18135057',
             'https://i.gkd.li/i/24989479',
+            'https://i.gkd.li/i/25002786',
           ],
           excludeSnapshotUrls: ['https://i.gkd.li/i/21792783'],
         },
