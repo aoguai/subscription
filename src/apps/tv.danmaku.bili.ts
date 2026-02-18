@@ -132,6 +132,18 @@ export default defineGkdApp({
       ],
     },
     {
+      key: 6,
+      name: '局部广告-首页浮标广告',
+      rules: [
+        {
+          fastQuery: true,
+          activityIds: '.MainActivityV2',
+          matches: '[vid="animation_close"][clickable=true]',
+          snapshotUrls: 'https://i.gkd.li/i/25357810',
+        },
+      ],
+    },
+    {
       key: 7,
       name: '局部广告-视频页广告',
       desc: '关闭视频页面的会员推广弹窗和免流星卡广告',
@@ -172,11 +184,12 @@ export default defineGkdApp({
         {
           key: 0,
           matches:
-            '[id="tv.danmaku.bili:id/shopping_close" || vid="live_game_card_close" || vid="match_close"][visibleToUser=true]',
+            '[id="tv.danmaku.bili:id/shopping_close" || vid="live_game_card_close" || vid="match_close" || vid="iv_pop_rank_guide_card_close"][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/13200549',
             'https://i.gkd.li/i/22990081',
             'https://i.gkd.li/i/23098023',
+            'https://i.gkd.li/i/25238734',
           ],
         },
         {
@@ -188,6 +201,18 @@ export default defineGkdApp({
             'https://i.gkd.li/i/18046573',
             'https://i.gkd.li/i/22990105',
           ],
+        },
+        {
+          key: 2,
+          matchTime: 10000,
+          actionMaximum: 1, //防止循环展开关闭
+          matches:
+            'View[visibleToUser=true] <<2 @[clickable=true] < [vid="pager"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/24985920',
+            'https://i.gkd.li/i/25240029',
+          ],
+          excludeSnapshotUrls: ['https://i.gkd.li/i/25369451'],
         },
       ],
     },
