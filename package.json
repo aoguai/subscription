@@ -55,7 +55,7 @@
     "@types/node": "24.10.1",
     "eslint": "9.39.1",
     "eslint-config-prettier": "10.1.8",
-    "eslint-plugin-unused-imports": "4.3.0",
+    "eslint-plugin-unused-imports": "4.4.1",
     "json5": "2.2.3",
     "lint-staged": "16.2.6",
     "prettier": "3.6.2",
