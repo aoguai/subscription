@@ -108,6 +108,17 @@ export default defineGkdApp({
             '[text="添加会员小组件"] < View +3 View[childCount=2] > [text="近期不再提醒我"]',
           snapshotUrls: 'https://i.gkd.li/i/16427922',
         },
+        {
+          key: 2,
+          activityIds:
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
+          matches:
+            '[text="通用半浮层容器页面"] >4 [text*="小组件"] - View[index=0][visibleToUser=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/26164320',
+            'https://i.gkd.li/i/26164322',
+          ],
+        },
       ],
     },
     {
@@ -328,12 +339,13 @@ export default defineGkdApp({
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
             'com.alipay.mobile.nebulax.xriver.activity.XRiverTransActivity$Main',
             'com.alipay.android.living.activity.LivingNotTransparentDetailActivity',
-            '.AlipayLogin',
             'com.alipay.android.phone.wallet.blessingcard_receive.biz.activity.ReceiveDialogActivity',
+            'com.alipay.android.living.activity.LivingDetailActivity',
+            '.AlipayLogin',
           ],
           matches: [
             '[text="访问被拒绝" || text="人气太旺啦，请稍后再试" || text="訪問被拒絕" || text="人氣太旺啦，請稍後再試" || text="伺服器繁忙，請稍後再試"][visibleToUser=true]',
-            '[id="com.alipay.mobile.antui:id/back_button"][visibleToUser=true]',
+            '[id="com.alipay.mobile.antui:id/back_button"][clickable=true]',
           ],
           snapshotUrls: [
             'https://i.gkd.li/i/23046994',
@@ -343,6 +355,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/24353826',
             'https://i.gkd.li/i/24183318',
             'https://i.gkd.li/i/25199767',
+            'https://i.gkd.li/i/25485052',
           ],
         },
       ],
