@@ -82,6 +82,17 @@ export default defineGkdApp({
       desc: '关闭地图页面的卡片式广告和购票优惠提示',
       rules: [
         {
+          key: 0,
+          activityIds: 'com.autonavi.map.activity.NewMapActivity',
+          fastQuery: true,
+          matches: [
+            '[vid="btn_qrscan"][desc="扫一扫"]',
+            'ViewGroup[desc.length>0] < ViewGroup + @[desc="关闭"][clickable=true][visibleToUser=true] <<n [vid="quickservice"]',
+          ],
+          snapshotUrls: 'https://i.gkd.li/i/14715295',
+          excludeSnapshotUrls: 'https://i.gkd.li/i/25660170',
+        },
+        {
           key: 1,
           fastQuery: true,
           activityIds: 'com.autonavi.map.activity.NewMapActivity',
