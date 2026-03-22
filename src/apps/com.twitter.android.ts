@@ -56,9 +56,9 @@ export default defineGkdApp({
         {
           preKeys: [0, 1, 2],
           key: 10,
-          name: '点击屏蔽',
+          name: '点击屏蔽/隐藏,如果机会全用完需要取消遍再屏蔽',
           matches:
-            '@ViewGroup > [id="com.twitter.android:id/action_sheet_item_title"][text^="屏蔽"||text^="Block"||text^="封鎖"||text^="隐藏 @"||text^="Hide @"][visibleToUser=true]',
+            '@ViewGroup > [id="com.twitter.android:id/action_sheet_item_title"][text^="屏蔽"||text^="Block"||text^="隐藏 @"||text^="Mute @"||text^="Unblock @"||text^="Unmute @"]',
           snapshotUrls: [
             'https://i.gkd.li/import/12798810',
             'https://i.gkd.li/i/14782902',
@@ -69,7 +69,10 @@ export default defineGkdApp({
             'https://i.gkd.li/i/20034038', // 封鎖
             'https://i.gkd.li/i/20239421',
             'https://i.gkd.li/i/24359537',
-            'https://i.gkd.li/i/25089665',
+            'https://i.gkd.li/i/25089665', // 屏蔽已用
+            'https://i.gkd.li/i/25461007', // 隐藏已用
+            'https://i.gkd.li/i/25461077', // En-Mute
+            'https://i.gkd.li/i/25461050', // En-Unmute
           ],
         },
         {
@@ -77,12 +80,13 @@ export default defineGkdApp({
           key: 11,
           name: '二次确认-点击屏蔽',
           matches:
-            '[text="取消"||text^="Cancel"] + [text="屏蔽"||text^="Block"||text^="封鎖"||text="是的，我确定"||text^="Yes"]',
+            '[text="取消"||text^="Cancel"] + [text="屏蔽"||text^="Block"||text="是的，我确定"||text^="Yes"||text^="屏蔽"||text^="Mute"||text^="Unmute"]',
           snapshotUrls: [
             'https://i.gkd.li/import/12828832', // com.twitter.tweetdetail.TweetDetailActivity
             'https://i.gkd.li/import/12904601', // com.twitter.app.profiles.ProfileActivity
             'https://i.gkd.li/import/13680798', // 兼容英文
             'https://i.gkd.li/i/25089666',
+            'https://i.gkd.li/i/25461062', // En-Unmute
           ],
         },
       ],
@@ -105,14 +109,27 @@ export default defineGkdApp({
     {
       key: 6,
       name: '功能类-自动点击翻译',
-      desc: '点击推文下方的"翻译"按钮',
       enable: false,
-      fastQuery: true,
-      activityIds: 'com.twitter.tweetdetail.TweetDetailActivity',
-      rules: '[vid="translation_link"][text^="翻译"]',
-      snapshotUrls: [
-        'https://i.gkd.li/i/14189817',
-        'https://i.gkd.li/i/14615911',
+      rules: [
+        {
+          fastQuery: true,
+          actionCd: 2000, //防止[译文]节点未加载完导致重复点击 [翻译]
+          activityIds: 'com.twitter.tweetdetail.TweetDetailActivity',
+          matches:
+            '[vid="translation_link" || vid="grok_translation_link"][clickable=true][index=parent.childCount.minus(1)]',
+          exampleUrls: [
+            'https://e.gkd.li/ced46989-9c6a-4626-b027-7953e0fdc2c6',
+            'https://m.gkd.li/57941037/40ece44f-883f-429a-aa0c-17dac15a50e4',
+          ],
+          snapshotUrls: [
+            'https://i.gkd.li/i/14189817',
+            'https://i.gkd.li/i/14615911',
+            'https://i.gkd.li/i/25537171',
+            'https://i.gkd.li/i/25461468',
+            'https://i.gkd.li/i/25461607', // Grok translate
+          ],
+          excludeSnapshotUrls: 'https://i.gkd.li/i/25537171', // 已翻译, 加 [index=parent.childCount.minus(1)] 排除
+        },
       ],
     },
     {
