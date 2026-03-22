@@ -35,6 +35,7 @@ export default defineGkdApp({
           name: '在签到后，关闭弹窗',
           action: 'back',
           anyMatches: [
+            '[text="保存至"]',
             '[vid="ivCardBackBackground"][visibleToUser=true]',
             '[vid="cvCardFront"] > [vid="ivClose"][visibleToUser=true]',
           ],
