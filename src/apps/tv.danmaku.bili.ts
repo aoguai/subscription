@@ -123,10 +123,14 @@ export default defineGkdApp({
           key: 51,
           name: '点击关闭',
           fastQuery: true,
-          matches: '[vid="close_dislike"]',
+          anyMatches: [
+            '[vid="close_dislike"][visibleToUser=true]',
+            '@[text="关闭"][clickable=true] -n * <<(2,4) [name$="ComposeView" || name$="FrameLayout"] <n [vid="recycler"]',
+          ],
           snapshotUrls: [
             'https://i.gkd.li/i/17675894',
             'https://i.gkd.li/i/18587456',
+            'https://i.gkd.li/i/25739074',
           ],
         },
       ],
