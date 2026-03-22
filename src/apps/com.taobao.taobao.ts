@@ -140,12 +140,13 @@ export default defineGkdApp({
             'com.taobao.tao.TBMainActivity',
           ],
           matches:
-            '@[clickable=true][childCount=0][width<150 && height<150][index=parent.childCount.minus(1)] -n TextView[text.length>0] <n View <<n WebView[vid="poplayer_inner_view"]',
+            '@[name="android.widget.TextView" || name="android.widget.Image"][clickable=true][childCount=0][width<150 && height<150][index=parent.childCount.minus(1)] <n View >(1,3) [childCount!=null][text$="用" || text$="收下" || text*="立减"] <<n WebView[vid="poplayer_inner_view"]',
           snapshotUrls: [
             'https://i.gkd.li/i/22949963',
             'https://i.gkd.li/i/23289412',
             'https://i.gkd.li/i/23567053',
             'https://i.gkd.li/i/24982514',
+            'https://i.gkd.li/i/26044614',
           ],
         },
         {
@@ -157,12 +158,18 @@ export default defineGkdApp({
             '@ImageView[clickable=true][width<150 && height<155] < FrameLayout <2 FrameLayout < FrameLayout < FrameLayout < FrameLayout <2 [vid="weex_render_view"]',
           snapshotUrls: 'https://i.gkd.li/i/23923991',
         },
+        {
+          key: 14,
+          activityIds: 'com.taobao.weex.WXActivity',
+          matches: 'Dialog > Image[text.length>40] + Button[text="关闭"]',
+          snapshotUrls: 'https://i.gkd.li/i/26164501',
+        },
       ],
     },
     {
       key: 3,
-      name: '局部广告-悬浮/卡片广告',
-      desc: '关闭各种悬浮或卡片广告',
+      name: '局部广告-悬浮/卡片/横幅广告',
+      desc: '关闭各种悬浮/卡片/横幅广告',
       rules: [
         {
           key: 0,
@@ -215,6 +222,31 @@ export default defineGkdApp({
           matches:
             '@FrameLayout[desc="关闭"][clickable=true] <<n [vid="ll_dinamicx_container"]',
           snapshotUrls: 'https://i.gkd.li/i/23289445',
+        },
+        {
+          key: 5,
+          name: '商品详情页面横条广告',
+          fastQuery: true,
+          activityIds: 'com.taobao.android.detail.alittdetail.TTDetailActivity',
+          matches:
+            '@FrameLayout[desc="关闭"][clickable=true][visibleToUser=true] -3 ImageView <<n [vid="bottom_float_dx"]',
+          snapshotUrls: 'https://i.gkd.li/i/25639274',
+        },
+        {
+          key: 6,
+          name: '订单页横条广告',
+          fastQuery: true,
+          activityIds: 'com.taobao.android.order.bundle.TBOrderListActivity',
+          matches:
+            '@TextView[clickable=true][visibleToUser=true][text.length=1] -4 ImageView < LinearLayout[childCount=5] <<n [vid="recycler_view"]',
+          snapshotUrls: 'https://i.gkd.li/i/25639650',
+        },
+        {
+          key: 7,
+          name: '首页横条广告',
+          activityIds: 'com.taobao.tao.welcome.Welcome',
+          matches: '[desc.length=4] < * + @[clickable=true] > [text="뉜"]',
+          snapshotUrls: 'https://i.gkd.li/i/25658605',
         },
       ],
     },
