@@ -58,10 +58,12 @@ export default defineGkdApp({
           actionMaximum: 1,
           resetMatch: 'app',
           activityIds: '.maincontainer.activity.MainActivity',
-          matches: 'WebView[text="夜市氛围弹框"] > [id="root"] >3 TextView',
+          matches:
+            '@[clickable=true][width<200] <<(4,6) View[id="root"] <<(5,8) [vid="fish_layer_container_id"]',
           snapshotUrls: [
             'https://i.gkd.li/i/23694103',
             'https://i.gkd.li/i/23183586',
+            'https://i.gkd.li/i/25796344',
           ],
         },
         {
@@ -70,7 +72,7 @@ export default defineGkdApp({
           activityIds:
             'com.taobao.idlefish.search_implement.SearchResultActivity',
           matches:
-            '@TextView[width<250 && height<250] - [childCount=0][text="收下红包"] <<n [vid="fish_layer_container_id"]',
+            '@[index=parent.childCount.minus(1)][clickable=true][width<250][height<250] <n View <<6 m0 <<6 [vid="fish_layer_container_id"]',
           snapshotUrls: 'https://i.gkd.li/i/23125419',
         },
       ],
@@ -139,19 +141,36 @@ export default defineGkdApp({
       desc: '点击确认授权按钮',
       enable: false,
       fastQuery: true,
+      activityIds: 'com.taobao.login4android.scan.QrScanActivity',
       rules: [
         {
           key: 0,
-          activityIds: 'com.taobao.login4android.scan.QrScanActivity',
-          matches: '[text="确认登录"][visibleToUser=true]',
-          snapshotUrls: 'https://i.gkd.li/i/20239307',
+          actionMaximum: 1,
+          resetMatch: 'match',
+          matches: '@[clickable=true] > [vid="confirm"][visibleToUser=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/25619592', // 未打勾_纯手拍快照
+            'https://i.gkd.li/i/25620240', // 未打勾
+          ],
         },
         {
-          key: 1,
-          preKeys: 0,
-          activityIds: 'com.taobao.login4android.scan.QrScanActivity',
-          matches: '[text="同意"][visibleToUser=true]',
-          snapshotUrls: ['https://i.gkd.li/i/20239322'],
+          key: 1, // 目的跟key0一样，只不过以弹窗的形式出现
+          matches: [
+            '[text="服务协议及隐私保护"]',
+            '[text="同意"][clickable=true]',
+          ],
+          snapshotUrls: 'https://i.gkd.li/i/25620304',
+        },
+        {
+          key: 2,
+          matches: [
+            '[text="扫码登录"]',
+            '[text="确认登录"][clickable=true][visibleToUser=true]',
+          ],
+          snapshotUrls: [
+            'https://i.gkd.li/i/25619659', // 旧版,无需打勾
+            'https://i.gkd.li/i/25620267', // 已打勾(节点状态无变化)
+          ],
         },
       ],
     },
