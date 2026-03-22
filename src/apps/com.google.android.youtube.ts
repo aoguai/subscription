@@ -2,7 +2,7 @@ import { defineGkdApp } from '@gkd-kit/define';
 
 export default defineGkdApp({
   id: 'com.google.android.youtube',
-  name: 'youtube',
+  name: 'YouTube',
   groups: [
     {
       key: 0,
@@ -61,13 +61,14 @@ export default defineGkdApp({
         'com.google.android.apps.youtube.app.watchwhile.WatchWhileActivity',
       ],
       rules:
-        '[getChild(0).getChild(0).desc!="Image attachment"] + @[desc="不用了，谢谢" || desc="关闭" || desc="Close" || desc="No thanks"][visibleToUser=true] <<n [vid="bottom_ui_container" || vid="custom"]',
+        '[!(getChild(0).getChild(0).desc="Image attachment")] + @[desc="不用了，谢谢" || desc="关闭" || desc="我暂时不要" || desc="Close" || desc="No thanks"][visibleToUser=true] <<n [vid="bottom_ui_container" || vid="custom"]',
       snapshotUrls: [
         'https://i.gkd.li/import/12877357',
         'https://i.gkd.li/i/13797512',
         'https://i.gkd.li/i/18017075',
         'https://i.gkd.li/i/18549944',
         'https://i.gkd.li/i/19578085',
+        'https://i.gkd.li/i/25865404',
       ],
       excludeSnapshotUrls: 'https://i.gkd.li/i/21978683',
     },
@@ -80,15 +81,16 @@ export default defineGkdApp({
           activityIds:
             'com.google.android.apps.youtube.app.watchwhile.MainActivity',
           matches:
-            '@ImageView[clickable=true][width<100 && height<100] <<n [vid="panel_header"]',
-          snapshotUrls: 'https://i.gkd.li/i/23787178',
+            '[desc="更多选项"] + @ImageView[clickable=true][width<100 && height<100] <<n [vid="panel_header"]',
+          snapshotUrls: ['https://i.gkd.li/i/23787178'],
+          excludeSnapshotUrls: 'https://i.gkd.li/i/25461943',
         },
       ],
     },
     {
       key: 4,
       name: '功能类-自动翻译评论',
-      desc: '点击评论区的翻译成中文按钮',
+      desc: '评论区自动点击[翻译成/Translate to]',
       enable: false,
       rules: [
         {
@@ -97,11 +99,13 @@ export default defineGkdApp({
           activityIds:
             'com.google.android.apps.youtube.app.watchwhile.MainActivity',
           matches:
-            '@Button[desc^="翻译成中文"][clickable=true][visibleToUser=true] <<n [vid="results" || vid="section_list"]',
+            '@Button[desc^="翻译成"||desc^="Translate to"][clickable=true][visibleToUser=true] <<n [vid="results" || vid="section_list"]',
           snapshotUrls: [
             'https://i.gkd.li/i/17068544', // 翻译前
             'https://i.gkd.li/i/17068647', // 翻译后
             'https://i.gkd.li/i/17501400',
+            'https://i.gkd.li/i/25462152', // En_translate前
+            'https://i.gkd.li/i/25462248', // En_translate后
           ],
         },
       ],
@@ -125,8 +129,12 @@ export default defineGkdApp({
           fastQuery: true,
           activityIds:
             'com.google.android.apps.youtube.app.watchwhile.MainActivity',
-          matches: '@[clickable=true] > [text="关闭"]',
-          snapshotUrls: 'https://i.gkd.li/i/23772979',
+          matches:
+            '@[clickable=true] >(1,2) [vid="list_item_text"][text="关闭"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/23772979',
+            'https://i.gkd.li/i/25461885',
+          ],
         },
       ],
     },
