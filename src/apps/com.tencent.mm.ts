@@ -136,15 +136,16 @@ export default defineGkdApp({
           key: 0,
           name: 'PC 微信扫码登录',
           matches: [
-            '[text="登录 Windows 微信" || text="登入 微信 for Windows" || text^="Log in to Weixin for"][visibleToUser=true]',
+            '[text^="登录 Win" || text^="登录桌面" || text^="登入 WeChat" || text^="Log in to Weixin for"][visibleToUser=true]',
             '[text="登录" || text="登入" || text="Log In"][visibleToUser=true]',
           ],
           snapshotUrls: [
             'https://i.gkd.li/import/13522625', // activityIds: 'com.tencent.mm.plugin.webwx.ui.ExtDeviceWXLoginUI'
             'https://i.gkd.li/import/13522577', // activityIds: 'com.tencent.mm.ui.LauncherUI'
             'https://i.gkd.li/i/19399694',
-            'https://i.gkd.li/i/22356438',
-            'https://i.gkd.li/i/25315046', //zh_TW
+            'https://i.gkd.li/i/22356438', // En_US
+            'https://i.gkd.li/i/25315046', // zh_TW
+            'https://i.gkd.li/i/25815630', // Linux_zh_CN
           ],
         },
         {
@@ -262,10 +263,11 @@ export default defineGkdApp({
             '.plugin.luckymoney.ui.LuckyMoneyNewReceiveUI',
           ],
           matches:
-            '@Button[desc="开" || desc="開"] -3 LinearLayout >2 [text$="红包" || text$="紅包"]',
+            '@Button[desc="开" || desc="開"] -(2,3) LinearLayout >2 [text$="红包" || text$="紅包"]',
           snapshotUrls: [
             'https://i.gkd.li/i/18134828',
             'https://i.gkd.li/i/21177180',
+            'https://i.gkd.li/i/25901145',
             'https://i.gkd.li/i/25315061', //zh_TW
           ],
           excludeSnapshotUrls: 'https://i.gkd.li/i/12567698', // 金币动画的快照
@@ -646,7 +648,7 @@ export default defineGkdApp({
           key: 0,
           name: '点击[X]-1',
           matches:
-            'View[childCount>=2] >n [name$="View"][desc.length>=1] - View[desc$="推​荐​" || desc$="推​薦​"][childCount>=2] > ImageView[clickable=true][visibleToUser=true][index=parent.childCount.minus(1)][width<100&&height<100][clickable=true]',
+            'View[childCount>=2][desc!="发现"] >n [name$="View"][desc.length>=1][desc!="发现"] - View[desc$="推​荐​" || desc$="推​薦​"][childCount>=2][desc!="发现"] > ImageView[clickable=true][visibleToUser=true][index=parent.childCount.minus(1)][width<100&&height<100][clickable=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/14436176',
             'https://i.gkd.li/i/14392392',
