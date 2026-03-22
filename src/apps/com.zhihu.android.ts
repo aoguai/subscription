@@ -14,7 +14,7 @@ export default defineGkdApp({
         {
           key: 0,
           activityIds: [
-            '.feature.short_container_feature.ui.ShortContainerHostActivity',
+            '.feature.short_container_feature.ui',
             '.ContentActivity',
           ],
           matches:
@@ -29,6 +29,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/14206949',
             'https://i.gkd.li/i/14206988',
             'https://i.gkd.li/i/18008867',
+            'https://i.gkd.li/i/25572259',
           ],
           excludeSnapshotUrls: [
             'https://i.gkd.li/i/17002118',
