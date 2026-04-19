@@ -8,12 +8,12 @@ export default defineGkdApp({
       key: 1,
       name: '局部广告-卡片广告',
       desc: '关闭播放界面、歌单页、我的页等位置的各类卡片广告',
+      activityIds: '.activity.AppStarterActivity',
       rules: [
         {
           key: 1,
           fastQuery: true,
-          activityIds:
-            'com.tencent.qqmusic.business.playernew.view.NewPlayerActivity',
+          activityIds: '.business.playernew.view.NewPlayerActivity',
           matches:
             '[text^="广告"] + [text="跳过"][clickable=true][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/13985169', // 播放界面
@@ -21,7 +21,6 @@ export default defineGkdApp({
         {
           key: 2,
           fastQuery: true,
-          activityIds: 'com.tencent.qqmusic.activity.AppStarterActivity',
           matches:
             '@[desc="关闭"][clickable=true] -(1,2) [text="广告"][visibleToUser=true]',
           snapshotUrls: [
@@ -32,37 +31,33 @@ export default defineGkdApp({
         {
           key: 3,
           fastQuery: true,
-          activityIds: 'com.tencent.qqmusic.activity.AppStarterActivity',
           matches:
-            '@ImageView - ImageView - RelativeLayout >n [text="听歌入会赢绿钻"||text="摇动点击广告跳转"][visibleToUser=true]',
+            '@ImageView - ImageView - RelativeLayout >3 [text="听歌入会赢绿钻" || text="摇动点击广告跳转"][visibleToUser=true]',
           snapshotUrls: [
-            'https://i.gkd.li/i/13206982',
-            'https://i.gkd.li/i/13218134',
+            'https://i.gkd.li/i/13206982', // (首页) 听歌入会赢绿钻
+            'https://i.gkd.li/i/13218134', // (首页) 摇动点击广告跳转
           ],
         },
         {
           key: 4,
           fastQuery: true,
-          activityIds: 'com.tencent.qqmusic.activity.AppStarterActivity',
-          matches:
-            '@[clickable=true][visibleToUser=true] > [text="广告"][visibleToUser=true]',
+          matches: '@[clickable=true] > [text="广告"][visibleToUser=true]',
           snapshotUrls: [
-            'https://i.gkd.li/i/15041019',
-            'https://i.gkd.li/i/18227243',
+            'https://i.gkd.li/i/15041019', // 首页
+            'https://i.gkd.li/i/18227243', // 搜索页
           ],
-          excludeSnapshotUrls: 'https://i.gkd.li/i/18219557',
+          excludeSnapshotUrls: 'https://i.gkd.li/i/18219557', // [text="广告"][visibleToUser=false]
         },
         {
           key: 5,
-          activityIds: 'com.tencent.qqmusic.activity.AppStarterActivity',
+          fastQuery: true,
           matches:
-            'RecyclerView > LinearLayout[childCount=3] >5 ViewGroup[childCount=3] > @ViewGroup[clickable=true] >2 ImageView[text=null][desc=null][visibleToUser=true]',
-          snapshotUrls: 'https://i.gkd.li/i/15756931',
+            '@ImageView[clickable=true][height<87] <2 RelativeLayout - * > [text="广告"]',
+          snapshotUrls: 'https://i.gkd.li/i/26806364', // 首页
         },
         {
           key: 6,
           fastQuery: true,
-          activityIds: '.activity.AppStarterActivity',
           matches:
             '@ImageView[clickable=true] - [text="广告"][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/17450309',
@@ -70,23 +65,14 @@ export default defineGkdApp({
         {
           key: 7,
           fastQuery: true,
-          activityIds: '.activity.AppStarterActivity',
           matches: '[text="广告 | 关闭"][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/18227204',
         },
+
+        // 不支持快查的放后面,以防阻塞前面快查的
         {
-          key: 8,
-          name: '播放页[猜你也会喜欢]推荐',
-          fastQuery: true,
-          activityIds: '.business.playernew.view.NewPlayerActivity',
-          matches:
-            '@ImageView[childCount=0][clickable=true] -2 [text="猜你也会喜欢"][visibleToUser=true]',
-          snapshotUrls: 'https://i.gkd.li/i/18410610',
-        },
-        {
-          key: 9,
+          key: 20,
           matchTime: 10000,
-          activityIds: '.activity.AppStarterActivity',
           matches:
             'RecyclerView > FrameLayout[desc!=null] >3 LinearLayout[id!=null] > ViewPager > FrameLayout[visibleToUser=true] > ImageView[childCount=0][clickable=true][width<150 && height<100][index=parent.childCount.minus(1)]',
           snapshotUrls: [
@@ -95,11 +81,16 @@ export default defineGkdApp({
           ],
         },
         {
-          key: 10,
-          activityIds: '.activity.AppStarterActivity',
+          key: 21,
           matches:
             'ImageView[width<80 && height<80] <<2 @ViewGroup[clickable=true] - [text^="hi~"]',
           snapshotUrls: 'https://i.gkd.li/i/23930716',
+        },
+        {
+          key: 22,
+          matches:
+            'RecyclerView > LinearLayout[childCount=3] >5 ViewGroup[childCount=3] > @ViewGroup[clickable=true] >2 ImageView[text=null][desc=null][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/15756931',
         },
       ],
     },
