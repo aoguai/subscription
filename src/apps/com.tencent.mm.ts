@@ -136,7 +136,7 @@ export default defineGkdApp({
           key: 0,
           name: 'PC 微信扫码登录',
           matches: [
-            '[text^="登录 Win" || text^="登录桌面" || text^="登入 WeChat" || text^="Log in to Weixin for"][visibleToUser=true]',
+            '[text^="登录 Win" || text^="登录 Mac" || text^="登录桌面" || text^="登入 WeChat" || text^="登入 微信" || text^="Log in to Weixin for"][visibleToUser=true]',
             '[text="登录" || text="登入" || text="Log In"][visibleToUser=true]',
           ],
           snapshotUrls: [
@@ -146,6 +146,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/22356438', // En_US
             'https://i.gkd.li/i/25315046', // zh_TW
             'https://i.gkd.li/i/25815630', // Linux_zh_CN
+            'https://i.gkd.li/i/26865671',
           ],
         },
         {
@@ -230,7 +231,7 @@ export default defineGkdApp({
     },
     {
       key: 5,
-      name: '功能类-自动领取微信红包',
+      name: '功能类-自动领取红包',
       desc: '自动领取私聊红包,群聊红包',
       enable: false,
       fastQuery: true,
@@ -243,10 +244,11 @@ export default defineGkdApp({
             '.ui.chatting.variants.ChattingMainUI',
           ],
           matches:
-            'LinearLayout[childCount=1] >2 @FrameLayout[clickable=true] >2 LinearLayout[getChild(1).childCount=1] +2 RelativeLayout > [text="微信红包"]',
+            'LinearLayout[childCount=1] >2 @FrameLayout[clickable=true] >3 [childCount=1] <2 LinearLayout +(1,2) RelativeLayout > [text="微信红包"]',
           snapshotUrls: [
             'https://i.gkd.li/i/18134826',
             'https://i.gkd.li/i/24347101',
+            'https://i.gkd.li/i/26586606',
           ],
           excludeSnapshotUrls: [
             'https://i.gkd.li/i/18134823', // 自己发的， LinearLayout[childCount=1] 区分
@@ -464,7 +466,7 @@ export default defineGkdApp({
       rules: [
         {
           key: 0,
-          name: '开屏广告',
+          name: '开屏广告-1',
           actionDelay: 800, // 过早点击首次大概率跳不过
           forcedTime: 10000,
           fastQuery: true,
@@ -515,6 +517,16 @@ export default defineGkdApp({
             'https://i.gkd.li/import/13298294',
             'https://i.gkd.li/import/14156176', // 误触快照
           ],
+        },
+        {
+          key: 3,
+          name: '开屏广告-2',
+          matchRoot: true,
+          actionCd: 500,
+          matches:
+            '@TextView[text*="跳过"] < View < * < WebView < * < * < * < * < * < * < * < * < * <2 FrameLayout[childCount=2] < * < [id="android:id/content"]',
+          // matches: '@TextView[text*="跳过"][text.length<10][height<150] <<12 * <2 FrameLayout[childCount=2] < * < [id="android:id/content"]',  // 用 << 会被GKD判为缓慢查询,等类似的多了再用吧
+          snapshotUrls: 'https://i.gkd.li/i/26677309',
         },
       ],
     },
