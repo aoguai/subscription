@@ -15,7 +15,7 @@ export default defineGkdApp({
       rules: [
         {
           key: 1,
-          matches: '[id=`tv.danmaku.bili:id/ad_goods_mark_big`]',
+          matches: '[vid="ad_goods_mark_big"]',
           snapshotUrls: 'https://i.gkd.li/import/12700222',
         },
         {
@@ -136,6 +136,19 @@ export default defineGkdApp({
       ],
     },
     {
+      key: 5,
+      name: '局部广告-会员购',
+      desc: '底部横幅Ad',
+      rules: [
+        {
+          fastQuery: true,
+          activityIds: '.MainActivityV2',
+          matches: '[vid="mall_home_newuser_coupon_close"][clickable=true]',
+          snapshotUrls: 'https://i.gkd.li/i/26240948',
+        },
+      ],
+    },
+    {
       key: 6,
       name: '局部广告-首页浮标广告',
       rules: [
@@ -161,7 +174,7 @@ export default defineGkdApp({
             'com.bilibili.ship.theseus.detail.UnitedBizDetailsActivity',
             'com.bilibili.video.videodetail.VideoDetailsActivity',
           ],
-          matches: '[id="tv.danmaku.bili:id/toast_x"]',
+          matches: '[vid="toast_x"]',
           snapshotUrls: [
             'https://i.gkd.li/i/12892611',
             'https://i.gkd.li/i/13308344',
@@ -302,12 +315,12 @@ export default defineGkdApp({
           fastQuery: true,
           activityIds: 'com.bilibili.vip.web.VipWebActivity',
           matches:
-            'TextView[childCount=0][text!=null][index=parent.childCount.minus(1)] -2 View >3 [text^="专属等级加速包"] +2 @TextView[childCount=0][text="领取"] <<n [vid="webview"]',
+            '@TextView[index=parent.childCount.minus(1)][text="领取"] -n [text="领经验"] < View <(2,3) View <3 View < [id="app"][getChild(childCount.minus(1)).text$="隐私政策"] <<(5,6) [vid="webview"]',
           snapshotUrls: [
             'https://i.gkd.li/i/22886723', // 领取前
             'https://i.gkd.li/i/22886739', // 领取后
           ],
-          excludeSnapshotUrls: 'https://i.gkd.li/i/23385023',
+          excludeSnapshotUrls: 'https://i.gkd.li/i/23385023', // [getChild(childCount.minus(1)).text$="隐私政策"] 排除弹窗
         },
       ],
     },
