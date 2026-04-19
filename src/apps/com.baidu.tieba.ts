@@ -115,12 +115,15 @@ export default defineGkdApp({
             'com.baidu.tieba.pb.pb.main.PbActivity',
             'com.baidu.tieba.forum.ForumActivity',
           ],
-          matches:
+          anyMatches: [
             '@View[clickable=true][visibleToUser=true] - [text^="选择不喜欢"]',
+            '[text="已经看过"][clickable=true]',
+          ],
           snapshotUrls: [
             'https://i.gkd.li/i/16595134',
             'https://i.gkd.li/i/16595511',
             'https://i.gkd.li/i/16595113',
+            'https://i.gkd.li/i/26634661', // [已经看过]
           ],
         },
       ],
