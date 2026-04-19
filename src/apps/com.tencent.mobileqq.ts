@@ -11,7 +11,10 @@ export default defineGkdApp({
       fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
+      scopeKeys: [13], // 规则组key13也是开屏广告
+      actionMaximumKey: 0, // key13-0
       resetMatch: 'app',
+      priorityTime: 10000,
       excludeActivityIds: [
         'com.tencent.mobileqq.activity.ChatActivity', // 在聊天界面禁用
         'com.tencent.mobileqq.search.activity.UniteSearchActivity', // 在搜索页面禁用
@@ -44,7 +47,7 @@ export default defineGkdApp({
           name: '消息页面顶部广告',
           activityIds: 'com.tencent.mobileqq.activity.SplashActivity',
           matches:
-            'ImageView[longClickable!=true][vid!="chat_item_head_icon"][desc=null&&text=null] <n *[left=0][vid!="root"][visibleToUser=true] >n TextView[clickable=false][text.length>0][!(text~="(?is).*([01]?[0-9]|2[0-3])[:：][0-5][0-9].*")][text!$="G"&&text!$="M"&&text!$="k"][visibleToUser=true] <<n * > [name$="ImageView"||name$="Button"][desc="关闭"||(desc=null&&text=null)][vid!="chat_item_head_icon"][childCount=0][visibleToUser=true][clickable=true][longClickable!=true][left>0]',
+            '[longClickable!=true][vid!="chat_item_head_icon"][desc=null&&text=null] <n *[left=0][vid!="root"][visibleToUser=true] >n TextView[clickable=false][text.length>0][!(text~="(?is).*([01]?[0-9]|2[0-3])[:：][0-5][0-9].*")][text!$="G"&&text!$="M"&&text!$="k"][visibleToUser=true] <<n * > [name$="ImageView"||name$="Button"][desc="关闭"||(desc=null&&text=null)][vid!="chat_item_head_icon"][childCount=0][visibleToUser=true][clickable=true][longClickable!=true][left>0]',
           excludeMatches: [
             '[id^="com.tencent.mobileqq.qzone"]', // QQ空间
             '[text="互动标识"]', // 侧滑抽屉
@@ -78,6 +81,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/23837678',
             'https://i.gkd.li/i/24230528',
             'https://i.gkd.li/i/25235782',
+            'https://i.gkd.li/i/26159150',
           ],
           excludeSnapshotUrls: [
             'https://i.gkd.li/i/14414585', //  误触
@@ -561,19 +565,21 @@ export default defineGkdApp({
       enable: false,
       fastQuery: true,
       actionMaximum: 1,
-      activityIds: [
-        'com.tencent.mobileqq.mini.appbrand.ui.AppBrandUI',
-        'com.tencent.mobileqq.activity.miniaio.MiniChatActivity',
-      ],
+      priorityTime: 10000,
       rules: [
         {
+          key: 0,
+          activityIds: [
+            '.mini.appbrand.ui.AppBrandUI',
+            '.activity.miniaio.MiniChatActivity',
+          ],
           matches: [
             '[text="广告"][visibleToUser=true]',
             '[text="跳过"][visibleToUser=true]',
           ],
           snapshotUrls: [
-            'https://i.gkd.li/import/12877215',
-            'https://i.gkd.li/import/12919195',
+            'https://i.gkd.li/i/12877215',
+            'https://i.gkd.li/i/12919195',
             'https://i.gkd.li/i/15130235',
           ],
         },
