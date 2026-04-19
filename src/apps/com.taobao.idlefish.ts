@@ -46,10 +46,11 @@ export default defineGkdApp({
           activityIds:
             'com.taobao.idlefish.maincontainer.activity.MainActivity',
           matches:
-            'WebView[text="Rax App"] > [id="root"] >(3,6) View[index=parent.childCount.minus(1)][clickable=true]',
+            'WebView[text="Rax App"] > [id="root"] >(3,6) View[index=parent.childCount.minus(1)][index>=1]',
           snapshotUrls: [
             'https://i.gkd.li/i/14551046',
             'https://i.gkd.li/i/24981766',
+            'https://i.gkd.li/i/26865707',
           ],
         },
         {
@@ -176,6 +177,32 @@ export default defineGkdApp({
     },
     {
       key: 9,
+      name: '局部广告',
+      desc: '关闭各类局部广告',
+      rules: [
+        {
+          key: 0,
+          fastQuery: true,
+          activityIds: '.maincontainer.activity.MainActivity',
+          matches:
+            '@ImageView[clickable=true][width<100] <(2,5) FrameLayout <<(3,4) [vid="fish_layer_container_id"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/25796897',
+            'https://i.gkd.li/i/26184285',
+          ],
+        },
+        {
+          key: 1,
+          fastQuery: true,
+          activityIds: '.detail.DetailActivity',
+          matches:
+            'Image[width<60 && height<60] < @View <n [childCount=2] < [id="root"] <<2 * <2 WebView <<2 [vid="fish_layer_container_id"]',
+          snapshotUrls: 'https://i.gkd.li/i/26837679',
+        },
+      ],
+    },
+    {
+      key: 20,
       name: '功能类-关闭小额免密支付',
       desc: '关闭支付时的小额免密支付选项',
       rules: [
