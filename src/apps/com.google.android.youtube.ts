@@ -9,27 +9,20 @@ export default defineGkdApp({
       name: '全屏广告-视频播放-跳过广告',
       desc: '点击跳过广告按钮',
       enable: false,
-      fastQuery: true,
-      activityIds: [
-        'com.google.android.apps.youtube.app.watchwhile.WatchWhileActivity',
-        'com.google.android.apps.youtube.app.watchwhile.MainActivity',
-        'com.google.android.youtube',
-      ],
       rules: [
         {
+          fastQuery: true,
           key: 0,
-          name: '类型1',
-          matches: '[id="com.google.android.youtube:id/skip_ad_button_text"]',
-          snapshotUrls: [
-            'https://i.gkd.li/import/13797491',
-            'https://i.gkd.li/import/12565261',
+          activityIds: [
+            'com.google.android.apps.youtube.app.watchwhile.WatchWhileActivity',
+            'com.google.android.apps.youtube.app.watchwhile.MainActivity',
           ],
-        },
-        {
-          key: 1,
-          name: '类型2',
-          matches: '[id="com.google.android.youtube:id/modern_skip_ad_text"]',
-          snapshotUrls: ['https://i.gkd.li/import/13705106'],
+          matches: '[vid="skip_ad_button" || vid="modern_skip_ad_text"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13797491',
+            'https://i.gkd.li/i/12565261',
+            'https://i.gkd.li/i/13705106',
+          ],
         },
       ],
     },
@@ -43,12 +36,16 @@ export default defineGkdApp({
         'com.google.android.apps.youtube.app.watchwhile.WatchWhileActivity',
         'com.google.android.apps.youtube.app.watchwhile.MainActivity',
       ],
-      rules:
-        '@[desc="关闭广告面板" || desc="Close ad panel"] <<n [vid="panel_header"]',
-      snapshotUrls: [
-        'https://i.gkd.li/import/12877346',
-        'https://i.gkd.li/import/13797491',
-        'https://i.gkd.li/import/13705106',
+      rules: [
+        {
+          matches:
+            '@[desc="关闭广告面板" || desc="Close ad panel"][clickable=true] - ImageView <<3 FrameLayout < [vid="panel_header"][visibleToUser=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13797491',
+            'https://i.gkd.li/i/13705106', // 纯id？
+            'https://i.gkd.li/i/14784199',
+          ],
+        },
       ],
     },
     {
@@ -56,34 +53,34 @@ export default defineGkdApp({
       name: '全屏广告-会员广告',
       desc: '关闭首页和视频页的会员广告提示',
       enable: false,
-      activityIds: [
+      fastQuery: true,
+      activityIds:
         'com.google.android.apps.youtube.app.watchwhile.MainActivity',
-        'com.google.android.apps.youtube.app.watchwhile.WatchWhileActivity',
-      ],
-      rules:
-        '[!(getChild(0).getChild(0).desc="Image attachment")] + @[desc="不用了，谢谢" || desc="关闭" || desc="我暂时不要" || desc="Close" || desc="No thanks"][visibleToUser=true] <<n [vid="bottom_ui_container" || vid="custom"]',
-      snapshotUrls: [
-        'https://i.gkd.li/import/12877357',
-        'https://i.gkd.li/i/13797512',
-        'https://i.gkd.li/i/18017075',
-        'https://i.gkd.li/i/18549944',
-        'https://i.gkd.li/i/19578085',
-        'https://i.gkd.li/i/25865404',
-      ],
-      excludeSnapshotUrls: 'https://i.gkd.li/i/21978683',
-    },
-    {
-      key: 3,
-      name: '局部广告',
       rules: [
         {
-          fastQuery: true,
-          activityIds:
-            'com.google.android.apps.youtube.app.watchwhile.MainActivity',
+          key: 0,
+          name: '视频',
           matches:
-            '[desc="更多选项"] + @ImageView[clickable=true][width<100 && height<100] <<n [vid="panel_header"]',
-          snapshotUrls: ['https://i.gkd.li/i/23787178'],
-          excludeSnapshotUrls: 'https://i.gkd.li/i/25461943',
+            '[!(getChild(0).getChild(0).desc="Image attachment")] + @[desc="不用了，谢谢" || desc="关闭" || desc="我暂时不要" || desc="Close" || desc="No thanks"][visibleToUser=true] <3 ViewGroup <<(-n+8) [vid="bottom_ui_container" || vid="custom"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13797512',
+            'https://i.gkd.li/i/19578085',
+            'https://i.gkd.li/i/25865404',
+          ],
+          // excludeSnapshotUrls: 'https://i.gkd.li/i/21978683',
+          exampleUrls: 'https://e.gkd.li/1292c8c9-26e3-4053-bec4-e5ebe50cde8e',
+        },
+        {
+          key: 1,
+          name: '开屏', // 疑似开屏，但有可能不是
+          matches:
+            '[!(getChild(0).getChild(0).desc="Image attachment")] + @[desc="不用了，谢谢" || desc="关闭" || desc="我暂时不要" || desc="Close" || desc="No thanks"][visibleToUser=true] -n ImageView < * < [vid="custom"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/18017075',
+            'https://i.gkd.li/i/18549944',
+          ],
+          // excludeSnapshotUrls: 'https://i.gkd.li/i/21978683',
+          exampleUrls: 'https://e.gkd.li/11cdf5b2-97a8-42f0-a2eb-dc1cb2c98ac1',
         },
       ],
     },
@@ -99,7 +96,8 @@ export default defineGkdApp({
           activityIds:
             'com.google.android.apps.youtube.app.watchwhile.MainActivity',
           matches:
-            '@Button[desc^="翻译成"||desc^="Translate to"][clickable=true][visibleToUser=true] <<n [vid="results" || vid="section_list"]',
+            '@Button[desc^="翻译成"||desc^="Translate to"][clickable=true][visibleToUser=true] -n [desc^="@"] <<3 ViewGroup -n * < [vid="results" || vid="section_list"]',
+          exampleUrls: 'https://e.gkd.li/e9d6eaa8-9fbf-4b16-8f0c-50239597c687',
           snapshotUrls: [
             'https://i.gkd.li/i/17068544', // 翻译前
             'https://i.gkd.li/i/17068647', // 翻译后
@@ -113,22 +111,60 @@ export default defineGkdApp({
     {
       key: 5,
       name: '分段广告-播放页广告',
+      desc: '点击[Dismiss/关闭]',
+      enable: false,
       rules: [
         {
-          key: 1,
           fastQuery: true,
           activityIds:
             'com.google.android.apps.youtube.app.watchwhile.MainActivity',
           matches:
-            '@[vid="overflow_button"][clickable=true] <<n [vid="collapsible_ad_cta_overlay_container"]',
-          snapshotUrls: 'https://i.gkd.li/i/23790199',
+            '[vid="mealbar_action_button"] - [vid="mealbar_dismiss_button"][clickable=true][visibleToUser=true]',
+          exampleUrls: 'https://e.gkd.li/aa8f2617-fd6d-43a8-951d-1bd6efc504d3',
+          snapshotUrls: [
+            'https://i.gkd.li/i/19930694',
+            'https://i.gkd.li/i/25461814',
+          ],
+        },
+      ],
+    },
+    {
+      key: 8,
+      name: '局部广告',
+      desc: '点击关闭各类局部广告',
+      rules: [
+        {
+          fastQuery: true,
+          activityIds:
+            'com.google.android.apps.youtube.app.watchwhile.MainActivity',
+          matches:
+            '@ImageView[clickable=true][index=parent.childCount.minus(1)] - [desc="更多选项"] < ViewGroup[childCount=2] < * < [vid="panel_header"]',
+          snapshotUrls: 'https://i.gkd.li/i/23787178',
+          excludeSnapshotUrls: 'https://i.gkd.li/i/25461943',
+        },
+      ],
+    },
+    {
+      key: 9,
+      name: '分段广告-播放器广告',
+      desc: '点击关闭播放器广告',
+      enable: false,
+      fastQuery: true,
+      activityIds:
+        'com.google.android.apps.youtube.app.watchwhile.MainActivity',
+      rules: [
+        {
+          key: 1,
+          matches:
+            '[vid="collapsible_ad_cta_overlay_container"] >4 [vid="overflow_button"][clickable=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/23790199',
+            'https://i.gkd.li/i/26672553',
+          ],
         },
         {
           key: 2,
           preKeys: [1],
-          fastQuery: true,
-          activityIds:
-            'com.google.android.apps.youtube.app.watchwhile.MainActivity',
           matches:
             '@[clickable=true] >(1,2) [vid="list_item_text"][text="关闭"]',
           snapshotUrls: [
