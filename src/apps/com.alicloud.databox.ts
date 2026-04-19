@@ -94,7 +94,7 @@ export default defineGkdApp({
       rules: [
         {
           matches:
-            '[text^="立即了解"] -3 @View[clickable=true] <<n [vid="webContainer"]',
+            '[text*="新版本"] -n @[clickable=true][getChild(0).name$="Image"] <<4 [id="root"] <<3 [vid="webContainer"]',
           snapshotUrls: 'https://i.gkd.li/import/13806865',
         },
       ],
@@ -149,7 +149,7 @@ export default defineGkdApp({
       desc: '点击关闭',
       enable: false,
       fastQuery: true,
-      activityIds: 'com.alicloud.databox.MainActivity',
+      activityIds: '.MainActivity',
       rules: [
         {
           matches: ['[text="容量使用超限"]', '[vid="layout_close"]'],
@@ -165,7 +165,7 @@ export default defineGkdApp({
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
-      activityIds: 'com.alicloud.databox.transferpage.TransferListActivity',
+      activityIds: '.transferpage.TransferListActivity',
       rules: [
         {
           key: 0,
