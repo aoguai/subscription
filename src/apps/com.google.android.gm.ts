@@ -13,6 +13,7 @@ export default defineGkdApp({
       rules: [
         {
           key: 1,
+          actionMaximum: 1,
           matches:
             '[vid="basic_ad_teaser_info_icon" || vid="button_chip_ad_teaser_info_icon"][clickable=true]',
           snapshotUrls: [
@@ -24,6 +25,7 @@ export default defineGkdApp({
           preKeys: [1],
           key: 2,
           name: '②点击[屏蔽]',
+          action: 'clickCenter', // 此界面不接受无障碍事件
           matches:
             '@Button[clickable=true][text="屏蔽此广告" || text^="Block" || desc="屏蔽"] <<n [vid="my_ad_center_dialog"]',
           snapshotUrls: [
