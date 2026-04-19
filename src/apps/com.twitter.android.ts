@@ -58,7 +58,7 @@ export default defineGkdApp({
           key: 10,
           name: '点击屏蔽/隐藏,如果机会全用完需要取消遍再屏蔽',
           matches:
-            '@ViewGroup > [id="com.twitter.android:id/action_sheet_item_title"][text^="屏蔽"||text^="Block"||text^="隐藏 @"||text^="Mute @"||text^="Unblock @"||text^="Unmute @"]',
+            '@ViewGroup > [id="com.twitter.android:id/action_sheet_item_title"][text^="屏蔽"||text^="封鎖"||text^="Block"||text^="隐藏 @"||text^="Mute @"||text^="Unblock @"||text^="Unmute @"]',
           snapshotUrls: [
             'https://i.gkd.li/import/12798810',
             'https://i.gkd.li/i/14782902',
@@ -73,6 +73,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/25461007', // 隐藏已用
             'https://i.gkd.li/i/25461077', // En-Mute
             'https://i.gkd.li/i/25461050', // En-Unmute
+            'https://i.gkd.li/i/26865753',
           ],
         },
         {
@@ -116,7 +117,7 @@ export default defineGkdApp({
           actionCd: 2000, //防止[译文]节点未加载完导致重复点击 [翻译]
           activityIds: 'com.twitter.tweetdetail.TweetDetailActivity',
           matches:
-            '[vid="translation_link" || vid="grok_translation_link"][clickable=true][index=parent.childCount.minus(1)]',
+            '[vid="translation_link" || vid="grok_translation_link"][index=parent.childCount.minus(1)][index!=2]',
           exampleUrls: [
             'https://e.gkd.li/ced46989-9c6a-4626-b027-7953e0fdc2c6',
             'https://m.gkd.li/57941037/40ece44f-883f-429a-aa0c-17dac15a50e4',
@@ -127,8 +128,12 @@ export default defineGkdApp({
             'https://i.gkd.li/i/25537171',
             'https://i.gkd.li/i/25461468',
             'https://i.gkd.li/i/25461607', // Grok translate
+            'https://i.gkd.li/i/26642877',
           ],
-          excludeSnapshotUrls: 'https://i.gkd.li/i/25537171', // 已翻译, 加 [index=parent.childCount.minus(1)] 排除
+          excludeSnapshotUrls: [
+            'https://i.gkd.li/i/25537171', // 已翻译, 加 [index=parent.childCount.minus(1)] 排除
+            'https://i.gkd.li/i/26642826', // 已翻译, 加 [index!=2] 排除
+          ],
         },
       ],
     },
