@@ -250,10 +250,14 @@ export default defineGkdApp({
       rules: [
         {
           key: 0,
+          fastQuery: true,
           activityIds: 'com.eg.android.AlipayGphone.AlipayLogin',
           matches:
-            'RelativeLayout[childCount=2][desc="全屏广告"] ImageView[desc="关闭"]',
-          snapshotUrls: 'https://i.gkd.li/i/14034152',
+            '@ImageView[desc="关闭"][clickable=true] < LinearLayout - [id="com.alipay.mobile.advertisement:id/standardlayer_contentview"][desc="推荐广告"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14034152',
+            'https://i.gkd.li/i/26184718',
+          ],
         },
         {
           key: 1,
@@ -332,6 +336,7 @@ export default defineGkdApp({
       key: 18,
       name: '功能类-无法访问时点击[返回]',
       desc: '无法访问时点击[返回]',
+      enable: false,
       rules: [
         {
           fastQuery: true,
@@ -357,6 +362,21 @@ export default defineGkdApp({
             'https://i.gkd.li/i/25199767',
             'https://i.gkd.li/i/25485052',
           ],
+        },
+      ],
+    },
+    {
+      key: 20,
+      name: '局部广告-底部横幅广告',
+      fastQuery: true,
+      activityIds: '.AlipayLogin',
+      rules: [
+        {
+          key: 0,
+          name: '邀请参加调研',
+          matches:
+            '@ImageView[clickable=true][width<68] <2 [desc="底部广告"] - [vid="alipaylogin_layout"]',
+          snapshotUrls: 'https://i.gkd.li/i/26330637',
         },
       ],
     },
