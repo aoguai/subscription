@@ -28,14 +28,15 @@ export default defineGkdApp({
       desc: '关闭首页、帖子内的广告和直播推广',
       enable: false,
       fastQuery: true,
-      forcedTime: 10000,
+      activityIds: [
+        '.tblauncher.MainTabActivity',
+        '.pb.pb.main.PbActivity',
+        '.forum.ForumActivity',
+      ],
       rules: [
         {
           key: 0,
-          activityIds: [
-            'com.baidu.tieba.tblauncher.MainTabActivity',
-            'com.baidu.tieba.forum.ForumActivity',
-          ],
+          activityIds: ['.tblauncher.MainTabActivity', '.forum.ForumActivity'],
           matches:
             '@ImageView[clickable=true][visibleToUser=true] <(1,2) LinearLayout <4 RelativeLayout +2 RelativeLayout >2 [text="直播中"]',
           snapshotUrls: [
@@ -45,13 +46,9 @@ export default defineGkdApp({
         },
         {
           key: 1,
-          activityIds: [
-            'com.baidu.tieba.forum.ForumActivity',
-            'com.baidu.tieba.pb.pb.main.PbActivity',
-            'com.baidu.tieba.tblauncher.MainTabActivity',
-          ],
           matches:
             '@FrameLayout[clickable=true][visibleToUser=true] < LinearLayout < RelativeLayout <3 LinearLayout < RelativeLayout + LinearLayout >2 [text$="广告"]',
+          exampleUrls: 'https://e.gkd.li/3b2f0906-f620-4fda-a59f-334a9548836e',
           snapshotUrls: [
             'https://i.gkd.li/i/16595127',
             'https://i.gkd.li/i/16595515',
@@ -60,7 +57,7 @@ export default defineGkdApp({
         },
         {
           key: 2,
-          activityIds: 'com.baidu.tieba.pb.pb.main.PbActivity',
+          activityIds: '.pb.pb.main.PbActivity',
           matches:
             '@FrameLayout[clickable=true][visibleToUser=true] < LinearLayout < FrameLayout -(1,2) [text$="广告"]',
           snapshotUrls: [
@@ -70,36 +67,16 @@ export default defineGkdApp({
         },
         {
           key: 3,
-          activityIds: 'com.baidu.tieba.pb.pb.main.PbActivity',
+          activityIds: '.pb.pb.main.PbActivity',
           matches:
             '@ImageView[clickable=true][visibleToUser=true] -3 [text="直播中"]',
           snapshotUrls: 'https://i.gkd.li/i/16596210',
         },
         {
           key: 4,
-          activityIds: 'com.baidu.tieba.pb.pb.main.PbActivity',
           matches:
-            '@[clickable=true][visibleToUser=true] <(1,2) RelativeLayout <(1,4) RelativeLayout[childCount>1] >(3,4) [text="广告"]',
+            'ImageView[index=parent.childCount.minus(1)] < @[vid="obfuscated"][clickable=true] -n * < RelativeLayout + FrameLayout >n [text="广告"]',
           snapshotUrls: [
-            'https://i.gkd.li/i/16595124',
-            'https://i.gkd.li/i/16596297',
-            'https://i.gkd.li/i/24541094',
-          ],
-          excludeSnapshotUrls: 'https://i.gkd.li/i/16632851', // [childCount>1] 防止误触]
-        },
-        {
-          key: 5,
-          activityIds: [
-            'com.baidu.tieba.pb.pb.main.PbActivity',
-            'com.baidu.tieba.forum.ForumActivity',
-            'com.baidu.tieba.tblauncher.MainTabActivity',
-          ],
-          matches:
-            '@FrameLayout[clickable=true][visibleToUser=true] <(3,4) RelativeLayout + FrameLayout >(7,8,9) [text="广告"]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/16595301',
-            'https://i.gkd.li/i/16596195',
-            'https://i.gkd.li/i/16596775',
             'https://i.gkd.li/i/21524232',
             'https://i.gkd.li/i/21529443',
             'https://i.gkd.li/i/21556758',
@@ -108,23 +85,49 @@ export default defineGkdApp({
           ],
         },
         {
+          key: 5,
+          activityIds: '.pb.pb.main.PbActivity',
+          matches:
+            'ImageView[childCount=0] < @FrameLayout[clickable=true][childCount=1][visibleToUser=true] <2 RelativeLayout + RelativeLayout >3 [text="广告"]',
+          snapshotUrls: 'https://i.gkd.li/i/24541094',
+        },
+        // 第二段
+        {
+          key: 50,
           preKeys: [0, 1, 2, 3, 4, 5],
-          key: 10,
-          activityIds: [
-            'com.baidu.tieba.tblauncher.MainTabActivity',
-            'com.baidu.tieba.pb.pb.main.PbActivity',
-            'com.baidu.tieba.forum.ForumActivity',
-          ],
-          anyMatches: [
+          name: '点击[不感兴趣]', // 直接结束, 无需第三段
+          matches:
             '@View[clickable=true][visibleToUser=true] - [text^="选择不喜欢"]',
-            '[text="已经看过"][clickable=true]',
-          ],
           snapshotUrls: [
             'https://i.gkd.li/i/16595134',
             'https://i.gkd.li/i/16595511',
             'https://i.gkd.li/i/16595113',
+          ],
+        },
+        {
+          key: 51,
+          preKeys: [0, 1, 2, 3, 4, 5],
+          name: '选一个[理由]',
+          matches:
+            '[text="已经看过" || text="广告重复" || text="不感兴趣"][clickable=true]',
+          snapshotUrls: [
             'https://i.gkd.li/i/26634661', // [已经看过]
           ],
+        },
+        {
+          key: 52,
+          preKeys: [0, 1, 2, 3, 4, 5],
+          name: '选[不喜欢]该直播',
+          matches: '@[clickable=true] >3 [text="不喜欢"]',
+          snapshotUrls: 'https://i.gkd.li/i/27052244', // [不喜欢] 直播
+        },
+        // 第三段
+        {
+          key: 100,
+          preKeys: [51, 52],
+          name: '点击[确定]',
+          matches: '@[clickable=true] - [text^="已选"][text$="理由"]',
+          snapshotUrls: 'https://i.gkd.li/i/26934788',
         },
       ],
     },
@@ -306,14 +309,13 @@ export default defineGkdApp({
           key: 0,
           name: '贴吧页签到',
           activityIds: 'com.baidu.tieba.forum.ForumActivity',
-          anyMatches: [
-            '@TextView[text="签到"][visibleToUser=true] <3 View < View <2 View < View < WebView < WebView < FrameLayout < ViewGroup <2 FrameLayout < FrameLayout < [id="android:id/content"]',
-            '@TextView[text="签到"][visibleToUser=true] <5 View < View <2 View < WebView < WebView < FrameLayout < ViewGroup <2 FrameLayout < FrameLayout < [id="android:id/content"]',
-          ],
+          matches:
+            '@TextView[text="签到"][visibleToUser=true] <n View < View <2 View < * < WebView <<(6,7) [id="android:id/content"]',
           snapshotUrls: [
             'https://i.gkd.li/import/13776801',
             'https://i.gkd.li/i/15087289',
             'https://i.gkd.li/i/17902156',
+            'https://i.gkd.li/i/27051552',
           ],
         },
         {
@@ -328,6 +330,7 @@ export default defineGkdApp({
             'https://i.gkd.li/import/13776424',
             'https://i.gkd.li/i/15087327',
             'https://i.gkd.li/i/15881225',
+            'https://i.gkd.li/i/27051969',
           ],
         },
       ],
