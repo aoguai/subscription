@@ -132,12 +132,12 @@ export default defineGkdGlobalGroups([
       {
         key: 0,
         name: '快手SDK-类型1',
-        matches: `[text="广告"] <<n ViewGroup >n ViewGroup[childCount=1][clickable=true] > ImageView${COMMON_PREFIX}`,
+        matches: `[text="广告"] <<n ViewGroup >n @ViewGroup[childCount=1][clickable=true] > ImageView${COMMON_PREFIX}`,
       },
       {
         key: 1,
         name: '快手SDK-类型2',
-        matches: `[text="广告"] <<n ViewGroup >n ViewGroup[childCount=4][clickable=true] > [text="跳过"]${COMMON_PREFIX}`,
+        matches: `[text="广告"] <<n ViewGroup >n @ViewGroup[childCount=4][clickable=true] > [text="跳过"]${COMMON_PREFIX}`,
       },
       {
         key: 2,

@@ -101,7 +101,7 @@ export default defineGkdApp({
         },
         {
           matches:
-            '@ImageView < FrameLayout[clickable=true] + TextView[text^="打开系统通知"]',
+            'ImageView < @FrameLayout[clickable=true] + TextView[text^="打开系统通知"]',
           snapshotUrls: 'https://i.gkd.li/import/12839865',
         },
       ],

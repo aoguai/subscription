@@ -50,7 +50,7 @@ export default defineGkdApp({
           fastQuery: true,
           activityIds:
             'com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity',
-          matches: 'View[clickable=true] < FrameLayout +4 * >2 [text="反馈"]',
+          matches: '@View[clickable=true] < FrameLayout +4 * >2 [text="反馈"]',
           snapshotUrls: 'https://i.gkd.li/i/13259183',
         },
         {

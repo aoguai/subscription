@@ -119,7 +119,7 @@ export default defineGkdApp({
       ],
       rules: [
         {
-          matches: '[desc="查看原图"][visibleToUser=true]',
+          matches: '@[desc="查看原图"][clickable=true][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/15463399',
             'https://i.gkd.li/i/27207770',

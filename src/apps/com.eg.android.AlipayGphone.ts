@@ -106,7 +106,7 @@ export default defineGkdApp({
           activityIds:
             'com.alipay.mobile.nebulax.integration.mpaas.activity.NebulaActivity$Main',
           matches:
-            '[text="添加会员小组件"] < View +3 View[childCount=2] > [text="近期不再提醒我"]',
+            '[text="添加会员小组件"] < View +3 View[childCount=2] > @[text="近期不再提醒我"][clickable=true]',
           snapshotUrls: 'https://i.gkd.li/i/16427922',
         },
         {
