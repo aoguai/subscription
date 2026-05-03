@@ -55,6 +55,7 @@ export default defineGkdGlobalGroups([
     matchRoot: true,
     actionMaximum: 2,
     matchTime: 9000,
+    forcedTime: 9000,
     fastQuery: true,
     resetMatch: 'app',
     actionMaximumKey: 0,
@@ -124,6 +125,7 @@ export default defineGkdGlobalGroups([
     enable: false,
     order: FULLSCREEN_AD,
     matchTime: 10000,
+    forcedTime: 10000,
     resetMatch: 'activity',
     actionCdKey: 0,
     rules: [
@@ -218,6 +220,7 @@ export default defineGkdGlobalGroups([
     enable: false,
     order: PARTIAL_AD,
     matchTime: 10000,
+    forcedTime: 10000,
     resetMatch: 'activity',
     actionCdKey: 0,
     rules: [
@@ -286,6 +289,7 @@ export default defineGkdGlobalGroups([
     disableIfAppGroupMatch: '更新提示',
     actionMaximum: 2,
     matchTime: 10000,
+    forcedTime: 10000,
     resetMatch: 'activity',
     actionCdKey: 0,
     actionMaximumKey: 0,
@@ -368,6 +372,7 @@ export default defineGkdGlobalGroups([
     disableIfAppGroupMatch: '评价提示',
     actionMaximum: 2,
     matchTime: 10000,
+    forcedTime: 10000,
     resetMatch: 'activity',
     actionCdKey: 0,
     actionMaximumKey: 0,
@@ -415,6 +420,7 @@ export default defineGkdGlobalGroups([
     order: NOTIFICATION_PROMPT,
     disableIfAppGroupMatch: '通知提示',
     matchTime: 10000,
+    forcedTime: 10000,
     resetMatch: 'activity',
     actionCdKey: 0,
     rules: [
@@ -462,6 +468,7 @@ export default defineGkdGlobalGroups([
     disableIfAppGroupMatch: '青少年模式',
     actionMaximum: 2,
     matchTime: 10000,
+    forcedTime: 10000,
     resetMatch: 'app',
     actionCdKey: 0,
     actionMaximumKey: 0,
@@ -509,6 +516,7 @@ export default defineGkdGlobalGroups([
     order: YOUTH_MODE,
     disableIfAppGroupMatch: '权限提示',
     matchTime: 10000,
+    forcedTime: 10000,
     resetMatch: 'activity',
     actionCdKey: 0,
     rules: [
@@ -555,6 +563,7 @@ export default defineGkdGlobalGroups([
     order: LOCATION_PROMPT,
     disableIfAppGroupMatch: '定位提示',
     matchTime: 10000,
+    forcedTime: 10000,
     resetMatch: 'activity',
     actionCdKey: 0,
     rules: [
