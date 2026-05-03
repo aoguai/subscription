@@ -132,17 +132,20 @@ export default defineGkdGlobalGroups([
       {
         key: 0,
         name: '快手SDK-类型1',
-        matches: `[text="广告"] <<n ViewGroup >n @ViewGroup[childCount=1][clickable=true] > ImageView${COMMON_PREFIX}`,
+        fastQuery: true,
+        matches: `ImageView${COMMON_PREFIX} < @ViewGroup[childCount=1][clickable=true] <<n ViewGroup >n [text="广告"]`,
       },
       {
         key: 1,
         name: '快手SDK-类型2',
-        matches: `[text="广告"] <<n ViewGroup >n @ViewGroup[childCount=4][clickable=true] > [text="跳过"]${COMMON_PREFIX}`,
+        fastQuery: true,
+        matches: `[text="跳过"]${COMMON_PREFIX} < @ViewGroup[childCount=4][clickable=true] <<n ViewGroup >n [text="广告"]`,
       },
       {
         key: 2,
         name: '快手SDK-类型3',
-        matches: `[text="广告"]  <<n ViewGroup +2 ViewGroup[childCount=3][checked=false] >n ImageView${COMMON_PREFIX}`,
+        fastQuery: true,
+        matches: `@ImageView${COMMON_PREFIX} <<n ViewGroup[childCount=3][checked=false] -2 ViewGroup >n [text="广告"]`,
         snapshotUrls: ['https://i.gkd.li/i/13625303'],
       },
       {
@@ -513,7 +516,7 @@ export default defineGkdGlobalGroups([
     name: '权限提示',
     desc: '! 该规则会自动拒绝 APP 包括但不限于蓝牙、剪切板、通讯录、悬浮窗权限申请弹窗提示，如果有影响请关闭',
     enable: false,
-    order: YOUTH_MODE,
+    order: PERMISSION_PROMPT,
     disableIfAppGroupMatch: '权限提示',
     matchTime: 10000,
     forcedTime: 10000,
