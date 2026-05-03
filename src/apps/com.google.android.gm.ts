@@ -26,8 +26,10 @@ export default defineGkdApp({
           key: 2,
           name: '②点击[屏蔽]',
           action: 'clickCenter', // 此界面不接受无障碍事件
-          matches:
-            '@Button[clickable=true][text="屏蔽此广告" || text^="Block" || desc="屏蔽"] <<n [vid="my_ad_center_dialog"]',
+          anyMatches: [
+            '@Button[text="屏蔽此广告" || text^="Block"][clickable=true] <<n [vid="my_ad_center_dialog"]',
+            '@Button[desc="屏蔽"][clickable=true] <<n [vid="my_ad_center_dialog"]',
+          ],
           snapshotUrls: [
             'https://i.gkd.li/i/13255700', // 屏蔽此广告
             'https://i.gkd.li/i/13724271', // Block
@@ -39,7 +41,7 @@ export default defineGkdApp({
           key: 3,
           name: '③点击[继续]',
           matches:
-            '@Button[clickable=true][text="继续" || text="Continue"] <<n [id="com.google.android.gm:id/my_ad_center_dialog"]',
+            '@Button[text="继续" || text="Continue"][clickable=true] <<n [id="com.google.android.gm:id/my_ad_center_dialog"]',
           snapshotUrls: [
             'https://i.gkd.li/i/13255701', // 继续
             'https://i.gkd.li/i/13724287', // Continue

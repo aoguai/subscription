@@ -9,6 +9,7 @@ export default defineGkdApp({
       name: '全屏广告-首页广告弹窗',
       desc: '关闭首页弹出的全屏广告',
       enable: false,
+      fastQuery: true,
       rules: [
         {
           key: 0,
@@ -27,6 +28,7 @@ export default defineGkdApp({
       key: 3,
       name: '局部广告-首页信息流广告',
       desc: '关闭首页信息流中的广告卡片',
+      fastQuery: true,
       activityIds:
         'com.gotokeep.keep.refactor.business.main.activity.MainActivity',
       rules:
@@ -38,6 +40,7 @@ export default defineGkdApp({
       name: '全屏广告-运动购页面广告弹窗',
       desc: '关闭运动购物页面的弹窗广告',
       enable: false,
+      fastQuery: true,
       rules: [
         {
           key: 0,

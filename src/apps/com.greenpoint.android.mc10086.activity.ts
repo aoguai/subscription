@@ -8,6 +8,7 @@ export default defineGkdApp({
       key: 2,
       name: '全屏广告-首页弹窗广告',
       enable: false,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',

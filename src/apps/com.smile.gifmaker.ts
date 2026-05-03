@@ -38,6 +38,7 @@ export default defineGkdApp({
       name: '局部广告-首页左侧红包悬浮控件',
       desc: '关闭首页左侧悬浮的红包广告控件',
       enable: false,
+      fastQuery: true,
       activityIds: 'com.yxcorp.gifshow.HomeActivity',
       rules: [
         {
@@ -60,6 +61,7 @@ export default defineGkdApp({
         {
           key: 0,
           name: '消息页面-你可能感兴趣的人',
+          fastQuery: true,
           matches: '[id="com.smile.gifmaker:id/close_pymk"]',
           snapshotUrls: 'https://i.gkd.li/i/12708707',
         },
@@ -91,7 +93,7 @@ export default defineGkdApp({
           action: 'back',
           activityIds:
             'com.kuaishou.live.core.basic.activity.LiveSlideActivity',
-          matches: '[visibleToUser=true][text="幸运奖池"] <<n [vid="webView"]',
+          matches: '[text="幸运奖池"][visibleToUser=true] <<n [vid="webView"]',
           snapshotUrls: 'https://i.gkd.li/i/15629334',
         },
       ],

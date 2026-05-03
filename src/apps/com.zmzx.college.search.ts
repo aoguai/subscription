@@ -124,6 +124,7 @@ export default defineGkdApp({
         },
         {
           key: 5,
+          fastQuery: true,
           matches: '[vid="ms_item_pre_render_smallimage_close"]',
           snapshotUrls: 'https://i.gkd.li/i/16398731',
         },

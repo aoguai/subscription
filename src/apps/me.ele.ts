@@ -133,10 +133,9 @@ export default defineGkdApp({
       enable: false,
       rules: [
         {
-          fastQuery: true,
           activityIds: 'me.ele.component.webcontainer.view.AppUCWebActivity',
           matches:
-            '@View[clickable=true] + View >2 [visibleToUser=true][text*="立即续费"] <<n [id="me.ele:id/inside_web_view"]',
+            '@View[clickable=true] + View >2 [text*="立即续费"][visibleToUser=true] <<n [id="me.ele:id/inside_web_view"]',
           snapshotUrls: 'https://i.gkd.li/i/13295007',
         },
       ],

@@ -85,7 +85,7 @@ export default defineGkdApp({
         },
         {
           key: 1,
-          matches: '[visibleToUser=true][vid="ad_close"]',
+          matches: '[vid="ad_close"][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/16773614',
         },
       ],

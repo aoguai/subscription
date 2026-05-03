@@ -151,6 +151,7 @@ export default defineGkdApp({
       name: '分段广告-好友动态广告卡片',
       desc: '关闭好友动态中的广告卡片',
       enable: false,
+      fastQuery: true,
       activityIds: [
         'com.qzone.reborn.feedpro.activity.QzoneFriendFeedProActivity',
         '.activity.SplashActivity',

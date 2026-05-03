@@ -8,6 +8,7 @@ export default defineGkdApp({
       key: 2,
       name: '局部广告-我的页面卡片广告',
       desc: '关闭我的页面中的卡片式广告',
+      fastQuery: true,
       activityIds: 'com.zhaopin.social.homepage.ZSC_MainTabActivity',
       rules:
         '[id="com.zhaopin.social:id/rl_banner_close"][visibleToUser=true][clickable=true]',

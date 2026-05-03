@@ -274,7 +274,7 @@ export default defineGkdApp({
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           matches:
-            '@[text*="跳过"] + [visibleToUser=true][text^="账单分期还"] <<n [id="com.alipay.mobile.nebula:id/h5_pc_container"]',
+            '@[text*="跳过"] + [text^="账单分期还"][visibleToUser=true] <<n [id="com.alipay.mobile.nebula:id/h5_pc_container"]',
           snapshotUrls: 'https://i.gkd.li/i/18409779',
         },
         {
@@ -328,7 +328,7 @@ export default defineGkdApp({
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           matches:
-            '[text="支付宝授权"] >3 @[childCount=0][text="同意"] <<n [id="com.alipay.mobile.nebula:id/h5_pc_container"]',
+            '[text="支付宝授权"] >3 @[text="同意"][childCount=0] <<n [id="com.alipay.mobile.nebula:id/h5_pc_container"]',
           snapshotUrls: 'https://i.gkd.li/i/17376764',
         },
       ],

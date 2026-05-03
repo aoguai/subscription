@@ -209,7 +209,7 @@ export default defineGkdApp({
             'com.zhihu.android.mix.activity.ContentMixProfileActivity',
           fastQuery: true,
           matches:
-            'View[childCount=3] > @View[clickable=true][childCount=1][text=""] > Image[childCount=0][text=""] <<n [vid="view_content"]',
+            'View[childCount=3] > @View[clickable=true][childCount=1][text=""] > Image[text=""][childCount=0] <<n [vid="view_content"]',
           snapshotUrls: 'https://i.gkd.li/i/16422471',
         },
         {
