@@ -113,12 +113,17 @@ export default defineGkdApp({
       name: '功能类-自动查看原图',
       desc: '浏览图片时自动切换至原图模式',
       enable: false,
-      activityIds:
+      activityIds: [
+        'com.idlefish.flutterbridge.flutterboost.boost.FishFlutterBoostTransparencyActivity',
         'com.idlefish.flutterbridge.flutterboost.boost.FishFlutterBoostActivity',
+      ],
       rules: [
         {
           matches: '[desc="查看原图"][visibleToUser=true]',
-          snapshotUrls: 'https://i.gkd.li/i/15463399',
+          snapshotUrls: [
+            'https://i.gkd.li/i/15463399',
+            'https://i.gkd.li/i/27207770',
+          ],
         },
       ],
     },
