@@ -151,29 +151,14 @@ export default defineGkdApp({
       name: '分段广告-好友动态广告卡片',
       desc: '关闭好友动态中的广告卡片',
       enable: false,
+      activityIds: [
+        'com.qzone.reborn.feedpro.activity.QzoneFriendFeedProActivity',
+        '.activity.SplashActivity',
+        '.guild.base.QPublicFragmentActivityForMainWebActivity',
+      ],
       rules: [
         {
           key: 0,
-          activityIds: [
-            'com.tencent.mobileqq.activity.SplashActivity',
-            'com.qzone.reborn.feedx.activity.QZoneFriendFeedXActivity',
-          ],
-          matches: 'View[desc="广告"] + ImageView[clickable=true]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/12847842',
-            'https://i.gkd.li/i/13787345',
-            'https://i.gkd.li/i/24381585',
-          ],
-        },
-        {
-          key: 1,
-          activityIds: 'com.tencent.mobileqq.activity.SplashActivity',
-          matches: '[desc="广告 展开 按钮"] > [desc="关闭"]',
-          snapshotUrls: 'https://i.gkd.li/i/14138572',
-        },
-        {
-          key: 3,
-          fastQuery: true,
           activityIds: [
             'com.qzone.reborn.feedpro.activity.QzoneFriendFeedProActivity',
             '.guild.base.QPublicFragmentActivityForMainWebActivity',
@@ -185,27 +170,33 @@ export default defineGkdApp({
           ],
         },
         {
-          preKeys: [0, 1, 3],
-          fastQuery: true,
-          activityIds: [
-            'com.tencent.mobileqq.activity.SplashActivity',
-            'com.qzone.reborn.feedx.activity.QZoneFriendFeedXActivity',
-            'com.qzone.reborn.feedpro.activity.QzoneFriendFeedProActivity',
-          ],
-          anyMatches: [
-            '@[clickable=true] > * > ImageView + [text="隐藏此条动态"]',
-            '@[clickable=true] >(1,2) ImageView + [text="关闭此条广告"]',
-          ],
+          key: 1,
+          activityIds: '.activity.SplashActivity',
+          matches:
+            '@[desc="更多"][clickable=true] - [desc="广告"][visibleToUser=true] - LinearLayout > [text="今天"]',
+          snapshotUrls: 'https://i.gkd.li/i/24381585',
+        },
+        // 第二段
+        {
+          key: 50,
+          preKeys: [0, 1],
+          name: '点击[关闭]此条广告',
+          matches:
+            '@[clickable=true] >(1,2) [text^="关闭"][text*="条"][text.length<10]',
           snapshotUrls: [
-            'https://i.gkd.li/i/13761147',
-            'https://i.gkd.li/i/13849730',
-            'https://i.gkd.li/i/12840889',
-            'https://i.gkd.li/i/13831867',
-            'https://i.gkd.li/i/14138571',
             'https://i.gkd.li/i/21947698',
             'https://i.gkd.li/i/24381598',
             'https://i.gkd.li/i/24406932',
+            'https://i.gkd.li/i/26997293', // 关闭这条
           ],
+        },
+        // 第三段
+        {
+          key: 100,
+          preKeys: [50],
+          name: '点击[直接关闭]',
+          matches: '[text="直接关闭"][clickable=true]',
+          snapshotUrls: 'https://i.gkd.li/i/26997174',
         },
       ],
     },
