@@ -16,7 +16,7 @@ export default defineGkdApp({
     },
     {
       key: 3,
-      name: '全屏广告-浮窗广告',
+      name: '全屏广告-弹窗广告',
       desc: '关闭首页和查询办理页面的浮窗广告',
       enable: false,
       fastQuery: true,
@@ -26,6 +26,7 @@ export default defineGkdApp({
       ],
       rules: [
         {
+          key: 0,
           matches: 'ImageView[id="com.ct.client:id/close"]',
           snapshotUrls: [
             'https://i.gkd.li/import/12819676',
@@ -34,24 +35,22 @@ export default defineGkdApp({
           ],
         },
         {
+          key: 1,
           matches: 'ImageView[id="com.ct.client:id/ivFloatClose"]',
           snapshotUrls: [
             'https://i.gkd.li/import/13043345',
             'https://i.gkd.li/i/15137220',
           ],
         },
+        {
+          key: 2,
+          activityIds: [
+            'com.ct.client.common.webview.OnlineBusinessWebkitActivity',
+          ],
+          matches: 'Image[text="tishi-close"]',
+          snapshotUrls: ['https://i.gkd.li/import/12913804'],
+        },
       ],
-    },
-    {
-      key: 4,
-      name: '全屏广告-弹窗广告',
-      desc: '关闭业务办理页面的全屏推广弹窗',
-      enable: false,
-      activityIds: [
-        'com.ct.client.common.webview.OnlineBusinessWebkitActivity',
-      ],
-      rules: 'Image[text="tishi-close"]',
-      snapshotUrls: ['https://i.gkd.li/import/12913804'],
     },
   ],
 });
