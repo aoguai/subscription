@@ -149,6 +149,14 @@ export default defineGkdApp({
           snapshotUrls: 'https://i.gkd.li/i/26026279',
           exampleUrls: 'https://e.gkd.li/a17eca15-c7bd-4ea6-ba84-0d3242641697',
         },
+        {
+          key: 3,
+          fastQuery: true,
+          activityIds: 'cn.wps.moffice.main.local.HomeRootActivity',
+          matches:
+            '[vid="home_page_list_view"] [vid="card_v"] >2 LinearLayout + * > [vid="close_iv"][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/28419645',
+        },
       ],
     },
   ],
