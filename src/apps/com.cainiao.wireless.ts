@@ -82,6 +82,15 @@ export default defineGkdApp({
             'Image[childCount=0][width<100 && height<100] < @View[clickable=true][childCount=1] - Image[childCount=0][text="超时享"] <<n [vid="browser_fragment_layout"]',
           snapshotUrls: 'https://i.gkd.li/i/24099845',
         },
+        {
+          key: 8,
+          fastQuery: true,
+          activityIds:
+            'com.taobao.cainiao.logistic.ui.view.LogisticDetailActivity',
+          matches:
+            '@Image[clickable=true][width<100 && height<100] +3 * > [childCount=0][text="开心收下"] <<n [vid="browser_fragment_layout"]',
+          snapshotUrls: 'https://i.gkd.li/i/28173171',
+        },
       ],
     },
     {
