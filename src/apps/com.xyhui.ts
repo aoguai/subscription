@@ -77,6 +77,23 @@ export default defineGkdApp({
             '@ImageView[width<100 && height<100] <<4 * + * >4 [text="反馈"]',
           snapshotUrls: 'https://i.gkd.li/i/23567050',
         },
+        {
+          key: 14,
+          fastQuery: true,
+          activityIds: '.lut.act.LutMainActivity',
+          matches:
+            '@ImageView[childCount=0][text=null][desc=null][id=null][visibleToUser=true][width<90 && height<90] < FrameLayout[childCount=1][text=null][desc=null][id=null] - FrameLayout[childCount>2] >3 [text^="立即" || text$="应用" || text="了解更多" || text="查看详情"]',
+          snapshotUrls: 'https://i.gkd.li/i/23937136',
+        },
+        {
+          key: 15,
+          name: '京东广告2',
+          fastQuery: true,
+          activityIds: '.lut.act.LutMainActivity',
+          matches:
+            '@ImageView[childCount=0][text=null][visibleToUser=true] < FrameLayout[childCount=1] <3 FrameLayout[childCount=3] < FrameLayout[childCount=2] +5 FrameLayout[childCount=4] > [text^="扭动或点击"]',
+          snapshotUrls: 'https://i.gkd.li/i/27525121',
+        },
       ],
     },
   ],
