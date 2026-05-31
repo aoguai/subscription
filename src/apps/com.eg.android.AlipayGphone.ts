@@ -294,15 +294,21 @@ export default defineGkdApp({
         {
           key: 5,
           name: '小组件弹窗',
-          activityIds:
+          activityIds: [
             'com.alipay.mobile.nebulax.integration.mpaas.activity.NebulaActivity$Main',
-          matches: '[text^="去"][text.length>2] + [text="近期不再提醒我"]',
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
+          ],
+          anyMatches: [
+            '[text^="去"][text.length>2] + [text="近期不再提醒我"]',
+            '@Image[width<80 && height<80][visibleToUser=true] < View < View < View < View < WebView[text*="半浮层容器"] < WebView <2 * < * < [id="android:id/content"]',
+          ],
           snapshotUrls: [
             // 弹窗中的文字和图片每隔几秒切换
             'https://i.gkd.li/i/16427922',
             'https://i.gkd.li/i/22984695',
             'https://i.gkd.li/i/22984696',
             'https://i.gkd.li/i/24981728',
+            'https://i.gkd.li/i/27384135',
           ],
         },
         {
@@ -350,7 +356,7 @@ export default defineGkdApp({
             '.AlipayLogin',
           ],
           matches: [
-            '[text="访问被拒绝" || text="人气太旺啦，请稍后再试" || text="訪問被拒絕" || text="人氣太旺啦，請稍後再試" || text="伺服器繁忙，請稍後再試"][visibleToUser=true]',
+            '[text="访问被拒绝" || text^="人气太旺啦" || text^="訪問被拒絕" || text^="人氣太旺啦" || text^="伺服器繁忙"][visibleToUser=true]',
             '[id="com.alipay.mobile.antui:id/back_button"][clickable=true]',
           ],
           snapshotUrls: [
