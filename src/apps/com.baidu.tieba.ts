@@ -18,7 +18,22 @@ export default defineGkdApp({
           activityIds: '.pb.pb.main.PbActivity',
           matches:
             '@ImageView[clickable=true] -2 LinearLayout > [text^="打开通知"]',
-          snapshotUrls: 'https://i.gkd.li/import/13536170',
+          snapshotUrls: 'https://i.gkd.li/i/13536170',
+        },
+        {
+          key: 1,
+          activityIds: '.immessagecenter.mention.reply.ReplyMeActivity',
+          matches: 'TextView[text="开启消息推送"] +2 TextView[text="不开启"]',
+          snapshotUrls: 'https://i.gkd.li/i/13675694',
+        },
+        {
+          key: 2,
+          activityIds: 'com.baidu.tbadk.browser.TBWebContainerActivity',
+          matches: '[text="开启通知"] <n * > [text="暂不开启"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13804455',
+            'https://i.gkd.li/i/20918198',
+          ],
         },
       ],
     },
@@ -48,7 +63,6 @@ export default defineGkdApp({
           key: 1,
           matches:
             '@FrameLayout[clickable=true][visibleToUser=true] < LinearLayout < RelativeLayout <3 LinearLayout < RelativeLayout + LinearLayout >2 [text$="广告"]',
-          exampleUrls: 'https://e.gkd.li/3b2f0906-f620-4fda-a59f-334a9548836e',
           snapshotUrls: [
             'https://i.gkd.li/i/16595127',
             'https://i.gkd.li/i/16595515',
@@ -91,11 +105,12 @@ export default defineGkdApp({
             'ImageView[childCount=0] < @FrameLayout[clickable=true][childCount=1][visibleToUser=true] <2 RelativeLayout + RelativeLayout >3 [text="广告"]',
           snapshotUrls: 'https://i.gkd.li/i/24541094',
         },
+
         // 第二段
         {
           key: 50,
           preKeys: [0, 1, 2, 3, 4, 5],
-          name: '点击[不感兴趣]', // 直接结束, 无需第三段
+          name: '②点击[不感兴趣]', // 直接结束, 无需第三段
           matches:
             '@View[clickable=true][visibleToUser=true] - [text^="选择不喜欢"]',
           snapshotUrls: [
@@ -107,7 +122,7 @@ export default defineGkdApp({
         {
           key: 51,
           preKeys: [0, 1, 2, 3, 4, 5],
-          name: '选一个[理由]',
+          name: '②选一个[理由]',
           matches:
             '[text="已经看过" || text="广告重复" || text="不感兴趣"][clickable=true]',
           snapshotUrls: [
@@ -117,15 +132,16 @@ export default defineGkdApp({
         {
           key: 52,
           preKeys: [0, 1, 2, 3, 4, 5],
-          name: '选[不喜欢]该直播',
+          name: '②选[不喜欢]该直播',
           matches: '@[clickable=true] >3 [text="不喜欢"]',
           snapshotUrls: 'https://i.gkd.li/i/27052244', // [不喜欢] 直播
         },
+
         // 第三段
         {
           key: 100,
           preKeys: [51, 52],
-          name: '点击[确定]',
+          name: '③点击[确定]',
           matches: '@[clickable=true] - [text^="已选"][text$="理由"]',
           snapshotUrls: 'https://i.gkd.li/i/26934788',
         },
@@ -138,26 +154,13 @@ export default defineGkdApp({
       matchTime: 10000,
       forcedTime: 10000,
       actionMaximum: 1,
-      activityIds: [
-        'com.baidu.tieba.tblauncher.MainTabActivity',
-        'com.baidu.tieba.frs.FrsActivity',
-      ],
+      activityIds: ['.tblauncher.MainTabActivity', '.frs.FrsActivity'],
       rules: [
         {
           key: 1,
           matches:
             'RelativeLayout[childCount=2] > @RelativeLayout[childCount=1][clickable=true] > ImageView',
-          snapshotUrls: 'https://i.gkd.li/import/13060892',
-        },
-        {
-          key: 2,
-          fastQuery: true,
-          matches:
-            '@ImageView[childCount=0][clickable=true][visibleToUser=true] < LinearLayout[childCount=1] <4 RelativeLayout +3 LinearLayout >4 [text="小游戏"]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/17943902',
-            'https://i.gkd.li/i/18217417',
-          ],
+          snapshotUrls: 'https://i.gkd.li/i/13060892',
         },
       ],
     },
@@ -168,48 +171,35 @@ export default defineGkdApp({
       enable: false,
       matchTime: 10000,
       actionMaximum: 1,
-      activityIds: [
-        'com.baidu.tbadk.browser.TBWebContainerActivity',
-        'com.baidu.tieba.frs.FrsActivity',
-        'com.baidu.tieba.tblauncher.MainTabActivity',
-        'com.baidu.tieba.LogoActivity',
-      ],
       rules: [
         {
           key: 1,
           name: '点击正下方x关闭',
+          activityIds: [
+            '.frs.FrsActivity',
+            '.tblauncher.MainTabActivity',
+            '.LogoActivity',
+          ],
           matches:
-            '@TextView[id="com.baidu.tieba:id/obfuscated"][clickable=true][childCount=0][visibleToUser=true] - FrameLayout[childCount=2][getChild(1).text="广告"] < RelativeLayout[childCount=2] < [parent=null]',
+            '@TextView[vid="obfuscated"][clickable=true][childCount=0][visibleToUser=true] - FrameLayout[childCount=2][getChild(1).text="广告"] < RelativeLayout[childCount=2] < [parent=null]',
           snapshotUrls: [
-            'https://i.gkd.li/import/13168383',
-            'https://i.gkd.li/import/13322120',
-            'https://i.gkd.li/import/13328246',
+            'https://i.gkd.li/i/13168383',
+            'https://i.gkd.li/i/13322120',
+            'https://i.gkd.li/i/13328246',
           ],
         },
         {
           key: 2,
-          name: '点击正下方x关闭2',
-          forcedTime: 10000,
-          matches:
-            'WebView[text="会员弹窗" || text="一键签到"] >(3,4) TextView + Image[text!=null][childCount=0][visibleToUser=true]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/14630806',
-            'https://i.gkd.li/i/14630806',
-            'https://i.gkd.li/i/15119439',
-            'https://i.gkd.li/i/15119451',
-            'https://i.gkd.li/i/16426630',
+          activityIds: [
+            '.tblauncher.MainTabActivity',
+            'com.baidu.tbadk.browser.TBWebContainerActivity',
           ],
-        },
-        {
-          key: 3,
-          name: '点击正下方x关闭3',
           matches:
             'WebView[text!=null] > View[childCount=1] > View[childCount=3] > @[visibleToUser=true][index=2]',
           snapshotUrls: [
             'https://i.gkd.li/i/13060891',
             'https://i.gkd.li/i/16703244',
           ],
-          excludeSnapshotUrls: ['https://i.gkd.li/i/13222361'],
         },
       ],
     },
@@ -220,53 +210,40 @@ export default defineGkdApp({
       matchDelay: 500,
       matchTime: 10000,
       actionMaximum: 1,
+      activityIds: ['.pb.pb.main.PbActivity', '.tblauncher.MainTabActivity'],
       rules: [
         {
           key: 0,
-          name: '首页右侧悬浮广告-1',
-          activityIds: [
-            '.tblauncher.MainTabActivity',
-            '.pb.pb.main.PbActivity',
-          ],
+          fastQuery: true,
+          name: '悬浮广告1',
           matches:
-            '@ImageView[clickable=true][visibleToUser=true][vid="obfuscated"] - [text="广告"]',
+            '@ImageView[clickable=true][visibleToUser=true][width<77] - [text="广告"]',
           snapshotUrls: [
-            'https://i.gkd.li/import/13115167',
             'https://i.gkd.li/i/16622395',
             'https://i.gkd.li/i/16632851',
           ],
-          excludeSnapshotUrls: 'https://i.gkd.li/import/13327933',
+          excludeSnapshotUrls: 'https://i.gkd.li/i/13327933', // 加 [width<77] 排除
         },
         {
           key: 1,
-          name: '首页右侧悬浮广告-2',
-          activityIds: 'com.baidu.tieba.tblauncher.MainTabActivity',
+          name: '悬浮广告2',
           matches:
-            'RelativeLayout >2 RelativeLayout[childCount=1] > ImageView[childCount=0][clickable=true]',
-          snapshotUrls: 'https://i.gkd.li/import/14291964',
+            'RelativeLayout[childCount=2] >2 ImageView[clickable=true][visibleToUser=true][width<77]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14291964',
+            'https://i.gkd.li/i/13625336',
+            'https://i.gkd.li/i/13627881',
+          ],
+          excludeSnapshotUrls: 'https://i.gkd.li/i/28344945', // 加 RelativeLayout[childCount=2] 排除
         },
         {
           key: 2,
           name: '评论区左侧悬浮广告',
-          fastQuery: true,
-          activityIds: 'com.baidu.tieba.pb.pb.main.PbActivity',
+          activityIds: '.pb.pb.main.PbActivity',
           matches:
             'FrameLayout[getChild(1).getChild(1).text!=null] + @FrameLayout[clickable=true] > LinearLayout[childCount=2] > ImageView + [text="广告"][visibleToUser=true]',
-          snapshotUrls: 'https://i.gkd.li/import/13296280',
+          snapshotUrls: 'https://i.gkd.li/i/13296280',
           excludeSnapshotUrls: 'https://i.gkd.li/i/20361318',
-        },
-        {
-          key: 3,
-          activityIds: [
-            'com.baidu.tieba.pb.pb.main.PbActivity',
-            'com.baidu.tieba.tblauncher.MainTabActivity',
-          ],
-          matches:
-            'RelativeLayout[childCount=2] > RelativeLayout[childCount=1] > ImageView[childCount=0][clickable=true]',
-          snapshotUrls: [
-            'https://i.gkd.li/import/13625336',
-            'https://i.gkd.li/import/13627881',
-          ],
         },
       ],
     },
@@ -308,26 +285,23 @@ export default defineGkdApp({
         {
           key: 0,
           name: '贴吧页签到',
-          activityIds: 'com.baidu.tieba.forum.ForumActivity',
+          activityIds: '.forum.ForumActivity',
           matches:
             '@TextView[text="签到"][visibleToUser=true] <n View < View <2 View < * < WebView <<(6,7) [id="android:id/content"]',
           snapshotUrls: [
-            'https://i.gkd.li/import/13776801',
             'https://i.gkd.li/i/15087289',
             'https://i.gkd.li/i/17902156',
             'https://i.gkd.li/i/27051552',
           ],
         },
         {
-          preKeys: 0,
           key: 1,
           name: '关闭签到成功弹窗',
-          activityIds: 'com.baidu.tbadk.browser.TBWebContainerActivity',
           action: 'back',
+          activityIds: 'com.baidu.tbadk.browser.TBWebContainerActivity',
           matches:
             '@WebView[text="签到弹窗"][visibleToUser=true] < WebView < FrameLayout < LinearLayout < RelativeLayout < [id="android:id/content"]',
           snapshotUrls: [
-            'https://i.gkd.li/import/13776424',
             'https://i.gkd.li/i/15087327',
             'https://i.gkd.li/i/15881225',
             'https://i.gkd.li/i/27051969',
@@ -337,11 +311,100 @@ export default defineGkdApp({
     },
     {
       key: 13,
-      name: '局部广告-感兴趣的吧推广',
-      desc: '关闭首页和吧内的贴吧推荐',
+      name: '局部广告-帖子底部话题卡片',
+      desc: '点击关闭',
+      actionMaximum: 1,
+      rules: [
+        {
+          fastQuery: true,
+          activityIds: '.pb.pb.main.PbActivity',
+          matches: '@ImageView[clickable=true] -2 [text="进入话题查看更多"]',
+          snapshotUrls: 'https://i.gkd.li/i/14586847',
+        },
+      ],
+    },
+    {
+      key: 14,
+      name: '全屏广告-会员弹窗',
+      desc: '点击关闭',
+      enable: false,
+      rules: [
+        {
+          forcedTime: 10000,
+          activityIds: [
+            '.tblauncher.MainTabActivity',
+            'com.baidu.tbadk.browser.TBWebContainerActivity',
+          ],
+          matches:
+            'WebView[text="会员弹窗" || text="一键签到"] >(3,4) TextView + Image[text!=null][childCount=0][visibleToUser=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14630806',
+            'https://i.gkd.li/i/15119439',
+            'https://i.gkd.li/i/15119451',
+            'https://i.gkd.li/i/16426630',
+          ],
+        },
+      ],
+    },
+    {
+      key: 15,
+      name: '局部广告-信息流广告',
+      desc: '点击关闭',
+      fastQuery: true,
+      forcedTime: 10000,
       rules: [
         {
           key: 0,
+          activityIds: '.pb.pb.main.PbActivity',
+          matches:
+            '@[clickable=true][visibleToUser=true] <(1,2) RelativeLayout <(1,4) RelativeLayout[childCount>1] >(3,4) [text="广告"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/16595124',
+            'https://i.gkd.li/i/16596297',
+          ],
+          excludeSnapshotUrls: 'https://i.gkd.li/i/16632851', // [childCount>1] 防止误触
+        },
+        {
+          key: 1,
+          activityIds: [
+            '.tblauncher.MainTabActivity',
+            '.pb.pb.main.PbActivity',
+            '.forum.ForumActivity',
+          ],
+          matches:
+            '@FrameLayout[clickable=true][visibleToUser=true] <4 RelativeLayout + FrameLayout >7 [text="广告"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/16595301',
+            'https://i.gkd.li/i/16596195',
+            'https://i.gkd.li/i/16596775',
+          ],
+        },
+        {
+          key: 2,
+          activityIds: '.tblauncher.MainTabActivity',
+          matches:
+            '@ImageView[childCount=0][clickable=true][visibleToUser=true] < LinearLayout[childCount=1] <4 RelativeLayout +3 LinearLayout >4 [text="小游戏"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/17943902',
+            'https://i.gkd.li/i/18217417',
+          ],
+        },
+        {
+          key: 3,
+          activityIds: '.tblauncher.MainTabActivity',
+          matches:
+            'ImageView < @[clickable=true] <2 FrameLayout[childCount=2] -3 ViewGroup > [text="广告"]',
+          snapshotUrls: 'https://i.gkd.li/i/28345921',
+        },
+      ],
+    },
+    {
+      key: 16,
+      name: '局部广告-感兴趣的吧推广',
+      desc: '关闭首页、吧内其他贴吧的推广',
+      rules: [
+        {
+          key: 1,
           fastQuery: true,
           activityIds: ['.tblauncher.MainTabActivity', '.forum.ForumActivity'],
           matches:
