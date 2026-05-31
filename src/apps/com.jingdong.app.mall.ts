@@ -187,8 +187,8 @@ export default defineGkdApp({
         {
           key: 0,
           anyMatches: [
-            'ImageView < FrameLayout[index=0] < ViewGroup[childCount>=3] > FrameLayout[index=parent.childCount.minus(1)||index=parent.childCount.minus(2)][childCount=1] > ImageView[desc="关闭"]',
-            'View + FrameLayout[index=1] <2 ViewGroup[childCount>=3] > FrameLayout[index=parent.childCount.minus(1)||index=parent.childCount.minus(2)][childCount=1] > ImageView[desc="关闭"]',
+            'ImageView < FrameLayout[index=0] < ViewGroup[childCount>=3] > FrameLayout[index=parent.childCount.minus(1)||index=parent.childCount.minus(2)][childCount=1] > ImageView[desc="关闭"][visibleToUser=true]',
+            'View + FrameLayout[index=1] <2 ViewGroup[childCount>=3] > FrameLayout[index=parent.childCount.minus(1)||index=parent.childCount.minus(2)][childCount=1] > ImageView[desc="关闭"][visibleToUser=true]',
           ],
           snapshotUrls: [
             'https://i.gkd.li/import/13258973',
@@ -201,14 +201,14 @@ export default defineGkdApp({
         {
           key: 1,
           matches:
-            '@View[desc.length=null][clickable=true][longClickable=false][visibleToUser=true][id=null] -n ImageView[id=null] <n RelativeLayout[id=null]',
+            '@View[desc.length=null][clickable=true][longClickable=false][visibleToUser=true][id=null][right>parent.right.minus(140)][top<=parent.top.plus(30)] -n ImageView[id=null] <n RelativeLayout[id=null]',
           snapshotUrls: 'https://i.gkd.li/import/14163014',
         },
         {
           key: 2,
           anyMatches: [
-            'ImageView +n ViewGroup >2 [text.length>0] < ViewGroup + @ViewGroup > ImageView',
-            '@ViewGroup[index=parent.childCount.minus(1)] -2 ViewGroup[childCount<=1][index=0] + ViewGroup[childCount=2] >2 [text.length>0&&text.length<=3]',
+            'ImageView +n ViewGroup >2 [text.length>0] < ViewGroup + @ViewGroup[clickable=true][visibleToUser=true][right>parent.right.minus(180)] > ImageView <<n RelativeLayout[id^="com.jd.lib.personal.feature:id/"]',
+            '@ViewGroup[index=parent.childCount.minus(1)][clickable=true][visibleToUser=true][right>parent.right.minus(180)] -2 ViewGroup[childCount<=1][index=0] + ViewGroup[childCount=2] >2 [text.length>0&&text.length<=3] <<n RelativeLayout[id^="com.jd.lib.personal.feature:id/"]',
           ],
           snapshotUrls: [
             'https://i.gkd.li/i/15047238',
