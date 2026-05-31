@@ -40,8 +40,10 @@ export default defineGkdApp({
         {
           key: 0,
           name: '点击广告卡片右侧菜单图标',
-          matches:
+          anyMatches: [
             '[height > prev.bottom.plus(200)] >n [(((desc*="广告"||desc*="来自淘宝")&&desc*="查看")||desc$=",,轻点两下查看详情"||(desc^="【有奖调研】"&&desc.length=22))||(id*="/ad_")][visibleToUser=true] >(2,3,4) @ImageView[visibleToUser=true] < [vid^="more" || id^="tv.danmaku.bili.adbiz:id/more"][visibleToUser=true]',
+            '[id$="ad_tint_frame" || id$="root_container" || id$="constraintLayout"][visibleToUser=true] >(1,2,3) [vid="more" || id="tv.danmaku.bili.adbiz:id/more"]',
+          ],
           snapshotUrls: [
             'https://i.gkd.li/import/12642260', // n = 2
             'https://i.gkd.li/import/12705266', // n = 3
@@ -70,6 +72,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/23123800',
             'https://i.gkd.li/i/23687196',
             'https://i.gkd.li/i/27153803',
+            'https://i.gkd.li/i/27686976',
           ],
           excludeSnapshotUrls: ['https://i.gkd.li/i/23833031'], // 会出现按钮在底部导航栏后且visibleToUser=true的情况，需要使用 [height > prev.bottom.plus(200)] 排除，原理是根元素的高度必须大于右侧元素（视频卡片元素）bottom+200
         },
