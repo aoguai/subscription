@@ -139,13 +139,14 @@ export default defineGkdApp({
             'com.taobao.tao.TBMainActivity',
           ],
           matches:
-            '@[name="android.widget.TextView" || name="android.widget.Image"][clickable=true][childCount=0][width<150 && height<150][index=parent.childCount.minus(1)] <n View >(1,3) [text$="用" || text$="收下" || text*="立减"][childCount!=null] <<n WebView[vid="poplayer_inner_view"]',
+            '@[name$=".TextView" || name$=".Image"][clickable=true][childCount=0][width<150 && height<150][index=parent.childCount.minus(1)] <n View >(1,2,3) [id=null][text$="用" || text$="收下" || text*="立减"] <<n WebView[vid="poplayer_inner_view"]',
           snapshotUrls: [
             'https://i.gkd.li/i/22949963',
             'https://i.gkd.li/i/23289412',
             'https://i.gkd.li/i/23567053',
             'https://i.gkd.li/i/24982514',
             'https://i.gkd.li/i/26044614',
+            'https://i.gkd.li/i/28312957',
           ],
         },
         {
@@ -365,9 +366,15 @@ export default defineGkdApp({
       fastQuery: true,
       rules: [
         {
-          activityIds: 'com.taobao.browser.BrowserActivity',
+          activityIds: [
+            'com.taobao.browser.BrowserActivity',
+            'com.taobao.themis.container.app.TMSActivity',
+          ],
           matches: '[text="确认授权"][visibleToUser=true]',
-          snapshotUrls: 'https://i.gkd.li/i/18271783',
+          snapshotUrls: [
+            'https://i.gkd.li/i/18271783',
+            'https://i.gkd.li/i/28432106',
+          ],
         },
       ],
     },
