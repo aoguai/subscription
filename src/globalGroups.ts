@@ -50,11 +50,9 @@ const OPEN_AD_FAST_COUNT_DOWN_VIDS =
   '[vid="count_down"||vid="count_down_view"||vid="countDown"||vid="countDownView"||vid="gdt_count_down_view"||vid="GdtCountDownView"||vid="ui_count_down"]';
 // 兜底规则保持旧主规则的匹配表达式，避免只优化快速路径导致 desc/宽泛 vid 场景回归。
 const OPEN_AD_FALLBACK_MATCHES = `${COMMON_PREFIX}[((text.length<10&&(text*="跳过"||text*="跳 过"||text*="跳過"||text*="跳 過"||text~="(?is).*skip.*")&&text!*="视频"&&text!*="片头"&&text!*="片尾")||id~="(?is).*tt_splash_skip_btn"||(vid~="(?is).*skip.*"&&vid!~="(?is).*video.*"&&vid!~="(?is).*head.*"&&vid!~="(?is).*tail.*"&&!(text="帮助")&&!(text="取消")&&!(text*="退出"))||(vid~="(?is).*count.*"&&vid~="(?is).*down.*"&&!(vid~="(?is).*load.*")&&!(vid~="(?is).*hour.*")&&!(vid~="(?is).*minute.*")&&!(vid~="(?is).*timing.*")&&!(vid~="(?is).*add.*")&&!(vid~="(?is).*ead.*"))||(desc.length<10&&(desc*="跳过"||desc*="跳過"||desc~="(?is).*skip.*")))]${OPEN_AD_TIME_EXCLUDES}`;
-const OPEN_AD_TEXT_EXCLUDE_MATCH =
-  '([text*="搜索" || text="历史记录" || text$="在搜"][text.length>3 && text.length<7][visibleToUser=true]) || ([text="设置" || text$="设置" || text="退款详情" || text="Submit" || text*="阅读并同意" || text$="登录" || text="书签" || text="NEXT"][visibleToUser=true]) || ([text$="选好了" || text^="下一步" || text^="完成" || text*="跳过片"][text.length<10][visibleToUser=true]) || ([text^="选择"][text*="偏好" || text*="兴趣" || text*="喜好"][text.length<10][visibleToUser=true])';
 // 快速规则和兜底规则共用旧排除条件，保证优化前后的误触保护一致。
 const OPEN_AD_EXCLUDE_MATCHES = [
-  OPEN_AD_TEXT_EXCLUDE_MATCH,
+  '[text="Submit" || text="书签" || text="NEXT" || text="覆盖" || text*="阅读并同意" || ((text*="搜索" || text="历史记录" || text$="在搜") && text.length>3 && text.length<7) || ((text$="设置" || text*="跳过片" || (text^="选择" && (text*="偏好" || text*="兴趣" || text*="喜好" || text*="行业"))) && text.length<10)][visibleToUser=true]',
   '[id~="(?is).*search.*"] < * > [(id~="(?is).*clear.*")||(id~="(?is).*close.*")||(id~="(?is).*back.*")||(text~="(?is).*取消.*")][height>0&&width>0][top>0&&left>0]',
   '[name!$=".EditText"] < * > [(id~="(?is).*clear.*")||(id~="(?is).*close.*")||(id~="(?is).*back.*")||(text~="(?is).*取消.*")][height>0&&width>0][top>0&&left>0]',
 ];
@@ -609,14 +607,14 @@ export default defineGkdGlobalGroups([
         key: 4,
         matches: [
           `${COMMON_PREFIX}[(text*="未成年"||text*="儿童"||text*="青少年"||text*="守护")&&text*="模式"&&text.length<15]`,
-          `${COMMON_PREFIX}[(text*="知道了"||text*="我已知晓"||text*="已满"||text*="不再提醒")&&text.length<8]`,
+          `${COMMON_PREFIX}[(text*="知道了"||text*="我已知晓"||text*="已满"||text*="不再提")&&text.length<8]`,
         ],
       },
       {
         key: 5,
         matches: [
           `${COMMON_PREFIX}[(desc*="未成年"||desc*="儿童"||desc*="青少年"||desc*="守护")&&desc*="模式"&&desc.length<15]`,
-          `${COMMON_PREFIX}[(desc*="知道了"||desc*="我已知晓"||desc*="已满"||desc*="不再提醒")&&desc.length<8]`,
+          `${COMMON_PREFIX}[(desc*="知道了"||desc*="我已知晓"||desc*="已满"||desc*="不再提")&&desc.length<8]`,
         ],
       },
     ],
