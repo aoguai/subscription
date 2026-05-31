@@ -412,7 +412,8 @@ export default defineGkdApp({
         {
           key: 1,
           anyMatches: [
-            '[desc="未选中,原图,复选框" || desc="未選定，原圖，複選對話方塊"][text=null||text=""][visibleToUser=true] <(1,2) [name$="Layout"][childCount=2] > ImageButton[index=0]',
+            '@[desc^="未选中" || desc^="未選定" || desc^="Unselected"][visibleToUser=true] + [text="原图" || text="原圖" || text="Full Image"]',
+            '@[desc^="未选中" || desc^="未選定" || desc^="Unselected"][visibleToUser=true]',
           ],
           snapshotUrls: [
             'https://i.gkd.li/i/16987145', // 未选中
@@ -420,10 +421,12 @@ export default defineGkdApp({
             'https://i.gkd.li/i/18413281',
             'https://i.gkd.li/i/14661734',
             'https://i.gkd.li/i/19625049',
+            'https://i.gkd.li/i/27852612',
           ],
           excludeSnapshotUrls: [
             'https://i.gkd.li/i/16987141', // 已选中
             'https://i.gkd.li/i/16987147', // 已选中
+            'https://i.gkd.li/i/27852606',
           ],
         },
       ],
