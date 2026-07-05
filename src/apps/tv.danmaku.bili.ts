@@ -43,6 +43,7 @@ export default defineGkdApp({
           anyMatches: [
             '[height > prev.bottom.plus(200)] >n [(((desc*="广告"||desc*="来自淘宝")&&desc*="查看")||desc$=",,轻点两下查看详情"||(desc^="【有奖调研】"&&desc.length=22))||(id*="/ad_")][visibleToUser=true] >(2,3,4) @ImageView[visibleToUser=true] < [vid^="more" || id^="tv.danmaku.bili.adbiz:id/more"][visibleToUser=true]',
             '[id$="ad_tint_frame" || id$="root_container" || id$="constraintLayout"][visibleToUser=true] >(1,2,3) [vid="more" || id="tv.danmaku.bili.adbiz:id/more"]',
+            '[text="课堂" || text="纪录片" || text="游戏" || vid="bottom_container" || vid="live_lottie_layout"][index=2] +n [vid="more"][visibleToUser=true]',
           ],
           snapshotUrls: [
             'https://i.gkd.li/import/12642260', // n = 2
@@ -73,6 +74,13 @@ export default defineGkdApp({
             'https://i.gkd.li/i/23687196',
             'https://i.gkd.li/i/27153803',
             'https://i.gkd.li/i/27686976',
+            'https://i.gkd.li/i/23934632', // 课堂
+            'https://i.gkd.li/i/23933866', // 纪录片
+            'https://i.gkd.li/i/24015674', // 游戏
+            'https://i.gkd.li/i/23933925', // vid="bottom_container"
+            'https://i.gkd.li/i/17675894', // 直播 vid="live_lottie_layout"
+            'https://i.gkd.li/i/18306858', // 直播
+            'https://i.gkd.li/i/28908101', // [vid="more_layout"] 视频暂停播放时出现的广告
           ],
           excludeSnapshotUrls: ['https://i.gkd.li/i/23833031'], // 会出现按钮在底部导航栏后且visibleToUser=true的情况，需要使用 [height > prev.bottom.plus(200)] 排除，原理是根元素的高度必须大于右侧元素（视频卡片元素）bottom+200
         },
@@ -90,7 +98,7 @@ export default defineGkdApp({
           fastQuery: true,
           name: '点击[不感兴趣]',
           matches:
-            '@[clickable=true] > [text="这个内容" || text="不感兴趣" || text="相似内容过多" || text="up主不感兴趣" || text="此类内容过多" || text="对该up的直播不感兴趣"|| text="我不想看"]',
+            '@[clickable=true] > [text="这个内容" || text="不感兴趣" || text="相似内容过多" || text="up主不感兴趣" || text="此类内容过多" || text="对该up的直播不感兴趣"|| text*="不想看" || text$="质量差"]',
           snapshotUrls: [
             'https://i.gkd.li/import/13495649',
             'https://i.gkd.li/i/13742257',
@@ -120,6 +128,8 @@ export default defineGkdApp({
             'https://i.gkd.li/i/20739391',
             'https://i.gkd.li/i/23687208',
             'https://i.gkd.li/i/24836772',
+            'https://i.gkd.li/i/24015691', // 我不想看
+            'https://i.gkd.li/i/28659010', // 不想看该内容、广告质量差
           ],
         },
         {
@@ -247,16 +257,20 @@ export default defineGkdApp({
       rules: [
         {
           key: 1,
-          matches:
-            '@[vid="more"][clickable=true][visibleToUser=true] -(3,4) [vid="tag_layout"]',
+          name: '点击右下角[菜单]',
+          matches: '[vid="ad_tint_frame"] > [vid="more"][clickable=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/17269053',
             'https://i.gkd.li/i/17964354',
+            'https://i.gkd.li/i/28495212',
           ],
         },
         {
+          key: 2,
           preKeys: [1],
-          matches: '@[clickable=true] > [text$="不感兴趣"]',
+          name: '点击[不感兴趣]',
+          matches:
+            '@[clickable=true] > [text$="不感兴趣" || text*="不想看" || text$="质量差"]',
           snapshotUrls: [
             'https://i.gkd.li/i/17269055',
             'https://i.gkd.li/i/17964356',
@@ -372,6 +386,21 @@ export default defineGkdApp({
             '[text="确认"][visibleToUser=true]',
           ],
           snapshotUrls: 'https://i.gkd.li/i/24989484',
+        },
+      ],
+    },
+    {
+      key: 21,
+      name: '局部广告-视频页-即将展示Ad',
+      desc: '视频途中[x秒后展示广告] -> 取消',
+      rules: [
+        {
+          fastQuery: true,
+          activityIds:
+            'com.bilibili.ship.theseus.detail.UnitedBizDetailsActivity',
+          matches:
+            '@[text="取消"][clickable=true][visibleToUser=true] - [text="后将展示广告"] <2 View[childCount=3] <<2 ComposeView <<3 FrameLayout[childCount=1] <n * < [vid="video_container"]',
+          snapshotUrls: 'https://i.gkd.li/i/29379312',
         },
       ],
     },
