@@ -41,6 +41,16 @@ export default defineGkdApp({
             '@ViewGroup[clickable=true][childCount=0][visibleToUser=true] < ViewGroup[childCount=1] < ViewGroup[childCount=2] < FrameLayout < FrameLayout < [vid="webview_container"]',
           snapshotUrls: 'https://i.gkd.li/i/17783777',
         },
+        {
+          key: 4,
+          name: '体验臻品音质',
+          fastQuery: true,
+          activityIds:
+            'com.tencent.qqmusiclite.activity.player.MusicPlayerActivity',
+          matches:
+            '[text$="钟免费体验"] < * - [text$="臻品音质"] <2 * - @View[clickable=true][text=null][childCount=0] <<4 [id="android:id/content"]',
+          snapshotUrls: 'https://i.gkd.li/i/29175549',
+        },
       ],
     },
     {
