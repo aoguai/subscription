@@ -18,7 +18,7 @@ export default defineGkdApp({
           snapshotUrls: 'https://i.gkd.li/i/12639658',
         },
         {
-          key: 0,
+          key: 1,
           name: '顶部横幅1',
           fastQuery: true,
           activityIds: '.framework.plugin.rn.PluginRNActivity',
