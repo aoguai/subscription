@@ -85,6 +85,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/28426083',
             'https://i.gkd.li/i/28425887',
             'https://i.gkd.li/i/28425944',
+            'https://i.gkd.li/i/29140037',
           ],
           excludeSnapshotUrls: [
             'https://i.gkd.li/i/14414585', //  误触
@@ -767,6 +768,62 @@ export default defineGkdApp({
           matches:
             '@CompoundButton[checked=true] - RelativeLayout > [text="你的QQ好友关系"]',
           snapshotUrls: 'https://i.gkd.li/i/16929347',
+        },
+      ],
+    },
+    {
+      key: 29,
+      name: '分段广告-QQ空间空友爱看',
+      desc: '点击卡片右侧[推荐] ②点击[关闭推荐]',
+      enable: false,
+      fastQuery: true,
+      activityIds:
+        'com.qzone.reborn.feedpro.activity.QzoneFriendFeedProActivity',
+      rules: [
+        {
+          key: 0,
+          matches: '[text="推荐"] < * < @[clickable=true] -2 [text="空友爱看"]',
+          snapshotUrls: 'https://i.gkd.li/i/27521340',
+        },
+        {
+          key: 1,
+          preKeys: 0,
+          matches: '@[clickable=true] >2 [text="关闭推荐"]',
+          snapshotUrls: 'https://i.gkd.li/i/27521350',
+        },
+      ],
+    },
+    {
+      key: 30,
+      name: '分段广告-空友爱看内的广告',
+      desc: '点击[广告],点击[关闭这条],点击[直接关闭]',
+      enable: false,
+      fastQuery: true,
+      activityIds: 'com.qzone.reborn.base.QZoneShellActivity',
+      rules: [
+        {
+          key: 0,
+          name: '点击[广告]',
+          matches: '@[desc="更多"][clickable=true] > [text="广告"]',
+          snapshotUrls: 'https://i.gkd.li/i/28888622',
+        },
+        {
+          key: 20,
+          preKeys: [0],
+          name: '点击[关闭这条]',
+          matches:
+            '@[clickable=true] > [text="关闭此条广告" || text="关闭这条"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/28888643',
+            'https://i.gkd.li/i/28942736',
+          ],
+        },
+        {
+          key: 50,
+          preKeys: [20],
+          name: '点击[直接关闭]',
+          matches: '[text="直接关闭"][clickable=true]',
+          snapshotUrls: 'https://i.gkd.li/i/28942737',
         },
       ],
     },
