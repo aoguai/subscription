@@ -244,6 +244,7 @@ export default defineGkdApp({
         {
           key: 7,
           name: '首页横条广告',
+          matchRoot: true,
           activityIds: 'com.taobao.tao.welcome.Welcome',
           matches: '[desc.length=4] < * + @[clickable=true] > [text="뉜"]',
           snapshotUrls: 'https://i.gkd.li/i/25658605',

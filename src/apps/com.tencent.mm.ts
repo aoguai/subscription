@@ -94,13 +94,15 @@ export default defineGkdApp({
           preKeys: [25],
           key: 50,
           name: '点击[关闭]',
-          matches: '[text*="关闭" || text="Close"][clickable=true]',
+          matches:
+            '[text="直接关闭" || text="Close" || text="关闭广告"][clickable=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/12663984',
             'https://i.gkd.li/i/12905846',
             'https://i.gkd.li/i/14647940',
             'https://i.gkd.li/i/14783534',
           ],
+          excludeSnapshotUrls: 'https://i.gkd.li/i/28927197', // [text="关闭该广告"] , 这是第二段的,用[text*="关闭"]会点击错, https://github.com/Lin-arm/GKD_subscription/issues/194
         },
 
         // 预留key

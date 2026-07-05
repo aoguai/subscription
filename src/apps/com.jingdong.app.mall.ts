@@ -256,16 +256,20 @@ export default defineGkdApp({
     },
     {
       key: 13,
-      name: '功能类-支付订单后点击[完成]',
-      desc: '点击支付完成后的完成按钮',
+      name: '功能类-支付订单后点击[完成/回首页]',
+      desc: '点击支付完成后的[完成/回首页]按钮',
       enable: false,
       rules: [
         {
           fastQuery: true,
           activityIds:
             '.bundle.cashierfinish.view.CashierUserContentCompleteActivity',
-          matches: '[vid="lib_cashier_finish_back_page_text"]',
-          snapshotUrls: 'https://i.gkd.li/i/17358003',
+          matches:
+            '[vid="lib_cashier_finish_back_page_text" || text="回首页"][clickable=true][visibleToUser=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/17358003',
+            'https://i.gkd.li/i/29404312',
+          ],
         },
       ],
     },

@@ -183,26 +183,26 @@ export default defineGkdGlobalGroups([
         key: 0,
         name: '快手SDK-类型1',
         fastQuery: true,
-        matches: `ImageView${COMMON_PREFIX} < @ViewGroup[childCount=1][clickable=true] <<n ViewGroup >n [text="广告"]`,
+        matches: `ImageView${COMMON_PREFIX} < @ViewGroup[childCount=1][clickable=true] <<n ViewGroup >n [text="广告"][visibleToUser=true]`,
       },
       {
         key: 1,
         name: '快手SDK-类型2',
         fastQuery: true,
-        matches: `[text="跳过"]${COMMON_PREFIX} < @ViewGroup[childCount=4][clickable=true] <<n ViewGroup >n [text="广告"]`,
+        matches: `[text="跳过"]${COMMON_PREFIX} < @ViewGroup[childCount=4][clickable=true] <<n ViewGroup >n [text="广告"][visibleToUser=true]`,
       },
       {
         key: 2,
         name: '快手SDK-类型3',
         fastQuery: true,
-        matches: `@ImageView${COMMON_PREFIX} <<n ViewGroup[childCount=3][checked=false] -2 ViewGroup >n [text="广告"]`,
+        matches: `@ImageView${COMMON_PREFIX} <<n ViewGroup[childCount=3][checked=false] -2 ViewGroup >n [text="广告"][visibleToUser=true]`,
         snapshotUrls: ['https://i.gkd.li/i/13625303'],
       },
       {
         key: 3,
         name: '快手SDK-类型4',
         matches:
-          'ImageView[childCount=0][text=null] < @ViewGroup[childCount=1][clickable=true][visibleToUser=true] <<(1, 3) ViewGroup +(1, 2, 4) ViewGroup[childCount=2] >(1,3) [text="广告"]',
+          'ImageView[childCount=0][text=null] < @ViewGroup[childCount=1][clickable=true][visibleToUser=true] <<(1, 3) ViewGroup +(1, 2, 4) ViewGroup[childCount=2] >(1,3) [text="广告"][visibleToUser=true]',
         snapshotUrls: [
           'https://i.gkd.li/import/13259198',
           'https://i.gkd.li/i/16837806',
@@ -268,7 +268,7 @@ export default defineGkdGlobalGroups([
         name: '快手SDK-类型5',
         fastQuery: true,
         matches: [
-          '[text="广告"]',
+          '[text="广告"][visibleToUser=true]',
           '@ImageView[clickable=true] - [text="|"] - [text$="s"]',
         ],
         snapshotUrls: ['https://i.gkd.li/i/13625303'],

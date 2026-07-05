@@ -14,7 +14,7 @@ export default defineGkdApp({
         {
           key: 0,
           activityIds: [
-            '.feature.short_container_feature.ui',
+            '.feature.short_container_feature.ui.',
             '.ContentActivity',
           ],
           matches:
@@ -148,8 +148,10 @@ export default defineGkdApp({
       rules: [
         {
           key: 0,
-          matches:
-            '@[text="×"||(name*=".Image"&&id=null)][index!=0][visibleToUser=true][!(vid="medal")] <n [!(vid!=null)] > [name!*="WebView"][(text$="热度"||text$="广告"||text="创作者小助手"||(text^="知乎"&&text!*="·"))||(text="查看详情")][text.length>2&&text.length<20]',
+          anyMatches: [
+            '@[clickable=true][visibleToUser=true] -(1,2) TextView[childCount=0][id=null][text=null][desc=null] <n ViewGroup >n [text*="广告"][childCount=0][id=null][desc=null]',
+            'ImageView < @[index=parent.childCount.minus(1)][clickable=true][width<150] <n ViewGroup + [childCount=2] >3 [text="广告"]',
+          ],
           snapshotUrls: [
             'https://i.gkd.li/import/14178980',
             'https://i.gkd.li/import/14206949',
@@ -165,6 +167,9 @@ export default defineGkdApp({
             'https://i.gkd.li/i/15282584',
             'https://i.gkd.li/i/15285359',
             'https://i.gkd.li/i/20648888',
+            'https://i.gkd.li/i/28590141',
+            'https://i.gkd.li/i/28661886',
+            'https://i.gkd.li/i/14232195',
           ],
           excludeSnapshotUrls: ['https://i.gkd.li/i/17088832'],
         },
