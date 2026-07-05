@@ -75,11 +75,12 @@ export default defineGkdApp({
           key: 0,
           name: '视频',
           matches:
-            '[!(getChild(0).getChild(0).desc="Image attachment")] + @[desc="不用了，谢谢" || desc="关闭" || desc="我暂时不要" || desc="Close" || desc="No thanks"][visibleToUser=true] <3 ViewGroup <<(-n+8) [vid="bottom_ui_container" || vid="custom"]',
+            '[!(getChild(0).getChild(0).desc="Image attachment")] + @[desc="不用了，谢谢" || desc="关闭" || desc="我暂时不要" || desc="Close" || desc="No thanks" || desc="I’ll pass this time"][clickable=true] <3 ViewGroup <<(-n+8) [vid="bottom_ui_container" || vid="custom"]',
           snapshotUrls: [
             'https://i.gkd.li/i/13797512',
             'https://i.gkd.li/i/19578085',
             'https://i.gkd.li/i/25865404',
+            'https://i.gkd.li/i/28486200',
           ],
           // excludeSnapshotUrls: 'https://i.gkd.li/i/21978683',
           exampleUrls: 'https://e.gkd.li/1292c8c9-26e3-4053-bec4-e5ebe50cde8e',
@@ -109,17 +110,22 @@ export default defineGkdApp({
           actionCd: 500,
           activityIds:
             'com.google.android.apps.youtube.app.watchwhile.MainActivity',
-          matches:
-            '@[desc^="翻译成"||desc^="Translate to"][visibleToUser=true] <n [childCount>3] <<(2,4) ViewGroup <n [vid="results" || vid="section_list"]',
-          exampleUrls: 'https://e.gkd.li/e9d6eaa8-9fbf-4b16-8f0c-50239597c687',
+          anyMatches: [
+            '@[desc^="翻译成"||desc^="Translate to"][visibleToUser=true] <n [childCount>3 && childCount<8] < [childCount=2] <(1,2) ViewGroup <n [vid="results" || vid="section_list"]',
+            '@[desc^="翻译成"||desc^="Translate to"][visibleToUser=true] <n [childCount=5] < [childCount=2] <2 [childCount=2] < ViewGroup <n [vid="results" || vid="section_list"]', // UI2
+          ],
           snapshotUrls: [
+            // 2024
             'https://i.gkd.li/i/17068544', // 翻译前
-            'https://i.gkd.li/i/27276425', // 控件类名不一致
             'https://i.gkd.li/i/17068647', // 翻译后
-            'https://i.gkd.li/i/17501400',
-            'https://i.gkd.li/i/25462152', // En_translate前
-            'https://i.gkd.li/i/25462248', // En_translate后
-            'https://i.gkd.li/i/27276291', // 评论-回复区UI
+            'https://i.gkd.li/i/17501400', // 回复-main
+            // English
+            'https://i.gkd.li/i/25462152', // 前
+            'https://i.gkd.li/i/25462248', // 后
+            // 其他
+            'https://i.gkd.li/i/27276291', // 回复-main-> fork 未实现
+            'https://i.gkd.li/i/29379961', // 会员评论
+            'https://i.gkd.li/i/27276425', // 控件类名不一致
           ],
         },
       ],
