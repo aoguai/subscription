@@ -49,6 +49,7 @@ export default defineGkdApp({
         '.module.bbs.post.ui.activitys.WebNewsPostPageActivity',
         '.module.bbs.post.ui.activitys.PicturePostPageActivity',
         '.module.bbs.post.ui.activitys.v2.PicturePostPageActivityV2',
+        '.module.bbs.post.ui.activitys.v2.WebNewsPostPageActivityV2',
       ],
       rules: [
         {
@@ -57,6 +58,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/16646832',
             'https://i.gkd.li/i/17574462',
             'https://i.gkd.li/i/25336815',
+            'https://i.gkd.li/i/30749472',
           ],
           excludeSnapshotUrls: 'https://i.gkd.li/i/22377026',
         },

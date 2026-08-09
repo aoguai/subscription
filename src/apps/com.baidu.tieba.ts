@@ -215,6 +215,33 @@ export default defineGkdApp({
       ],
     },
     {
+      key: 4,
+      name: '局部广告-游戏类推广',
+      desc: '首页,游戏公测/上线等推广,点击x掉',
+      fastQuery: true,
+      activityIds: '.tblauncher.MainTabActivity',
+      rules: [
+        {
+          key: 0,
+          matches:
+            '@ImageView <2 [childCount=2] <4 [index=0][childCount=4] +(1,2) FrameLayout > [text*="定档" || text*="预约" || text*="测试"][text*="《"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/30164473', //定档
+            'https://i.gkd.li/i/30164474', //定档
+            'https://i.gkd.li/i/30164475', //测试招募
+            'https://i.gkd.li/i/30165036', //预约
+            'https://i.gkd.li/i/30346796', //测试
+          ],
+        },
+        {
+          key: 1,
+          matches:
+            '@ImageView <2 [childCount=2] <4 [index=0][childCount=4] +n [childCount>3] > [text="权限" || text="隐私" || text="功能"] -(1,2,3) [text*="有限公司"]',
+          snapshotUrls: 'https://i.gkd.li/i/30164269',
+        },
+      ],
+    },
+    {
       key: 9,
       name: '全屏广告-广告弹窗',
       desc: '关闭会员弹窗、签到弹窗等全屏广告',
