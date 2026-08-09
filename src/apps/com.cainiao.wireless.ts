@@ -132,6 +132,14 @@ export default defineGkdApp({
             'https://i.gkd.li/i/16518502', // 避免误触
           ],
         },
+        {
+          key: 12,
+          name: '超时享服务',
+          fastQuery: true,
+          matches:
+            '[desc^="激活超时享服务"] -2 @[clickable=true] < FrameLayout < FrameLayout < FrameLayout < FrameLayout < [vid="package_dx_container"]',
+          snapshotUrls: 'https://i.gkd.li/i/29924327',
+        },
       ],
     },
     {
