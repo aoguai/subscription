@@ -41,6 +41,7 @@ export default defineGkdApp({
             'com.anythink.basead.ui.ATPortraitTranslucentActivity',
             'com.smartdigimkt.sdk.basead.ui.ATPortraitTranslucentActivity',
             'com.beizi.ad.v2.activity.BeiZiNewInterstitialActivity',
+            'com.anythink.core.common.inner.ui.ATPortraitTranslucentActivity',
           ],
           matches:
             '[vid="anythink_myoffer_btn_close_id" || vid="sdm_myoffer_btn_close_id" || vid="beizi_interstitial_ad_close_iv"]',
@@ -48,6 +49,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/22868736',
             'https://i.gkd.li/i/23293759',
             'https://i.gkd.li/i/23577343',
+            'https://i.gkd.li/i/30700901',
           ],
         },
         {
