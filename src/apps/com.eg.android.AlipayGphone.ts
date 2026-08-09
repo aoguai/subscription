@@ -22,7 +22,7 @@ export default defineGkdApp({
         {
           key: 0,
           matches:
-            '@[(name$=".Image"&&text.length=0)||((text^="暂不升级"||text^="放弃升级")||text="关闭")][visibleToUser=true][desc.length=null] <<n * <n * > * >n [((text^="同意")&&((text*="协议并"||text*="升级并")))&&(text$="确认交易"||text$="升级"||text$="开通"||text*="刷脸"||text$="付款")||text="确认"||text="立即领取"||text="立即开通"]',
+            '@[(name$=".Image"&&text.length=0)||((text^="暂不升级"||text^="放弃升级"||text^="不感兴趣")||text="关闭")][visibleToUser=true][desc.length=null] <<n * <n * > * >n [((text^="同意")&&((text*="协议并"||text*="升级并")))&&(text$="确认交易"||text$="升级"||text$="开通"||text*="刷脸"||text$="付款")||text="确认"||text="立即领取"||text="立即开通"||text="确认开通"]',
           snapshotUrls: [
             'https://i.gkd.li/import/12737055', //com.alipay.mobile.nebulax.integration.mpaas.activity.NebulaActivity$Main
             'https://i.gkd.li/import/13915022',
@@ -44,6 +44,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/23455533',
             'https://i.gkd.li/i/25000603',
             'https://i.gkd.li/i/27007114',
+            'https://i.gkd.li/i/30699230',
           ],
           excludeSnapshotUrls: ['https://i.gkd.li/i/19478718'],
         },
@@ -248,10 +249,10 @@ export default defineGkdApp({
       name: '全屏广告-弹窗广告',
       desc: '关闭全屏弹窗广告',
       enable: false,
+      fastQuery: true,
       rules: [
         {
           key: 0,
-          fastQuery: true,
           activityIds: 'com.eg.android.AlipayGphone.AlipayLogin',
           matches:
             '@ImageView[desc="关闭"][clickable=true] < LinearLayout - [id="com.alipay.mobile.advertisement:id/standardlayer_contentview"][desc="推荐广告"]',
@@ -262,15 +263,27 @@ export default defineGkdApp({
         },
         {
           key: 1,
-          activityIds:
+          forcedTime: 10000, //主动查询10秒
+          activityIds: [
             'com.alipay.mobile.nebulax.integration.mpaas.activity.NebulaActivity$Main',
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
+          ],
           matches:
-            'WebView > View > View > View > View > @TextView[clickable=true][visibleToUser=true][text=""] <<n [id="com.alipay.mobile.nebula:id/h5_pc_container"]',
-          snapshotUrls: 'https://i.gkd.li/i/16812751',
+            '@TextView[id=desc][text=""][visibleToUser=true][width<110][height<110][top>getPrev(1).height.div(2)][left<getPrev(1).width.div(2)][right>getPrev(1).width.div(2)] <(2,3) View[childCount>1] <<n [id="com.alipay.mobile.nebula:id/h5_pc_container"]',
+          /**
+           * [top>getPrev(1).height.div(2)] ：top大于 1/2的屏幕高度，即限制目标节点在下半屏
+           * [left<getPrev(1).width.div(2)][right>getPrev(1).width.div(2)] ：其内的 getPrev(1).width.div(2) 是屏幕的竖中线，即要求 屏幕的竖中线 像串烤串一样穿过目标节点
+           */
+          snapshotUrls: [
+            'https://i.gkd.li/i/16812751',
+            'https://i.gkd.li/i/29666442',
+            'https://i.gkd.li/i/29814861',
+            'https://i.gkd.li/i/30511870',
+          ],
+          excludeSnapshotUrls: 'https://i.gkd.li/i/29814461', // 用 [left<getPrev(1).width.div(2)][right>getPrev(1).width.div(2)] 排除
         },
         {
           key: 2,
-          fastQuery: true,
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           matches:
@@ -288,7 +301,7 @@ export default defineGkdApp({
           key: 4,
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
-          matches: 'Image[text="关闭弹屏"]',
+          matches: 'Image[visibleToUser=true][text="关闭弹屏"]',
           snapshotUrls: 'https://i.gkd.li/i/22531246',
         },
         {
@@ -313,7 +326,6 @@ export default defineGkdApp({
         },
         {
           key: 6,
-          fastQuery: true,
           activityIds: '.AlipayLogin',
           matches:
             '@[text="我知道了"][clickable=true] -n [text^="用碰一下支付"]',
