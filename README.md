@@ -50,10 +50,4 @@
 
 ## Star History
 
-<a href="https://star-history.com/#aoguai/subscription&Timeline">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=aoguai/subscription&type=Timeline&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=aoguai/subscription&type=Timeline" />
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=aoguai/subscription&type=Timeline" />
-  </picture>
-</a>
+[![Star History Chart](https://starhistory.link/aoguai/subscription.svg?theme=cyan)](https://starhistory.link/aoguai/subscription)
