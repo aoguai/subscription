@@ -18,6 +18,7 @@ export default defineGkdApp({
             'com.taobao.android.tbabilitykit.pop.StdPopContainerActivity',
             'com.taobao.android.detail.wrapper.activity.DetailActivity',
             'com.alibaba.triver.container.TriverMainActivity',
+            'com.alibaba.android.ultron.vfw.weex2.highPerformance.widget.UltronTradeHybridActivity',
           ],
           fastQuery: true,
           matches: '@[desc="关闭按钮"] - [vid="poplayer_native_state_id"]',
@@ -32,6 +33,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/13198239',
             'https://i.gkd.li/i/14905372',
             'https://i.gkd.li/i/22319206',
+            'https://i.gkd.li/i/30856922',
           ],
         },
         {
@@ -164,6 +166,15 @@ export default defineGkdApp({
           matches: 'Dialog > Image[text.length>40] + Button[text="关闭"]',
           snapshotUrls: 'https://i.gkd.li/i/26164501',
         },
+        {
+          key: 15,
+          fastQuery: true,
+          activityIds:
+            'com.taobao.android.tbabilitykit.pop.StdPopContainerActivity',
+          matches:
+            'Image[text*=".jpg"][width<150 && height<150] < [visibleToUser=true] < @View[clickable=true][childCount=1] <<n FrameLayout[id=null] - [vid="layermanager_penetrate_webview_container_id"]',
+          snapshotUrls: 'https://i.gkd.li/i/30710740',
+        },
       ],
     },
     {
@@ -266,7 +277,7 @@ export default defineGkdApp({
         'com.taobao.tao.TBMainActivity',
       ],
       rules:
-        '@Image[childCount=0][visibleToUser=true][text!=null] <n View >(1,2) [text*="消息通知" || text*="系统通知"][visibleToUser=true] <<n [vid="poplayer_inner_view"]',
+        '@Image[childCount=0][visibleToUser=true][text!=null] <n View >(1,2) [visibleToUser=true][text^="开启" || text*="消息"][text*="通知"] <<n [vid="poplayer_inner_view"]',
       snapshotUrls: [
         'https://i.gkd.li/import/13197594', //com.taobao.tao.welcome.Welcome
         'https://i.gkd.li/import/13222946', //com.taobao.android.order.bundle.TBOrderDetailActivity
@@ -276,6 +287,7 @@ export default defineGkdApp({
         'https://i.gkd.li/i/15104645',
         'https://i.gkd.li/i/18407606',
         'https://i.gkd.li/i/21789921',
+        'https://i.gkd.li/i/30726795',
       ],
     },
     {
