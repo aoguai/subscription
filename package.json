@@ -22,8 +22,8 @@
   },
   "scripts": {
     "postinstall": "simple-git-hooks",
-    "format": "prettier --cache --write ./**/*.{js,cjs,mjs,ts,jsx,tsx,json}",
-    "lint": "eslint --cache --fix ./**/*.{js,cjs,mjs,ts,jsx,tsx}",
+    "format": "prettier --cache --write --ignore-unknown .",
+    "lint": "eslint --cache --fix .",
     "check": "tsc --noEmit && tsx ./scripts/check.ts",
     "build": "tsc --noEmit && tsx ./scripts/build.ts"
   },
@@ -33,7 +33,6 @@
   },
   "lint-staged": {
     "*.{js,cjs,mjs,ts,cts,mts,jsx,tsx}": [
-      "prettier --cache --write",
       "eslint --cache --fix"
     ],
     "*.json": [
@@ -49,28 +48,33 @@
   ],
   "dependencies": {
     "@eslint/js": "10.0.1",
-    "@gkd-kit/api": "0.9.2",
+    "@gkd-kit/api": "0.9.3",
     "@gkd-kit/define": "0.0.1",
     "@gkd-kit/tools": "0.8.0",
-    "@types/node": "25.3.5",
-    "eslint": "10.0.3",
+    "@types/node": "26.1.2",
+    "eslint": "10.8.0",
     "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-prettier": "5.5.6",
     "eslint-plugin-unused-imports": "4.4.1",
+    "jiti": "2.7.0",
     "json5": "2.2.3",
-    "lint-staged": "16.3.2",
-    "prettier": "3.8.1",
+    "lint-staged": "17.3.0",
+    "prettier": "3.9.6",
     "simple-git-hooks": "2.13.1",
-    "tsx": "4.21.0",
-    "typescript": "5.9.3",
-    "typescript-eslint": "8.56.1"
+    "tsx": "4.23.5",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.66.0"
   },
-  "volta": {
-    "node": "24.12.0",
-    "pnpm": "10.31.0"
-  },
-  "packageManager": "pnpm@10.31.0",
-  "engineStrict": true,
-  "engines": {
-    "node": ">=22"
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "26",
+      "onFail": "warn"
+    },
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.20.0",
+      "onFail": "warn"
+    }
   }
 }

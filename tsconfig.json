@@ -8,9 +8,10 @@
     "skipLibCheck": true,
     "declaration": false,
     "sourceMap": false,
+    "types": ["node"],
     "noUnusedLocals": true,
     "esModuleInterop": true,
     "isolatedModules": true
   },
-  "include": ["src", "scripts"]
+  "include": ["src", "scripts", "*.ts"]
 }
