@@ -166,21 +166,26 @@ export default defineGkdApp({
       enable: false,
       fastQuery: true,
       activityIds: [
-        'com.qzone.reborn.feedpro.activity.QzoneFriendFeedProActivity',
-        '.activity.SplashActivity',
-        '.guild.base.QPublicFragmentActivityForMainWebActivity',
+        'com.qzone.reborn.feedpro.activity.QzoneFriendFeedProActivity', //空间动态页
+        '.guild.base.QPublicFragmentActivityForMainWebActivity', //频道页
+        'com.qzone.reborn.layer.part.QzoneFeedProGalleryActivity', //好友空间相册页
+        'com.qzone.reborn.base.QZoneShellActivity', //空友爱看页
+        '.activity.SplashActivity', //空间动态页
       ],
       rules: [
         {
           key: 0,
+          name: '①点击[广告]',
           activityIds: [
             'com.qzone.reborn.feedpro.activity.QzoneFriendFeedProActivity',
             '.guild.base.QPublicFragmentActivityForMainWebActivity',
+            'com.qzone.reborn.base.QZoneShellActivity',
           ],
           matches: '@[clickable=true] > [text="广告"][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/21947672',
             'https://i.gkd.li/i/24404962',
+            'https://i.gkd.li/i/28888622',
           ],
         },
         {
@@ -190,10 +195,17 @@ export default defineGkdApp({
             '@[desc="更多"][clickable=true] - [desc="广告"][visibleToUser=true] - LinearLayout > [text="今天"]',
           snapshotUrls: 'https://i.gkd.li/i/24381585',
         },
+        {
+          key: 2,
+          activityIds:
+            'com.qzone.reborn.layer.part.QzoneFeedProGalleryActivity',
+          matches: '[text="广告"][clickable=true]',
+          snapshotUrls: 'https://i.gkd.li/i/30876372',
+        },
         // 第二段
         {
           key: 50,
-          preKeys: [0, 1],
+          preKeys: [0, 1, 2],
           name: '点击[关闭]此条广告',
           matches:
             '@[clickable=true] >(1,2) [text^="关闭"][text*="条"][text.length<10]',
@@ -202,6 +214,9 @@ export default defineGkdApp({
             'https://i.gkd.li/i/24381598',
             'https://i.gkd.li/i/24406932',
             'https://i.gkd.li/i/26997293', // 关闭这条
+            'https://i.gkd.li/i/28888643',
+            'https://i.gkd.li/i/28942736',
+            'https://i.gkd.li/i/30876374',
           ],
         },
         // 第三段
@@ -210,7 +225,11 @@ export default defineGkdApp({
           preKeys: [50],
           name: '点击[直接关闭]',
           matches: '[text="直接关闭"][clickable=true]',
-          snapshotUrls: 'https://i.gkd.li/i/26997174',
+          snapshotUrls: [
+            'https://i.gkd.li/i/26997174',
+            'https://i.gkd.li/i/28942737',
+            'https://i.gkd.li/i/30876376',
+          ],
         },
       ],
     },
@@ -791,48 +810,33 @@ export default defineGkdApp({
       rules: [
         {
           key: 0,
-          matches: '[text="推荐"] < * < @[clickable=true] -2 [text="空友爱看"]',
-          snapshotUrls: 'https://i.gkd.li/i/27521340',
+          name: '①更多操作',
+          matches:
+            '@[desc="更多操作"][clickable=true][visibleToUser=true] <3 * +4 * >5 [text="空友爱看"]',
+          snapshotUrls: 'https://i.gkd.li/i/32656065',
         },
         {
           key: 1,
-          preKeys: 0,
-          matches: '@[clickable=true] >2 [text="关闭推荐"]',
-          snapshotUrls: 'https://i.gkd.li/i/27521350',
-        },
-      ],
-    },
-    {
-      key: 30,
-      name: '分段广告-空友爱看内的广告',
-      desc: '点击[广告],点击[关闭这条],点击[直接关闭]',
-      enable: false,
-      fastQuery: true,
-      activityIds: 'com.qzone.reborn.base.QZoneShellActivity',
-      rules: [
-        {
-          key: 0,
-          name: '点击[广告]',
-          matches: '@[desc="更多"][clickable=true] > [text="广告"]',
-          snapshotUrls: 'https://i.gkd.li/i/28888622',
-        },
-        {
-          key: 20,
           preKeys: [0],
-          name: '点击[关闭这条]',
-          matches:
-            '@[clickable=true] > [text="关闭此条广告" || text="关闭这条"]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/28888643',
-            'https://i.gkd.li/i/28942736',
-          ],
+          name: '②不感兴趣',
+          matches: '@[clickable=true] >2 [text="不感兴趣"]',
+          snapshotUrls: 'https://i.gkd.li/i/32656067',
         },
         {
-          key: 50,
-          preKeys: [20],
-          name: '点击[直接关闭]',
-          matches: '[text="直接关闭"][clickable=true]',
-          snapshotUrls: 'https://i.gkd.li/i/28942737',
+          key: 2,
+          preKeys: [1],
+          name: '③选择原因',
+          activityIds: '.activity.QPublicTransFragmentActivity',
+          matches: '[desc="没有我想看的类型 未选中"]',
+          snapshotUrls: 'https://i.gkd.li/i/32656073',
+        },
+        {
+          key: 3,
+          preKeys: [2],
+          name: '④提交',
+          activityIds: '.activity.QPublicTransFragmentActivity',
+          matches: '[desc$="已选中"] +n * > [desc="提交"]',
+          snapshotUrls: 'https://i.gkd.li/i/32656070',
         },
       ],
     },
