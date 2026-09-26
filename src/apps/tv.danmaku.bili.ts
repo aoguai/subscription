@@ -27,19 +27,19 @@ export default defineGkdApp({
     },
     {
       key: 4,
-      name: '分段广告-视频卡片广告',
-      desc: '关闭视频流中的广告卡片，包括视频底部、评论区中间、详情页下方等位置',
+      name: '分段广告-视频及搜索卡片广告',
+      desc: '关闭视频流和搜索结果中的广告卡片，包括视频底部、评论区中间、详情页下方等位置',
       enable: false,
-      activityIds: [
-        'tv.danmaku.bili.MainActivityV2',
-        'com.bilibili.video.videodetail.VideoDetailsActivity',
-        'com.bilibili.ship.theseus.all.UnitedBizDetailsActivity',
-        'com.bilibili.ship.theseus.detail.UnitedBizDetailsActivity',
-      ],
       rules: [
         {
           key: 0,
           name: '点击广告卡片右侧菜单图标',
+          activityIds: [
+            'tv.danmaku.bili.MainActivityV2',
+            'com.bilibili.video.videodetail.VideoDetailsActivity',
+            'com.bilibili.ship.theseus.all.UnitedBizDetailsActivity',
+            'com.bilibili.ship.theseus.detail.UnitedBizDetailsActivity',
+          ],
           anyMatches: [
             '[height > prev.bottom.plus(200)] >n [(((desc*="广告"||desc*="来自淘宝")&&desc*="查看")||desc$=",,轻点两下查看详情"||(desc^="【有奖调研】"&&desc.length=22))||(id*="/ad_")][visibleToUser=true] >(2,3,4) @ImageView[visibleToUser=true] < [vid^="more" || id^="tv.danmaku.bili.adbiz:id/more"][visibleToUser=true]',
             '[id$="ad_tint_frame" || id$="root_container" || id$="constraintLayout"][visibleToUser=true] >(1,2,3) [vid="more" || id="tv.danmaku.bili.adbiz:id/more"]',
@@ -89,6 +89,12 @@ export default defineGkdApp({
           key: 49,
           fastQuery: true,
           name: '点击[我不想看]',
+          activityIds: [
+            'tv.danmaku.bili.MainActivityV2',
+            'com.bilibili.video.videodetail.VideoDetailsActivity',
+            'com.bilibili.ship.theseus.all.UnitedBizDetailsActivity',
+            'com.bilibili.ship.theseus.detail.UnitedBizDetailsActivity',
+          ],
           matches: '[vid="recycler"] >n [text="我不想看"]',
           snapshotUrls: ['https://i.gkd.li/i/17786751'],
         },
@@ -97,6 +103,12 @@ export default defineGkdApp({
           key: 50,
           fastQuery: true,
           name: '点击[不感兴趣]',
+          activityIds: [
+            'tv.danmaku.bili.MainActivityV2',
+            'com.bilibili.video.videodetail.VideoDetailsActivity',
+            'com.bilibili.ship.theseus.all.UnitedBizDetailsActivity',
+            'com.bilibili.ship.theseus.detail.UnitedBizDetailsActivity',
+          ],
           matches:
             '@[clickable=true] > [text="这个内容" || text="不感兴趣" || text="相似内容过多" || text="up主不感兴趣" || text="此类内容过多" || text="对该up的直播不感兴趣"|| text*="不想看" || text$="质量差" || text="减少直播推荐" || text="和当前视频无关"]',
           snapshotUrls: [
@@ -138,6 +150,12 @@ export default defineGkdApp({
           key: 51,
           name: '点击关闭',
           fastQuery: true,
+          activityIds: [
+            'tv.danmaku.bili.MainActivityV2',
+            'com.bilibili.video.videodetail.VideoDetailsActivity',
+            'com.bilibili.ship.theseus.all.UnitedBizDetailsActivity',
+            'com.bilibili.ship.theseus.detail.UnitedBizDetailsActivity',
+          ],
           anyMatches: [
             '[vid="close_dislike"][visibleToUser=true]',
             '@[text="关闭"][clickable=true] -n * <<(2,4) [name$="ComposeView" || name$="FrameLayout"] <n [vid="recycler"]',
@@ -146,6 +164,32 @@ export default defineGkdApp({
             'https://i.gkd.li/i/17675894',
             'https://i.gkd.li/i/18587456',
             'https://i.gkd.li/i/25739074',
+          ],
+        },
+        {
+          key: 52,
+          name: '搜索结果-点击右下角[菜单]',
+          fastQuery: true,
+          activityIds: 'com.bilibili.search2.main.BiliMainSearchActivity',
+          matches: '[vid="ad_tint_frame"] > [vid="more"][clickable=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/17269053',
+            'https://i.gkd.li/i/17964354',
+            'https://i.gkd.li/i/28495212',
+          ],
+        },
+        {
+          key: 53,
+          preKeys: [52],
+          name: '搜索结果-点击[不感兴趣]',
+          fastQuery: true,
+          activityIds: 'com.bilibili.search2.main.BiliMainSearchActivity',
+          matches:
+            '@[clickable=true] > [text$="不感兴趣" || text*="不想看" || text$="质量差"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/17269055',
+            'https://i.gkd.li/i/17964356',
+            'https://i.gkd.li/i/22657666', // 直播
           ],
         },
       ],
@@ -255,38 +299,6 @@ export default defineGkdApp({
             'https://i.gkd.li/i/25240029',
           ],
           excludeSnapshotUrls: ['https://i.gkd.li/i/25369451'],
-        },
-      ],
-    },
-    {
-      key: 9,
-      name: '分段广告-搜索结果广告',
-      desc: '关闭搜索结果中的广告内容',
-      enable: false,
-      fastQuery: true,
-      activityIds: 'com.bilibili.search2.main.BiliMainSearchActivity',
-      rules: [
-        {
-          key: 1,
-          name: '点击右下角[菜单]',
-          matches: '[vid="ad_tint_frame"] > [vid="more"][clickable=true]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/17269053',
-            'https://i.gkd.li/i/17964354',
-            'https://i.gkd.li/i/28495212',
-          ],
-        },
-        {
-          key: 2,
-          preKeys: [1],
-          name: '点击[不感兴趣]',
-          matches:
-            '@[clickable=true] > [text$="不感兴趣" || text*="不想看" || text$="质量差"]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/17269055',
-            'https://i.gkd.li/i/17964356',
-            'https://i.gkd.li/i/22657666', // 直播
-          ],
         },
       ],
     },

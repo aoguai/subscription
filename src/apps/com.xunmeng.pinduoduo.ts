@@ -30,8 +30,8 @@ export default defineGkdApp({
     },
     {
       key: 2,
-      name: '全屏广告-弹窗广告',
-      desc: '关闭各类全屏弹窗广告，包括活动弹窗、红包弹窗等',
+      name: '全屏广告',
+      desc: '关闭活动、红包及下单后出现的各类全屏弹窗广告',
       enable: false,
       rules: [
         {
@@ -136,6 +136,23 @@ export default defineGkdApp({
           matches:
             '@ViewGroup[width<86 && height<86][clickable=true][focusable=true][clickable=true] + ViewGroup [text="元"]',
           snapshotUrls: 'https://i.gkd.li/i/25572172',
+        },
+        {
+          name: '下单后出现的弹窗',
+          key: 12,
+          activityIds: [
+            '.activity.NewPageMaskActivity',
+            '.ui.activity.HomeActivity',
+          ],
+          action: 'clickCenter',
+          matches: 'Button[text="关闭弹窗" || desc="关闭弹窗"][clickable=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13927594',
+            'https://i.gkd.li/i/14434154',
+            'https://i.gkd.li/i/14456017',
+            'https://i.gkd.li/i/13308175',
+            'https://i.gkd.li/i/23256823',
+          ],
         },
       ],
     },
@@ -253,30 +270,6 @@ export default defineGkdApp({
           snapshotUrls: [
             'https://i.gkd.li/i/13925378', // checked=false
             'https://i.gkd.li/i/13925380', // checked=true
-          ],
-        },
-      ],
-    },
-    {
-      key: 12,
-      name: '全屏广告-下单后出现的弹窗',
-      desc: '点击关闭',
-      enable: false,
-      rules: [
-        {
-          key: 0,
-          activityIds: [
-            '.activity.NewPageMaskActivity',
-            '.ui.activity.HomeActivity',
-          ],
-          action: 'clickCenter',
-          matches: 'Button[text="关闭弹窗" || desc="关闭弹窗"][clickable=true]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/13927594',
-            'https://i.gkd.li/i/14434154',
-            'https://i.gkd.li/i/14456017',
-            'https://i.gkd.li/i/13308175',
-            'https://i.gkd.li/i/23256823',
           ],
         },
       ],

@@ -7,7 +7,7 @@ export default defineGkdApp({
     {
       key: 1,
       name: '分段广告-卡片广告',
-      desc: '点击[关闭]-点击[直接关闭]/[不感兴趣]',
+      desc: '点击[关闭]-点击[直接关闭]/[不感兴趣]；搜索页规则触发时会收起输入法',
       rules: [
         {
           key: 0,
@@ -62,6 +62,28 @@ export default defineGkdApp({
             'https://i.gkd.li/i/16047089',
             'https://i.gkd.li/i/23771645',
           ],
+        },
+        {
+          key: 91,
+          name: '搜索页-点击广告标记',
+          fastQuery: true,
+          activityIds: '.music.biz.search.activity.SearchActivity',
+          matches: '[vid="adTagView" || vid="adTagViewNew"][clickable=true]',
+          exampleUrls: 'https://e.gkd.li/afb3fc72-7a69-489a-ac5a-7a70f5685667',
+          snapshotUrls: [
+            'https://i.gkd.li/i/16357208',
+            'https://i.gkd.li/i/16357111',
+          ],
+        },
+        {
+          preKeys: [91],
+          key: 92,
+          name: '搜索页-直接关闭',
+          fastQuery: true,
+          activityIds: '.music.biz.search.activity.SearchActivity',
+          matches: '[text="直接关闭"]',
+          exampleUrls: 'https://e.gkd.li/1e2b2822-01dd-455f-8991-1b746c61c07c',
+          snapshotUrls: 'https://i.gkd.li/i/16357210',
         },
       ],
     },
@@ -179,31 +201,6 @@ export default defineGkdApp({
           activityIds: '.module.login.LoginPermissionActivity',
           matches: '[text="授权登录"][clickable=true]',
           snapshotUrls: 'https://i.gkd.li/i/14830218',
-        },
-      ],
-    },
-    {
-      key: 16,
-      name: '分段广告-搜索页广告',
-      desc: '该规则触发时会导致输入法收起',
-      fastQuery: true,
-      activityIds: '.music.biz.search.activity.SearchActivity',
-      rules: [
-        {
-          key: 0,
-          matches: '[vid="adTagView" || vid="adTagViewNew"][clickable=true]',
-          exampleUrls: 'https://e.gkd.li/afb3fc72-7a69-489a-ac5a-7a70f5685667',
-          snapshotUrls: [
-            'https://i.gkd.li/i/16357208',
-            'https://i.gkd.li/i/16357111',
-          ],
-        },
-        {
-          preKeys: [0],
-          key: 90,
-          matches: '[text="直接关闭"]',
-          exampleUrls: 'https://e.gkd.li/1e2b2822-01dd-455f-8991-1b746c61c07c',
-          snapshotUrls: 'https://i.gkd.li/i/16357210',
         },
       ],
     },
