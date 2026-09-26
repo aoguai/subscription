@@ -724,21 +724,23 @@ export default defineGkdApp({
     },
     {
       key: 22,
-      name: '功能类-付款后自动点击完成/返回商家',
-      desc: '支付完成后自动点击完成或返回商家按钮',
+      name: '功能类-收款付款后自动点击完成/返回',
+      desc: '支付完成后自动点击完成或返回按钮',
       enable: false,
       matchRoot: true,
       fastQuery: true,
       activityIds: [
         'com.tencent.mm.framework.app.UIPageFragmentActivity',
         '.ui.LauncherUI',
+        '.plugin.lite.ui.WxaLiteAppTransparentLiteUI',
+        '.plugin.lite.ui.WxaLiteAppLiteUI',
       ],
       rules: [
         {
           matches: [
-            '[text="支付成功"]',
-            '[text*="￥"||text*="¥"]',
-            '[text="完成"||text="返回商家"]',
+            '[text="支付成功"||text*="已收款"||desc="支付成功"||desc*="已收款"]',
+            '[text*="￥"||text*="¥"||desc*="￥"||desc*="¥"]',
+            '[text="完成"||text="返回商家"||desc="完成"||desc="返回商家"||vid="actionbar_up_indicator"]',
           ],
           snapshotUrls: [
             'https://i.gkd.li/i/14399355',
@@ -746,6 +748,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/14662147',
             'https://i.gkd.li/i/16215946',
             'https://i.gkd.li/i/18348017',
+            'https://i.gkd.li/i/31693084', // 完成
           ],
           excludeSnapshotUrls: [
             'https://i.gkd.li/i/14532946', // 避免在此页面误触
