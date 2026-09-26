@@ -39,8 +39,11 @@ export default defineGkdApp({
           key: 2, //无快查
           activityIds: 'com.x.android.main.MainActivity',
           matches:
-            '@ImageView[desc="发帖选项"] - [visibleToUser=true][text="Ad"]',
-          snapshotUrls: 'https://i.gkd.li/i/29085434',
+            '[text="Ad" || getChild(0).text="已推广"] +(1,4) ImageView[visibleToUser=true][desc="发帖选项"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/29085434', // Ad
+            'https://i.gkd.li/i/32325884', // 已推广
+          ],
         },
 
         // 第二段
