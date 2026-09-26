@@ -1,4 +1,3 @@
-
 ## 1. Maintainer Position & Terms of Use
 
 In the context of this repository, "the Software" refers generally to the subscription rules and related files contained in this project.
@@ -74,7 +73,7 @@ Where a third-party application has designated conditions such as "watch adverti
 
 ## 4. Clarification Regarding Automated Operations
 
-Pursuant to Article 10 of the *Measures for the Administration of Internet Advertising* of the People's Republic of China, where an internet advertisement is published in the form of a pop-up or similar format, advertisers and advertising publishers shall prominently display a close button to ensure one-click closure, and the following situations are prohibited:
+Pursuant to Article 10 of the _Measures for the Administration of Internet Advertising_ of the People's Republic of China, where an internet advertisement is published in the form of a pop-up or similar format, advertisers and advertising publishers shall prominently display a close button to ensure one-click closure, and the following situations are prohibited:
 
 (1) The absence of a close button, or the advertisement being closeable only after a countdown has elapsed;
 
