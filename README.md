@@ -10,9 +10,9 @@
 
 若您已阅读了解并同意 [LICENSE](./LICENSE) 与 [LEGAL.md](./LEGAL.md)，可将以下任意链接添加至 [GKD](https://github.com/gkd-kit/gkd) 内使用此规则：
 
-| GitHub 源（推荐）                                                                          | Release 离线订阅文件                                                  | gitmirror 源                                                                       | jsDelivr 源                                                                          |
-| ------------------------------------------------------------------------------------------ | --------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| [复制](https://raw.githubusercontent.com/aoguai/subscription/custom/dist/aoguai_gkd.json5) | [下载](https://github.com/aoguai/subscription/releases/latest)        | [复制](https://raw.gitmirror.com/aoguai/subscription/custom/dist/aoguai_gkd.json5) | [复制](https://cdn.jsdelivr.net/gh/aoguai/subscription@custom/dist/aoguai_gkd.json5) |
+| GitHub 源（推荐）                                                                          | Release 离线订阅文件                                           | gitmirror 源                                                                       | jsDelivr 源                                                                          |
+| ------------------------------------------------------------------------------------------ | -------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| [复制](https://raw.githubusercontent.com/aoguai/subscription/custom/dist/aoguai_gkd.json5) | [下载](https://github.com/aoguai/subscription/releases/latest) | [复制](https://raw.gitmirror.com/aoguai/subscription/custom/dist/aoguai_gkd.json5) | [复制](https://cdn.jsdelivr.net/gh/aoguai/subscription@custom/dist/aoguai_gkd.json5) |
 
 **请注意：**
 
@@ -20,9 +20,9 @@
 
 ## 说明 📝
 
-当前版本: v88
+当前版本: v89
 
-当前订阅文件含 285 应用规则组， 9 全局规则组。
+当前订阅文件含 280 应用规则组， 9 全局规则组。
 
 **🔍 查看详细[适配规则列表](./dist/README.md)**
 
