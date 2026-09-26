@@ -101,11 +101,12 @@ export default defineGkdApp({
             '.detail.DetailActivity',
           ],
           matches:
-            '@[longClickable=true][childCount=0][height>width] < [childCount>1] >(1,4) [text="广告"][visibleToUser=true]',
+            '@[longClickable=true][childCount=0][height>width] < [childCount>1] >(1,3,4) [text="广告"][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/19604324',
             'https://i.gkd.li/i/29751786',
             'https://i.gkd.li/i/29753749', //同城商品页
+            'https://i.gkd.li/i/31875408',
           ],
           excludeSnapshotUrls: 'https://i.gkd.li/i/29753324', // 广告的上半部分被遮住时,[长按]广告不会出现弹窗, 用 [height>width] 排除
           exampleUrls: 'https://e.gkd.li/738c623e-58fe-45a1-9a28-957f0f812c72',
