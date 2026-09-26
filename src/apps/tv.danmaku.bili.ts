@@ -98,7 +98,7 @@ export default defineGkdApp({
           fastQuery: true,
           name: '点击[不感兴趣]',
           matches:
-            '@[clickable=true] > [text="这个内容" || text="不感兴趣" || text="相似内容过多" || text="up主不感兴趣" || text="此类内容过多" || text="对该up的直播不感兴趣"|| text*="不想看" || text$="质量差"]',
+            '@[clickable=true] > [text="这个内容" || text="不感兴趣" || text="相似内容过多" || text="up主不感兴趣" || text="此类内容过多" || text="对该up的直播不感兴趣"|| text*="不想看" || text$="质量差" || text="减少直播推荐" || text="和当前视频无关"]',
           snapshotUrls: [
             'https://i.gkd.li/import/13495649',
             'https://i.gkd.li/i/13742257',
@@ -130,6 +130,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/24836772',
             'https://i.gkd.li/i/24015691', // 我不想看
             'https://i.gkd.li/i/28659010', // 不想看该内容、广告质量差
+            'https://i.gkd.li/i/30885647', // 减少直播推荐、和当前视频无关
           ],
         },
         {
@@ -203,6 +204,14 @@ export default defineGkdApp({
             '@[vid="close"][visibleToUser=true] - [text$="免费领B站大会员"]',
           snapshotUrls: 'https://i.gkd.li/i/18165189',
         },
+        {
+          key: 3,
+          activityIds:
+            'com.bilibili.ship.theseus.detail.UnitedBizDetailsActivity',
+          matches:
+            '[desc="close"] < @[clickable=true] <3 View <2 [childCount=4] < View <2 View < ComposeView < FrameLayout < [vid="fl_tab_pager_container"]',
+          snapshotUrls: 'https://i.gkd.li/i/31067294',
+        },
       ],
     },
     {
@@ -225,10 +234,12 @@ export default defineGkdApp({
         },
         {
           key: 1,
+          forcedTime: 120000, // 主动查询2分钟
           matches:
             '@[vid="close" || vid="iv_close"] - [vid="up_avatar" || vid="gift_icon" || vid="follow_container"][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/14782965',
+            'https://i.gkd.li/i/32246446',
             'https://i.gkd.li/i/18046573',
             'https://i.gkd.li/i/22990105',
           ],
@@ -305,6 +316,7 @@ export default defineGkdApp({
       key: 11,
       name: '功能类-自动点击评论区的[展开更多评论]',
       desc: '自动点击评论区的[展开更多评论]',
+      enable: false,
       rules: [
         {
           fastQuery: true,
@@ -325,9 +337,26 @@ export default defineGkdApp({
       ],
     },
     {
+      key: 12,
+      name: '全屏广告-完善信息弹窗',
+      desc: '按[返回键]',
+      enable: false,
+      rules: [
+        {
+          fastQuery: true,
+          action: 'back',
+          activityIds: '.MainActivityV2',
+          matches:
+            '[vid="design_bottom_sheet"] >2 [vid="title"][text="完善信息，获取精准推荐"]',
+          snapshotUrls: 'https://i.gkd.li/i/31165755',
+        },
+      ],
+    },
+    {
       key: 18,
       name: '功能类-自动领取会员经验',
       desc: '在会员中心页面自动领取会员经验',
+      enable: false,
       rules: [
         {
           fastQuery: true,
@@ -346,6 +375,7 @@ export default defineGkdApp({
       key: 19,
       name: '功能类-自动点击查看原图',
       desc: '浏览图片时自动切换至原图模式',
+      enable: false,
       rules: [
         {
           fastQuery: true,
