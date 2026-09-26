@@ -30,10 +30,21 @@ export default defineGkdApp({
       desc: '点击关闭浮窗广告',
       rules: [
         {
+          key: 0,
           fastQuery: true,
           activityIds: 'com.unionpay.activity.UPActivityMain',
           matches: '[vid="close_view"][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/20239453',
+        },
+        {
+          key: 1,
+          fastQuery: true,
+          activityIds: '.activity.UPActivityMain',
+          matches: '[vid="frog_float"] >2 [vid="close_view"][clickable=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14586427',
+            'https://i.gkd.li/i/31259720',
+          ],
         },
       ],
     },
